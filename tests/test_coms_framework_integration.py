@@ -177,11 +177,19 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
         )
 
         resolver = legacy.Resolver()
+        row_context = integration.SsnWorkbookResolutionContext(source_rows)
         audited_rows = build_governed_workbook_batch(
             source_rows,
-            integration.SsnSourceResolverAdapter(resolver),
-            integration.SsnTargetResolverAdapter(resolver),
+            integration.SsnSourceResolverAdapter(
+                resolver,
+                row_context=row_context,
+            ),
+            integration.SsnTargetResolverAdapter(
+                resolver,
+                row_context=row_context,
+            ),
         )
+        row_context.assert_complete()
         self.assertEqual(len(audited_rows), 105)
 
         source_keys = [
@@ -333,15 +341,45 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
 
     def test_target_adapter_translates_legacy_resolution_failure(self) -> None:
         class FailingResolver:
+            def resolve_source_subject(
+                self,
+                token: str,
+                row_id: str,
+            ) -> tuple[URIRef, str]:
+                return URIRef("http://example.org/Observation"), "class"
+
             def resolve(self, token: str, expected_kind: str, row_id: str) -> None:
                 raise legacy.GenerationError(
                     f"{row_id}: unresolved {expected_kind} token {token!r}"
                 )
 
-        adapter = integration.SsnTargetResolverAdapter(FailingResolver())  # type: ignore[arg-type]
+        row = WorkbookSourceRow(
+            location=FrameworkRowLocation("Mappings", 2),
+            row_id_text=_test_row_id(1),
+            subject_text="sosa:Observation",
+            predicate_text="rdfs:subClassOf",
+            target_text="bfo:Missing",
+            reasoning_text="",
+            status_text=None,
+        )
+        row_context = integration.SsnWorkbookResolutionContext((row,))
+        resolver = FailingResolver()
+        source_adapter = integration.SsnSourceResolverAdapter(  # type: ignore[arg-type]
+            resolver,
+            row_context=row_context,
+        )
+        target_adapter = integration.SsnTargetResolverAdapter(  # type: ignore[arg-type]
+            resolver,
+            row_context=row_context,
+        )
+        source_adapter.resolve_source_entity(row.subject_text)
         with self.assertRaises(EntityResolutionError) as raised:
-            adapter.resolve_entity("bfo:Missing", "class")
-        self.assertIn("COMS shadow integration", str(raised.exception))
+            target_adapter.resolve_entity("bfo:Missing", "class")
+        self.assertIn(
+            f"{row.location.text} [{row.row_id_text}]",
+            str(raised.exception),
+        )
+        row_context.assert_complete()
 
 
 class ComsCompatibilityProjectionTests(unittest.TestCase):
@@ -725,8 +763,6 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             self.framework_resolver.records,
             self.legacy_resolver.records,
         )
-        for record in self.framework_resolver.records.values():
-            self.assertNotIn("COMS shadow integration", record.rows)
 
     def test_both_explicit_blank_rows_project_without_targets(self) -> None:
         blank_rows = [item for item in self.projected_rows if not item.predicate]

@@ -182,23 +182,18 @@ class SsnSourceResolverAdapter:
         self,
         resolver: legacy.Resolver,
         *,
-        diagnostic_context: str = "COMS shadow integration",
-        row_context: SsnWorkbookResolutionContext | None = None,
+        row_context: SsnWorkbookResolutionContext,
     ) -> None:
         self._resolver = resolver
-        self._diagnostic_context = diagnostic_context
         self._row_context = row_context
 
     def resolve_source_entity(self, token: str) -> ResolvedSourceEntity:
-        diagnostic_context = self._diagnostic_context
-        if self._row_context is not None:
-            diagnostic_context = self._row_context.begin_source_resolution(token)
+        diagnostic_context = self._row_context.begin_source_resolution(token)
         iri, kind = self._resolver.resolve_source_subject(
             token,
             diagnostic_context,
         )
-        if self._row_context is not None:
-            self._row_context.retain_source_entity(str(iri), kind)
+        self._row_context.retain_source_entity(str(iri), kind)
         return ResolvedSourceEntity(iri=str(iri), kind=kind)
 
 
@@ -209,17 +204,13 @@ class SsnTargetResolverAdapter:
         self,
         resolver: legacy.Resolver,
         *,
-        diagnostic_context: str = "COMS shadow integration",
-        row_context: SsnWorkbookResolutionContext | None = None,
+        row_context: SsnWorkbookResolutionContext,
     ) -> None:
         self._resolver = resolver
-        self._diagnostic_context = diagnostic_context
         self._row_context = row_context
 
     def resolve_entity(self, token: str, expected_kind: str) -> str:
-        diagnostic_context = self._diagnostic_context
-        if self._row_context is not None:
-            diagnostic_context = self._row_context.current_diagnostic_id
+        diagnostic_context = self._row_context.current_diagnostic_id
         try:
             resolution = self._resolver.resolve(
                 token,
