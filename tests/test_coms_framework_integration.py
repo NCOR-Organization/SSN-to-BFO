@@ -53,11 +53,21 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 import coms_framework_integration as integration  # noqa: E402
 import coms_row_identity as legacy_identity  # noqa: E402
 import generate_mapping_from_coms as legacy  # noqa: E402
+import product_dispositions as dispositions  # noqa: E402
 
 
 WORKBOOK_PATH = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
 WORKBOOK_SHA256 = "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
 GENERATOR_SHA256 = "247e049d9f1407143de7edf6c806d8e3dd485303c10dc1c167932a45df1d893f"
+ROW_IDENTITY_MODULE_SHA256 = (
+    "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425"
+)
+DISPOSITION_MODULE_SHA256 = (
+    "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e"
+)
+PUBLICATION_METADATA_SHA256 = (
+    "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9"
+)
 ARTIFACT_SHA256 = {
     REPO_ROOT / "SSN2BFO.ttl": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
     REPO_ROOT / "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": (
@@ -72,6 +82,9 @@ ARTIFACT_SHA256 = {
     REPO_ROOT / "reports/coms-product-dispositions.json": (
         "29ca8c4e519a052cf3d44635e70c6361bebc3b88dc0f0815e3047011fad6a4f8"
     ),
+    REPO_ROOT / "reports/coms-generation-validation.md": (
+        "87af70f2aeac0cd54f08e46d84a60dca741dd88cb1d72e5a98b46dd9ea461c0a"
+    ),
 }
 EXPECTED_MAPPING_TYPES = {
     "class_mapping": 44,
@@ -81,6 +94,13 @@ EXPECTED_MAPPING_TYPES = {
     "range": 15,
     "explicit_blank": 2,
 }
+FIXED_DISPOSITION_HASHES = dispositions.RequiredInputHashes(
+    workbook_sha256=WORKBOOK_SHA256,
+    generator_sha256=GENERATOR_SHA256,
+    row_identity_module_sha256=ROW_IDENTITY_MODULE_SHA256,
+    disposition_module_sha256=DISPOSITION_MODULE_SHA256,
+    publication_metadata_sha256=PUBLICATION_METADATA_SHA256,
+)
 
 
 def sha256_file(path: Path) -> str:
@@ -93,6 +113,41 @@ def sha256_file(path: Path) -> str:
 
 def audit_key(row_id: str, worksheet: str, row_number: int) -> tuple[str, str, int]:
     return row_id, worksheet, row_number
+
+
+def disposition_input_fields(
+    item: dispositions.DispositionRowInput,
+) -> dict[str, object]:
+    return {
+        "row_id": item.row_id,
+        "location": (
+            item.location.worksheet,
+            item.location.row_number,
+        ),
+        "subject_lexical": item.subject_lexical,
+        "predicate_lexical": item.predicate_lexical,
+        "authoritative_target_lexical": item.authoritative_target_lexical,
+        "canonical_row": (
+            item.canonical_row.canonicalization,
+            item.canonical_row.mapping_type,
+            item.canonical_row.predicate_iri,
+            item.canonical_row.subject_iri,
+            item.canonical_row.target,
+        ),
+        "source_expression_sha256": item.source_expression_sha256,
+        "mapping_type": item.mapping_type,
+        "reasoning": item.reasoning,
+        "authoritative_axioms": tuple(
+            (
+                axiom.identity.canonical_axiom,
+                axiom.identity.sha256,
+                axiom.subject_iri,
+                axiom.predicate_iri,
+                axiom.target_iris,
+            )
+            for axiom in item.authoritative_axioms
+        ),
+    }
 
 
 def _expression_kinds(expression: legacy.Expr | None) -> set[str]:
@@ -416,6 +471,14 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             cls.audited_rows,
             cls.row_context.source_kind_by_row_id,
         )
+        cls.legacy_disposition_inputs = tuple(
+            legacy.disposition_input_for_processed_row(item)
+            for item in cls.legacy_processed
+        )
+        cls.native_disposition_inputs = tuple(
+            integration.disposition_input_for_audited_workbook_row(item)
+            for item in cls.audited_rows
+        )
 
     def test_row_aware_adapters_preserve_context_and_source_kinds(self) -> None:
         rows = (
@@ -609,7 +672,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                 subject_iri="http://example.org/subject",
                 predicate_iri="http://www.w3.org/2000/01/rdf-schema#subClassOf",
                 mapping_type="class_mapping",
-                reasoning=source_row.reasoning_text,
+                reasoning=" sentinel record reasoning ",
                 expression=ExpressionNode(
                     kind="named",
                     iri="http://example.org/target",
@@ -655,6 +718,111 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                     ),
                 ),
             ),
+        )
+
+        forbidden = AssertionError(
+            "native disposition adapter invoked a legacy semantic authority"
+        )
+        with (
+            mock.patch.object(
+                legacy,
+                "disposition_input_for_processed_row",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                legacy,
+                "canonical_input_for_processed_row",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                integration,
+                "project_audited_workbook_rows",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                integration,
+                "project_expression_node",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                integration,
+                "project_canonical_row_audit",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                legacy_identity,
+                "canonicalize_processed_row",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                legacy_identity,
+                "source_expression_sha256",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                legacy_identity,
+                "canonical_authoritative_axioms",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                legacy_identity,
+                "build_row_audit",
+                side_effect=forbidden,
+            ),
+            mock.patch.object(
+                integration,
+                "canonical_input_for_mapping_record",
+                wraps=framework_identity.canonical_input_for_mapping_record,
+            ) as canonical_view,
+        ):
+            native_input = integration.disposition_input_for_audited_workbook_row(
+                audited_row
+            )
+        canonical_view.assert_called_once_with(
+            audited_row.governed_record,
+            source_row.location,
+        )
+        self.assertEqual(
+            native_input,
+            dispositions.DispositionRowInput(
+                row_id=source_row.row_id_text,
+                location=legacy_identity.RowLocation("Mappings", 7),
+                subject_lexical=" sosa:Observation ",
+                predicate_lexical=" rdfs:subClassOf ",
+                authoritative_target_lexical=" bfo:Entity ",
+                canonical_row=legacy_identity.CanonicalRowExpression(
+                    canonicalization="sentinel-canonicalization",
+                    mapping_type="sentinel-mapping-type",
+                    predicate_iri="sentinel-predicate-iri",
+                    subject_iri="sentinel-subject-iri",
+                    target="sentinel-canonical-target",
+                ),
+                source_expression_sha256="sentinel-source-expression-hash",
+                mapping_type="class_mapping",
+                reasoning=" preserve lexical text ",
+                authoritative_axioms=(
+                    dispositions.DispositionAxiomInput(
+                        identity=legacy_identity.AuthoritativeAxiomIdentity(
+                            canonical_axiom="sentinel-authoritative-axiom",
+                            sha256="sentinel-authoritative-axiom-hash",
+                        ),
+                        subject_iri="http://example.org/subject",
+                        predicate_iri=(
+                            "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+                        ),
+                        target_iris=("http://example.org/target",),
+                    ),
+                ),
+            ),
+        )
+        self.assertIsInstance(native_input.location, legacy_identity.RowLocation)
+        self.assertIsInstance(
+            native_input.canonical_row,
+            legacy_identity.CanonicalRowExpression,
+        )
+        self.assertIsInstance(
+            native_input.authoritative_axioms[0].identity,
+            legacy_identity.AuthoritativeAxiomIdentity,
         )
 
     def test_primary_workbook_projection_is_structurally_identical(self) -> None:
@@ -797,6 +965,208 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             assert item.identity_audit is not None
             self.assertEqual(item.identity_audit.authoritative_axioms, ())
 
+    def test_native_disposition_inputs_match_legacy_field_by_field_for_all_rows(
+        self,
+    ) -> None:
+        self.assertEqual(len(self.native_disposition_inputs), 105)
+        self.assertEqual(len(self.legacy_disposition_inputs), 105)
+        self.assertEqual(
+            [item.row_id for item in self.native_disposition_inputs],
+            [item.row_id for item in self.legacy_disposition_inputs],
+        )
+
+        mismatches = Counter()
+        for native, expected in zip(
+            self.native_disposition_inputs,
+            self.legacy_disposition_inputs,
+        ):
+            native_fields = disposition_input_fields(native)
+            expected_fields = disposition_input_fields(expected)
+            for field in native_fields:
+                mismatches[field] += (
+                    native_fields[field] != expected_fields[field]
+                )
+        self.assertEqual(
+            dict(mismatches),
+            {
+                field: 0
+                for field in disposition_input_fields(
+                    self.native_disposition_inputs[0]
+                )
+            },
+        )
+
+    def test_native_disposition_classification_and_explicit_blanks_match_legacy(
+        self,
+    ) -> None:
+        def classification_evidence(
+            row_inputs: tuple[dispositions.DispositionRowInput, ...],
+        ) -> tuple[list[tuple[object, ...]], Counter[str]]:
+            evidence: list[tuple[object, ...]] = []
+            categories: Counter[str] = Counter()
+            for row in row_inputs:
+                for axiom in row.authoritative_axioms:
+                    category = dispositions.classify_target_category(axiom)
+                    categories[category] += 1
+                    evidence.append(
+                        (
+                            row.row_id,
+                            axiom.identity,
+                            dispositions.referenced_iris(axiom),
+                            category,
+                            dispositions.derive_product_dispositions(
+                                category,
+                                dispositions.PRODUCT_ROLE_ORDER,
+                            ),
+                        )
+                    )
+            return evidence, categories
+
+        legacy_evidence, legacy_categories = classification_evidence(
+            self.legacy_disposition_inputs
+        )
+        native_evidence, native_categories = classification_evidence(
+            self.native_disposition_inputs
+        )
+        self.assertEqual(len(native_evidence), 103)
+        self.assertEqual(native_evidence, legacy_evidence)
+        self.assertEqual(native_categories, legacy_categories)
+        self.assertEqual(
+            native_categories,
+            Counter(
+                {
+                    "target_neutral": 29,
+                    "bfo_bearing": 19,
+                    "cco_bearing": 25,
+                    "mixed_bfo_cco": 30,
+                }
+            ),
+        )
+
+        native_blanks = {
+            item.row_id: item
+            for item in self.native_disposition_inputs
+            if not item.authoritative_axioms
+        }
+        legacy_blanks = {
+            item.row_id: item
+            for item in self.legacy_disposition_inputs
+            if not item.authoritative_axioms
+        }
+        expected_blanks = {
+            "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f": (
+                "Sheet2",
+                16,
+                "sosa:hasSample",
+                "78883d8f62ff3dc679b238f1a17e47db6cc0b481a2859aa729723dea670aadb6",
+            ),
+            "urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab": (
+                "Sheet2",
+                17,
+                "sosa:isSampleOf",
+                "46baaa1e5b7a959dbb7cc484f1c977f95487847d7ea493abe60fd55d4df42876",
+            ),
+        }
+        self.assertEqual(set(native_blanks), set(expected_blanks))
+        for row_id, (sheet, row_number, source, source_hash) in expected_blanks.items():
+            native = native_blanks[row_id]
+            expected = legacy_blanks[row_id]
+            self.assertEqual(disposition_input_fields(native), disposition_input_fields(expected))
+            self.assertEqual((native.location.worksheet, native.location.row_number), (sheet, row_number))
+            self.assertEqual(native.subject_lexical, source)
+            self.assertIsNone(native.predicate_lexical)
+            self.assertIsNone(native.authoritative_target_lexical)
+            self.assertEqual(native.mapping_type, "explicit_blank")
+            self.assertIsNone(native.canonical_row.predicate_iri)
+            self.assertIsNone(native.canonical_row.target)
+            self.assertEqual(native.source_expression_sha256, source_hash)
+            self.assertEqual(native.authoritative_axioms, ())
+
+        document = dispositions.build_disposition_document(
+            self.native_disposition_inputs,
+            legacy.load_metadata(legacy.PUBLICATION_METADATA),
+            FIXED_DISPOSITION_HASHES,
+        )
+        document_blanks = {
+            row.row_id: row
+            for row in document.rows
+            if not row.authoritative_axioms
+        }
+        self.assertEqual(set(document_blanks), set(expected_blanks))
+        for row in document_blanks.values():
+            self.assertEqual(row.authoritative_axioms, ())
+            assert row.row_product_dispositions is not None
+            self.assertEqual(len(row.row_product_dispositions), 5)
+            for _, disposition in row.row_product_dispositions:
+                self.assertEqual(disposition.status, "deferred")
+                self.assertEqual(
+                    disposition.reason_code,
+                    "EXPLICITLY_UNMAPPED_SOURCE_ROW",
+                )
+
+    def test_native_canonical_inputs_render_all_authoritative_axioms_exactly(
+        self,
+    ) -> None:
+        comparisons = 0
+        for audited, processed in zip(
+            self.audited_rows,
+            self.legacy_processed,
+        ):
+            native_input = framework_identity.canonical_input_for_mapping_record(
+                audited.governed_record,
+                audited.source_row.location,
+            )
+            legacy_input = legacy.canonical_input_for_processed_row(processed)
+            assert processed.identity_audit is not None
+            self.assertEqual(
+                len(audited.row_audit.authoritative_axioms),
+                len(processed.identity_audit.authoritative_axioms),
+            )
+            for native_identity, expected_identity in zip(
+                audited.row_audit.authoritative_axioms,
+                processed.identity_audit.authoritative_axioms,
+            ):
+                self.assertEqual(native_identity.sha256, expected_identity.sha256)
+                axiom_id = f"sha256:{native_identity.sha256}"
+                self.assertEqual(
+                    legacy.render_authoritative_axiom_lines(
+                        native_input,
+                        axiom_id,
+                    ),
+                    legacy.render_authoritative_axiom_lines(
+                        legacy_input,
+                        axiom_id,
+                    ),
+                )
+                comparisons += 1
+        self.assertEqual(comparisons, 103)
+
+    def test_native_disposition_document_matches_fixed_provenance_bytes(
+        self,
+    ) -> None:
+        publication_metadata = legacy.load_metadata(legacy.PUBLICATION_METADATA)
+        legacy_document = dispositions.build_disposition_document(
+            self.legacy_disposition_inputs,
+            publication_metadata,
+            FIXED_DISPOSITION_HASHES,
+        )
+        native_document = dispositions.build_disposition_document(
+            self.native_disposition_inputs,
+            publication_metadata,
+            FIXED_DISPOSITION_HASHES,
+        )
+        legacy_bytes = dispositions.serialize_disposition_document(legacy_document)
+        native_bytes = dispositions.serialize_disposition_document(native_document)
+        maintained_path = REPO_ROOT / "reports/coms-product-dispositions.json"
+
+        self.assertEqual(native_document, legacy_document)
+        self.assertEqual(native_bytes, legacy_bytes)
+        self.assertEqual(native_bytes, maintained_path.read_bytes())
+        self.assertEqual(
+            hashlib.sha256(native_bytes).hexdigest(),
+            ARTIFACT_SHA256[maintained_path],
+        )
+
     def test_projection_invokes_no_legacy_semantic_authority(self) -> None:
         forbidden = AssertionError("projection invoked a legacy semantic authority")
         with (
@@ -853,13 +1223,12 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
         )
 
         cls.framework_resolver = CountingResolver()
-        (
-            cls.framework_processed,
-            cls.framework_stats,
-        ) = integration.process_primary_workbook_with_coms(
+        cls.framework_result = integration.process_primary_workbook_with_coms_result(
             WORKBOOK_PATH,
             cls.framework_resolver,
         )
+        cls.framework_processed = cls.framework_result.processed_rows
+        cls.framework_stats = cls.framework_result.stats
 
     @staticmethod
     def _legacy_process(path: Path) -> tuple[list[legacy.ProcessedRow], legacy.WorkbookStats]:
@@ -934,6 +1303,30 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
         )
 
     def test_primary_wrapper_matches_legacy_rows_stats_and_resolution_state(self) -> None:
+        compatibility_resolver = legacy.Resolver()
+        with mock.patch.object(
+            integration,
+            "process_primary_workbook_with_coms_result",
+            return_value=self.framework_result,
+        ) as rich_processor:
+            wrapper_processed, wrapper_stats = (
+                integration.process_primary_workbook_with_coms(
+                    WORKBOOK_PATH,
+                    compatibility_resolver,
+                )
+            )
+        rich_processor.assert_called_once_with(
+            WORKBOOK_PATH,
+            compatibility_resolver,
+        )
+        self.assertIs(wrapper_processed, self.framework_result.processed_rows)
+        self.assertIs(wrapper_stats, self.framework_result.stats)
+        self.assertIsInstance(
+            self.framework_result,
+            integration.PrimaryWorkbookComsResult,
+        )
+        self.assertIsInstance(self.framework_result.audited_rows, tuple)
+        self.assertEqual(len(self.framework_result.audited_rows), 105)
         self.assertEqual(len(self.framework_processed), 105)
         self.assertEqual(self.framework_processed, self.legacy_processed)
         self.assertEqual(self.framework_stats, self.legacy_stats)
@@ -1063,6 +1456,16 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                     "validate_incompatible_duplicate_mappings",
                     wraps=legacy.validate_incompatible_duplicate_mappings,
                 ))
+                native_disposition_adapter = stack.enter_context(mock.patch.object(
+                    integration,
+                    "disposition_input_for_audited_workbook_row",
+                    side_effect=forbidden,
+                ))
+                legacy_disposition_adapter = stack.enter_context(mock.patch.object(
+                    legacy,
+                    "disposition_input_for_processed_row",
+                    wraps=legacy.disposition_input_for_processed_row,
+                ))
                 compiler_renderer = stack.enter_context(mock.patch.object(
                     framework_compiler,
                     "render_mapping_record_turtle",
@@ -1113,6 +1516,8 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             wrapper.assert_called_once_with(WORKBOOK_PATH, resolver)
             self.assertEqual(domain_policy.call_count, 31)
             incompatible_policy.assert_called_once_with(captured["processed"])
+            native_disposition_adapter.assert_not_called()
+            self.assertEqual(legacy_disposition_adapter.call_count, 105)
             compiler_renderer.assert_not_called()
             document_record_renderer.assert_not_called()
             document_header_renderer.assert_not_called()

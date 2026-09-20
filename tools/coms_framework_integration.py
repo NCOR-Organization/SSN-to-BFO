@@ -5,9 +5,10 @@ from __future__ import annotations
 
 from collections import Counter
 from collections.abc import Iterable, Mapping
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from pathlib import Path
 from types import MappingProxyType
+from typing import cast
 
 from coms.adapters.xlsx import (
     WorkbookSourceRow,
@@ -21,8 +22,12 @@ from coms.mapping_parser import EntityResolutionError, MappingParseError
 from coms.mapping_predicates import MappingPredicateTokenError
 from coms.mapping_record_builder import MappingRecordBuildError
 from coms.row_identity import (
+    AuthoritativeAxiomIdentity as FrameworkAuthoritativeAxiomIdentity,
     CanonicalRowAudit as FrameworkCanonicalRowAudit,
+    CanonicalRowExpression as FrameworkCanonicalRowExpression,
     ComsRowIdentityError as FrameworkRowIdentityError,
+    RowLocation as FrameworkRowLocation,
+    canonical_input_for_mapping_record,
 )
 from coms.workbook_batch import (
     AuditedWorkbookRow,
@@ -37,6 +42,11 @@ from rdflib import URIRef
 
 import coms_row_identity as legacy_identity
 import generate_mapping_from_coms as legacy
+from product_dispositions import (
+    DispositionRowInput,
+    ProductDispositionError,
+    axiom_input_from_canonical_row,
+)
 
 
 PRIMARY_WORKBOOK_PROFILE = WorkbookProfile(
@@ -70,6 +80,15 @@ _EXPECTED_FRAMEWORK_FAILURES = (
     FrameworkRowIdentityError,
     WorkbookMappingError,
 )
+
+
+@dataclass(frozen=True)
+class PrimaryWorkbookComsResult:
+    """Retain native COMS rows and the temporary downstream projection."""
+
+    audited_rows: tuple[AuditedWorkbookRow, ...]
+    processed_rows: list[legacy.ProcessedRow]
+    stats: legacy.WorkbookStats
 
 
 def _diagnostic_id(row: WorkbookSourceRow) -> str:
@@ -280,26 +299,85 @@ def project_canonical_row_audit(
 
     return legacy_identity.CanonicalRowAudit(
         row_id=audit.row_id,
-        location=legacy_identity.RowLocation(
-            worksheet=audit.location.worksheet,
-            row_number=audit.location.row_number,
-        ),
+        location=_project_row_location(audit.location),
         reasoning=audit.reasoning,
-        expression=legacy_identity.CanonicalRowExpression(
-            canonicalization=audit.expression.canonicalization,
-            mapping_type=audit.expression.mapping_type,
-            predicate_iri=audit.expression.predicate_iri,
-            subject_iri=audit.expression.subject_iri,
-            target=audit.expression.target,
-        ),
+        expression=_project_canonical_row_expression(audit.expression),
         source_expression_sha256=audit.source_expression_sha256,
         authoritative_axioms=tuple(
-            legacy_identity.AuthoritativeAxiomIdentity(
-                canonical_axiom=axiom.canonical_axiom,
-                sha256=axiom.sha256,
-            )
+            _project_authoritative_axiom_identity(axiom)
             for axiom in audit.authoritative_axioms
         ),
+    )
+
+
+def _project_row_location(
+    value: FrameworkRowLocation,
+) -> legacy_identity.RowLocation:
+    return legacy_identity.RowLocation(
+        worksheet=value.worksheet,
+        row_number=value.row_number,
+    )
+
+
+def _project_canonical_row_expression(
+    value: FrameworkCanonicalRowExpression,
+) -> legacy_identity.CanonicalRowExpression:
+    return legacy_identity.CanonicalRowExpression(
+        canonicalization=value.canonicalization,
+        mapping_type=value.mapping_type,
+        predicate_iri=value.predicate_iri,
+        subject_iri=value.subject_iri,
+        target=value.target,
+    )
+
+
+def _project_authoritative_axiom_identity(
+    value: FrameworkAuthoritativeAxiomIdentity,
+) -> legacy_identity.AuthoritativeAxiomIdentity:
+    return legacy_identity.AuthoritativeAxiomIdentity(
+        canonical_axiom=value.canonical_axiom,
+        sha256=value.sha256,
+    )
+
+
+def disposition_input_for_audited_workbook_row(
+    item: AuditedWorkbookRow,
+) -> DispositionRowInput:
+    """Adapt one COMS-audited row without using ProcessedRow or legacy Expr."""
+
+    source_row = item.source_row
+    record = item.governed_record
+    audit = item.row_audit
+    canonical_input = cast(
+        legacy_identity.CanonicalRowInput,
+        canonical_input_for_mapping_record(
+            record,
+            source_row.location,
+        ),
+    )
+
+    try:
+        axiom_inputs = tuple(
+            axiom_input_from_canonical_row(
+                _project_authoritative_axiom_identity(identity),
+                canonical_input,
+            )
+            for identity in audit.authoritative_axioms
+        )
+    except ProductDispositionError as exc:
+        raise legacy.GenerationError(str(exc)) from exc
+
+    return DispositionRowInput(
+        row_id=source_row.row_id_text,
+        location=_project_row_location(source_row.location),
+        subject_lexical=source_row.subject_text,
+        predicate_lexical=source_row.predicate_text or None,
+        authoritative_target_lexical=source_row.target_text or None,
+        canonical_row=_project_canonical_row_expression(audit.expression),
+        source_expression_sha256=audit.source_expression_sha256,
+        mapping_type=record.mapping_type,
+        reasoning=source_row.reasoning_text,
+        authoritative_axioms=axiom_inputs,
     )
 
 
@@ -449,11 +527,11 @@ def _derive_primary_workbook_stats(
     return stats
 
 
-def process_primary_workbook_with_coms(
+def process_primary_workbook_with_coms_result(
     workbook_path: Path,
     resolver: legacy.Resolver,
-) -> tuple[list[legacy.ProcessedRow], legacy.WorkbookStats]:
-    """Process the primary SSN workbook through COMS without writing outputs."""
+) -> PrimaryWorkbookComsResult:
+    """Process the primary workbook once and retain both row representations."""
 
     profile = replace(
         PRIMARY_WORKBOOK_PROFILE,
@@ -529,4 +607,21 @@ def process_primary_workbook_with_coms(
         audited_rows,
         processed_rows,
     )
-    return processed_rows, stats
+    return PrimaryWorkbookComsResult(
+        audited_rows=audited_rows,
+        processed_rows=processed_rows,
+        stats=stats,
+    )
+
+
+def process_primary_workbook_with_coms(
+    workbook_path: Path,
+    resolver: legacy.Resolver,
+) -> tuple[list[legacy.ProcessedRow], legacy.WorkbookStats]:
+    """Preserve the existing ProcessedRow compatibility interface."""
+
+    result = process_primary_workbook_with_coms_result(
+        workbook_path,
+        resolver,
+    )
+    return result.processed_rows, result.stats

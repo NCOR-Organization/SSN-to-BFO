@@ -23,6 +23,15 @@ reparsing, re-resolving, or recomputing hashes. The legacy front half remains
 available for non-primary inputs, SOSA/release consumers, and equivalence
 testing. Renderer migration remains out of scope.
 
+The integration layer also retains the native `AuditedWorkbookRow` batch in a
+project-local rich result and can construct `DispositionRowInput` directly
+from each source row, governed semantic record, and COMS canonical audit.
+Tests prove that these native disposition inputs, classifications, existing
+SSN renderer evidence, and fixed-provenance report bytes are identical to the
+legacy `ProcessedRow` adapter. Production disposition routing has not changed:
+it still uses `disposition_input_for_processed_row()`. Switching that one
+consumer to the native adapter is reserved for the next migration commit.
+
 For `mappings/SSN2BFO-COMS.xlsx`, production `main()` calls the COMS-backed
 wrapper before the unchanged disposition, product-membership, and legacy
 renderer stages. Other workbook paths continue through the legacy front half.
