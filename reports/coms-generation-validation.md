@@ -9,16 +9,16 @@ Freshness is determined from content hashes, not file timestamps.
 | Item | Value |
 |---|---|
 | workbook SHA-256 | `e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6` |
-| generator SHA-256 | `247e049d9f1407143de7edf6c806d8e3dd485303c10dc1c167932a45df1d893f` |
+| generator SHA-256 | `f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6` |
 | row-identity module SHA-256 | `9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425` |
 | product-disposition module SHA-256 | `6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e` |
 | modular-products module SHA-256 | `8874e996c243dde4dcedaf3701629048b5430168318f8710e4b537649a9cb0fb` |
 | publication metadata SHA-256 | `bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9` |
-| generation timestamp (UTC) | `2026-09-19T21:01:48+00:00` |
+| generation timestamp (UTC) | `2026-09-21T00:25:03+00:00` |
 | maintained ontology path | `SSN2BFO.ttl` |
 | generated ontology SHA-256 | `c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11` |
 | maintained product-disposition path | `reports/coms-product-dispositions.json` |
-| product-disposition JSON SHA-256 | `29ca8c4e519a052cf3d44635e70c6361bebc3b88dc0f0815e3047011fad6a4f8` |
+| product-disposition JSON SHA-256 | `c6f61271e573705882fa6a0f92f54c7731d6358739dc39ad66882ba6a737b0db` |
 | maintained alignment-core path | `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl` |
 | alignment-core Turtle SHA-256 | `17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770` |
 | maintained strict-BFO path | `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl` |
@@ -558,4 +558,4 @@ This section records mapping and domain/range property-typing rows after parsing
 
 ## Runtime
 
-- Runtime seconds: 14.40
+- Runtime seconds: 15.05

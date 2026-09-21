@@ -209,10 +209,22 @@ class ComsDomainRangeTests(unittest.TestCase):
             dispositions.RequiredInputHashes(*["0" * 64] * 5),
             self.metadata,
         )
+        input_path = self.root / "dispositions-from-inputs.json"
+        input_document, returned_inputs = (
+            coms.build_and_write_disposition_report_from_inputs(
+                row_inputs,
+                input_path,
+                dispositions.RequiredInputHashes(*["0" * 64] * 5),
+                self.metadata,
+            )
+        )
         self.assertEqual(document.summary.governed_row_count, 1)
         self.assertEqual(document.summary.authoritative_axiom_count, 1)
         self.assertEqual(document.summary.target_neutral_axiom_count, 1)
         self.assertEqual(len(row_inputs), 1)
+        self.assertEqual(input_document, document)
+        self.assertEqual(returned_inputs, row_inputs)
+        self.assertEqual(input_path.read_bytes(), path.read_bytes())
         self.assertEqual(workbook_path.read_bytes(), before)
 
     def governed_row(

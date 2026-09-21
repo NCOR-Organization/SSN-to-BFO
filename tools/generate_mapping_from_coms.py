@@ -16,7 +16,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Sequence
 
 from coms_row_identity import (
     CANONICALIZATION_VERSION,
@@ -1075,14 +1075,14 @@ def disposition_input_for_processed_row(item: ProcessedRow) -> DispositionRowInp
     )
 
 
-def build_and_write_disposition_report(
-    processed_rows: list[ProcessedRow],
+def build_and_write_disposition_report_from_inputs(
+    disposition_inputs: Sequence[DispositionRowInput],
     path: Path,
     input_hashes: RequiredInputHashes,
     publication_metadata: PublicationMetadata,
 ) -> tuple[DispositionDocument, list[DispositionRowInput]]:
+    row_inputs = list(disposition_inputs)
     try:
-        row_inputs = [disposition_input_for_processed_row(item) for item in processed_rows]
         document = build_disposition_document(
             row_inputs,
             publication_metadata,
@@ -1101,6 +1101,20 @@ def build_and_write_disposition_report(
     if issues:
         raise GenerationError(str(ProductDispositionError(issues)))
     return loaded, row_inputs
+
+
+def build_and_write_disposition_report(
+    processed_rows: list[ProcessedRow],
+    path: Path,
+    input_hashes: RequiredInputHashes,
+    publication_metadata: PublicationMetadata,
+) -> tuple[DispositionDocument, list[DispositionRowInput]]:
+    return build_and_write_disposition_report_from_inputs(
+        [disposition_input_for_processed_row(item) for item in processed_rows],
+        path,
+        input_hashes,
+        publication_metadata,
+    )
 
 
 def validate_identity_audit_completeness(
@@ -3511,16 +3525,26 @@ def main(argv: list[str] | None = None) -> int:
     strict_bfo_hermit: HermitResult | None = None
     cco_extension_result: ModularProductResult | None = None
     cco_extension_hermit: HermitResult | None = None
+    native_disposition_inputs: list[DispositionRowInput] | None = None
 
     try:
         publication_metadata = load_metadata(PUBLICATION_METADATA)
         if input_path.resolve() == PRIMARY_WORKBOOK.resolve():
-            from coms_framework_integration import process_primary_workbook_with_coms
+            from coms_framework_integration import (
+                disposition_input_for_audited_workbook_row,
+                process_primary_workbook_with_coms_result,
+            )
 
-            processed, stats = process_primary_workbook_with_coms(
+            primary_result = process_primary_workbook_with_coms_result(
                 input_path,
                 resolver,
             )
+            processed = primary_result.processed_rows
+            stats = primary_result.stats
+            native_disposition_inputs = [
+                disposition_input_for_audited_workbook_row(item)
+                for item in primary_result.audited_rows
+            ]
         else:
             rows, stats = read_workbook(input_path)
             processed = validate_and_process_rows(rows, resolver, stats)
@@ -3529,18 +3553,27 @@ def main(argv: list[str] | None = None) -> int:
             for item in processed
             if item.identity_audit is not None
         ]
-        disposition_document, _ = build_and_write_disposition_report(
-            processed,
-            disposition_report_path,
-            RequiredInputHashes(
-                workbook_sha256=workbook_sha256,
-                generator_sha256=generator_sha256,
-                row_identity_module_sha256=identity_module_sha256,
-                disposition_module_sha256=disposition_module_sha256,
-                publication_metadata_sha256=publication_metadata_sha256,
-            ),
-            publication_metadata,
+        disposition_input_hashes = RequiredInputHashes(
+            workbook_sha256=workbook_sha256,
+            generator_sha256=generator_sha256,
+            row_identity_module_sha256=identity_module_sha256,
+            disposition_module_sha256=disposition_module_sha256,
+            publication_metadata_sha256=publication_metadata_sha256,
         )
+        if native_disposition_inputs is None:
+            disposition_document, _ = build_and_write_disposition_report(
+                processed,
+                disposition_report_path,
+                disposition_input_hashes,
+                publication_metadata,
+            )
+        else:
+            disposition_document, _ = build_and_write_disposition_report_from_inputs(
+                native_disposition_inputs,
+                disposition_report_path,
+                disposition_input_hashes,
+                publication_metadata,
+            )
         disposition_sha256 = sha256_file(disposition_report_path)
         graph = generate_ontology(
             processed,

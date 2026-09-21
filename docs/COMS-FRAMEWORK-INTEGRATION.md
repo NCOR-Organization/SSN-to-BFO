@@ -28,21 +28,33 @@ project-local rich result and can construct `DispositionRowInput` directly
 from each source row, governed semantic record, and COMS canonical audit.
 Tests prove that these native disposition inputs, classifications, existing
 SSN renderer evidence, and fixed-provenance report bytes are identical to the
-legacy `ProcessedRow` adapter. Production disposition routing has not changed:
-it still uses `disposition_input_for_processed_row()`. Switching that one
-consumer to the native adapter is reserved for the next migration commit.
+legacy `ProcessedRow` adapter. Canonical primary-workbook disposition inputs
+now come directly from the retained audited rows and flow through the shared
+SSN disposition report writer. The semantic batch still projects
+`ProcessedRow` for rendering, product membership and reconciliation,
+coverage, and other downstream compatibility consumers.
 
-For `mappings/SSN2BFO-COMS.xlsx`, production `main()` calls the COMS-backed
-wrapper before the unchanged disposition, product-membership, and legacy
-renderer stages. Other workbook paths continue through the legacy front half.
+Noncanonical workbook inputs continue to construct dispositions through
+`disposition_input_for_processed_row()`, which remains the compatibility
+adapter for legacy callers. Both routes join at the same input-based report
+writer; disposition classification, role policy, ordering, serialization,
+and validation remain unchanged. The governed routing update refreshes only
+truthful generator-derived provenance in the maintained disposition and
+generation reports. The next likely migration target is modular product
+membership and reconciliation, not rendering.
+
+For `mappings/SSN2BFO-COMS.xlsx`, production `main()` consumes the rich COMS
+result, routes its audited rows directly into disposition inputs, and supplies
+its projected rows to the unchanged product-membership and legacy renderer
+stages. Other workbook paths continue through the legacy front half.
 The duplicate domain/range authoring rule now has one shared project authority
 used by both paths; the temporary integration-local copy has been removed. The
-approved cutover update changes only truthful generator provenance in the
-maintained disposition and generation reports. The four ontology products and
-all mapping/disposition semantics remain unchanged. The overall migration is
-not complete: the compatibility projection and legacy comparison path remain
-until a later cleanup milestone, and COMS compiler/document rendering is not
-used.
+approved disposition-routing update changes only truthful generator
+provenance in the maintained disposition and generation reports. The four
+ontology products and all mapping/disposition semantics remain unchanged. The
+overall migration is not complete: renderers and product reconciliation still
+depend on the compatibility projection, the legacy comparison path remains,
+and COMS compiler/document rendering is not used.
 
 For local framework development only, a sibling checkout may override the pin:
 

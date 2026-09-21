@@ -58,7 +58,7 @@ import product_dispositions as dispositions  # noqa: E402
 
 WORKBOOK_PATH = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
 WORKBOOK_SHA256 = "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
-GENERATOR_SHA256 = "247e049d9f1407143de7edf6c806d8e3dd485303c10dc1c167932a45df1d893f"
+GENERATOR_SHA256 = "f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6"
 ROW_IDENTITY_MODULE_SHA256 = (
     "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425"
 )
@@ -80,10 +80,10 @@ ARTIFACT_SHA256 = {
         "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
     ),
     REPO_ROOT / "reports/coms-product-dispositions.json": (
-        "29ca8c4e519a052cf3d44635e70c6361bebc3b88dc0f0815e3047011fad6a4f8"
+        "c6f61271e573705882fa6a0f92f54c7731d6358739dc39ad66882ba6a737b0db"
     ),
     REPO_ROOT / "reports/coms-generation-validation.md": (
-        "87af70f2aeac0cd54f08e46d84a60dca741dd88cb1d72e5a98b46dd9ea461c0a"
+        "17a5070cd0023ced0de10c3fca97daf45dc6c4e1e9ae733525d619f618fff357"
     ),
 }
 EXPECTED_MAPPING_TYPES = {
@@ -1145,27 +1145,54 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         self,
     ) -> None:
         publication_metadata = legacy.load_metadata(legacy.PUBLICATION_METADATA)
-        legacy_document = dispositions.build_disposition_document(
-            self.legacy_disposition_inputs,
-            publication_metadata,
-            FIXED_DISPOSITION_HASHES,
-        )
-        native_document = dispositions.build_disposition_document(
-            self.native_disposition_inputs,
-            publication_metadata,
-            FIXED_DISPOSITION_HASHES,
-        )
-        legacy_bytes = dispositions.serialize_disposition_document(legacy_document)
-        native_bytes = dispositions.serialize_disposition_document(native_document)
         maintained_path = REPO_ROOT / "reports/coms-product-dispositions.json"
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            legacy_path = root / "legacy-dispositions.json"
+            native_path = root / "native-dispositions.json"
+            with mock.patch.object(
+                legacy,
+                "build_and_write_disposition_report_from_inputs",
+                wraps=legacy.build_and_write_disposition_report_from_inputs,
+            ) as shared_writer:
+                legacy_document, legacy_inputs = (
+                    legacy.build_and_write_disposition_report(
+                        self.legacy_processed,
+                        legacy_path,
+                        FIXED_DISPOSITION_HASHES,
+                        publication_metadata,
+                    )
+                )
+            shared_writer.assert_called_once()
+            delegated_inputs = shared_writer.call_args.args[0]
+            self.assertEqual(
+                [disposition_input_fields(item) for item in delegated_inputs],
+                [
+                    disposition_input_fields(item)
+                    for item in self.legacy_disposition_inputs
+                ],
+            )
 
-        self.assertEqual(native_document, legacy_document)
-        self.assertEqual(native_bytes, legacy_bytes)
-        self.assertEqual(native_bytes, maintained_path.read_bytes())
-        self.assertEqual(
-            hashlib.sha256(native_bytes).hexdigest(),
-            ARTIFACT_SHA256[maintained_path],
-        )
+            native_document, native_inputs = (
+                legacy.build_and_write_disposition_report_from_inputs(
+                    self.native_disposition_inputs,
+                    native_path,
+                    FIXED_DISPOSITION_HASHES,
+                    publication_metadata,
+                )
+            )
+
+            self.assertEqual(
+                [disposition_input_fields(item) for item in legacy_inputs],
+                [disposition_input_fields(item) for item in native_inputs],
+            )
+            self.assertEqual(native_document, legacy_document)
+            self.assertEqual(native_path.read_bytes(), legacy_path.read_bytes())
+            self.assertEqual(native_path.read_bytes(), maintained_path.read_bytes())
+            self.assertEqual(
+                hashlib.sha256(native_path.read_bytes()).hexdigest(),
+                ARTIFACT_SHA256[maintained_path],
+            )
 
     def test_projection_invokes_no_legacy_semantic_authority(self) -> None:
         forbidden = AssertionError("projection invoked a legacy semantic authority")
@@ -1391,15 +1418,37 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             resolver = CountingResolver()
             hermit = self._passing_hermit_result(root)
             captured: dict[str, object] = {}
-            real_wrapper = integration.process_primary_workbook_with_coms
+            real_rich_processor = integration.process_primary_workbook_with_coms_result
+            real_input_writer = legacy.build_and_write_disposition_report_from_inputs
 
-            def recording_wrapper(
+            def recording_rich_processor(
                 workbook_path: Path,
                 shared_resolver: legacy.Resolver,
-            ) -> tuple[list[legacy.ProcessedRow], legacy.WorkbookStats]:
-                result = real_wrapper(workbook_path, shared_resolver)
-                captured["processed"], captured["stats"] = result
+            ) -> integration.PrimaryWorkbookComsResult:
+                result = real_rich_processor(workbook_path, shared_resolver)
+                captured["result"] = result
+                captured["processed"] = result.processed_rows
+                captured["stats"] = result.stats
                 captured["resolver"] = shared_resolver
+                return result
+
+            def recording_input_writer(
+                disposition_inputs: list[dispositions.DispositionRowInput],
+                path: Path,
+                input_hashes: dispositions.RequiredInputHashes,
+                publication_metadata: legacy.PublicationMetadata,
+            ) -> tuple[
+                dispositions.DispositionDocument,
+                list[dispositions.DispositionRowInput],
+            ]:
+                result = real_input_writer(
+                    disposition_inputs,
+                    path,
+                    input_hashes,
+                    publication_metadata,
+                )
+                captured["native_inputs"] = result[1]
+                captured["disposition_document"] = result[0]
                 return result
 
             forbidden = AssertionError(
@@ -1409,10 +1458,15 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 resolver_type = stack.enter_context(
                     mock.patch.object(legacy, "Resolver", return_value=resolver)
                 )
-                wrapper = stack.enter_context(mock.patch.object(
+                rich_processor = stack.enter_context(mock.patch.object(
+                    integration,
+                    "process_primary_workbook_with_coms_result",
+                    side_effect=recording_rich_processor,
+                ))
+                compatibility_processor = stack.enter_context(mock.patch.object(
                     integration,
                     "process_primary_workbook_with_coms",
-                    side_effect=recording_wrapper,
+                    side_effect=forbidden,
                 ))
                 stack.enter_context(
                     mock.patch.object(legacy, "read_workbook", side_effect=forbidden)
@@ -1459,12 +1513,22 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 native_disposition_adapter = stack.enter_context(mock.patch.object(
                     integration,
                     "disposition_input_for_audited_workbook_row",
-                    side_effect=forbidden,
+                    wraps=integration.disposition_input_for_audited_workbook_row,
                 ))
                 legacy_disposition_adapter = stack.enter_context(mock.patch.object(
                     legacy,
                     "disposition_input_for_processed_row",
-                    wraps=legacy.disposition_input_for_processed_row,
+                    side_effect=forbidden,
+                ))
+                compatibility_writer = stack.enter_context(mock.patch.object(
+                    legacy,
+                    "build_and_write_disposition_report",
+                    side_effect=forbidden,
+                ))
+                shared_writer = stack.enter_context(mock.patch.object(
+                    legacy,
+                    "build_and_write_disposition_report_from_inputs",
+                    side_effect=recording_input_writer,
                 ))
                 compiler_renderer = stack.enter_context(mock.patch.object(
                     framework_compiler,
@@ -1513,11 +1577,21 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
 
             self.assertEqual(return_code, 0)
             resolver_type.assert_called_once_with()
-            wrapper.assert_called_once_with(WORKBOOK_PATH, resolver)
+            rich_processor.assert_called_once_with(WORKBOOK_PATH, resolver)
+            compatibility_processor.assert_not_called()
             self.assertEqual(domain_policy.call_count, 31)
             incompatible_policy.assert_called_once_with(captured["processed"])
-            native_disposition_adapter.assert_not_called()
-            self.assertEqual(legacy_disposition_adapter.call_count, 105)
+            self.assertEqual(native_disposition_adapter.call_count, 105)
+            result = captured["result"]
+            self.assertIsInstance(result, integration.PrimaryWorkbookComsResult)
+            assert isinstance(result, integration.PrimaryWorkbookComsResult)
+            self.assertEqual(
+                [call.args[0] for call in native_disposition_adapter.call_args_list],
+                list(result.audited_rows),
+            )
+            legacy_disposition_adapter.assert_not_called()
+            compatibility_writer.assert_not_called()
+            shared_writer.assert_called_once()
             compiler_renderer.assert_not_called()
             document_record_renderer.assert_not_called()
             document_header_renderer.assert_not_called()
@@ -1544,6 +1618,48 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 ),
                 103,
             )
+            native_inputs = captured["native_inputs"]
+            self.assertIsInstance(native_inputs, list)
+            assert isinstance(native_inputs, list)
+            self.assertEqual(len(native_inputs), 105)
+            self.assertEqual(
+                [item.row_id for item in native_inputs],
+                [item.source_row.row_id_text for item in result.audited_rows],
+            )
+            blank_inputs = [
+                item
+                for item in native_inputs
+                if item.mapping_type == "explicit_blank"
+            ]
+            self.assertEqual(len(blank_inputs), 2)
+            self.assertTrue(
+                all(not item.authoritative_axioms for item in blank_inputs)
+            )
+            disposition_document = captured["disposition_document"]
+            self.assertIsInstance(
+                disposition_document,
+                dispositions.DispositionDocument,
+            )
+            assert isinstance(
+                disposition_document,
+                dispositions.DispositionDocument,
+            )
+            blank_records = [
+                item
+                for item in disposition_document.rows
+                if item.mapping_type == "explicit_blank"
+            ]
+            self.assertEqual(len(blank_records), 2)
+            for item in blank_records:
+                self.assertEqual(item.authoritative_axioms, ())
+                assert item.row_product_dispositions is not None
+                self.assertEqual(len(item.row_product_dispositions), 5)
+                self.assertTrue(all(
+                    disposition.status == "deferred"
+                    and disposition.reason_code
+                    == "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+                    for _, disposition in item.row_product_dispositions
+                ))
             self._assert_temp_product_hashes(root)
 
     def test_nonprimary_main_retains_legacy_front_half(self) -> None:
@@ -1573,6 +1689,13 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 mock.patch.object(legacy, "Resolver", return_value=resolver),
                 mock.patch.object(
                     integration,
+                    "process_primary_workbook_with_coms_result",
+                    side_effect=AssertionError(
+                        "non-primary production invoked the rich COMS processor"
+                    ),
+                ) as rich_processor,
+                mock.patch.object(
+                    integration,
                     "process_primary_workbook_with_coms",
                     side_effect=AssertionError(
                         "non-primary production invoked the COMS primary wrapper"
@@ -1588,6 +1711,28 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                     "validate_and_process_rows",
                     side_effect=recording_process,
                 ) as process_rows,
+                mock.patch.object(
+                    integration,
+                    "disposition_input_for_audited_workbook_row",
+                    side_effect=AssertionError(
+                        "non-primary production invoked the native disposition adapter"
+                    ),
+                ) as native_disposition_adapter,
+                mock.patch.object(
+                    legacy,
+                    "disposition_input_for_processed_row",
+                    wraps=legacy.disposition_input_for_processed_row,
+                ) as legacy_disposition_adapter,
+                mock.patch.object(
+                    legacy,
+                    "build_and_write_disposition_report",
+                    wraps=legacy.build_and_write_disposition_report,
+                ) as compatibility_writer,
+                mock.patch.object(
+                    legacy,
+                    "build_and_write_disposition_report_from_inputs",
+                    wraps=legacy.build_and_write_disposition_report_from_inputs,
+                ) as shared_writer,
                 mock.patch.object(
                     legacy,
                     "validate_primary_domain_range_authoring_row",
@@ -1620,9 +1765,19 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 )
 
             self.assertEqual(return_code, 0)
+            rich_processor.assert_not_called()
             wrapper.assert_not_called()
             read_workbook.assert_called_once_with(copied_workbook)
             process_rows.assert_called_once()
+            native_disposition_adapter.assert_not_called()
+            self.assertEqual(legacy_disposition_adapter.call_count, 105)
+            self.assertEqual(
+                [call.args[0] for call in legacy_disposition_adapter.call_args_list],
+                captured["processed"],
+            )
+            compatibility_writer.assert_called_once()
+            shared_writer.assert_called_once()
+            self.assertEqual(len(shared_writer.call_args.args[0]), 105)
             self.assertEqual(domain_policy.call_count, 31)
             self.assertEqual(captured["processed"], self.legacy_processed)
             self.assertEqual(captured["stats"], self.legacy_stats)
