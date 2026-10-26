@@ -1,0 +1,183 @@
+{
+  "available_alternatives": [
+    "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
+    "Finalize no_direct_mapping in the DL product and review a separate representation query; do not reinstate a chain while inverse-functionality remains."
+  ],
+  "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
+  "coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": true,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+    "source_kind": "object_property",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "critical_features": [
+    "explicit_blank"
+  ],
+  "current_mapping_state": [
+    {
+      "assertion_status": "explicit_blank",
+      "existing_rationale": "Property-chain mapping deferred because an owl:propertyChainAxiom makes sosa:hasSample non-simple, which conflicts with the pinned SOSA/SSN inverse-functional declaration. The source ontology remains unchanged; the representation intent belongs in a rule, SHACL, or annotation layer rather than the OWL 2 DL mapping product.",
+      "expression_forms": {},
+      "location": "Sheet2!16",
+      "predicate": "",
+      "provenance": "mapping",
+      "row_id": "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f",
+      "target": ""
+    }
+  ],
+  "derived_consequences": [],
+  "evidence": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet2!16",
+    "imports/sosa.ttl#http://www.w3.org/ns/sosa/hasSample",
+    "imports/ssn.ttl#http://www.w3.org/ns/sosa/hasSample",
+    "imports/cco.ttl",
+    "reports/sample-representation-property-chains-review.md"
+  ],
+  "formal_consequences": [
+    "sosa:hasSample contributes zero mapping axioms; native source axioms remain present."
+  ],
+  "human_question": "Should the recorded OWL 2 DL chain deferral become a final no-direct-mapping decision, or should a separately evaluated non-OWL representation route remain deferred?",
+  "mapping_property_chains": [
+    {
+      "assertion_status": "asserted",
+      "axiom": "cco:ont00001917 o cco:ont00001808 -> ssn:forProperty",
+      "direction": "member_path_entails_superproperty",
+      "mapping_row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+      "member_sequence": [
+        "cco:ont00001917",
+        "cco:ont00001808"
+      ],
+      "provenance": "mapping",
+      "superproperty": "http://www.w3.org/ns/ssn/forProperty"
+    }
+  ],
+  "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
+  "pinned_track_comparison": {
+    "location": "Sheet2!31",
+    "match_kind": "same lexical term",
+    "predicate": "",
+    "rationale": "No direct BFO/CCO object-property mapping is adopted. sosa:hasSample relates a FeatureOfInterest to a Sample or SampleCollection intended to represent it. CCO represented_by requires a Representational Information Content Entity as the representing relatum, whereas a SOSA Sample or SampleCollection is not thereby such an information content entity. The source representative-sampling relation therefore has no reviewed direct BFO/CCO superproperty.",
+    "row_id": "urn:uuid:a2b2a51d-52d9-494a-a5c9-075c6f9204d4",
+    "source_term": "sosa:hasSample",
+    "status": "no_direct_mapping",
+    "target": ""
+  },
+  "priority": 1,
+  "recommendation": "Retain the artifact during review. Finalize no_direct_mapping in the DL product and review a separate representation query; do not reinstate a chain while inverse-functionality remains.",
+  "review_clarifications": [],
+  "review_state": "deferred",
+  "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+  "source_semantics": {
+    "assertion_status": "asserted_except_derived_consequences",
+    "contextual_axioms": [
+      {
+        "assertion_status": "asserted",
+        "axiom": "sosa:FeatureOfInterest rdfs:subClassOf (sosa:hasSample owl:allValuesFrom sosa:Sample)",
+        "object": "(sosa:hasSample owl:allValuesFrom sosa:Sample)",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "expression_reference",
+        "subject": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+      }
+    ],
+    "definitions": [
+      "Relation between a FeatureOfInterest and the Sample used to represent it."
+    ],
+    "derived_consequences": [],
+    "grouped_disjointness": [],
+    "iri": "http://www.w3.org/ns/sosa/hasSample",
+    "label": "has sample",
+    "logical_axioms": [
+      "owl:inverseOf sosa:isSampleOf",
+      "rdf:type owl:InverseFunctionalProperty",
+      "rdf:type owl:ObjectProperty"
+    ],
+    "nonlogical_domain_range_notes": [
+      "<http://schema.org/domainIncludes> sosa:FeatureOfInterest",
+      "<http://schema.org/rangeIncludes> sosa:Sample"
+    ],
+    "property_chains": [],
+    "provenance": "source_native"
+  },
+  "target_semantics": [
+    {
+      "assertion_status": "asserted_except_derived_consequences",
+      "contextual_axioms": [
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001837 rdfs:subPropertyOf bfo:BFO_0000084",
+          "object": "bfo:BFO_0000084",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001837"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001961 rdfs:subPropertyOf bfo:BFO_0000084",
+          "object": "bfo:BFO_0000084",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001961"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001997 rdfs:subPropertyOf bfo:BFO_0000084",
+          "object": "bfo:BFO_0000084",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001997"
+        }
+      ],
+      "definitions": [
+        "b generically depends on c =Def b is a generically dependent continuant & c is an independent continuant that is not a spatial region & at some time t there inheres in c a specifically dependent continuant which concretizes b at t"
+      ],
+      "derived_consequences": [],
+      "grouped_disjointness": [],
+      "iri": "http://purl.obolibrary.org/obo/BFO_0000084",
+      "label": "generically depends on",
+      "logical_axioms": [
+        "owl:inverseOf bfo:BFO_0000101",
+        "rdf:type owl:ObjectProperty",
+        "rdfs:domain bfo:BFO_0000031",
+        "rdfs:range (bfo:BFO_0000004 and [owl:complementOf bfo:BFO_0000006; rdf:type owl:Class])"
+      ],
+      "nonlogical_domain_range_notes": [],
+      "property_chains": [],
+      "provenance": "target_native",
+      "role": "historical_or_review_candidate_only"
+    },
+    {
+      "assertion_status": "asserted_except_derived_consequences",
+      "contextual_axioms": [],
+      "definitions": [
+        "y represented_by x iff x is an instance of Information Content Entity, and y is an instance of Entity, and z is carrier of x, such that x is about y in virtue of there existing an isomorphism between characteristics of z and y."
+      ],
+      "derived_consequences": [],
+      "grouped_disjointness": [],
+      "iri": "https://www.commoncoreontologies.org/ont00001873",
+      "label": "represented by",
+      "logical_axioms": [
+        "owl:inverseOf cco:ont00001938",
+        "rdf:type owl:ObjectProperty",
+        "rdfs:range cco:ont00001069",
+        "rdfs:subPropertyOf cco:ont00001801"
+      ],
+      "nonlogical_domain_range_notes": [],
+      "property_chains": [],
+      "provenance": "target_native",
+      "role": "historical_or_review_candidate_only"
+    }
+  ]
+}

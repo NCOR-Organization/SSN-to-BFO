@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
-  "generator_sha256": "f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6",
+  "workbook_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+  "generator_sha256": "9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
   "publication_metadata_sha256": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
@@ -55,7 +55,7 @@
       "source_expression_sha256": "83aead1b2757da7978dc77d9a7e2dfb0704c5df30337ee02d7d954dbedefac27",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d26c043966cd9ac909de23299f25178e558bdf2b31d0c4cdceef63feca9f1367",
@@ -112,7 +112,7 @@
       "source_expression_sha256": "6408065f23d5e5840f14b6e0929330e9b7be02c7100203216a37d2ad7c9f5c0c",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:9922788e81b846ae627e86d59ed8a00a0ea0c82441995dff3268e55339cbeaba",
@@ -169,7 +169,7 @@
       "source_expression_sha256": "2f4f4b8a49cd6309baf0b3b420cca9f68d899f4d6847a47f1045f97fd4eb90ec",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The domain records the specifically dependent continuant and process-profile categories. isPropertyOf retains its source inverse relationship to hasProperty; the separate conditional rule handles the two cases without a global BFO subproperty inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0caeec31770247fe2efeb443e85fefe9b4e1648a7d9569adc35d2972b77682b1",
@@ -289,7 +289,7 @@
       "source_expression_sha256": "38b45e7132f890f685473157123fd00617403ef84b475be0696941be9ce100d3",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:41080a7afb8263845cbd910a2a4c6d5bfec9b2b21126a5acd1c037b7e404b797",
@@ -346,7 +346,7 @@
       "source_expression_sha256": "478f26ce5b36bc0249f3631e2a1cb1374a9782ad20d6491b57ce2af4a88ac16a",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Frequency is modeled as a function because it constrains how often a system can perform actions when realized in planned acts. Treating frequency as an occurrent part of realizations reflects that it is manifested through repeated execution rather than existing independently.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d0be6196d522ed9650cdfebad33b965d523868a68682405423324b28c54f1e82",
@@ -412,7 +412,7 @@
       "source_expression_sha256": "71441321015321658bd32ac0185d96d0af0887865756974b4a1839835f39fabc",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The existing review identifies subsystems as structural components and explicitly recommends the now-adopted continuant-parthood inclusion. It asserts only the necessary direction.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:a967fdeccb6b435f0f84de94b976dec27307580651a7d16a08b900be0daa4dd1",
@@ -470,7 +470,7 @@
       "source_expression_sha256": "8af39ca015db241800bcf10d34c6ef428870ad6cb2ec489011d20a7085ee5c38",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedOnPlatform under has_participant. The current assertion exactly preserves that decision.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:cb03fd4e0013c6cb36cdae6f435a71662e5ace11c4b60fd6121e30a58cfddbaf",
@@ -528,7 +528,7 @@
       "source_expression_sha256": "2fa8fda06a35546b7cd86061a3740e383918c087de982faceb34ad1ace104823",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Latency is modeled as a function because it characterizes temporal performance behavior that is only manifested when the system operates. The cause–effect structure and temporal region reflect that latency is measured through realized processes rather than inherent qualities.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3457b3a3df2aa6fa0356c77e1cfd6ff95dbb450c7e9965c5bf1beb987488a3a1",
@@ -597,7 +597,7 @@
       "source_expression_sha256": "fb1601493fb203b063d1b1e562ea5451a1ece8905d7f93e8ca4649dac9810d3a",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "This class is modeled as either a specifically dependent continuant or a process profile to align with SSN/SOSA’s treatment of properties that may be continuant features or features of processes, both of which can be the target of intentional change.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f0ed25535d9f911882545913dac2c83339346e2ca16a5e939b2a2e27cd5f1c4e",
@@ -659,7 +659,7 @@
       "source_expression_sha256": "f05c613dbda3a8cda59297e2e0ccac44bdfbfe2cd5890088971e09ef0e83f677",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7b6dc290ded8df4f46f20ce28efdc86479348dd0c0746fd31c883e97724b0361",
@@ -723,7 +723,7 @@
       "source_expression_sha256": "3e02bc508bc6d80d73bf7ace564a18916b058d60a62d778a14a9c02740df9122",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:a1b8c592a4cf6791fb11952b7c19ff54de44725f94537d874e93b3ea320232ab",
@@ -780,7 +780,7 @@
       "source_expression_sha256": "19f9b7df8bb9c81f7b2ec9d2244b3f9864e53c21d1e54ceeb59f8e7d2704f613",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "If an observation x qualityOfObservation y, then y is an information output produced by x that assesses the quality of the observation’s result.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:8d7dc6c8f9ecc7fc94c23b7a9c5e8603e3013f8dcef2453f4c45f3d4ee8f0f93",
@@ -840,7 +840,7 @@
       "source_expression_sha256": "10f70cc32598bc0a01b685df5387a83792a97b8853079af8f2e72b450cd2312b",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "OperatingProperty is modeled as a specifically dependent continuant or process profile because it characterizes how a system operates under given conditions without being a realizable capability. Its prescription by design reflects engineering intent rather than measured performance.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3f12e123ab52f767626a55a1d07c7d5d85a955e538890927ea02090db15411ab",
@@ -903,7 +903,7 @@
       "source_expression_sha256": "bcc4aa63f9e3d86b30f0900127e61cc1e56b946b4a30f3a11e2c6302f2a2f75c",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "The retained mapping characterizes Stimulus as a CCO Cause that is the cause of some Observation. The historical rationale treats a stimulus as an event or happening that causally contributes to an observation and expressly selects necessary-and-sufficient equivalence for this characterization.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3c8142551309a66a37dc13ff25eb6fd6b31e7089a776f7391316bacb3705cf1e",
@@ -965,7 +965,7 @@
       "source_expression_sha256": "be38dc3ef3f5e76e250d1cb245360749bd7336ed0785cdab09a20730ea6ef540",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c039b2a88fe82d34a443e1753f23414ba037f6b6b5d20093323ed6efdce90540",
@@ -1022,7 +1022,7 @@
       "source_expression_sha256": "60b56bf1da2a86512e40747f2a2037968b757e2c9be7abf50ea4910098d03a67",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f9e3e9bae942c365fd53f52ede02164deff53aa65f5d20a1efa91cd54df7724f",
@@ -1079,7 +1079,7 @@
       "source_expression_sha256": "3db4c188033abac7841a40ef88585754cd5d50b3acca2a7876b36e71c8635b23",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Input is mapped to InformationContentEntity because SSN inputs are informational resources made available to procedures, not material participants or process parts.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3904c25cf0f62fae33bad65d4d752ae170f94b3678274b151bd6fdd007c4d120",
@@ -1139,7 +1139,7 @@
       "source_expression_sha256": "ff05717a8a1580d8eaad24c06c1234e062508961eef5a0ec0a0952a9c46cf660",
       "mapping_type": "property_chain",
       "coverage_classification": "property_chain",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:ac90bbff84f27289fdc5c5fb492323384ea75b344016bb5eb7a4d34a540a8f91",
@@ -1200,7 +1200,7 @@
       "source_expression_sha256": "63a0643266c14870cd600ce103710df959e9b7f7dd4220c985337951e6f55252",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "This row retains the explicit Sensor subclass expression for the current local CCO profile: material entity, bearer of a realizable entity realized in an Observation, and agent in an Observation. The historical cco:Sensor equivalence concerned a separate forward-looking target-version profile. This note documents the retained current-profile expression without settling that separate question.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f1380a66f7734f9b3e29c3e53388eabffa1e5fb296f1e0a192ada48d796a6c2b",
@@ -1265,7 +1265,7 @@
       "source_expression_sha256": "8db69af6d7175d894153961af20069ada1ff015b288dccbebef4ebb60849421d",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Actuation is modeled as a planned process because it is intentionally carried out according to a procedure in order to change the state of the world, which aligns directly with the CCO notion of a PlannedAct.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c65595bd49e621675a797ec88f0bed32696c176393221adaae8b1a9192cdd842",
@@ -1327,7 +1327,7 @@
       "source_expression_sha256": "40553a3ab5b52532d5d74c4fe23ffb3c52321ac8799ab61c33abba7ba2d59bbd",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:39946148848f627dc9bd67601c5d0d1184960c34054c876541a77fa9d42e3d6b",
@@ -1382,7 +1382,7 @@
       "source_expression_sha256": "78883d8f62ff3dc679b238f1a17e47db6cc0b481a2859aa729723dea670aadb6",
       "mapping_type": "explicit_blank",
       "coverage_classification": "explicitly_unmapped",
-      "reasoning": "Property-chain mapping deferred because an owl:propertyChainAxiom makes sosa:hasSample non-simple, which conflicts with the pinned SOSA/SSN inverse-functional declaration. The source ontology remains unchanged; the representation intent belongs in a rule, SHACL, or annotation layer rather than the OWL 2 DL mapping product.",
+      "reasoning": "`sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represented by` would treat the Sample endpoint as representational information content, which does not capture physical specimens, sampling locations, and other material Samples generally.\n- Mapping to BFO `generically depends on` would assign the generically-dependent-content role to the sampled Feature of Interest rather than capturing samplehood.\n- A participation mapping also does not represent the relation between a sampled feature and its sample.\n\nHistorical work proposed the composite representation path:\n\nrepresented_by(feature, information-content)\nAND\ngenerically_depends_on(information-content, sample)\n→\nhasSample(feature, sample)\n\nThis path should NOT be reinstated as an unconditional formal mapping.\n\nIt is not sufficient for samplehood: an ordinary representational carrier such as a book, photograph, recording, or other information-bearing artifact may bear content representing an entity without thereby being a Sample of that entity.\n\nIt is also not established as necessary: SOSA's notion of intended representativeness does not by itself require commitment to a distinct CCO information-content entity borne by every Sample.\n\nThe previous OWL implementation additionally creates simplicity/profile problems because `hasSample` is inverse-functional and is the inverse of a property used with cardinality/functionality constraints. That implementation issue is secondary to the semantic decision and is NOT the reason for the no-direct outcome.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.\n\nThis does NOT rule out:\n- a future guarded representation rule;\n- a query-level mapping;\n- a more specialized sample-provenance model;\n- weaker documentary correspondences to other vocabularies.",
       "authoritative_axioms": [],
       "row_product_dispositions": {
         "integrated": {
@@ -1432,7 +1432,7 @@
       "source_expression_sha256": "0d074b5355e0d3561dc181a9fa4a987ac87799804de4b6d49828ced614ff7359",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Precision is modeled as a function because it concerns consistency across repeated realizations of system behavior. The reliance on reliability measurement reflects that precision is assessed statistically across processes, not as a single intrinsic property.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7bcd034eadbf0577e59b123707dd31bbd105681183ea0b8e5cf98914676d3a59",
@@ -1500,7 +1500,7 @@
       "source_expression_sha256": "ea72f4dbda8f016f87ab205d4be69a51e6866ea076fb45c211661b2b68e73a15",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "SurvivalProperty is modeled as a function because it concerns the system’s capacity to remain viable over time under conditions. The affordance-based realization reflects that survival characteristics emerge from design-enabled processes.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:6c917d0118060a0a5c8175a486c2880f4948c998bfc384d1494925e0e9e26390",
@@ -1567,7 +1567,7 @@
       "source_expression_sha256": "487e82d6ba9c2529f91b500b06e2681ee82343693847544dd8428fb02758469d",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Sample is modeled as a material entity because it is a physical thing intentionally produced or selected to stand in for a feature of interest.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:787e892cd89062b21176fd6a4732cccaba3bd65cddaae2d9c8580e3072b140b9",
@@ -1629,7 +1629,7 @@
       "source_expression_sha256": "ca6148da0e1204ef82128833520bde3ed981f4676c8e3866ebf758b01a421e5b",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "OperatingPowerRange is modeled as a function because it constrains operational capability with respect to power when realized in processes. Power appears as an occurrent part of realizations rather than as an independent entity.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:2d3f18260f6d804a9e949bda85aca7dcfe2d170b01199991ee8797423dd99a61",
@@ -1695,7 +1695,7 @@
       "source_expression_sha256": "1569e27d068c2096846026f7f259c735d3d2d494edb6de138cb0b14dd63af95e",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:72d1a5d3f112c4b7c8d7eb32b1196babbd912b1213beba3c5d2967fbf7221ba0",
@@ -1755,7 +1755,7 @@
       "source_expression_sha256": "d0957c4a3b9e144232abb48c196d943ff1118b429eb4cc27532d4247d4c2c5b6",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:4ee0a31d0d7abc626e19715ee1f31b610823136f2ea133155491a644f72db22a",
@@ -1813,7 +1813,7 @@
       "source_expression_sha256": "9f73be21f435e6ac7a96c45014d248ffa694c90e0c1ae716885675ac74d2d918",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The existing review treats use of a Procedure as being carried out according to its prescriptions and explicitly recommends the now-adopted cco:prescribed_by inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:87e268563c3100731545a500259535d0784a692b94e3d42d25ef938a1b5019af",
@@ -1873,7 +1873,7 @@
       "source_expression_sha256": "7096425af18d2a7f3be2531b2f91886a07801fc4e247087fa8418f28fd041ab6",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:1f37a84e9d8ba4775e3ff0dd1f730f21cd573dba406d80512ce84a4edb70c456",
@@ -1930,7 +1930,7 @@
       "source_expression_sha256": "a1b40bd9317136e38532eb86ffbd5249bced8edad40313d5ec3fc31357f918a4",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Resolution is modeled as a function because it characterizes the system’s capacity to discriminate differences when realized in operational processes. The use of deviation measurement reflects that resolution is evaluated by analyzing minimal detectable change through realized behavior.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:851caee27c77385ceed70a2deb1a071a3e708361318649f6f62e6b37813791a9",
@@ -1998,7 +1998,7 @@
       "source_expression_sha256": "9486b4a342f938c087be79e441c7f8767e177df1020995c8ce0c49c1e2fde60e",
       "mapping_type": "property_chain",
       "coverage_classification": "property_chain",
-      "reasoning": "",
+      "reasoning": "The retained hosting interpretation uses role-mediated support. The bearer_of, has_realization, has_participant path entails hosts; the chain does not require a matching path for every asserted hosts edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:90d2b3a965084a150dcd254003bbdd2e5d706d8dd1b7a941c44e44ee2ea1737e",
@@ -2058,7 +2058,7 @@
       "source_expression_sha256": "aabf5aee802973379ba4c8cb711e194580526dde4b9a9c4669e4a2cd28d3a5da",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Selectivity is modeled as a function because it describes how a system behaves during operation with respect to isolating intended properties. The realization in planned acts reflects that selectivity is manifested through operational behavior involving participants.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3638f72bc407bf83119efc46ddbf7364798b8e5afa31a906bc1d736b62d980b1",
@@ -2124,7 +2124,7 @@
       "source_expression_sha256": "7e3f2b33b64788358236504d3e06e12bd7e0231949e52f31e801908d7e55f1db",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c8842712d9b51ad420a00450debb0f4fa62a2487b085a0ee6e722b1787bb676b",
@@ -2181,7 +2181,7 @@
       "source_expression_sha256": "1b842013b19abf9df9c994d68128178132fda149bb001b02c29ebfd93a043804",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The range records specifically dependent continuants and process profiles. The separate conditional rule produces bearer_of or has_occurrent_part from suitable endpoint typing, avoiding an unconditional dual BFO subproperty mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:6dfa77b04dfaea343d0a8767e6467c603eafddf10395ff40ac7416f52c7fd4d4",
@@ -2240,7 +2240,7 @@
       "source_expression_sha256": "ef681068fcc4afa870acf612bb26197c4711ac04eab19500f0e96a75a004d10b",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:14fa695165c7036e41a38bca759038d8c35e8b0b6362c6940d3359cf0143fac1",
@@ -2300,7 +2300,7 @@
       "source_expression_sha256": "fe8a979e62b1dfe2f2f00c6a65df77262575c4c615fa293e1c5f5095ef61b44c",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The retained interpretation treats the originating Stimulus as an occurrent that causally initiates the Observation process. This row preserves the corresponding process_started_by inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:66b0f4f770429025a37f6fe8844978ab9e46dc963d0a33ad2a0a55839199cdd1",
@@ -2360,7 +2360,7 @@
       "source_expression_sha256": "40def499db727e011d4b1a88c5e98174923a2bc9b23ad00d6b7e46398b1934fb",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:5c980e110913e59c68de989465bb1ecc8b07e55d4ef9801e8e46783cb89cf1b1",
@@ -2417,7 +2417,7 @@
       "source_expression_sha256": "30b0ba8398ec4a4a5215332bb3d11a737a3a6469cdb3a05fb9c373f570d5c1a4",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:bfcbd5b2f93ee1e69874a2c6918895e693d5f41d44568d2dff24404d9bc519f1",
@@ -2477,7 +2477,7 @@
       "source_expression_sha256": "ddebb2c5b741612c38258e89574653ffb5acb9f3e5758d5ee008b901a7ca7e00",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7bed0226c2da616898792bcdfc1f0ca3319d07f1934781cfec1282ebe747fe80",
@@ -2534,7 +2534,7 @@
       "source_expression_sha256": "20dae62e65511464178b54e802ceac8a72064fe1ccf040205b2cbf4a70546373",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:392dd07207293b5643eb67b0770ba70c84452967e49f1986ccb747ebe8424d6d",
@@ -2594,7 +2594,7 @@
       "source_expression_sha256": "08f45d9daa6aa212c9fe32978de8d58ee3b1ecf098e692256b1aacb860518d63",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:96693821f15cd413fae70f98804b76a37e4b549eb952782af48daab19adc0c43",
@@ -2651,7 +2651,7 @@
       "source_expression_sha256": "be77705e2453a1ef9aa69d8177d99b0c696af3c83c36ae2b532117deea5f0102",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Sensitivity is modeled as a function because it concerns proportional relationships between input changes and output changes when realized in processes. The ratio-based measurement reflects that sensitivity is an evaluative performance characteristic, not a basic quality.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f7079e239ac89c931c0bf767439ded105c7d1760b7b6e0346551ef3c46d3f759",
@@ -2719,7 +2719,7 @@
       "source_expression_sha256": "ed695cce8fbcd13007bc517530f5fb2fc7f402d895ade3b37e801cc4b1cf32c1",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The retained interpretation treats a detected Stimulus as causally triggering a response in the Sensor. The Sensor is therefore represented as affected by the Stimulus, preserving the existing is_affected_by inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:fbdef9082a1ce45abecc3ed037f0fb12bb6c376dea196c3912566ee664f50370",
@@ -2776,7 +2776,7 @@
       "source_expression_sha256": "46baaa1e5b7a959dbb7cc484f1c977f95487847d7ea493abe60fd55d4df42876",
       "mapping_type": "explicit_blank",
       "coverage_classification": "explicitly_unmapped",
-      "reasoning": "Property-chain mapping deferred because an owl:propertyChainAxiom makes sosa:isSampleOf non-simple, which conflicts with the pinned SOSA/SSN functional declaration and the minimum-cardinality restriction on sosa:Sample. The source ontology remains unchanged; the representation intent belongs in a rule, SHACL, or annotation layer rather than the OWL 2 DL mapping product.",
+      "reasoning": "`sosa:isSampleOf` relates a Sample to the Feature of Interest that it is intended to be representative of. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represents` would treat every Sample as representational information content.\n- Mapping to BFO `is carrier of` would treat the sampled Feature of Interest as generically dependent content.\n- Mapping to participation would confuse the feature being sampled with a process in which the Sample participates.\n\nHistorical work proposed:\n\nis_carrier_of(sample, information-content)\nAND\nrepresents(information-content, feature)\n→\nisSampleOf(sample, feature)\n\nThis should NOT be reinstated as an unconditional formal mapping.\n\nThe representation/carrier path is not sufficient for samplehood. A carrier may bear information representing an entity without being intended or functioning as a Sample of that entity.\n\nIt is also not established as necessary. Intended representativeness in SOSA does not by itself require a separately instantiated CCO information-content entity.\n\nBecause `isSampleOf` is functional, an overbroad representation-chain mapping would also create undesirable consequences: a carrier bearing representations of multiple distinct entities could infer multiple `isSampleOf` successors and thereby force equality of those represented entities.\n\nThe historical OWL chain also creates simplicity/profile conflicts with retained source functionality/cardinality axioms. Again, this is an implementation consequence, not the semantic basis of the no-direct decision.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:isSampleOf` across its source usage.\n\nThis does NOT rule out a future more specifically conditioned representation or provenance model.",
       "authoritative_axioms": [],
       "row_product_dispositions": {
         "integrated": {
@@ -2826,7 +2826,7 @@
       "source_expression_sha256": "43e7759ead3c66f83889b2fd88922b18b3a61f1f27c8de10896ae81fc4b51a43",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0db60d0e9764151246aa7f88574dbc9fb112eecb2191d00822192f51ec298678",
@@ -2886,7 +2886,7 @@
       "source_expression_sha256": "0ed4203735fb46297727736073cd3a76748f7674a0ca364d8529eb30886e974b",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:6e391f29bd41a8d9690da48c2132f58a553fc72e2df3f7f2f4c116b0d574f189",
@@ -2943,7 +2943,7 @@
       "source_expression_sha256": "02573a746733f57a298ba130c29ce88c017e8fa1960bce7bdc1cc22d44867775",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The existing pair review retains the actuation-to-affected-property mapping and its inverse; the current inclusion records the effect relation without asserting property equivalence.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7b38f4108fd76423fec54f3d4d34f07cc4b4540d5b773f2fd8f52413c6f78f93",
@@ -3003,7 +3003,7 @@
       "source_expression_sha256": "01eea28848f5c27b9b1094a05ae140f4d3ce6d931f9828578137328a8aa45473",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedSystem under has_participant. The current assertion exactly preserves that decision.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:205b4f09b9778256d60879903b8e03e20a284c0ce6d3dd085b87d5c2e3b44cad",
@@ -3061,7 +3061,7 @@
       "source_expression_sha256": "235080b117c44da576d0930f0a91040d87a728eefc5bc7c0b3bb68596a098c57",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:390c9b5de75302a30d93d73ac3f3706f09cf39aa164a11314f85cb40fb518a56",
@@ -3118,7 +3118,7 @@
       "source_expression_sha256": "a9b704a9c29dddd44336baec70b661c6f8c99801c1b767194966c92924195b3c",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "inCondition links a capability or range specification to its environmental context without asserting ontological dependence between them. The incorrect historical property chain was removed. The current row supplies the SystemCapability-or-OperatingRange-or-SurvivalRange domain and does not assert a direct BFO/CCO relation mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:1149dc67a0411aa63c8ac06b3be6ecee8eaf03d62268b48079df3ca3c134dc62",
@@ -3177,7 +3177,7 @@
       "source_expression_sha256": "9a543be1fc872ce1fc146d2e5206ae7787f38984b93aa5000716c75e3bba8aad",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "sosa:Sampling is modeled as a cco:PlannedAct because it is intentionally carried out according to a procedure to create or transform samples. The equivalentTo axiom captures that being prescribed by a procedure and producing a sample as output is both necessary and sufficient for being a sampling.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:e69a0d20905384f1a3b3e5f9df6b82987f1a1da4e90db05becbc99d980b39168",
@@ -3241,7 +3241,7 @@
       "source_expression_sha256": "5e3bcc79d73e5ff6739754d93fa976584ef66c2e9407d0ff1cc168bb3ce2b335",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "The implemented simplification retains the Function with an Actuation realization having a specifically dependent continuant output and an ArtifactFunctionSpecification prescription. It removes the former affects some ProcessProfile alternative. Historical reasoner results remain limited to the profile evaluated.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:04f2e1c545b6c6f252d9cf377e1e1f325bafa846d37c6b75a975a692ea059963",
@@ -3307,7 +3307,7 @@
       "source_expression_sha256": "2c44d5f805e49ba8f4d61788e71d6bd70044a33de1ffad849b068a53f073b947",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Drift is modeled as a function because it concerns systematic behavior over time that is manifested through processes rather than existing as a static property. The realization through deviation measurement reflects that drift is assessed by analyzing changes relative to expected values.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7bfe203db92e7e2b6f107641f3edbbcc111a4b9879471d70e1928b2817c0b853",
@@ -3375,7 +3375,7 @@
       "source_expression_sha256": "26ff1947816d05739895b400d159bc59e7aa6aa9a614f461b8f00d11ca5ef42c",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0a66d02476e30d96f3c00a905a1cce9a4e5ff745c4a3745a238efc8291a4f691",
@@ -3432,7 +3432,7 @@
       "source_expression_sha256": "ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:157aece9de6259bc9ad10c9023b8e620c03f9f88bc688cceb058f1e68c7d39b2",
@@ -3489,7 +3489,7 @@
       "source_expression_sha256": "0ee977776b5234128624d290ca51e38a035ae70de7e50e0d91833ec57745520f",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "DetectionLimit is modeled as a function because it characterizes the system’s ability to distinguish presence or absence under uncertainty when realized in processes. The reliance on veracity measurement reflects that detection limits are probabilistic performance characteristics rather than simple qualities.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:25eb572d7c35d5e480c606eddf558b7b5e986136f82f7da5657c857653b81705",
@@ -3557,7 +3557,7 @@
       "source_expression_sha256": "b747359b164bb0677e13958d4c23918897e59f844569f24e87db9bc87b90d784",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Accuracy is modeled as a function rather than a quality because it concerns how well a system performs relative to truth conditions when realized in processes. The use of measurement information entities reflects that accuracy is assessed through evaluative measurement, not directly observed as an intrinsic quality.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0aae335885ecdd46575658fe71c7cf073d4dcdda299250671a41f4ab3447536c",
@@ -3625,7 +3625,7 @@
       "source_expression_sha256": "538cb51989eced139509e2d3c2a8c6e4c2d290eb829ff316c7deb609c83924da",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Output is modeled as an information content entity because SSN outputs are informational artifacts produced by executing procedures, regardless of whether they later influence material processes.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c77542ac30e2120d22aefdad6fd59cd22a77690848d2279060e2b545b97e177d",
@@ -3685,7 +3685,7 @@
       "source_expression_sha256": "ceafff8b76962f198ca1f184ff076c3536247fe1c33bd964f725ea59da6a7da8",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:e780a611c30f9c3cf0e4dbe0bb60f281891360af5bb0c7c443caf882dd5fc33f",
@@ -3742,7 +3742,7 @@
       "source_expression_sha256": "d409b9408fd1ef69731e7ee34fc04e7f296348e55bddb62b6d6c0941aa660061",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The explicit inverse-side policy retains the inverse affects mapping. The current source and CCO inverse pairs preserve this direction without an equivalence commitment.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:cec49555cfb61f5cf5707fd755d31d71059b3b3ead5956a01ebfb820d1ee4eb5",
@@ -3802,7 +3802,7 @@
       "source_expression_sha256": "afdb1a808d715d603eb55cd484a748eae0c59746551a1dd906430ab5db351215",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "sosa:Sampler is modeled analogously to sosa:Sensor and sosa:Actuator as a bfo:MaterialEntity bearing a bfo:RealizableEntity realized in a sampling process and functioning as an agent. The equivalentTo axiom captures that these conditions are both necessary and sufficient for being a sampler.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:a80712efe3f50de428bfde449a3ebdf23c87750872d13a182cf065db7d0b9ae8",
@@ -3867,7 +3867,7 @@
       "source_expression_sha256": "308287a0820e7928181bc83d4f35ae4dc97e94f54d4a8e98bb71ba9a3728feda",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "ObservableProperty mirrors ActuatableProperty in being modeled as either a specifically dependent continuant or a process profile, reflecting that observable aspects may be features of continuants or temporally extended features of processes.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:5606980322dc337a4e5d0eb2daef2e5acbba7ee42a782247375fcf3f39d12e00",
@@ -3929,7 +3929,7 @@
       "source_expression_sha256": "58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d695dd55dbcac9a40574027e8ef1396186bccd79631492fba6403bd67e16f44c",
@@ -3986,7 +3986,7 @@
       "source_expression_sha256": "0a70c5e59bc893392f0d1cfaf718fbceba3e1729e3a55dde8425297f9367757c",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The explicit inverse-side policy retains this inverse agent mapping, supported by source madeBySampler/madeSampling and target has_agent/agent_in inverse pairs.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:9210e36acd33fe0b2b119b7f01500e5e0b31c5a0a88808f7002efbcd8f0509b7",
@@ -4046,7 +4046,7 @@
       "source_expression_sha256": "ce44916ee688759e7bae9c9202f0be28047a9e9ff7ff0ee719495bca5cad59e0",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:69c3b2b4c146ceb3fddb1d600e12d656e8fe35fcf169d0c4fafa9dff68822b1e",
@@ -4109,7 +4109,7 @@
       "source_expression_sha256": "256084a3fa83724cf983427926caff6ef9c9fa8f0276edb80309d42aa9949f81",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The existing sampling-pair review retains the Sampling-to-Sampler has_agent mapping. This documents the active relation between an actual sampling and its sampler; it does not decide whether every sampler must actually sample.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7e4bf7f39c62e83876b0be229a205fc4bc9f52a846d5b86e049d16adc1f5c1be",
@@ -4169,7 +4169,7 @@
       "source_expression_sha256": "ce6f9db8353fb35a53387ba317ddf90c19b3a5b97d7c3ee463070de61e251171",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0db509d9fc575ddc50b0183e97de46b32b5ba4383954670e5ea59d60474aeb59",
@@ -4226,7 +4226,7 @@
       "source_expression_sha256": "478781e56bbb172a1c71b44efb3483918dc97746dae5d0060ff077cc87e5a025",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:733a2295af690d2d2b86dfcd47dfd33214e84ed16606930d2b4246bfeab98d8b",
@@ -4283,7 +4283,7 @@
       "source_expression_sha256": "ddbf9961f6b455619cdba40745406218696f68eaac23ccd924c6db7e8465617f",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:ebc7ad7b88f4da2f7a42cc794943cbdbc4a2420c9a58378764be6964603cf30b",
@@ -4340,7 +4340,7 @@
       "source_expression_sha256": "88f002b065588248bb46ba34b62a6c9e6ecd3a5e85320d36d4501a3b3a0c4b47",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "SystemLifetime is modeled as a function because it characterizes the extent of operational viability rather than a static attribute. Its realization in stasis of operationality reflects that lifetime is manifested as sustained functioning over time.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:30d80749b62ad19d41ee9ffc6b0176426ab98d2d0b773aad7d4fdf16ee823ac0",
@@ -4408,7 +4408,7 @@
       "source_expression_sha256": "6f5b6bf0a17b9f7353f360b346133939c17833c9461b73b40fcb1a6aa6a6714b",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The retained interpretation states that the Platform on which Systems are deployed participates in the Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:20d91e47601ba6ee027a45b1292383a93db5223addd66a57f6b0ce832054b0d6",
@@ -4466,7 +4466,7 @@
       "source_expression_sha256": "7ac782b086f818af382db44d105231e4cf6dba24934ae24c076e6ecf7133c690",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "MaintenanceSchedule is modeled as a disposition because it represents a tendency or requirement for maintenance to occur under certain conditions. Its realization through maintenance acts reflects that the schedule itself is not a process but is realized in processes.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c8c01d3cea6d9185b6c07763b28bec3b25a8e467d2abeeba7dda4edadb99ad61",
@@ -4536,7 +4536,7 @@
       "source_expression_sha256": "888f4d97c4d62a60af5c4bed48e18ef060562feb484b5a39870c3ca8782b3a98",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Result is allowed to be either informational or material because SOSA results include both informational outputs (e.g., measurements) and material outputs (e.g., samples).",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:4de8c53cc012a2f7e0322696f11d796ad9db81474e35fcb142b297bb3b714bde",
@@ -4601,7 +4601,7 @@
       "source_expression_sha256": "8a3ad12c4c9f7269f431573e4b69efb66aff9d6b3e276799a27271efc7b98269",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:e97401fddd65d2c240938d965cb3ecb82f52b396f7fbdc7ccee0de7edf3ff74b",
@@ -4660,7 +4660,7 @@
       "source_expression_sha256": "746a007b72a00ce5517e19770d2beceee5740b3b346b2e70d329f9ac95cc7778",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "This is mapped as a specifically dependent continuant or process profile because conditions are not standalone entities but aspects of a system or its operation that depend on something else and characterize circumstances under which performance is evaluated. The link to PerformanceSpecification reflects that conditions are specified and constrained rather than independently realized.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3555605bb2df608876e70c42ec20fa13f80abde4df1a61953beef445621384e2",
@@ -4723,7 +4723,7 @@
       "source_expression_sha256": "44f8e256510d7aeee357d89e95dd987adb9c07fa43bc2b70e7fccb95348783e9",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:2d8f0bb889aed23463bdc12f71eb087cf980f269d7283687d266c012c25c4f52",
@@ -4782,7 +4782,7 @@
       "source_expression_sha256": "f195b5ed35e9d8e0ce1ff5345c0b5516fd9b946a6e74523cf4228306cf30cd87",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
@@ -4842,7 +4842,7 @@
       "source_expression_sha256": "8cc6fd22aa625f9d4f67a84514bdc12f4f6e94d12fc2c6242257a272d530e24d",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The explicit inverse-side policy retains this inverse output mapping. Current source hasResult/isResultOf and target has_output/is_output_of inverse pairs supply the same consequence.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:68c7f27ba59dc05cef448bf3a158a51385a53a955f45a16d5b5de3025fd50149",
@@ -4902,7 +4902,7 @@
       "source_expression_sha256": "2d4010ce8244b3060af20e418fc7866cd9b40b3beddd905cc90d12b9586b3015",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:5da19db0676db0eb0397d4708cf751f9c90a3a732165b769534e0d9300777cc6",
@@ -4959,7 +4959,7 @@
       "source_expression_sha256": "7867920787556af6ea7cdcfd036b466545cf68a1724655dad17b1288b19f62d8",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:09ba32215644cf2d55cfe5855539839e3bd68f014c110cd1f562426ee660134b",
@@ -5016,7 +5016,7 @@
       "source_expression_sha256": "a9e7ce56c2b944844816d554305009c49ee6336bb243832e6bd5725ecad196b8",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "ResponseTime is modeled as a function because it characterizes temporal system behavior that emerges during operation. The realization via cause–effect process structure reflects that response time is only meaningful when the system is acting.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d7147bf65fde2651641479cec361657f97e01137ad2b760e37061eae25cbe368",
@@ -5085,7 +5085,7 @@
       "source_expression_sha256": "a478be4c1764cbfca52c521cad2d4bb904985e678540a3be8c726c5fe285719c",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7a526678ca98bd78c27db8abd67cc309ea9841c11fa1b6845fe62ade62f3556c",
@@ -5145,7 +5145,7 @@
       "source_expression_sha256": "8f903cd362769ba3fa14c03661dd8a7cdcb1d02f5285469e3ccf6acb83e56b99",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:332f337d02fa3315c8d21c1ff70a9a182696adf032799e50a6f2bd623ecda746",
@@ -5202,7 +5202,7 @@
       "source_expression_sha256": "20ec8ef778e6da66caf7bb1904db3c3a13a2527e0a935404ab2444fc9b3d0385",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The retained interpretation states that the deployed System participates in its Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3e6d4c8e6ae7f32b3fde12f2e976c4c91ea66a0893e45ae7a3bb7ddf974dafba",
@@ -5260,7 +5260,7 @@
       "source_expression_sha256": "b5f25fb0bcf748c3be3006227cf4f1f3b71b1307094704afefdd37c7d371386f",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "SurvivalRange was modeled as a function characterizing conditions a system can endure without losing operational integrity, manifested through affordance-realizing processes. Its historical technical deferral explicitly preserved that intended semantics. The expression was subsequently restored in COMS; historical reasoner findings retain their original profile limitations.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:e941d1a04c368c1f5129efef4a5d369aae978e8850e6eecfab01bc9244eca46a",
@@ -5327,7 +5327,7 @@
       "source_expression_sha256": "5db7fb7b07d43ae858f318823c2f64e43407419625e58ece12f9dfb3f83224f5",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "SystemCapability is modeled as a specifically dependent continuant or process profile because capabilities are dependent characteristics of a system that describe what it can do, not processes themselves. The use of PerformanceSpecification captures that capabilities are defined relative to stated performance criteria and conditions.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:765b6d8892fe2096feba40fd405da8b82eb8e3ea275470c3970146781ba79ecc",
@@ -5390,7 +5390,7 @@
       "source_expression_sha256": "47d35665f53fc5d1fb29148f7d1184f38162d47477c0929e2a90b53aba86bcf0",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The existing pair review documents results as outputs of observations, actuations, or samplings and retains the process-to-output direction. The current direct mapping is unchanged; historical HermiT results are not promoted to current evidence.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:ea0c502c7fe789b98b0bbe26002ac0b18790b13a24580a0e31e06a9891f717ec",
@@ -5450,7 +5450,7 @@
       "source_expression_sha256": "9b387c1657e3dbe917196955793476da0f730ef73ba29d0687f7111b5521b43e",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:89dc07e0f0e0a2117964d686c2a88b7da77cb761bba5c3cb74b6b6521502cf11",
@@ -5516,7 +5516,7 @@
       "source_expression_sha256": "b5fb7b4571c02926a0bd3b107ad08a64ac20970554266fc15dfbf40d1ac6396c",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:574e85973353c07195e8e6ae6dc3a813c8baecb2b0a19a268084ff8e404f606c",
@@ -5573,7 +5573,7 @@
       "source_expression_sha256": "e027eeb617a4a930a80560c624b56160074a365d62d331d067b2eafdcd974b25",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "The retained mapping treats Procedure as information content prescribing how a process is to be carried out and retains the prescribes-some-Process restriction. Its target is the stable IRI cco:ont00000965, called Prescriptive Information Content Entity in historical workbook prose and labelled Directive Information Content Entity in the current imported target.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d0db111747f3564ec1005c04b04a804ebaf5476f273ae2675826b889dfeda719",
@@ -5635,7 +5635,7 @@
       "source_expression_sha256": "d7f46e445d34eb318bb7b400732670f57783a8ec8931b255c21275c5240e0589",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "BatteryLifetime was modeled as a function characterizing how long a battery supports system operation, realized through operational stasis and continued energy provision. The current COMS expression retains the historical workbook's placement of Power within the realization. Historical reasoner-driven deferral and later COMS restoration are implementation history, not a new semantic rejection or a current reasoner result.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:dcf3f04234e744a132f942e4d0ce6fe2bb71420cf0c3de60b8163d8b6d9ffe4a",
@@ -5705,7 +5705,7 @@
       "source_expression_sha256": "64f48f9c624c6fd33d8135e498d7eafc52a8624ac2ae90f9bfa6735bb1ff7a0c",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The documented intended dependence runs from the system property object to the system capability subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:9df2ac96dda81289facb4e871c73c208fa2ae4fc7f33cfd9bc293c8e50b0439c",
@@ -5763,7 +5763,7 @@
       "source_expression_sha256": "1513a648a3ec448a29813759c8249cc034de2b23eba821b8c0b852b9385d8e22",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:6f6ff88affdc1afbc57c833c7eae38117a3ec8d54b7ac28931e83474e938c6c5",
@@ -5826,7 +5826,7 @@
       "source_expression_sha256": "d88340717fd4e5dfd5bd070a7cbc9d1a465e93a91e0284805d7cae23becd6e37",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "OperatingRange is modeled as a specifically dependent continuant or process profile because it describes permissible conditions for normal operation rather than behavior itself. The link to ArtifactDesign reflects that operating ranges are design-specified constraints.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:a7156d6ebbd83de2547dbd7e11a2c103e9fd8cc8be71a59c57656e86df5a715f",
@@ -5889,7 +5889,7 @@
       "source_expression_sha256": "a5bc720f89ba6680e3bd74be03ecbf006f3b9a83477a0bd8d47b5ed07310ba20",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:046c9120e36b99488082b91da7f607659195e4d0af549e456e88766fe7643f9a",
@@ -5948,7 +5948,7 @@
       "source_expression_sha256": "3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:dca940a9ecdfa31a693dffaa7b880ac797fb94b80580f7dc3b292f1220960009",
@@ -6005,7 +6005,7 @@
       "source_expression_sha256": "5029139adaefa0e642d4a632424227c407448858c17b4c5f82acd80e9a7469dc",
       "mapping_type": "property_chain",
       "coverage_classification": "property_chain",
-      "reasoning": "",
+      "reasoning": "This retained inverse-side hosting chain uses participates_in, realizes and inheres_in. A matching path entails isHostedBy; the chain does not require a matching path for every asserted isHostedBy edge.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:47859e2cfd5df437d1f55c83560793ab22f035de9b829ccdedcc4d3118cc4f3e",
@@ -6065,7 +6065,7 @@
       "source_expression_sha256": "9c5471a4e0cc97d3cade0a1c2a22af533fd573d9365bc7fee476b1ecf216ce75",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "",
+      "reasoning": "These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f67fc6019bda0c4d47e8eb2a71f56bc92fc3d5eb49c9e2b4a82b38615046ae91",
@@ -6122,7 +6122,7 @@
       "source_expression_sha256": "2cebc1769b4adbf1594ebdbe7afc3c7ed0fd16bde2c0994b9ff6952bd9d72402",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "sosa:Actuator is a bfo:MaterialEntity because actuators are physical devices. The bfo:RealizableEntity it bears is realized in actuation processes, capturing the functional rather than purely structural definition of actuators. The cco:agent_in restriction captures that the actuator plays a causative role in the actuation.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:21d7cb7ddce4687296139d1e503435b53404810ecba690267188a7a6082659b0",
@@ -6187,7 +6187,7 @@
       "source_expression_sha256": "eb56d5239f3725bd2e8d6ae2c02cc7aa60d9237a2c93d701d514291d47744918",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The documented intended dependence runs from the survival property object to the survival range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical reasoner findings retain their original profile limitations.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:b87f9b4fe09c1df974c9c698e4501efaab8762b8a376aa207f83810b6f2ae7dd",
@@ -6245,7 +6245,7 @@
       "source_expression_sha256": "d6aed3db731e2dbec987a7eff38297d409d36240f10f920663c9eb82154ee4d2",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The current is_about assertion remains subject to the existing evidence hold. Relationship-nature interpretation was provisional, and a pinned local SKOS closure is unavailable. This note does not finalize the mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:a5469930af6f93dca4bf66f337827b214ff9f4fb940d04f569b4142b69a68154",
@@ -6305,7 +6305,7 @@
       "source_expression_sha256": "b00d4da20ac7bbeccd0bc92eaeccb1207d290accaa1401a96565e0c919fe0f13",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "",
+      "reasoning": "Provisional mapping for instance-data testing: RelationshipNature is treated as descriptive/information content identifying the nature of a reified sample relationship. The evidence hold remains open because the source declares a skos:Concept superclass but the imported SKOS ontology has no resolving local artifact; exact transitive closure evidence is unavailable.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3c778acf36c7687a0a2d38929a849455d40ab77d001b6aa8b8c4586e890d7997",
@@ -6365,7 +6365,7 @@
       "source_expression_sha256": "b445637d9f4cfc26ab88b990deee554a701a683195b88bf4ccb2d481e55993da",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "",
+      "reasoning": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:3319996395ff5c961d89ef64b955bd227c90bbd762a5184a40e39ef307ea54a8",

@@ -12,6 +12,7 @@ __pycache__/
 
 # ROBOT dependency cache
 build/lib/
+build/current-semantic-validation/
 
 # Generated validation outputs
 src/*/build/artifacts/*

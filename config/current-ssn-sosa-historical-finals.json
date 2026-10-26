@@ -1,0 +1,90 @@
+{
+  "entries": [
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "ee0113ce17cf5ddb78f087dd8dde74aa1299dec1aea69c28bc963cab2549b3ed",
+      "historical_basis": "Current actuation/property pair review explicitly retained the mapping and its inverse.",
+      "historical_evidence_ref": "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md",
+      "source_iri": "http://www.w3.org/ns/sosa/actsOnProperty"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "13359181f39ff1a2599ae6f3f5a4965458cf9031ebe30b24242fdee17701602d",
+      "historical_basis": "Current result pair review explicitly retained the process-to-output mapping.",
+      "historical_evidence_ref": "reports/isResultOf-hasResult-full-closure-analysis.md",
+      "source_iri": "http://www.w3.org/ns/sosa/hasResult"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "1c1edb44faa7171b3926d4cd3aedb4ae533f74e7ea2625b0ce8594aa7ae4b22d",
+      "historical_basis": "Current inverse-side policy explicitly retained the inverse affects mapping.",
+      "historical_evidence_ref": "reports/inverse-side-direct-mapping-policy-review.md",
+      "source_iri": "http://www.w3.org/ns/sosa/isActedOnBy"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "703692f20d14f53c52b9d8a4cb62863fb7fc7dde6d1c030afb825a45a0aaa1af",
+      "historical_basis": "Current inverse-side policy explicitly retained the inverse output mapping.",
+      "historical_evidence_ref": "reports/inverse-side-direct-mapping-policy-review.md",
+      "source_iri": "http://www.w3.org/ns/sosa/isResultOf"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "1bd274137eaf0f83275bc48895b2ad7691fb9c59694657da41eb1149a3c5af95",
+      "historical_basis": "Current sampling pair review explicitly retained the Sampling-to-Sampler relation.",
+      "historical_evidence_ref": "reports/madeSampling-madeBySampler-full-closure-analysis.md",
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySampler"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "a78619d11c3cdb49d422c3008914c16d8100f802643f42f0885bd069785d918f",
+      "historical_basis": "Current inverse-side policy explicitly retained the inverse agent relation.",
+      "historical_evidence_ref": "reports/inverse-side-direct-mapping-policy-review.md",
+      "source_iri": "http://www.w3.org/ns/sosa/madeSampling"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "562e616f6b128e309e636ba56cfe45e072743041b9689ca310e977679748be08",
+      "historical_basis": "Prior current-track review recommended the now-adopted prescribed_by inclusion.",
+      "historical_evidence_ref": "reports/straightforward-op-mapping-candidates-review.md",
+      "source_iri": "http://www.w3.org/ns/sosa/usedProcedure"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "4ada6aba7deef9ea6bdaf640dd1df0dd1f04a0eb729db9406d07977e28345e3a",
+      "historical_basis": "Current inverse-side policy explicitly retained participation in a Deployment.",
+      "historical_evidence_ref": "reports/inverse-side-direct-mapping-policy-review.md",
+      "source_iri": "http://www.w3.org/ns/ssn/hasDeployment"
+    },
+    {
+      "accepted_outcome": "no_direct_mapping",
+      "assessment_record_sha256": "492975ec151d32640c6140b984015effce33f170c09aa3dba37bd42a756d5df2",
+      "historical_basis": "Prior current-track decision semantically rejected the process-input superproperty.",
+      "historical_evidence_ref": "reports/input-output-cco-mapping-rationale-cleanup.md",
+      "source_iri": "http://www.w3.org/ns/ssn/hasInput"
+    },
+    {
+      "accepted_outcome": "no_direct_mapping",
+      "assessment_record_sha256": "f55d2335822f0074b32c23af703f38a64b14bb9b6476fe834b207452f7932d6f",
+      "historical_basis": "Prior current-track decision semantically rejected the process-output superproperty.",
+      "historical_evidence_ref": "reports/input-output-cco-mapping-rationale-cleanup.md",
+      "source_iri": "http://www.w3.org/ns/ssn/hasOutput"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "295eeae90714a512add12b4586744c31205429c1e0b801a2a7039342b75591f6",
+      "historical_basis": "Prior current-track review recommended the now-adopted continuant-parthood inclusion.",
+      "historical_evidence_ref": "reports/straightforward-op-mapping-candidates-review.md",
+      "source_iri": "http://www.w3.org/ns/ssn/hasSubSystem"
+    },
+    {
+      "accepted_outcome": "formal_mapping_adopted",
+      "assessment_record_sha256": "4ab9a4f0d2b988aba812cf3a3a71cecbfbe9cff0162cd35dd613a11abdc21724",
+      "historical_basis": "Current inverse-side policy explicitly retained participation in a Deployment.",
+      "historical_evidence_ref": "reports/inverse-side-direct-mapping-policy-review.md",
+      "source_iri": "http://www.w3.org/ns/ssn/inDeployment"
+    }
+  ],
+  "purpose": "Fixed documentary baseline of the twelve current SSN/SOSA historical final assessment records; not fresh human approval.",
+  "schema_version": 1
+}

@@ -25,6 +25,12 @@ BFO Projection remains a governed product role, but it is not currently material
 
 See [Product Architecture](docs/PRODUCT-ARCHITECTURE.md) for the relationships among the materialized products and the non-materialized product roles.
 
+The current track's local source and target identities, assessment completeness,
+formal coverage, and publication blockers are recorded separately in the
+[current SSN/SOSA publication-readiness report](reports/current-ssn-sosa-publication-readiness.md).
+This is a candidate assessment of the unchanged mapping decisions, not a release
+or a claim that every source term has a final semantic review.
+
 ## SOSA-next maintained development products
 
 The repository also maintains the governed development track for the approved

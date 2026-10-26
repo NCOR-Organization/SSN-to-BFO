@@ -386,6 +386,8 @@ def compile_check() -> StepResult:
             sys.executable,
             "-m",
             "py_compile",
+            *[str(path.relative_to(REPO_ROOT)) for path in sorted((REPO_ROOT / "tools").glob("current_*.py"))],
+            *[str(path.relative_to(REPO_ROOT)) for path in sorted((REPO_ROOT / "tests").glob("test_current*.py"))],
             "tools/run_validation_suite.py",
             "tools/test_elk_instance_mapping_entailments.py",
             "tools/test_full_sosa_closure_hermit.py",
@@ -515,6 +517,21 @@ def run_validation_suite(args: argparse.Namespace) -> int:
 
     results: list[StepResult] = []
     results.append(parse_ttl_check())
+    if results[-1].passed:
+        results.append(run_command(
+            "Current publication assessment regression tests",
+            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_current*.py"],
+        ))
+    if results[-1].passed:
+        results.append(run_command(
+            "Current source/target byte identities",
+            [sys.executable, "tools/current_source_identity.py"],
+        ))
+    if results[-1].passed:
+        results.append(run_command(
+            "Current assessment inventory and report freshness",
+            [sys.executable, "tools/current_assessment.py"],
+        ))
     if results[-1].passed:
         results.append(
             run_command(

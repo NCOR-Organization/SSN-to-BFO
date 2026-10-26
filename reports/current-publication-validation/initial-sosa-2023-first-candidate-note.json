@@ -1,0 +1,10 @@
+{
+  "artifact_role": "Diagnostic copy from the FIRST temporary candidate in an existing synthetic package unit test; not a published release or completed package-test result.",
+  "actual_execution_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "test_context": "Existing synthetic release fixture 2099-01-02 uses a deliberately synthetic source_commit/tag inside its manifest. No repository tag/commit/release was created.",
+  "recorded_at_utc": "2026-10-10T18:18:20.774617+00:00",
+  "manifest_path": "reports/current-publication-validation/initial-sosa-2023-first-candidate-manifest.json",
+  "manifest_sha256": "29706f4926a887f5e62dc1766e4120f54d44a19c3eed988488d5c553e6f4e9ee",
+  "supported_observation": "The first temporary candidate recorded all 4 HermiT product checks PASS, including the 12,864-triple RO closure. The original RO child exited before the 1,800-second cap; a second independent candidate then began.",
+  "limitation": "The embedded deterministic_package_rebuild boolean is written by existing candidate-construction code before the enclosing repeated-build check finishes; it is NOT taken here as evidence that the full package test passed."
+}

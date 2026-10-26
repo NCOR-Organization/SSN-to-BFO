@@ -1,1 +1,5 @@
 src/sosa-next/imports/ro-full.owl whitespace=-trailing-space
+
+# Retain byte-exact captured evidence, including its terminal blank line.
+reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.log whitespace=-blank-at-eof
+reports/current-publication-validation/package-cli-diagnostic.log whitespace=-blank-at-eof

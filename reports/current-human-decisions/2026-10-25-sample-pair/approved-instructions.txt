@@ -1,0 +1,365 @@
+We are now encoding TWO APPROVED HUMAN SEMANTIC DECISIONS in the current SSN/SOSA publication-hardening workflow.
+
+Repository:
+
+/Users/alecsculley/Documents/GitHub/SSN-to-BFO
+
+Branch:
+
+publication/current-sosa-readiness
+
+Expected HEAD before work:
+
+c3f9b05593727bd13854bf1830cc09b4a653b41f
+
+This is no longer an analysis task.
+
+The human semantic decisions have been made.
+
+DO NOT reopen the mapping question.
+DO NOT make additional semantic decisions.
+DO NOT modify any other assessment term.
+DO NOT modify SOSA-2023 semantics or statuses.
+DO NOT modify generalized COMS architecture.
+DO NOT commit or tag.
+
+APPROVED DECISIONS
+
+1. http://www.w3.org/ns/sosa/hasSample
+
+Current:
+- review_state: deferred
+- assessment_outcome: deferred
+- workbook location: Sheet2!16
+- RowID: urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f
+- predicate: blank
+- target: blank
+
+Approved:
+- review_state: final
+- assessment_outcome: no_direct_mapping
+
+2. http://www.w3.org/ns/sosa/isSampleOf
+
+Current:
+- review_state: deferred
+- assessment_outcome: deferred
+- workbook location: Sheet2!17
+- RowID: urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab
+- predicate: blank
+- target: blank
+
+Approved:
+- review_state: final
+- assessment_outcome: no_direct_mapping
+
+These two decisions are one coordinated inverse-pair review.
+
+Create TWO term-specific human decision records, cross-referencing each other where the project schema permits.
+
+Do not add a mapping predicate or target to either workbook row.
+
+Do not generate a new OWL mapping axiom for either property.
+
+SEMANTIC DECISION — hasSample
+
+Use the following approved substance in the decision rationale:
+
+`sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted.
+
+The reviewed direct candidates do not preserve the source meaning generally:
+
+- Mapping to CCO `represented by` would treat the Sample endpoint as representational information content, which does not capture physical specimens, sampling locations, and other material Samples generally.
+- Mapping to BFO `generically depends on` would assign the generically-dependent-content role to the sampled Feature of Interest rather than capturing samplehood.
+- A participation mapping also does not represent the relation between a sampled feature and its sample.
+
+Historical work proposed the composite representation path:
+
+represented_by(feature, information-content)
+AND
+generically_depends_on(information-content, sample)
+→
+hasSample(feature, sample)
+
+This path should NOT be reinstated as an unconditional formal mapping.
+
+It is not sufficient for samplehood: an ordinary representational carrier such as a book, photograph, recording, or other information-bearing artifact may bear content representing an entity without thereby being a Sample of that entity.
+
+It is also not established as necessary: SOSA's notion of intended representativeness does not by itself require commitment to a distinct CCO information-content entity borne by every Sample.
+
+The previous OWL implementation additionally creates simplicity/profile problems because `hasSample` is inverse-functional and is the inverse of a property used with cardinality/functionality constraints. That implementation issue is secondary to the semantic decision and is NOT the reason for the no-direct outcome.
+
+Accordingly:
+
+No reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.
+
+This does NOT rule out:
+- a future guarded representation rule;
+- a query-level mapping;
+- a more specialized sample-provenance model;
+- weaker documentary correspondences to other vocabularies.
+
+HISTORICAL RO CONTEXT — hasSample
+
+Preserve as contextual evidence, NOT as the BFO/CCO decision:
+
+Historical RO companion work records:
+
+sosa:hasSample skos:relatedMatch RO:0001001
+
+where RO:0001001 is `derives into`.
+
+The historical judgment was deliberately weak: derivational lineage is meaningfully related to sampling/provenance, but it is not equivalent to samplehood and does not justify BFO/CCO formal subsumption.
+
+Do NOT convert this SKOS relation into:
+- rdfs:subPropertyOf
+- owl:equivalentProperty
+- an OWL BFO/CCO mapping axiom.
+
+Do NOT modify an RO companion workbook or product merely to encode this BFO/CCO decision.
+
+If the repository already contains an authoritative reference to this RO companion assessment, cite it in the human decision evidence.
+
+If it does not, do not invent a repository path. The human rationale may still state that this was considered historical contextual evidence.
+
+SEMANTIC DECISION — isSampleOf
+
+Use the following approved substance in the decision rationale:
+
+`sosa:isSampleOf` relates a Sample to the Feature of Interest that it is intended to be representative of. No direct BFO/CCO mapping is adopted.
+
+The reviewed direct candidates do not preserve the source meaning generally:
+
+- Mapping to CCO `represents` would treat every Sample as representational information content.
+- Mapping to BFO `is carrier of` would treat the sampled Feature of Interest as generically dependent content.
+- Mapping to participation would confuse the feature being sampled with a process in which the Sample participates.
+
+Historical work proposed:
+
+is_carrier_of(sample, information-content)
+AND
+represents(information-content, feature)
+→
+isSampleOf(sample, feature)
+
+This should NOT be reinstated as an unconditional formal mapping.
+
+The representation/carrier path is not sufficient for samplehood. A carrier may bear information representing an entity without being intended or functioning as a Sample of that entity.
+
+It is also not established as necessary. Intended representativeness in SOSA does not by itself require a separately instantiated CCO information-content entity.
+
+Because `isSampleOf` is functional, an overbroad representation-chain mapping would also create undesirable consequences: a carrier bearing representations of multiple distinct entities could infer multiple `isSampleOf` successors and thereby force equality of those represented entities.
+
+The historical OWL chain also creates simplicity/profile conflicts with retained source functionality/cardinality axioms. Again, this is an implementation consequence, not the semantic basis of the no-direct decision.
+
+Accordingly:
+
+No reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:isSampleOf` across its source usage.
+
+This does NOT rule out a future more specifically conditioned representation or provenance model.
+
+HISTORICAL RO CONTEXT — isSampleOf
+
+Preserve as contextual evidence, NOT as the BFO/CCO decision:
+
+Historical RO companion work records:
+
+sosa:isSampleOf skos:relatedMatch RO:0001000
+
+where RO:0001000 is `derives from`.
+
+The historical analysis treated this as a related lineage/provenance relation, not a formal subsumption or equivalence. SOSA samplehood includes intended representativeness and can apply outside RO's stricter material-derivation semantics.
+
+Do NOT promote this to an OWL mapping.
+
+Do NOT modify RO companion artifacts as part of this milestone.
+
+INVERSE-PAIR COHERENCE
+
+Record explicitly that:
+
+- `sosa:hasSample` and `sosa:isSampleOf` are source inverses;
+- they were reviewed together;
+- the same substantive no-direct disposition is adopted for both;
+- neither blank workbook row means the relation lacks semantics;
+- the result means specifically that no reviewed DIRECT BFO/CCO mapping is adopted;
+- weaker SKOS correspondences or future guarded mappings remain logically separate possibilities.
+
+HUMAN DECISION RECORDS
+
+Use the project's existing guarded human-decision-record mechanism.
+
+For each record, bind the decision to the current exact:
+
+- source IRI;
+- final outcome;
+- RowID;
+- deliberate absence of mapping predicate/target;
+- source identity;
+- target identity;
+- workbook hash;
+- formal coverage evidence;
+- pre-decision assessment;
+- complete current review packet;
+- packet open question and explicit human response;
+- supporting evidence references;
+- reviewer identity according to the existing project mechanism;
+- review timestamp according to the existing project mechanism.
+
+Do NOT invent reviewer identity if the workflow has no configured value.
+
+If the workflow requires an explicit reviewer value and none exists/configures automatically, stop BEFORE changing assessment state and report exactly what field/value is required.
+
+Do not bypass the human-decision guard.
+
+ASSESSMENT UPDATE
+
+Only after both decision records validate:
+
+change:
+
+sosa:hasSample
+- deferred → final
+- deferred → no_direct_mapping
+
+sosa:isSampleOf
+- deferred → final
+- deferred → no_direct_mapping
+
+No other real term may change state or outcome.
+
+EXPECTED POST-DECISION COUNTS
+
+Before:
+- source terms: 91
+- final: 12
+- deferred: 2
+- unreviewed: 77
+- unresolved: 79
+- formal_mapping_adopted: 10
+- no_direct_mapping: 2
+- inheritance_sufficient: 0
+
+Expected after these two approved decisions:
+- source terms: 91
+- final: 14
+- deferred: 0
+- unreviewed: 77
+- unresolved: 77
+- formal_mapping_adopted: 10
+- no_direct_mapping: 4
+- inheritance_sufficient: 0
+
+Verify exact queue membership changes by removal of ONLY:
+
+- http://www.w3.org/ns/sosa/hasSample
+- http://www.w3.org/ns/sosa/isSampleOf
+
+REGENERATE PROJECT-LOCAL REVIEW OUTPUTS
+
+Regenerate only the state-dependent current-track artifacts required by the workflow, including as applicable:
+
+- assessment validation;
+- human-review queue/report;
+- rationale report;
+- readiness/reporting metadata;
+- decision-record indexes/manifests;
+- post-state validation evidence.
+
+Do not regenerate or alter mapping products unnecessarily.
+
+The two workbook mapping rows must remain formally blank.
+
+MAPPING PRESERVATION
+
+Verify byte-level semantic preservation of:
+
+- current authoritative workbook predicate/target content;
+- current generated mapping products;
+- mapping rule;
+- current source ontologies;
+- target ontology;
+- SOSA-2023 protected files;
+- historical authorities;
+- protected local COMS architecture;
+- external COMS tracked files.
+
+No new BFO/CCO mapping axiom may appear for either Sample relation.
+
+TESTS
+
+Run the relevant validation after the approved decisions are encoded:
+
+1. human-decision/finality tests;
+2. assessment validation;
+3. queue/rationale safety;
+4. source identity validation;
+5. generation freshness;
+6. mapping/product preservation;
+7. focused publication-hardening tests;
+8. affected COMS integration tests;
+9. SOSA-2023 non-regression tests;
+10. Python/static compilation checks;
+11. git diff --check.
+
+Do not run expensive unrelated RO reasoning.
+
+If state-dependent tests contain expectations for the old 79-term real queue, update only the legitimate state-dependent expected artifact/baseline needed to represent these two approved human decisions.
+
+Do NOT weaken:
+- finality guards;
+- custody guards;
+- adversarial tests;
+- historical-final restrictions;
+- decision-record validation.
+
+FINAL VERIFICATION
+
+Explicitly prove:
+
+- exactly two real assessment records changed;
+- exactly two new human semantic decision records were created;
+- no third real term changed;
+- unresolved count is exactly 77;
+- final count is exactly 14;
+- no_direct_mapping count is exactly 4;
+- workbook predicates/targets for both terms remain blank;
+- no mapping axiom was added for either term;
+- historical RO SKOS correspondences were not promoted into formal BFO/CCO mappings;
+- SOSA-2023 remains unchanged;
+- COMS remains unchanged;
+- four evidence-held terms remain held unless one of them is one of these two (they are not);
+- publication readiness may still remain blocked for the previously documented reasons.
+
+COMPLETION REPORT
+
+Return:
+
+1. pre-state;
+2. decision records created;
+3. exact approved rationale stored for hasSample;
+4. exact approved rationale stored for isSampleOf;
+5. how historical RO context was recorded;
+6. assessment changes;
+7. queue transition;
+8. before/after counts;
+9. files changed;
+10. confirmation that workbook mapping rows remain blank;
+11. confirmation no mapping axioms were added;
+12. mapping semantic preservation;
+13. SOSA-2023 preservation;
+14. COMS preservation;
+15. focused test results;
+16. integration/non-regression results;
+17. remaining unresolved count;
+18. remaining publication blockers.
+
+End with exactly one of:
+
+APPROVED SAMPLE-PAIR DECISIONS ENCODED — 77 UNRESOLVED TERMS REMAIN
+
+or
+
+DECISION ENCODING BLOCKED — NO ASSESSMENT STATE CHANGED
+
+Do not commit or tag.

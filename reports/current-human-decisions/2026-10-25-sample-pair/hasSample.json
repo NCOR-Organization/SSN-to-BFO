@@ -1,0 +1,104 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt",
+    "sha256": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1"
+  },
+  "assessment_outcome": "no_direct_mapping",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json",
+    "record_sha256": "2e0371d08cf71d7e754cdddcdd683ba4cb57f00a6468981e40e71537bb857539",
+    "sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d"
+  },
+  "decision_basis": "semantic_rejection",
+  "decision_id": "urn:uuid:715b1858-9d88-40d6-bc19-34d0f247d45c",
+  "deliberate_mapping_absence": {
+    "approved": true,
+    "new_mapping_axiom_authorized": false,
+    "workbook_rows": [
+      {
+        "location": "Sheet2!16",
+        "predicate": "",
+        "row_id": "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f",
+        "target": ""
+      }
+    ]
+  },
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet2!16",
+    "imports/sosa.ttl#http://www.w3.org/ns/sosa/hasSample",
+    "imports/ssn.ttl#http://www.w3.org/ns/sosa/hasSample",
+    "imports/cco.ttl",
+    "reports/sample-representation-property-chains-review.md",
+    "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt",
+    "reports/sosa-2023-ro-mapping-decisions.md#no-direct-decisions",
+    "mappings/SOSA-next-to-RO-COMS.xlsx#Sheet2!31"
+  ],
+  "explicit_no_direct_mapping_adopted": true,
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": true,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+    "source_kind": "object_property",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "eb5cad25bf78551652fa7ba894549e4b418b1e1641c2fd71054e9362b737e957",
+  "formal_mapping_assertions": [],
+  "historical_ro_context": {
+    "approved_context_verbatim": "Preserve as contextual evidence, NOT as the BFO/CCO decision:\n\nHistorical RO companion work records:\n\nsosa:hasSample skos:relatedMatch RO:0001001\n\nwhere RO:0001001 is `derives into`.\n\nThe historical judgment was deliberately weak: derivational lineage is meaningfully related to sampling/provenance, but it is not equivalent to samplehood and does not justify BFO/CCO formal subsumption.\n\nDo NOT convert this SKOS relation into:\n- rdfs:subPropertyOf\n- owl:equivalentProperty\n- an OWL BFO/CCO mapping axiom.\n\nDo NOT modify an RO companion workbook or product merely to encode this BFO/CCO decision.\n\nIf the repository already contains an authoritative reference to this RO companion assessment, cite it in the human decision evidence.\n\nIf it does not, do not invent a repository path. The human rationale may still state that this was considered historical contextual evidence.",
+    "human_supplied_historical_correspondence": {
+      "object": "RO:0001001",
+      "predicate": "skos:relatedMatch",
+      "subject": "sosa:hasSample"
+    },
+    "promoted_to_formal_mapping": false,
+    "repository_evidence_scope": "The cited pinned RO companion decision report and workbook preserve the related derives_into/derives_from candidate discussion and a no_direct_mapping disposition with blank formal predicate/target. The exact historical skos:relatedMatch statement is supplied by the human approval; it is not asserted to be present in the current repository products.",
+    "status": "Context only; not a BFO/CCO mapping decision or an authorization to promote SKOS to OWL."
+  },
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
+  },
+  "inverse_pair_review": {
+    "approved_coherence": "- `sosa:hasSample` and `sosa:isSampleOf` are source inverses;\n- they were reviewed together;\n- the same substantive no-direct disposition is adopted for both;\n- neither blank workbook row means the relation lacks semantics;\n- the result means specifically that no reviewed DIRECT BFO/CCO mapping is adopted;\n- weaker SKOS correspondences or future guarded mappings remain logically separate possibilities.",
+    "pair_review_id": "urn:uuid:cad1d838-bdd6-47ad-9dff-5ed30ac37726",
+    "partner_decision_id": "urn:uuid:11d26084-45e6-479b-bdea-793e8886a382",
+    "partner_decision_path": "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json",
+    "partner_source_iri": "http://www.w3.org/ns/sosa/isSampleOf"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f"
+  ],
+  "question_response": "Finalize no_direct_mapping. `sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted. The semantic non-adoption conclusion is independent of the historical OWL profile limitations. Future guarded or query-level approaches remain separate possibilities and do not defer this approved decision.",
+  "rationale": "`sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represented by` would treat the Sample endpoint as representational information content, which does not capture physical specimens, sampling locations, and other material Samples generally.\n- Mapping to BFO `generically depends on` would assign the generically-dependent-content role to the sampled Feature of Interest rather than capturing samplehood.\n- A participation mapping also does not represent the relation between a sampled feature and its sample.\n\nHistorical work proposed the composite representation path:\n\nrepresented_by(feature, information-content)\nAND\ngenerically_depends_on(information-content, sample)\n→\nhasSample(feature, sample)\n\nThis path should NOT be reinstated as an unconditional formal mapping.\n\nIt is not sufficient for samplehood: an ordinary representational carrier such as a book, photograph, recording, or other information-bearing artifact may bear content representing an entity without thereby being a Sample of that entity.\n\nIt is also not established as necessary: SOSA's notion of intended representativeness does not by itself require commitment to a distinct CCO information-content entity borne by every Sample.\n\nThe previous OWL implementation additionally creates simplicity/profile problems because `hasSample` is inverse-functional and is the inverse of a property used with cardinality/functionality constraints. That implementation issue is secondary to the semantic decision and is NOT the reason for the no-direct outcome.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.\n\nThis does NOT rule out:\n- a future guarded representation rule;\n- a query-level mapping;\n- a more specialized sample-provenance model;\n- weaker documentary correspondences to other vocabularies.",
+  "review_packet_snapshot": {
+    "item_sha256": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7",
+    "path": "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json",
+    "sha256": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7"
+  },
+  "review_question": "Should the recorded OWL 2 DL chain deferral become a final no-direct-mapping decision, or should a separately evaluated non-OWL representation route remain deferred?",
+  "review_state": "final",
+  "review_timestamp": "2026-10-25T21:37:41+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "reviewer_identity_source": "Explicit reviewer_identity supplied by the human user for both approved decisions in this session.",
+  "schema_version": 1,
+  "separate_semantic_conclusion": "No reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.",
+  "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+  "timestamp_scope": "Encoding of the approved human decision after reviewer identity was supplied; not an inferred date of an earlier review."
+}

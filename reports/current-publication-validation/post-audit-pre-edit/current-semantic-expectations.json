@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "track": "current-ssn-sosa",
+  "status": "human_review_required",
+  "policy": "No repository record approves this selected positive/negative expectation suite. All proposals remain outside publication evidence until explicit human approval is recorded. Negative means not entailed, not logical negation. No claim of global interpretability.",
+  "expectations": [
+    {
+      "id": "simple-inherited-positive",
+      "coverage": "simple_subsumption",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "http://example.org/sample-test/sample-relationship-1",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000031"
+      },
+      "input_files": [
+        "tests/fixtures/current-semantic/sample-relationship.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "A sample relationship used as information should inherit the target information-content category (generically dependent continuant), beyond the direct ICE mapping.",
+      "evidence": [
+        "tests/fixtures/current-semantic/sample-relationship.ttl",
+        "imports/sosa-sampling.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "simple-material-negative",
+      "coverage": "simple_subsumption",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "http://example.org/sample-test/sample-relationship-1",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000040"
+      },
+      "input_files": [
+        "tests/fixtures/current-semantic/sample-relationship.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "Do not identify a relationship information item with a material sample merely because it refers to a sample.",
+      "evidence": [
+        "tests/fixtures/current-semantic/sample-relationship.ttl",
+        "imports/sosa-sampling.ttl",
+        "imports/cco.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "equivalence-reverse-positive",
+      "coverage": "equivalence",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "https://example.org/current-semantic-review/sample",
+        "object": "http://www.w3.org/ns/sosa/Sample"
+      },
+      "input_files": [],
+      "premises_turtle": "<https://example.org/current-semantic-review/sample> a <http://purl.obolibrary.org/obo/BFO_0000040>; <https://www.commoncoreontologies.org/ont00001936> <https://example.org/current-semantic-review/sampling>. <https://example.org/current-semantic-review/sampling> a <http://www.w3.org/ns/sosa/Sampling>.",
+      "motivation": "Exercise the sufficient direction for a material output of a sampling event; review whether that condition warrants the source Sample classification. This is a proposed concrete competency case, not a claim that the equivalence is justified.",
+      "evidence": [
+        "imports/sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "equivalence-overbroad-negative",
+      "coverage": "equivalence",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "https://example.org/current-semantic-review/material",
+        "object": "http://www.w3.org/ns/sosa/Sample"
+      },
+      "input_files": [],
+      "premises_turtle": "<https://example.org/current-semantic-review/material> a <http://purl.obolibrary.org/obo/BFO_0000040>.",
+      "motivation": "A material thing with no sampling facts should not be classified as a Sample solely from the material-entity component; tests sufficient-condition overreach.",
+      "evidence": [
+        "imports/sosa.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "observation-process-positive",
+      "coverage": "complex_class_expression",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "https://example.org/data/Observation_346344",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000015"
+      },
+      "input_files": [
+        "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "The concrete barometer observation should inherit process from its target act interpretation through the complex mapping.",
+      "evidence": [
+        "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "observation-continuant-negative",
+      "coverage": "complex_class_expression",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "https://example.org/data/Observation_346344",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000002"
+      },
+      "input_files": [
+        "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "A sensing event should not collapse into a continuant because its output or sensor is a continuant; detects category confusion.",
+      "evidence": [
+        "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "observation-plan-positive",
+      "coverage": "existential_restriction",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "existential_subsumption",
+        "subject": "http://www.w3.org/ns/sosa/Observation",
+        "object": "https://www.commoncoreontologies.org/ont00000345",
+        "predicate": "https://www.commoncoreontologies.org/ont00001777"
+      },
+      "input_files": [],
+      "premises_turtle": "",
+      "motivation": "Review whether every source Observation necessarily involves the plan-side existential inherited from the current complex filler. This tests a consequence of the filler intersection, not the full asserted restriction.",
+      "evidence": [
+        "imports/sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "observation-sensor-reverse-negative",
+      "coverage": "existential_restriction",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "class_subsumption",
+        "subject": "https://www.commoncoreontologies.org/ont00000345",
+        "object": "http://www.w3.org/ns/sosa/Observation"
+      },
+      "input_files": [],
+      "premises_turtle": "",
+      "motivation": "A plan specification is not itself an observation; detect reversal from a restriction filler to the subject class.",
+      "evidence": [
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "result-inverse-positive",
+      "coverage": "object_property_subsumption",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "object_property_assertion",
+        "subject": "https://example.org/remaining-direct-mapping-fixture/sampling",
+        "object": "https://example.org/remaining-direct-mapping-fixture/sampling-result",
+        "predicate": "https://www.commoncoreontologies.org/ont00001986"
+      },
+      "input_files": [
+        "tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "An existing result-of example should infer the target inverse output relation, testing interaction of source relation, mapping and target inverse semantics.",
+      "evidence": [
+        "tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "result-direction-negative",
+      "coverage": "object_property_subsumption",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "object_property_assertion",
+        "subject": "https://example.org/remaining-direct-mapping-fixture/sampling-result",
+        "object": "https://example.org/remaining-direct-mapping-fixture/sampling",
+        "predicate": "https://www.commoncoreontologies.org/ont00001986"
+      },
+      "input_files": [
+        "tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "The result should not be treated as the event that outputs its event; catches a direction error.",
+      "evidence": [
+        "tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "hosts-chain-inverse-positive",
+      "coverage": "property_chain",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "object_property_assertion",
+        "subject": "https://example.org/property-chain-mapping-fixture/hosted-system",
+        "object": "https://example.org/property-chain-mapping-fixture/host-capability",
+        "predicate": "http://www.w3.org/ns/sosa/isHostedBy"
+      },
+      "input_files": [
+        "tests/fixtures/property-chain-mapping/property-chain-mappings.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "The existing hosts-chain fixture should also imply the source inverse hosting relation; tests chain plus inverse interaction beyond restating the head axiom.",
+      "evidence": [
+        "tests/fixtures/property-chain-mapping/property-chain-mappings.ttl",
+        "imports/sosa.ttl",
+        "reports/isHostedBy-hosts-full-closure-analysis.md"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "hosts-chain-direction-negative",
+      "coverage": "property_chain",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "object_property_assertion",
+        "subject": "https://example.org/property-chain-mapping-fixture/hosted-system",
+        "object": "https://example.org/property-chain-mapping-fixture/host-capability",
+        "predicate": "http://www.w3.org/ns/sosa/hosts"
+      },
+      "input_files": [
+        "tests/fixtures/property-chain-mapping/property-chain-mappings.ttl"
+      ],
+      "premises_turtle": "",
+      "motivation": "Do not reverse the hosting direction simply because the hosted entity is also a participant.",
+      "evidence": [
+        "tests/fixtures/property-chain-mapping/property-chain-mappings.ttl",
+        "imports/sosa.ttl",
+        "reports/isHostedBy-hosts-full-closure-analysis.md"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "broad-feature-entity-positive",
+      "coverage": "deliberately_broad_source_term",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "class_subsumption",
+        "subject": "http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000001"
+      },
+      "input_files": [],
+      "premises_turtle": "",
+      "motivation": "A broad feature remains an entity across all target branches; tests the common ancestor of the current union.",
+      "evidence": [
+        "imports/sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "broad-feature-material-negative",
+      "coverage": "deliberately_broad_source_term",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "class_subsumption",
+        "subject": "http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "object": "http://purl.obolibrary.org/obo/BFO_0000040"
+      },
+      "input_files": [],
+      "premises_turtle": "",
+      "motivation": "Source FeatureOfInterest is broad; the target union should not force every feature to be material.",
+      "evidence": [
+        "imports/sosa.ttl",
+        "imports/cco.ttl",
+        "SSN2BFO.ttl"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "typing-sensor-positive",
+      "coverage": "typing_only_no_direct_case",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": true,
+      "query": {
+        "kind": "class_assertion",
+        "subject": "https://example.org/current-semantic-review/device",
+        "object": "http://www.w3.org/ns/sosa/Sensor"
+      },
+      "input_files": [],
+      "premises_turtle": "<https://example.org/current-semantic-review/device> <http://www.w3.org/ns/sosa/madeObservation> <https://example.org/current-semantic-review/observation>.",
+      "motivation": "A madeObservation link should establish source Sensor typing. The competency question is supported by the source domain semantics and should be distinguished from a direct target relation.",
+      "evidence": [
+        "imports/ssn.ttl",
+        "SSN2BFO.ttl",
+        "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    },
+    {
+      "id": "typing-agent-negative",
+      "coverage": "typing_only_no_direct_case",
+      "review_state": "human_review_required",
+      "approval_evidence": null,
+      "expected_entailed": false,
+      "query": {
+        "kind": "object_property_assertion",
+        "subject": "https://example.org/current-semantic-review/device",
+        "object": "https://example.org/current-semantic-review/observation",
+        "predicate": "https://www.commoncoreontologies.org/ont00001787"
+      },
+      "input_files": [],
+      "premises_turtle": "<https://example.org/current-semantic-review/device> <http://www.w3.org/ns/sosa/madeObservation> <https://example.org/current-semantic-review/observation>.",
+      "motivation": "Review whether the deliberately typing-only observation-agent pair should avoid the stronger target agent relation. This is a human question, not automatic approval of the current omission.",
+      "evidence": [
+        "imports/ssn.ttl",
+        "SSN2BFO.ttl",
+        "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md"
+      ],
+      "epistemic_status": "proposed interpretation; human decision required",
+      "decision_required": "Approve or amend this independently motivated expectation after reviewing source/target definitions and current rationale; do not infer approval from the existing mapping alone."
+    }
+  ]
+}

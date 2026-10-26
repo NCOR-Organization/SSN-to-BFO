@@ -1,0 +1,21 @@
+test_claimed_approval_without_evidence_rejected (test_current_semantic_validation.ExactInputTests.test_claimed_approval_without_evidence_rejected) ... ok
+test_classification_distinguishes_semantic_failure_from_unknown (test_current_semantic_validation.ExactInputTests.test_classification_distinguishes_semantic_failure_from_unknown) ... ok
+test_corpus_is_eleven_and_synthetic_is_separate (test_current_semantic_validation.ExactInputTests.test_corpus_is_eleven_and_synthetic_is_separate) ... ok
+test_flattening_only_removes_import_directives (test_current_semantic_validation.ExactInputTests.test_flattening_only_removes_import_directives) ... ok
+test_hash_drift_and_corpus_drift_detected (test_current_semantic_validation.ExactInputTests.test_hash_drift_and_corpus_drift_detected) ... ok
+test_missing_materialization_is_not_empty_materialization (test_current_semantic_validation.ExactInputTests.test_missing_materialization_is_not_empty_materialization) ... ok
+test_missing_result_is_not_zero_difference (test_current_semantic_validation.ExactInputTests.test_missing_result_is_not_zero_difference) ... ok
+test_proposals_cover_positive_negative_and_required_cases (test_current_semantic_validation.ExactInputTests.test_proposals_cover_positive_negative_and_required_cases) ... ok
+test_source_fixture_matches_established_smoke_fixture (test_current_semantic_validation.ExactInputTests.test_source_fixture_matches_established_smoke_fixture) ... ok
+test_actual_positive_and_negative_query_support (test_current_semantic_validation.HermitIntegrationTests.test_actual_positive_and_negative_query_support) ... ok
+test_incomplete_import_even_consistent_reasoner_fails_closed (test_current_semantic_validation.HermitIntegrationTests.test_incomplete_import_even_consistent_reasoner_fails_closed) ... ok
+test_inconsistent_graph_has_no_explosive_entailment_evidence (test_current_semantic_validation.HermitIntegrationTests.test_inconsistent_graph_has_no_explosive_entailment_evidence) ... ok
+test_out_of_profile_fails_closed (test_current_semantic_validation.HermitIntegrationTests.test_out_of_profile_fails_closed) ... ok
+test_real_hermit_detects_source_class_property_and_equivalence_violation (test_current_semantic_validation.HermitIntegrationTests.test_real_hermit_detects_source_class_property_and_equivalence_violation) ... ok
+test_real_hermit_detects_target_signature_violation (test_current_semantic_validation.HermitIntegrationTests.test_real_hermit_detects_target_signature_violation) ... ok
+test_unchanged_hierarchy_passes_and_loss_detects_corrupted_materialization (test_current_semantic_validation.HermitIntegrationTests.test_unchanged_hierarchy_passes_and_loss_detects_corrupted_materialization) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.597s
+
+OK

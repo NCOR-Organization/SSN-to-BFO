@@ -1,0 +1,4 @@
+Approved positive and negative semantic expectations are both required
+Both source and target deductive-difference results must pass
+Every source example and the separate fixture need consistent exact-closure results
+Current semantic evidence gate is FAIL

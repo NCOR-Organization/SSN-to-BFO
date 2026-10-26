@@ -29,6 +29,7 @@ from pathlib import Path
 _IMPORT_DONT_WRITE_BYTECODE = sys.dont_write_bytecode
 sys.dont_write_bytecode = True
 try:
+    import generate_mapping_from_coms as current_generator
     from product_dispositions import (
         PRODUCT_ROLE_ORDER,
         ProductDispositionError,
@@ -137,6 +138,7 @@ METADATA_LABELS = {
     "product-disposition module SHA-256": "disposition_module_sha256",
     "modular-products module SHA-256": "modular_products_module_sha256",
     "publication metadata SHA-256": "publication_metadata_sha256",
+    "current assessment inventory SHA-256": "current_assessment_inventory_sha256",
     "maintained product-disposition path": "disposition_report_path",
     "product-disposition JSON SHA-256": "disposition_report_sha256",
     "maintained alignment-core path": "alignment_core_path",
@@ -1022,10 +1024,23 @@ def validate_temporary_outputs(
     )
 
     emit("[10/11] Confirming required reports and freshness metadata", log)
+    current_identity = summary.get("current_identity_reporting")
+    if not isinstance(current_identity, dict):
+        raise CheckFailure("generator summary lacks current-track identity/assessment results")
+    if not current_identity.get("identity_audit_complete"):
+        raise CheckFailure("current-track row identity audit is incomplete")
+    if not current_identity.get("zero_axiom_assessment_dispositions_complete"):
+        raise CheckFailure("current-track zero-axiom rows lack valid assessment dispositions")
+    assessment_inventory = current_generator.CURRENT_ASSESSMENT_INVENTORY
+    if not assessment_inventory.is_file():
+        raise CheckFailure("current-track assessment inventory is missing")
+    if current_identity.get("assessment_inventory_sha256") != sha256_file(assessment_inventory):
+        raise CheckFailure("current-track assessment inventory changed during generation")
     metadata = read_report_metadata(paths["generation_report"])
     expected_metadata = {
         "workbook_sha256": workbook_hash,
         "generator_sha256": generator_hash,
+        "current_assessment_inventory_sha256": sha256_file(assessment_inventory),
         "maintained_output_path": relative(MAINTAINED_OUTPUTS["candidate"]),
         "generated_candidate_sha256": candidate_hash,
         "disposition_module_sha256": sha256_file(DISPOSITION_MODULE),
@@ -1079,6 +1094,32 @@ def assert_no_trailing_whitespace(path: Path) -> None:
             raise CheckFailure(f"trailing whitespace in temporary output {path}:{number}")
 
 
+def current_assessment_freshness_errors(metadata: dict[str, str]) -> list[str]:
+    """Current-project assessment is a reporting dependency, never mapping authority."""
+    inventory_path = current_generator.CURRENT_ASSESSMENT_INVENTORY
+    if not inventory_path.is_file():
+        return ["current assessment inventory is missing"]
+    errors = []
+    if metadata.get("current_assessment_inventory_sha256") != sha256_file(inventory_path):
+        errors.append("current assessment inventory hash differs from the generated report")
+    try:
+        rows, stats = current_generator.read_workbook(WORKBOOK)
+        processed = current_generator.validate_and_process_rows(
+            rows, current_generator.Resolver(), stats
+        )
+        identity = current_generator.current_identity_reporting(
+            stats, [row.identity_audit for row in processed], inventory_path
+        )
+    except (OSError, ValueError, current_generator.GenerationError) as exc:
+        errors.append(f"current row identity/assessment cannot be checked: {exc}")
+        return errors
+    if not identity["identity_audit_complete"]:
+        errors.append("current-track row identity audit is incomplete")
+    if not identity["zero_axiom_assessment_dispositions_complete"]:
+        errors.append("current-track zero-axiom rows lack valid assessment dispositions")
+    return errors
+
+
 def freshness_errors(workbook_hash: str, generator_hash: str) -> list[str]:
     errors: list[str] = []
     for name, path in MAINTAINED_OUTPUTS.items():
@@ -1088,6 +1129,7 @@ def freshness_errors(workbook_hash: str, generator_hash: str) -> list[str]:
         return errors
 
     metadata = read_report_metadata(MAINTAINED_OUTPUTS["generation_report"])
+    errors.extend(current_assessment_freshness_errors(metadata))
     for key in METADATA_LABELS.values():
         if key not in metadata:
             errors.append(f"generation report is missing source metadata: {key}")

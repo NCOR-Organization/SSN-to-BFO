@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/java",
+    "-Xmx4G",
+    "-cp",
+    "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/current-semantic-validation/20261010T173634423980Z:/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar",
+    "CurrentSemanticReasoner",
+    "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/current-semantic-validation/20261010T173634423980Z/example-08-source.rdf",
+    "consistency"
+  ],
+  "returncode": 2,
+  "execution_status": "completed",
+  "elapsed_seconds": 0.548,
+  "stdout": {
+    "path": "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stdout.log",
+    "sha256": "258f77488d484657a86405f0b75055b342e100a65e092dc3668b01010cc59c4c",
+    "bytes": 9754
+  },
+  "stderr": {
+    "path": "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

@@ -1,0 +1,87 @@
+CURRENT TRACK NOT YET PUBLICATION READY — HUMAN SEMANTIC REVIEW REQUIRED
+- Complete the 79-term human review queue, retaining explicit decisions and rationale evidence; 2 terms are deferred and 77 unreviewed.
+- Resolve 77 judgment-sensitive rationale proposals before treating them as adequate publication rationales.
+- No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.
+- Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Exact-closure example success is not established for every source example and the separate fixture.
+- Source and target approximate deductive-difference comparisons do not both have a valid PASS result.
+- Human approval of selected positive and negative semantic expectations is outstanding.
+- Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.
+- Invalid historical semantic reconciliation: reconciliation metadata hash differs: tests/test_current_semantic_validation.py
+- Stored semantic evidence hash differs: config/current-semantic-expectations.json
+- Stored semantic evidence hash differs: tests/test_current_semantic_validation.py
+- Stored semantic evidence hash differs: tools/current_semantic_validation.py
+- Cannot reconcile semantic execution source-hierarchy: Raw execution identity differs from required slot: source-hierarchy
+- Cannot reconcile semantic execution target-hierarchy: Raw execution identity differs from required slot: target-hierarchy
+- Cannot reconcile semantic execution aligned-hierarchy: Raw execution identity differs from required slot: aligned-hierarchy
+- Cannot reconcile semantic execution example-00-source: Raw execution identity differs from required slot: example-00-source
+- Cannot reconcile semantic execution example-00-aligned: Raw execution identity differs from required slot: example-00-aligned
+- Cannot reconcile semantic execution example-01-source: Raw execution identity differs from required slot: example-01-source
+- Cannot reconcile semantic execution example-01-aligned: Raw execution identity differs from required slot: example-01-aligned
+- Cannot reconcile semantic execution example-02-source: Raw execution identity differs from required slot: example-02-source
+- Cannot reconcile semantic execution example-02-aligned: Raw execution identity differs from required slot: example-02-aligned
+- Cannot reconcile semantic execution example-03-source: Raw execution identity differs from required slot: example-03-source
+- Cannot reconcile semantic execution example-03-aligned: Raw execution identity differs from required slot: example-03-aligned
+- Cannot reconcile semantic execution example-04-source: Raw execution identity differs from required slot: example-04-source
+- Cannot reconcile semantic execution example-04-aligned: Raw execution identity differs from required slot: example-04-aligned
+- Cannot reconcile semantic execution example-05-source: Raw execution identity differs from required slot: example-05-source
+- Cannot reconcile semantic execution example-05-aligned: Raw execution identity differs from required slot: example-05-aligned
+- Cannot reconcile semantic execution example-06-source: Raw execution identity differs from required slot: example-06-source
+- Cannot reconcile semantic execution example-06-aligned: Raw execution identity differs from required slot: example-06-aligned
+- Cannot reconcile semantic execution example-07-source: Raw execution identity differs from required slot: example-07-source
+- Cannot reconcile semantic execution example-07-aligned: Raw execution identity differs from required slot: example-07-aligned
+- Cannot reconcile semantic execution example-08-source: Raw execution identity differs from required slot: example-08-source
+- Cannot reconcile semantic execution example-08-aligned: Raw execution identity differs from required slot: example-08-aligned
+- Cannot reconcile semantic execution example-09-source: Raw execution identity differs from required slot: example-09-source
+- Cannot reconcile semantic execution example-09-aligned: Raw execution identity differs from required slot: example-09-aligned
+- Cannot reconcile semantic execution example-10-source: Raw execution identity differs from required slot: example-10-source
+- Cannot reconcile semantic execution example-10-aligned: Raw execution identity differs from required slot: example-10-aligned
+- Cannot reconcile semantic execution example-11-source: Raw execution identity differs from required slot: example-11-source
+- Cannot reconcile semantic execution example-11-aligned: Raw execution identity differs from required slot: example-11-aligned
+- Validation input bindings are missing, extra, or incomplete for the current candidate
+- Validation execution input changed: tests/test_current_assessment.py
+- Validation execution input changed: tests/test_current_semantic_validation.py
+- Validation execution input changed: tools/current_assessment.py
+- Validation execution input changed: tools/current_publication_readiness.py
+- Validation execution input changed: tools/current_semantic_validation.py
+- Command affected_integration_tests: expected_input_sha256 bindings missing or stale command inputs
+- Command affected_integration_tests: input_sha256 bindings missing or stale command inputs
+- Command affected_integration_tests: input_sha256_after bindings missing or stale command inputs
+- Command assessment: expected_input_sha256 bindings missing or stale command inputs
+- Command assessment: input_sha256 bindings missing or stale command inputs
+- Command assessment: input_sha256_after bindings missing or stale command inputs
+- Command current_focused_tests: expected_input_sha256 bindings missing or stale command inputs
+- Command current_focused_tests: input_sha256 bindings missing or stale command inputs
+- Command current_focused_tests: input_sha256_after bindings missing or stale command inputs
+- Command generation_freshness: expected_input_sha256 bindings missing or stale command inputs
+- Command generation_freshness: input_sha256 bindings missing or stale command inputs
+- Command generation_freshness: input_sha256_after bindings missing or stale command inputs
+- Command preservation: expected_input_sha256 bindings missing or stale command inputs
+- Command preservation: input_sha256 bindings missing or stale command inputs
+- Command preservation: input_sha256_after bindings missing or stale command inputs
+- Command semantic_stored_consistency: expected_input_sha256 bindings missing or stale command inputs
+- Command semantic_stored_consistency: input_sha256 bindings missing or stale command inputs
+- Command semantic_stored_consistency: input_sha256_after bindings missing or stale command inputs
+- Command sosa_2023_nonregression: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_2023_nonregression: input_sha256 bindings missing or stale command inputs
+- Command sosa_2023_nonregression: input_sha256_after bindings missing or stale command inputs
+- Command sosa_products: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_products: input_sha256 bindings missing or stale command inputs
+- Command sosa_products: input_sha256_after bindings missing or stale command inputs
+- Command sosa_source_version: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_source_version: input_sha256 bindings missing or stale command inputs
+- Command sosa_source_version: input_sha256_after bindings missing or stale command inputs
+- Command source_identity: expected_input_sha256 bindings missing or stale command inputs
+- Command source_identity: input_sha256 bindings missing or stale command inputs
+- Command source_identity: input_sha256_after bindings missing or stale command inputs
+- Command static_checks: expected_input_sha256 bindings missing or stale command inputs
+- Command static_checks: input_sha256 bindings missing or stale command inputs
+- Command static_checks: input_sha256_after bindings missing or stale command inputs
+- Command whitespace: expected_input_sha256 bindings missing or stale command inputs
+- Command whitespace: input_sha256 bindings missing or stale command inputs
+- Command whitespace: input_sha256_after bindings missing or stale command inputs
+- Required validation not run: full_repository_gate
+- Required validation not run: unit_tests
+- Retained historical semantic diagnostics lack pre-execution tickets and helper result envelopes. Their old code/input bindings are now stale, so they cannot certify a new semantic execution; rerun only with the reviewed closure and resolved profile/import blockers.
+- Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.

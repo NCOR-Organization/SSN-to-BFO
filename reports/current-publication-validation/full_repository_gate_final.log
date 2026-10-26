@@ -1,0 +1,239 @@
+$ make check
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+........................................................
+----------------------------------------------------------------------
+Ran 56 tests in 28.151s
+
+OK
+Current source/target/workbook/product/configuration identities: PASS
+{
+  "rationales": {
+    "existing_workbook_rationale_rows": 3,
+    "existing_workbook_rationale_terms": 3,
+    "human_review_required_proposals": 76,
+    "safe_documentary_proposals": 15,
+    "semantic_review_terms": 79
+  },
+  "status": "PASS",
+  "summary": {
+    "assertion_bearing_rows": 103,
+    "assessment_outcomes": {
+      "deferred": 2,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 0,
+      "no_direct_mapping": 2,
+      "unreviewed": 77
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 3,
+    "coverage_counts": {
+      "direct_formal_mapping": 69,
+      "explicit_blank": 2,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 15,
+      "rule_or_chain_route": 10,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 44,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 92,
+      "named": 199,
+      "some": 101,
+      "union": 16
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 2,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 3,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 34,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 2,
+      "final": 12,
+      "unreviewed": 77
+    },
+    "rows_with_expression_form": {
+      "intersection": 38,
+      "named": 75,
+      "some": 38,
+      "union": 15
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  }
+}
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.263s
+
+OK
+.........................
+----------------------------------------------------------------------
+Ran 25 tests in 19.211s
+
+OK
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+OK
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 5.392s
+
+OK
+..
+----------------------------------------------------------------------
+Ran 2 tests in 9.647s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.666s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK
+............
+----------------------------------------------------------------------
+Ran 12 tests in 1.027s
+
+OK
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.596s
+
+OK
+.......E
+======================================================================
+ERROR: setUpClass (tests.test_sosa_2023_build_release.Sosa2023ReleasePackageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_build_release.py", line 148, in setUpClass
+    cls.result = build.build_release_package(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 2306, in build_release_package
+    assemble_release_package(
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1994, in assemble_release_package
+    run_independent_reasoning(package_dir, work_root / 'reasoning', toolchain, repository_root=repository_root)
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1716, in run_independent_reasoning
+    raise ReleasePackageError(
+sosa_2023_release_runtime.ReleasePackageError: ERROR [HERMIT_FAILED] ro_mapping: {'return_code': 143, 'robot_output': '', 'reasoned_output_exists': False, 'reasoned_output_triples': None, 'unsatisfiable_classes': [], 'passed': False}
+
+----------------------------------------------------------------------
+Ran 7 tests in 313.382s
+
+FAILED (errors=1)
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: PASS
+
+==> Current source/target byte identities
+$ /opt/miniconda3/bin/python tools/current_source_identity.py
+Current source/target byte identities: PASS
+
+==> Current assessment inventory and report freshness
+$ /opt/miniconda3/bin/python tools/current_assessment.py
+Current assessment inventory and report freshness: PASS
+
+==> COMS row-identity focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_row_identity.py
+COMS row-identity focused tests: PASS
+
+==> COMS framework shadow-integration tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_framework_integration.py
+COMS framework shadow-integration tests: PASS
+
+==> SOSA source-version authority focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_source_version.py
+SOSA source-version authority focused tests: PASS
+
+==> Uniform product-role policy focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_product_role_policy.py
+Uniform product-role policy focused tests: PASS
+
+==> SOSA formal package-scope focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_release_scope.py
+SOSA formal package-scope focused tests: PASS
+
+==> Forthcoming SOSA COMS focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_check_sosa_next_mapping.py
+Forthcoming SOSA COMS focused tests: PASS
+
+==> SOSA-next maintained-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_products.py
+SOSA-next maintained-product focused tests: PASS
+
+==> SOSA-next catalog consumer-stack focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_consumer_stack.py
+SOSA-next catalog consumer-stack focused tests: PASS
+
+==> SOSA-2023 publication-metadata focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_publication_metadata.py
+SOSA-2023 publication-metadata focused tests: PASS
+
+==> SOSA-2023 formal-rendering focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_rendering.py
+SOSA-2023 formal-rendering focused tests: PASS
+
+==> SOSA-2023 release-manifest focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_manifest.py
+SOSA-2023 release-manifest focused tests: PASS
+
+==> SOSA-2023 release-package focused tests
+$ /opt/miniconda3/bin/python -m unittest tests.test_sosa_2023_release_runtime tests.test_sosa_2023_build_release
+SOSA-2023 release-package focused tests: FAIL (1)
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: PASS
+- Current source/target byte identities: PASS
+- Current assessment inventory and report freshness: PASS
+- COMS row-identity focused tests: PASS
+- COMS framework shadow-integration tests: PASS
+- SOSA source-version authority focused tests: PASS
+- Uniform product-role policy focused tests: PASS
+- SOSA formal package-scope focused tests: PASS
+- Forthcoming SOSA COMS focused tests: PASS
+- SOSA-next maintained-product focused tests: PASS
+- SOSA-next catalog consumer-stack focused tests: PASS
+- SOSA-2023 publication-metadata focused tests: PASS
+- SOSA-2023 formal-rendering focused tests: PASS
+- SOSA-2023 release-manifest focused tests: PASS
+- SOSA-2023 release-package focused tests: FAIL
+
+Validation suite: FAIL (1 failed step)
+make: *** [validate] Error 1

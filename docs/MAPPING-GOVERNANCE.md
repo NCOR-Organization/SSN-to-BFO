@@ -8,6 +8,12 @@ Root-level `SSN2BFO.ttl` and the maintained modular products are generated artif
 
 Only governed COMS content is authoritative. The generator does not treat explanatory documents, historical workbooks, or the pre-COMS ontology as competing mapping authorities.
 
+## Current-track publication assessment
+
+`config/current-ssn-sosa-identity.json` freezes local source, target, workbook, product, and scope bytes for the current SSN/SOSA assessment. `mappings/current-ssn-sosa-assessment.json` records one assessment per in-scope source term independently of assertion-oriented workbook rows. Neither file introduces mapping axioms. Assessment completeness, formal coverage, row identity, and human semantic review are separate checks.
+
+The current scoped inventory excludes datatype properties and deprecated terms, preserving the existing source query policy. A domain/range-only record is a typing fact, not an adopted semantic outcome. Blank rows retain row identity and explicit assessment disposition; unresolved disposition remains a publication blocker even when row identity passes. Proposed rationales and semantic changes require the human review documented in `reports/current-ssn-sosa-human-review.md`. No proposal in that report changes the workbook.
+
 ## Historical sources
 
 The manually maintained ontology that preceded COMS authority is frozen at:
@@ -34,6 +40,16 @@ urn:uuid:xxxxxxxx-xxxx-4xxx-[89ab]xxx-xxxxxxxxxxxx
 A RowID identifies the mapping record and remains unchanged when the row moves or receives an intentional in-place correction.
 
 A separate canonical source-expression SHA-256 excludes row location and `coms:Reasoning`. It detects logical mapping changes without treating rationale edits or row movement as identity changes.
+
+The current SSN/SOSA workbook also has a stricter project-local documentary-evolution
+projection: ordered sheet identities and row positions, with the exact A/B/C/E
+values (`sssom:subject_id`, `sssom:predicate_id`, `coms:Target`, `coms:RowID`).
+Unlike per-axiom identity, this projection detects row reordering. Column D is
+documentary rationale. A changed XLSX hash is accepted for an existing human
+decision only through an explicit, validated D-only transition backed by the
+old and new workbook snapshots. Equal semantic hashes alone are insufficient.
+See [the local custody model](CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md#documentary-workbook-evolution).
+This does not change generalized COMS or authorize semantic edits.
 
 Current governance rules are:
 

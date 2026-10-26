@@ -1,0 +1,18 @@
+Local synthetic package CLI diagnostic; no commit, tag, or published release.
+Started UTC: 2026-10-10T17:41:56.682497+00:00
+Working directory: /Users/alecsculley/Documents/GitHub/SSN-to-BFO
+PYTHONHASHSEED=0; PYTHONDONTWRITEBYTECODE=1
+Command: /opt/miniconda3/bin/python -B tools/build_release.py --release-id 2099-01-02 --release-date 2099-01-02 --source-commit 0123456789abcdef0123456789abcdef01234567 --git-tag v2099-01-02 --notes /Users/alecsculley/Documents/GitHub/SSN-to-BFO/release-notes/SYNTHETIC-2099-01-02.md --output-dir /tmp/publication-package-cli-diagnostic-dgsrnv_j/0/2099-01-02
+Exit code: 0
+Current report/inventory hashes before: {"mappings/current-ssn-sosa-assessment.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d", "reports/coms-generation-validation.md": "fef66acfc7cf970c540f212971e790ab92f612461441fe020f680fb7ecc61bd0", "reports/coms-product-dispositions.json": "d1bcb2fb56b5edf3b007e101cba2c05735d98d096f77cf6fc793fcf10e94df44"}
+Current report/inventory hashes after: {"mappings/current-ssn-sosa-assessment.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d", "reports/coms-generation-validation.md": "fef66acfc7cf970c540f212971e790ab92f612461441fe020f680fb7ecc61bd0", "reports/coms-product-dispositions.json": "d1bcb2fb56b5edf3b007e101cba2c05735d98d096f77cf6fc793fcf10e94df44"}
+Reports/inventory unchanged: True
+
+STDOUT:
+Release package: /tmp/publication-package-cli-diagnostic-dgsrnv_j/0/2099-01-02
+Manifest SHA-256: 8c503bb26d1df1be0e929efb9393fd21ee17b04debbbf706735591328d895f1d
+Catalog SHA-256: 6051b8e70c2c19e93a4fd67c3e6ca7c5d8b0435be5b0d5026387b1df95e5e176
+SHA256SUMS SHA-256: f8d0ab5b56e5c7d29a053d3438b0180108665a55dc9e1a77be516d96b97b87cb
+
+STDERR:
+

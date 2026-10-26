@@ -1,0 +1,12 @@
+@prefix ex: <http://example.org/sample-test/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sampling: <http://www.w3.org/ns/sosa/sampling/> .
+
+# Separate synthetic fixture matching tools/test_instance_data.py.
+# This is not a source example and is never counted in the source corpus.
+ex:sample-1 a sosa:Sample .
+ex:sample-2 a sosa:Sample .
+ex:derived-from a sampling:RelationshipNature .
+ex:sample-relationship-1 a sampling:SampleRelationship ;
+    sampling:relatedSample ex:sample-2 ;
+    sampling:natureOfRelationship ex:derived-from .

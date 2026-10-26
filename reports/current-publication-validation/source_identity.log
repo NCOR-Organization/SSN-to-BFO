@@ -1,0 +1,2 @@
+$ /opt/miniconda3/bin/python -B tools/current_source_identity.py
+Current source/target/workbook/product/configuration identities: PASS

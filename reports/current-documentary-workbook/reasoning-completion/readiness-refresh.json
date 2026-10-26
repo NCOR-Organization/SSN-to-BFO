@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/miniconda3/bin/python3.12",
+    "-B",
+    "tools/current_publication_readiness.py",
+    "--write"
+  ],
+  "exit_code": 1,
+  "interpretation": "EXPECTED_NOT_READY: unchanged semantic review and full-gate evidence blockers; documentary completion validation passes.",
+  "log": "reports/current-documentary-workbook/reasoning-completion/readiness-refresh.log",
+  "log_sha256": "54d7e569c191ee5fb8bf435501ebfd4d588a9858f3e139d8cc0cccc6bcebe2a3",
+  "report_sha256": "3b17062a7ddcc4bcac999a4486ccbcf45693c7812b2af710b5c3e6201952c896",
+  "ledger_sha256": "b85ac10bacc431282c52af9a0d135e61066822eac9e76885b9783bd6a84541c0"
+}

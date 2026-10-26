@@ -1,0 +1,102 @@
+{
+  "parent_test_pid": 29599,
+  "initial_reasoner_limit_seconds": 1800,
+  "subsequent_reasoner_limit_seconds": 300,
+  "policy": "Initial RO repeat capped early after completed original N reasoning evidence; all further own SOSA-2023 RO HermiT calls receive a 300-second diagnostic cap. Incomplete technical validation, never semantic inconsistency or PASS.",
+  "status": "parent_finished",
+  "updated_at_utc": "2026-10-10T19:03:02.144064+00:00",
+  "attempts": [
+    {
+      "pid": 36854,
+      "command": "/usr/bin/java -Xmx4G -Djava.net.useSystemProxies=true -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=9 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=9 -Dftp.proxyHost=127.0.0.1 -Dftp.proxyPort=9 -Dhttp.nonProxyHosts= -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --catalog /Users/alecsculley/Documents/GitHub/SSN-to-BFO/src/sosa-next/catalog-v001.xml --input /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl --reasoner HermiT --dump-unsatisfiable /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+      "first_observed_at_utc": "2026-10-10T18:14:46.010487+00:00",
+      "first_observed_elapsed_seconds": 179,
+      "status": "TIMEOUT",
+      "limit_seconds": 1800,
+      "last_observed_elapsed_seconds": 774,
+      "closure_retention": {
+        "original_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl",
+        "available": true,
+        "original_sha256": "4142543209f7461c1df3fb8743564530429f70525a91751ead12b61332322edb",
+        "original_bytes": 789816,
+        "gzip_path": "reports/current-publication-validation/unit_tests_final-timeout-closures/36854-closure.ttl.gz",
+        "gzip_sha256": "2e14b9a008fe75bd10c4bfe15ad39013f775424c1e16dc06760d9740d5c080e5",
+        "gzip_bytes": 148654
+      },
+      "reasoned_retention": {
+        "original_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+        "available": false
+      },
+      "unsatisfiable_retention": {
+        "original_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-espj6sfo/.sosa-2023-release-package-build-dmi2642n/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl",
+        "available": false
+      },
+      "actual_elapsed_seconds_at_cap": 774,
+      "capped_at_utc": "2026-10-10T18:24:41.960743+00:00",
+      "signal": "SIGTERM",
+      "original_limit_seconds": 1800,
+      "revised_cap_reason": "Authorized bounded diagnostic repeat: avoiding further unbounded duplication after completed original RO evidence; full suite already has independently confirmed missing-SKOS failure. This interruption is incomplete technical validation, not semantic failure or PASS.",
+      "completed_original_evidence": {
+        "path": "reports/current-publication-validation/initial-sosa-2023-first-candidate-manifest.json",
+        "sha256": "29706f4926a887f5e62dc1766e4120f54d44a19c3eed988488d5c553e6f4e9ee"
+      }
+    },
+    {
+      "pid": 39667,
+      "command": "/usr/bin/java -Xmx4G -Djava.net.useSystemProxies=true -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=9 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=9 -Dftp.proxyHost=127.0.0.1 -Dftp.proxyPort=9 -Dhttp.nonProxyHosts= -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --catalog /Users/alecsculley/Documents/GitHub/SSN-to-BFO/src/sosa-next/catalog-v001.xml --input /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl --reasoner HermiT --dump-unsatisfiable /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl --output /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+      "first_observed_at_utc": "2026-10-10T18:25:02.123005+00:00",
+      "first_observed_elapsed_seconds": 8,
+      "status": "TIMEOUT",
+      "limit_seconds": 300,
+      "closure_retention": {
+        "original_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl",
+        "available": true,
+        "original_sha256": "9450fd1fd7a09e63a92ad8b7c99d5bc63e844e9a010454bc53cea9714e9911ea",
+        "original_bytes": 789816,
+        "gzip_path": "reports/current-publication-validation/unit_tests_final-timeout-closures/39667-closure.ttl.gz",
+        "gzip_sha256": "654fabe76a77f8b02833e894c64dc6bf4fe6beed4c9d931b6e53673d51e3b905",
+        "gzip_bytes": 148962
+      },
+      "reasoned_retention": {
+        "original_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+        "available": false
+      },
+      "unsatisfiable_retention": {
+        "original_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-ync9jsy8/package/.sosa-2023-release-package-build-zsw_2tvs/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl",
+        "available": false
+      },
+      "last_observed_elapsed_seconds": 1155,
+      "actual_elapsed_seconds_at_cap": 1155,
+      "capped_at_utc": "2026-10-10T18:44:09.515869+00:00",
+      "signal": "SIGTERM",
+      "revised_cap_reason": "Authorized 300-second diagnostic cap on repeated SOSA-2023 RO reasoning; incomplete technical validation, never semantic failure or PASS.",
+      "cap_delay_note": "Recorded actual elapsed exceeds the configured diagnostic limit. The watchdog observed a large wall-clock jump between polls; cause was not established. No claim that termination occurred at the configured limit."
+    },
+    {
+      "pid": 42450,
+      "command": "/usr/bin/java -Xmx4G -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --reasoner HermiT --input /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-crvugub4/sosa-2023-ro-fixed-closure.ttl --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-crvugub4/sosa-2023-ro-fixed-closure-reasoned.ttl",
+      "first_observed_at_utc": "2026-10-10T18:57:43.869315+00:00",
+      "first_observed_elapsed_seconds": 0,
+      "status": "TIMEOUT",
+      "limit_seconds": 300,
+      "closure_retention": {
+        "original_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-crvugub4/sosa-2023-ro-fixed-closure.ttl",
+        "available": true,
+        "original_sha256": "6707537d2246672d3a8ca146831aee3e062636b92d2970454b0eee8fbc20de9d",
+        "original_bytes": 786397,
+        "gzip_path": "reports/current-publication-validation/unit_tests_final-timeout-closures/42450-closure.ttl.gz",
+        "gzip_sha256": "f371dcc2583718497551839fcb125b1f13ca0136a2c0609abfdf5e5f8b475825",
+        "gzip_bytes": 148648
+      },
+      "reasoned_retention": {
+        "original_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-crvugub4/sosa-2023-ro-fixed-closure-reasoned.ttl",
+        "available": false
+      },
+      "last_observed_elapsed_seconds": 300,
+      "actual_elapsed_seconds_at_cap": 300,
+      "capped_at_utc": "2026-10-10T19:02:43.659630+00:00",
+      "signal": "SIGTERM",
+      "revised_cap_reason": "Authorized 300-second diagnostic cap on repeated SOSA-2023 RO reasoning; incomplete technical validation, never semantic failure or PASS."
+    }
+  ]
+}

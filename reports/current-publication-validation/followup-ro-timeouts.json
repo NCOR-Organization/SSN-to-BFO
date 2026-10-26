@@ -1,0 +1,47 @@
+[
+  {
+    "classification": "TIMEOUT \u2014 NOT COMPLETED; no semantic consistency conclusion",
+    "cap_seconds": 300,
+    "cap_reason": "Bounded diagnostic repeat after an earlier long SOSA-2023 RO package HermiT attempt completed. The planned repeat cap was 300 seconds; actual observed elapsed is recorded separately. This interrupted attempt is not treated as a completed test.",
+    "observed_elapsed": "05:13",
+    "pid": 37572,
+    "parent_pid": 22453,
+    "ancestor_pid": 22442,
+    "recorded_at_utc": "2026-10-10T18:22:27.375484+00:00",
+    "reasoner_command": "/usr/bin/java -Xmx4G -Djava.net.useSystemProxies=true -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=9 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=9 -Dftp.proxyHost=127.0.0.1 -Dftp.proxyPort=9 -Dhttp.nonProxyHosts= -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --catalog /Users/alecsculley/Documents/GitHub/SSN-to-BFO/src/sosa-next/catalog-v001.xml --input /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-dvrrkqqe/.sosa-2023-release-package-build-i1vid_sa/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl --reasoner HermiT --dump-unsatisfiable /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-dvrrkqqe/.sosa-2023-release-package-build-i1vid_sa/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-release-package-tests-dvrrkqqe/.sosa-2023-release-package-build-i1vid_sa/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+    "closure_bytes": 789816,
+    "closure_sha256": "4ca7f664450c6fffecacbef199f0459ed8a4e620014188ad9acd9628fda1578b",
+    "closure_snapshot": "reports/current-publication-validation/followup-ro-timeout-37572.ttl.gz",
+    "signal": "SIGTERM"
+  },
+  {
+    "classification": "TIMEOUT \u2014 NOT COMPLETED; no semantic consistency conclusion",
+    "cap_seconds": 300,
+    "cap_reason": "Bounded diagnostic repeat after an earlier long SOSA-2023 RO package HermiT attempt completed. The planned repeat cap was 300 seconds; actual observed elapsed is recorded separately. This interrupted attempt is not treated as a completed test.",
+    "observed_elapsed": "05:03",
+    "pid": 39141,
+    "parent_pid": 22453,
+    "ancestor_pid": 22442,
+    "recorded_at_utc": "2026-10-10T18:27:43.617517+00:00",
+    "reasoner_command": "/usr/bin/java -Xmx4G -Djava.net.useSystemProxies=true -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=9 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=9 -Dftp.proxyHost=127.0.0.1 -Dftp.proxyPort=9 -Dhttp.nonProxyHosts= -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --catalog /Users/alecsculley/Documents/GitHub/SSN-to-BFO/src/sosa-next/catalog-v001.xml --input /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-chkzkfdx/package/.sosa-2023-release-package-build-s7u64zci/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/closure.ttl --reasoner HermiT --dump-unsatisfiable /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-chkzkfdx/package/.sosa-2023-release-package-build-s7u64zci/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/unsatisfiable.ttl --output /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-real-archive-integration-chkzkfdx/package/.sosa-2023-release-package-build-s7u64zci/.2099-01-02-sosa-2023-build-work/reasoning/ro_mapping/reasoned.ttl",
+    "closure_bytes": 789816,
+    "closure_sha256": "9beb47e6eaeeb87960d0d5dcd0fc1280ac8b6f6cab0fbcabbccb9d82881494c0",
+    "closure_snapshot": "reports/current-publication-validation/followup-ro-timeout-39141.ttl.gz",
+    "signal": "SIGTERM"
+  },
+  {
+    "classification": "TIMEOUT \u2014 NOT COMPLETED; no semantic consistency conclusion",
+    "cap_seconds": 300,
+    "cap_reason": "Bounded diagnostic repeat after an earlier long SOSA-2023 RO package HermiT attempt completed. The planned repeat cap was 300 seconds; actual observed elapsed is recorded separately. This interrupted attempt is not treated as a completed test.",
+    "observed_elapsed": "15:35",
+    "pid": 40883,
+    "parent_pid": 22453,
+    "ancestor_pid": 22442,
+    "recorded_at_utc": "2026-10-10T18:44:12.059352+00:00",
+    "reasoner_command": "/usr/bin/java -Xmx4G -jar /Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar reason --reasoner HermiT --input /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-t15q7uka/sosa-2023-ro-fixed-closure.ttl --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/sosa-2023-ro-hermit-t15q7uka/sosa-2023-ro-fixed-closure-reasoned.ttl",
+    "closure_bytes": 786397,
+    "closure_sha256": "abfe1fa8f17f3233ebcb5e024cad1579bbc18ada45929cb0a29831c7da42c38b",
+    "closure_snapshot": "reports/current-publication-validation/followup-ro-timeout-40883.ttl.gz",
+    "signal": "SIGTERM"
+  }
+]

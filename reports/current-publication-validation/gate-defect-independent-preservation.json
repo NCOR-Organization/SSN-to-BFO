@@ -1,0 +1,844 @@
+{
+  "groups": {
+    "current_mapping_semantics": {
+      "count": 6,
+      "changes": [],
+      "hashes": {
+        "mappings/SSN2BFO-COMS.xlsx": {
+          "sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+          "bytes": 12372
+        },
+        "SSN2BFO.ttl": {
+          "sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+          "bytes": 177684
+        },
+        "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": {
+          "sha256": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+          "bytes": 7623
+        },
+        "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": {
+          "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+          "bytes": 19183
+        },
+        "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": {
+          "sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+          "bytes": 153549
+        },
+        "rules/ssn-hasproperty-conditional-mapping.rq": {
+          "sha256": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+          "bytes": 2286
+        }
+      }
+    },
+    "sources_and_targets": {
+      "count": 5,
+      "changes": [],
+      "hashes": {
+        "imports/sosa.ttl": {
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+          "bytes": 34854
+        },
+        "imports/sosa-sampling.ttl": {
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+          "bytes": 3604
+        },
+        "imports/ssn.ttl": {
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+          "bytes": 38450
+        },
+        "imports/ssn-systems.ttl": {
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+          "bytes": 41076
+        },
+        "imports/cco.ttl": {
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+          "bytes": 1229197
+        }
+      }
+    },
+    "sosa_2023": {
+      "count": 49,
+      "changes": [],
+      "hashes": {
+        "config/sosa-2023-publication-metadata.toml": {
+          "sha256": "864c52455bfbc06ddaa0f10213be290dcdcb53fdb68a3f8e91b3f5a627ddb229",
+          "bytes": 2737
+        },
+        "config/sosa-2023-release-manifest-schema-v1.json": {
+          "sha256": "5b75bfbd2a074b65a611f7ffcad15d5834df04319de8dca016b326fc14402482",
+          "bytes": 47562
+        },
+        "config/sosa-2023-ro-product.toml": {
+          "sha256": "376a139f934de7be8c45f0540f52b7ff2c92ecd4cff31ff03e36f8a432dd1263",
+          "bytes": 572
+        },
+        "config/sosa-2023-ro-source-version.toml": {
+          "sha256": "86f175390974f7b51bfeaab2b3f346aad266dfa9adf8c192363e37f1e96690e4",
+          "bytes": 629
+        },
+        "config/sosa-release-scope.toml": {
+          "sha256": "24a9ca3923247debf666b6aeb8b6fe96f57df574c7a447e29277d3832d22fb94",
+          "bytes": 539
+        },
+        "config/sosa-source-version.toml": {
+          "sha256": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+          "bytes": 2466
+        },
+        "mappings/SOSA-next-to-BFO-COMS.xlsx": {
+          "sha256": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
+          "bytes": 22004
+        },
+        "mappings/SOSA-next-to-RO-COMS.xlsx": {
+          "sha256": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
+          "bytes": 12497
+        },
+        "releases/sosa-next/sosa-bfo-mapping.ttl": {
+          "sha256": "1ae415bc96940e4007d064102f556aa544593616a0eff984534406028b846efb",
+          "bytes": 23352
+        },
+        "releases/sosa-next/sosa-cco-extension.ttl": {
+          "sha256": "53a7cc6c0f664e51bf9f7ac28e3d067fc4fdcc750e22a34fe5c12c766e51dc19",
+          "bytes": 18538
+        },
+        "releases/sosa-next/sosa-integrated.ttl": {
+          "sha256": "3f502821476478252cdd9feb316b47612daa473e511597970a1351617d5cfc12",
+          "bytes": 40843
+        },
+        "releases/sosa-next/sosa-ro-mapping.ttl": {
+          "sha256": "1747563c4bba01a0c6b34bd61660a1f0c9026c266cc147991e74bc1d314ac388",
+          "bytes": 1230
+        },
+        "reports/sosa-2023-ro-mapping-decisions.md": {
+          "sha256": "de720f911f169c672e005e8714c280fd35f8d152b93fac29f74dde3bcb498193",
+          "bytes": 19489
+        },
+        "reports/sosa-actuation-agent-unsat-explanation.md": {
+          "sha256": "0156aba20f1464c7274bf81587600fd2395abacea262f1d064c014899da7a67a",
+          "bytes": 12950
+        },
+        "reports/sosa-import-closure-fidelity-audit.md": {
+          "sha256": "ff8b67cf78d0664ce7a3ea2482031c4be91500c70a87f4bd78409e4791084d52",
+          "bytes": 8118
+        },
+        "reports/sosa-inverse-property-pairs-full-closure-analysis.md": {
+          "sha256": "d240ae533b0dfc390eb01a2598b464c8bab2ca537da5d0622f3a61922f72a09f",
+          "bytes": 17305
+        },
+        "reports/sosa-next-crosswalk-reconciliation.csv": {
+          "sha256": "7baa36709043a6f24e4fe14134b1a23f248138458f27c4c3c06ed01fb6d96647",
+          "bytes": 159663
+        },
+        "reports/sosa-next-crosswalk-reconciliation.md": {
+          "sha256": "0817a644868d759487325b55fda05b64c3e88172c3cd0cfcea2254d6efa0e5a5",
+          "bytes": 37999
+        },
+        "reports/sosa-next-formal-release-integration-audit.md": {
+          "sha256": "a7c17ca19f55edc6483f90a9c1262d8e9e8efdff130c24d0daaa988429c7345d",
+          "bytes": 16544
+        },
+        "reports/sosa-next-product-contract.md": {
+          "sha256": "900401f771a1c99c5aff51441b677b7a28e395ad0956d1a27f7d87f9252f1b5c",
+          "bytes": 17161
+        },
+        "reports/sosa-release-package-scope-decision.md": {
+          "sha256": "6c5fc1859feba2d33ecfb859378578033a421aeafe7fb80b10c1d80a2ac319d0",
+          "bytes": 2925
+        },
+        "reports/sosa-sensor-version-alignment-deferral.md": {
+          "sha256": "f4d9ea7c8b4f12c210c2c444177fea6a34e6080bef0d95cd5360f85667ed5a5f",
+          "bytes": 7248
+        },
+        "reports/sosa-sensor-version-alignment-resolution.md": {
+          "sha256": "cd51eeac2b611bc0cf63f9709e0f3f245cfd3ba6bff8b1a71a24c77082580b4d",
+          "bytes": 16660
+        },
+        "reports/sosa-source-version-identity-decision.md": {
+          "sha256": "3870b3e50bfd757c7821b762df6a6579c24a28f5a1598236c4ce98a6d5db6a1a",
+          "bytes": 4770
+        },
+        "src/sosa-next/Makefile": {
+          "sha256": "cd975edd5052f35cffa4c21a49fa5b5bd7e189778ec1557e5d7335235acd4905",
+          "bytes": 5613
+        },
+        "src/sosa-next/build/artifacts/.gitkeep": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "src/sosa-next/catalog-v001.xml": {
+          "sha256": "ddfddae98780a207878765b5f5d2d7fc96238cca15322bba01d1f4908507a5d5",
+          "bytes": 2275
+        },
+        "src/sosa-next/docs/README.md": {
+          "sha256": "490305af2151aa60729f5d5fbd19081e7891f9716380620df58f72698f7a79ef",
+          "bytes": 4545
+        },
+        "src/sosa-next/examples/README.md": {
+          "sha256": "9c6f8962cc714c27f45fa4e5cf9ab0bb86b6670bf121c9ec7cb592348fe33df1",
+          "bytes": 124
+        },
+        "src/sosa-next/imports/README.md": {
+          "sha256": "5b147e80efb0fe82f9296a6dc270e542d901f935b074f233a9d420d4c34877e5",
+          "bytes": 3090
+        },
+        "src/sosa-next/imports/cco.ttl": {
+          "sha256": "0daf917353420073ddd9bbd581c7fb84effdc050b934a7a4678cd34dda708f26",
+          "bytes": 1976585
+        },
+        "src/sosa-next/imports/ro-full.owl": {
+          "sha256": "debfb46f91fa1ed8e1af02cf087ece8d02983c37789bfd027b47c2e8c8a5f179",
+          "bytes": 1215600
+        },
+        "src/sosa-next/imports/sample-relations.ttl": {
+          "sha256": "0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32",
+          "bytes": 2981
+        },
+        "src/sosa-next/imports/sosa-actuation.ttl": {
+          "sha256": "18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5",
+          "bytes": 13985
+        },
+        "src/sosa-next/imports/sosa-common.ttl": {
+          "sha256": "31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa",
+          "bytes": 32245
+        },
+        "src/sosa-next/imports/sosa-deprecated.ttl": {
+          "sha256": "5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987",
+          "bytes": 3108
+        },
+        "src/sosa-next/imports/sosa-observation.ttl": {
+          "sha256": "da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3",
+          "bytes": 20572
+        },
+        "src/sosa-next/imports/sosa-sampling.ttl": {
+          "sha256": "82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70",
+          "bytes": 21850
+        },
+        "src/sosa-next/imports/sosa-source-declaration-overlay.ttl": {
+          "sha256": "5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2",
+          "bytes": 580
+        },
+        "src/sosa-next/imports/sosa-system.ttl": {
+          "sha256": "1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf",
+          "bytes": 6460
+        },
+        "src/sosa-next/imports/sosa.ttl": {
+          "sha256": "a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305",
+          "bytes": 2997
+        },
+        "src/sosa-next/sosa-mappings-edit.ttl": {
+          "sha256": "4999c2e73ef3b4959f4d0c3b4d0a133a1293dcc5920363ae9c34c7182d2dde76",
+          "bytes": 763
+        },
+        "src/sosa-next/sparql/artifact-metadata.rq": {
+          "sha256": "0cab21a3e3d621d5206a7a930c1a84499055ac8c61e7f642b36f2ff14f8aab39",
+          "bytes": 1241
+        },
+        "src/sosa-next/sparql/construct/README.md": {
+          "sha256": "dc2eced69beb485f6f92b12c1e91c7d73628a095f57ddcc70ffb315b52ff8b69",
+          "bytes": 114
+        },
+        "src/sosa-next/sparql/export/sssom-bfo-mappings.rq": {
+          "sha256": "003330a5b8417f2cbb620a10bcae808760ff1f1df15a290c0c277932ceb0b777",
+          "bytes": 801
+        },
+        "src/sosa-next/sparql/export/sssom-cco-mappings.rq": {
+          "sha256": "52f61637bb62b6a177a28ed6f10626f749e462eccffcb80d6612b71d714aab09",
+          "bytes": 976
+        },
+        "src/sosa-next/sparql/export/sssom-mappings.rq": {
+          "sha256": "b1a4c604bec315b2cb4e87d0f70cdd6215f0dcca1a0a821479d0e7b409805995",
+          "bytes": 1185
+        },
+        "src/sosa-next/sparql/no-template-leakage.rq": {
+          "sha256": "c2e19e0ca1784b472ef08a5bcbaeacf22a767f84845b7c3ea0b1f5e0d0e10b89",
+          "bytes": 834
+        },
+        "src/sosa-next/sparql/report/unmapped-terms.rq": {
+          "sha256": "4a6a20d8e565a2be3690fb63a4de58854dc95b36beaea1aa941f618f78143f45",
+          "bytes": 494
+        }
+      }
+    },
+    "historical": {
+      "count": 112,
+      "changes": [],
+      "hashes": {
+        "legacy/SSN2BFO-pre-COMS.ttl": {
+          "sha256": "11c2db8b7e389bf443046c4a9940865529e56f63a19a4a515e6a52c2a8212a59",
+          "bytes": 123957
+        },
+        "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": {
+          "sha256": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
+          "bytes": 26813
+        },
+        "legacy/workbooks/FINAL_SOSA 2023 to BFO-CCO .xlsx": {
+          "sha256": "4cdb6806fc9b6461a99e91e5faeffd0afa969a454cd598ef28d58cd8aef433fa",
+          "bytes": 38465
+        },
+        "reports/actuation-agent-property-mapping-deferral.md": {
+          "sha256": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
+          "bytes": 5577
+        },
+        "reports/actuation-range-mapping-correction-evaluation.md": {
+          "sha256": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
+          "bytes": 14965
+        },
+        "reports/actuation-range-simplification-evaluation.md": {
+          "sha256": "820f6bed71113cdf2c1dfe5d376fe61a68a848c92b8b2ea4e374e38ee4e451ab",
+          "bytes": 11497
+        },
+        "reports/actuation-range-simplification-implementation.md": {
+          "sha256": "53cf2dbe66689001a8fc02af62d538256676d125c10390b74ac8b84b1266f05d",
+          "bytes": 7463
+        },
+        "reports/all-mapping-changes-and-rationales.md": {
+          "sha256": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
+          "bytes": 44595
+        },
+        "reports/all-source-domain-range-operationalization-evaluation.md": {
+          "sha256": "fbdf4f75823b4d0a4f6d4cfea1e521c6c5220fc10a9b8a724e384353f0d2ea1b",
+          "bytes": 12213
+        },
+        "reports/coms-automatic-validation-setup.md": {
+          "sha256": "c37acc9580d8464464f8009e1f3f66f89047614692a78f8144f749a9c4ea5996",
+          "bytes": 16483
+        },
+        "reports/coms-frequency-correction-validation.md": {
+          "sha256": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
+          "bytes": 4530
+        },
+        "reports/coms-source-term-coverage.md": {
+          "sha256": "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c",
+          "bytes": 3676
+        },
+        "reports/coms-vs-pre-coms-legacy-diff.md": {
+          "sha256": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+          "bytes": 32175
+        },
+        "reports/deferred-candidate-domain-range-causality-retest.md": {
+          "sha256": "7ecbf24406a58b7b6032553fb490d4432c1332f43aac74a0ad6c6e182fb220eb",
+          "bytes": 52311
+        },
+        "reports/deferred-mapping-reactivation-plan.md": {
+          "sha256": "7a3810daab1fd8fb528a231771ef90ca1d07cdc5dff7b8094d1b83a6f0d1c8c6",
+          "bytes": 13694
+        },
+        "reports/deferred-reactivation-results.md": {
+          "sha256": "c15176fc3988b3a7a471315d68d863ad97778680c73df56699827d7a15aca378",
+          "bytes": 5239
+        },
+        "reports/elk-instance-mapping-entailments.md": {
+          "sha256": "18bcaf68bd32a6d0b5d602dcfc4370466b6085c7f6db66c53216d2c1c01c9905",
+          "bytes": 12426
+        },
+        "reports/full-sosa-closure-hermit-check.md": {
+          "sha256": "c98ced338ec23dc3d780ada4700c2d86c2ef4271c429601ea01267ea94ed18e8",
+          "bytes": 1426
+        },
+        "reports/hasproperty-observes-mapping-review.md": {
+          "sha256": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
+          "bytes": 2164
+        },
+        "reports/hermit-clean-baseline-after-deferrals.md": {
+          "sha256": "679efc73381e0c7ae31527dd2dd4c573ce9ae86a5a838290a65fad8df9d61ba5",
+          "bytes": 4831
+        },
+        "reports/hermit-clean-source-domain-range-axioms.md": {
+          "sha256": "e2e4d5b4e94d8a1789749fa669640d4e81d3b2f4d8a29630da55590ec5ff42ce",
+          "bytes": 7792
+        },
+        "reports/hermit-core-sosa-sensor-cluster-explanation.md": {
+          "sha256": "03468a05a305a87847fade34e7ae82d19ea6b93c395244de159129109dced0bf",
+          "bytes": 20460
+        },
+        "reports/hermit-hasInput-reactivation-canary.md": {
+          "sha256": "fd6aaf8e2cec03164dd1a1029a7e038649315f7d85206d84a1d6d113ec441263",
+          "bytes": 4961
+        },
+        "reports/hermit-hasOperatingProperty-reactivation-canary.md": {
+          "sha256": "d8c5becb197f719e2e82d42ae8a1ddd0cc1073507ec2a6edd3b5af261778459a",
+          "bytes": 4536
+        },
+        "reports/hermit-hasOutput-reactivation-canary.md": {
+          "sha256": "c340dc16d1f7ae48b78eaceb3837789a57a0300f381bdadff80dca20f1424135",
+          "bytes": 5411
+        },
+        "reports/hermit-hasProperty-domain-range-architecture.md": {
+          "sha256": "c399c243b663c331ba60b72d68d00f4271ef0b670be2f1a9b02445521ba305d2",
+          "bytes": 11496
+        },
+        "reports/hermit-hasSurvivalProperty-reactivation-canary.md": {
+          "sha256": "f9c6e535d14413516fca690144fecf176a2fd8cd21e4b8d5ed1ef52087100142",
+          "bytes": 5676
+        },
+        "reports/hermit-hasSystemProperty-alternatives.md": {
+          "sha256": "2ba345d3c6cdcd119255c7eb7a94f6b3a230b4e42a3dc914c4a143650a87cb6f",
+          "bytes": 10957
+        },
+        "reports/hermit-hasSystemProperty-explanation.md": {
+          "sha256": "9e3e500fbff4b8ae57c01a7d1d6e18851cb1c60ac2c1ab8bb9c85486bc765e06",
+          "bytes": 14222
+        },
+        "reports/hermit-hasSystemProperty-reactivation-canary.md": {
+          "sha256": "d1afd13ac34640ad03517d3e47028667343bab232930631a214e8e5f01838d4f",
+          "bytes": 6190
+        },
+        "reports/hermit-input-output-deferral-evaluation.md": {
+          "sha256": "22238d4293aee1a74d708d6aa33ebd839d2322d9c0059c17785f64486cbf5c2f",
+          "bytes": 9113
+        },
+        "reports/hermit-input-output-mapping-evaluation.md": {
+          "sha256": "7bd33f231e5eb561b9be84a9fb80382e3f7f2da847a316afb5395ffe3783e6c5",
+          "bytes": 21148
+        },
+        "reports/hermit-observation-sensor-stimulus-deferral-evaluation.md": {
+          "sha256": "f71b945240f81a3b8f8fc697711aa1f0c371d182f46c5989a34cc4fe28919ba0",
+          "bytes": 19112
+        },
+        "reports/hermit-observation-sensor-stimulus-evaluation.md": {
+          "sha256": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
+          "bytes": 22979
+        },
+        "reports/hermit-observedProperty-deferral-evaluation.md": {
+          "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+          "bytes": 7890
+        },
+        "reports/hermit-observedProperty-reactivation-canary.md": {
+          "sha256": "6ebf79a69871a2110c40806d2cdee124781f76ee0908d03f3ea61051b62660d3",
+          "bytes": 5409
+        },
+        "reports/hermit-profile-diagnostic-baseline.md": {
+          "sha256": "614bf5be125f15d0fa88c99e7032056c2cee1b15078af10d17844c513600bf61",
+          "bytes": 10174
+        },
+        "reports/hermit-remaining-unsat-isolation.md": {
+          "sha256": "c9f3d4d0fdb9db24684e770e15915936207670071efdcba29fd53b0d0d5d8634",
+          "bytes": 16389
+        },
+        "reports/hermit-safe-ssn-systems-dependence-design.md": {
+          "sha256": "d0c3f678ac1ae76ab9cc59cb6444a409637eb204018cb02b0f804c6208db40a5",
+          "bytes": 11458
+        },
+        "reports/hermit-source-vs-mapping-isolation.md": {
+          "sha256": "09e1b36887d6271f17fd817a541a3dc394640dc4a406253ff61e830bfa999db7",
+          "bytes": 12257
+        },
+        "reports/hermit-survival-property-broader-context-extraction.md": {
+          "sha256": "7148fd29f56cbaf43aba0967bddd0c5799b37ea23d7e835186eca40cfbe7e9ef",
+          "bytes": 19620
+        },
+        "reports/hermit-survival-property-minimal-conflict-extraction.md": {
+          "sha256": "404ad9cdde4bc3966c1efdbfb35556fe77542d8e204d8b359276ba39d0f0f479",
+          "bytes": 15456
+        },
+        "reports/hermit-survival-property-source-restriction-explanation.md": {
+          "sha256": "2e53188f4892f467d284936db945c0f5d024b58f0c2527b228097752cec289e4",
+          "bytes": 18746
+        },
+        "reports/hermit-survival-range-deferral-evaluation.md": {
+          "sha256": "48dca287da413b7f653f632b654985d7e646e911bc88c2a854ebc6274556d749",
+          "bytes": 8786
+        },
+        "reports/hermit-survival-range-sosa-context-explanation.md": {
+          "sha256": "c128ec152ba78fc7f49be3e55f3f32dc010ffa56c8ccf448c514d8637fff58ad",
+          "bytes": 22067
+        },
+        "reports/hermit-unsat-cluster-isolation.md": {
+          "sha256": "327124a59d3b53659aa598c121f9e08df9f71c4454a7d1a7608cd51b3871f838",
+          "bytes": 15506
+        },
+        "reports/hosts-implementedby-complex-mapping-review.md": {
+          "sha256": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23",
+          "bytes": 3028
+        },
+        "reports/ignore-domain-range-inverse-audit-policy.md": {
+          "sha256": "7d74edb3f8690a4ffcdabfa333d7121cd2e8f5b8ad91e3864753bae50322531e",
+          "bytes": 1672
+        },
+        "reports/input-output-cco-mapping-rationale-cleanup.md": {
+          "sha256": "251b7b672c36dc19c06f60c00fdc9e9bd101dc4c9783f91e8947f9d51d3d9f1f",
+          "bytes": 2869
+        },
+        "reports/input-output-reactivation-results.md": {
+          "sha256": "1d43687af4476a6b5cca421a3097a3e3f0f99179831b80150ce00d08a40288e4",
+          "bytes": 4747
+        },
+        "reports/instance-data-smoke-test.md": {
+          "sha256": "b92e278429406a981486d2533d15fe029c88178b5b3ee8477ea1f7f6c19d7901",
+          "bytes": 3678
+        },
+        "reports/inverse-side-direct-mapping-policy-review.md": {
+          "sha256": "a87a2e0fb756b666651decd2fc1ab50c13245ba64dcb2a3bff3ddc0619271dd2",
+          "bytes": 2905
+        },
+        "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md": {
+          "sha256": "988d63ea89385938c9b79b9b2b2dc4bf7f6515a0d07c0aa0faa76cac53676487",
+          "bytes": 13183
+        },
+        "reports/isHostedBy-hosts-full-closure-analysis.md": {
+          "sha256": "5e13743261d6f8470970f3bbeba912457f5218a90df4ef19fed8eb88cafebd45",
+          "bytes": 12110
+        },
+        "reports/isObservedBy-observes-full-closure-analysis.md": {
+          "sha256": "595e9c38522522b8c6e7984db4e1067983cf75feed980e5034927a8d706ac79b",
+          "bytes": 12114
+        },
+        "reports/isResultOf-hasResult-full-closure-analysis.md": {
+          "sha256": "0c6189baf7fe30ca7c2141f77a05aefa0dbd43f948d1df34bc3b34e65bcdfea2",
+          "bytes": 12981
+        },
+        "reports/madeByActuator-agent-mapping-adjustment-evaluation.md": {
+          "sha256": "4d5b469eb57ffa2df538811407c5bc9b66777c3427771f3d57cfa8dc5ad78a3a",
+          "bytes": 22490
+        },
+        "reports/madeByActuator-range-after-agent-deferral.md": {
+          "sha256": "a6526175d5dfb3e6874c91e0b602241036386867801262b364b519eba6576be2",
+          "bytes": 6280
+        },
+        "reports/madeByActuator-range-hermit-failure.md": {
+          "sha256": "68d64f9acf05ce6387a88c81f23f0b68331b5689154abee307863fe9fafca05a",
+          "bytes": 14905
+        },
+        "reports/madeByActuator-range-minimal-reproduction.md": {
+          "sha256": "dba7c01d585cf9de552db1276e40795f14626b8584cec330264fc89c4fc1cb8e",
+          "bytes": 17175
+        },
+        "reports/madeByActuator-range-redundancy-debug.md": {
+          "sha256": "bdda8c2bf9a93803f55f2d2bb6fb3071f5d990ce1c8fabe0b7c2e78fe45bf155",
+          "bytes": 10319
+        },
+        "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md": {
+          "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+          "bytes": 10565
+        },
+        "reports/madeSampling-madeBySampler-full-closure-analysis.md": {
+          "sha256": "ba0bac2453d6fbabdae7bae6cd1feff93deb930d33df9766c0987e1bee4941cc",
+          "bytes": 11044
+        },
+        "reports/mapping-consistency-audit-triage.md": {
+          "sha256": "1f8c655f99c9341c44e67f220302b628b0d8d3a9b459097223429111951cfe56",
+          "bytes": 5253
+        },
+        "reports/mapping-consistency-audit.csv": {
+          "sha256": "0ea6c72824ecd7ff50a5cc503b6bad149cbe0d37ef923d8d5223e99008748a9a",
+          "bytes": 697
+        },
+        "reports/mapping-consistency-audit.md": {
+          "sha256": "a53d682b2b44b9a06daaa81fc8409eb1c57109c48135191d113bdadd9c6ea192",
+          "bytes": 9338
+        },
+        "reports/mapping-consistency-resolution-plan.md": {
+          "sha256": "2d53b7634f62afe1bd04354077efec307c0ac2eea48f877216863bf8ebf71f94",
+          "bytes": 8785
+        },
+        "reports/mapping-consistency-target-mismatch-review.md": {
+          "sha256": "55fbefbd6125de5aec33a6701c4c753426819bf1a576eca76cceb4d091b21d33",
+          "bytes": 20821
+        },
+        "reports/materialized-sosa-import-hermit-evaluation.md": {
+          "sha256": "2723f256c35f9381152227efc0cf184588e82ef3106897e53ecca6bd79d5a411",
+          "bytes": 9981
+        },
+        "reports/materialized-sosa-sampling-import-validation.md": {
+          "sha256": "d00453acf3dd43bc09bdf7abe426f07e41455c33f13c86f19d8a60a7e023e483",
+          "bytes": 5513
+        },
+        "reports/missing-in-spreadsheet-resolution-review.md": {
+          "sha256": "63218b943cb2aeca112f7f33c84842fa74b861a4650ccae0c504fc10571f4b94",
+          "bytes": 2202
+        },
+        "reports/object-property-domain-range-entailment-audit.md": {
+          "sha256": "9312992819a3f3d672bc5bc1d632eb1437e0398e40cb70636dcbdaef65cb64fb",
+          "bytes": 75350
+        },
+        "reports/object-property-domain-range-fallback-policy-audit.md": {
+          "sha256": "033ad6ace8956f3ab143bba4deec772b5f98bed141534eaf75afd099b6123be7",
+          "bytes": 64389
+        },
+        "reports/object-property-domain-range-minimal-basis-implementation.md": {
+          "sha256": "6c3967312648baf3491fc680bc98e133aefbc445e94036ef5a1cf1e4cc42aeea",
+          "bytes": 12267
+        },
+        "reports/object-property-domain-range-minimal-basis.md": {
+          "sha256": "80bf8472f1295aff2b0ad3c963291e28d6cbdc641836bd5cc88e693f8c81a4f7",
+          "bytes": 29053
+        },
+        "reports/object-property-typing-probe-check.md": {
+          "sha256": "d927124c1e253e5f3c4156ec20da0d725fb348b03f5b91c11c5abc07b60d86e2",
+          "bytes": 18935
+        },
+        "reports/observes-upper-mapping-decision.md": {
+          "sha256": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
+          "bytes": 1621
+        },
+        "reports/overall-ttl-workbook-diff-since-baseline.md": {
+          "sha256": "0d9ed51ebc5c782b26500c6458b8adbbf8e3dd9ee1d47d9d8939888ad49d70a9",
+          "bytes": 19626
+        },
+        "reports/prior-decision-audit-full-sosa-closure.md": {
+          "sha256": "4f7faf9dbe1fc01e0db42db46e600f9603be6b1ff4a6997fcf9e5da3b0963f0d",
+          "bytes": 18866
+        },
+        "reports/product-role-inclusion-policy.md": {
+          "sha256": "ed4a8f64ee12fd97187d1e0f0e1908bdd1939eaea257e4ea37291c21c80b5379",
+          "bytes": 5267
+        },
+        "reports/prov-functional-parity-audit.md": {
+          "sha256": "67e0ce6c57fb972e87c854271c0ffddbdaa58d8a3a6bc473184d9ee8e6d97378",
+          "bytes": 84614
+        },
+        "reports/publication-product-and-import-policy.md": {
+          "sha256": "33bec5bc30a66651c3d9badef93ad7fd1f5af32a17e7a21917331510d2627f62",
+          "bytes": 55825
+        },
+        "reports/reasoner-diagnostic-report.md": {
+          "sha256": "4b3e3654d8ed50f9fb74c6fa90fe6053021aa716a310a43d489a0356169cc861",
+          "bytes": 2066
+        },
+        "reports/reasoner-safe-replacement-mapping-review.md": {
+          "sha256": "4151008084bac71706d57e298ab50a7e2c9e920d68cee5e26244aec95c5d2d58",
+          "bytes": 16220
+        },
+        "reports/reasoner-unsafe-system-mapping-deferral.md": {
+          "sha256": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
+          "bytes": 1999
+        },
+        "reports/remaining-audit-disposition.md": {
+          "sha256": "49a20fc7f262788bbddfaac2b7af367092f8fe87d3b02a2c0ef17e8a5caeb507",
+          "bytes": 3233
+        },
+        "reports/remaining-missing-in-ttl-review.md": {
+          "sha256": "6e76ef15f3c2f07f10c2460e8df8ae90f4ae9cc4c5b7da23def5f93576ec9f9e",
+          "bytes": 3817
+        },
+        "reports/remaining-ttl-only-assertions-review.md": {
+          "sha256": "867b75a75afb4bc2aede168e0cf075e0dd795f1591b5c28f4ae70f24db560d33",
+          "bytes": 2760
+        },
+        "reports/rerun-prior-clean-decisions-full-sosa.md": {
+          "sha256": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+          "bytes": 16991
+        },
+        "reports/reusable-coms-capability-inventory.md": {
+          "sha256": "85ed3f1e5f84b36292f525495bc140b7c2c6c2b6b007e0ccb1bb86a710448955",
+          "bytes": 20714
+        },
+        "reports/robot-substitution-audit.md": {
+          "sha256": "cd3dce24c04754fe5c51023856c129d39b7aa943e36a749a3ff6cfd432524aaf",
+          "bytes": 29907
+        },
+        "reports/sample-relationship-deferral.md": {
+          "sha256": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
+          "bytes": 1413
+        },
+        "reports/sample-representation-property-chains-review.md": {
+          "sha256": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
+          "bytes": 2488
+        },
+        "reports/sampler-equivalentclass-decision.md": {
+          "sha256": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
+          "bytes": 827
+        },
+        "reports/sampler-sensor-class-mapping-reconciliation-review.md": {
+          "sha256": "9626119e6cabacdcd1dfb602af52a14bdf230ad3375c58a6907ca27c58bf8dca",
+          "bytes": 4502
+        },
+        "reports/sampler-subclass-vs-equivalentclass-review.md": {
+          "sha256": "d87d31b2c61bcb4e661ff867a8ff41615ed5580bd1af7800a5ac215df546a4cd",
+          "bytes": 2578
+        },
+        "reports/sensor-next-cco-deferral.md": {
+          "sha256": "7cb9cd06f7208b48717372a9d5a9185b27b186c46d4fa2c10c57ac3b69be374c",
+          "bytes": 1228
+        },
+        "reports/sensor-upcoming-cco-version-target-review.md": {
+          "sha256": "bb2fc0837398e688c496221b20dab65fc9c54e78308449999011dbdc093e7f19",
+          "bytes": 1730
+        },
+        "reports/ssn-hasproperty-disjunctive-domain-range-candidate.md": {
+          "sha256": "b818f24c549c7968e7692aeb7f94863934168721928f9cc9a09376e204deb392",
+          "bytes": 9127
+        },
+        "reports/ssn-hasproperty-modeling-options.md": {
+          "sha256": "0ed798703f9ccd523ffec02295609548168e28a470a2c86052eb7518d07fe009",
+          "bytes": 14028
+        },
+        "reports/ssn-hasproperty-rule-mapping-artifact.md": {
+          "sha256": "c854c814080397f9682c811b04a4858eb7ee356521e808a37108d51c75469d8b",
+          "bytes": 6839
+        },
+        "reports/ssn-systems-dependence-reactivation-results.md": {
+          "sha256": "d4845bada4f6f184016bfbbc447ee387c0c7d9f93f3850de8cd14c1ed834604d",
+          "bytes": 5017
+        },
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md": {
+          "sha256": "7998be7effb2a994b189d3da5ab79629d13cf0377a28904f1ad41a40e02da447",
+          "bytes": 9718
+        },
+        "reports/ssn-systems-property-split-mapping-review.md": {
+          "sha256": "595473648a1cb1597f3f56abad3dcad2f8fcc656dc51f8ba6d788f2afe584ad3",
+          "bytes": 17221
+        },
+        "reports/ssn-vs-prov-comparison.md": {
+          "sha256": "c7dc0d13763d074aa2eddec483ff2ddff5d39d7ce87f0ec7560784c38d5c3a4b",
+          "bytes": 14855
+        },
+        "reports/straightforward-op-mapping-candidates-review.md": {
+          "sha256": "2837a2981b534abd25cf05da31e82088b55aa0c138f17d5ab80ab70c37007a18",
+          "bytes": 2738
+        },
+        "reports/strict-spreadsheet-assertion-extraction-review.md": {
+          "sha256": "8f3c38494bd170de32dc9d5c05300637c3eb1ac59378ec27df84a8aa6097e9db",
+          "bytes": 2123
+        },
+        "reports/system-property-direct-mapping-deferral.md": {
+          "sha256": "3a68343b54113f13408245463a053ef8773b46397574934b0b40adb7dd995df1",
+          "bytes": 9065
+        },
+        "reports/system-property-mapping-simplification-evaluation.md": {
+          "sha256": "cd1afbeae255641308584182b62310128c5a0489f73d7dafa878ba722be01c5c",
+          "bytes": 10542
+        },
+        "reports/system-property-process-profile-scope-review.md": {
+          "sha256": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
+          "bytes": 14679
+        },
+        "reports/updated-spreadsheet-ttl-only-assertions-review.md": {
+          "sha256": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
+          "bytes": 3583
+        },
+        "reports/workbook-mapping-changes-since-first-version.xlsx": {
+          "sha256": "7324204ea90784482d959518515cdd95f0816c9bf9d8d48393813396306c9187",
+          "bytes": 15639
+        }
+      }
+    },
+    "coms_local": {
+      "count": 3,
+      "changes": [],
+      "hashes": {
+        "docs/COMS-FRAMEWORK-INTEGRATION.md": {
+          "sha256": "f8fc8e8129afc633888901881d78b809eed5f849a6bc81c47e71118fce0fa6a0",
+          "bytes": 3738
+        },
+        "tools/coms_framework_integration.py": {
+          "sha256": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
+          "bytes": 21498
+        },
+        "tools/coms_row_identity.py": {
+          "sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
+          "bytes": 12880
+        }
+      }
+    }
+  },
+  "external_coms": {
+    "head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+    "tracked_count": 55,
+    "changes": [],
+    "index_set_matches": true
+  },
+  "workbooks": {
+    "mappings/SOSA-next-to-BFO-COMS.xlsx": {
+      "Sheet1": {
+        "rows": 37,
+        "statuses": {
+          "no_direct_mapping": 12,
+          "active": 25
+        }
+      },
+      "Sheet2": {
+        "rows": 82,
+        "statuses": {
+          "no_direct_mapping": 52,
+          "active": 30
+        }
+      }
+    },
+    "mappings/SOSA-next-to-RO-COMS.xlsx": {
+      "Sheet2": {
+        "rows": 82,
+        "statuses": {
+          "no_direct_mapping": 66,
+          "active": 16
+        }
+      }
+    }
+  },
+  "counts": {
+    "source_total": 91,
+    "kinds": {
+      "class": 44,
+      "object_property": 47
+    },
+    "assessment_total": 91,
+    "source_assessment_set_equal": true,
+    "review_states": {
+      "unreviewed": 77,
+      "final": 12,
+      "deferred": 2
+    },
+    "outcomes": {
+      "unreviewed": 77,
+      "formal_mapping_adopted": 10,
+      "deferred": 2,
+      "no_direct_mapping": 2
+    },
+    "unresolved_count": 79,
+    "queue_count": 79,
+    "queue_exact_membership": true
+  },
+  "assessment_unchanged": true,
+  "assessment_sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+  "unresolved_sha256": "78d0d2842b8bf0c307b06796de3a38c04d0e83239e334125972a5102d4f91bdf",
+  "unresolved_unchanged": true,
+  "packet_semantics": {
+    "current-ssn-sosa-human-review.json": {
+      "items": 79,
+      "semantic_items_equal": true,
+      "all_json_equal": true,
+      "sha256": "cb012e82f78554f8aee47abb30ad71f3970ebd1c4117f6affbd3d2f37d20773a"
+    },
+    "current-ssn-sosa-coverage.json": {
+      "items": 91,
+      "semantic_items_equal": true,
+      "all_json_equal": true,
+      "sha256": "c09bebabe6a4f20d29c6dafd33f0b738e18c1af02b95816c3dffb35923ae99d2"
+    },
+    "current-ssn-sosa-rationale-proposals.json": {
+      "items": 91,
+      "semantic_items_equal": true,
+      "all_json_equal": true,
+      "sha256": "479a09d8af75ba589023541f9380302a7ed35d21eb2c443d49a3dd7a7af04ddc"
+    }
+  },
+  "human_review_markdown_unchanged": true,
+  "holds": {
+    "http://www.w3.org/ns/sosa/sampling/RelationshipNature": {
+      "review_state": "unreviewed",
+      "in_unresolved": true,
+      "packet_present": true,
+      "explicit_policy_name_present": true
+    },
+    "http://www.w3.org/ns/sosa/sampling/natureOfRelationship": {
+      "review_state": "unreviewed",
+      "in_unresolved": true,
+      "packet_present": true,
+      "explicit_policy_name_present": true
+    },
+    "http://www.w3.org/ns/sosa/madeActuation": {
+      "review_state": "unreviewed",
+      "in_unresolved": true,
+      "packet_present": true,
+      "explicit_policy_name_present": true
+    },
+    "http://www.w3.org/ns/sosa/madeByActuator": {
+      "review_state": "unreviewed",
+      "in_unresolved": true,
+      "packet_present": true,
+      "explicit_policy_name_present": true
+    }
+  },
+  "hold_policy_line": "No new human decision is made by generating these mechanics. The current assessment remains **12 historical final, 2 deferred, 77 unreviewed, 79 unresolved**. The four evidence holds for `sampling:RelationshipNature`, `sampling:natureOfRelationship`, `sosa:madeActuation`, and `sosa:madeByActuator` remain open.",
+  "branch": "publication/current-sosa-readiness",
+  "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f"
+}

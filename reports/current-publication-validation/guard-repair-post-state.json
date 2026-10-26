@@ -1,0 +1,479 @@
+{
+  "milestone": "Final execution-binding and material-review-facts repair",
+  "recorded_at_utc": "2026-10-10T23:39:34.812957+00:00",
+  "branch": "publication/current-sosa-readiness",
+  "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "pre_state": "reports/current-publication-validation/final-mechanical-pre-state.json",
+  "prior_repair_inventory": "reports/current-publication-validation/final-mechanical-prior-post-state.json",
+  "git_status_short_branch": "## publication/current-sosa-readiness\n M .gitignore\n M Makefile\n M README.md\n M docs/MAPPING-GOVERNANCE.md\n M docs/VALIDATION-AND-RELEASES.md\n M reports/coms-generation-validation.md\n M reports/coms-product-dispositions.json\n M reports/current-full-sosa-baseline-summary.md\n M reports/current-ssn-sosa-release-readiness-audit.md\n M src/current-ssn-sosa/docs/README.md\n M src/current-ssn-sosa/examples/README.md\n M tests/test_coms_framework_integration.py\n M tests/test_generate_mapping_from_coms.py\n M tools/check_coms_mapping.py\n M tools/generate_mapping_from_coms.py\n M tools/run_validation_suite.py\n?? config/current-semantic-expectations.json\n?? config/current-ssn-sosa-identity.json\n?? config/current-ssn-sosa-scope.json\n?? docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md\n?? mappings/current-ssn-sosa-assessment.json\n?? reports/current-publication-baseline.json\n?? reports/current-publication-candidate.json\n?? reports/current-publication-guard-repair.md\n?? reports/current-publication-preservation.json\n?? reports/current-publication-validation/RESULTS.md\n?? reports/current-publication-validation/assessment.log\n?? reports/current-publication-validation/commands.json\n?? reports/current-publication-validation/coms-framework-fingerprint-rerun.command.json\n?? reports/current-publication-validation/coms-framework-fingerprint-rerun.log\n?? reports/current-publication-validation/current-semantic-final-check.command.json\n?? reports/current-publication-validation/current-semantic-final-check.stderr.log\n?? reports/current-publication-validation/current-semantic-final-check.stdout.log\n?? reports/current-publication-validation/current-semantic-unit-tests-final.command.json\n?? reports/current-publication-validation/current-semantic-unit-tests-final.stderr.log\n?? reports/current-publication-validation/current-semantic-unit-tests-final.stdout.log\n?? reports/current-publication-validation/current-semantic-unit-tests.command.json\n?? reports/current-publication-validation/current-semantic-unit-tests.stderr.log\n?? reports/current-publication-validation/current-semantic-unit-tests.stdout.log\n?? reports/current-publication-validation/current_focused_final.command.json\n?? reports/current-publication-validation/current_focused_final.log\n?? reports/current-publication-validation/dependency_check.log\n?? reports/current-publication-validation/final-gate-ro-timeout-44851.ttl.gz\n?? reports/current-publication-validation/final-mechanical-actual-substitution-attacks.json\n?? reports/current-publication-validation/final-mechanical-affected_integration_tests.command.json\n?? reports/current-publication-validation/final-mechanical-affected_integration_tests.log\n?? reports/current-publication-validation/final-mechanical-final-affected_integration_tests.command.json\n?? reports/current-publication-validation/final-mechanical-final-affected_integration_tests.log\n?? reports/current-publication-validation/final-mechanical-final-assessment.command.json\n?? reports/current-publication-validation/final-mechanical-final-assessment.log\n?? reports/current-publication-validation/final-mechanical-final-current_focused_tests.command.json\n?? reports/current-publication-validation/final-mechanical-final-current_focused_tests.log\n?? reports/current-publication-validation/final-mechanical-final-generation_freshness.command.json\n?? reports/current-publication-validation/final-mechanical-final-generation_freshness.log\n?? reports/current-publication-validation/final-mechanical-final-preservation.command.json\n?? reports/current-publication-validation/final-mechanical-final-preservation.log\n?? reports/current-publication-validation/final-mechanical-final-semantic_stored.command.json\n?? reports/current-publication-validation/final-mechanical-final-semantic_stored.log\n?? reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.command.json\n?? reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.log\n?? reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.command.json\n?? reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.log\n?? reports/current-publication-validation/final-mechanical-final-sosa_products.command.json\n?? reports/current-publication-validation/final-mechanical-final-sosa_products.log\n?? reports/current-publication-validation/final-mechanical-final-sosa_source_version.command.json\n?? reports/current-publication-validation/final-mechanical-final-sosa_source_version.log\n?? reports/current-publication-validation/final-mechanical-final-source_identity.command.json\n?? reports/current-publication-validation/final-mechanical-final-source_identity.log\n?? reports/current-publication-validation/final-mechanical-final-static_checks.command.json\n?? reports/current-publication-validation/final-mechanical-final-static_checks.log\n?? reports/current-publication-validation/final-mechanical-final-whitespace.command.json\n?? reports/current-publication-validation/final-mechanical-final-whitespace.log\n?? reports/current-publication-validation/final-mechanical-independent-preservation.json\n?? reports/current-publication-validation/final-mechanical-packet-audit.json\n?? reports/current-publication-validation/final-mechanical-pre-state.json\n?? reports/current-publication-validation/final-mechanical-prior-commands.json\n?? reports/current-publication-validation/final-mechanical-prior-post-state.json\n?? reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.command.json\n?? reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.log\n?? reports/current-publication-validation/followup-ro-timeout-37572.ttl.gz\n?? reports/current-publication-validation/followup-ro-timeout-39141.ttl.gz\n?? reports/current-publication-validation/followup-ro-timeout-40883.ttl.gz\n?? reports/current-publication-validation/followup-ro-timeouts.json\n?? reports/current-publication-validation/full_repository_gate.log\n?? reports/current-publication-validation/full_repository_gate_final.command.json\n?? reports/current-publication-validation/full_repository_gate_final.log\n?? reports/current-publication-validation/generation_freshness.log\n?? reports/current-publication-validation/guard-repair-affected_integration_tests.command.json\n?? reports/current-publication-validation/guard-repair-affected_integration_tests.log\n?? reports/current-publication-validation/guard-repair-assessment.command.json\n?? reports/current-publication-validation/guard-repair-assessment.log\n?? reports/current-publication-validation/guard-repair-current_focused_tests.command.json\n?? reports/current-publication-validation/guard-repair-current_focused_tests.log\n?? reports/current-publication-validation/guard-repair-final-affected_integration_tests.command.json\n?? reports/current-publication-validation/guard-repair-final-affected_integration_tests.log\n?? reports/current-publication-validation/guard-repair-final-assessment.command.json\n?? reports/current-publication-validation/guard-repair-final-assessment.log\n?? reports/current-publication-validation/guard-repair-final-current_focused_tests.command.json\n?? reports/current-publication-validation/guard-repair-final-current_focused_tests.log\n?? reports/current-publication-validation/guard-repair-final-generation_freshness.command.json\n?? reports/current-publication-validation/guard-repair-final-generation_freshness.log\n?? reports/current-publication-validation/guard-repair-final-preservation.command.json\n?? reports/current-publication-validation/guard-repair-final-preservation.log\n?? reports/current-publication-validation/guard-repair-final-semantic_stored.command.json\n?? reports/current-publication-validation/guard-repair-final-semantic_stored.log\n?? reports/current-publication-validation/guard-repair-final-semantic_stored_consistency.command.json\n?? reports/current-publication-validation/guard-repair-final-semantic_stored_consistency.log\n?? reports/current-publication-validation/guard-repair-final-sosa_2023_nonregression.command.json\n?? reports/current-publication-validation/guard-repair-final-sosa_2023_nonregression.log\n?? reports/current-publication-validation/guard-repair-final-sosa_products.command.json\n?? reports/current-publication-validation/guard-repair-final-sosa_products.log\n?? reports/current-publication-validation/guard-repair-final-sosa_source_version.command.json\n?? reports/current-publication-validation/guard-repair-final-sosa_source_version.log\n?? reports/current-publication-validation/guard-repair-final-source_identity.command.json\n?? reports/current-publication-validation/guard-repair-final-source_identity.log\n?? reports/current-publication-validation/guard-repair-final-static_checks.command.json\n?? reports/current-publication-validation/guard-repair-final-static_checks.log\n?? reports/current-publication-validation/guard-repair-final-whitespace.command.json\n?? reports/current-publication-validation/guard-repair-final-whitespace.log\n?? reports/current-publication-validation/guard-repair-generation_freshness.command.json\n?? reports/current-publication-validation/guard-repair-generation_freshness.log\n?? reports/current-publication-validation/guard-repair-independent-preservation.json\n?? reports/current-publication-validation/guard-repair-post-state.json\n?? reports/current-publication-validation/guard-repair-pre-state.json\n?? reports/current-publication-validation/guard-repair-prior-commands.json\n?? reports/current-publication-validation/guard-repair-sosa_2023_nonregression.command.json\n?? reports/current-publication-validation/guard-repair-sosa_2023_nonregression.log\n?? reports/current-publication-validation/guard-repair-sosa_products.command.json\n?? reports/current-publication-validation/guard-repair-sosa_products.log\n?? reports/current-publication-validation/guard-repair-sosa_source_version.command.json\n?? reports/current-publication-validation/guard-repair-sosa_source_version.log\n?? reports/current-publication-validation/guard-repair-source_identity.command.json\n?? reports/current-publication-validation/guard-repair-source_identity.log\n?? reports/current-publication-validation/guard-repair-static_checks.command.json\n?? reports/current-publication-validation/guard-repair-static_checks.log\n?? reports/current-publication-validation/initial-command-sequence.json\n?? reports/current-publication-validation/initial-sosa-2023-first-candidate-manifest.json\n?? reports/current-publication-validation/initial-sosa-2023-first-candidate-note.json\n?? reports/current-publication-validation/package-cli-diagnostic.log\n?? reports/current-publication-validation/post-audit-focused.command.json\n?? reports/current-publication-validation/post-audit-focused.log\n?? reports/current-publication-validation/post-audit-motivation-corrections.json\n?? reports/current-publication-validation/post-audit-pre-edit/current-semantic-expectations.json\n?? reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.json\n?? reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.md\n?? reports/current-publication-validation/post-audit-runner-bootstrap.log\n?? reports/current-publication-validation/post-audit-semantic-run.command.json\n?? reports/current-publication-validation/post-audit-semantic-run.log\n?? reports/current-publication-validation/publication-criterion.command.json\n?? reports/current-publication-validation/publication-criterion.log\n?? reports/current-publication-validation/query-equivalence-diagnostic.log\n?? reports/current-publication-validation/semantic-20261010T173148147449Z.tar.gz\n?? reports/current-publication-validation/semantic-20261010T173407596681Z.tar.gz\n?? reports/current-publication-validation/semantic-20261010T173512593611Z.tar.gz\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/javac.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/javac.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/javac.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.stdout.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/summary.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/javac.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/javac.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/javac.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.stdout.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/summary.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.command.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.result.json\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.stderr.log\n?? reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.stdout.log\n?? reports/current-publication-validation/sosa_products.log\n?? reports/current-publication-validation/sosa_source_version.log\n?? reports/current-publication-validation/source_identity.log\n?? reports/current-publication-validation/static_checks.log\n?? reports/current-publication-validation/superseded-semantic-attempts.json\n?? reports/current-publication-validation/unit_tests.log\n?? reports/current-publication-validation/unit_tests_final-timeout-closures/36854-closure.ttl.gz\n?? reports/current-publication-validation/unit_tests_final-timeout-closures/39667-closure.ttl.gz\n?? reports/current-publication-validation/unit_tests_final-timeout-closures/42450-closure.ttl.gz\n?? reports/current-publication-validation/unit_tests_final.command.json\n?? reports/current-publication-validation/unit_tests_final.log\n?? reports/current-publication-validation/unit_tests_final.timeouts.json\n?? reports/current-publication-validation/whitespace.log\n?? reports/current-ssn-sosa-coverage.json\n?? reports/current-ssn-sosa-coverage.md\n?? reports/current-ssn-sosa-human-review.json\n?? reports/current-ssn-sosa-human-review.md\n?? reports/current-ssn-sosa-publication-readiness.md\n?? reports/current-ssn-sosa-rationale-proposals.json\n?? reports/current-ssn-sosa-rationale-proposals.md\n?? reports/current-ssn-sosa-semantic-validation.json\n?? reports/current-ssn-sosa-semantic-validation.md\n?? tests/fixtures/current-semantic/sample-relationship.ttl\n?? tests/test_current_assessment.py\n?? tests/test_current_identity_reporting.py\n?? tests/test_current_publication_preservation.py\n?? tests/test_current_publication_readiness.py\n?? tests/test_current_semantic_validation.py\n?? tests/test_current_source_identity.py\n?? tools/current_assessment.py\n?? tools/current_publication_preservation.py\n?? tools/current_publication_readiness.py\n?? tools/current_semantic_validation.py\n?? tools/current_source_identity.py\n?? tools/java/CurrentSemanticReasoner.java\n",
+  "changed_tracked_file_count": 16,
+  "untracked_file_count": 403,
+  "staged_file_count": 0,
+  "tags": "df1c63d84aa15fb2bd9bae8d67ca5313be18a428 refs/tags/v2026-07-18\n",
+  "repair_change_counts": {
+    "modified": 18,
+    "created": 36,
+    "deleted": 0
+  },
+  "assessment_inventory_sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+  "core_summary": {
+    "assertion_bearing_rows": 103,
+    "assessment_outcomes": {
+      "deferred": 2,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 0,
+      "no_direct_mapping": 2,
+      "unreviewed": 77
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 3,
+    "coverage_counts": {
+      "direct_formal_mapping": 69,
+      "explicit_blank": 2,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 15,
+      "rule_or_chain_route": 10,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 44,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 92,
+      "named": 199,
+      "some": 101,
+      "union": 16
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 2,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 3,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 34,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 2,
+      "final": 12,
+      "unreviewed": 77
+    },
+    "rows_with_expression_form": {
+      "intersection": 38,
+      "named": 75,
+      "some": 38,
+      "union": 15
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  },
+  "repair_files": [
+    {
+      "path": "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md",
+      "change": "modified",
+      "artifact_kind": "documentation",
+      "pre_repair_sha256": "d0c2b8edc056b5e3e9e6f1cd9bf41c853304e0715485423bf9982885ced128ff",
+      "sha256": "afab33be34cc5c9d4a9317b80f553b6537c1b3ab8fc866cf30681401182e6fa2",
+      "bytes": 24488
+    },
+    {
+      "path": "reports/current-publication-candidate.json",
+      "change": "modified",
+      "artifact_kind": "publication_evidence",
+      "pre_repair_sha256": "e18dbe24efe34cfa647a9584838adcfec415dc9478421018a4a68f6c4eff7d52",
+      "hash_note": "Excluded to avoid circular final-manifest hashes."
+    },
+    {
+      "path": "reports/current-publication-guard-repair.md",
+      "change": "modified",
+      "artifact_kind": "documentation",
+      "pre_repair_sha256": "70b8495b6df5790e289526435dde0555b41de2b8692f7d6d8a099c31c428b558",
+      "sha256": "1745bfc2dee8d9bc297339c5df2c35312dab06198cb57dd231a6dfe526da2947",
+      "bytes": 10809
+    },
+    {
+      "path": "reports/current-publication-validation/RESULTS.md",
+      "change": "modified",
+      "artifact_kind": "generated_retained_evidence",
+      "pre_repair_sha256": "3d07e5938bbc2241a89943fb34bca4012e0632b7f06d669ad407ef868eb9fa21",
+      "sha256": "179e8f25c374018124087ccb5d41277d5e8e8ae63d738515ab0720469b48b796",
+      "bytes": 8186
+    },
+    {
+      "path": "reports/current-publication-validation/commands.json",
+      "change": "modified",
+      "artifact_kind": "generated_retained_evidence",
+      "pre_repair_sha256": "7d853463a46962bbef7545042c1a8c5eb53d75613c9c16d19777404d8dc764b0",
+      "sha256": "f753bdd8c1c7a958d999eb792a79a858a5585008b59715e55858ed845d8e2584",
+      "bytes": 909832
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-actual-substitution-attacks.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "a59d13f65ae65833d8b3aa5688ee8ea77a9c439921cb5a39f07790ee5c2bfd1c",
+      "bytes": 2260
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-affected_integration_tests.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "7752798a7431dbcd8f39cc54b18975756bf70c8768e6b86650cdce813cccd70c",
+      "bytes": 65530
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-affected_integration_tests.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "693c6411bb55ab948f0cc58cda188be78f1be8b560facda939b6705d099c7e36",
+      "bytes": 46556
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-affected_integration_tests.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "78ad0314bb80e4de7131d593a24945b85968f9fba6b8c160e05e7ec81904f65b",
+      "bytes": 65447
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-affected_integration_tests.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "b42d42c87917b95cb60b0b5993f323a26f3a2bcdccab81b008dd525a0d99420b",
+      "bytes": 46556
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-assessment.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "3e46177c3760c96a31469719f32118b9062372fbfe3cb8f1caf85e79d64ff792",
+      "bytes": 65288
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-assessment.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "ec5603afa27b5122f75f1687fd995caeff8919ded5d0e944f6289582d5b391c5",
+      "bytes": 1639
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-current_focused_tests.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "f12b3325f79f08348f26ec6ed598554dac0ef86e118216bdda41b569c2686daa",
+      "bytes": 65396
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-current_focused_tests.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "1b170473e8673156c50b64eb62bae3eea806d78393ff913e4d85d1956d4a61fb",
+      "bytes": 21515
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-generation_freshness.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "370e2aa6bfceefb05f3018a9e54d0eccb1e7e7b9a65679b2853c9728492ba6fd",
+      "bytes": 65339
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-generation_freshness.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "9d06901a3b52f15bcd39013e27a1bce8f8638b234fcb0e15cba2119ab081ad28",
+      "bytes": 5800
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-preservation.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "7477f800b81b6540316f3ee02f94de3c0c8c6c70f93e102c61d61e6788d2c975",
+      "bytes": 65308
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-preservation.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "7f04cb82a1b400b68ae87ccf1d2da129c37ecf74a72568b22593e82ee841e973",
+      "bytes": 25257
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-semantic_stored.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "60e1162a41457903f39b8e0f0e05398701749af9aa7ad5e05ab9861b875afe90",
+      "bytes": 65328
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-semantic_stored.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "cf6d5e31cb8bddb91f11ba0300a77c6e1ed6c458f75a129179266bb491898777",
+      "bytes": 25959
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "8af1de5661c07ebea2f5a04bf50ed9a5ca67462552982cae29bb4ec6f679bf00",
+      "bytes": 65623
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "8440b1104c20febba6007f467afc17a6cbca1ec719d26a9fa4d9066e3ae80d18",
+      "bytes": 62
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "fde86f602affd7cb2725c80b875cfffb415f2bb4df9b51721827bb713bc565dd",
+      "bytes": 65621
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "240c8db126f08490af56d4108ef8be8994c883115caa6f66ec6193db457c0393",
+      "bytes": 6534
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_products.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "dff5971ccadfd3f2533c77f170a33ab1f59211ae79c62c680e5f309a94ef1fbf",
+      "bytes": 65304
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_products.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "8325c69ae83da63e39cad983638b6401f36552c995a5a6810d35e46b459725ea",
+      "bytes": 1241
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_source_version.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "6168c77a031417280b6f3955caacc260f4120829c3516f8c8c46633ad42cffb6",
+      "bytes": 65322
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-sosa_source_version.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "5ab492cd94b2e78907273415ae44097a4f028e2f61413640c8ac63dff9ad255e",
+      "bytes": 1470
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-source_identity.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "9f7a72d99802d774e7f63cfe1134d4cff08529126d92f5ea0b012a5b431baba1",
+      "bytes": 65308
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-source_identity.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "e523106e326edb9f399f2fa301c0699c85f30764396d2e9fd30ff50f9c9b4128",
+      "bytes": 70
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-static_checks.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "5b1ee9234bde4c290b9eafc94550b0baa0adc2228395bc887981995ba5a126b6",
+      "bytes": 65248
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-static_checks.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-whitespace.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "022b837155a12144cb23466061232979ffcddff6511ea7073205ffad2ab76bfe",
+      "bytes": 65249
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-final-whitespace.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-independent-preservation.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "59747d6a9b5d9aa7bc6ccb90800648c4cf6ade008c6f9fef6e0ceb4461f2e9c3",
+      "bytes": 40862
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-packet-audit.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "23e959ea0f2ae4af552cd09d2f70f5431179417035ae8df271f37c30a0a09c8e",
+      "bytes": 11927
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-pre-state.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "b4cc9c67dc070faf91df2072ab79a9380626577e04308c21ac7429dd3d0d1a2c",
+      "bytes": 161653
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-prior-commands.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "7d853463a46962bbef7545042c1a8c5eb53d75613c9c16d19777404d8dc764b0",
+      "bytes": 908680
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-prior-post-state.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "453b62bc1cda37f1f49140571b3966ff76ba69b4f6348f19c4ad0b2c048facfa",
+      "bytes": 59131
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.command.json",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "edefb3883f651c89e883502460bf2e5fb36cc0c19eaf3fd7f4a11e276b41953f",
+      "bytes": 65609
+    },
+    {
+      "path": "reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.log",
+      "change": "created",
+      "artifact_kind": "generated_retained_evidence",
+      "sha256": "5e9fa9a7037b6a4d8c119d3bf47f0a6bc30a0a98adde5cf3bb8c73ae24f8cbf4",
+      "bytes": 6534
+    },
+    {
+      "path": "reports/current-publication-validation/guard-repair-post-state.json",
+      "change": "modified",
+      "artifact_kind": "generated_retained_evidence",
+      "pre_repair_sha256": "453b62bc1cda37f1f49140571b3966ff76ba69b4f6348f19c4ad0b2c048facfa",
+      "hash_note": "Excluded to avoid circular final-manifest hashes."
+    },
+    {
+      "path": "reports/current-ssn-sosa-coverage.json",
+      "change": "modified",
+      "artifact_kind": "publication_evidence",
+      "pre_repair_sha256": "4b3072801bf0df7e41b3172dc57a137d12e304928c337d2e069431c84612f295",
+      "sha256": "8c64a67199cbcc3b94fe3e71928bb25c6f6475ec7df48bac1716306d5b776877",
+      "bytes": 88158
+    },
+    {
+      "path": "reports/current-ssn-sosa-human-review.json",
+      "change": "modified",
+      "artifact_kind": "publication_evidence",
+      "pre_repair_sha256": "5b38babe76150ef0e05f25b5913619e1ad75060c3dcb9df0ed408b623f0e538b",
+      "sha256": "70a59b040cbcd84f11e304ec0f04945cbbeb362558a3ab8bc5c580aa47fc822f",
+      "bytes": 2052135
+    },
+    {
+      "path": "reports/current-ssn-sosa-human-review.md",
+      "change": "modified",
+      "artifact_kind": "documentation",
+      "pre_repair_sha256": "31deecf59d27a99f8deb975c5a3ad0756dc6659340e1b250d78b19c1451f7a0e",
+      "sha256": "9557996dbaae8b624a034cedd1404fc44c2c4ad7c28d1a88c467629c959aa1ef",
+      "bytes": 385752
+    },
+    {
+      "path": "reports/current-ssn-sosa-publication-readiness.md",
+      "change": "modified",
+      "artifact_kind": "documentation",
+      "pre_repair_sha256": "384d2227b279286ec7b7ed5b50f7bba5a27fecec428cf45915198611145d6053",
+      "sha256": "4fdf4e8d59a623313e8f801d73e975959000122d7836d02293267c3350a6575c",
+      "bytes": 19607
+    },
+    {
+      "path": "reports/current-ssn-sosa-rationale-proposals.json",
+      "change": "modified",
+      "artifact_kind": "publication_evidence",
+      "pre_repair_sha256": "88574521525e56323e393b7210cc7d360c403ec5f6ce933d2ffff6eea260392a",
+      "sha256": "acef6553e963b34b0d0ef3d46f13d8e494f6d9cde8352191c2a2c63ce94ad5ff",
+      "bytes": 114260
+    },
+    {
+      "path": "reports/current-ssn-sosa-semantic-validation.json",
+      "change": "modified",
+      "artifact_kind": "publication_evidence",
+      "pre_repair_sha256": "87f1084ad9fe5d5ad8c5f6f01fd2b120978b49289d73bbe4c9fe40205a0ef136",
+      "sha256": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a",
+      "bytes": 276411
+    },
+    {
+      "path": "reports/current-ssn-sosa-semantic-validation.md",
+      "change": "modified",
+      "artifact_kind": "documentation",
+      "pre_repair_sha256": "d10129d0060a272281d39c8863a49112b40ecc22b59c6a0f2bdb1ea52f4365d1",
+      "sha256": "610bd2b9a25108dc651cde3fae2536d567dc0866579048adac69966bc99fe975",
+      "bytes": 6466
+    },
+    {
+      "path": "tests/test_current_assessment.py",
+      "change": "modified",
+      "artifact_kind": "test",
+      "pre_repair_sha256": "947dcc4c9762174d321b7768efa2bd4ff4dbdb05d4f6cf7dba292ab4bd4182f8",
+      "sha256": "16216a824a0599dad554ac64f9f18c311be8f077e801bbe04e28ba082991af16",
+      "bytes": 31405
+    },
+    {
+      "path": "tests/test_current_semantic_validation.py",
+      "change": "modified",
+      "artifact_kind": "test",
+      "pre_repair_sha256": "d0d1b1155faff8ae65018c7934bed16a668436d93028ffb9d36ef8a048c2428d",
+      "sha256": "d8443382fcf2c6c054b01b8bb8a7e363262f817777a1e387c4c999c67b4b9d41",
+      "bytes": 41668
+    },
+    {
+      "path": "tools/current_assessment.py",
+      "change": "modified",
+      "artifact_kind": "authored_source",
+      "pre_repair_sha256": "4a1c22e76ba656aeee095dc9c4f7b902877f034a94a2c65040d1423aa2eed6b8",
+      "sha256": "5f8d0effd4b8390cebba6b08298d174110f7fa55e02f739c7bdcaef38b904402",
+      "bytes": 51996
+    },
+    {
+      "path": "tools/current_publication_readiness.py",
+      "change": "modified",
+      "artifact_kind": "authored_source",
+      "pre_repair_sha256": "8095dfe74b01b35e5d6e4a6c71429cf265d4a6d1ac61111157b198dc9a5582b0",
+      "sha256": "8d2f1446446bb7e55b5af76b136bd93bf8e8557ced15393829bbded651a6d9ae",
+      "bytes": 27576
+    },
+    {
+      "path": "tools/current_semantic_validation.py",
+      "change": "modified",
+      "artifact_kind": "authored_source",
+      "pre_repair_sha256": "eaa980c2ae6ac5471a5cf197d5bfa6fbe1113fef477585d313dfae0cab4ae5b3",
+      "sha256": "94f6fab0a1c649d72c018c2b3b64447222a23c75cee107912f63cbf40d3af495",
+      "bytes": 64039
+    }
+  ],
+  "test_counts": {
+    "affected_integration_tests": 128,
+    "current_focused_tests": 119,
+    "sosa_2023_nonregression": 44
+  },
+  "remaining_mechanical_blockers": [],
+  "assessment_basis": "Implementation regressions and sample checks complete; independent human-review-gate audit remains next. No publication or semantic approval.",
+  "verdict": "FINAL MECHANICAL REPAIRS COMPLETE \u2014 READY FOR INDEPENDENT HUMAN-REVIEW-GATE AUDIT"
+}

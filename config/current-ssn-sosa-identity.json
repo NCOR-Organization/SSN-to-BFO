@@ -1,0 +1,570 @@
+{
+  "project": "SSN-to-BFO current SSN/SOSA publication assessment",
+  "baseline_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "branch_at_freeze": "publication/current-sosa-readiness",
+  "identity_policy": "Local byte identities; no upstream immutable commit is inferred from local Git history or version text.",
+  "source_files": [
+    {
+      "path": "imports/sosa.ttl",
+      "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "bytes": 34854,
+      "local_git_provenance": {
+        "latest_change": "92ccb8fb6276fc0e2f4b89fa10fd1af2d6d535f4|2026-07-09T23:04:10-04:00|Materialize SOSA import for diagnostics",
+        "earliest_recoverable_change": "92ccb8fb6276fc0e2f4b89fa10fd1af2d6d535f4|2026-07-09T23:04:10-04:00|Materialize SOSA import for diagnostics",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- imports/sosa.ttl"
+      },
+      "upstream_immutable_commit": "not established from repository evidence",
+      "ontologies": [
+        {
+          "ontology_iri": "http://www.w3.org/ns/sosa/",
+          "version_iris": [],
+          "imports": [],
+          "annotations_and_header_triples": [
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/created>",
+              "\"2017-04-17\"^^<http://www.w3.org/2001/XMLSchema#date>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/creator>",
+              "_:cb7022a24e65dc3a551ae89b240cda214534eb0d80650d05fe3d3bbea9b0ed386f"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/description>",
+              "\"This ontology is based on the SSN Ontology by the W3C Semantic Sensor Networks Incubator Group (SSN-XG), together with considerations from the W3C/OGC Spatial Data on the Web Working Group.\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.opengeospatial.org/ogc/Software>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/rights>",
+              "\"Copyright 2017 W3C/OGC.\""
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/dc/terms/title>",
+              "\"Sensor, Observation, Sample, and Actuator (SOSA) Ontology\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/vocab/vann/preferredNamespacePrefix>",
+              "\"sosa\""
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://purl.org/vocab/vann/preferredNamespaceUri>",
+              "\"http://www.w3.org/ns/sosa/\""
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://purl.org/vocommons/voaf#Vocabulary>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#NamedIndividual>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#Ontology>"
+            ],
+            [
+              "_:cb7022a24e65dc3a551ae89b240cda214534eb0d80650d05fe3d3bbea9b0ed386f",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://xmlns.com/foaf/0.1/Agent>"
+            ],
+            [
+              "_:cb7022a24e65dc3a551ae89b240cda214534eb0d80650d05fe3d3bbea9b0ed386f",
+              "<http://xmlns.com/foaf/0.1/name>",
+              "\"W3C/OGC Spatial Data on the Web Working Group\"@en"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "imports/sosa-sampling.ttl",
+      "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "bytes": 3604,
+      "local_git_provenance": {
+        "latest_change": "4821567c1319670ec3723fccc924d68a54620f92|2026-07-12T18:23:13-04:00|Materialize SOSA Sampling import",
+        "earliest_recoverable_change": "4821567c1319670ec3723fccc924d68a54620f92|2026-07-12T18:23:13-04:00|Materialize SOSA Sampling import",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- imports/sosa-sampling.ttl"
+      },
+      "upstream_immutable_commit": "not established from repository evidence",
+      "ontologies": [
+        {
+          "ontology_iri": "http://www.w3.org/ns/sosa/sampling/",
+          "version_iris": [],
+          "imports": [
+            "http://www.w3.org/2004/02/skos/core",
+            "http://www.w3.org/ns/sosa/"
+          ],
+          "annotations_and_header_triples": [
+            [
+              "<http://www.w3.org/ns/sosa/sampling/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#Ontology>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/sampling/>",
+              "<http://www.w3.org/2002/07/owl#imports>",
+              "<http://www.w3.org/2004/02/skos/core>"
+            ],
+            [
+              "<http://www.w3.org/ns/sosa/sampling/>",
+              "<http://www.w3.org/2002/07/owl#imports>",
+              "<http://www.w3.org/ns/sosa/>"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "imports/ssn.ttl",
+      "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "bytes": 38450,
+      "local_git_provenance": {
+        "latest_change": "a9af2a7d61982781e759a4fe96f9c65ee01faea5|2025-04-16T23:11:02-04:00|added imports",
+        "earliest_recoverable_change": "a9af2a7d61982781e759a4fe96f9c65ee01faea5|2025-04-16T23:11:02-04:00|added imports",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- imports/ssn.ttl"
+      },
+      "upstream_immutable_commit": "not established from repository evidence",
+      "ontologies": [
+        {
+          "ontology_iri": "http://www.w3.org/ns/ssn/",
+          "version_iris": [],
+          "imports": [
+            "http://www.w3.org/ns/sosa/"
+          ],
+          "annotations_and_header_triples": [
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/created>",
+              "\"2017-04-17\"^^<http://www.w3.org/2001/XMLSchema#date>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/creator>",
+              "_:cb3576334a55279d5943e17ebfeb668021968f4862ef84b63f86cd8bac8b36b5b2"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/description>",
+              "\"This ontology describes sensors, actuators and observations, and related concepts. It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.opengeospatial.org/ogc/Software>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/rights>",
+              "\"Copyright 2017 W3C/OGC.\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/dc/terms/title>",
+              "\"Semantic Sensor Network Ontology\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/vocab/vann/preferredNamespacePrefix>",
+              "\"ssn\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://purl.org/vocab/vann/preferredNamespaceUri>",
+              "\"http://www.w3.org/ns/ssn/\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://purl.org/vocommons/voaf#Vocabulary>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#NamedIndividual>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#Ontology>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/2000/01/rdf-schema#comment>",
+              "\"Please report any errors to the W3C Spatial Data on the Web Working Group via the SDW WG Public List public-sdw-wg@w3.org\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/2000/01/rdf-schema#seeAlso>",
+              "<https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/2002/07/owl#imports>",
+              "<http://www.w3.org/ns/sosa/>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/>",
+              "<http://www.w3.org/2002/07/owl#versionInfo>",
+              "\"\"\"New modular version of the SSN ontology. \n\nThis ontology was originally developed in 2009-2011 by the W3C Semantic Sensor Networks Incubator Group (SSN-XG). For more information on the group's activities see: http://www.w3.org/2005/Incubator/ssn/. The ontology was revised and modularized in 2015-2017 by the W3C/OGC Spatial Data on the Web Working Group, see: https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology. \n\nIn particular, (a) the scope is extended to include actuation and sampling; (b) the core concepts and properties are factored out into the SOSA ontology. The SSN ontology imports SOSA and adds formal axiomatization consistent with the text definitions in SOSA, and adds classes and properties to accommodate the scope of the original SSN ontology. \"\"\"@en"
+            ],
+            [
+              "_:cb3576334a55279d5943e17ebfeb668021968f4862ef84b63f86cd8bac8b36b5b2",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://xmlns.com/foaf/0.1/Agent>"
+            ],
+            [
+              "_:cb3576334a55279d5943e17ebfeb668021968f4862ef84b63f86cd8bac8b36b5b2",
+              "<http://xmlns.com/foaf/0.1/name>",
+              "\"W3C/OGC Spatial Data on the Web Working Group\"@en"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "imports/ssn-systems.ttl",
+      "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "bytes": 41076,
+      "local_git_provenance": {
+        "latest_change": "7e08f75c5f04ad5d439e6feaf0af368f3cf63283|2026-02-02T15:29:52-05:00|Add files via upload",
+        "earliest_recoverable_change": "7e08f75c5f04ad5d439e6feaf0af368f3cf63283|2026-02-02T15:29:52-05:00|Add files via upload",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- imports/ssn-systems.ttl"
+      },
+      "upstream_immutable_commit": "not established from repository evidence",
+      "ontologies": [
+        {
+          "ontology_iri": "http://www.w3.org/ns/ssn/systems/",
+          "version_iris": [],
+          "imports": [
+            "http://www.w3.org/ns/ssn/"
+          ],
+          "annotations_and_header_triples": [
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/created>",
+              "\"2017-05-14\"^^<http://www.w3.org/2001/XMLSchema#date>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/creator>",
+              "_:cb8cadc72187292f0db90fbda6fb4bfbb598de0dcd8736b944954a39eacdea55d1"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/description>",
+              "\"This ontology describes system capabilities, operating ranges, and survival ranges.\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.opengeospatial.org/ogc/Software>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/license>",
+              "<http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/rights>",
+              "\"Copyright 2017 W3C/OGC.\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/dc/terms/title>",
+              "\"System capabilities, operating ranges, and survival ranges ontology\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/vocab/vann/preferredNamespacePrefix>",
+              "\"ssn-system\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://purl.org/vocab/vann/preferredNamespaceUri>",
+              "\"http://www.w3.org/ns/ssn/systems/\""
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://purl.org/vocommons/voaf#Vocabulary>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#NamedIndividual>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#Ontology>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/2000/01/rdf-schema#comment>",
+              "\"Please report any errors to the W3C Spatial Data on the Web Working Group via the SDW WG Public List public-sdw-wg@w3.org\"@en"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/2000/01/rdf-schema#seeAlso>",
+              "<https://www.w3.org/2015/spatial/wiki/Semantic_Sensor_Network_Ontology>"
+            ],
+            [
+              "<http://www.w3.org/ns/ssn/systems/>",
+              "<http://www.w3.org/2002/07/owl#imports>",
+              "<http://www.w3.org/ns/ssn/>"
+            ],
+            [
+              "_:cb8cadc72187292f0db90fbda6fb4bfbb598de0dcd8736b944954a39eacdea55d1",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://xmlns.com/foaf/0.1/Agent>"
+            ],
+            [
+              "_:cb8cadc72187292f0db90fbda6fb4bfbb598de0dcd8736b944954a39eacdea55d1",
+              "<http://xmlns.com/foaf/0.1/name>",
+              "\"W3C/OGC Spatial Data on the Web Working Group\"@en"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "target_files": [
+    {
+      "path": "imports/cco.ttl",
+      "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "bytes": 1229197,
+      "local_git_provenance": {
+        "latest_change": "a9af2a7d61982781e759a4fe96f9c65ee01faea5|2025-04-16T23:11:02-04:00|added imports",
+        "earliest_recoverable_change": "a9af2a7d61982781e759a4fe96f9c65ee01faea5|2025-04-16T23:11:02-04:00|added imports",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- imports/cco.ttl"
+      },
+      "upstream_immutable_commit": "not established from repository evidence",
+      "ontologies": [
+        {
+          "ontology_iri": "https://www.commoncoreontologies.org/CommonCoreOntologiesMerged",
+          "version_iris": [
+            "https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged"
+          ],
+          "imports": [],
+          "annotations_and_header_triples": [
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://purl.org/dc/terms/license>",
+              "\"BSD 3-Clause: https://github.com/CommonCoreOntology/CommonCoreOntologies/blob/master/LICENSE\"@en"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://purl.org/dc/terms/rights>",
+              "\"CUBRC Inc., see full license.\"@en"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+              "<http://www.w3.org/2002/07/owl#Ontology>"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/2000/01/rdf-schema#comment>",
+              "\"A stand-alone file containing the eleven mid-level Common Core Ontologies plus BFO. Provided for use-cases where one file representing a specific release of CCO and its imports is desirable.\"@en"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/2000/01/rdf-schema#label>",
+              "\"Common Core Ontologies Merged\"@en"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/2002/07/owl#versionIRI>",
+              "<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/2002/07/owl#versionInfo>",
+              "\"Depends on http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl, obtained 11/03/2024.\"@en"
+            ],
+            [
+              "<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>",
+              "<http://www.w3.org/2002/07/owl#versionInfo>",
+              "\"Version 2.0\"@en"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "target_components": {
+    "CCO": {
+      "artifact": "imports/cco.ttl",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged",
+      "version_info": "Version 2.0"
+    },
+    "BFO": {
+      "artifact": "imports/cco.ttl",
+      "identity_basis": "Embedded in merged CCO artifact, not a separately pinned BFO download",
+      "provenance_annotation": "Depends on http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl, obtained 11/03/2024.",
+      "upstream_immutable_commit": "not established from repository evidence"
+    }
+  },
+  "unresolved_external_imports": [
+    "http://www.w3.org/2004/02/skos/core"
+  ],
+  "closure_limitation": "The governed local closure contains all five listed artifacts. SKOS is imported by the sampling artifact but has no local byte-pinned copy; full upstream import closure identity is incomplete. Do not fetch or silently substitute another track's dependencies.",
+  "authoritative_workbook": {
+    "path": "mappings/SSN2BFO-COMS.xlsx",
+    "sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+    "bytes": 12372,
+    "local_git_provenance": {
+      "latest_change": "d2675bdc465684d1f442c0152955a2e8a6d471b8|2026-07-30T15:45:10-04:00|Defer sample property chains for OWL 2 DL simplicity",
+      "earliest_recoverable_change": "116890b9b7e9b42f103e2ca061f4a859cdefe06a|2026-07-13T19:23:00-04:00|Add parallel COMS mapping generation pipeline",
+      "evidence_command": "git log --follow --format='%H|%aI|%s' -- mappings/SSN2BFO-COMS.xlsx"
+    }
+  },
+  "products": [
+    {
+      "path": "SSN2BFO.ttl",
+      "sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "bytes": 177684,
+      "local_git_provenance": {
+        "latest_change": "d2675bdc465684d1f442c0152955a2e8a6d471b8|2026-07-30T15:45:10-04:00|Defer sample property chains for OWL 2 DL simplicity",
+        "earliest_recoverable_change": "d22468b9833da629951d9f88bbe2923bce84621d|2026-01-25T10:06:56-05:00|overview class mappings added",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- SSN2BFO.ttl"
+      }
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "sha256": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+      "bytes": 7623,
+      "local_git_provenance": {
+        "latest_change": "c38906eafba6f8fa8c63b1a7048b07ed204880e3|2026-07-16T14:21:17-04:00|Emit deterministic publication metadata",
+        "earliest_recoverable_change": "90e0351aaf8961a86ce8d01140ec2507d1b14bbe|2026-07-15T16:56:07-04:00|Generate SSN/SOSA alignment core",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl"
+      }
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "bytes": 19183,
+      "local_git_provenance": {
+        "latest_change": "c38906eafba6f8fa8c63b1a7048b07ed204880e3|2026-07-16T14:21:17-04:00|Emit deterministic publication metadata",
+        "earliest_recoverable_change": "dfb25b1b092c552334431ae476f56beaaa4a76dc|2026-07-15T20:11:49-04:00|Generate strict BFO mapping",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl"
+      }
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "bytes": 153549,
+      "local_git_provenance": {
+        "latest_change": "d2675bdc465684d1f442c0152955a2e8a6d471b8|2026-07-30T15:45:10-04:00|Defer sample property chains for OWL 2 DL simplicity",
+        "earliest_recoverable_change": "07349b9a340ac75f802d6d418cc3633833261800|2026-07-15T21:11:07-04:00|Generate CCO extension",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl"
+      }
+    }
+  ],
+  "scope_and_configuration": [
+    {
+      "path": "queries/source-classes-and-object-properties.rq",
+      "sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+      "bytes": 929,
+      "local_git_provenance": {
+        "latest_change": "116890b9b7e9b42f103e2ca061f4a859cdefe06a|2026-07-13T19:23:00-04:00|Add parallel COMS mapping generation pipeline",
+        "earliest_recoverable_change": "116890b9b7e9b42f103e2ca061f4a859cdefe06a|2026-07-13T19:23:00-04:00|Add parallel COMS mapping generation pipeline",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- queries/source-classes-and-object-properties.rq"
+      }
+    },
+    {
+      "path": "queries/unmapped-source-terms.rq",
+      "sha256": "38162b78061612b90aa284e0fc445c3ec1f163e5161b9b96633faaed62e22dd3",
+      "bytes": 291,
+      "local_git_provenance": {
+        "latest_change": "e1be5b504f0b40adb53d7e4fa71289f7e72d423b|2026-07-14T01:30:38-04:00|Treat domain and range rows as coverage",
+        "earliest_recoverable_change": "116890b9b7e9b42f103e2ca061f4a859cdefe06a|2026-07-13T19:23:00-04:00|Add parallel COMS mapping generation pipeline",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- queries/unmapped-source-terms.rq"
+      }
+    },
+    {
+      "path": "config/current-ssn-sosa-scope.json",
+      "sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+      "bytes": 1032,
+      "local_git_provenance": {
+        "latest_change": null,
+        "earliest_recoverable_change": null,
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- config/current-ssn-sosa-scope.json"
+      }
+    },
+    {
+      "path": "config/publication-metadata.toml",
+      "sha256": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
+      "bytes": 2414,
+      "local_git_provenance": {
+        "latest_change": "18e41714d9559ea481e88eeb3af18877b39de3fe|2026-08-09T11:27:25-04:00|Migrate current release to four materialized products",
+        "earliest_recoverable_change": "f4cc40b11e3fdf4c5cadf65c833bd560f3f6dd0c|2026-07-14T23:50:55-04:00|Add publication metadata and release identity validation",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- config/publication-metadata.toml"
+      }
+    },
+    {
+      "path": "config/product-role-policy.toml",
+      "sha256": "b197656c54b98854d45e27634a960a2a602ea1c852eeb5c17eeaa5719398fdfa",
+      "bytes": 2042,
+      "local_git_provenance": {
+        "latest_change": "7199eb2e8ef5c4e8bd0191b53b1222626b7a4f6f|2026-09-06T20:26:33-04:00|Add SOSA 2023 four-product RO release support",
+        "earliest_recoverable_change": "fc05e886b447d9c0492ae0940164326f7a410ea1|2026-08-08T17:24:26-04:00|Govern product-role materialization",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- config/product-role-policy.toml"
+      }
+    },
+    {
+      "path": "config/validation-toolchain.env",
+      "sha256": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+      "bytes": 334,
+      "local_git_provenance": {
+        "latest_change": "29c368d92814710bc1c037a83757578dd2ae796a|2026-07-14T20:55:19-04:00|Declare authoritative validation dependencies",
+        "earliest_recoverable_change": "29c368d92814710bc1c037a83757578dd2ae796a|2026-07-14T20:55:19-04:00|Declare authoritative validation dependencies",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- config/validation-toolchain.env"
+      }
+    },
+    {
+      "path": "requirements/validation.txt",
+      "sha256": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+      "bytes": 30,
+      "local_git_provenance": {
+        "latest_change": "17846163e1546f5ab0db1cab0037342ab0bf3654|2026-07-19T18:31:08-04:00|Relocate repository guidance files",
+        "earliest_recoverable_change": "29c368d92814710bc1c037a83757578dd2ae796a|2026-07-14T20:55:19-04:00|Declare authoritative validation dependencies",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- requirements/validation.txt"
+      }
+    },
+    {
+      "path": "requirements/coms-integration.txt",
+      "sha256": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+      "bytes": 162,
+      "local_git_provenance": {
+        "latest_change": "0695192e90608b6d96ce75ed2ea547aa29ba552c|2026-09-16T23:02:01-04:00|Add shadow COMS framework integration",
+        "earliest_recoverable_change": "0695192e90608b6d96ce75ed2ea547aa29ba552c|2026-09-16T23:02:01-04:00|Add shadow COMS framework integration",
+        "evidence_command": "git log --follow --format='%H|%aI|%s' -- requirements/coms-integration.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+PYTHONDONTWRITEBYTECODE=1 python tools/current_publication_readiness.py --write
+CURRENT TRACK NOT YET PUBLICATION READY — HUMAN SEMANTIC REVIEW REQUIRED
+- Complete the 79-term human review queue, retaining explicit decisions and rationale evidence; 2 terms are deferred and 77 unreviewed.
+- Resolve 76 judgment-sensitive rationale proposals before treating them as adequate publication rationales.
+- No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.
+- Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Exact-closure example success is not established for every source example and the separate fixture.
+- Source and target approximate deductive-difference comparisons do not both have a valid PASS result.
+- Human approval of selected positive and negative semantic expectations is outstanding.
+- Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.
+- Validation failed: unit_tests (exit 1)
+- Validation failed: full_repository_gate (exit 2)
+- Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.
+make: *** [check-current-publication] Error 1

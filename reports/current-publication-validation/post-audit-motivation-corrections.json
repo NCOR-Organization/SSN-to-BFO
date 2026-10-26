@@ -1,0 +1,48 @@
+{
+  "changed_at_utc": "2026-10-10T19:08:46.291131+00:00",
+  "scope": "Exactly three explanatory motivation strings; all IDs, queries, premises, evidence references and approval states unchanged. No formal mapping or source edits.",
+  "before_sha256": "1d3578bb7d2fead879c7ba744615e60ad2436fba8980ad8e780b82d033615312",
+  "after_sha256": "72539cf6c9f3bb4667bf2e5ac12ef75a7c69aba14b21afeaa44720687497d1d5",
+  "unchanged_non_motivation_payload": true,
+  "corrections": [
+    {
+      "id": "equivalence-reverse-positive",
+      "before": "Exercise the sufficient direction for a material output of a sampling event; review whether that condition warrants the source Sample classification. This is a proposed concrete competency case, not a claim that the equivalence is justified.",
+      "after": "Exercise the sufficient direction for a material entity that is object of a sampling event. CCO is object of describes a continuant as part of the projected state an agent intends to achieve through a process. Review whether that condition warrants the source Sample classification. This proposed competency case does not establish that the equivalence is justified."
+    },
+    {
+      "id": "observation-plan-positive",
+      "before": "Review whether every source Observation necessarily involves the plan-side existential inherited from the current complex filler. This tests a consequence of the filler intersection, not the full asserted restriction.",
+      "after": "Review whether every source Observation necessarily has a process part that is an Act of Measuring. The queried CCO terms are has process part (ont00001777) and Act of Measuring (ont00000345). This tests an existential consequence of the current filler intersection, rather than the complete asserted restriction."
+    },
+    {
+      "id": "observation-sensor-reverse-negative",
+      "before": "A plan specification is not itself an observation; detect reversal from a restriction filler to the subject class.",
+      "after": "An Act of Measuring used as an existential restriction filler should not, solely on that basis, be classified as a source Observation. Review this proposed boundary against the source and target definitions; the query tests subclassification of Act of Measuring as Observation."
+    }
+  ],
+  "local_definition_evidence": {
+    "Act of Measuring": "imports/cco.ttl:6911",
+    "has process part": "imports/cco.ttl:881",
+    "is object of": "imports/cco.ttl:2439"
+  },
+  "preserved_pre_audit_files": [
+    {
+      "original": "config/current-semantic-expectations.json",
+      "copy": "reports/current-publication-validation/post-audit-pre-edit/current-semantic-expectations.json",
+      "sha256": "1d3578bb7d2fead879c7ba744615e60ad2436fba8980ad8e780b82d033615312"
+    },
+    {
+      "original": "reports/current-ssn-sosa-semantic-validation.json",
+      "copy": "reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.json",
+      "sha256": "f478e308dc5b62b019efddf1e5262d36586035aa8015b684c672daf952221a24"
+    },
+    {
+      "original": "reports/current-ssn-sosa-semantic-validation.md",
+      "copy": "reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.md",
+      "sha256": "498891a0bf978e78c2eb8d6b38801c98916ad55accfc10c5eca1e7aed4148930"
+    }
+  ],
+  "non_motivation_payload_sha256_before": "8a4a5b925992e3aa7cbf9a19afe5ac65c068d7a78510802e2db169004717e85d",
+  "non_motivation_payload_sha256_after": "8a4a5b925992e3aa7cbf9a19afe5ac65c068d7a78510802e2db169004717e85d"
+}

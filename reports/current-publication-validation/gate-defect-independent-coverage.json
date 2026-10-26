@@ -1,0 +1,13 @@
+{
+  "coverage_counts": {
+    "direct_formal_mapping": 69,
+    "inherited_formal_mapping": 41,
+    "rule_or_chain_route": 10,
+    "typing_only_in_workbook": 17,
+    "explicit_blank": 2,
+    "no_established_formal_route": 15
+  },
+  "per_term_coverage_mismatches": [],
+  "term_count": 91,
+  "overlap_semantics": "Six structural flags computed independently per term; not mutually exclusive and not semantic approval."
+}

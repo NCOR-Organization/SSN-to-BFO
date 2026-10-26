@@ -1,0 +1,244 @@
+{
+  "status": "PASS",
+  "recorded_at_utc": "2026-10-25T21:39:25.255990+00:00",
+  "checks": {
+    "exactly_two_assessment_records_changed": true,
+    "other_89_assessment_records_identical": true,
+    "assessment_document_metadata_unchanged": true,
+    "queue_removed_only_approved_pair": true,
+    "remaining_77_review_packets_identical": true,
+    "four_holds_identical_and_still_unreviewed": true,
+    "exactly_two_new_human_decision_records": true,
+    "workbook_predicates_targets_blank": true,
+    "workbook_expected_source_rowids": true,
+    "current_mapping_source_target_rules_byte_identical": true,
+    "no_new_mapping_axiom_or_ro_promotion": true,
+    "hasSample:approved_rationale_verbatim": true,
+    "hasSample:assessment_rationale_identical": true,
+    "hasSample:reviewer_exact": true,
+    "hasSample:review_timestamp_timezone_aware": true,
+    "hasSample:final_no_direct_mapping": true,
+    "hasSample:snapshot_exact": true,
+    "hasSample:packet_snapshot_exact": true,
+    "hasSample:open_question_exact": true,
+    "hasSample:explicit_response_present": true,
+    "hasSample:no_formal_mapping_assertions": true,
+    "hasSample:ro_context_not_promoted": true,
+    "hasSample:approved_input_artifact_verbatim": true,
+    "hasSample:partner_cross_reference": true,
+    "isSampleOf:approved_rationale_verbatim": true,
+    "isSampleOf:assessment_rationale_identical": true,
+    "isSampleOf:reviewer_exact": true,
+    "isSampleOf:review_timestamp_timezone_aware": true,
+    "isSampleOf:final_no_direct_mapping": true,
+    "isSampleOf:snapshot_exact": true,
+    "isSampleOf:packet_snapshot_exact": true,
+    "isSampleOf:open_question_exact": true,
+    "isSampleOf:explicit_response_present": true,
+    "isSampleOf:no_formal_mapping_assertions": true,
+    "isSampleOf:ro_context_not_promoted": true,
+    "isSampleOf:approved_input_artifact_verbatim": true,
+    "isSampleOf:partner_cross_reference": true,
+    "preservation_guard_pass": true,
+    "head_unchanged": true,
+    "branch_unchanged": true,
+    "tags_unchanged": true,
+    "expected_counts": true
+  },
+  "failed_checks": [],
+  "changed_assessment_source_iris": [
+    "http://www.w3.org/ns/sosa/hasSample",
+    "http://www.w3.org/ns/sosa/isSampleOf"
+  ],
+  "assessment_changed_fields": {
+    "http://www.w3.org/ns/sosa/hasSample": [
+      "assessment_outcome",
+      "evidence",
+      "human_decision_record",
+      "rationale",
+      "review_state"
+    ],
+    "http://www.w3.org/ns/sosa/isSampleOf": [
+      "assessment_outcome",
+      "evidence",
+      "human_decision_record",
+      "rationale",
+      "review_state"
+    ]
+  },
+  "queue_removed": [
+    "http://www.w3.org/ns/sosa/hasSample",
+    "http://www.w3.org/ns/sosa/isSampleOf"
+  ],
+  "queue_added": [],
+  "hold_terms": [
+    "http://www.w3.org/ns/sosa/sampling/RelationshipNature",
+    "http://www.w3.org/ns/sosa/sampling/natureOfRelationship",
+    "http://www.w3.org/ns/sosa/madeActuation",
+    "http://www.w3.org/ns/sosa/madeByActuator"
+  ],
+  "new_decision_records": [
+    "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json",
+    "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json"
+  ],
+  "per_decision": {
+    "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json": {
+      "approved_rationale_verbatim": true,
+      "assessment_rationale_identical": true,
+      "reviewer_exact": true,
+      "review_timestamp_timezone_aware": true,
+      "final_no_direct_mapping": true,
+      "snapshot_exact": true,
+      "packet_snapshot_exact": true,
+      "open_question_exact": true,
+      "explicit_response_present": true,
+      "no_formal_mapping_assertions": true,
+      "ro_context_not_promoted": true,
+      "approved_input_artifact_verbatim": true,
+      "partner_cross_reference": true
+    },
+    "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": {
+      "approved_rationale_verbatim": true,
+      "assessment_rationale_identical": true,
+      "reviewer_exact": true,
+      "review_timestamp_timezone_aware": true,
+      "final_no_direct_mapping": true,
+      "snapshot_exact": true,
+      "packet_snapshot_exact": true,
+      "open_question_exact": true,
+      "explicit_response_present": true,
+      "no_formal_mapping_assertions": true,
+      "ro_context_not_promoted": true,
+      "approved_input_artifact_verbatim": true,
+      "partner_cross_reference": true
+    }
+  },
+  "counts": {
+    "source_terms": 91,
+    "review_states": {
+      "unreviewed": 77,
+      "final": 14
+    },
+    "assessment_outcomes": {
+      "unreviewed": 77,
+      "formal_mapping_adopted": 10,
+      "no_direct_mapping": 4
+    },
+    "unresolved": 77
+  },
+  "workbook_rows": {
+    "Sheet2!16": [
+      "sosa:hasSample",
+      null,
+      null,
+      "Property-chain mapping deferred because an owl:propertyChainAxiom makes sosa:hasSample non-simple, which conflicts with the pinned SOSA/SSN inverse-functional declaration. The source ontology remains unchanged; the representation intent belongs in a rule, SHACL, or annotation layer rather than the OWL 2 DL mapping product.",
+      "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f"
+    ],
+    "Sheet2!17": [
+      "sosa:isSampleOf",
+      null,
+      null,
+      "Property-chain mapping deferred because an owl:propertyChainAxiom makes sosa:isSampleOf non-simple, which conflicts with the pinned SOSA/SSN functional declaration and the minimum-cardinality restriction on sosa:Sample. The source ontology remains unchanged; the representation intent belongs in a rule, SHACL, or annotation layer rather than the OWL 2 DL mapping product.",
+      "urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab"
+    ]
+  },
+  "mapping_preserved_paths": [
+    "mappings/SSN2BFO-COMS.xlsx",
+    "SSN2BFO.ttl",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "imports/sosa.ttl",
+    "imports/sosa-sampling.ttl",
+    "imports/ssn.ttl",
+    "imports/ssn-systems.ttl",
+    "imports/cco.ttl",
+    "rules/ssn-hasproperty-conditional-mapping.rq"
+  ],
+  "preservation": {
+    "status": "PASS",
+    "errors": [],
+    "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+    "branch": "publication/current-sosa-readiness",
+    "external_coms": {
+      "status": "PASS",
+      "baseline_head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+      "head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+      "changed_paths": [],
+      "errors": [],
+      "tracked_file_count": 55
+    }
+  },
+  "protected_groups": {
+    "current_mapping_semantics": {
+      "file_count": 6,
+      "changed_paths": []
+    },
+    "current_sources_and_targets": {
+      "file_count": 5,
+      "changed_paths": []
+    },
+    "pinned_sosa_2023": {
+      "file_count": 49,
+      "changed_paths": []
+    },
+    "historical_authorities": {
+      "file_count": 112,
+      "changed_paths": []
+    },
+    "local_coms_architecture": {
+      "file_count": 3,
+      "changed_paths": []
+    }
+  },
+  "file_delta_at_check": {
+    "changed": [
+      ".cache/coms/last-success.json",
+      "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md",
+      "mappings/current-ssn-sosa-assessment.json",
+      "reports/coms-generation-validation.md",
+      "reports/current-publication-candidate.json",
+      "reports/current-ssn-sosa-coverage.json",
+      "reports/current-ssn-sosa-coverage.md",
+      "reports/current-ssn-sosa-human-review.json",
+      "reports/current-ssn-sosa-human-review.md",
+      "reports/current-ssn-sosa-publication-readiness.md",
+      "reports/current-ssn-sosa-rationale-proposals.json",
+      "reports/current-ssn-sosa-rationale-proposals.md",
+      "tests/test_coms_framework_integration.py",
+      "tests/test_current_assessment.py",
+      "tools/current_assessment.py"
+    ],
+    "added": [
+      "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt",
+      "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json",
+      "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json",
+      "reports/current-publication-validation/sample-pair-decisions/all-final-gate-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/all-final-gate.log",
+      "reports/current-publication-validation/sample-pair-decisions/assessment-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/assessment.log",
+      "reports/current-publication-validation/sample-pair-decisions/coms-integration-tests.log",
+      "reports/current-publication-validation/sample-pair-decisions/focused-publication-tests.log",
+      "reports/current-publication-validation/sample-pair-decisions/generation-refresh.log",
+      "reports/current-publication-validation/sample-pair-decisions/generation_freshness-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/generation_freshness.log",
+      "reports/current-publication-validation/sample-pair-decisions/historical-semantic-custody-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/historical-semantic-custody.log",
+      "reports/current-publication-validation/sample-pair-decisions/pre-state.json",
+      "reports/current-publication-validation/sample-pair-decisions/preservation-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/preservation.log",
+      "reports/current-publication-validation/sample-pair-decisions/publication-readiness.log",
+      "reports/current-publication-validation/sample-pair-decisions/sosa-2023-nonregression-tests-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/sosa-2023-nonregression-tests.log",
+      "reports/current-publication-validation/sample-pair-decisions/source_identity-command.json",
+      "reports/current-publication-validation/sample-pair-decisions/source_identity.log",
+      "reports/current-publication-validation/sample-pair-decisions/validation-runner.py"
+    ],
+    "deleted": []
+  },
+  "file_delta_scope": "Snapshot at check time; concurrent validation logs and final reporting may subsequently be added or refreshed. All semantic authorities and assessment records were checked independently."
+}

@@ -54,11 +54,12 @@ import coms_framework_integration as integration  # noqa: E402
 import coms_row_identity as legacy_identity  # noqa: E402
 import generate_mapping_from_coms as legacy  # noqa: E402
 import product_dispositions as dispositions  # noqa: E402
+import current_documentary_workbook as documentary  # noqa: E402
 
 
 WORKBOOK_PATH = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
 WORKBOOK_SHA256 = "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
-GENERATOR_SHA256 = "f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6"
+GENERATOR_SHA256 = "9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843"
 ROW_IDENTITY_MODULE_SHA256 = (
     "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425"
 )
@@ -79,13 +80,11 @@ ARTIFACT_SHA256 = {
     REPO_ROOT / "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": (
         "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
     ),
-    REPO_ROOT / "reports/coms-product-dispositions.json": (
-        "c6f61271e573705882fa6a0f92f54c7731d6358739dc39ad66882ba6a737b0db"
-    ),
-    REPO_ROOT / "reports/coms-generation-validation.md": (
-        "17a5070cd0023ced0de10c3fca97daf45dc6c4e1e9ae733525d619f618fff357"
-    ),
 }
+DOCUMENTARY_REPORT_PATHS = (
+    REPO_ROOT / "reports/coms-product-dispositions.json",
+    REPO_ROOT / "reports/coms-generation-validation.md",
+)
 EXPECTED_MAPPING_TYPES = {
     "class_mapping": 44,
     "object_property_mapping": 25,
@@ -94,8 +93,10 @@ EXPECTED_MAPPING_TYPES = {
     "range": 15,
     "explicit_blank": 2,
 }
-FIXED_DISPOSITION_HASHES = dispositions.RequiredInputHashes(
-    workbook_sha256=WORKBOOK_SHA256,
+CURRENT_DISPOSITION_HASHES = dispositions.RequiredInputHashes(
+    # Documentary workbook evolution changes provenance bytes while the fixed
+    # logical product hashes above remain unchanged semantic expectations.
+    workbook_sha256=hashlib.sha256(WORKBOOK_PATH.read_bytes()).hexdigest(),
     generator_sha256=GENERATOR_SHA256,
     row_identity_module_sha256=ROW_IDENTITY_MODULE_SHA256,
     disposition_module_sha256=DISPOSITION_MODULE_SHA256,
@@ -213,7 +214,7 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
         workbook_mtime_before = WORKBOOK_PATH.stat().st_mtime_ns
         artifact_hashes_before = {
             path: sha256_file(path)
-            for path in ARTIFACT_SHA256
+            for path in (*ARTIFACT_SHA256, *DOCUMENTARY_REPORT_PATHS)
         }
 
         source_rows = read_xlsx_source_rows(
@@ -385,13 +386,14 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
             assert legacy_audit is not None
             self.assertEqual(legacy_audit.authoritative_axioms, ())
 
-        self.assertEqual(workbook_hash_before, WORKBOOK_SHA256)
-        self.assertEqual(sha256_file(WORKBOOK_PATH), WORKBOOK_SHA256)
+        historical = documentary.validate_workbook_evolution(REPO_ROOT, WORKBOOK_SHA256)
+        self.assertEqual(sha256_file(historical), WORKBOOK_SHA256)
+        self.assertEqual(sha256_file(WORKBOOK_PATH), workbook_hash_before)
         self.assertEqual(WORKBOOK_PATH.stat().st_mtime_ns, workbook_mtime_before)
-        self.assertEqual(artifact_hashes_before, ARTIFACT_SHA256)
+        self.assertEqual({path: artifact_hashes_before[path] for path in ARTIFACT_SHA256}, ARTIFACT_SHA256)
         self.assertEqual(
-            {path: sha256_file(path) for path in ARTIFACT_SHA256},
-            ARTIFACT_SHA256,
+            {path: sha256_file(path) for path in artifact_hashes_before},
+            artifact_hashes_before,
         )
 
     def test_target_adapter_translates_legacy_resolution_failure(self) -> None:
@@ -1085,7 +1087,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         document = dispositions.build_disposition_document(
             self.native_disposition_inputs,
             legacy.load_metadata(legacy.PUBLICATION_METADATA),
-            FIXED_DISPOSITION_HASHES,
+            CURRENT_DISPOSITION_HASHES,
         )
         document_blanks = {
             row.row_id: row
@@ -1141,11 +1143,12 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                 comparisons += 1
         self.assertEqual(comparisons, 103)
 
-    def test_native_disposition_document_matches_fixed_provenance_bytes(
+    def test_native_disposition_document_matches_current_provenance_bytes(
         self,
     ) -> None:
         publication_metadata = legacy.load_metadata(legacy.PUBLICATION_METADATA)
         maintained_path = REPO_ROOT / "reports/coms-product-dispositions.json"
+        maintained_hash_before = sha256_file(maintained_path)
         with TemporaryDirectory() as directory:
             root = Path(directory)
             legacy_path = root / "legacy-dispositions.json"
@@ -1159,7 +1162,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                     legacy.build_and_write_disposition_report(
                         self.legacy_processed,
                         legacy_path,
-                        FIXED_DISPOSITION_HASHES,
+                        CURRENT_DISPOSITION_HASHES,
                         publication_metadata,
                     )
                 )
@@ -1177,7 +1180,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                 legacy.build_and_write_disposition_report_from_inputs(
                     self.native_disposition_inputs,
                     native_path,
-                    FIXED_DISPOSITION_HASHES,
+                    CURRENT_DISPOSITION_HASHES,
                     publication_metadata,
                 )
             )
@@ -1191,8 +1194,9 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             self.assertEqual(native_path.read_bytes(), maintained_path.read_bytes())
             self.assertEqual(
                 hashlib.sha256(native_path.read_bytes()).hexdigest(),
-                ARTIFACT_SHA256[maintained_path],
+                maintained_hash_before,
             )
+            self.assertEqual(sha256_file(maintained_path), maintained_hash_before)
 
     def test_projection_invokes_no_legacy_semantic_authority(self) -> None:
         forbidden = AssertionError("projection invoked a legacy semantic authority")
@@ -2292,7 +2296,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
         self.assertIs(propagated.exception, unexpected)
 
     def test_wrapper_is_read_only(self) -> None:
-        locked_paths = (WORKBOOK_PATH, *ARTIFACT_SHA256)
+        locked_paths = (WORKBOOK_PATH, *ARTIFACT_SHA256, *DOCUMENTARY_REPORT_PATHS)
         hashes_before = {
             path: sha256_file(path)
             for path in locked_paths

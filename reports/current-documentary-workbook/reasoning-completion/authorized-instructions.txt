@@ -1,0 +1,340 @@
+Apply the already-audited documentary `coms:Reasoning` completion to the authoritative current SSN/SOSA workbook.
+
+Repository:
+
+/Users/alecsculley/Documents/GitHub/SSN-to-BFO
+
+Branch:
+
+publication/current-sosa-readiness
+
+Required HEAD before and after:
+
+c3f9b05593727bd13854bf1830cc09b4a653b41f
+
+AUTHORITATIVE WORKBOOK:
+
+mappings/SSN2BFO-COMS.xlsx
+
+OBJECTIVE
+
+Apply exactly the 104 previously audited documentary reasoning assignments.
+
+This is a DOCUMENTATION-ONLY workbook evolution.
+
+Do NOT:
+- change any semantic mapping;
+- change columns A, B, C, or E;
+- change row order;
+- change sheet order/names;
+- add/remove rows;
+- change assessment states/outcomes;
+- create new human semantic decisions;
+- change source or target ontologies;
+- alter SOSA-2023;
+- alter generalized COMS architecture;
+- commit or tag.
+
+PRECONDITIONS
+
+Verify before writing:
+
+- authoritative workbook full SHA-256:
+  e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6
+
+- semantic projection SHA-256:
+  d42340112492fa033216870de64848d899ffd39041be013b7ecc1b655d68136b
+
+- 105 authoritative rows
+- 91 source terms
+- 14 final
+- 0 deferred
+- 77 unreviewed/unresolved
+- 10 formal_mapping_adopted
+- 4 no_direct_mapping
+- 0 inheritance_sufficient
+
+If any precondition differs materially, STOP without editing.
+
+SOURCE OF THE 104 VALUES
+
+Use the exact values from the completed workbook-field audit / safe auto-fill catalog.
+
+Do NOT redraft, shorten, improve, normalize, reinterpret, or otherwise alter those audited texts.
+
+The write set is:
+
+Sheet1:
+- D2:D5
+- D7:D45
+
+Sheet2:
+- D2:D62
+
+EXCEPTIONS / SPECIAL HANDLING
+
+1. PRESERVE Sheet1!D6 EXACTLY AS-IS.
+
+Do not alter:
+
+Sheet1!D6
+
+Its existing text remains intentionally unchanged pending documentary clarification.
+
+2. Sheet2!D16
+
+Replace its old technical-deferral explanation with the COMPLETE VERBATIM `rationale` value from:
+
+reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json
+
+Do not add a prefix, suffix, heading, citation, or paraphrase.
+
+3. Sheet2!D17
+
+Replace its old technical-deferral explanation with the COMPLETE VERBATIM `rationale` value from:
+
+reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json
+
+Again preserve exact text and paragraph breaks.
+
+4. Sheet2!B16/C16 and Sheet2!B17/C17
+
+Remain deliberately blank.
+
+Do not add a predicate or target.
+
+5. All other assignments
+
+Use the exact previously audited proposed values for their respective D cells.
+
+For cells documenting:
+- unresolved semantic questions;
+- historical/current discrepancies;
+- evidence holds;
+- technical deferrals;
+
+preserve the neutral wording exactly.
+
+Do NOT convert any such note into a semantic conclusion.
+
+CANDIDATE-FIRST WORKFLOW
+
+Do not overwrite the authoritative workbook immediately.
+
+1. Copy the authoritative workbook to a candidate path.
+2. Apply only the authorized column-D edits to the candidate.
+3. Validate the candidate structurally.
+4. Compare its semantic projection to the current authoritative workbook.
+5. Require exact equality of semantic-projection hashes.
+6. Produce a complete documentary-update manifest.
+7. Register the transition using the project-local documentary guard.
+8. Only after the transition validates, install the exact candidate bytes as:
+   mappings/SSN2BFO-COMS.xlsx
+
+Do not reconstruct/re-save the workbook again after transition validation if doing so could change bytes. Install exactly the validated candidate.
+
+DOCUMENTARY TRANSITION RECORD
+
+Use the existing project-local:
+
+tools/current_documentary_workbook.py
+
+Create the required documentary transition record.
+
+It must identify every changed D cell and no other cell.
+
+Record:
+
+- old full-workbook SHA-256;
+- new full-workbook SHA-256;
+- old semantic-projection SHA-256;
+- new semantic-projection SHA-256;
+- exact changed cells;
+- old/new values and hashes;
+- supporting evidence references;
+- editor identity according to the established mechanism;
+- unchanged A/B/C/E assertion.
+
+The old and new semantic-projection SHA-256 MUST be identical:
+
+d42340112492fa033216870de64848d899ffd39041be013b7ecc1b655d68136b
+
+If the semantic projection differs, STOP and do not install the candidate.
+
+CELL-LEVEL VERIFICATION
+
+After candidate generation, prove:
+
+- exactly 104 D cells changed;
+- Sheet1!D6 did not change;
+- no A cell changed;
+- no B cell changed;
+- no C cell changed;
+- no E cell changed;
+- no row was reordered;
+- no sheet was reordered/renamed;
+- no styles/formulas/merged structures were unintentionally introduced;
+- all 105 RowIDs remain identical and unique.
+
+For every intended edit, verify the installed cell text exactly equals the audited proposed value.
+
+SAMPLE-PAIR DECISION CUSTODY
+
+Verify both existing decision records remain immutable:
+
+- hasSample.json
+- isSampleOf.json
+
+Do not edit either record.
+
+Verify after workbook installation:
+
+- both decisions still validate through the documentary evolution chain;
+- retained historical workbook snapshot remains unchanged;
+- retained pre-decision packets remain unchanged;
+- `hasSample` remains final/no_direct_mapping;
+- `isSampleOf` remains final/no_direct_mapping;
+- their predicate/target cells remain blank.
+
+REPORT / ARTIFACT REFRESH
+
+Refresh only affected documentary/state-dependent reports and evidence required by the established workflow.
+
+Regenerate as applicable:
+
+- human-review report/json;
+- coverage report/json;
+- rationale-proposals report/json;
+- current publication readiness metadata;
+- documentary-workbook chain/index/manifest;
+- preservation/identity evidence;
+- validation ledger.
+
+Do NOT regenerate mapping products in a way that changes their semantic bytes.
+
+If generation/freshness tooling runs, confirm generated logical products remain byte-identical.
+
+ASSESSMENT PRESERVATION
+
+The reasoning completion must NOT alter assessment semantics.
+
+Expected after write:
+
+- source terms: 91
+- final: 14
+- deferred: 0
+- unreviewed: 77
+- unresolved: 77
+- formal_mapping_adopted: 10
+- no_direct_mapping: 4
+- inheritance_sufficient: 0
+
+Exact unresolved membership must remain unchanged.
+
+SEMANTIC PRESERVATION
+
+Verify against trusted state that the following semantic content is unchanged:
+
+- columns A/B/C/E of the workbook;
+- generated current mapping products;
+- mapping rule;
+- source ontologies;
+- target ontology;
+- SOSA-2023 protected artifacts/statuses;
+- historical authorities;
+- protected local COMS architecture;
+- all tracked files in external COMS.
+
+No new OWL/RDFS mapping axiom may appear.
+
+No existing mapping axiom may disappear.
+
+No predicate/target/expression may change.
+
+VALIDATION
+
+Run:
+
+1. documentary-workbook guard tests;
+2. assessment/finality validation;
+3. decision custody validation;
+4. source identity validation;
+5. publication preservation validation;
+6. mapping generation/freshness checks;
+7. publication-hardening focused tests;
+8. COMS integration tests;
+9. SOSA-2023 non-regression tests;
+10. Python/static compilation checks;
+11. git diff --check.
+
+Do not run expensive unrelated RO reasoning.
+
+EXPECTED TEST BASELINE
+
+Before this write, the last validated baseline was:
+
+- 195 publication-hardening tests;
+- 32 documentary guard tests included in the broader validated state;
+- 128 COMS integration tests;
+- 44 SOSA-2023 tests;
+- 399 total reported tests.
+
+If totals legitimately increase because write-transition tests are added or exercised, report the new totals and explain the difference.
+
+FINAL DIFF AUDIT
+
+Before completion, independently verify the workbook diff at cell level.
+
+Produce a compact table:
+
+- sheet;
+- cell;
+- source term;
+- old D hash;
+- new D hash;
+- transition-record entry present? YES/NO.
+
+There must be exactly 104 entries.
+
+Also report separately:
+
+- Sheet1!D6 unchanged;
+- Sheet2!B16/C16 unchanged blank;
+- Sheet2!B17/C17 unchanged blank.
+
+COMPLETION REPORT
+
+Return:
+
+1. pre-write workbook SHA-256;
+2. post-write workbook SHA-256;
+3. pre/post semantic-projection SHA-256;
+4. number of D cells changed;
+5. confirmation Sheet1!D6 unchanged;
+6. confirmation A/B/C/E unchanged;
+7. documentary transition record path/ID;
+8. transition validation result;
+9. sample-pair decision custody result;
+10. counts before/after;
+11. mapping-product byte preservation;
+12. source/target preservation;
+13. SOSA-2023 preservation;
+14. COMS preservation;
+15. publication-hardening tests;
+16. documentary guard tests;
+17. COMS integration tests;
+18. SOSA-2023 tests;
+19. remaining documentary ambiguities;
+20. remaining genuine semantic/reconciliation/evidence-hold issues.
+
+Do NOT resolve those remaining issues in this task.
+
+End with exactly one of:
+
+COMS REASONING COMPLETION APPLIED — 104 DOCUMENTARY CELLS UPDATED, SEMANTICS UNCHANGED
+
+or
+
+COMS REASONING COMPLETION BLOCKED — AUTHORITATIVE WORKBOOK LEFT UNCHANGED
+
+Do not commit or tag.

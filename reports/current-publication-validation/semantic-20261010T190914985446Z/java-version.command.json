@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/usr/bin/java",
+    "-version"
+  ],
+  "returncode": 0,
+  "execution_status": "completed",
+  "elapsed_seconds": 0.04,
+  "stdout": {
+    "path": "reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "path": "reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stderr.log",
+    "sha256": "42bafe9a39f0540426f62ce72e51c395e1bb42fa545e01bc45118397a70427a9",
+    "bytes": 160
+  }
+}

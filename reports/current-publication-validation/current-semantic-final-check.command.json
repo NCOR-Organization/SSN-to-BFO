@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "tools/current_semantic_validation.py",
+    "--check"
+  ],
+  "returncode": 1,
+  "execution_status": "completed",
+  "elapsed_seconds": 0.154,
+  "stdout": {
+    "path": "reports/current-publication-validation/current-semantic-final-check.stdout.log",
+    "sha256": "91e6705f2d24495239a02af48c8caf755005e4474973bed54b6c4b0dc158c221",
+    "bytes": 256
+  },
+  "stderr": {
+    "path": "reports/current-publication-validation/current-semantic-final-check.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

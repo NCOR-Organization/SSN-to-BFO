@@ -1,0 +1,26 @@
+{
+  "datatype_property_policy": "excluded, matching the pre-existing governed source query; datatype properties are not claimed assessed",
+  "deprecated_policy": "exclude_owl_deprecated_true",
+  "namespaces": [
+    "http://www.w3.org/ns/sosa/",
+    "http://www.w3.org/ns/sosa/sampling/",
+    "http://www.w3.org/ns/ssn/",
+    "http://www.w3.org/ns/ssn/systems/"
+  ],
+  "query": "queries/source-classes-and-object-properties.rq",
+  "query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+  "schema_version": 1,
+  "scope_evidence": "reports/coms-source-term-coverage.md and tools/generate_mapping_from_coms.py SOURCE_IMPORTS/build_coverage; no source signature broadened or narrowed",
+  "source_files": [
+    "imports/sosa.ttl",
+    "imports/sosa-sampling.ttl",
+    "imports/ssn.ttl",
+    "imports/ssn-systems.ttl"
+  ],
+  "source_signature_sha256": "da23829091e838174164662f4aa3ff5218f7747dbeaea2c15500d0e318a434db",
+  "term_kinds": [
+    "class",
+    "object_property"
+  ],
+  "track": "current-ssn-sosa"
+}

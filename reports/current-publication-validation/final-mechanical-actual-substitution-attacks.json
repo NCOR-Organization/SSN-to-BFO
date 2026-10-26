@@ -1,0 +1,54 @@
+{
+  "report_sha256": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a",
+  "method": "Direct in-memory mutations of the actual retained report; raw evidence and hashes not changed; full validate_stored used without mocked plan or builders.",
+  "source_raw_status": "technical_failure",
+  "cases": [
+    {
+      "case": "honest retained blocked report",
+      "accepted": true,
+      "status": "FAIL",
+      "errors": []
+    },
+    {
+      "case": "source hierarchy borrows target",
+      "accepted": false,
+      "errors": [
+        "Stored semantic reference differs from required execution slot hierarchy/source: target-hierarchy",
+        "Stored semantic execution summary contradicts raw evidence: source-hierarchy"
+      ]
+    },
+    {
+      "case": "target hierarchy borrows source",
+      "accepted": false,
+      "errors": [
+        "Stored semantic reference differs from required execution slot hierarchy/target: source-hierarchy",
+        "Stored semantic execution summary contradicts raw evidence: target-hierarchy"
+      ]
+    },
+    {
+      "case": "example borrows another example aligned result",
+      "accepted": false,
+      "errors": [
+        "Stored semantic reference differs from required execution slot examples/src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl/aligned: example-01-aligned",
+        "Stored semantic execution summary contradicts raw evidence: example-00-aligned"
+      ]
+    },
+    {
+      "case": "example source phase borrows aligned",
+      "accepted": false,
+      "errors": [
+        "Stored semantic reference differs from required execution slot examples/src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl/source: example-00-aligned",
+        "Stored semantic execution summary contradicts raw evidence: example-00-source"
+      ]
+    },
+    {
+      "case": "example aligned phase borrows source",
+      "accepted": false,
+      "errors": [
+        "Stored semantic reference differs from required execution slot examples/src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl/aligned: example-00-source",
+        "Stored semantic execution summary contradicts raw evidence: example-00-aligned"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

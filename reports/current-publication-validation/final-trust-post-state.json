@@ -1,0 +1,1105 @@
+{
+  "milestone": "Final human-review gate schema-boundary and retry-archive defect repair",
+  "recorded_at_utc": "2026-10-25T20:59:34.343700+00:00",
+  "pre_state_path": "reports/current-publication-validation/gate-defect-pre-state.json",
+  "pre_state_sha256": "f295e2bf8b2276260d42c0bb4b04d7922eff54d0982b349f1500e2e23dc33fd3",
+  "pre_git": {
+    "branch": "publication/current-sosa-readiness",
+    "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+    "status": "## publication/current-sosa-readiness\n M .gitignore\n M Makefile\n M README.md\n M docs/MAPPING-GOVERNANCE.md\n M docs/VALIDATION-AND-RELEASES.md\n M reports/coms-generation-validation.md\n M reports/coms-product-dispositions.json\n M reports/current-full-sosa-baseline-summary.md\n M reports/current-ssn-sosa-release-readiness-audit.md\n M src/current-ssn-sosa/docs/README.md\n M src/current-ssn-sosa/examples/README.md\n M tests/test_coms_framework_integration.py\n M tests/test_generate_mapping_from_coms.py\n M tools/check_coms_mapping.py\n M tools/generate_mapping_from_coms.py\n M tools/run_validation_suite.py\n?? config/current-semantic-expectations.json\n?? config/current-ssn-sosa-historical-finals.json\n?? config/current-ssn-sosa-identity.json\n?? config/current-ssn-sosa-scope.json\n?? docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md\n?? mappings/current-ssn-sosa-assessment.json\n?? reports/current-publication-baseline.json\n?? reports/current-publication-candidate.json\n?? reports/current-publication-final-trust-repair.md\n?? reports/current-publication-guard-repair.md\n?? reports/current-publication-preservation.json\n?? reports/current-publication-validation/\n?? reports/current-ssn-sosa-coverage.json\n?? reports/current-ssn-sosa-coverage.md\n?? reports/current-ssn-sosa-human-review.json\n?? reports/current-ssn-sosa-human-review.md\n?? reports/current-ssn-sosa-publication-readiness.md\n?? reports/current-ssn-sosa-rationale-proposals.json\n?? reports/current-ssn-sosa-rationale-proposals.md\n?? reports/current-ssn-sosa-semantic-validation.json\n?? reports/current-ssn-sosa-semantic-validation.md\n?? tests/fixtures/current-semantic/\n?? tests/test_current_assessment.py\n?? tests/test_current_identity_reporting.py\n?? tests/test_current_publication_preservation.py\n?? tests/test_current_publication_readiness.py\n?? tests/test_current_semantic_invocation.py\n?? tests/test_current_semantic_validation.py\n?? tests/test_current_source_identity.py\n?? tools/current_assessment.py\n?? tools/current_publication_preservation.py\n?? tools/current_publication_readiness.py\n?? tools/current_semantic_invocation.py\n?? tools/current_semantic_validation.py\n?? tools/current_source_identity.py\n?? tools/java/\n",
+    "tags": "df1c63d84aa15fb2bd9bae8d67ca5313be18a428 refs/tags/v2026-07-18\n"
+  },
+  "pre_git_counts": {
+    "modified_tracked_count": 16,
+    "untracked_count": 423,
+    "staged_count": 0
+  },
+  "post_git": {
+    "branch": "publication/current-sosa-readiness",
+    "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+    "short_branch": "## publication/current-sosa-readiness\n M .gitignore\n M Makefile\n M README.md\n M docs/MAPPING-GOVERNANCE.md\n M docs/VALIDATION-AND-RELEASES.md\n M reports/coms-generation-validation.md\n M reports/coms-product-dispositions.json\n M reports/current-full-sosa-baseline-summary.md\n M reports/current-ssn-sosa-release-readiness-audit.md\n M src/current-ssn-sosa/docs/README.md\n M src/current-ssn-sosa/examples/README.md\n M tests/test_coms_framework_integration.py\n M tests/test_generate_mapping_from_coms.py\n M tools/check_coms_mapping.py\n M tools/generate_mapping_from_coms.py\n M tools/run_validation_suite.py\n?? config/current-semantic-expectations.json\n?? config/current-ssn-sosa-historical-finals.json\n?? config/current-ssn-sosa-identity.json\n?? config/current-ssn-sosa-scope.json\n?? docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md\n?? mappings/current-ssn-sosa-assessment.json\n?? reports/current-publication-baseline.json\n?? reports/current-publication-candidate.json\n?? reports/current-publication-final-trust-repair.md\n?? reports/current-publication-guard-repair.md\n?? reports/current-publication-preservation.json\n?? reports/current-publication-validation/\n?? reports/current-ssn-sosa-coverage.json\n?? reports/current-ssn-sosa-coverage.md\n?? reports/current-ssn-sosa-human-review.json\n?? reports/current-ssn-sosa-human-review.md\n?? reports/current-ssn-sosa-publication-readiness.md\n?? reports/current-ssn-sosa-rationale-proposals.json\n?? reports/current-ssn-sosa-rationale-proposals.md\n?? reports/current-ssn-sosa-semantic-validation.json\n?? reports/current-ssn-sosa-semantic-validation.md\n?? tests/fixtures/current-semantic/\n?? tests/test_current_assessment.py\n?? tests/test_current_identity_reporting.py\n?? tests/test_current_publication_preservation.py\n?? tests/test_current_publication_readiness.py\n?? tests/test_current_semantic_invocation.py\n?? tests/test_current_semantic_retry.py\n?? tests/test_current_semantic_schema.py\n?? tests/test_current_semantic_validation.py\n?? tests/test_current_source_identity.py\n?? tools/current_assessment.py\n?? tools/current_publication_preservation.py\n?? tools/current_publication_readiness.py\n?? tools/current_semantic_invocation.py\n?? tools/current_semantic_validation.py\n?? tools/current_source_identity.py\n?? tools/java/\n",
+    "modified_tracked_count": 16,
+    "untracked_count": 456,
+    "staged_count": 0,
+    "modified_tracked_paths": [
+      ".gitignore",
+      "Makefile",
+      "README.md",
+      "docs/MAPPING-GOVERNANCE.md",
+      "docs/VALIDATION-AND-RELEASES.md",
+      "reports/coms-generation-validation.md",
+      "reports/coms-product-dispositions.json",
+      "reports/current-full-sosa-baseline-summary.md",
+      "reports/current-ssn-sosa-release-readiness-audit.md",
+      "src/current-ssn-sosa/docs/README.md",
+      "src/current-ssn-sosa/examples/README.md",
+      "tests/test_coms_framework_integration.py",
+      "tests/test_generate_mapping_from_coms.py",
+      "tools/check_coms_mapping.py",
+      "tools/generate_mapping_from_coms.py",
+      "tools/run_validation_suite.py"
+    ],
+    "untracked_paths": [
+      "config/current-semantic-expectations.json",
+      "config/current-ssn-sosa-historical-finals.json",
+      "config/current-ssn-sosa-identity.json",
+      "config/current-ssn-sosa-scope.json",
+      "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md",
+      "mappings/current-ssn-sosa-assessment.json",
+      "reports/current-publication-baseline.json",
+      "reports/current-publication-candidate.json",
+      "reports/current-publication-final-trust-repair.md",
+      "reports/current-publication-guard-repair.md",
+      "reports/current-publication-preservation.json",
+      "reports/current-publication-validation/RESULTS.md",
+      "reports/current-publication-validation/assessment.log",
+      "reports/current-publication-validation/commands.json",
+      "reports/current-publication-validation/coms-framework-fingerprint-rerun.command.json",
+      "reports/current-publication-validation/coms-framework-fingerprint-rerun.log",
+      "reports/current-publication-validation/current-semantic-final-check.command.json",
+      "reports/current-publication-validation/current-semantic-final-check.stderr.log",
+      "reports/current-publication-validation/current-semantic-final-check.stdout.log",
+      "reports/current-publication-validation/current-semantic-unit-tests-final.command.json",
+      "reports/current-publication-validation/current-semantic-unit-tests-final.stderr.log",
+      "reports/current-publication-validation/current-semantic-unit-tests-final.stdout.log",
+      "reports/current-publication-validation/current-semantic-unit-tests.command.json",
+      "reports/current-publication-validation/current-semantic-unit-tests.stderr.log",
+      "reports/current-publication-validation/current-semantic-unit-tests.stdout.log",
+      "reports/current-publication-validation/current_focused_final.command.json",
+      "reports/current-publication-validation/current_focused_final.log",
+      "reports/current-publication-validation/dependency_check.log",
+      "reports/current-publication-validation/final-gate-ro-timeout-44851.ttl.gz",
+      "reports/current-publication-validation/final-mechanical-actual-substitution-attacks.json",
+      "reports/current-publication-validation/final-mechanical-affected_integration_tests.command.json",
+      "reports/current-publication-validation/final-mechanical-affected_integration_tests.log",
+      "reports/current-publication-validation/final-mechanical-final-affected_integration_tests.command.json",
+      "reports/current-publication-validation/final-mechanical-final-affected_integration_tests.log",
+      "reports/current-publication-validation/final-mechanical-final-assessment.command.json",
+      "reports/current-publication-validation/final-mechanical-final-assessment.log",
+      "reports/current-publication-validation/final-mechanical-final-current_focused_tests.command.json",
+      "reports/current-publication-validation/final-mechanical-final-current_focused_tests.log",
+      "reports/current-publication-validation/final-mechanical-final-generation_freshness.command.json",
+      "reports/current-publication-validation/final-mechanical-final-generation_freshness.log",
+      "reports/current-publication-validation/final-mechanical-final-preservation.command.json",
+      "reports/current-publication-validation/final-mechanical-final-preservation.log",
+      "reports/current-publication-validation/final-mechanical-final-semantic_stored.command.json",
+      "reports/current-publication-validation/final-mechanical-final-semantic_stored.log",
+      "reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.command.json",
+      "reports/current-publication-validation/final-mechanical-final-semantic_stored_consistency.log",
+      "reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.command.json",
+      "reports/current-publication-validation/final-mechanical-final-sosa_2023_nonregression.log",
+      "reports/current-publication-validation/final-mechanical-final-sosa_products.command.json",
+      "reports/current-publication-validation/final-mechanical-final-sosa_products.log",
+      "reports/current-publication-validation/final-mechanical-final-sosa_source_version.command.json",
+      "reports/current-publication-validation/final-mechanical-final-sosa_source_version.log",
+      "reports/current-publication-validation/final-mechanical-final-source_identity.command.json",
+      "reports/current-publication-validation/final-mechanical-final-source_identity.log",
+      "reports/current-publication-validation/final-mechanical-final-static_checks.command.json",
+      "reports/current-publication-validation/final-mechanical-final-static_checks.log",
+      "reports/current-publication-validation/final-mechanical-final-whitespace.command.json",
+      "reports/current-publication-validation/final-mechanical-final-whitespace.log",
+      "reports/current-publication-validation/final-mechanical-independent-preservation.json",
+      "reports/current-publication-validation/final-mechanical-packet-audit.json",
+      "reports/current-publication-validation/final-mechanical-pre-state.json",
+      "reports/current-publication-validation/final-mechanical-prior-commands.json",
+      "reports/current-publication-validation/final-mechanical-prior-post-state.json",
+      "reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.command.json",
+      "reports/current-publication-validation/final-mechanical-sosa_2023_nonregression.log",
+      "reports/current-publication-validation/final-trust-assessment-check.log",
+      "reports/current-publication-validation/final-trust-assessment.log",
+      "reports/current-publication-validation/final-trust-compile.log",
+      "reports/current-publication-validation/final-trust-diff-check.log",
+      "reports/current-publication-validation/final-trust-focused.log",
+      "reports/current-publication-validation/final-trust-generation-freshness.log",
+      "reports/current-publication-validation/final-trust-independent-git.json",
+      "reports/current-publication-validation/final-trust-integration.log",
+      "reports/current-publication-validation/final-trust-post-state.json",
+      "reports/current-publication-validation/final-trust-pre-state.json",
+      "reports/current-publication-validation/final-trust-preservation.json",
+      "reports/current-publication-validation/final-trust-readiness.log",
+      "reports/current-publication-validation/final-trust-sosa-2023.log",
+      "reports/current-publication-validation/final-trust-sosa-products.log",
+      "reports/current-publication-validation/final-trust-sosa-source-version.log",
+      "reports/current-publication-validation/final-trust-source-identity.log",
+      "reports/current-publication-validation/followup-ro-timeout-37572.ttl.gz",
+      "reports/current-publication-validation/followup-ro-timeout-39141.ttl.gz",
+      "reports/current-publication-validation/followup-ro-timeout-40883.ttl.gz",
+      "reports/current-publication-validation/followup-ro-timeouts.json",
+      "reports/current-publication-validation/full_repository_gate.log",
+      "reports/current-publication-validation/full_repository_gate_final.command.json",
+      "reports/current-publication-validation/full_repository_gate_final.log",
+      "reports/current-publication-validation/gate-defect-assessment.command.json",
+      "reports/current-publication-validation/gate-defect-assessment.log",
+      "reports/current-publication-validation/gate-defect-compile.command.json",
+      "reports/current-publication-validation/gate-defect-compile.log",
+      "reports/current-publication-validation/gate-defect-diff-check.command.json",
+      "reports/current-publication-validation/gate-defect-diff-check.log",
+      "reports/current-publication-validation/gate-defect-focused.command.json",
+      "reports/current-publication-validation/gate-defect-focused.log",
+      "reports/current-publication-validation/gate-defect-generation-freshness.command.json",
+      "reports/current-publication-validation/gate-defect-generation-freshness.log",
+      "reports/current-publication-validation/gate-defect-historical-archive.command.json",
+      "reports/current-publication-validation/gate-defect-historical-archive.log",
+      "reports/current-publication-validation/gate-defect-independent-coverage.json",
+      "reports/current-publication-validation/gate-defect-independent-preservation.json",
+      "reports/current-publication-validation/gate-defect-independent-retry.json",
+      "reports/current-publication-validation/gate-defect-independent-review.json",
+      "reports/current-publication-validation/gate-defect-independent-schema.json",
+      "reports/current-publication-validation/gate-defect-integration.command.json",
+      "reports/current-publication-validation/gate-defect-integration.log",
+      "reports/current-publication-validation/gate-defect-pre-state.json",
+      "reports/current-publication-validation/gate-defect-preservation.command.json",
+      "reports/current-publication-validation/gate-defect-preservation.log",
+      "reports/current-publication-validation/gate-defect-previous-final-trust-repair.md",
+      "reports/current-publication-validation/gate-defect-previous-post-state.json",
+      "reports/current-publication-validation/gate-defect-readiness.command.json",
+      "reports/current-publication-validation/gate-defect-readiness.log",
+      "reports/current-publication-validation/gate-defect-sosa-2023.command.json",
+      "reports/current-publication-validation/gate-defect-sosa-2023.log",
+      "reports/current-publication-validation/gate-defect-source-identity.command.json",
+      "reports/current-publication-validation/gate-defect-source-identity.log",
+      "reports/current-publication-validation/gate-defect-validation.json",
+      "reports/current-publication-validation/generation_freshness.log",
+      "reports/current-publication-validation/guard-repair-affected_integration_tests.command.json",
+      "reports/current-publication-validation/guard-repair-affected_integration_tests.log",
+      "reports/current-publication-validation/guard-repair-assessment.command.json",
+      "reports/current-publication-validation/guard-repair-assessment.log",
+      "reports/current-publication-validation/guard-repair-current_focused_tests.command.json",
+      "reports/current-publication-validation/guard-repair-current_focused_tests.log",
+      "reports/current-publication-validation/guard-repair-final-affected_integration_tests.command.json",
+      "reports/current-publication-validation/guard-repair-final-affected_integration_tests.log",
+      "reports/current-publication-validation/guard-repair-final-assessment.command.json",
+      "reports/current-publication-validation/guard-repair-final-assessment.log",
+      "reports/current-publication-validation/guard-repair-final-current_focused_tests.command.json",
+      "reports/current-publication-validation/guard-repair-final-current_focused_tests.log",
+      "reports/current-publication-validation/guard-repair-final-generation_freshness.command.json",
+      "reports/current-publication-validation/guard-repair-final-generation_freshness.log",
+      "reports/current-publication-validation/guard-repair-final-preservation.command.json",
+      "reports/current-publication-validation/guard-repair-final-preservation.log",
+      "reports/current-publication-validation/guard-repair-final-semantic_stored.command.json",
+      "reports/current-publication-validation/guard-repair-final-semantic_stored.log",
+      "reports/current-publication-validation/guard-repair-final-semantic_stored_consistency.command.json",
+      "reports/current-publication-validation/guard-repair-final-semantic_stored_consistency.log",
+      "reports/current-publication-validation/guard-repair-final-sosa_2023_nonregression.command.json",
+      "reports/current-publication-validation/guard-repair-final-sosa_2023_nonregression.log",
+      "reports/current-publication-validation/guard-repair-final-sosa_products.command.json",
+      "reports/current-publication-validation/guard-repair-final-sosa_products.log",
+      "reports/current-publication-validation/guard-repair-final-sosa_source_version.command.json",
+      "reports/current-publication-validation/guard-repair-final-sosa_source_version.log",
+      "reports/current-publication-validation/guard-repair-final-source_identity.command.json",
+      "reports/current-publication-validation/guard-repair-final-source_identity.log",
+      "reports/current-publication-validation/guard-repair-final-static_checks.command.json",
+      "reports/current-publication-validation/guard-repair-final-static_checks.log",
+      "reports/current-publication-validation/guard-repair-final-whitespace.command.json",
+      "reports/current-publication-validation/guard-repair-final-whitespace.log",
+      "reports/current-publication-validation/guard-repair-generation_freshness.command.json",
+      "reports/current-publication-validation/guard-repair-generation_freshness.log",
+      "reports/current-publication-validation/guard-repair-independent-preservation.json",
+      "reports/current-publication-validation/guard-repair-post-state.json",
+      "reports/current-publication-validation/guard-repair-pre-state.json",
+      "reports/current-publication-validation/guard-repair-prior-commands.json",
+      "reports/current-publication-validation/guard-repair-sosa_2023_nonregression.command.json",
+      "reports/current-publication-validation/guard-repair-sosa_2023_nonregression.log",
+      "reports/current-publication-validation/guard-repair-sosa_products.command.json",
+      "reports/current-publication-validation/guard-repair-sosa_products.log",
+      "reports/current-publication-validation/guard-repair-sosa_source_version.command.json",
+      "reports/current-publication-validation/guard-repair-sosa_source_version.log",
+      "reports/current-publication-validation/guard-repair-source_identity.command.json",
+      "reports/current-publication-validation/guard-repair-source_identity.log",
+      "reports/current-publication-validation/guard-repair-static_checks.command.json",
+      "reports/current-publication-validation/guard-repair-static_checks.log",
+      "reports/current-publication-validation/initial-command-sequence.json",
+      "reports/current-publication-validation/initial-sosa-2023-first-candidate-manifest.json",
+      "reports/current-publication-validation/initial-sosa-2023-first-candidate-note.json",
+      "reports/current-publication-validation/package-cli-diagnostic.log",
+      "reports/current-publication-validation/post-audit-focused.command.json",
+      "reports/current-publication-validation/post-audit-focused.log",
+      "reports/current-publication-validation/post-audit-motivation-corrections.json",
+      "reports/current-publication-validation/post-audit-pre-edit/current-semantic-expectations.json",
+      "reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.json",
+      "reports/current-publication-validation/post-audit-pre-edit/current-ssn-sosa-semantic-validation.md",
+      "reports/current-publication-validation/post-audit-runner-bootstrap.log",
+      "reports/current-publication-validation/post-audit-semantic-run.command.json",
+      "reports/current-publication-validation/post-audit-semantic-run.log",
+      "reports/current-publication-validation/publication-criterion.command.json",
+      "reports/current-publication-validation/publication-criterion.log",
+      "reports/current-publication-validation/query-equivalence-diagnostic.log",
+      "reports/current-publication-validation/semantic-20261010T173148147449Z.tar.gz",
+      "reports/current-publication-validation/semantic-20261010T173407596681Z.tar.gz",
+      "reports/current-publication-validation/semantic-20261010T173512593611Z.tar.gz",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/aligned-hierarchy.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-00-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-01-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-02-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-03-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-04-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-05-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-06-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-07-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-08-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-09-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-10-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/example-11-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/java-version.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/javac.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/javac.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/javac.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/source-hierarchy.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/summary.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T173634423980Z/target-hierarchy.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/aligned-hierarchy.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-00-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-01-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-02-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-03-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-04-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-05-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-06-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-07-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-08-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-09-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-10-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-aligned.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/example-11-source.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/java-version.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/javac.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/javac.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/javac.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/source-hierarchy.stdout.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/summary.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.command.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.result.json",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.stderr.log",
+      "reports/current-publication-validation/semantic-20261010T190914985446Z/target-hierarchy.stdout.log",
+      "reports/current-publication-validation/sosa_products.log",
+      "reports/current-publication-validation/sosa_source_version.log",
+      "reports/current-publication-validation/source_identity.log",
+      "reports/current-publication-validation/static_checks.log",
+      "reports/current-publication-validation/superseded-semantic-attempts.json",
+      "reports/current-publication-validation/unit_tests.log",
+      "reports/current-publication-validation/unit_tests_final-timeout-closures/36854-closure.ttl.gz",
+      "reports/current-publication-validation/unit_tests_final-timeout-closures/39667-closure.ttl.gz",
+      "reports/current-publication-validation/unit_tests_final-timeout-closures/42450-closure.ttl.gz",
+      "reports/current-publication-validation/unit_tests_final.command.json",
+      "reports/current-publication-validation/unit_tests_final.log",
+      "reports/current-publication-validation/unit_tests_final.timeouts.json",
+      "reports/current-publication-validation/whitespace.log",
+      "reports/current-ssn-sosa-coverage.json",
+      "reports/current-ssn-sosa-coverage.md",
+      "reports/current-ssn-sosa-human-review.json",
+      "reports/current-ssn-sosa-human-review.md",
+      "reports/current-ssn-sosa-publication-readiness.md",
+      "reports/current-ssn-sosa-rationale-proposals.json",
+      "reports/current-ssn-sosa-rationale-proposals.md",
+      "reports/current-ssn-sosa-semantic-validation.json",
+      "reports/current-ssn-sosa-semantic-validation.md",
+      "tests/fixtures/current-semantic/sample-relationship.ttl",
+      "tests/test_current_assessment.py",
+      "tests/test_current_identity_reporting.py",
+      "tests/test_current_publication_preservation.py",
+      "tests/test_current_publication_readiness.py",
+      "tests/test_current_semantic_invocation.py",
+      "tests/test_current_semantic_retry.py",
+      "tests/test_current_semantic_schema.py",
+      "tests/test_current_semantic_validation.py",
+      "tests/test_current_source_identity.py",
+      "tools/current_assessment.py",
+      "tools/current_publication_preservation.py",
+      "tools/current_publication_readiness.py",
+      "tools/current_semantic_invocation.py",
+      "tools/current_semantic_validation.py",
+      "tools/current_source_identity.py",
+      "tools/java/CurrentSemanticReasoner.java"
+    ],
+    "staged_paths": [],
+    "tags": "df1c63d84aa15fb2bd9bae8d67ca5313be18a428 refs/tags/v2026-07-18\n"
+  },
+  "file_delta": [
+    {
+      "path": ".cache/coms/last-success.json",
+      "change": "modified",
+      "before": {
+        "sha256": "4cae1fa7337508eb9f4d180a20beeae1b7b1574ec683bda1350cf13b09c6fe3a",
+        "bytes": 4950
+      },
+      "after": {
+        "sha256": "8ddae3bb761f15f8d11c78a5bf9f10dd8c30a0e97d0f46162eb578bc12b5a4f0",
+        "bytes": 4950
+      },
+      "classification": "non-semantic ignored runtime cache"
+    },
+    {
+      "path": "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md",
+      "change": "modified",
+      "before": {
+        "sha256": "9e28a9b6e5063a00232bc976ed9cb282327ca6d57aa3374f066e532709896b73",
+        "bytes": 29453
+      },
+      "after": {
+        "sha256": "bb1e625a4c96a13ca4d8650d4fc99af0b1b66d9a74c1bf026f4acdc2f9153d61",
+        "bytes": 31947
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "reports/current-publication-candidate.json",
+      "change": "modified",
+      "before": {
+        "sha256": "33e37a9a176e794b17b2c3053c6e99e691be286bd54d0cf1db218489556902e5",
+        "bytes": 185888
+      },
+      "after": {
+        "sha256": "b796e8cee9f354435998d11424831891fe0171922fa9a3584e26511f8be04631",
+        "bytes": 150767
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-final-trust-repair.md",
+      "change": "modified",
+      "before": {
+        "sha256": "13860a43253686876fcdca84ec960bf78e1a36816cc74fcf7d24f742c9dc8f77",
+        "bytes": 12117
+      },
+      "after": {
+        "sha256": "988fb559032e9c472fb95a9051fa9bcf08f53037b740d745291ea044e23f429d",
+        "bytes": 10037
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/RESULTS.md",
+      "change": "modified",
+      "before": {
+        "sha256": "03ced58cf375ee9536a8ca1fca67ce326301c5829be533294cf1b181620f3156",
+        "bytes": 8679
+      },
+      "after": {
+        "sha256": "86865c7d824007c3b04d8b8d308e49807ee03f57981576f19bd1333d98c9682c",
+        "bytes": 9125
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/commands.json",
+      "change": "modified",
+      "before": {
+        "sha256": "f753bdd8c1c7a958d999eb792a79a858a5585008b59715e55858ed845d8e2584",
+        "bytes": 909832
+      },
+      "after": {
+        "sha256": "656557d39e0a2e73888407924ca7bec6f56d4e0640cc0c5f5be920fb41e60ff1",
+        "bytes": 910151
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-assessment.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "a21ed0864304f235ba247e2e6157ff525615107fb711d608ea54dc86709530ee",
+        "bytes": 66959
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-assessment.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "ec5603afa27b5122f75f1687fd995caeff8919ded5d0e944f6289582d5b391c5",
+        "bytes": 1639
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-compile.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "c2b1acd8bb36ab795604bbaaf4e8e062684467908f0e2d91b1d856d391c395d7",
+        "bytes": 66974
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-compile.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "f7777477ed5e38f086944bb2694527f88a12680cda69c0d9a8d42136bdb0ac36",
+        "bytes": 73
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-diff-check.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "569230e8ce905670de69eb4d12218b50b7ab15c1b0abe3d2fef51314ec49754f",
+        "bytes": 66932
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-diff-check.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-focused.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "dafa746dcda69aad101e66c99874fa0b9f76d0786b1505a5f029a5615df13d6f",
+        "bytes": 67350
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-focused.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "b72ba558b70cc3ebfe44db576cdf0b819a90fc825c8a424b30df406c970fa485",
+        "bytes": 33989
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-generation-freshness.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "3b5c8cf3083b9014cd60fda728d38957708a819664dbe8eb1fc818b738372ee7",
+        "bytes": 67009
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-generation-freshness.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "ea6c8e18462ba4463a48d95cc76209c2f2ee135cd223db7d8df0267afc520040",
+        "bytes": 5804
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-historical-archive.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "9e727799aa43b50d8eaaf0195fdab68ad3a1c9d60a3a02bdc41c566e590b18a0",
+        "bytes": 67017
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-historical-archive.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "a54a6f397f9852ea3399ca89395b40d4dc0b9dbd07d3681331e50a033e42a418",
+        "bytes": 498
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-independent-coverage.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "96f7a00385ee715477549f047be4e60207a227db753f0e3e27437b4dfa6dc321",
+        "bytes": 417
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-independent-preservation.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "946913906c698c27b03439b1c8e483b9bbb03cdfaaec59290043eb43899dd983",
+        "bytes": 35987
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-independent-retry.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "8d4ebbaf922aa3aa3fb7b210b593f08b46f94885b88ca6f87c68161e4ebd8528",
+        "bytes": 671
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-independent-review.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "98f83052d1c47e951ea4af5a05541e56b5d9ab8d84d30b46f3c33cd328e9cce1",
+        "bytes": 2698
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-independent-schema.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "ff523606b7bb0345d39895c5cd3020958984330562479e16e5c978728dbfffff",
+        "bytes": 6741
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-integration.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "084cb17d77a7fd7b9bafee6b4e063eac3263feb5bb56943478bada95c8cbddb5",
+        "bytes": 67091
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-integration.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "a11a858118f55c26fc81b45467ac1252db7e222192424b6cbdef2476806dcba1",
+        "bytes": 47332
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-pre-state.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "f295e2bf8b2276260d42c0bb4b04d7922eff54d0982b349f1500e2e23dc33fd3",
+        "bytes": 231423
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-preservation.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "da395c182c43b61dce6fa408a4a8aea6ace158f7808bb1587ef507621180d843",
+        "bytes": 66979
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-preservation.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "7f04cb82a1b400b68ae87ccf1d2da129c37ecf74a72568b22593e82ee841e973",
+        "bytes": 25257
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-previous-final-trust-repair.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "13860a43253686876fcdca84ec960bf78e1a36816cc74fcf7d24f742c9dc8f77",
+        "bytes": 12117
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-previous-post-state.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "82371fd6a6baa19f33c2e3a32577dadb621417b5cb58ec5beeafa853b1c66d97",
+        "bytes": 62832
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-readiness.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "26fbf19e765a3d3f0204554c4f91be01aa7878e9d21283a775841a80b65d00a5",
+        "bytes": 66982
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-readiness.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "522f8354b7d29af0010e3c189e73428f5bfcba2755055fd0552697e76cd2c1c6",
+        "bytes": 6080
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-sosa-2023.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "b068acfa9830c9ba4946999a715c4a3279e8cbe749da83cc023af651b5cc08c6",
+        "bytes": 67298
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-sosa-2023.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "aee551b4483da3a5bd408eee89b428a3626a745e7ea0617a04e0a2579601b560",
+        "bytes": 6798
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-source-identity.command.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "609369018e6b2a799e8368203d040d70abd75babd37ed56ff452772caf6ff533",
+        "bytes": 66979
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-source-identity.log",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "e523106e326edb9f399f2fa301c0699c85f30764396d2e9fd30ff50f9c9b4128",
+        "bytes": 70
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-publication-validation/gate-defect-validation.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "6b564087a1231ec886e54e77db776deeae3cedd4cb67fa459f48c8faed75a175",
+        "bytes": 767182
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-ssn-sosa-publication-readiness.md",
+      "change": "modified",
+      "before": {
+        "sha256": "17f3784895739835961664ce2a2ed464fc82118b7067f74aa1d7fa65b5f12f59",
+        "bytes": 27429
+      },
+      "after": {
+        "sha256": "0f6326be3432a5b0e72d7cb318954af47f3524720cd6be500fa5d8e46d89cc89",
+        "bytes": 24527
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "reports/current-ssn-sosa-semantic-validation.md",
+      "change": "modified",
+      "before": {
+        "sha256": "5c92081c3a0ef280c026363db39cda34d45af854c1a30f51a5d35f6b3d8998fb",
+        "bytes": 6903
+      },
+      "after": {
+        "sha256": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
+        "bytes": 7628
+      },
+      "classification": "reporting/evidence"
+    },
+    {
+      "path": "tests/test_current_semantic_invocation.py",
+      "change": "modified",
+      "before": {
+        "sha256": "b628b7d0587bfcc68444470cfef75aac6e8305b1881f5cf99af7d320a8b80f02",
+        "bytes": 19285
+      },
+      "after": {
+        "sha256": "610128aeee69ec8163f44ab67d3381bd9eb9af81a03ae004f39f5994500e0323",
+        "bytes": 19482
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tests/test_current_semantic_retry.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "849018a2d2b449dc8e4f5b346a7c4d0a4743e6e4e023e021ae6aa33a9b3aa9d8",
+        "bytes": 12869
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tests/test_current_semantic_schema.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "sha256": "9862c713d3b384438e3ef68317131c893a91e522b86ebf4d75e10b52ade978d4",
+        "bytes": 17597
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tests/test_current_semantic_validation.py",
+      "change": "modified",
+      "before": {
+        "sha256": "6d1f1e40476f16c9880b8585875a2eb598fc05e5fa6043837a34a9910582ae8a",
+        "bytes": 41739
+      },
+      "after": {
+        "sha256": "20dcd56dd4c3256b5be44177bffbcb8e4aaf7253bba558baeb0241894a3b1b1c",
+        "bytes": 43479
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tools/current_publication_readiness.py",
+      "change": "modified",
+      "before": {
+        "sha256": "1968f25ef8281bc5e6d19debf65b7f752672cb1c33d25a1046a6bbf75270ffc4",
+        "bytes": 27840
+      },
+      "after": {
+        "sha256": "4df350500af535232ffa9e3e9c22b36025d3c48e51c709e1a019a594b8538905",
+        "bytes": 28233
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tools/current_semantic_invocation.py",
+      "change": "modified",
+      "before": {
+        "sha256": "80e3a09ce0bdcfd732292804a80042cb61b8d8d71ca2f6a5fb7531f95c37f4d4",
+        "bytes": 13261
+      },
+      "after": {
+        "sha256": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+        "bytes": 13254
+      },
+      "classification": "project-local guard/test/documentation"
+    },
+    {
+      "path": "tools/current_semantic_validation.py",
+      "change": "modified",
+      "before": {
+        "sha256": "2312dbc36d2b4438453849edc017c0424b1f5a6f2e99607480bef6b5d4bf30c5",
+        "bytes": 74986
+      },
+      "after": {
+        "sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+        "bytes": 74348
+      },
+      "classification": "project-local guard/test/documentation"
+    }
+  ],
+  "file_delta_counts": {
+    "modified": 13,
+    "created": 33
+  },
+  "self_exclusion": "This post-state file is excluded from its own SHA-256 delta; its previous hash is recorded in pre-state and its former bytes are retained in gate-defect-previous-post-state.json.",
+  "requested_hashes_before": {
+    "mappings/current-ssn-sosa-assessment.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+    "reports/current-ssn-sosa-human-review.json": "cb012e82f78554f8aee47abb30ad71f3970ebd1c4117f6affbd3d2f37d20773a",
+    "reports/current-ssn-sosa-human-review.md": "9557996dbaae8b624a034cedd1404fc44c2c4ad7c28d1a88c467629c959aa1ef",
+    "reports/current-ssn-sosa-semantic-validation.json": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a",
+    "reports/current-publication-final-trust-repair.md": "13860a43253686876fcdca84ec960bf78e1a36816cc74fcf7d24f742c9dc8f77",
+    "reports/current-publication-validation/final-trust-post-state.json": "82371fd6a6baa19f33c2e3a32577dadb621417b5cb58ec5beeafa853b1c66d97"
+  },
+  "requested_hashes_after": {
+    "mappings/current-ssn-sosa-assessment.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+    "reports/current-ssn-sosa-human-review.json": "cb012e82f78554f8aee47abb30ad71f3970ebd1c4117f6affbd3d2f37d20773a",
+    "reports/current-ssn-sosa-human-review.md": "9557996dbaae8b624a034cedd1404fc44c2c4ad7c28d1a88c467629c959aa1ef",
+    "reports/current-ssn-sosa-semantic-validation.json": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a",
+    "reports/current-publication-final-trust-repair.md": "988fb559032e9c472fb95a9051fa9bcf08f53037b740d745291ea044e23f429d"
+  },
+  "byte_identical_preserved_files": {
+    "mappings/current-ssn-sosa-assessment.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+    "reports/current-ssn-sosa-human-review.json": "cb012e82f78554f8aee47abb30ad71f3970ebd1c4117f6affbd3d2f37d20773a",
+    "reports/current-ssn-sosa-human-review.md": "9557996dbaae8b624a034cedd1404fc44c2c4ad7c28d1a88c467629c959aa1ef",
+    "reports/current-ssn-sosa-coverage.json": "c09bebabe6a4f20d29c6dafd33f0b738e18c1af02b95816c3dffb35923ae99d2",
+    "reports/current-ssn-sosa-coverage.md": "b134a64fe6c83582c0757689ea13b20ddbf87ca67d3d1cb4b8277db5e289f165",
+    "reports/current-ssn-sosa-rationale-proposals.json": "479a09d8af75ba589023541f9380302a7ed35d21eb2c443d49a3dd7a7af04ddc",
+    "reports/current-ssn-sosa-rationale-proposals.md": "58713996571cdae752d53e2bdd01b8e53ef26653dc7698ce24230efb4d45e178",
+    "reports/current-ssn-sosa-semantic-validation.json": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a",
+    "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
+    "tools/current_assessment.py": "91bfcad8977e745deee8e21f552197da9098e1bf784037ba56008204a30246fa"
+  },
+  "counts": {
+    "source_terms": 91,
+    "classes": 44,
+    "object_properties": 47,
+    "review_states": {
+      "unreviewed": 77,
+      "final": 12,
+      "deferred": 2
+    },
+    "outcomes": {
+      "unreviewed": 77,
+      "formal_mapping_adopted": 10,
+      "deferred": 2,
+      "no_direct_mapping": 2
+    },
+    "unresolved": 79,
+    "unresolved_set_sha256": "78d0d2842b8bf0c307b06796de3a38c04d0e83239e334125972a5102d4f91bdf"
+  },
+  "tests": {
+    "focused": {
+      "tests": 185,
+      "passed": true,
+      "log": "reports/current-publication-validation/gate-defect-focused.log",
+      "log_sha256": "b72ba558b70cc3ebfe44db576cdf0b819a90fc825c8a424b30df406c970fa485"
+    },
+    "integration": {
+      "tests": 128,
+      "passed": true,
+      "log": "reports/current-publication-validation/gate-defect-integration.log",
+      "log_sha256": "a11a858118f55c26fc81b45467ac1252db7e222192424b6cbdef2476806dcba1"
+    },
+    "sosa-2023": {
+      "tests": 44,
+      "passed": true,
+      "log": "reports/current-publication-validation/gate-defect-sosa-2023.log",
+      "log_sha256": "aee551b4483da3a5bd408eee89b428a3626a745e7ea0617a04e0a2579601b560"
+    }
+  },
+  "total_tests": 357,
+  "validation_ledger": {
+    "path": "reports/current-publication-validation/gate-defect-validation.json",
+    "sha256": "6b564087a1231ec886e54e77db776deeae3cedd4cb67fa459f48c8faed75a175"
+  },
+  "independent_evidence": {
+    "gate-defect-independent-coverage.json": {
+      "path": "reports/current-publication-validation/gate-defect-independent-coverage.json",
+      "sha256": "96f7a00385ee715477549f047be4e60207a227db753f0e3e27437b4dfa6dc321"
+    },
+    "gate-defect-independent-preservation.json": {
+      "path": "reports/current-publication-validation/gate-defect-independent-preservation.json",
+      "sha256": "946913906c698c27b03439b1c8e483b9bbb03cdfaaec59290043eb43899dd983"
+    },
+    "gate-defect-independent-retry.json": {
+      "path": "reports/current-publication-validation/gate-defect-independent-retry.json",
+      "sha256": "8d4ebbaf922aa3aa3fb7b210b593f08b46f94885b88ca6f87c68161e4ebd8528"
+    },
+    "gate-defect-independent-review.json": {
+      "path": "reports/current-publication-validation/gate-defect-independent-review.json",
+      "sha256": "98f83052d1c47e951ea4af5a05541e56b5d9ab8d84d30b46f3c33cd328e9cce1"
+    },
+    "gate-defect-independent-schema.json": {
+      "path": "reports/current-publication-validation/gate-defect-independent-schema.json",
+      "sha256": "ff523606b7bb0345d39895c5cd3020958984330562479e16e5c978728dbfffff"
+    }
+  },
+  "tags_unchanged": true,
+  "no_human_semantic_decisions_made": true,
+  "publication_ready": false,
+  "gate_recommendation": "ready for independent human-review gate audit"
+}

@@ -1,5 +1,7 @@
 # Current Full SOSA Baseline Summary
 
+> Historical pre-COMS baseline evidence. Counts, authority paths, and normalized reasoning results below describe that earlier state. For the unchanged current mapping candidate's publication assessment, see [current publication readiness](current-ssn-sosa-publication-readiness.md).
+
 ## Current Validation Baseline
 
 This report summarizes the current validated baseline after materializing the local SOSA import, adding the full local SOSA closure HermiT validation check, deferring unsafe actuation-side CCO agent mappings, adding the source-level `sosa:madeByActuator` range axiom, and completing the current SOSA inverse-property-pair audit.

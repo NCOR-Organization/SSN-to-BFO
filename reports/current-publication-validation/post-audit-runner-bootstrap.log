@@ -1,0 +1,4 @@
+Initial orchestration attempt used python3 -B and failed before launching semantic evaluation or writing its command record.
+Missing dependency: openpyxl is required to inspect the COMS workbook.
+Exit status: 1.
+Retry uses the existing /opt/miniconda3/bin/python environment; no dependency was installed or changed.

@@ -1,0 +1,58 @@
+{
+  "assessment_record_changes": [
+    [
+      "http://www.w3.org/ns/sosa/hasSample",
+      [
+        "human_decision_record",
+        "rationale",
+        "review_state",
+        "evidence",
+        "assessment_outcome"
+      ]
+    ],
+    [
+      "http://www.w3.org/ns/sosa/isSampleOf",
+      [
+        "human_decision_record",
+        "rationale",
+        "review_state",
+        "evidence",
+        "assessment_outcome"
+      ]
+    ]
+  ],
+  "decision_count": 2,
+  "decisions": [
+    {
+      "decision_id": "urn:uuid:715b1858-9d88-40d6-bc19-34d0f247d45c",
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json",
+        "sha256": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f"
+      },
+      "source_iri": "http://www.w3.org/ns/sosa/hasSample"
+    },
+    {
+      "decision_id": "urn:uuid:11d26084-45e6-479b-bdea-793e8886a382",
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json",
+        "sha256": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2"
+      },
+      "source_iri": "http://www.w3.org/ns/sosa/isSampleOf"
+    }
+  ],
+  "milestone": "approved sample-pair human semantic decisions",
+  "pair_review_id": "urn:uuid:cad1d838-bdd6-47ad-9dff-5ed30ac37726",
+  "pre_decision_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json",
+    "sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d"
+  },
+  "pre_state_validation": {
+    "assessment_unchanged_during_validation": true,
+    "both_decision_records_validated_before_assessment_write": true,
+    "full_proposed_assessment_validated_before_write": true
+  },
+  "review_timestamp": "2026-10-25T21:37:41+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "schema_version": 1,
+  "validation_evidence": "reports/current-publication-validation/sample-pair-decisions/post-state.json"
+}

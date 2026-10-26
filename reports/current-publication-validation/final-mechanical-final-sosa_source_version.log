@@ -1,0 +1,20 @@
+Status: approved
+Source identity: sosa-2023-af425a0454ec00512a5ebfa2873fe35a077f5fda
+Development alias: sosa-next
+Edition: Semantic Sensor Network Ontology - 2023 Edition
+Edition version IRI: http://www.w3.org/ns/sosa/2023/
+Upstream repository: https://github.com/w3c/sdw-sosa-ssn
+Upstream commit: af425a0454ec00512a5ebfa2873fe35a077f5fda
+Upstream commit date: 2026-07-22
+Upstream source files: 8
+Local overlay: src/sosa-next/imports/sosa-source-declaration-overlay.ttl
+  0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32  src/sosa-next/imports/sample-relations.ttl
+  18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5  src/sosa-next/imports/sosa-actuation.ttl
+  31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa  src/sosa-next/imports/sosa-common.ttl
+  5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987  src/sosa-next/imports/sosa-deprecated.ttl
+  da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3  src/sosa-next/imports/sosa-observation.ttl
+  82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70  src/sosa-next/imports/sosa-sampling.ttl
+  5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2  src/sosa-next/imports/sosa-source-declaration-overlay.ttl
+  1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf  src/sosa-next/imports/sosa-system.ttl
+  a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305  src/sosa-next/imports/sosa.ttl
+Summary: PASS

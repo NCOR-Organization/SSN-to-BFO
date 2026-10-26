@@ -27,6 +27,7 @@ from coms_row_identity import (
     RowIdentityReference,
     RowLocation,
     build_row_audit,
+    source_expression_sha256,
     validate_row_id,
     validate_unique_authoritative_axioms,
     validate_unique_row_ids,
@@ -87,6 +88,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - runtime dependency guar
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PRIMARY_WORKBOOK = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+CURRENT_ASSESSMENT_INVENTORY = REPO_ROOT / "mappings/current-ssn-sosa-assessment.json"
 LEGACY_ONTOLOGY = REPO_ROOT / "legacy/SSN2BFO-pre-COMS.ttl"
 IDENTITY_MODULE = REPO_ROOT / "tools/coms_row_identity.py"
 DISPOSITION_MODULE = REPO_ROOT / "tools/product_dispositions.py"
@@ -2626,6 +2628,156 @@ def write_comparison_report(path: Path, result: ComparisonResult, processed_rows
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def current_identity_reporting(
+    stats: WorkbookStats,
+    identity_audits: Sequence[CanonicalRowAudit],
+    assessment_inventory_path: Path | None = None,
+) -> dict[str, object]:
+    """Separate current-track row identity from zero-axiom semantic review.
+
+    This is reporting for the current SSN/SOSA project only. It neither changes
+    COMS canonicalization nor supplies dispositions for SOSA-2023 generation.
+    An explicit blank has canonical row identity, but its assessment must still
+    explain whether a zero-axiom decision is reviewed or remains unresolved.
+    """
+    assertion_audits = [
+        audit for audit in identity_audits
+        if audit.expression.mapping_type != "explicit_blank"
+    ]
+    blank_audits = [
+        audit for audit in identity_audits
+        if audit.expression.mapping_type == "explicit_blank"
+    ]
+    invalid_row_ids = []
+    for audit in identity_audits:
+        expression = audit.expression
+        try:
+            validate_row_id(audit.row_id, audit.location)
+            valid = (
+                bool(expression.subject_iri)
+                and expression.canonicalization == CANONICALIZATION_VERSION
+                and audit.source_expression_sha256 == source_expression_sha256(expression)
+            )
+        except ComsRowIdentityError:
+            valid = False
+        if expression.mapping_type == "explicit_blank":
+            valid = valid and (
+                expression.predicate_iri is None
+                and expression.target is None
+                and not audit.authoritative_axioms
+            )
+        else:
+            compatible_predicates = {
+                "class_mapping": {str(RDFS.subClassOf), str(OWL.equivalentClass)},
+                "object_property_mapping": {str(RDFS.subPropertyOf), str(OWL.equivalentProperty)},
+                "property_chain": {str(OWL.propertyChainAxiom)},
+                "domain": {str(RDFS.domain)},
+                "range": {str(RDFS.range)},
+            }
+            valid = valid and (
+                expression.predicate_iri in compatible_predicates.get(expression.mapping_type, set())
+                and bool(expression.target)
+                and bool(audit.authoritative_axioms)
+                and all(
+                    axiom.canonical_axiom
+                    and axiom.sha256 == hashlib.sha256(
+                        axiom.canonical_axiom.encode("utf-8")
+                    ).hexdigest()
+                    for axiom in audit.authoritative_axioms
+                )
+            )
+        if not valid:
+            invalid_row_ids.append(audit.row_id)
+    identity_complete = (
+        stats.identity_count_reconciliation_passed
+        and stats.identity_row_id_set_reconciliation_passed
+        and stats.identity_location_reconciliation_passed
+        and len(identity_audits) == stats.governed_row_id_count
+        == stats.unique_row_id_count == stats.processed_row_count
+        == stats.identity_audit_row_count
+        and len({audit.row_id for audit in identity_audits}) == len(identity_audits)
+        and len(assertion_audits) == stats.active_axiom_rows
+        and len(blank_audits) == stats.blank_mapping_rows
+        and not validate_unique_authoritative_axioms(identity_audits)
+        and not invalid_row_ids
+    )
+    inventory_path = assessment_inventory_path or CURRENT_ASSESSMENT_INVENTORY
+    inventory_error = None
+    inventory_sha256 = None
+    records = []
+    try:
+        inventory_bytes = inventory_path.read_bytes()
+        inventory_sha256 = hashlib.sha256(inventory_bytes).hexdigest()
+        inventory = json.loads(inventory_bytes)
+        if (
+            not isinstance(inventory, dict)
+            or inventory.get("schema_version") != 1
+            or inventory.get("track") != "current-ssn-sosa"
+            or not isinstance(inventory.get("records"), list)
+            or not all(isinstance(record, dict) for record in inventory["records"])
+        ):
+            raise ValueError("expected the current SSN/SOSA assessment inventory")
+        records = inventory["records"]
+    except (OSError, ValueError, TypeError) as exc:
+        inventory_error = str(exc)
+
+    zero_axiom_rows = []
+    final_outcomes = {"formal_mapping_adopted", "inheritance_sufficient", "no_direct_mapping"}
+    for audit in blank_audits:
+        matches = [record for record in records if record.get("source_iri") == audit.expression.subject_iri]
+        record = matches[0] if len(matches) == 1 else {}
+        state = record.get("review_state")
+        outcome = record.get("assessment_outcome")
+        row_ids = record.get("mapping_row_ids")
+        disposition_present = (
+            len(matches) == 1
+            and isinstance(row_ids, list)
+            and audit.row_id in row_ids
+            and bool(record.get("rationale"))
+            and bool(record.get("evidence"))
+            and (
+                (state == "final" and outcome in final_outcomes)
+                or (state == "deferred" and outcome == "deferred")
+                or (state == "unreviewed" and outcome == "unreviewed")
+            )
+            and (
+                outcome != "formal_mapping_adopted"
+                or any(
+                    other.expression.subject_iri == audit.expression.subject_iri
+                    and other.row_id in row_ids
+                    and other.row_id not in invalid_row_ids
+                    for other in assertion_audits
+                )
+            )
+        )
+        zero_axiom_rows.append({
+            "row_id": audit.row_id,
+            "source_iri": audit.expression.subject_iri,
+            "identity_valid": audit.row_id not in invalid_row_ids,
+            "review_state": state,
+            "assessment_outcome": outcome,
+            "assessment_disposition_present": disposition_present,
+            "reviewed_zero_axiom_decision": disposition_present and state == "final",
+        })
+    return {
+        "identity_audit_complete": identity_complete,
+        "assertion_bearing_rows": len(assertion_audits),
+        "explicit_zero_axiom_rows": len(blank_audits),
+        "malformed_or_missing_identity_row_ids": invalid_row_ids,
+        "assessment_inventory_path": str(inventory_path.relative_to(REPO_ROOT))
+        if inventory_path.is_relative_to(REPO_ROOT) else str(inventory_path),
+        "assessment_inventory_sha256": inventory_sha256,
+        "assessment_inventory_error": inventory_error,
+        "zero_axiom_assessment_dispositions_complete": all(
+            row["assessment_disposition_present"] for row in zero_axiom_rows
+        ),
+        "reviewed_zero_axiom_decisions": sum(
+            row["reviewed_zero_axiom_decision"] for row in zero_axiom_rows
+        ),
+        "zero_axiom_rows": zero_axiom_rows,
+    }
+
+
 def write_generation_report(
     path: Path,
     *,
@@ -2672,6 +2824,7 @@ def write_generation_report(
         for axiom in audit.authoritative_axioms
     ]
     unique_authoritative_axioms = set(authoritative_axioms)
+    current_identity = current_identity_reporting(stats, identity_audits)
     lines = [
         "# COMS Mapping Generation Validation",
         "",
@@ -2689,6 +2842,7 @@ def write_generation_report(
         f"| product-disposition module SHA-256 | `{disposition_module_sha256}` |",
         f"| modular-products module SHA-256 | `{modular_products_module_sha256}` |",
         f"| publication metadata SHA-256 | `{publication_metadata_sha256}` |",
+        f"| current assessment inventory SHA-256 | `{current_identity['assessment_inventory_sha256'] or 'unavailable'}` |",
         f"| generation timestamp (UTC) | `{generation_timestamp}` |",
         f"| maintained ontology path | `{output_path}` |",
         f"| generated ontology SHA-256 | `{candidate_sha256}` |",
@@ -2955,18 +3109,27 @@ def write_generation_report(
             f"- RowID-set reconciliation result: {'PASS' if stats.identity_row_id_set_reconciliation_passed else 'FAIL'}",
             f"- Location reconciliation result: {'PASS' if stats.identity_location_reconciliation_passed else 'FAIL'}",
             "- Identity-audit completeness result: "
-            + (
-                "PASS"
-                if stats.identity_count_reconciliation_passed
-                and stats.identity_row_id_set_reconciliation_passed
-                and stats.identity_location_reconciliation_passed
-                and all(audit.authoritative_axioms for audit in identity_audits)
-                else "FAIL"
-            ),
+            + ("PASS" if current_identity["identity_audit_complete"] else "FAIL"),
+            f"- Assertion-bearing rows requiring canonical axiom identity: {current_identity['assertion_bearing_rows']}",
+            f"- Explicit zero-axiom rows requiring canonical row identity: {current_identity['explicit_zero_axiom_rows']}",
+            "- Zero-axiom assessment disposition completeness: "
+            + ("PASS" if current_identity["zero_axiom_assessment_dispositions_complete"] else "FAIL"),
+            f"- Reviewed zero-axiom decisions: {current_identity['reviewed_zero_axiom_decisions']} / {current_identity['explicit_zero_axiom_rows']}",
+            f"- Current assessment inventory: `{current_identity['assessment_inventory_path']}`",
+            f"- Current assessment inventory SHA-256: `{current_identity['assessment_inventory_sha256'] or 'unavailable'}`",
+            *([f"- Assessment inventory error: {current_identity['assessment_inventory_error']}"] if current_identity["assessment_inventory_error"] else []),
             f"- Duplicate RowID result: {'PASS' if stats.governed_row_id_count == stats.unique_row_id_count else 'FAIL'}",
             f"- Duplicate authoritative-axiom result: {'PASS' if len(identity_audits) == stats.governed_row_id_count and len(authoritative_axioms) == len(unique_authoritative_axioms) else 'FAIL'}",
             "",
             "The RowID is persistent identity; the source-expression SHA-256 excludes location and `coms:Reasoning`. Location and reasoning remain report-visible governed metadata.",
+            "An explicit blank can pass row identity without emitting an axiom. Assessment disposition completeness and reviewed zero-axiom decisions are separate checks; unresolved dispositions do not establish a reviewed semantic decision or publication readiness.",
+            "",
+            "| Zero-axiom RowID | Source | Review state | Assessment outcome | Disposition recorded |",
+            "|---|---|---|---|---|",
+            *[
+                f"| `{row['row_id']}` | `{row['source_iri']}` | {row['review_state'] or 'missing'} | {row['assessment_outcome'] or 'missing'} | {'PASS' if row['assessment_disposition_present'] else 'FAIL'} |"
+                for row in current_identity["zero_axiom_rows"]
+            ],
             "",
             "| RowID | Worksheet | Row | Mapping type | Source-expression SHA-256 | Canonical authoritative axiom | Reasoning |",
             "|---|---|---:|---|---|---|---|",
@@ -3341,6 +3504,7 @@ def write_summary_json(
         "identity_count_reconciliation_passed": stats.identity_count_reconciliation_passed,
         "identity_row_id_set_reconciliation_passed": stats.identity_row_id_set_reconciliation_passed,
         "identity_location_reconciliation_passed": stats.identity_location_reconciliation_passed,
+        "current_identity_reporting": current_identity_reporting(stats, identity_audits),
         "canonicalization_version": CANONICALIZATION_VERSION,
         "canonical_authoritative_axioms": sum(
             len(audit.authoritative_axioms) for audit in identity_audits

@@ -1,0 +1,159 @@
+{
+  "branch": "publication/current-sosa-readiness",
+  "cell_audit": {
+    "path": "reports/current-documentary-workbook/reasoning-completion/cell-diff.md",
+    "sha256": "584f5ab11f5801f5b4ab6cf03f1ddec4c2aaf54f5508b60440f473b1b2792bb9"
+  },
+  "commands": [
+    {
+      "documented_input_changes": [
+        "reports/coms-generation-validation.md",
+        "reports/coms-product-dispositions.json"
+      ],
+      "name": "generation-refresh",
+      "path": "reports/current-documentary-workbook/reasoning-completion/generation-refresh.command.json",
+      "sha256": "e36580f52bad66218056a9f8023b63e357a1fc3e40adf2d3d3fe8321295561b8",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "generation-check",
+      "path": "reports/current-documentary-workbook/reasoning-completion/generation-check.command.json",
+      "sha256": "0e99eed2e2dfeca8e1bf2d0a22214c502121485add027c6bc1647440714b8867",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "assessment-refresh",
+      "path": "reports/current-documentary-workbook/reasoning-completion/assessment-refresh.command.json",
+      "sha256": "30e72b14163005c0fd790acc9a0a0f3643f8b4f22b6725de424dd47c2773c33a",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "assessment-check",
+      "path": "reports/current-documentary-workbook/reasoning-completion/assessment-check.command.json",
+      "sha256": "62c95340dae0b28394fde4db567ed64e143ea0bee643e6219074bc029ac63e55",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "source-identity",
+      "path": "reports/current-documentary-workbook/reasoning-completion/source-identity.command.json",
+      "sha256": "3569e6a464b064c72da567f91aec9361b7a02d1b0ff2359a4e40aec5d8a7428f",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "preservation",
+      "path": "reports/current-documentary-workbook/reasoning-completion/preservation.command.json",
+      "sha256": "2dac87baf203bc024151e081ba839e551a868a258a5862d9ac514c519a9ee1b6",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "documentary-chain",
+      "path": "reports/current-documentary-workbook/reasoning-completion/documentary-chain.command.json",
+      "sha256": "1462c0a4171ae551d64a803c64c32b2d560e73ce2388dc3a85598a1e0af2a9a6",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "publication-tests",
+      "path": "reports/current-documentary-workbook/reasoning-completion/publication-tests.command.json",
+      "sha256": "4b1cea88d0f257cdf117bfc897744ac15918d4a28c665482c01913c033e87fca",
+      "status": "PASS",
+      "test_count": 195
+    },
+    {
+      "documented_input_changes": [],
+      "name": "documentary-tests",
+      "path": "reports/current-documentary-workbook/reasoning-completion/documentary-tests.command.json",
+      "sha256": "4090cf13df0bddd8d941cfbd645f107cafbbbe6192e85a7652772c9e9ba4deca",
+      "status": "PASS",
+      "test_count": 33
+    },
+    {
+      "documented_input_changes": [],
+      "name": "coms-tests",
+      "path": "reports/current-documentary-workbook/reasoning-completion/coms-tests.command.json",
+      "sha256": "43208638758ae9fa94f7d886afa864ee025835e72c1100bea92fb3ac42d939ec",
+      "status": "PASS",
+      "test_count": 128
+    },
+    {
+      "documented_input_changes": [],
+      "name": "sosa2023-tests",
+      "path": "reports/current-documentary-workbook/reasoning-completion/sosa2023-tests.command.json",
+      "sha256": "e9664723c23d29354cddcc673a658e6dc5fdd484e12e2c69561ec2c8268a2a27",
+      "status": "PASS",
+      "test_count": 44
+    },
+    {
+      "documented_input_changes": [],
+      "name": "sosa-source-version",
+      "path": "reports/current-documentary-workbook/reasoning-completion/sosa-source-version.command.json",
+      "sha256": "bf15d7fed4a6ac7460dc2bb94ad6af5a3c27c88a9edb4e6e0b2aa289991c6916",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "sosa-next-products",
+      "path": "reports/current-documentary-workbook/reasoning-completion/sosa-next-products.command.json",
+      "sha256": "35f371b92cbde7a916ea5d1a9db8686a5efc169859cb1e8bf474c04723658ad7",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "static-compilation",
+      "path": "reports/current-documentary-workbook/reasoning-completion/static-compilation.command.json",
+      "sha256": "77c02e634d90d4a743946a4ed053022b9cb330a1265b99dcc683f7545c083569",
+      "status": "PASS",
+      "test_count": null
+    },
+    {
+      "documented_input_changes": [],
+      "name": "whitespace",
+      "path": "reports/current-documentary-workbook/reasoning-completion/whitespace.command.json",
+      "sha256": "67991e8cbc72f3dfb3623985731d1cdc727e7fb9fe953c00b635580a4868f83c",
+      "status": "PASS",
+      "test_count": null
+    }
+  ],
+  "completed_at_utc": "2026-10-25T23:07:47.491074+00:00",
+  "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "independent_audit": {
+    "path": "reports/current-documentary-workbook/reasoning-completion/independent-cell-audit.json",
+    "sha256": "7ee2b43f7797f591d80fedc3cfe69c58b2176abc44986a6889088ba0dd582669"
+  },
+  "not_run": {
+    "expensive_unrelated_RO_reasoning": "Excluded by user instruction.",
+    "full_repository_make_check": "Not part of this bounded documentary run; existing full-gate ledger remains historical.",
+    "new_exact_closure_semantic_review": "Not requested; existing semantic evidence and unresolved review issues are unchanged."
+  },
+  "schema_version": 1,
+  "scope": "Bounded validation of the authorized 104-cell documentary reasoning completion; not a full publication gate or semantic approval.",
+  "state_comparison": {
+    "path": "reports/current-documentary-workbook/reasoning-completion/state-comparison.json",
+    "sha256": "49cc58d3683e5da0b45bf34dc76bffe8709f6e83d7db0cfc9a7e3727a942647f"
+  },
+  "status": "PASS",
+  "test_count_change": "399 to 400: one added test validates the actual installed documentary chain; historical fixtures now explicitly use the retained baseline.",
+  "test_counts": {
+    "coms-tests": 128,
+    "documentary-tests": 33,
+    "publication-tests": 195,
+    "sosa2023-tests": 44
+  },
+  "total_tests": 400,
+  "transition_record": "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json"
+}

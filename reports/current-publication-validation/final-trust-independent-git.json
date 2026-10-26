@@ -1,0 +1,32 @@
+{
+  "branch": "publication/current-sosa-readiness",
+  "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "groups": {
+    "current_mapping_semantics": {
+      "count": 6,
+      "changed": []
+    },
+    "source_target": {
+      "count": 5,
+      "changed": []
+    },
+    "sosa_2023": {
+      "count": 49,
+      "changed": []
+    },
+    "historical": {
+      "count": 112,
+      "changed": []
+    },
+    "coms_local": {
+      "count": 3,
+      "changed": []
+    }
+  },
+  "external": {
+    "head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+    "tracked_count": 55,
+    "changed": []
+  },
+  "pass": true
+}

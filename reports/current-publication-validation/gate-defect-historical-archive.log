@@ -1,0 +1,12 @@
+{
+  "kind": "historical_legacy_archive",
+  "status": "HISTORICAL_ONLY",
+  "archive": {
+    "path": "reports/current-publication-validation/semantic-20261010T190914985446Z/summary.json",
+    "sha256": "fef6cd505ad2e5cf29c777a33008901877735ceccc2c7faaff3384a4653f2b7f",
+    "bytes": 207537
+  },
+  "publication_evidence_eligible": false,
+  "current_review_evidence_eligible": false,
+  "policy": "Pinned historical bytes only; no current required execution slot or semantic conclusion is validated."
+}

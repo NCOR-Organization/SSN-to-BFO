@@ -1,0 +1,472 @@
+$ /opt/miniconda3/bin/python -B -m unittest discover -s tests
+....................E.........................F......F...........F...........................................................................All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+.Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+....Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.05 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing alignment core
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing CCO extension
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.02 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing strict BFO mapping
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+........Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-v2na7uj8/.cache/coms-noncanonical-header/run-yz3zcunq/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 72
+Blank mapping rows: 2
+Class mapping rows: 44
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 3
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 103
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 25
+Disposition mixed BFO/CCO axioms: 30
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 55
+CCO-extension logical triples: 924
+CCO-extension total triples: 933
+CCO-extension SHA-256: 2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1114
+Candidate closure triple count: 15904
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 44
+Unmapped classes: 0
+Mapped object properties: 28
+Unmapped object properties: 2
+Mappings present in both: 55
+COMS-only mappings: 17
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.alignment_core.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-noncanonical-header/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-f7q5qg6r/.cache/coms-reordered-root-imports/run-l8v_6ztz/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 72
+Blank mapping rows: 2
+Class mapping rows: 44
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 3
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 103
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 25
+Disposition mixed BFO/CCO axioms: 30
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 55
+CCO-extension logical triples: 924
+CCO-extension total triples: 933
+CCO-extension SHA-256: 2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1114
+Candidate closure triple count: 15904
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 44
+Unmapped classes: 0
+Mapped object properties: 28
+Unmapped object properties: 2
+Mappings present in both: 55
+COMS-only mappings: 17
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.integrated.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-reordered-root-imports/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+..COMS quality check: FAIL (stale COMS outputs: alignment-core hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: CCO-extension hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: strict-BFO hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.alignment_core.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-strict_bfo_mapping\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (product-disposition validation failed: ERROR [MISSING_FIELD] document: missing required field 'canonicalization_version' | ERROR [MISSING_FIELD] document: missing required field 'disposition_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'generator_sha256' | ERROR [MISSING_FIELD] document: missing required field 'product_order' | ERROR [MISSING_FIELD] document: missing required field 'publication_metadata_sha256' | ERROR [MISSING_FIELD] document: missing required field 'row_identity_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'rows' | ERROR [MISSING_FIELD] document: missing required field 'summary' | ERROR [MISSING_FIELD] document: missing required field 'workbook_sha256' | ERROR [WRONG_TYPE] product_order: expected array of product strings | ERROR [WRONG_TYPE] rows: expected array | ERROR [WRONG_TYPE] summary: expected JSON object | ERROR [WRONG_TYPE] summary.authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.bfo_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.cco_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.class_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.explicitly_unmapped_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.governed_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.mixed_bfo_cco_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_chain_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_typing_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.relation_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.target_neutral_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_row_id_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.zero_axiom_row_count: expected nonnegative integer)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.......[2/11] Compiling COMS generator
+[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+......................................................................................................................................................................................................................................................................................................................F.......E.........................................E................................................F..............................
+======================================================================
+ERROR: test_fresh_process_hash_seeds_are_byte_identical (test_build_release.ReleasePackageTests.test_fresh_process_hash_seeds_are_byte_identical)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_build_release.py", line 862, in test_fresh_process_hash_seeds_are_byte_identical
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/miniconda3/bin/python', '-B', 'tools/build_release.py', '--release-id', '2099-01-02', '--release-date', '2099-01-02', '--source-commit', '0123456789abcdef0123456789abcdef01234567', '--git-tag', 'v2099-01-02', '--notes', '/Users/alecsculley/Documents/GitHub/SSN-to-BFO/release-notes/SYNTHETIC-2099-01-02.md', '--output-dir', '/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/release-seed-builds-f36jil3v/42/2099-01-02']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: setUpClass (test_sosa_2023_build_release.Sosa2023ReleasePackageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_build_release.py", line 148, in setUpClass
+    cls.result = build.build_release_package(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 2316, in build_release_package
+    assemble_release_package(
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1994, in assemble_release_package
+    run_independent_reasoning(package_dir, work_root / 'reasoning', toolchain, repository_root=repository_root)
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1716, in run_independent_reasoning
+    raise ReleasePackageError(
+sosa_2023_release_runtime.ReleasePackageError: ERROR [HERMIT_FAILED] ro_mapping: {'return_code': 143, 'robot_output': '', 'reasoned_output_exists': False, 'reasoned_output_triples': None, 'unsatisfiable_classes': [], 'passed': False}
+
+======================================================================
+ERROR: test_real_package_build_archives_twice_exactly_and_validates_read_only (test_sosa_2023_release_archive.Sosa2023RealPackageArchiveIntegrationTests.test_real_package_build_archives_twice_exactly_and_validates_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_archive.py", line 644, in test_real_package_build_archives_twice_exactly_and_validates_read_only
+    result = build.build_release_package(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 2306, in build_release_package
+    assemble_release_package(
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1994, in assemble_release_package
+    run_independent_reasoning(package_dir, work_root / 'reasoning', toolchain, repository_root=repository_root)
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/sosa_2023_build_release.py", line 1716, in run_independent_reasoning
+    raise ReleasePackageError(
+sosa_2023_release_runtime.ReleasePackageError: ERROR [HERMIT_FAILED] ro_mapping: {'return_code': 143, 'robot_output': '', 'reasoned_output_exists': False, 'reasoned_output_triples': None, 'unsatisfiable_classes': [], 'passed': False}
+
+======================================================================
+FAIL: test_native_disposition_document_matches_fixed_provenance_bytes (test_coms_framework_integration.ComsCompatibilityProjectionTests.test_native_disposition_document_matches_fixed_provenance_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 1191, in test_native_disposition_document_matches_fixed_provenance_bytes
+    self.assertEqual(native_path.read_bytes(), maintained_path.read_bytes())
+AssertionError: b'{\n[189 chars]6": "f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acf[292909 chars]n}\n' != b'{\n[189 chars]6": "9e46f057900a7b6901771e27178d7ac854f01a95d[292909 chars]n}\n'
+
+======================================================================
+FAIL: test_primary_workbook_semantic_identity_equivalence (test_coms_framework_integration.ComsFrameworkShadowIntegrationTests.test_primary_workbook_semantic_identity_equivalence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 391, in test_primary_workbook_semantic_identity_equivalence
+    self.assertEqual(artifact_hashes_before, ARTIFACT_SHA256)
+AssertionError: {Posi[778 chars]'): 'd1bcb2fb56b5edf3b007e101cba2c05735d98d096[187 chars]bd0'} != {Posi[778 chars]'): 'c6f61271e573705882fa6a0f92f54c7731d635873[187 chars]357'}
+Diff is 1380 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_wrapper_is_read_only (test_coms_framework_integration.ComsPrimaryWorkbookWrapperTests.test_wrapper_is_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 2350, in test_wrapper_is_read_only
+    self.assertEqual(
+AssertionError: '9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843' != 'f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6'
+- 9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843
++ f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6
+
+
+======================================================================
+FAIL: test_governed_queries_match_rdflib_without_product_changes (test_robot_query_equivalence_pilot.RobotQueryEquivalencePilotTests.test_governed_queries_match_rdflib_without_product_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_robot_query_equivalence_pilot.py", line 61, in test_governed_queries_match_rdflib_without_product_changes
+    self.assertTrue(first["passed"], first)
+AssertionError: False is not true : {'passed': False, 'robot_path': '/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/bin/robot', 'workbook': '/Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx', 'governed_row_count': 105, 'source_graph': {'triple_count': 1157, 'round_trip_triple_count': 1157, 'round_trip_isomorphic': True, 'owl_imports_count': 4, 'sha256': 'd9165d7b2cdfe1e02ffcff4b0f4c81167f9307571fab1ec51c4a3acf34c65a99'}, 'coverage_graph': {'triple_count': 182, 'round_trip_triple_count': 182, 'round_trip_isomorphic': True, 'sha256': '906875d908679705afc9734ef4a9ec5f1178cfbbfb725fefc9adb843ade4be9d'}, 'source_query': {'passed': False, 'query': '/Users/alecsculley/Documents/GitHub/SSN-to-BFO/queries/source-classes-and-object-properties.rq', 'rdflib_row_count': 91, 'robot_row_count': 0, 'same_ordered_rows': False, 'rdflib_only_rows': [['http://www.w3.org/ns/sosa/ActuatableProperty', 'class'], ['http://www.w3.org/ns/sosa/Actuation', 'class'], ['http://www.w3.org/ns/sosa/Actuator', 'class'], ['http://www.w3.org/ns/sosa/FeatureOfInterest', 'class'], ['http://www.w3.org/ns/sosa/ObservableProperty', 'class'], ['http://www.w3.org/ns/sosa/Observation', 'class'], ['http://www.w3.org/ns/sosa/Platform', 'class'], ['http://www.w3.org/ns/sosa/Procedure', 'class'], ['http://www.w3.org/ns/sosa/Result', 'class'], ['http://www.w3.org/ns/sosa/Sample', 'class'], ['http://www.w3.org/ns/sosa/Sampler', 'class'], ['http://www.w3.org/ns/sosa/Sampling', 'class'], ['http://www.w3.org/ns/sosa/Sensor', 'class'], ['http://www.w3.org/ns/sosa/actsOnProperty', 'object_property'], ['http://www.w3.org/ns/sosa/hasFeatureOfInterest', 'object_property'], ['http://www.w3.org/ns/sosa/hasResult', 'object_property'], ['http://www.w3.org/ns/sosa/hasSample', 'object_property'], ['http://www.w3.org/ns/sosa/hosts', 'object_property'], ['http://www.w3.org/ns/sosa/isActedOnBy', 'object_property'], ['http://www.w3.org/ns/sosa/isFeatureOfInterestOf', 'object_property'], ['http://www.w3.org/ns/sosa/isHostedBy', 'object_property'], ['http://www.w3.org/ns/sosa/isObservedBy', 'object_property'], ['http://www.w3.org/ns/sosa/isResultOf', 'object_property'], ['http://www.w3.org/ns/sosa/isSampleOf', 'object_property'], ['http://www.w3.org/ns/sosa/madeActuation', 'object_property'], ['http://www.w3.org/ns/sosa/madeByActuator', 'object_property'], ['http://www.w3.org/ns/sosa/madeBySampler', 'object_property'], ['http://www.w3.org/ns/sosa/madeBySensor', 'object_property'], ['http://www.w3.org/ns/sosa/madeObservation', 'object_property'], ['http://www.w3.org/ns/sosa/madeSampling', 'object_property'], ['http://www.w3.org/ns/sosa/observedProperty', 'object_property'], ['http://www.w3.org/ns/sosa/observes', 'object_property'], ['http://www.w3.org/ns/sosa/phenomenonTime', 'object_property'], ['http://www.w3.org/ns/sosa/sampling/RelationshipNature', 'class'], ['http://www.w3.org/ns/sosa/sampling/SampleRelationship', 'class'], ['http://www.w3.org/ns/sosa/sampling/hasSampleRelationship', 'object_property'], ['http://www.w3.org/ns/sosa/sampling/natureOfRelationship', 'object_property'], ['http://www.w3.org/ns/sosa/sampling/relatedSample', 'object_property'], ['http://www.w3.org/ns/sosa/usedProcedure', 'object_property'], ['http://www.w3.org/ns/ssn/Deployment', 'class'], ['http://www.w3.org/ns/ssn/Input', 'class'], ['http://www.w3.org/ns/ssn/Output', 'class'], ['http://www.w3.org/ns/ssn/Property', 'class'], ['http://www.w3.org/ns/ssn/Stimulus', 'class'], ['http://www.w3.org/ns/ssn/System', 'class'], ['http://www.w3.org/ns/ssn/deployedOnPlatform', 'object_property'], ['http://www.w3.org/ns/ssn/deployedSystem', 'object_property'], ['http://www.w3.org/ns/ssn/detects', 'object_property'], ['http://www.w3.org/ns/ssn/forProperty', 'object_property'], ['http://www.w3.org/ns/ssn/hasDeployment', 'object_property'], ['http://www.w3.org/ns/ssn/hasInput', 'object_property'], ['http://www.w3.org/ns/ssn/hasOutput', 'object_property'], ['http://www.w3.org/ns/ssn/hasProperty', 'object_property'], ['http://www.w3.org/ns/ssn/hasSubSystem', 'object_property'], ['http://www.w3.org/ns/ssn/implementedBy', 'object_property'], ['http://www.w3.org/ns/ssn/implements', 'object_property'], ['http://www.w3.org/ns/ssn/inDeployment', 'object_property'], ['http://www.w3.org/ns/ssn/isPropertyOf', 'object_property'], ['http://www.w3.org/ns/ssn/isProxyFor', 'object_property'], ['http://www.w3.org/ns/ssn/systems/Accuracy', 'class'], ['http://www.w3.org/ns/ssn/systems/ActuationRange', 'class'], ['http://www.w3.org/ns/ssn/systems/BatteryLifetime', 'class'], ['http://www.w3.org/ns/ssn/systems/Condition', 'class'], ['http://www.w3.org/ns/ssn/systems/DetectionLimit', 'class'], ['http://www.w3.org/ns/ssn/systems/Drift', 'class'], ['http://www.w3.org/ns/ssn/systems/Frequency', 'class'], ['http://www.w3.org/ns/ssn/systems/Latency', 'class'], ['http://www.w3.org/ns/ssn/systems/MaintenanceSchedule', 'class'], ['http://www.w3.org/ns/ssn/systems/MeasurementRange', 'class'], ['http://www.w3.org/ns/ssn/systems/OperatingPowerRange', 'class'], ['http://www.w3.org/ns/ssn/systems/OperatingProperty', 'class'], ['http://www.w3.org/ns/ssn/systems/OperatingRange', 'class'], ['http://www.w3.org/ns/ssn/systems/Precision', 'class'], ['http://www.w3.org/ns/ssn/systems/Resolution', 'class'], ['http://www.w3.org/ns/ssn/systems/ResponseTime', 'class'], ['http://www.w3.org/ns/ssn/systems/Selectivity', 'class'], ['http://www.w3.org/ns/ssn/systems/Sensitivity', 'class'], ['http://www.w3.org/ns/ssn/systems/SurvivalProperty', 'class'], ['http://www.w3.org/ns/ssn/systems/SurvivalRange', 'class'], ['http://www.w3.org/ns/ssn/systems/SystemCapability', 'class'], ['http://www.w3.org/ns/ssn/systems/SystemLifetime', 'class'], ['http://www.w3.org/ns/ssn/systems/SystemProperty', 'class'], ['http://www.w3.org/ns/ssn/systems/hasOperatingProperty', 'object_property'], ['http://www.w3.org/ns/ssn/systems/hasOperatingRange', 'object_property'], ['http://www.w3.org/ns/ssn/systems/hasSurvivalProperty', 'object_property'], ['http://www.w3.org/ns/ssn/systems/hasSurvivalRange', 'object_property'], ['http://www.w3.org/ns/ssn/systems/hasSystemCapability', 'object_property'], ['http://www.w3.org/ns/ssn/systems/hasSystemProperty', 'object_property'], ['http://www.w3.org/ns/ssn/systems/inCondition', 'object_property'], ['http://www.w3.org/ns/ssn/systems/qualityOfObservation', 'object_property'], ['http://www.w3.org/ns/ssn/wasOriginatedBy', 'object_property']], 'robot_only_rows': [], 'robot_return_code': 1, 'robot_output': 'org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.w3.org/2004/02/skos/core> Cause: www.w3.org\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.', 'robot_output_exists': False, 'robot_output_bytes': 0, 'robot_header': []}, 'unmapped_query': {'passed': True, 'query': '/Users/alecsculley/Documents/GitHub/SSN-to-BFO/queries/unmapped-source-terms.rq', 'rdflib_row_count': 2, 'robot_row_count': 2, 'same_ordered_rows': True, 'rdflib_only_rows': [], 'robot_only_rows': [], 'robot_return_code': 0, 'robot_output': '', 'robot_output_exists': True, 'robot_output_bytes': 173, 'robot_header': ['term', 'kind', 'coverageStatus']}}
+
+======================================================================
+FAIL: test_pinned_sosa_2023_ro_closure_is_hermit_clean (test_sosa_2023_ro_reasoning.Sosa2023RoReasoningTest.test_pinned_sosa_2023_ro_closure_is_hermit_clean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_ro_reasoning.py", line 365, in test_pinned_sosa_2023_ro_closure_is_hermit_clean
+    self.assertEqual(
+AssertionError: 143 != 0 : OWL 2 DL Profile Report: [Ontology and imports closure in profile]
+
+----------------------------------------------------------------------
+Ran 619 tests in 2466.120s
+
+FAILED (failures=5, errors=3)
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-jfu8rkg4/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 1
+Canonical authoritative axioms: 1
+Errors:
+- ERROR [TARGET_CATEGORY_MISMATCH] urn:uuid:00000000-0000-4000-8000-000000000001: synthetic disposition failure
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-j4klz_61/generation-report.md
+Worksheets read: none
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 0
+Unique RowIDs: 0
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- Synthetic!1: governed worksheet is missing required header 'coms:RowID'
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-_bh3swb0/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [IDENTITY_AUDIT_INCOMPLETE] processed row count 1 does not match identity-audit row count 0 | ERROR [PROCESSED_AUDIT_ROWID_MISMATCH] processed RowIDs missing from identity audits: urn:uuid:00000000-0000-4000-8000-000000000001 (Synthetic!2) | ERROR [IDENTITY_AUDIT_INCOMPLETE] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001] is absent from the identity audit
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-6nfxkwba/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-ze8flixj/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-96pxsnfz/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+
+==> Python compile check
+$ /opt/miniconda3/bin/python -m py_compile tools/run_validation_suite.py tools/test_elk_instance_mapping_entailments.py tools/test_full_sosa_closure_hermit.py tools/test_object_property_typing_probes.py tools/test_instance_data.py tools/compare_mappings.py tools/coms_row_identity.py tools/coms_framework_integration.py tools/product_dispositions.py tools/modular_products.py tools/generate_mapping_from_coms.py tools/robot_template_generation_pilot.py tools/robot_property_chain_generation_pilot.py tools/robot_diff_pilot.py tools/robot_extract_pilot.py tools/robot_query_equivalence_pilot.py tools/robot_retained_example_validation_pilot.py tools/robot_verify_pilot.py tools/robot_reconstruction_validation.py tools/validate_robot_reconstruction.py tools/check_coms_mapping.py tools/sosa_source_version.py tools/check_sosa_source_version.py tools/product_role_policy.py tools/check_product_role_policy.py tools/sosa_release_scope.py tools/check_sosa_release_scope.py tools/check_sosa_next_mapping.py tools/generate_sosa_next_products.py tools/check_sosa_next_products.py tools/watch_coms_mapping.py tools/publication_metadata.py tools/check_publication_metadata.py tools/release_context.py tools/release_manifest.py tools/sosa_2023_release_manifest.py tools/sosa_2023_release_runtime.py tools/sosa_2023_build_release.py tools/sosa_2023_check_release.py tools/sosa_2023_release_archive.py tools/sosa_2023_rehearse_release.py tools/build_release.py tools/check_release.py tools/release_archive.py tools/rehearse_release.py tests/test_generate_mapping_from_coms.py tests/test_sosa_source_version.py tests/test_product_role_policy.py tests/test_sosa_release_scope.py tests/test_check_sosa_next_mapping.py tests/test_sosa_next_products.py tests/test_sosa_next_consumer_stack.py tests/test_sosa_2023_publication_metadata.py tests/test_sosa_2023_release_rendering.py tests/test_sosa_2023_release_manifest.py tests/test_sosa_2023_release_runtime.py tests/test_sosa_2023_build_release.py tests/test_sosa_2023_release_archive.py tests/test_sosa_2023_release_rehearsal.py tests/test_robot_template_generation_pilot.py tests/test_robot_property_chain_generation_pilot.py tests/test_robot_diff_pilot.py tests/test_robot_extract_pilot.py tests/test_robot_query_equivalence_pilot.py tests/test_robot_retained_example_validation_pilot.py tests/test_robot_verify_pilot.py tests/test_robot_reconstruction_validation.py tests/test_coms_row_identity.py tests/test_coms_framework_integration.py tests/test_product_dispositions.py tests/test_modular_products.py tests/test_strict_bfo_mapping.py tests/test_cco_extension.py tests/test_bfo_projection.py tests/test_publication_metadata.py tests/test_release_context.py tests/test_release_rendering.py tests/test_release_manifest.py tests/test_build_release.py tests/test_release_archive.py tests/test_release_rehearsal.py tests/test_placeholder_catalog_migration.py
+Python compile check: PASS
+
+==> failing bytecode fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("failed-bytecode-report.json").write_text(json.dumps({
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+raise SystemExit(7)
+'
+failing bytecode fixture: FAIL (7)
+
+==> bytecode isolation fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import subprocess
+import sys
+
+inner = r"""
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("bytecode-report.json").write_text(json.dumps({
+    "dont_write": os.environ["PYTHONDONTWRITEBYTECODE"],
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+"""
+subprocess.run(
+    [sys.executable, "-c", inner],
+    env={"PYTHONPATH": "."},
+    check=True,
+)
+'
+bytecode isolation fixture: PASS
+
+==> primary plus cleanup failure
+$ /opt/miniconda3/bin/python -c pass
+primary plus cleanup failure: FAIL (7); CLEANUP_FAILED external bytecode cache: owned path identity changed

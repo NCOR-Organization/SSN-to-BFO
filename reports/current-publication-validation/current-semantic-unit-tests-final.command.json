@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_current_semantic_validation.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "execution_status": "completed",
+  "elapsed_seconds": 3.541,
+  "stdout": {
+    "path": "reports/current-publication-validation/current-semantic-unit-tests-final.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "path": "reports/current-publication-validation/current-semantic-unit-tests-final.stderr.log",
+    "sha256": "c7db0e26df88252ad884385ccd4b1d358466ddc6185c6b3d857c293bf7ef0932",
+    "bytes": 3128
+  }
+}

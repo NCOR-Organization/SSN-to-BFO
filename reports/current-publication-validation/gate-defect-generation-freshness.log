@@ -1,0 +1,80 @@
+[1/11] Verifying workbook exists and opens
+Workbook worksheets: Sheet1, Sheet2
+Workbook SHA-256: e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6
+[2/11] Compiling COMS generator
+Generator SHA-256: 9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python3.12 tools/generate_mapping_from_coms.py --input mappings/SSN2BFO-COMS.xlsx --output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/candidate/SSN2BFO.ttl --report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-generation-validation.md --disposition-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-product-dispositions.json --alignment-core-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-source-term-coverage.md --diff-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/hermit --report-workbook-path mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/summary.json
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-generation-validation.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/candidate/SSN2BFO.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-source-term-coverage.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/reports/coms-product-dispositions.json
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-716yc6n8/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 72
+Blank mapping rows: 2
+Class mapping rows: 44
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 3
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 103
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 25
+Disposition mixed BFO/CCO axioms: 30
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 55
+CCO-extension logical triples: 924
+CCO-extension total triples: 933
+CCO-extension SHA-256: 2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1114
+Candidate closure triple count: 15904
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 44
+Unmapped classes: 0
+Mapped object properties: 28
+Unmapped object properties: 2
+Mappings present in both: 55
+COMS-only mappings: 17
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+Product dispositions: PASS (105 rows; 103 axioms)
+Alignment core: PASS (1 declaration; 0 imports; 7 metadata; 29 governed axioms; 53 logical triples; 61 total triples)
+Strict BFO mapping: PASS (1 declaration; 1 import; 7 metadata; 19 direct governed axioms; 125 logical triples; 134 total triples)
+CCO extension: PASS (1 declaration; 1 import; 7 metadata; 55 direct governed axioms; 924 logical triples; 933 total triples)
+[5/11] Confirming maintained SPARQL source-term coverage checks ran
+Coverage query: PASS (91 source terms; 2 unmapped)
+[6/11] Parsing temporary generated candidate TTL
+Generated candidate parse: PASS (1 declaration; 4 imports; 7 metadata; 1102 logical; 1114 total)
+[7-9/11] Confirming exact candidate closure profile and HermiT result
+Candidate HermiT: PASS (15904 closure triples; no named unsats)
+[10/11] Confirming required reports and freshness metadata
+[11/11] Running git diff --check
+Pre-update git whitespace check
+$ git diff --check
+Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (16.28 seconds)
+Last-success metadata: .cache/coms/last-success.json

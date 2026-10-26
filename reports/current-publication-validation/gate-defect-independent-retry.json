@@ -1,0 +1,6 @@
+{
+  "second_driver_call_error": "FileExistsError: Semantic attempt destination already exists; retry with new build/evidence destinations: /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-retry-check-v0vr_f7f/build/retry-diagnostic.rdf, /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-retry-check-v0vr_f7f/evidence/retry-diagnostic.attempt.json, /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-retry-check-v0vr_f7f/evidence/retry-diagnostic.result.json, /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-retry-check-v0vr_f7f/evidence/retry-diagnostic.command.json",
+  "first_receipt_revalidation_error": null,
+  "ticket_count": 1,
+  "envelope_count": 1
+}

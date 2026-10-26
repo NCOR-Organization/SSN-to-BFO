@@ -1,5 +1,7 @@
 # Current SSN/SOSA Release-Readiness Audit
 
+> Historical pre-COMS release audit. Placeholder products, workbooks, and commands below describe the earlier state and are retained as history. See [current publication readiness](current-ssn-sosa-publication-readiness.md) for the current candidate.
+
 ## Scope
 
 This report audits whether the current SSN/SOSA-to-BFO/CCO mapping is ready for use and release.

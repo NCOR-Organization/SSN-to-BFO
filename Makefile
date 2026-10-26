@@ -20,6 +20,7 @@ compile:
 	@cache_dir=$$(mktemp -d /tmp/ssn-to-bfo-pycache.XXXXXX); \
 	trap 'rm -rf "$$cache_dir"' EXIT HUP INT TERM; \
 	PYTHONDONTWRITEBYTECODE=1 PYTHONPYCACHEPREFIX="$$cache_dir" python -m py_compile \
+		tools/current_*.py tests/test_current*.py \
 		tools/run_validation_suite.py \
 		tools/test_elk_instance_mapping_entailments.py \
 		tools/test_instance_data.py \
@@ -197,6 +198,17 @@ coms-status:
 check: validate compile
 	git diff --check
 	git status --short
+
+# Publication assessment is deliberately separate from the structural gate.
+# It fails while semantic decisions or complete exact-closure evidence are open.
+.PHONY: check-current-publication current-publication-evidence
+check-current-publication:
+	PYTHONDONTWRITEBYTECODE=1 python tools/current_publication_readiness.py --write
+
+current-publication-evidence:
+	PYTHONDONTWRITEBYTECODE=1 python tools/current_source_identity.py
+	PYTHONDONTWRITEBYTECODE=1 python tools/current_assessment.py --write
+	PYTHONDONTWRITEBYTECODE=1 python tools/current_semantic_validation.py
 
 post-merge-check:
 	git status --short

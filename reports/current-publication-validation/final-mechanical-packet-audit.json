@@ -1,0 +1,336 @@
+{
+  "status": "PASS",
+  "method": "Root compared all79 pre/post subjects, states, questions, priorities, coverage, current workbook row identities/assertions and C/N facts. Root and separate execution-implementation reviewer inspected the17 listed packet samples against local ontology/workbook evidence. Counts describe applicable facts, not a claim every fact kind exists for every term.",
+  "unchanged_fields": [
+    "review_state",
+    "priority",
+    "human_question",
+    "coverage_evidence",
+    "pinned_track_comparison",
+    "critical_features",
+    "mapping_RowIDs_predicates_targets",
+    "assessment_inventory",
+    "expectation_manifest",
+    "identity",
+    "scope"
+  ],
+  "unresolved_count": 79,
+  "samples": [
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+      "priority": 1,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 3,
+      "source_incoming_context_count": 1,
+      "source_native_chain_count": 0,
+      "target_fact_count": 2,
+      "target_incoming_context_count": 3,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 1,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/isSampleOf",
+      "priority": 1,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 2,
+      "source_incoming_context_count": 3,
+      "source_native_chain_count": 0,
+      "target_fact_count": 2,
+      "target_incoming_context_count": 9,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 1,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/systems/inCondition",
+      "priority": 2,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 1,
+      "source_incoming_context_count": 6,
+      "source_native_chain_count": 0,
+      "target_fact_count": 0,
+      "target_incoming_context_count": 0,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 0,
+      "derived_consequence_count": 1,
+      "mapping_row_ids": [
+        "urn:uuid:79e12baa-9467-4494-bdf3-b6906f5a81a7"
+      ],
+      "has_cross_track_comparison": false
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/hosts",
+      "priority": 6,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 2,
+      "source_incoming_context_count": 1,
+      "source_native_chain_count": 1,
+      "target_fact_count": 3,
+      "target_incoming_context_count": 36,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/madeByActuator",
+      "priority": 2,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 1,
+      "source_incoming_context_count": 3,
+      "source_native_chain_count": 1,
+      "target_fact_count": 1,
+      "target_incoming_context_count": 1,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 1,
+      "mapping_row_ids": [
+        "urn:uuid:675bb221-ad63-4033-9f22-5190d0b6d545",
+        "urn:uuid:ac95c1e2-0d93-48de-be9d-4defbe6525f0"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Procedure",
+      "priority": 4,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 4,
+      "source_incoming_context_count": 6,
+      "source_native_chain_count": 0,
+      "target_fact_count": 3,
+      "target_incoming_context_count": 82,
+      "target_disjoint_group_count": 1,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 1,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "priority": 2,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 2,
+      "source_incoming_context_count": 6,
+      "source_native_chain_count": 0,
+      "target_fact_count": 0,
+      "target_incoming_context_count": 0,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 0,
+      "derived_consequence_count": 1,
+      "mapping_row_ids": [
+        "urn:uuid:b16f1d3a-3d10-4b75-9f12-2331e6c46d74",
+        "urn:uuid:01b1aff2-a12b-430b-9775-b43241c3a7cf"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
+      "priority": 2,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 2,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 1,
+      "target_fact_count": 1,
+      "target_incoming_context_count": 1,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 1,
+      "mapping_row_ids": [
+        "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
+        "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/hasProperty",
+      "priority": 2,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 2,
+      "source_incoming_context_count": 8,
+      "source_native_chain_count": 0,
+      "target_fact_count": 4,
+      "target_incoming_context_count": 52,
+      "target_disjoint_group_count": 1,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Platform",
+      "priority": 3,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 3,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 0,
+      "target_fact_count": 1,
+      "target_incoming_context_count": 29,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 0,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Sample",
+      "priority": 3,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 7,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 0,
+      "target_fact_count": 2,
+      "target_incoming_context_count": 31,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Sampler",
+      "priority": 3,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 4,
+      "source_incoming_context_count": 1,
+      "source_native_chain_count": 0,
+      "target_fact_count": 5,
+      "target_incoming_context_count": 57,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Sensor",
+      "priority": 4,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 6,
+      "source_incoming_context_count": 5,
+      "source_native_chain_count": 0,
+      "target_fact_count": 5,
+      "target_incoming_context_count": 57,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/Actuator",
+      "priority": 4,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 5,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 0,
+      "target_fact_count": 5,
+      "target_incoming_context_count": 57,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+      "priority": 4,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 6,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 0,
+      "target_fact_count": 4,
+      "target_incoming_context_count": 34,
+      "target_disjoint_group_count": 1,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 1,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239"
+      ],
+      "has_cross_track_comparison": false
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/isHostedBy",
+      "priority": 6,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 1,
+      "source_incoming_context_count": 2,
+      "source_native_chain_count": 1,
+      "target_fact_count": 3,
+      "target_incoming_context_count": 18,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 0,
+      "mapping_chain_count": 2,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:e866de80-683d-4138-a713-be9646d37148"
+      ],
+      "has_cross_track_comparison": true
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+      "priority": 6,
+      "source_definition_count": 1,
+      "source_asserted_outgoing_count": 1,
+      "source_incoming_context_count": 4,
+      "source_native_chain_count": 0,
+      "target_fact_count": 2,
+      "target_incoming_context_count": 8,
+      "target_disjoint_group_count": 0,
+      "target_native_chain_count": 2,
+      "mapping_chain_count": 1,
+      "derived_consequence_count": 0,
+      "mapping_row_ids": [
+        "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+      ],
+      "has_cross_track_comparison": true
+    }
+  ],
+  "inCondition": "No explicit source/workbook range; three source universal restrictions plus current mapping domain RowID imply Condition for objects. Packet labels this aligned derived evidence, not a source-only range assertion.",
+  "systematic_omissions_found": [],
+  "limits": [
+    "Bounded direct-participation extraction, not full OWL entailment enumeration.",
+    "Governed graphs contain no anonymous subjects for subclass/subproperty/equivalence/disjointness predicates or AllDisjointProperties groups; these unimplemented forms do not omit present facts.",
+    "RelationshipNature and dependent natureOfRelationship closure-sensitive judgments still require pinned SKOS evidence."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "reviewed_at_utc": "2026-10-25T20:58:08.461981+00:00",
+  "status": "PASS",
+  "scope": "Independent read-only final preservation and code-diff review; no duplicate suites run",
+  "preservation_evidence": "independent-preservation.json",
+  "coverage_evidence": "independent-coverage.json",
+  "code_diff_basis": "Retained audit copy exactly matched pre-state SHA256 for both changed semantic code files",
+  "code_review_inputs": [
+    {
+      "path": "tools/current_semantic_validation.py",
+      "pre_sha256": "2312dbc36d2b4438453849edc017c0424b1f5a6f2e99607480bef6b5d4bf30c5",
+      "retained_pre_sha256": "2312dbc36d2b4438453849edc017c0424b1f5a6f2e99607480bef6b5d4bf30c5",
+      "retained_pre_is_exact": true,
+      "current_sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+      "changed": true
+    },
+    {
+      "path": "tools/current_semantic_invocation.py",
+      "pre_sha256": "80e3a09ce0bdcfd732292804a80042cb61b8d8d71ca2f6a5fb7531f95c37f4d4",
+      "retained_pre_sha256": "80e3a09ce0bdcfd732292804a80042cb61b8d8d71ca2f6a5fb7531f95c37f4d4",
+      "retained_pre_is_exact": true,
+      "current_sha256": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+      "changed": true
+    }
+  ],
+  "schema_findings": {
+    "current_contract": "Exact int schema 2 is mandatory at current entry points; field never selects legacy mode",
+    "custody": "All attempted reasoner runs go through selection and invocation-chain verification unconditionally",
+    "historical": "Separate pinned path+SHA archive reader; current-review and publication ineligible; removed current reconciliation path",
+    "actionable_defects_found": []
+  },
+  "retry_findings": {
+    "design": "Accepted fail-before-touch alternative, explicit fresh build/evidence destination per retry",
+    "preflight": "Checks existing graph, query, reservation, result and known command/output paths, including dangling symlinks, before serialization or any file write",
+    "create_once": "Reservation, graph, query and result writes use exclusive creation; ticket and capture/envelope already exclusive",
+    "prior_attempt_preservation": "No code path rewrites an existing slot graph/query/result during a driver retry; fresh destination attempt uses separate graph/query identities",
+    "selection": "Existing create-once selected-invocations record and verification unchanged",
+    "actionable_defects_found": []
+  },
+  "limits": [
+    "No new semantic judgment or real decision record created",
+    "Code review supplements root-run regression matrices; it does not independently rerun them",
+    "Current historical blocked semantic evidence remains deliberately ineligible"
+  ]
+}

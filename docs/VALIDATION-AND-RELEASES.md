@@ -23,6 +23,27 @@ It includes:
 - Python compilation
 - whitespace and repository-cleanliness checks
 
+## Current-track publication validation
+
+Publication assessment adds project-local byte-identity, dynamic inventory,
+review-disposition, and reporting regression checks. `make check-current-publication`
+runs the publication criterion and fails while required semantic review or exact
+validation remains incomplete. Its failure must not be relabeled a successful
+publication result merely because structural unit tests pass.
+
+The older `tools/test_full_sosa_closure_hermit.py` diagnostic removes the
+`sosa:isSampleOf` functional and `sosa:hasSample` inverse-functional triples
+before reasoning. Its PASS concerns that normalized local diagnostic closure.
+It is not exact-closure publication evidence. Likewise, example parse and RDFS
+smoke checks are not complete-reasoner consistency tests. The new current-track
+semantic validation preserves logical axioms, records unresolved imports and OWL
+profile failures, and binds individual attempts to input hashes. Existing stored
+diagnostic reports remain historical evidence for their stated inputs.
+
+See `reports/current-ssn-sosa-publication-readiness.md` for freshly executed versus
+historical results, and `docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md` for the candidate
+publication criterion. No test result changes the pinned SOSA-2023 track.
+
 ## Validation environment
 
 `requirements/validation.txt` declares direct Python packages.

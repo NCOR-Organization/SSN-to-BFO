@@ -1,0 +1,152 @@
+{
+  "assessment_file_byte_identical": true,
+  "branch": "publication/current-sosa-readiness",
+  "changed_existing_files_at_validation_completion": {
+    ".cache/coms/last-success.json": {
+      "after_sha256": "2a22e3519f9bfba2208a1bf10dcb6b84a3af11bf541562c34adbf1d9a3ee9921",
+      "before_sha256": "e59f247dd8c758f3856d97b5366724b4ff3b8406f7f754572f33f03a59349482"
+    },
+    "mappings/SSN2BFO-COMS.xlsx": {
+      "after_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "before_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
+    },
+    "reports/coms-generation-validation.md": {
+      "after_sha256": "4f7433e4bd56aca75c965606a0408f5988c689256884606efc577306b1a71b5d",
+      "before_sha256": "172f4db6d1bd72cf57e57369e35643aaf6e25ede11e84294530c240fbdec9959"
+    },
+    "reports/coms-product-dispositions.json": {
+      "after_sha256": "273633bf8ec05bae079bd18bbcb1ff10ea95abd823794b001393e81476c240d9",
+      "before_sha256": "d1bcb2fb56b5edf3b007e101cba2c05735d98d096f77cf6fc793fcf10e94df44"
+    },
+    "reports/current-publication-preservation.json": {
+      "after_sha256": "bde17111db34b7310c5956cd9aa6b7403cc601d20c7fbd052f9e4b00f3e5552b",
+      "before_sha256": "7f04cb82a1b400b68ae87ccf1d2da129c37ecf74a72568b22593e82ee841e973"
+    },
+    "reports/current-ssn-sosa-coverage.json": {
+      "after_sha256": "2467d6616164102bd32e766093ee25b8b2f118d319bc2d098ef83279b27b05e8",
+      "before_sha256": "8e924bfd469589324ba0e86f33325845e527579969b715159ee02ab695883099"
+    },
+    "reports/current-ssn-sosa-coverage.md": {
+      "after_sha256": "8f42c5bf95c20a90305d90c0dece065517fe4548ddcfaf2ebe3e8392e1c6417d",
+      "before_sha256": "0a32bc5f94a214bab640887c7252dfde1cee8ff186cfc602d8a45cc790ec5970"
+    },
+    "reports/current-ssn-sosa-human-review.json": {
+      "after_sha256": "5b45026122dd6d9ee6bcc2eb28867e904ab45e4e484ddcc44e42bb3f1665bac2",
+      "before_sha256": "ed8732ea482d388de3b1971d9417ad6532a0e7c3d9ab722abbbea5f67c6e4725"
+    },
+    "reports/current-ssn-sosa-rationale-proposals.json": {
+      "after_sha256": "6f8ef24d8975d100845c77346ade3d803908935d0eaa972fa72c37d7c48977a5",
+      "before_sha256": "e9ac160de6d9db38326c0e4618ff441c534cc1c67a2d92273a25b5cca2bbe335"
+    },
+    "reports/current-ssn-sosa-rationale-proposals.md": {
+      "after_sha256": "cc0f09e6ed1e2b40be64e8c14d0c8dcc5b6316c9eb51118d00bc4f745cfa104c",
+      "before_sha256": "3e5c454f6fb343f25b1636b00132800c9a65b31a024151368d2538d78edebddd"
+    },
+    "tests/test_coms_framework_integration.py": {
+      "after_sha256": "2ff6f219f493c0ad58f470c0bf2d44ca7e6b70b78fffb2f856a82b749d56e94e",
+      "before_sha256": "c58984bb5ba227faef9a48d4859985f1bf97e80f91103093423fea27adf69e53"
+    },
+    "tests/test_current_assessment.py": {
+      "after_sha256": "73792c7c3aee6a0e8ca660fc56bf6913701139dcd400b153d2f250aa4eee1ecb",
+      "before_sha256": "93a0cf211b8bdb14635fdbe579d4fa762d91647e420b1e180832d21dba2dfd9e"
+    },
+    "tests/test_current_documentary_decisions.py": {
+      "after_sha256": "9ba85221c67fcb527769cd2ff4a19b29c1a7f3c486bee2ee4b5515c510850be9",
+      "before_sha256": "635adfac4c51a31d3a7cda428b37c13846b50c1fda9c71c5f2d9a2cf690b2937"
+    },
+    "tests/test_current_documentary_workbook.py": {
+      "after_sha256": "4ce5fc726baafd8b3bc9c523a252d5f1cbbd7e2c815e88d5c0bcb0fd85b5a68e",
+      "before_sha256": "9d65f7a8afc1fc274e681d6e56f80a327b0e1ad5db0db9ecfb026a71bb1542c3"
+    },
+    "tests/test_current_publication_preservation.py": {
+      "after_sha256": "eaff7783114b5439444f0ed5770607285ee6d59c86b80da9e3a4991adaac669c",
+      "before_sha256": "1a06e7a3500188c7ddc3fbfd585ddfa92a3829facb0942ef663b9e4ff6529030"
+    },
+    "tests/test_current_source_identity.py": {
+      "after_sha256": "922bc8dc06db4ab54d0afbbf42fda3b89c4ef9f6d296aa11ff774976dd8eee46",
+      "before_sha256": "5f63e3f2f00f2eef2497bdf585af7885d893a84f05cfb6f911901163b07a5100"
+    },
+    "tools/current_assessment.py": {
+      "after_sha256": "bd0b440ae6fe5b35925422454c47b621bc6892613e97e8c4236de65169dcf247",
+      "before_sha256": "d461d296696bfdbc128741bf0588f7b011c7333aa3e514469d2d024e3c2e9c81"
+    },
+    "tools/current_publication_readiness.py": {
+      "after_sha256": "3f28e6e153cf6daa48e2c105a3b6587121939036967420bb36f4bbfb0b178673",
+      "before_sha256": "1e103a522a1871bfed578cf61c8f2e99022062fe0338fea48b3667237458e43e"
+    }
+  },
+  "counts_after": {
+    "deferred": 0,
+    "final": 14,
+    "formal_mapping_adopted": 10,
+    "inheritance_sufficient": 0,
+    "no_direct_mapping": 4,
+    "source_terms": 91,
+    "unresolved": 77,
+    "unreviewed": 77,
+    "workbook_rows": 105
+  },
+  "counts_before": {
+    "deferred": 0,
+    "final": 14,
+    "formal_mapping_adopted": 10,
+    "inheritance_sufficient": 0,
+    "no_direct_mapping": 4,
+    "source_terms": 91,
+    "unresolved": 77,
+    "unreviewed": 77,
+    "workbook_rows": 105
+  },
+  "deleted_files": [],
+  "historical_semantic_evidence_and_command_ledger_byte_identical": true,
+  "logical_products": {
+    "SSN2BFO.ttl": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
+  },
+  "post_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "post_semantic_projection_sha256": "d42340112492fa033216870de64848d899ffd39041be013b7ecc1b655d68136b",
+  "post_workbook_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+  "pre_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "pre_semantic_projection_sha256": "d42340112492fa033216870de64848d899ffd39041be013b7ecc1b655d68136b",
+  "pre_workbook_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+  "preservation": {
+    "external_coms": {
+      "baseline_head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+      "changed_paths": [],
+      "errors": [],
+      "head": "f391a9201398dc0f9954f3cb08ffb0354a9e0f6d",
+      "status": "PASS",
+      "tracked_file_count": 55
+    },
+    "groups": {
+      "current_mapping_semantics": {
+        "changed_paths": [],
+        "file_count": 6
+      },
+      "current_sources_and_targets": {
+        "changed_paths": [],
+        "file_count": 5
+      },
+      "historical_authorities": {
+        "changed_paths": [],
+        "file_count": 112
+      },
+      "local_coms_architecture": {
+        "changed_paths": [],
+        "file_count": 3
+      },
+      "pinned_sosa_2023": {
+        "changed_paths": [],
+        "file_count": 49
+      }
+    },
+    "path": "reports/current-publication-preservation.json",
+    "sha256": "bde17111db34b7310c5956cd9aa6b7403cc601d20c7fbd052f9e4b00f3e5552b"
+  },
+  "sample_decisions_and_retained_evidence_byte_identical": true,
+  "status": "PASS",
+  "tags_unchanged": true,
+  "unresolved_membership_unchanged": true
+}

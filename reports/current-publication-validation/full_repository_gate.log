@@ -1,0 +1,152 @@
+$ make check
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+........................................................
+----------------------------------------------------------------------
+Ran 56 tests in 30.282s
+
+OK
+Current source/target/workbook/product/configuration identities: PASS
+{
+  "rationales": {
+    "existing_workbook_rationale_rows": 3,
+    "existing_workbook_rationale_terms": 3,
+    "human_review_required_proposals": 76,
+    "safe_documentary_proposals": 15,
+    "semantic_review_terms": 79
+  },
+  "status": "PASS",
+  "summary": {
+    "assertion_bearing_rows": 103,
+    "assessment_outcomes": {
+      "deferred": 2,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 0,
+      "no_direct_mapping": 2,
+      "unreviewed": 77
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 3,
+    "coverage_counts": {
+      "direct_formal_mapping": 69,
+      "explicit_blank": 2,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 15,
+      "rule_or_chain_route": 10,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 44,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 92,
+      "named": 199,
+      "some": 101,
+      "union": 16
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 2,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 3,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 34,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 2,
+      "final": 12,
+      "unreviewed": 77
+    },
+    "rows_with_expression_form": {
+      "intersection": 38,
+      "named": 75,
+      "some": 38,
+      "union": 15
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  }
+}
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.280s
+
+OK
+....F......F...........F.
+======================================================================
+FAIL: test_native_disposition_document_matches_fixed_provenance_bytes (test_coms_framework_integration.ComsCompatibilityProjectionTests.test_native_disposition_document_matches_fixed_provenance_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 1191, in test_native_disposition_document_matches_fixed_provenance_bytes
+    self.assertEqual(native_path.read_bytes(), maintained_path.read_bytes())
+AssertionError: b'{\n[189 chars]6": "f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acf[292909 chars]n}\n' != b'{\n[189 chars]6": "9e46f057900a7b6901771e27178d7ac854f01a95d[292909 chars]n}\n'
+
+======================================================================
+FAIL: test_primary_workbook_semantic_identity_equivalence (test_coms_framework_integration.ComsFrameworkShadowIntegrationTests.test_primary_workbook_semantic_identity_equivalence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 391, in test_primary_workbook_semantic_identity_equivalence
+    self.assertEqual(artifact_hashes_before, ARTIFACT_SHA256)
+AssertionError: {Posi[778 chars]'): 'd1bcb2fb56b5edf3b007e101cba2c05735d98d096[187 chars]bd0'} != {Posi[778 chars]'): 'c6f61271e573705882fa6a0f92f54c7731d635873[187 chars]357'}
+Diff is 1380 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_wrapper_is_read_only (test_coms_framework_integration.ComsPrimaryWorkbookWrapperTests.test_wrapper_is_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_coms_framework_integration.py", line 2350, in test_wrapper_is_read_only
+    self.assertEqual(
+AssertionError: '9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843' != 'f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6'
+- 9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843
++ f4c15b8d5e4f6c86e1d22a24a9dcd9f0c76af2acfab0dfff21818578a6c726b6
+
+
+----------------------------------------------------------------------
+Ran 25 tests in 20.985s
+
+FAILED (failures=3)
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: PASS
+
+==> Current source/target byte identities
+$ /opt/miniconda3/bin/python tools/current_source_identity.py
+Current source/target byte identities: PASS
+
+==> Current assessment inventory and report freshness
+$ /opt/miniconda3/bin/python tools/current_assessment.py
+Current assessment inventory and report freshness: PASS
+
+==> COMS row-identity focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_row_identity.py
+COMS row-identity focused tests: PASS
+
+==> COMS framework shadow-integration tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_framework_integration.py
+COMS framework shadow-integration tests: FAIL (1)
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: PASS
+- Current source/target byte identities: PASS
+- Current assessment inventory and report freshness: PASS
+- COMS row-identity focused tests: PASS
+- COMS framework shadow-integration tests: FAIL
+
+Validation suite: FAIL (1 failed step)
+make: *** [validate] Error 1
