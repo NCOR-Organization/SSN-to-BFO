@@ -10,6 +10,7 @@ from contextlib import ExitStack
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -22,13 +23,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import current_assessment as audit
 import current_documentary_workbook as documentary
+from current_source_identity import ACCEPTED_CHECKPOINT_HEAD
 
 
 class DocumentaryDecisionIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.scope = json.loads(audit.SCOPE.read_text())
-        cls.document = json.loads(audit.ASSESSMENT.read_text())
+        # These documentary-only attack scenarios begin at the accepted
+        # sample-pair checkpoint, before subsequent semantic adjudications.
+        cls.assessment_bytes = subprocess.check_output([
+            "git", "-C", str(ROOT), "show",
+            f"{ACCEPTED_CHECKPOINT_HEAD}:mappings/current-ssn-sosa-assessment.json"])
+        cls.document = json.loads(cls.assessment_bytes)
         cls.graph = audit.source_graph()
         cls.target = Graph().parse(ROOT / audit.TARGET_PATH, format="turtle")
         cls.resolver = audit.mapping.Resolver()
@@ -46,6 +53,7 @@ class DocumentaryDecisionIntegrationTests(unittest.TestCase):
         paths.update(str(p.relative_to(ROOT)) for p in (ROOT / "config").glob("current-*.json"))
         paths.update(str(p.relative_to(ROOT)) for p in (ROOT / self.pair_directory).rglob("*") if p.is_file())
         self.copy_paths(paths)
+        (self.root / "mappings/current-ssn-sosa-assessment.json").write_bytes(self.assessment_bytes)
         self.copy_documentary_baseline()
         self.workbook = self.root / self.workbook_relative
         # These A–P scenarios model evolution from the original approved

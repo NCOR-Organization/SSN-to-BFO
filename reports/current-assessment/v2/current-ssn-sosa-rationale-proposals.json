@@ -1,0 +1,2547 @@
+{
+  "binding": {
+    "assessment_tool_sha256": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "input_scope": {
+      "custody": "authenticated_reachable_authorities",
+      "outputs": "reports/current-assessment/v2",
+      "policy": {
+        "path": "tools/current_custody_dependencies.py",
+        "sha256": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388"
+      },
+      "profile": "current-ssn-sosa-assessment-inputs-v2",
+      "schema_version": 2
+    },
+    "input_sha256": {
+      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
+      "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
+      "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+      "config/publication-metadata.toml": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
+      "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
+      "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
+      "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
+      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+      "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
+      "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
+      "reports/actuation-range-simplification-implementation.md": "53cf2dbe66689001a8fc02af62d538256676d125c10390b74ac8b84b1266f05d",
+      "reports/all-mapping-changes-and-rationales.md": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
+      "reports/all-source-domain-range-operationalization-evaluation.md": "fbdf4f75823b4d0a4f6d4cfea1e521c6c5220fc10a9b8a724e384353f0d2ea1b",
+      "reports/coms-frequency-correction-validation.md": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json": "09e17d3bf0a6c09e2c184db66aaaae331f610d7f78db33d5308a0df19890a80c",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty.json": "9d04174ff90b91dd48311189bd07d4bfac9eca46985d448cef569125d478e2de",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json": "da1f762851c24de45db6537bbf31fcd113a51382bd75040004fdbf92ca874ff2",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
+      "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
+      "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
+      "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
+      "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
+      "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json": "51ec899be8e1fb8939c504ab83e7ed67d1175ba21bd2c13c42a0db8b5f211c00",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2",
+      "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json": "3f4c4beae24ceced243cd33a461dfb5c23e2b1c04e4e326e03c77e4333d32bc5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
+      "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
+      "reports/hermit-observation-sensor-stimulus-evaluation.md": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
+      "reports/hermit-observedProperty-deferral-evaluation.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/hermit-observedProperty-reactivation-canary.md": "6ebf79a69871a2110c40806d2cdee124781f76ee0908d03f3ea61051b62660d3",
+      "reports/hermit-survival-property-source-restriction-explanation.md": "2e53188f4892f467d284936db945c0f5d024b58f0c2527b228097752cec289e4",
+      "reports/hermit-survival-range-deferral-evaluation.md": "48dca287da413b7f653f632b654985d7e646e911bc88c2a854ebc6274556d749",
+      "reports/hosts-implementedby-complex-mapping-review.md": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23",
+      "reports/input-output-cco-mapping-rationale-cleanup.md": "251b7b672c36dc19c06f60c00fdc9e9bd101dc4c9783f91e8947f9d51d3d9f1f",
+      "reports/inverse-side-direct-mapping-policy-review.md": "a87a2e0fb756b666651decd2fc1ab50c13245ba64dcb2a3bff3ddc0619271dd2",
+      "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md": "988d63ea89385938c9b79b9b2b2dc4bf7f6515a0d07c0aa0faa76cac53676487",
+      "reports/isHostedBy-hosts-full-closure-analysis.md": "5e13743261d6f8470970f3bbeba912457f5218a90df4ef19fed8eb88cafebd45",
+      "reports/isObservedBy-observes-full-closure-analysis.md": "595e9c38522522b8c6e7984db4e1067983cf75feed980e5034927a8d706ac79b",
+      "reports/isResultOf-hasResult-full-closure-analysis.md": "0c6189baf7fe30ca7c2141f77a05aefa0dbd43f948d1df34bc3b34e65bcdfea2",
+      "reports/madeByActuator-agent-mapping-adjustment-evaluation.md": "4d5b469eb57ffa2df538811407c5bc9b66777c3427771f3d57cfa8dc5ad78a3a",
+      "reports/madeByActuator-range-after-agent-deferral.md": "a6526175d5dfb3e6874c91e0b602241036386867801262b364b519eba6576be2",
+      "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/madeSampling-madeBySampler-full-closure-analysis.md": "ba0bac2453d6fbabdae7bae6cd1feff93deb930d33df9766c0987e1bee4941cc",
+      "reports/mapping-consistency-resolution-plan.md": "2d53b7634f62afe1bd04354077efec307c0ac2eea48f877216863bf8ebf71f94",
+      "reports/mapping-consistency-target-mismatch-review.md": "55fbefbd6125de5aec33a6701c4c753426819bf1a576eca76cceb4d091b21d33",
+      "reports/object-property-domain-range-fallback-policy-audit.md": "033ad6ace8956f3ab143bba4deec772b5f98bed141534eaf75afd099b6123be7",
+      "reports/observes-upper-mapping-decision.md": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
+      "reports/reasoner-unsafe-system-mapping-deferral.md": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
+      "reports/rerun-prior-clean-decisions-full-sosa.md": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+      "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json": "04f82200089e4325e0fe53d247d8042f034318418ac1633a46d3370a3c06b587",
+      "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "reports/sample-relationship-deferral.md": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
+      "reports/sample-representation-property-chains-review.md": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
+      "reports/sampler-equivalentclass-decision.md": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
+      "reports/sosa-2023-ro-mapping-decisions.md": "de720f911f169c672e005e8714c280fd35f8d152b93fac29f74dde3bcb498193",
+      "reports/sosa-next-crosswalk-reconciliation.md": "0817a644868d759487325b55fda05b64c3e88172c3cd0cfcea2254d6efa0e5a5",
+      "reports/sosa-sensor-version-alignment-deferral.md": "f4d9ea7c8b4f12c210c2c444177fea6a34e6080bef0d95cd5360f85667ed5a5f",
+      "reports/sosa-sensor-version-alignment-resolution.md": "cd51eeac2b611bc0cf63f9709e0f3f245cfd3ba6bff8b1a71a24c77082580b4d",
+      "reports/ssn-hasproperty-modeling-options.md": "0ed798703f9ccd523ffec02295609548168e28a470a2c86052eb7518d07fe009",
+      "reports/ssn-hasproperty-rule-mapping-artifact.md": "c854c814080397f9682c811b04a4858eb7ee356521e808a37108d51c75469d8b",
+      "reports/ssn-systems-dependence-reactivation-results.md": "d4845bada4f6f184016bfbbc447ee387c0c7d9f93f3850de8cd14c1ed834604d",
+      "reports/ssn-systems-domain-range-operationalization-evaluation.md": "7998be7effb2a994b189d3da5ab79629d13cf0377a28904f1ad41a40e02da447",
+      "reports/ssn-systems-property-split-mapping-review.md": "595473648a1cb1597f3f56abad3dcad2f8fcc656dc51f8ba6d788f2afe584ad3",
+      "reports/straightforward-op-mapping-candidates-review.md": "2837a2981b534abd25cf05da31e82088b55aa0c138f17d5ab80ab70c37007a18",
+      "reports/system-property-direct-mapping-deferral.md": "3a68343b54113f13408245463a053ef8773b46397574934b0b40adb7dd995df1",
+      "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
+      "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
+      "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
+      "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
+      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
+      "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+      "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
+      "tools/current_documentary_workbook.py": "191ae558a7a1498930bf8a37334c82c746c77400aaa1d09b24252cf7e51a3db5",
+      "tools/current_portable_execution_evidence.py": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+      "tools/current_publication_preservation.py": "91cc59ee12f5a1e3706ed854c895e7a727d6842b72043a91f8d7677aefbbef60",
+      "tools/current_publication_readiness.py": "c30df5212d41f9846353f22f3f7831299ba660d2ae881e6ac6a770ce8e961571",
+      "tools/current_retained_evidence.py": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+      "tools/current_semantic_generation.py": "f13b3b7726543382b9d6e968c5a4c48a9eea1996da1b614e2b2edbceebeb4710",
+      "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+      "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+      "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
+      "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
+      "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
+      "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
+      "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
+      "tools/publication_metadata.py": "b2e871b7d8d1c874b6c2daf1ac2904ede1e08092beb6207d4ccdb064e283aa09",
+      "tools/release_context.py": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
+      "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+    }
+  },
+  "proposals": [
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!4",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/ActuatableProperty",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/ActuatableProperty",
+        "imports/cco.ttl",
+        "reports/hermit-survival-property-source-restriction-explanation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "This class is modeled as either a specifically dependent continuant or a process profile to align with SSN/SOSA’s treatment of properties that may be continuant features or features of processes, both of which can be the target of intentional change."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342"
+      ],
+      "proposed_documentary_rationale": "This class is modeled as either a specifically dependent continuant or a process profile to align with SSN/SOSA’s treatment of properties that may be continuant features or features of processes, both of which can be the target of intentional change.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/ActuatableProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!5",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Actuation",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Actuation",
+        "imports/cco.ttl",
+        "reports/actuation-range-mapping-correction-evaluation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Actuation is modeled as a planned process because it is intentionally carried out according to a procedure in order to change the state of the world, which aligns directly with the CCO notion of a PlannedAct."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2a4f78b4-92cb-4095-9a6b-2ae03e00be4a"
+      ],
+      "proposed_documentary_rationale": "Actuation is modeled as a planned process because it is intentionally carried out according to a procedure in order to change the state of the world, which aligns directly with the CCO notion of a PlannedAct.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Actuation",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!37",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Actuator",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Actuator",
+        "imports/cco.ttl",
+        "reports/madeByActuator-agent-mapping-adjustment-evaluation.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "sosa:Actuator is a bfo:MaterialEntity because actuators are physical devices. The bfo:RealizableEntity it bears is realized in actuation processes, capturing the functional rather than purely structural definition of actuators. The cco:agent_in restriction captures that the actuator plays a causative role in the actuation."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0"
+      ],
+      "proposed_documentary_rationale": "sosa:Actuator is a bfo:MaterialEntity because actuators are physical devices. The bfo:RealizableEntity it bears is realized in actuation processes, capturing the functional rather than purely structural definition of actuators. The cco:agent_in restriction captures that the actuator plays a causative role in the actuation.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Actuator",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [
+        "Prose describes direct alignment as deferred/absent despite an active formal mapping row."
+      ],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!6",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "imports/cco.ttl",
+        "reports/hermit-survival-property-source-restriction-explanation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Direct alignment deferred because SOSA permits a FeatureOfInterest to be property-like. Restricting every FeatureOfInterest to a material entity or process makes the SSN survival-range pattern unsatisfiable."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86"
+      ],
+      "proposed_documentary_rationale": "Direct alignment deferred because SOSA permits a FeatureOfInterest to be property-like. Restricting every FeatureOfInterest to a material entity or process makes the SSN survival-range pattern unsatisfiable.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/FeatureOfInterest",
+      "status": "human_review_required"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!7",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/ObservableProperty",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/ObservableProperty",
+        "imports/cco.ttl",
+        "reports/hermit-observation-sensor-stimulus-evaluation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "ObservableProperty mirrors ActuatableProperty in being modeled as either a specifically dependent continuant or a process profile, reflecting that observable aspects may be features of continuants or temporally extended features of processes."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2"
+      ],
+      "proposed_documentary_rationale": "ObservableProperty mirrors ActuatableProperty in being modeled as either a specifically dependent continuant or a process profile, reflecting that observable aspects may be features of continuants or temporally extended features of processes.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/ObservableProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!8",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Observation",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Observation",
+        "imports/cco.ttl",
+        "reports/hermit-observation-sensor-stimulus-evaluation.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa"
+      ],
+      "proposed_documentary_rationale": "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Observation",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!9",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Platform",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Platform",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+      ],
+      "proposed_documentary_rationale": "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Platform",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!39",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Procedure",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Procedure",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The retained mapping treats Procedure as information content prescribing how a process is to be carried out and retains the prescribes-some-Process restriction. Its target is the stable IRI cco:ont00000965, called Prescriptive Information Content Entity in historical workbook prose and labelled Directive Information Content Entity in the current imported target."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607"
+      ],
+      "proposed_documentary_rationale": "The retained mapping treats Procedure as information content prescribing how a process is to be carried out and retains the prescribes-some-Process restriction. Its target is the stable IRI cco:ont00000965, called Prescriptive Information Content Entity in historical workbook prose and labelled Directive Information Content Entity in the current imported target.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Procedure",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!10",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Result",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Result",
+        "imports/cco.ttl",
+        "reports/isResultOf-hasResult-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Result is allowed to be either informational or material because SOSA results include both informational outputs (e.g., measurements) and material outputs (e.g., samples)."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f"
+      ],
+      "proposed_documentary_rationale": "Result is allowed to be either informational or material because SOSA results include both informational outputs (e.g., measurements) and material outputs (e.g., samples).",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Result",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!11",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Sample",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Sample",
+        "imports/cco.ttl",
+        "reports/sample-representation-property-chains-review.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Sample is modeled as a material entity because it is a physical thing intentionally produced or selected to stand in for a feature of interest."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb"
+      ],
+      "proposed_documentary_rationale": "Sample is modeled as a material entity because it is a physical thing intentionally produced or selected to stand in for a feature of interest.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Sample",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!40",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Sampler",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Sampler",
+        "imports/cco.ttl",
+        "reports/sampler-equivalentclass-decision.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "sosa:Sampler is modeled analogously to sosa:Sensor and sosa:Actuator as a bfo:MaterialEntity bearing a bfo:RealizableEntity realized in a sampling process and functioning as an agent. The equivalentTo axiom captures that these conditions are both necessary and sufficient for being a sampler."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c"
+      ],
+      "proposed_documentary_rationale": "sosa:Sampler is modeled analogously to sosa:Sensor and sosa:Actuator as a bfo:MaterialEntity bearing a bfo:RealizableEntity realized in a sampling process and functioning as an agent. The equivalentTo axiom captures that these conditions are both necessary and sufficient for being a sampler.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Sampler",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!12",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Sampling",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Sampling",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md"
+      ],
+      "existing_workbook_rationales": [
+        "sosa:Sampling is modeled as a cco:PlannedAct because it is intentionally carried out according to a procedure to create or transform samples. The equivalentTo axiom captures that being prescribed by a procedure and producing a sample as output is both necessary and sufficient for being a sampling."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3"
+      ],
+      "proposed_documentary_rationale": "sosa:Sampling is modeled as a cco:PlannedAct because it is intentionally carried out according to a procedure to create or transform samples. The equivalentTo axiom captures that being prescribed by a procedure and producing a sample as output is both necessary and sufficient for being a sampling.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Sampling",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!38",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/Sensor",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/Sensor",
+        "imports/cco.ttl",
+        "reports/sosa-sensor-version-alignment-resolution.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "This row retains the explicit Sensor subclass expression for the current local CCO profile: material entity, bearer of a realizable entity realized in an Observation, and agent in an Observation. The historical cco:Sensor equivalence concerned a separate forward-looking target-version profile. This note documents the retained current-profile expression without settling that separate question."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd"
+      ],
+      "proposed_documentary_rationale": "This row retains the explicit Sensor subclass expression for the current local CCO profile: material entity, bearer of a realizable entity realized in an Observation, and agent in an Observation. The historical cco:Sensor equivalence concerned a separate forward-looking target-version profile. This note documents the retained current-profile expression without settling that separate question.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/Sensor",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!5",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/actsOnProperty",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/actsOnProperty",
+        "imports/cco.ttl",
+        "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md"
+      ],
+      "existing_workbook_rationales": [
+        "The existing pair review retains the actuation-to-affected-property mapping and its inverse; the current inclusion records the effect relation without asserting property equivalence."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:69e972da-23ad-4e50-822b-e41198c95795"
+      ],
+      "proposed_documentary_rationale": "The existing pair review retains the actuation-to-affected-property mapping and its inverse; the current inclusion records the effect relation without asserting property equivalence.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/actsOnProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!6",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!7",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+        "imports/cco.ttl",
+        "reports/object-property-domain-range-fallback-policy-audit.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing.",
+        "The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b16f1d3a-3d10-4b75-9f12-2331e6c46d74",
+        "urn:uuid:01b1aff2-a12b-430b-9775-b43241c3a7cf"
+      ],
+      "proposed_documentary_rationale": "The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing. The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!8",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/hasResult",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/hasResult",
+        "imports/cco.ttl",
+        "reports/isResultOf-hasResult-full-closure-analysis.md"
+      ],
+      "existing_workbook_rationales": [
+        "The existing pair review documents results as outputs of observations, actuations, or samplings and retains the process-to-output direction. The current direct mapping is unchanged; historical HermiT results are not promoted to current evidence."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a"
+      ],
+      "proposed_documentary_rationale": "The existing pair review documents results as outputs of observations, actuations, or samplings and retains the process-to-output direction. The current direct mapping is unchanged; historical HermiT results are not promoted to current evidence.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/hasResult",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "explicit_blank"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!16",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/hasSample",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/hasSample",
+        "imports/cco.ttl",
+        "reports/sample-representation-property-chains-review.md",
+        "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt",
+        "reports/sosa-2023-ro-mapping-decisions.md#no-direct-decisions",
+        "mappings/SOSA-next-to-RO-COMS.xlsx#Sheet2!31"
+      ],
+      "existing_workbook_rationales": [
+        "`sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represented by` would treat the Sample endpoint as representational information content, which does not capture physical specimens, sampling locations, and other material Samples generally.\n- Mapping to BFO `generically depends on` would assign the generically-dependent-content role to the sampled Feature of Interest rather than capturing samplehood.\n- A participation mapping also does not represent the relation between a sampled feature and its sample.\n\nHistorical work proposed the composite representation path:\n\nrepresented_by(feature, information-content)\nAND\ngenerically_depends_on(information-content, sample)\n→\nhasSample(feature, sample)\n\nThis path should NOT be reinstated as an unconditional formal mapping.\n\nIt is not sufficient for samplehood: an ordinary representational carrier such as a book, photograph, recording, or other information-bearing artifact may bear content representing an entity without thereby being a Sample of that entity.\n\nIt is also not established as necessary: SOSA's notion of intended representativeness does not by itself require commitment to a distinct CCO information-content entity borne by every Sample.\n\nThe previous OWL implementation additionally creates simplicity/profile problems because `hasSample` is inverse-functional and is the inverse of a property used with cardinality/functionality constraints. That implementation issue is secondary to the semantic decision and is NOT the reason for the no-direct outcome.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.\n\nThis does NOT rule out:\n- a future guarded representation rule;\n- a query-level mapping;\n- a more specialized sample-provenance model;\n- weaker documentary correspondences to other vocabularies."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f"
+      ],
+      "proposed_documentary_rationale": "`sosa:hasSample` relates a Feature of Interest to a Sample used to represent it. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represented by` would treat the Sample endpoint as representational information content, which does not capture physical specimens, sampling locations, and other material Samples generally.\n- Mapping to BFO `generically depends on` would assign the generically-dependent-content role to the sampled Feature of Interest rather than capturing samplehood.\n- A participation mapping also does not represent the relation between a sampled feature and its sample.\n\nHistorical work proposed the composite representation path:\n\nrepresented_by(feature, information-content)\nAND\ngenerically_depends_on(information-content, sample)\n→\nhasSample(feature, sample)\n\nThis path should NOT be reinstated as an unconditional formal mapping.\n\nIt is not sufficient for samplehood: an ordinary representational carrier such as a book, photograph, recording, or other information-bearing artifact may bear content representing an entity without thereby being a Sample of that entity.\n\nIt is also not established as necessary: SOSA's notion of intended representativeness does not by itself require commitment to a distinct CCO information-content entity borne by every Sample.\n\nThe previous OWL implementation additionally creates simplicity/profile problems because `hasSample` is inverse-functional and is the inverse of a property used with cardinality/functionality constraints. That implementation issue is secondary to the semantic decision and is NOT the reason for the no-direct outcome.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:hasSample` across its source usage.\n\nThis does NOT rule out:\n- a future guarded representation rule;\n- a query-level mapping;\n- a more specialized sample-provenance model;\n- weaker documentary correspondences to other vocabularies.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "property_chain",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!18",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/hosts",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/hosts",
+        "imports/cco.ttl",
+        "reports/hosts-implementedby-complex-mapping-review.md",
+        "reports/isHostedBy-hosts-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The retained hosting interpretation uses role-mediated support. The bearer_of, has_realization, has_participant path entails hosts; the chain does not require a matching path for every asserted hosts edge."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e"
+      ],
+      "proposed_documentary_rationale": "The retained hosting interpretation uses role-mediated support. The bearer_of, has_realization, has_participant path entails hosts; the chain does not require a matching path for every asserted hosts edge.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/hosts",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!20",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isActedOnBy",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isActedOnBy",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The explicit inverse-side policy retains the inverse affects mapping. The current source and CCO inverse pairs preserve this direction without an equivalence commitment."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:8c9662e8-a69c-4ce1-9d17-381ec3cdc162"
+      ],
+      "proposed_documentary_rationale": "The explicit inverse-side policy retains the inverse affects mapping. The current source and CCO inverse pairs preserve this direction without an equivalence commitment.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/isActedOnBy",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!9",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!10",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+        "imports/cco.ttl",
+        "reports/object-property-domain-range-fallback-policy-audit.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing.",
+        "The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b5a532fc-5dea-4a47-9323-0a78a849c078",
+        "urn:uuid:e15cfee1-3c8e-4519-bce0-ec62729fd2fd"
+      ],
+      "proposed_documentary_rationale": "The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing. The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "property_chain",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!19",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isHostedBy",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isHostedBy",
+        "imports/cco.ttl",
+        "reports/hosts-implementedby-complex-mapping-review.md",
+        "reports/isHostedBy-hosts-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "This retained inverse-side hosting chain uses participates_in, realizes and inheres_in. A matching path entails isHostedBy; the chain does not require a matching path for every asserted isHostedBy edge."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:e866de80-683d-4138-a713-be9646d37148"
+      ],
+      "proposed_documentary_rationale": "This retained inverse-side hosting chain uses participates_in, realizes and inheres_in. A matching path entails isHostedBy; the chain does not require a matching path for every asserted isHostedBy edge.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/isHostedBy",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!21",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!22",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isObservedBy",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isObservedBy",
+        "imports/cco.ttl",
+        "reports/isObservedBy-observes-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping.",
+        "These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d5712b64-a526-4112-ba23-520ec8dc5066",
+        "urn:uuid:37fac05e-0d70-420d-a0c0-78bc1d87cd63"
+      ],
+      "proposed_documentary_rationale": "These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping. These rows supply source typing for the inverse of observes. The retained decision preserves the sensor-capability relation through source-native observes subPropertyOf ssn:forProperty, without a direct BFO/CCO relation mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/isObservedBy",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!25",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isResultOf",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isResultOf",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The explicit inverse-side policy retains this inverse output mapping. Current source hasResult/isResultOf and target has_output/is_output_of inverse pairs supply the same consequence."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b4fc5247-7d44-4619-9d0b-8466f45218bf"
+      ],
+      "proposed_documentary_rationale": "The explicit inverse-side policy retains this inverse output mapping. Current source hasResult/isResultOf and target has_output/is_output_of inverse pairs supply the same consequence.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/isResultOf",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "explicit_blank"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!17",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/isSampleOf",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/isSampleOf",
+        "imports/cco.ttl",
+        "reports/sample-representation-property-chains-review.md",
+        "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt",
+        "reports/sosa-2023-ro-mapping-decisions.md#no-direct-decisions",
+        "mappings/SOSA-next-to-RO-COMS.xlsx#Sheet2!53"
+      ],
+      "existing_workbook_rationales": [
+        "`sosa:isSampleOf` relates a Sample to the Feature of Interest that it is intended to be representative of. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represents` would treat every Sample as representational information content.\n- Mapping to BFO `is carrier of` would treat the sampled Feature of Interest as generically dependent content.\n- Mapping to participation would confuse the feature being sampled with a process in which the Sample participates.\n\nHistorical work proposed:\n\nis_carrier_of(sample, information-content)\nAND\nrepresents(information-content, feature)\n→\nisSampleOf(sample, feature)\n\nThis should NOT be reinstated as an unconditional formal mapping.\n\nThe representation/carrier path is not sufficient for samplehood. A carrier may bear information representing an entity without being intended or functioning as a Sample of that entity.\n\nIt is also not established as necessary. Intended representativeness in SOSA does not by itself require a separately instantiated CCO information-content entity.\n\nBecause `isSampleOf` is functional, an overbroad representation-chain mapping would also create undesirable consequences: a carrier bearing representations of multiple distinct entities could infer multiple `isSampleOf` successors and thereby force equality of those represented entities.\n\nThe historical OWL chain also creates simplicity/profile conflicts with retained source functionality/cardinality axioms. Again, this is an implementation consequence, not the semantic basis of the no-direct decision.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:isSampleOf` across its source usage.\n\nThis does NOT rule out a future more specifically conditioned representation or provenance model."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab"
+      ],
+      "proposed_documentary_rationale": "`sosa:isSampleOf` relates a Sample to the Feature of Interest that it is intended to be representative of. No direct BFO/CCO mapping is adopted.\n\nThe reviewed direct candidates do not preserve the source meaning generally:\n\n- Mapping to CCO `represents` would treat every Sample as representational information content.\n- Mapping to BFO `is carrier of` would treat the sampled Feature of Interest as generically dependent content.\n- Mapping to participation would confuse the feature being sampled with a process in which the Sample participates.\n\nHistorical work proposed:\n\nis_carrier_of(sample, information-content)\nAND\nrepresents(information-content, feature)\n→\nisSampleOf(sample, feature)\n\nThis should NOT be reinstated as an unconditional formal mapping.\n\nThe representation/carrier path is not sufficient for samplehood. A carrier may bear information representing an entity without being intended or functioning as a Sample of that entity.\n\nIt is also not established as necessary. Intended representativeness in SOSA does not by itself require a separately instantiated CCO information-content entity.\n\nBecause `isSampleOf` is functional, an overbroad representation-chain mapping would also create undesirable consequences: a carrier bearing representations of multiple distinct entities could infer multiple `isSampleOf` successors and thereby force equality of those represented entities.\n\nThe historical OWL chain also creates simplicity/profile conflicts with retained source functionality/cardinality axioms. Again, this is an implementation consequence, not the semantic basis of the no-direct decision.\n\nAccordingly:\n\nNo reviewed direct BFO/CCO relation or unconditional BFO/CCO relation chain adequately captures `sosa:isSampleOf` across its source usage.\n\nThis does NOT rule out a future more specifically conditioned representation or provenance model.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/isSampleOf",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!26",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!27",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeActuation",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeActuation",
+        "imports/cco.ttl",
+        "reports/actuation-agent-property-mapping-deferral.md",
+        "reports/madeByActuator-agent-mapping-adjustment-evaluation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains.",
+        "These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:01085646-1b07-4c69-a39a-0c5c8ab53d33",
+        "urn:uuid:0f9d6fa9-00b9-4602-b31d-9e205f53e67d"
+      ],
+      "proposed_documentary_rationale": "These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains. These rows retain Actuator-to-Actuation typing. The former agent_in inclusion was technically deferred with its inverse; technical deferral does not establish semantic rejection. The existing exact-closure evidence hold remains.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/madeActuation",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!28",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!29",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeByActuator",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeByActuator",
+        "imports/cco.ttl",
+        "reports/actuation-agent-property-mapping-deferral.md",
+        "reports/madeByActuator-range-after-agent-deferral.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection.",
+        "These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:675bb221-ad63-4033-9f22-5190d0b6d545",
+        "urn:uuid:ac95c1e2-0d93-48de-be9d-4defbe6525f0"
+      ],
+      "proposed_documentary_rationale": "These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection. These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/madeByActuator",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!30",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeBySampler",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeBySampler",
+        "imports/cco.ttl",
+        "reports/madeSampling-madeBySampler-full-closure-analysis.md"
+      ],
+      "existing_workbook_rationales": [
+        "The existing sampling-pair review retains the Sampling-to-Sampler has_agent mapping. This documents the active relation between an actual sampling and its sampler; it does not decide whether every sampler must actually sample."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866"
+      ],
+      "proposed_documentary_rationale": "The existing sampling-pair review retains the Sampling-to-Sampler has_agent mapping. This documents the active relation between an actual sampling and its sampler; it does not decide whether every sampler must actually sample.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySampler",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!32",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!33",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeBySensor",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeBySensor",
+        "imports/cco.ttl",
+        "reports/sosa-sensor-version-alignment-resolution.md",
+        "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
+        "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+      ],
+      "proposed_documentary_rationale": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!34",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!35",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeObservation",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeObservation",
+        "imports/cco.ttl",
+        "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
+        "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
+      ],
+      "proposed_documentary_rationale": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!31",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/madeSampling",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeSampling",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The explicit inverse-side policy retains this inverse agent mapping, supported by source madeBySampler/madeSampling and target has_agent/agent_in inverse pairs."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca"
+      ],
+      "proposed_documentary_rationale": "The explicit inverse-side policy retains this inverse agent mapping, supported by source madeBySampler/madeSampling and target has_agent/agent_in inverse pairs.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/madeSampling",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!36",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/observedProperty",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/observedProperty",
+        "imports/cco.ttl",
+        "reports/hermit-observedProperty-deferral-evaluation.md",
+        "reports/hermit-observedProperty-reactivation-canary.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+      ],
+      "proposed_documentary_rationale": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!23",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!24",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/observes",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/observes",
+        "imports/cco.ttl",
+        "reports/observes-upper-mapping-decision.md",
+        "reports/hasproperty-observes-mapping-review.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source.",
+        "These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:61fc3404-f33a-4c4c-a25c-412d9972016c",
+        "urn:uuid:5ce06556-de99-44be-922d-a3d092a00dbb"
+      ],
+      "proposed_documentary_rationale": "These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source. These rows supply Sensor/ObservableProperty typing. The prior decision rejected the BFO has_participant inclusion and retained observes subPropertyOf ssn:forProperty, which remains asserted in the imported SSN source.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/observes",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!11",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/phenomenonTime",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/phenomenonTime",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710"
+      ],
+      "proposed_documentary_rationale": "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/phenomenonTime",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!2",
+        "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/RelationshipNature",
+        "imports/cco.ttl",
+        "reports/sample-relationship-deferral.md"
+      ],
+      "existing_workbook_rationales": [
+        "Provisional mapping for instance-data testing: RelationshipNature is treated as descriptive/information content identifying the nature of a reified sample relationship. The evidence hold remains open because the source declares a skos:Concept superclass but the imported SKOS ontology has no resolving local artifact; exact transitive closure evidence is unavailable."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b"
+      ],
+      "proposed_documentary_rationale": "Provisional mapping for instance-data testing: RelationshipNature is treated as descriptive/information content identifying the nature of a reified sample relationship. The evidence hold remains open because the source declares a skos:Concept superclass but the imported SKOS ontology has no resolving local artifact; exact transitive closure evidence is unavailable.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/RelationshipNature",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!3",
+        "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+        "imports/cco.ttl",
+        "reports/sample-relationship-deferral.md"
+      ],
+      "existing_workbook_rationales": [
+        "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e"
+      ],
+      "proposed_documentary_rationale": "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!2",
+        "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+        "imports/cco.ttl",
+        "reports/sample-relationship-deferral.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+      ],
+      "proposed_documentary_rationale": "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!3",
+        "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/natureOfRelationship",
+        "imports/cco.ttl",
+        "reports/sample-relationship-deferral.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The current is_about assertion remains subject to the existing evidence hold. Relationship-nature interpretation was provisional, and a pinned local SKOS closure is unavailable. This note does not finalize the mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:f293250d-b1e8-4467-8b7d-a94fb2b9b705"
+      ],
+      "proposed_documentary_rationale": "The current is_about assertion remains subject to the existing evidence hold. Relationship-nature interpretation was provisional, and a pinned local SKOS closure is unavailable. This note does not finalize the mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/natureOfRelationship",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!4",
+        "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/relatedSample",
+        "imports/cco.ttl",
+        "reports/sample-relationship-deferral.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4"
+      ],
+      "proposed_documentary_rationale": "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/relatedSample",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!12",
+        "imports/sosa.ttl#http://www.w3.org/ns/sosa/usedProcedure",
+        "imports/ssn.ttl#http://www.w3.org/ns/sosa/usedProcedure",
+        "imports/cco.ttl",
+        "reports/straightforward-op-mapping-candidates-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The existing review treats use of a Procedure as being carried out according to its prescriptions and explicitly recommends the now-adopted cco:prescribed_by inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9"
+      ],
+      "proposed_documentary_rationale": "The existing review treats use of a Procedure as being carried out according to its prescriptions and explicitly recommends the now-adopted cco:prescribed_by inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/sosa/usedProcedure",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!31",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/Deployment",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
+      ],
+      "proposed_documentary_rationale": "ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/Deployment",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!32",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/Input",
+        "imports/cco.ttl",
+        "reports/input-output-cco-mapping-rationale-cleanup.md"
+      ],
+      "existing_workbook_rationales": [
+        "Input is mapped to InformationContentEntity because SSN inputs are informational resources made available to procedures, not material participants or process parts."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23"
+      ],
+      "proposed_documentary_rationale": "Input is mapped to InformationContentEntity because SSN inputs are informational resources made available to procedures, not material participants or process parts.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/Input",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!33",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/Output",
+        "imports/cco.ttl",
+        "reports/input-output-cco-mapping-rationale-cleanup.md"
+      ],
+      "existing_workbook_rationales": [
+        "Output is modeled as an information content entity because SSN outputs are informational artifacts produced by executing procedures, regardless of whether they later influence material processes."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4"
+      ],
+      "proposed_documentary_rationale": "Output is modeled as an information content entity because SSN outputs are informational artifacts produced by executing procedures, regardless of whether they later influence material processes.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/Output",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!34",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/Property",
+        "imports/cco.ttl",
+        "reports/ssn-hasproperty-modeling-options.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4"
+      ],
+      "proposed_documentary_rationale": "ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/Property",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "material_cross_track_difference",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!35",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/Stimulus",
+        "imports/cco.ttl",
+        "reports/hermit-observation-sensor-stimulus-evaluation.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The retained mapping characterizes Stimulus as a CCO Cause that is the cause of some Observation. The historical rationale treats a stimulus as an event or happening that causally contributes to an observation and expressly selects necessary-and-sufficient equivalence for this characterization."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:23915904-0174-4f2f-b6cf-6a8671b92d7e"
+      ],
+      "proposed_documentary_rationale": "The retained mapping characterizes Stimulus as a CCO Cause that is the cause of some Observation. The historical rationale treats a stimulus as an event or happening that causally contributes to an observation and expressly selects necessary-and-sufficient equivalence for this characterization.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/Stimulus",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "strong_equivalence",
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!36",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/System",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/System",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md"
+      ],
+      "existing_workbook_rationales": [
+        "ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
+      ],
+      "proposed_documentary_rationale": "ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/System",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!46",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The retained interpretation states that the Platform on which Systems are deployed participates in the Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5"
+      ],
+      "proposed_documentary_rationale": "The retained interpretation states that the Platform on which Systems are deployed participates in the Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!47",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/deployedSystem",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The retained interpretation states that the deployed System participates in its Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5"
+      ],
+      "proposed_documentary_rationale": "The retained interpretation states that the deployed System participates in its Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/deployedSystem",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!48",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/detects",
+        "imports/cco.ttl",
+        "reports/hermit-observation-sensor-stimulus-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "The retained interpretation treats a detected Stimulus as causally triggering a response in the Sensor. The Sensor is therefore represented as affected by the Stimulus, preserving the existing is_affected_by inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:6335c13d-fb23-49fd-9662-fd682c79f172"
+      ],
+      "proposed_documentary_rationale": "The retained interpretation treats a detected Stimulus as causally triggering a response in the Sensor. The Sensor is therefore represented as affected by the Stimulus, preserving the existing is_affected_by inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/detects",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "explicit_blank",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!49",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/forProperty",
+        "imports/cco.ttl",
+        "reports/observes-upper-mapping-decision.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt"
+      ],
+      "existing_workbook_rationales": [
+        "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+      ],
+      "proposed_documentary_rationale": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!50",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/hasDeployment",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedSystem under has_participant. The current assertion exactly preserves that decision."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4"
+      ],
+      "proposed_documentary_rationale": "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedSystem under has_participant. The current assertion exactly preserves that decision.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/hasDeployment",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!51",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!52",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/hasInput",
+        "imports/cco.ttl",
+        "reports/input-output-cco-mapping-rationale-cleanup.md"
+      ],
+      "existing_workbook_rationales": [
+        "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
+        "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf549b607",
+        "urn:uuid:ab19659f-7e70-4f35-87f1-46b59ae80884"
+      ],
+      "proposed_documentary_rationale": "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation. The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/hasInput",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!53",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!54",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/hasOutput",
+        "imports/cco.ttl",
+        "reports/input-output-cco-mapping-rationale-cleanup.md"
+      ],
+      "existing_workbook_rationales": [
+        "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
+        "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:27ab2a4a-15a3-4585-885a-bbac1fe0a5bb",
+        "urn:uuid:766c2e20-d125-448b-bc37-642daebaf088"
+      ],
+      "proposed_documentary_rationale": "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation. The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/hasOutput",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!55",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/hasProperty",
+        "imports/cco.ttl",
+        "reports/ssn-hasproperty-rule-mapping-artifact.md",
+        "reports/ssn-hasproperty-modeling-options.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The range records specifically dependent continuants and process profiles. The separate conditional rule produces bearer_of or has_occurrent_part from suitable endpoint typing, avoiding an unconditional dual BFO subproperty mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3"
+      ],
+      "proposed_documentary_rationale": "The range records specifically dependent continuants and process profiles. The separate conditional rule produces bearer_of or has_occurrent_part from suitable endpoint typing, avoiding an unconditional dual BFO subproperty mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/hasProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!56",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/hasSubSystem",
+        "imports/cco.ttl",
+        "reports/straightforward-op-mapping-candidates-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The existing review identifies subsystems as structural components and explicitly recommends the now-adopted continuant-parthood inclusion. It asserts only the necessary direction."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d"
+      ],
+      "proposed_documentary_rationale": "The existing review identifies subsystems as structural components and explicitly recommends the now-adopted continuant-parthood inclusion. It asserts only the necessary direction.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/hasSubSystem",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!57",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/implementedBy",
+        "imports/cco.ttl",
+        "reports/hosts-implementedby-complex-mapping-review.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+      ],
+      "proposed_documentary_rationale": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!58",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/implements",
+        "imports/cco.ttl",
+        "reports/hosts-implementedby-complex-mapping-review.md",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+      ],
+      "proposed_documentary_rationale": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/implements",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!59",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/inDeployment",
+        "imports/cco.ttl",
+        "reports/inverse-side-direct-mapping-policy-review.md"
+      ],
+      "existing_workbook_rationales": [
+        "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedOnPlatform under has_participant. The current assertion exactly preserves that decision."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804"
+      ],
+      "proposed_documentary_rationale": "The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedOnPlatform under has_participant. The current assertion exactly preserves that decision.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/inDeployment",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!15",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/isPropertyOf",
+        "imports/cco.ttl",
+        "reports/ssn-hasproperty-rule-mapping-artifact.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The domain records the specifically dependent continuant and process-profile categories. isPropertyOf retains its source inverse relationship to hasProperty; the separate conditional rule handles the two cases without a global BFO subproperty inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476"
+      ],
+      "proposed_documentary_rationale": "The domain records the specifically dependent continuant and process-profile categories. isPropertyOf retains its source inverse relationship to hasProperty; the separate conditional rule handles the two cases without a global BFO subproperty inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/isPropertyOf",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact",
+        "material_cross_track_difference"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!60",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!61",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/isProxyFor",
+        "imports/cco.ttl",
+        "reports/object-property-domain-range-fallback-policy-audit.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor.",
+        "These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:ebf4115f-fe96-4959-89a4-98c3a6031cff",
+        "urn:uuid:b7873da3-fc78-4a2a-92e1-ef83efb6d600"
+      ],
+      "proposed_documentary_rationale": "These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor. These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/isProxyFor",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!13",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Accuracy",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Accuracy is modeled as a function rather than a quality because it concerns how well a system performs relative to truth conditions when realized in processes. The use of measurement information entities reflects that accuracy is assessed through evaluative measurement, not directly observed as an intrinsic quality."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b"
+      ],
+      "proposed_documentary_rationale": "Accuracy is modeled as a function rather than a quality because it concerns how well a system performs relative to truth conditions when realized in processes. The use of measurement information entities reflects that accuracy is assessed through evaluative measurement, not directly observed as an intrinsic quality.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Accuracy",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!41",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/ActuationRange",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "The implemented simplification retains the Function with an Actuation realization having a specifically dependent continuant output and an ArtifactFunctionSpecification prescription. It removes the former affects some ProcessProfile alternative. Historical reasoner results remain limited to the profile evaluated."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65"
+      ],
+      "proposed_documentary_rationale": "The implemented simplification retains the Function with an Actuation realization having a specifically dependent continuant output and an ArtifactFunctionSpecification prescription. It removes the former affects some ProcessProfile alternative. Historical reasoner results remain limited to the profile evaluated.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/ActuationRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!42",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/BatteryLifetime",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "BatteryLifetime was modeled as a function characterizing how long a battery supports system operation, realized through operational stasis and continued energy provision. The current COMS expression retains the historical workbook's placement of Power within the realization. Historical reasoner-driven deferral and later COMS restoration are implementation history, not a new semantic rejection or a current reasoner result."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f"
+      ],
+      "proposed_documentary_rationale": "BatteryLifetime was modeled as a function characterizing how long a battery supports system operation, realized through operational stasis and continued energy provision. The current COMS expression retains the historical workbook's placement of Power within the realization. Historical reasoner-driven deferral and later COMS restoration are implementation history, not a new semantic rejection or a current reasoner result.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/BatteryLifetime",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!14",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Condition",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "This is mapped as a specifically dependent continuant or process profile because conditions are not standalone entities but aspects of a system or its operation that depend on something else and characterize circumstances under which performance is evaluated. The link to PerformanceSpecification reflects that conditions are specified and constrained rather than independently realized."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b"
+      ],
+      "proposed_documentary_rationale": "This is mapped as a specifically dependent continuant or process profile because conditions are not standalone entities but aspects of a system or its operation that depend on something else and characterize circumstances under which performance is evaluated. The link to PerformanceSpecification reflects that conditions are specified and constrained rather than independently realized.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Condition",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!15",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/DetectionLimit",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "DetectionLimit is modeled as a function because it characterizes the system’s ability to distinguish presence or absence under uncertainty when realized in processes. The reliance on veracity measurement reflects that detection limits are probabilistic performance characteristics rather than simple qualities."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8"
+      ],
+      "proposed_documentary_rationale": "DetectionLimit is modeled as a function because it characterizes the system’s ability to distinguish presence or absence under uncertainty when realized in processes. The reliance on veracity measurement reflects that detection limits are probabilistic performance characteristics rather than simple qualities.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/DetectionLimit",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!16",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Drift",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Drift is modeled as a function because it concerns systematic behavior over time that is manifested through processes rather than existing as a static property. The realization through deviation measurement reflects that drift is assessed by analyzing changes relative to expected values."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69"
+      ],
+      "proposed_documentary_rationale": "Drift is modeled as a function because it concerns systematic behavior over time that is manifested through processes rather than existing as a static property. The realization through deviation measurement reflects that drift is assessed by analyzing changes relative to expected values.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Drift",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!17",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Frequency",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Frequency is modeled as a function because it constrains how often a system can perform actions when realized in planned acts. Treating frequency as an occurrent part of realizations reflects that it is manifested through repeated execution rather than existing independently."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:124e6b06-906a-47be-a459-92babef3992e"
+      ],
+      "proposed_documentary_rationale": "Frequency is modeled as a function because it constrains how often a system can perform actions when realized in planned acts. Treating frequency as an occurrent part of realizations reflects that it is manifested through repeated execution rather than existing independently.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Frequency",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!18",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Latency",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Latency is modeled as a function because it characterizes temporal performance behavior that is only manifested when the system operates. The cause–effect structure and temporal region reflect that latency is measured through realized processes rather than inherent qualities."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b"
+      ],
+      "proposed_documentary_rationale": "Latency is modeled as a function because it characterizes temporal performance behavior that is only manifested when the system operates. The cause–effect structure and temporal region reflect that latency is measured through realized processes rather than inherent qualities.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Latency",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!19",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MaintenanceSchedule",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "MaintenanceSchedule is modeled as a disposition because it represents a tendency or requirement for maintenance to occur under certain conditions. Its realization through maintenance acts reflects that the schedule itself is not a process but is realized in processes."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63"
+      ],
+      "proposed_documentary_rationale": "MaintenanceSchedule is modeled as a disposition because it represents a tendency or requirement for maintenance to occur under certain conditions. Its realization through maintenance acts reflects that the schedule itself is not a process but is realized in processes.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/MaintenanceSchedule",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "explicit_blank",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!43",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MeasurementRange",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json"
+      ],
+      "existing_workbook_rationales": [
+        "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+      ],
+      "proposed_documentary_rationale": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!20",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/OperatingPowerRange",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "OperatingPowerRange is modeled as a function because it constrains operational capability with respect to power when realized in processes. Power appears as an occurrent part of realizations rather than as an independent entity."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26"
+      ],
+      "proposed_documentary_rationale": "OperatingPowerRange is modeled as a function because it constrains operational capability with respect to power when realized in processes. Power appears as an occurrent part of realizations rather than as an independent entity.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingPowerRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!21",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/OperatingProperty",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "OperatingProperty is modeled as a specifically dependent continuant or process profile because it characterizes how a system operates under given conditions without being a realizable capability. Its prescription by design reflects engineering intent rather than measured performance."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1"
+      ],
+      "proposed_documentary_rationale": "OperatingProperty is modeled as a specifically dependent continuant or process profile because it characterizes how a system operates under given conditions without being a realizable capability. Its prescription by design reflects engineering intent rather than measured performance.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!22",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/OperatingRange",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "OperatingRange is modeled as a specifically dependent continuant or process profile because it describes permissible conditions for normal operation rather than behavior itself. The link to ArtifactDesign reflects that operating ranges are design-specified constraints."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239"
+      ],
+      "proposed_documentary_rationale": "OperatingRange is modeled as a specifically dependent continuant or process profile because it describes permissible conditions for normal operation rather than behavior itself. The link to ArtifactDesign reflects that operating ranges are design-specified constraints.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!23",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Precision",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Precision is modeled as a function because it concerns consistency across repeated realizations of system behavior. The reliance on reliability measurement reflects that precision is assessed statistically across processes, not as a single intrinsic property."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f"
+      ],
+      "proposed_documentary_rationale": "Precision is modeled as a function because it concerns consistency across repeated realizations of system behavior. The reliance on reliability measurement reflects that precision is assessed statistically across processes, not as a single intrinsic property.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Precision",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!24",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Resolution",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Resolution is modeled as a function because it characterizes the system’s capacity to discriminate differences when realized in operational processes. The use of deviation measurement reflects that resolution is evaluated by analyzing minimal detectable change through realized behavior."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87"
+      ],
+      "proposed_documentary_rationale": "Resolution is modeled as a function because it characterizes the system’s capacity to discriminate differences when realized in operational processes. The use of deviation measurement reflects that resolution is evaluated by analyzing minimal detectable change through realized behavior.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Resolution",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!25",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/ResponseTime",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "ResponseTime is modeled as a function because it characterizes temporal system behavior that emerges during operation. The realization via cause–effect process structure reflects that response time is only meaningful when the system is acting."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d"
+      ],
+      "proposed_documentary_rationale": "ResponseTime is modeled as a function because it characterizes temporal system behavior that emerges during operation. The realization via cause–effect process structure reflects that response time is only meaningful when the system is acting.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/ResponseTime",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!26",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Selectivity",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Selectivity is modeled as a function because it describes how a system behaves during operation with respect to isolating intended properties. The realization in planned acts reflects that selectivity is manifested through operational behavior involving participants."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b"
+      ],
+      "proposed_documentary_rationale": "Selectivity is modeled as a function because it describes how a system behaves during operation with respect to isolating intended properties. The realization in planned acts reflects that selectivity is manifested through operational behavior involving participants.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Selectivity",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!27",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/Sensitivity",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "Sensitivity is modeled as a function because it concerns proportional relationships between input changes and output changes when realized in processes. The ratio-based measurement reflects that sensitivity is an evaluative performance characteristic, not a basic quality."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f"
+      ],
+      "proposed_documentary_rationale": "Sensitivity is modeled as a function because it concerns proportional relationships between input changes and output changes when realized in processes. The ratio-based measurement reflects that sensitivity is an evaluative performance characteristic, not a basic quality.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Sensitivity",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!28",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SurvivalProperty",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "SurvivalProperty is modeled as a function because it concerns the system’s capacity to remain viable over time under conditions. The affordance-based realization reflects that survival characteristics emerge from design-enabled processes."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0"
+      ],
+      "proposed_documentary_rationale": "SurvivalProperty is modeled as a function because it concerns the system’s capacity to remain viable over time under conditions. The affordance-based realization reflects that survival characteristics emerge from design-enabled processes.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SurvivalProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!44",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SurvivalRange",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "SurvivalRange was modeled as a function characterizing conditions a system can endure without losing operational integrity, manifested through affordance-realizing processes. Its historical technical deferral explicitly preserved that intended semantics. The expression was subsequently restored in COMS; historical reasoner findings retain their original profile limitations."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:c15208c5-847f-4de3-a456-4037142ca542"
+      ],
+      "proposed_documentary_rationale": "SurvivalRange was modeled as a function characterizing conditions a system can endure without losing operational integrity, manifested through affordance-realizing processes. Its historical technical deferral explicitly preserved that intended semantics. The expression was subsequently restored in COMS; historical reasoner findings retain their original profile limitations.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SurvivalRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!29",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemCapability",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "SystemCapability is modeled as a specifically dependent continuant or process profile because capabilities are dependent characteristics of a system that describe what it can do, not processes themselves. The use of PerformanceSpecification captures that capabilities are defined relative to stated performance criteria and conditions."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f"
+      ],
+      "proposed_documentary_rationale": "SystemCapability is modeled as a specifically dependent continuant or process profile because capabilities are dependent characteristics of a system that describe what it can do, not processes themselves. The use of PerformanceSpecification captures that capabilities are defined relative to stated performance criteria and conditions.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemCapability",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "existential_restriction",
+        "complex_expression",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!30",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemLifetime",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "SystemLifetime is modeled as a function because it characterizes the extent of operational viability rather than a static attribute. Its realization in stasis of operationality reflects that lifetime is manifested as sustained functioning over time."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7"
+      ],
+      "proposed_documentary_rationale": "SystemLifetime is modeled as a function because it characterizes the extent of operational viability rather than a static attribute. Its realization in stasis of operationality reflects that lifetime is manifested as sustained functioning over time.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemLifetime",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "explicit_blank",
+        "target_category_commitment"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet1!45",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty",
+        "imports/cco.ttl",
+        "reports/system-property-process-profile-scope-review.md",
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json"
+      ],
+      "existing_workbook_rationales": [
+        "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+      ],
+      "proposed_documentary_rationale": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": false,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!37",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-systems-dependence-reactivation-results.md"
+      ],
+      "existing_workbook_rationales": [
+        "The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3"
+      ],
+      "proposed_documentary_rationale": "The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!38",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!39",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-hasproperty-rule-mapping-artifact.md"
+      ],
+      "existing_workbook_rationales": [
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:265137eb-a279-4f9a-b1b9-e85d7ecb02a7",
+        "urn:uuid:8b87dd5b-298e-4ae7-8724-3778c0a67234"
+      ],
+      "proposed_documentary_rationale": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!40",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-systems-dependence-reactivation-results.md"
+      ],
+      "existing_workbook_rationales": [
+        "The documented intended dependence runs from the survival property object to the survival range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical reasoner findings retain their original profile limitations."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a"
+      ],
+      "proposed_documentary_rationale": "The documented intended dependence runs from the survival property object to the survival range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical reasoner findings retain their original profile limitations.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!41",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!42",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-hasproperty-rule-mapping-artifact.md"
+      ],
+      "existing_workbook_rationales": [
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:82ce9316-b7a7-4655-9c98-e16c314a0244",
+        "urn:uuid:bd5a2014-f338-49b8-b7ef-27f5b933d93b"
+      ],
+      "proposed_documentary_rationale": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SurvivalRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!43",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!44",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-hasproperty-rule-mapping-artifact.md"
+      ],
+      "existing_workbook_rationales": [
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+        "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:5f25dce9-54a0-442e-a9de-f18cd21aab1d",
+        "urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d545f81"
+      ],
+      "proposed_documentary_rationale": "The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:SystemCapability objects. These typing assertions do not by themselves assert a BFO/CCO relation edge.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!45",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "imports/cco.ttl",
+        "reports/ssn-systems-property-split-mapping-review.md",
+        "reports/ssn-systems-dependence-reactivation-results.md"
+      ],
+      "existing_workbook_rationales": [
+        "The documented intended dependence runs from the system property object to the system capability subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49"
+      ],
+      "proposed_documentary_rationale": "The documented intended dependence runs from the system property object to the system capability subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "complex_expression",
+        "typing_only_artifact"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!13",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/inCondition",
+        "imports/cco.ttl",
+        "reports/all-source-domain-range-operationalization-evaluation.md"
+      ],
+      "existing_workbook_rationales": [
+        "inCondition links a capability or range specification to its environmental context without asserting ontological dependence between them. The incorrect historical property chain was removed. The current row supplies the SystemCapability-or-OperatingRange-or-SurvivalRange domain and does not assert a direct BFO/CCO relation mapping."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:79e12baa-9467-4494-bdf3-b6906f5a81a7"
+      ],
+      "proposed_documentary_rationale": "inCondition links a capability or range specification to its environmental context without asserting ontological dependence between them. The incorrect historical property chain was removed. The current row supplies the SystemCapability-or-OperatingRange-or-SurvivalRange domain and does not assert a direct BFO/CCO relation mapping.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/inCondition",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!14",
+        "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md"
+      ],
+      "existing_workbook_rationales": [
+        "If an observation x qualityOfObservation y, then y is an information output produced by x that assesses the quality of the observation’s result."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:2018c5db-cb41-4a54-aa97-df5df82f0286"
+      ],
+      "proposed_documentary_rationale": "If an observation x qualityOfObservation y, then y is an information output produced by x that assesses the quality of the observation’s result.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+      "status": "safe_to_adopt"
+    },
+    {
+      "critical_features": [
+        "material_cross_track_difference",
+        "relation_interpretation"
+      ],
+      "documentary_consistency_issues": [],
+      "existing_evidence": [
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!62",
+        "imports/ssn.ttl#http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "imports/cco.ttl",
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+      ],
+      "existing_workbook_rationales": [
+        "The retained interpretation treats the originating Stimulus as an occurrent that causally initiates the Observation process. This row preserves the corresponding process_started_by inclusion."
+      ],
+      "mapping_row_ids": [
+        "urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd"
+      ],
+      "proposed_documentary_rationale": "The retained interpretation treats the originating Stimulus as an occurrent that causally initiates the Observation process. This row preserves the corresponding process_started_by inclusion.",
+      "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
+      "semantic_decision_still_required": true,
+      "source_iri": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+      "status": "safe_to_adopt"
+    }
+  ],
+  "summary": {
+    "existing_workbook_rationale_rows": 105,
+    "existing_workbook_rationale_terms": 91,
+    "human_review_required_proposals": 1,
+    "safe_documentary_proposals": 90,
+    "semantic_review_terms": 74
+  }
+}

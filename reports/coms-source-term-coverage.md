@@ -17,15 +17,15 @@ A domain or range row covers a property for source-term coverage but does not co
 | Item | Count |
 |---|---:|
 | source terms returned by SPARQL | 91 |
-| mapped classes | 44 |
-| unmapped classes | 0 |
-| mapped object properties | 28 |
-| unmapped object properties | 2 |
-| explicitly listed blank mappings | 2 |
+| mapped classes | 42 |
+| unmapped classes | 2 |
+| mapped object properties | 27 |
+| unmapped object properties | 3 |
+| explicitly listed blank mappings | 5 |
 | listed only in domain/range property-typing rows | 17 |
 | source terms absent from spreadsheet | 0 |
 | spreadsheet subjects not found in source ontologies | 0 |
-| unmapped rows returned by SPARQL coverage query | 2 |
+| unmapped rows returned by SPARQL coverage query | 5 |
 
 ## Mapped Classes
 
@@ -59,7 +59,6 @@ A domain or range row covers a property for source-term coverage but does not co
 - `ssn-system:Frequency`
 - `ssn-system:Latency`
 - `ssn-system:MaintenanceSchedule`
-- `ssn-system:MeasurementRange`
 - `ssn-system:OperatingPowerRange`
 - `ssn-system:OperatingProperty`
 - `ssn-system:OperatingRange`
@@ -72,10 +71,11 @@ A domain or range row covers a property for source-term coverage but does not co
 - `ssn-system:SurvivalRange`
 - `ssn-system:SystemCapability`
 - `ssn-system:SystemLifetime`
-- `ssn-system:SystemProperty`
 
 ## Unmapped Classes
 
+- `ssn-system:MeasurementRange`
+- `ssn-system:SystemProperty`
 
 ## Mapped Object Properties
 
@@ -96,7 +96,6 @@ A domain or range row covers a property for source-term coverage but does not co
 - `ssn:deployedOnPlatform`
 - `ssn:deployedSystem`
 - `ssn:detects`
-- `ssn:forProperty`
 - `ssn:hasDeployment`
 - `ssn:hasSubSystem`
 - `ssn:implementedBy`
@@ -112,11 +111,15 @@ A domain or range row covers a property for source-term coverage but does not co
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
+- `ssn:forProperty`
 
 ## Explicitly Listed Blank Mappings
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
+- `ssn:forProperty`
+- `ssn-system:MeasurementRange`
+- `ssn-system:SystemProperty`
 
 ## Listed Only In Domain/Range Property-Typing Rows
 

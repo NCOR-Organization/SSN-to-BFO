@@ -154,6 +154,7 @@ class StoredEvidenceAdversarialTests(unittest.TestCase):
                  validation.WORKBOOK_PATH, validation.MANIFEST_PATH, validation.FIXTURE_PATH,
                  validation.IDENTITY_PATH, validation.JAVA_SOURCE, validation.ROBOT_JAR, *self.corpus,
                  Path("tools/current_semantic_validation.py"), Path("tests/test_current_semantic_validation.py"),
+                 *validation.CUSTODY_DEPENDENCIES,
                  Path("config/validation-toolchain.env")}
         if self.ticketed:
             paths.update((validation.INVOCATION_HELPER, validation.INVOCATION_TESTS))

@@ -60,10 +60,10 @@ class CurrentIdentityReportingTests(unittest.TestCase):
     def test_reviewed_zero_axiom_rows_have_complete_identity_and_disposition(self) -> None:
         result = self.report()
         self.assertTrue(result["identity_audit_complete"])
-        self.assertEqual(result["assertion_bearing_rows"], 103)
-        self.assertEqual(result["explicit_zero_axiom_rows"], 2)
+        self.assertEqual(result["assertion_bearing_rows"], 100)
+        self.assertEqual(result["explicit_zero_axiom_rows"], 5)
         self.assertTrue(result["zero_axiom_assessment_dispositions_complete"])
-        self.assertEqual(result["reviewed_zero_axiom_decisions"], 2)
+        self.assertEqual(result["reviewed_zero_axiom_decisions"], 5)
         self.assertEqual(result["malformed_or_missing_identity_row_ids"], [])
 
     def test_unreviewed_disposition_does_not_become_reviewed_semantics(self) -> None:
@@ -182,7 +182,7 @@ class CurrentIdentityReportingTests(unittest.TestCase):
         summary = json.loads((self.root / "summary.json").read_text())
         self.assertIn("Identity-audit completeness result: PASS", markdown)
         self.assertIn("Zero-axiom assessment disposition completeness: PASS", markdown)
-        self.assertIn("Reviewed zero-axiom decisions: 2 / 2", markdown)
+        self.assertIn("Reviewed zero-axiom decisions: 5 / 5", markdown)
         self.assertTrue(summary["current_identity_reporting"]["identity_audit_complete"])
         self.assertEqual(summary["status"], "FAIL")  # Identity PASS cannot hide reasoner failure.
 

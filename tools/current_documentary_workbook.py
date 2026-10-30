@@ -19,6 +19,8 @@ from zipfile import BadZipFile
 
 from openpyxl import load_workbook
 
+import current_retained_evidence as retained
+
 ROOT = Path(__file__).resolve().parents[1]
 WORKBOOK = "mappings/SSN2BFO-COMS.xlsx"
 BASELINE = "config/current-documentary-workbook-baseline.json"
@@ -80,13 +82,18 @@ def _sha(value) -> str:
     return value
 
 
-def _bound_file(root: Path, ref: dict) -> Path:
+def _bound_file(root: Path, ref: dict, *, allow_retained: bool = False) -> Path:
     if not isinstance(ref, dict):
         raise ValueError("invalid evidence reference")
-    path = _path(root, ref.get("path"))
-    if digest(path.read_bytes()) != _sha(ref.get("sha256")):
-        raise ValueError(f"retained evidence hash mismatch: {ref.get('path')}")
-    return path
+    # Physical workbook versions and immutable decisions remain strict. Only
+    # historical supporting evidence may resolve its exact bytes elsewhere.
+    return retained.resolve(root, ref.get("path"), ref.get("sha256"),
+                            allow_retained=allow_retained)
+
+
+def _evidence_paths(root: Path, refs) -> set[str]:
+    return {path for ref in refs
+            for path in retained.evidence_paths(root, ref["path"], ref["sha256"])}
 
 
 def workbook_view(path: Path) -> dict:
@@ -209,7 +216,7 @@ def _evidence(root: Path, refs) -> None:
                 or set(ref) - {"path", "sha256", "reference"}
                 or ("reference" in ref and (not isinstance(ref["reference"], str) or not ref["reference"].strip()))):
             raise ValueError("invalid documentary evidence reference")
-        _bound_file(root, ref)
+        _bound_file(root, ref, allow_retained=True)
 
 
 def _validate_update(root: Path, path: Path) -> dict:
@@ -344,6 +351,11 @@ def _validate_immutable_decisions(root: Path, records: list[dict]) -> None:
 
 def evidence_paths(root: Path) -> list[str]:
     root = Path(root)
+    # Mixed history uses the semantic coordinator, but each documentary edge
+    # still passes this module's unchanged D-only validator.
+    if (root / "reports/current-semantic-workbook/transitions").exists():
+        import current_semantic_workbook as semantic
+        return semantic.evidence_paths(root)
     # Discovery also serves small report-only fixtures. Validation entry points
     # always require the immutable anchor, including when discovery is empty.
     if not (root / BASELINE).exists():
@@ -356,7 +368,8 @@ def evidence_paths(root: Path) -> list[str]:
     paths.update(path.relative_to(root).as_posix() for path in files)
     for document in chain:
         paths.update(f"{VERSIONS}/{document[key]}.xlsx" for key in ("old_workbook_sha256", "new_workbook_sha256"))
-        paths.update(ref["path"] for change in document["changes"] for ref in change["evidence"])
+        paths.update(_evidence_paths(root, [ref for change in document["changes"]
+                                           for ref in change["evidence"]]))
     return sorted(paths)
 
 
@@ -365,7 +378,13 @@ def create_update(root: Path, old_path: Path, new_path: Path, evidence: dict,
                   update_id: str | None = None) -> Path:
     """Record candidate bytes exclusively; never edit the live workbook."""
     root, old_path, new_path = Path(root), Path(old_path), Path(new_path)
-    baseline, chain, _ = _history(root)
+    mixed = (root / "reports/current-semantic-workbook/transitions").exists()
+    if mixed:
+        import current_semantic_workbook as semantic
+        history = semantic.resolve_history(root, require_live=False)
+        baseline, chain = history["baseline"], history["chain"]
+    else:
+        baseline, chain, _ = _history(root)
     old_hash, new_hash = digest(old_path.read_bytes()), digest(new_path.read_bytes())
     tail = chain[-1]["new_workbook_sha256"] if chain else baseline["historical_workbook"]["sha256"]
     if old_hash != tail:
@@ -413,7 +432,10 @@ def create_update(root: Path, old_path: Path, new_path: Path, evidence: dict,
         with destination.open("xb") as stream:
             created.append(destination)
             stream.write(canonical_bytes(document))
-        _history(root)
+        if mixed:
+            semantic.resolve_history(root, require_live=False)
+        else:
+            _history(root)
     except Exception:
         for path in reversed(created):
             path.unlink()

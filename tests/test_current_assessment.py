@@ -20,6 +20,7 @@ from rdflib.collection import Collection
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import current_assessment as audit
+import current_semantic_workbook as semantic
 
 
 class CurrentAssessmentTests(unittest.TestCase):
@@ -50,18 +51,23 @@ class CurrentAssessmentTests(unittest.TestCase):
 
     @contextmanager
     def synthetic_final_decision(self, iri: str, outcome: str):
-        """Disposable decision fixture over real current inputs; no real term is edited."""
+        """Disposable current fixture; preserve any existing approval's custody."""
+        maintained = next(r for r in self.document["records"] if r["source_iri"] == iri)
         before_document, packet = self.predecision_inputs(iri)
-        records = copy.deepcopy(before_document["records"])
+        records = copy.deepcopy(self.document["records"] if maintained.get("human_decision_record")
+                                else before_document["records"])
         record = next(r for r in records if r["source_iri"] == iri)
         original = copy.deepcopy(record)
-        record.update(review_state="final", assessment_outcome=outcome,
-                      rationale=f"Synthetic reviewed decision for {iri}; fixture only.")
+        if not maintained.get("human_decision_record"):
+            record.update(review_state="final", assessment_outcome=outcome,
+                          rationale=f"Synthetic reviewed decision for {iri}; fixture only.")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             input_paths = {*audit.SOURCE_PATHS, audit.TARGET_PATH, "mappings/SSN2BFO-COMS.xlsx",
-                           "mappings/SOSA-next-to-BFO-COMS.xlsx", "config/current-ssn-sosa-scope.json"}
+                           "mappings/SOSA-next-to-BFO-COMS.xlsx", "config/current-ssn-sosa-scope.json",
+                           "config/publication-metadata.toml", *semantic.GOVERNED_INPUT_SHA256}
             input_paths.update(audit.documentary.evidence_paths(ROOT))
+            input_paths.update(audit.applicability.evidence_paths(ROOT))
             for current in records:
                 if current.get("human_decision_record"):
                     relative = current["human_decision_record"]["path"]
@@ -69,34 +75,43 @@ class CurrentAssessmentTests(unittest.TestCase):
                     human = json.loads((ROOT / relative).read_text())
                     input_paths.update(human[key]["path"] for key in
                                        ("assessment_snapshot", "review_packet_snapshot"))
+                    if current.get("inheritance_sufficiency_evidence"):
+                        input_paths.add(current["inheritance_sufficiency_evidence"]["path"])
             for relative in sorted(input_paths):
                 destination = root / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(ROOT / relative, destination)
-            maintained = next(r for r in self.document["records"] if r["source_iri"] == iri)
+            approved_decision = None
             if maintained.get("human_decision_record"):
-                # A retained pre-decision packet must be tested with the exact
-                # workbook it reviewed, including its original column-D text.
-                human = json.loads((ROOT / maintained["human_decision_record"]["path"]).read_text())
-                historical = audit.documentary.validate_workbook_evolution(
-                    ROOT, human["input_hashes"]["workbook_sha256"])
-                shutil.copyfile(historical, root / "mappings/SSN2BFO-COMS.xlsx")
+                # Authenticate the copied mixed history without rewinding its
+                # live tail. Applicability approvals belong to this original
+                # decision ID and its exact historical inputs and rationale.
+                approved_decision = audit.documentary._json(audit.documentary._bound_file(
+                    root, maintained["human_decision_record"]))
+                self.assertEqual(approved_decision["assessment_outcome"], outcome)
+                self.assertTrue(any((root / semantic.TRANSITIONS).glob("*.json")))
+                historical = semantic.validate_workbook_evolution(
+                    root, approved_decision["input_hashes"]["workbook_sha256"])
+                self.assertEqual(audit.sha(historical), approved_decision["input_hashes"]["workbook_sha256"])
+                self.assertEqual(audit.sha(root / semantic.WORKBOOK), audit.sha(ROOT / semantic.WORKBOOK))
             raw_rows, stats = audit.mapping.read_workbook(root / "mappings/SSN2BFO-COMS.xlsx")
             fixture_rows = audit.mapping.validate_and_process_rows(raw_rows, audit.mapping.Resolver(), stats)
-            before_path = root / "assessment-before.json"
-            before_path.write_text(audit.json_text(before_document))
-            packet_path = root / "review-packet.json"
-            packet_path.write_text(audit.json_text(packet))
+            if approved_decision is None:
+                before_path = root / "assessment-before.json"
+                before_path.write_text(audit.json_text(before_document))
+                packet_path = root / "review-packet.json"
+                packet_path.write_text(audit.json_text(packet))
             own = [row for row in fixture_rows if str(row.subject) == iri]
             route = next(r for r in audit.coverage({iri: original["source_kind"]}, self.graph, fixture_rows)
                          if r["source_iri"] == iri)
-            # This context models a NEW synthetic approval, not an evolution of
-            # the two immutable accepted sample records. Real accepted-record
-            # attacks are exercised without this fixture override in
-            # test_current_documentary_decisions.py.
-            with patch.object(audit, "ROOT", root), patch.object(self, "rows", fixture_rows), patch.object(
+            # Only the disposable assessment points to the mutable test copy.
+            # Original bound decision artifacts and complete history stay
+            # intact; real immutable-record attacks use the documentary suite.
+            with patch.object(audit, "ROOT", root), patch.object(
+                    audit, "SOURCE_QUERY", root / audit.SOURCE_QUERY.relative_to(ROOT)), patch.object(
+                    self, "rows", fixture_rows), patch.object(
                     audit.documentary, "validate_immutable_decisions", return_value=None):
-                decision = {
+                decision = approved_decision if approved_decision is not None else {
                     "schema_version": 1, "decision_id": "urn:uuid:" + str(uuid4()),
                     "source_iri": iri, "review_state": "final", "assessment_outcome": outcome,
                     "rationale": record["rationale"], "review_question": packet["human_question"],
@@ -113,9 +128,9 @@ class CurrentAssessmentTests(unittest.TestCase):
                     "review_packet_snapshot": {"path": "review-packet.json", "sha256": audit.sha(packet_path),
                                                "item_sha256": audit.canonical_sha(packet)},
                 }
-                if outcome == "formal_mapping_adopted":
+                if approved_decision is None and outcome == "formal_mapping_adopted":
                     decision.update(decision_basis="formal_mapping_approval", formal_mapping_approved=True)
-                elif outcome == "no_direct_mapping":
+                elif approved_decision is None and outcome == "no_direct_mapping":
                     decision.update(decision_basis="semantic_rejection", explicit_no_direct_mapping_adopted=True,
                                     separate_semantic_conclusion="The source meaning does not warrant an adopted direct target relation in this fixture.")
                 decision_path = root / "human-decision.json"
@@ -200,9 +215,12 @@ class CurrentAssessmentTests(unittest.TestCase):
         historical = [r for r in finals if r["source_iri"] in baseline]
         self.assertEqual(set(baseline), {r["source_iri"] for r in historical})
         self.assertEqual(len(historical), 12)
-        self.assertEqual(len(finals), 14)
+        self.assertEqual(len(finals), 17)
         self.assertEqual({r["source_iri"] for r in finals} - set(baseline),
-                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf")})
+                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf")} |
+                         {"http://www.w3.org/ns/ssn/forProperty",
+                          "http://www.w3.org/ns/ssn/systems/SystemProperty",
+                          "http://www.w3.org/ns/ssn/systems/MeasurementRange"})
         for record in historical:
             self.assertEqual(baseline[record["source_iri"]]["assessment_record_sha256"],
                              audit.canonical_sha(record))
@@ -230,7 +248,25 @@ class CurrentAssessmentTests(unittest.TestCase):
                 mutation()
                 with self.assertRaisesRegex(ValueError, "human decision record"):
                     self.validate(records)
-        with self.synthetic_final_decision(iri, "formal_mapping_adopted") as (records, _, decision, save, _):
+        with self.synthetic_final_decision(iri, "formal_mapping_adopted") as (records, _, decision, save, root):
+            # This fixture retains the actual inheritance decisions and their
+            # history, so their bound query is a required copied dependency.
+            query_relative = audit.SOURCE_QUERY.relative_to(root).as_posix()
+            query_bytes = (ROOT / query_relative).read_bytes()
+            self.assertEqual(audit.SOURCE_QUERY.read_bytes(), query_bytes)
+            self.assertEqual(audit.sha(audit.SOURCE_QUERY), semantic.GOVERNED_INPUT_SHA256[query_relative])
+            inherited = [r for r in records if r["assessment_outcome"] == "inheritance_sufficient"]
+            self.assertEqual(len(inherited), 2)
+            for inherited_record in inherited:
+                evidence = audit.documentary._json(audit.documentary._bound_file(
+                    root, inherited_record["inheritance_sufficiency_evidence"]))
+                self.assertEqual(evidence["input_sha256"][query_relative], audit.sha(audit.SOURCE_QUERY))
+            audit.SOURCE_QUERY.unlink()
+            try:
+                with self.assertRaisesRegex(FileNotFoundError, "source-classes-and-object-properties.rq"):
+                    semantic.resolve_history(root)
+            finally:
+                audit.SOURCE_QUERY.write_bytes(query_bytes)
             self.validate(records)  # Valid fixture; no real assessment file is changed.
             for label, key, value, error in (
                 ("D wrong term", "source_iri", str(audit.mapping.SOSA.Sampler), "decision/assessment mismatch"),
@@ -388,7 +424,10 @@ class CurrentAssessmentTests(unittest.TestCase):
             # Independent synthetic source inventory; it contains neither of
             # the actual accepted sample decisions governed by the local pin.
             with patch.object(audit, "ROOT", root), patch.object(audit, "SOURCE_QUERY", query), patch.object(
-                    audit.documentary, "validate_immutable_decisions", return_value=None):
+                    audit.documentary, "validate_immutable_decisions", return_value=None), patch.object(
+                    audit.applicability, "validate_current_applicability", return_value=None):
+                # This unit fixture uses synthetic graph and non-XLSX input
+                # bytes. Real version custody is covered by integration tests.
                 routes = {r["source_iri"]: r for r in audit.coverage(terms, graph, [row])}
                 target = Graph().parse(root / audit.TARGET_PATH, format="turtle")
                 comparisons = audit.next_comparison([row])
@@ -473,13 +512,28 @@ class CurrentAssessmentTests(unittest.TestCase):
 
     def test_chain_head_does_not_cover_source_subproperty_or_its_inverse(self):
         terms = self.validate()
-        records = {r["source_iri"]: r for r in audit.coverage(terms, self.graph, self.rows)}
+        # Retain the historical chain fixture to test the direction rule even
+        # after the human decision removes that chain from the live workbook.
+        baseline = audit.documentary._baseline(ROOT)
+        workbook = audit.documentary._historical_snapshot(ROOT, baseline)
+        rows, stats = audit.mapping.read_workbook(workbook)
+        historical_rows = audit.mapping.validate_and_process_rows(rows, audit.mapping.Resolver(), stats)
+        records = {r["source_iri"]: r for r in audit.coverage(terms, self.graph, historical_rows)}
         for name in ["observes", "isObservedBy"]:
             record = records[str(audit.mapping.SOSA[name])]
             self.assertFalse(record["rule_or_chain_route"])
             self.assertFalse(record["inherited_formal_mapping"])
         self.assertTrue(records[str(audit.mapping.SSN.forProperty)]["rule_or_chain_route"])
         self.assertFalse(records[str(audit.mapping.SSN.forProperty)]["direct_formal_mapping"])
+
+    def test_adjudicated_forproperty_has_no_mapping_route(self):
+        iri = str(audit.mapping.SSN.forProperty)
+        record = next(r for r in audit.coverage(self.validate(), self.graph, self.rows)
+                      if r["source_iri"] == iri)
+        self.assertTrue(record["explicit_blank"])
+        self.assertTrue(record["no_established_formal_route"])
+        self.assertFalse(record["rule_or_chain_route"])
+        self.assertFalse(record["direct_formal_mapping"])
 
     def test_conditional_route_has_separate_typing_only_status(self):
         terms = self.validate()
@@ -741,7 +795,7 @@ class CurrentAssessmentTests(unittest.TestCase):
         unresolved = {r["source_iri"] for r in self.document["records"] if r["review_state"] != "final"}
         self.assertEqual({r["source_iri"] for r in queue["items"]}, unresolved)
         self.assertEqual(len(queue["items"]), len(unresolved))
-        self.assertEqual(len(unresolved), 77)
+        self.assertEqual(len(unresolved), 74)
         self.assertEqual(queue["items"][0]["priority"], 2)
         for item in queue["items"]:
             self.assertTrue(item["source_semantics"]["definitions"])
@@ -757,16 +811,16 @@ class CurrentAssessmentTests(unittest.TestCase):
                 record = next(r for r in self.document["records"] if r["source_iri"] == p["source_iri"])
                 self.assertEqual(p["proposed_documentary_rationale"], record["rationale"])
                 self.assertTrue(p["existing_workbook_rationales"])
-        self.assertEqual(cov["summary"]["coverage_counts"]["direct_formal_mapping"], 69)
+        self.assertEqual(cov["summary"]["coverage_counts"]["direct_formal_mapping"], 67)
         self.assertEqual(cov["summary"]["coverage_counts"]["typing_only_in_workbook"], 17)
-        self.assertEqual(cov["summary"]["coverage_counts"]["rule_or_chain_route"], 10)
-        self.assertEqual(cov["summary"]["coverage_counts"]["no_established_formal_route"], 15)
-        self.assertEqual(cov["summary"]["review_states"], {"final": 14, "deferred": 0, "unreviewed": 77})
+        self.assertEqual(cov["summary"]["coverage_counts"]["rule_or_chain_route"], 9)
+        self.assertEqual(cov["summary"]["coverage_counts"]["no_established_formal_route"], 16)
+        self.assertEqual(cov["summary"]["review_states"], {"final": 17, "deferred": 0, "unreviewed": 74})
         self.assertEqual(cov["summary"]["assessment_outcomes"], {"formal_mapping_adopted": 10,
-                         "no_direct_mapping": 4, "inheritance_sufficient": 0, "deferred": 0, "unreviewed": 77})
+                         "no_direct_mapping": 5, "inheritance_sufficient": 2, "deferred": 0, "unreviewed": 74})
         self.assertEqual(cov["summary"]["coverage_counts"]["inherited_formal_mapping"], 41)
-        self.assertEqual(cov["summary"]["coverage_counts"]["explicit_blank"], 2)
-        self.assertEqual(cov["summary"]["assertion_bearing_rows"], 103)
+        self.assertEqual(cov["summary"]["coverage_counts"]["explicit_blank"], 5)
+        self.assertEqual(cov["summary"]["assertion_bearing_rows"], 100)
 
 
 if __name__ == "__main__":

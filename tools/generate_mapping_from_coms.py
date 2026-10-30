@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from current_semantic_generation import expected_count, generated_expectations_context, validate_row_counts
+
 import argparse
 import hashlib
 import json
@@ -573,7 +575,8 @@ class ManchesterParser:
 
 
 class Resolver:
-    def __init__(self) -> None:
+    def __init__(self, root: Path | None = None) -> None:
+        self.root = REPO_ROOT if root is None else Path(root)
         self.graphs: dict[str, Graph] = {}
         self.label_index: dict[tuple[str, str, str], set[URIRef]] = defaultdict(set)
         self.labels: dict[URIRef, str] = {}
@@ -588,12 +591,12 @@ class Resolver:
             graph = loaded_by_file.get(rel_path)
             if graph is None:
                 graph = Graph()
-                graph.parse(REPO_ROOT / rel_path, format="turtle")
+                graph.parse(self.root / rel_path, format="turtle")
                 loaded_by_file[rel_path] = graph
             self.graphs[prefix] = graph
 
         for path in SOURCE_IMPORTS:
-            self.source_graph.parse(REPO_ROOT / path, format="turtle")
+            self.source_graph.parse(self.root / path, format="turtle")
 
         for prefix, graph in self.graphs.items():
             if prefix in {"owl", "rdf", "rdfs"}:
@@ -1472,7 +1475,7 @@ def render_formal_product_set(
         root_imports,
         validated_context,
     )
-    if len(root_logical) != ROOT_LOGICAL_TRIPLE_COUNT or len(root_graph) != ROOT_FORMAL_TOTAL_TRIPLE_COUNT:
+    if len(root_logical) != expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT) or len(root_graph) != expected_count('ROOT_FORMAL_TOTAL_TRIPLE_COUNT', ROOT_FORMAL_TOTAL_TRIPLE_COUNT):
         raise GenerationError(
             "formal integrated-root partition mismatch: "
             f"logical={len(root_logical)} total={len(root_graph)}"
@@ -1494,9 +1497,9 @@ def render_formal_product_set(
         validated_context,
     )
     expected_totals = {
-        "alignment_core": 64,
-        "strict_bfo_mapping": 137,
-        "cco_extension": 936,
+        "alignment_core": expected_count("ALIGNMENT_CORE_FORMAL_TOTAL_TRIPLE_COUNT", 64),
+        "strict_bfo_mapping": expected_count("STRICT_BFO_FORMAL_TOTAL_TRIPLE_COUNT", 137),
+        "cco_extension": expected_count("CCO_EXTENSION_FORMAL_TOTAL_TRIPLE_COUNT", 936),
     }
     for result in (core, strict, cco):
         expected_total = expected_totals[result.metadata.product_key]
@@ -1552,9 +1555,9 @@ def render_formal_product_set(
         import_triple_count=4,
         metadata_annotation_count=7,
         formal_metadata_annotation_count=3,
-        logical_triple_count=ROOT_LOGICAL_TRIPLE_COUNT,
+        logical_triple_count=expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT),
         total_triple_count=len(root_graph),
-        governed_axiom_count=103,
+        governed_axiom_count=expected_count("AUTHORITATIVE_AXIOM_COUNT", 103),
         sha256=hashlib.sha256(root_bytes).hexdigest(),
     )
     return FormalProductSet(
@@ -1630,16 +1633,16 @@ def generate_ontology(
         "integrated",
         expected_imports,
     )
-    if require_current_counts and len(logical_after_metadata) != ROOT_LOGICAL_TRIPLE_COUNT:
+    if require_current_counts and len(logical_after_metadata) != expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT):
         raise GenerationError(
             "integrated-root logical triple count mismatch: "
-            f"expected {ROOT_LOGICAL_TRIPLE_COUNT}, got {len(logical_after_metadata)}"
+            f"expected {expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT)}, got {len(logical_after_metadata)}"
         )
     if not isomorphic(logical_before_metadata, logical_after_metadata):
         raise GenerationError("integrated-root logical graph changed during metadata emission")
-    if require_current_counts and len(parsed) != ROOT_TOTAL_TRIPLE_COUNT:
+    if require_current_counts and len(parsed) != expected_count('ROOT_TOTAL_TRIPLE_COUNT', ROOT_TOTAL_TRIPLE_COUNT):
         raise GenerationError(
-            f"integrated-root total triple count mismatch: expected {ROOT_TOTAL_TRIPLE_COUNT}, "
+            f"integrated-root total triple count mismatch: expected {expected_count('ROOT_TOTAL_TRIPLE_COUNT', ROOT_TOTAL_TRIPLE_COUNT)}, "
             f"got {len(parsed)}"
         )
 
@@ -3006,8 +3009,8 @@ def write_generation_report(
             f"- Descriptive metadata annotations: {strict_bfo_result.metadata_annotation_count}",
             f"- Total RDF triples: {strict_bfo_result.total_triple_count}",
             "- Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`",
-            "- Imported alignment-core governed axioms: 29",
-            "- Project-module closure governed axioms: 48",
+            f"- Imported alignment-core governed axioms: {expected_count('ALIGNMENT_CORE_AXIOM_COUNT', 29)}",
+            f"- Project-module closure governed axioms: {expected_count('STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT', 48)}",
             "- Direct/alignment-core governed overlap: 0",
             "- CCO/RO and unexpected logical-vocabulary audit: PASS",
             "- Integrated-root and project-module canonical-axiom reconciliation: PASS",
@@ -3019,7 +3022,7 @@ def write_generation_report(
             f"- Named unsatisfiable classes: {'n/a' if strict_bfo_hermit is None else len(strict_bfo_hermit.unsat_classes)}",
             f"- HermiT result: {'FAIL' if strict_bfo_hermit is None else 'PASS' if strict_bfo_hermit.passed else 'FAIL'}",
             "- The validation dependency `imports/cco.ttl` is not imported by the published strict graph and does not authorize CCO mappings or transformations.",
-            "- The 55 CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.",
+            f"- The {expected_count('CCO_EXTENSION_AXIOM_COUNT', 55)} CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.",
             "- Formal-release metadata and identity remain deferred.",
         ]
 
@@ -3065,9 +3068,9 @@ def write_generation_report(
             f"- Descriptive metadata annotations: {cco_extension_result.metadata_annotation_count}",
             f"- Total RDF triples: {cco_extension_result.total_triple_count}",
             "- Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`",
-            "- Imported strict-BFO governed axioms: 19",
-            "- Transitively imported alignment-core governed axioms: 29",
-            "- Project-module closure governed axioms: 103",
+            f"- Imported strict-BFO governed axioms: {expected_count('STRICT_BFO_AXIOM_COUNT', 19)}",
+            f"- Transitively imported alignment-core governed axioms: {expected_count('ALIGNMENT_CORE_AXIOM_COUNT', 29)}",
+            f"- Project-module closure governed axioms: {expected_count('CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT', 103)}",
             "- Pairwise governed overlap: 0",
             "- RO and unexpected logical-vocabulary audit: PASS",
             "- Integrated-root and project-module canonical-axiom reconciliation: PASS",
@@ -3169,10 +3172,10 @@ def write_generation_report(
             "## Generated Ontology",
             "",
             f"- Path: `{output_path}`",
-            f"- Ontology declaration triples: {ROOT_ONTOLOGY_DECLARATION_COUNT}",
-            f"- Import triples: {ROOT_IMPORT_COUNT}",
-            f"- Descriptive metadata annotations: {ROOT_METADATA_ANNOTATION_COUNT}",
-            f"- Governed/structural logical triples: {ROOT_LOGICAL_TRIPLE_COUNT}",
+            f"- Ontology declaration triples: {expected_count('ROOT_ONTOLOGY_DECLARATION_COUNT', ROOT_ONTOLOGY_DECLARATION_COUNT)}",
+            f"- Import triples: {expected_count('ROOT_IMPORT_COUNT', ROOT_IMPORT_COUNT)}",
+            f"- Descriptive metadata annotations: {expected_count('ROOT_METADATA_ANNOTATION_COUNT', ROOT_METADATA_ANNOTATION_COUNT)}",
+            f"- Governed/structural logical triples: {expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT)}",
             f"- Generated ontology triple count: {'n/a' if hermit is None else hermit.generated_triple_count}",
             f"- `{output_path}` is generated from `mappings/SSN2BFO-COMS.xlsx` and must not be edited directly.",
             "- `coms:Reasoning` remained spreadsheet-only and was not emitted into the ontology.",
@@ -3390,10 +3393,10 @@ def write_summary_json(
         "publication_metadata_sha256": publication_metadata_sha256,
         "generation_timestamp": generation_timestamp,
         "generated_candidate_sha256": candidate_sha256,
-        "generated_candidate_ontology_declaration_triple_count": ROOT_ONTOLOGY_DECLARATION_COUNT,
-        "generated_candidate_import_triple_count": ROOT_IMPORT_COUNT,
-        "generated_candidate_metadata_annotation_count": ROOT_METADATA_ANNOTATION_COUNT,
-        "generated_candidate_logical_triple_count": ROOT_LOGICAL_TRIPLE_COUNT,
+        "generated_candidate_ontology_declaration_triple_count": expected_count('ROOT_ONTOLOGY_DECLARATION_COUNT', ROOT_ONTOLOGY_DECLARATION_COUNT),
+        "generated_candidate_import_triple_count": expected_count('ROOT_IMPORT_COUNT', ROOT_IMPORT_COUNT),
+        "generated_candidate_metadata_annotation_count": expected_count('ROOT_METADATA_ANNOTATION_COUNT', ROOT_METADATA_ANNOTATION_COUNT),
+        "generated_candidate_logical_triple_count": expected_count('ROOT_LOGICAL_TRIPLE_COUNT', ROOT_LOGICAL_TRIPLE_COUNT),
         "product_disposition_report_path": None if disposition_path is None else str(disposition_path),
         "product_disposition_report_sha256": disposition_sha256,
         "alignment_core_path": None if alignment_core_path is None else str(alignment_core_path),
@@ -3441,9 +3444,9 @@ def write_summary_json(
             "intersection_expression_count": strict_bfo_result.intersection_expression_count,
             "existential_restriction_count": strict_bfo_result.existential_restriction_count,
             "rdf_list_count": strict_bfo_result.rdf_list_count,
-            "project_closure_governed_axiom_count": 48,
-            "project_graph_triple_count": 195,
-            "local_project_graph_triple_count": 194,
+            "project_closure_governed_axiom_count": expected_count("STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT", 48),
+            "project_graph_triple_count": expected_count("STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT", 195),
+            "local_project_graph_triple_count": expected_count("STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 194),
             "hermit_return_code": None if strict_bfo_hermit is None else strict_bfo_hermit.return_code,
             "hermit_result": "FAIL" if strict_bfo_hermit is None else "PASS" if strict_bfo_hermit.passed else "FAIL",
             "closure_triple_count": None if strict_bfo_hermit is None else strict_bfo_hermit.closure_triple_count,
@@ -3480,9 +3483,9 @@ def write_summary_json(
             "intersection_expression_count": cco_extension_result.intersection_expression_count,
             "existential_restriction_count": cco_extension_result.existential_restriction_count,
             "rdf_list_count": cco_extension_result.rdf_list_count,
-            "project_closure_governed_axiom_count": 103,
-            "project_graph_triple_count": 1128,
-            "local_project_graph_triple_count": 1126,
+            "project_closure_governed_axiom_count": expected_count("CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT", 103),
+            "project_graph_triple_count": expected_count("CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT", 1128),
+            "local_project_graph_triple_count": expected_count("CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 1126),
             "hermit_return_code": None if cco_extension_hermit is None else cco_extension_hermit.return_code,
             "hermit_result": "FAIL" if cco_extension_hermit is None else "PASS" if cco_extension_hermit.passed else "FAIL",
             "closure_triple_count": None if cco_extension_hermit is None else cco_extension_hermit.closure_triple_count,
@@ -3572,7 +3575,7 @@ def write_summary_json(
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def main(argv: list[str] | None = None) -> int:
+def _main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, help="COMS workbook input path.")
     parser.add_argument("--output", required=True, help="Generated TTL output path.")
@@ -3717,6 +3720,8 @@ def main(argv: list[str] | None = None) -> int:
             for item in processed
             if item.identity_audit is not None
         ]
+        if input_path.resolve() == PRIMARY_WORKBOOK.resolve():
+            validate_row_counts(stats, identity_audits)
         disposition_input_hashes = RequiredInputHashes(
             workbook_sha256=workbook_sha256,
             generator_sha256=generator_sha256,
@@ -3957,6 +3962,27 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print("Summary: PASS")
     return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    # Only the project workbook may obtain governed count overrides. Other
+    # invocations retain their previous strict baseline checks.
+    inputs = argparse.ArgumentParser(add_help=False)
+    inputs.add_argument("--input")
+    known, _ = inputs.parse_known_args(argv)
+    path = Path(known.input) if known.input else None
+    if path is not None and not path.is_absolute():
+        path = REPO_ROOT / path
+    if path is None or path.resolve() != PRIMARY_WORKBOOK.resolve():
+        return _main(argv)
+    if not (REPO_ROOT / "reports/current-semantic-workbook/transitions").exists():
+        return _main(argv)
+    try:
+        with generated_expectations_context(REPO_ROOT, path):
+            return _main(argv)
+    except ValueError as exc:
+        print(f"Semantic workbook generation custody: FAIL ({exc})", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

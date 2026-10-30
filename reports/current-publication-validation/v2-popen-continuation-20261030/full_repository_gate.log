@@ -1,0 +1,1220 @@
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+........................................................................................................................................................................D4 documentary integration: D4 changed; full workbook SHA changed; semantic projection unchanged; documentary transition authenticated; MeasurementRange sufficiency evidence current; assessment custody authenticated.
+....................................................................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 460 tests in 1148.722s
+
+OK
+Current source/target/workbook/product/configuration identities: PASS
+{
+  "rationales": {
+    "existing_workbook_rationale_rows": 105,
+    "existing_workbook_rationale_terms": 91,
+    "human_review_required_proposals": 1,
+    "safe_documentary_proposals": 90,
+    "semantic_review_terms": 74
+  },
+  "status": "PASS",
+  "summary": {
+    "assertion_bearing_rows": 100,
+    "assessment_outcomes": {
+      "deferred": 0,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 2,
+      "no_direct_mapping": 5,
+      "unreviewed": 74
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 2,
+    "coverage_counts": {
+      "direct_formal_mapping": 67,
+      "explicit_blank": 5,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 16,
+      "rule_or_chain_route": 9,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 42,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 88,
+      "named": 192,
+      "some": 97,
+      "union": 15
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 5,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 2,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 32,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 0,
+      "final": 17,
+      "unreviewed": 74
+    },
+    "rows_with_expression_form": {
+      "intersection": 36,
+      "named": 73,
+      "some": 36,
+      "union": 14
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  }
+}
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.261s
+
+OK
+.........................
+----------------------------------------------------------------------
+Ran 25 tests in 24.539s
+
+OK
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+OK
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 5.318s
+
+OK
+..
+----------------------------------------------------------------------
+Ran 2 tests in 36.643s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.663s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK
+............
+----------------------------------------------------------------------
+Ran 12 tests in 1.015s
+
+OK
+.........................
+----------------------------------------------------------------------
+Ran 25 tests in 1.356s
+
+OK
+.................................
+----------------------------------------------------------------------
+Ran 33 tests in 2648.934s
+
+OK
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 1721.157s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 1.428s
+
+OK
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 6.121s
+
+OK
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 15.534s
+
+OK
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 20.625s
+
+OK
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 23.364s
+
+OK
+........
+----------------------------------------------------------------------
+Ran 8 tests in 7.184s
+
+OK
+.........................................................................................
+----------------------------------------------------------------------
+Ran 89 tests in 6.666s
+
+OK
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+......................
+----------------------------------------------------------------------
+Ran 22 tests in 35.417s
+
+OK
+......................
+----------------------------------------------------------------------
+Ran 22 tests in 0.037s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 122.004s
+
+OK
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 507.137s
+
+OK
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 2.574s
+
+OK
+..............................................
+----------------------------------------------------------------------
+Ran 46 tests in 76.436s
+
+OK
+
+==> Python compile check
+$ /opt/miniconda3/bin/python -m py_compile tools/run_validation_suite.py tools/test_elk_instance_mapping_entailments.py tools/test_full_sosa_closure_hermit.py tools/test_object_property_typing_probes.py tools/test_instance_data.py tools/compare_mappings.py tools/coms_row_identity.py tools/coms_framework_integration.py tools/product_dispositions.py tools/modular_products.py tools/generate_mapping_from_coms.py tools/robot_template_generation_pilot.py tools/robot_property_chain_generation_pilot.py tools/robot_diff_pilot.py tools/robot_extract_pilot.py tools/robot_query_equivalence_pilot.py tools/robot_retained_example_validation_pilot.py tools/robot_verify_pilot.py tools/robot_reconstruction_validation.py tools/validate_robot_reconstruction.py tools/check_coms_mapping.py tools/sosa_source_version.py tools/check_sosa_source_version.py tools/product_role_policy.py tools/check_product_role_policy.py tools/sosa_release_scope.py tools/check_sosa_release_scope.py tools/check_sosa_next_mapping.py tools/generate_sosa_next_products.py tools/check_sosa_next_products.py tools/watch_coms_mapping.py tools/publication_metadata.py tools/check_publication_metadata.py tools/release_context.py tools/release_manifest.py tools/sosa_2023_release_manifest.py tools/sosa_2023_release_runtime.py tools/sosa_2023_build_release.py tools/sosa_2023_check_release.py tools/sosa_2023_release_archive.py tools/sosa_2023_rehearse_release.py tools/build_release.py tools/check_release.py tools/release_archive.py tools/rehearse_release.py tests/test_generate_mapping_from_coms.py tests/test_sosa_source_version.py tests/test_product_role_policy.py tests/test_sosa_release_scope.py tests/test_check_sosa_next_mapping.py tests/test_sosa_next_products.py tests/test_sosa_next_consumer_stack.py tests/test_sosa_2023_publication_metadata.py tests/test_sosa_2023_release_rendering.py tests/test_sosa_2023_release_manifest.py tests/test_sosa_2023_release_runtime.py tests/test_sosa_2023_build_release.py tests/test_sosa_2023_release_archive.py tests/test_sosa_2023_release_rehearsal.py tests/test_robot_template_generation_pilot.py tests/test_robot_property_chain_generation_pilot.py tests/test_robot_diff_pilot.py tests/test_robot_extract_pilot.py tests/test_robot_query_equivalence_pilot.py tests/test_robot_retained_example_validation_pilot.py tests/test_robot_verify_pilot.py tests/test_robot_reconstruction_validation.py tests/test_coms_row_identity.py tests/test_coms_framework_integration.py tests/test_product_dispositions.py tests/test_modular_products.py tests/test_strict_bfo_mapping.py tests/test_cco_extension.py tests/test_bfo_projection.py tests/test_publication_metadata.py tests/test_release_context.py tests/test_release_rendering.py tests/test_release_manifest.py tests/test_release_contract.py tests/test_build_release.py tests/test_release_archive.py tests/test_release_rehearsal.py tests/test_placeholder_catalog_migration.py
+Python compile check: PASS
+
+==> failing bytecode fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("failed-bytecode-report.json").write_text(json.dumps({
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+raise SystemExit(7)
+'
+failing bytecode fixture: FAIL (7)
+
+==> bytecode isolation fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import subprocess
+import sys
+
+inner = r"""
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("bytecode-report.json").write_text(json.dumps({
+    "dont_write": os.environ["PYTHONDONTWRITEBYTECODE"],
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+"""
+subprocess.run(
+    [sys.executable, "-c", inner],
+    env={"PYTHONPATH": "."},
+    check=True,
+)
+'
+bytecode isolation fixture: PASS
+
+==> primary plus cleanup failure
+$ /opt/miniconda3/bin/python -c pass
+primary plus cleanup failure: FAIL (7); CLEANUP_FAILED external bytecode cache: owned path identity changed
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 15.122s
+
+OK
+Publication metadata validation: PASS
+Mode: development
+Metadata file: config/publication-metadata.toml
+Metadata SHA-256: bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9
+Schema version: 4
+Project title: SSN-to-BFO
+Default language: en
+Release IRI base: http://www.sks.ai/SSN2BFO/releases
+License IRI: https://creativecommons.org/publicdomain/zero/1.0/
+Repository IRI: https://github.com/BFO-Mappings/SSN-to-BFO
+Generated warning: Generated from governed COMS and publication metadata; do not edit this ontology directly.
+Development status property IRI: http://www.w3.org/ns/adms#status
+Development status IRI: http://www.sks.ai/SSN2BFO/authority-status/maintained-authoritative-development
+Formal release status IRI: http://www.sks.ai/SSN2BFO/authority-status/immutable-authoritative-release
+Canonical product count: 4
+Canonical product order: integrated, alignment_core, strict_bfo_mapping, cco_extension
+Product: integrated
+  path: SSN2BFO.ttl
+  stable ontology IRI: http://www.sks.ai/SSN2BFO/
+  release suffix: integrated
+  label: SSN-to-BFO Integrated Mapping
+  description: Directly asserts the complete governed COMS axiom set for the SSN/SOSA alignment with BFO and CCO.
+  product-type IRI: http://www.sks.ai/SSN2BFO/product-type/integrated
+Product: alignment_core
+  path: releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+  stable ontology IRI: http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core
+  release suffix: current-ssn-sosa/alignment-core
+  label: SSN/SOSA Alignment Core
+  description: Directly asserts the governed target-neutral SSN/SOSA alignment axioms shared by the modular products and imports no ontology.
+  product-type IRI: http://www.sks.ai/SSN2BFO/product-type/alignment-core
+Product: strict_bfo_mapping
+  path: releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+  stable ontology IRI: http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping
+  release suffix: current-ssn-sosa/bfo-mapping
+  label: SSN/SOSA Strict BFO Mapping
+  description: Directly asserts governed BFO-bearing axioms without weakening and imports the SSN/SOSA alignment core.
+  product-type IRI: http://www.sks.ai/SSN2BFO/product-type/strict-bfo-mapping
+Product: cco_extension
+  path: releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+  stable ontology IRI: http://www.sks.ai/SSN2BFO/current-ssn-sosa/cco-extension
+  release suffix: current-ssn-sosa/cco-extension
+  label: SSN/SOSA CCO Extension
+  description: Directly asserts governed CCO-bearing and mixed BFO/CCO axioms unchanged and imports the strict BFO mapping.
+  product-type IRI: http://www.sks.ai/SSN2BFO/product-type/cco-extension
+Immutable release version IRI: not claimed in development mode.
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+.Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.....Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.05 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing alignment core
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing CCO extension
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.02 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing strict BFO mapping
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+........Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-qpdrdax5/.cache/coms-noncanonical-header/run-gslgzwlv/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 69
+Blank mapping rows: 5
+Class mapping rows: 42
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 2
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 100
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 28
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 52
+CCO-extension logical triples: 875
+CCO-extension total triples: 884
+CCO-extension SHA-256: 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1065
+Candidate closure triple count: 15855
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 27
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 14
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.alignment_core.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-noncanonical-header/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-etg36f92/.cache/coms-reordered-root-imports/run-aj9_sts8/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 69
+Blank mapping rows: 5
+Class mapping rows: 42
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 2
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 100
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 28
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 52
+CCO-extension logical triples: 875
+CCO-extension total triples: 884
+CCO-extension SHA-256: 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1065
+Candidate closure triple count: 15855
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 27
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 14
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.integrated.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-reordered-root-imports/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+..COMS quality check: FAIL (stale COMS outputs: alignment-core hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: CCO-extension hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: strict-BFO hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.alignment_core.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-strict_bfo_mapping\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (product-disposition validation failed: ERROR [MISSING_FIELD] document: missing required field 'canonicalization_version' | ERROR [MISSING_FIELD] document: missing required field 'disposition_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'generator_sha256' | ERROR [MISSING_FIELD] document: missing required field 'product_order' | ERROR [MISSING_FIELD] document: missing required field 'publication_metadata_sha256' | ERROR [MISSING_FIELD] document: missing required field 'row_identity_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'rows' | ERROR [MISSING_FIELD] document: missing required field 'summary' | ERROR [MISSING_FIELD] document: missing required field 'workbook_sha256' | ERROR [WRONG_TYPE] product_order: expected array of product strings | ERROR [WRONG_TYPE] rows: expected array | ERROR [WRONG_TYPE] summary: expected JSON object | ERROR [WRONG_TYPE] summary.authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.bfo_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.cco_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.class_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.explicitly_unmapped_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.governed_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.mixed_bfo_cco_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_chain_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_typing_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.relation_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.target_neutral_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_row_id_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.zero_axiom_row_count: expected nonnegative integer)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.......[2/11] Compiling COMS generator
+[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+............................................
+----------------------------------------------------------------------
+Ran 84 tests in 155.225s
+
+OK
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-1t_dnirj/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 1
+Canonical authoritative axioms: 1
+Errors:
+- ERROR [TARGET_CATEGORY_MISMATCH] urn:uuid:00000000-0000-4000-8000-000000000001: synthetic disposition failure
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-q69u99y2/generation-report.md
+Worksheets read: none
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 0
+Unique RowIDs: 0
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- Synthetic!1: governed worksheet is missing required header 'coms:RowID'
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-93rywtpa/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [IDENTITY_AUDIT_INCOMPLETE] processed row count 1 does not match identity-audit row count 0 | ERROR [PROCESSED_AUDIT_ROWID_MISMATCH] processed RowIDs missing from identity audits: urn:uuid:00000000-0000-4000-8000-000000000001 (Synthetic!2) | ERROR [IDENTITY_AUDIT_INCOMPLETE] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001] is absent from the identity audit
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-xg2w_flw/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-3v3bxn10/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-7ojos8kr/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 103.177s
+
+OK
+Governed rows: 105
+Non-chain ROBOT axioms: 98
+Property-chain ROBOT axioms: 2
+Expected canonical axioms: 100
+Combined ROBOT canonical axioms: 100
+Overlapping backend axioms: 0
+Missing axioms: 0
+Extra axioms: 0
+Mismatched axioms: 0
+Summary: PASS
+[1/11] Verifying workbook exists and opens
+Workbook worksheets: Sheet1, Sheet2
+Workbook SHA-256: 778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c
+[2/11] Compiling COMS generator
+Generator SHA-256: 533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python tools/generate_mapping_from_coms.py --input mappings/SSN2BFO-COMS.xlsx --output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/candidate/SSN2BFO.ttl --report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-generation-validation.md --disposition-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-product-dispositions.json --alignment-core-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-source-term-coverage.md --diff-report /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/hermit --report-workbook-path mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/summary.json
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-generation-validation.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/candidate/SSN2BFO.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-source-term-coverage.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/reports/coms-product-dispositions.json
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /Users/alecsculley/Documents/GitHub/SSN-to-BFO/.cache/coms/run-nwn897cu/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 69
+Blank mapping rows: 5
+Class mapping rows: 42
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 2
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 100
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 28
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 52
+CCO-extension logical triples: 875
+CCO-extension total triples: 884
+CCO-extension SHA-256: 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1065
+Candidate closure triple count: 15855
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 27
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 14
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+Product dispositions: PASS (105 rows; 100 axioms)
+Alignment core: PASS (1 declaration; 0 imports; 7 metadata; 29 governed axioms; 53 logical triples; 61 total triples)
+Strict BFO mapping: PASS (1 declaration; 1 import; 7 metadata; 19 direct governed axioms; 125 logical triples; 134 total triples)
+CCO extension: PASS (1 declaration; 1 import; 7 metadata; 52 direct governed axioms; 875 logical triples; 884 total triples)
+[5/11] Confirming maintained SPARQL source-term coverage checks ran
+Coverage query: PASS (91 source terms; 5 unmapped)
+[6/11] Parsing temporary generated candidate TTL
+Generated candidate parse: PASS (1 declaration; 4 imports; 7 metadata; 1053 logical; 1065 total)
+[7-9/11] Confirming exact candidate closure profile and HermiT result
+Candidate HermiT: PASS (15855 closure triples; no named unsats)
+[10/11] Confirming required reports and freshness metadata
+[11/11] Running git diff --check
+Pre-update git whitespace check
+$ git diff --check
+Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (19.48 seconds)
+Last-success metadata: .cache/coms/last-success.json
+Status: approved
+Source identity: sosa-2023-af425a0454ec00512a5ebfa2873fe35a077f5fda
+Development alias: sosa-next
+Edition: Semantic Sensor Network Ontology - 2023 Edition
+Edition version IRI: http://www.w3.org/ns/sosa/2023/
+Upstream repository: https://github.com/w3c/sdw-sosa-ssn
+Upstream commit: af425a0454ec00512a5ebfa2873fe35a077f5fda
+Upstream commit date: 2026-07-22
+Upstream source files: 8
+Local overlay: src/sosa-next/imports/sosa-source-declaration-overlay.ttl
+  0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32  src/sosa-next/imports/sample-relations.ttl
+  18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5  src/sosa-next/imports/sosa-actuation.ttl
+  31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa  src/sosa-next/imports/sosa-common.ttl
+  5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987  src/sosa-next/imports/sosa-deprecated.ttl
+  da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3  src/sosa-next/imports/sosa-observation.ttl
+  82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70  src/sosa-next/imports/sosa-sampling.ttl
+  5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2  src/sosa-next/imports/sosa-source-declaration-overlay.ttl
+  1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf  src/sosa-next/imports/sosa-system.ttl
+  a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305  src/sosa-next/imports/sosa.ttl
+Summary: PASS
+Status: approved
+Role order: integrated, alignment_core, strict_bfo_mapping, bfo_projection, cco_extension, ro_mapping
+Materialization rule: direct_logical_content_or_distinct_consumer_function
+Empty role boundary sufficient: False
+current-ssn-sosa:
+  formal products: integrated, alignment_core, strict_bfo_mapping, cco_extension
+  omitted roles: bfo_projection, ro_mapping
+sosa-2023-af425a0454ec00512a5ebfa2873fe35a077f5fda:
+  formal products: integrated, strict_bfo_mapping, cco_extension, ro_mapping
+  omitted roles: alignment_core, bfo_projection
+Summary: PASS
+Status: approved
+Source identity: sosa-2023-af425a0454ec00512a5ebfa2873fe35a077f5fda
+Development alias: sosa-next
+Publication model: separate_package
+Formal track component: sosa-2023-af425a0454ec00512a5ebfa2873fe35a077f5fda
+Product-role policy: config/product-role-policy.toml
+Formal product order: integrated, strict_bfo_mapping, cco_extension, ro_mapping
+Omitted product roles: alignment_core, bfo_projection
+Current-track formal release: product_role_policy_migration_complete
+Summary: PASS
+Governed rows: 119
+Unique RowIDs: 119
+Active mappings: 55
+Deferred mappings: 0
+No-direct-mapping decisions: 64
+Unreviewed rows: 0
+Explicitly unmapped rows: 64
+Canonical authoritative axioms: 55
+Active ontology triples: 283
+Reasoned output triples: 1758
+Named unsatisfiable classes: 0
+Summary: PASS
+Governed rows: 119
+Active mappings: 55
+Deferred mappings: 0
+No-direct-mapping decisions: 64
+Unreviewed rows: 0
+Legacy explicitly unmapped aggregate: 64
+Canonical authoritative axioms: 55
+Target categories: {'cco_bearing': 30, 'bfo_bearing': 24, 'mixed_bfo_cco': 1}
+Combined logical triples: 277
+integrated:
+  axioms: 55
+  logical triples: 277
+  total triples: 290
+  SHA-256: 3f502821476478252cdd9feb316b47612daa473e511597970a1351617d5cfc12
+  reasoning closure triples: 15240
+  unsatisfiable classes: 0
+strict_bfo_mapping:
+  axioms: 24
+  logical triples: 154
+  total triples: 162
+  SHA-256: 1ae415bc96940e4007d064102f556aa544593616a0eff984534406028b846efb
+  reasoning closure triples: 15117
+  unsatisfiable classes: 0
+cco_extension:
+  axioms: 31
+  logical triples: 123
+  total triples: 132
+  SHA-256: 53a7cc6c0f664e51bf9f7ac28e3d067fc4fdcc750e22a34fe5c12c766e51dc19
+  reasoning closure triples: 15248
+  unsatisfiable classes: 0
+ro_mapping:
+  axioms: 16
+  governed properties: 82
+  no direct mapping: 66
+  logical triples: 16
+  total triples: 18
+  SHA-256: 1747563c4bba01a0c6b34bd61660a1f0c9026c266cc147991e74bc1d314ac388
+  SKOS mappings: 0
+  reasoning: dedicated SOSA-2023 RO semantic regression
+Maintained products fresh: True
+Summary: PASS
+Wrote /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+Example files tested: 11
+Counter({'PASS': 11})
+Fixture status: PASS
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: PASS
+
+==> Current source/target byte identities
+$ /opt/miniconda3/bin/python tools/current_source_identity.py
+Current source/target byte identities: PASS
+
+==> Current assessment inventory and report freshness
+$ /opt/miniconda3/bin/python tools/current_assessment.py
+Current assessment inventory and report freshness: PASS
+
+==> COMS row-identity focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_row_identity.py
+COMS row-identity focused tests: PASS
+
+==> COMS framework shadow-integration tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_framework_integration.py
+COMS framework shadow-integration tests: PASS
+
+==> SOSA source-version authority focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_source_version.py
+SOSA source-version authority focused tests: PASS
+
+==> Uniform product-role policy focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_product_role_policy.py
+Uniform product-role policy focused tests: PASS
+
+==> SOSA formal package-scope focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_release_scope.py
+SOSA formal package-scope focused tests: PASS
+
+==> Forthcoming SOSA COMS focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_check_sosa_next_mapping.py
+Forthcoming SOSA COMS focused tests: PASS
+
+==> SOSA-next maintained-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_products.py
+SOSA-next maintained-product focused tests: PASS
+
+==> SOSA-next catalog consumer-stack focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_consumer_stack.py
+SOSA-next catalog consumer-stack focused tests: PASS
+
+==> SOSA-2023 publication-metadata focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_publication_metadata.py
+SOSA-2023 publication-metadata focused tests: PASS
+
+==> SOSA-2023 formal-rendering focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_rendering.py
+SOSA-2023 formal-rendering focused tests: PASS
+
+==> SOSA-2023 release-manifest focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_manifest.py
+SOSA-2023 release-manifest focused tests: PASS
+
+==> SOSA-2023 release-package focused tests
+$ /opt/miniconda3/bin/python -m unittest tests.test_sosa_2023_release_runtime tests.test_sosa_2023_build_release
+SOSA-2023 release-package focused tests: PASS
+
+==> SOSA-2023 release-archive focused tests
+$ /opt/miniconda3/bin/python -m unittest tests.test_sosa_2023_release_archive
+SOSA-2023 release-archive focused tests: PASS
+
+==> SOSA-2023 release-rehearsal focused tests
+$ /opt/miniconda3/bin/python -m unittest tests.test_sosa_2023_release_rehearsal
+SOSA-2023 release-rehearsal focused tests: PASS
+
+==> COMS product-disposition focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_product_dispositions.py
+COMS product-disposition focused tests: PASS
+
+==> Alignment-core modular-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_modular_products.py
+Alignment-core modular-product focused tests: PASS
+
+==> Strict-BFO modular-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_strict_bfo_mapping.py
+Strict-BFO modular-product focused tests: PASS
+
+==> CCO-extension modular-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_cco_extension.py
+CCO-extension modular-product focused tests: PASS
+
+==> BFO-projection role reconciliation focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_bfo_projection.py
+BFO-projection role reconciliation focused tests: PASS
+
+==> Publication metadata focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_publication_metadata.py
+Publication metadata focused tests: PASS
+
+==> Formal release-context focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_context.py
+Formal release-context focused tests: PASS
+
+==> Formal ontology-rendering focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_rendering.py
+Formal ontology-rendering focused tests: PASS
+
+==> Release manifest focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_manifest.py
+Release manifest focused tests: PASS
+
+==> Authenticated current release contract focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_contract.py
+Authenticated current release contract focused tests: PASS
+
+==> Release package build and validation focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_build_release.py
+Release package build and validation focused tests: PASS
+
+==> Release archive focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_archive.py
+Release archive focused tests: PASS
+
+==> Release rehearsal focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_release_rehearsal.py
+Release rehearsal focused tests: PASS
+
+==> Placeholder and catalog migration focused tests
+$ /opt/miniconda3/bin/python -B -m unittest discover -s tests -p test_placeholder_catalog_migration.py
+Placeholder and catalog migration focused tests: PASS
+
+==> Publication metadata development check
+$ /opt/miniconda3/bin/python tools/check_publication_metadata.py
+Publication metadata development check: PASS
+
+==> COMS generator focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_generate_mapping_from_coms.py
+COMS generator focused tests: PASS
+
+==> ROBOT focused tests
+$ /opt/miniconda3/bin/python -m unittest tests.test_robot_template_generation_pilot tests.test_robot_property_chain_generation_pilot tests.test_robot_diff_pilot tests.test_robot_extract_pilot tests.test_robot_query_equivalence_pilot tests.test_robot_retained_example_validation_pilot tests.test_robot_verify_pilot tests.test_robot_reconstruction_validation
+ROBOT focused tests: PASS
+
+==> Complete ROBOT reconstruction check
+$ /opt/miniconda3/bin/python tools/validate_robot_reconstruction.py --output-dir /tmp/ssn-to-bfo-validation-suite/robot-reconstruction
+Complete ROBOT reconstruction check: PASS
+
+==> COMS workbook freshness and candidate quality check
+$ /opt/miniconda3/bin/python tools/check_coms_mapping.py --check-only
+COMS workbook freshness and candidate quality check: PASS
+
+==> SOSA source-version authority check
+$ /opt/miniconda3/bin/python tools/check_sosa_source_version.py
+SOSA source-version authority check: PASS
+
+==> Uniform product-role policy check
+$ /opt/miniconda3/bin/python tools/check_product_role_policy.py
+Uniform product-role policy check: PASS
+
+==> SOSA formal package-scope check
+$ /opt/miniconda3/bin/python tools/check_sosa_release_scope.py
+SOSA formal package-scope check: PASS
+
+==> Forthcoming SOSA COMS mapping check
+$ /opt/miniconda3/bin/python tools/check_sosa_next_mapping.py --output-dir /tmp/ssn-to-bfo-validation-suite/sosa-next-mapping-check
+Forthcoming SOSA COMS mapping check: PASS
+
+==> SOSA-next maintained-product check
+$ /opt/miniconda3/bin/python tools/check_sosa_next_products.py --output-dir /tmp/ssn-to-bfo-validation-suite/sosa-next-product-check
+SOSA-next maintained-product check: PASS
+
+==> Instance-data smoke test
+$ /opt/miniconda3/bin/python tools/test_instance_data.py --output /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+Instance-data smoke test: PASS
+
+==> ELK instance mapping entailment test
+Wrote /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+Example files tested: 16
+ROBOT pass/fail: 16/0
+Total direct class expectations checked: 6
+Total direct property expectations checked: 80
+Total property-chain expectations checked: 2
+Total restriction expectations checked: 0
+Total expectation failures: 0
+Active direct mappings not covered by instance data: 3
+Active property-chain mappings not covered by instance data: 0
+Active restriction mappings not covered by instance data: 0
+Summary: PASS
+Wrote /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+Triple count: 15853
+HermiT return code: 0
+Reasoned output produced: yes
+owl:Nothing count: 0
+Unsat count: 0
+Unsat set: clean
+Summary: PASS
+$ /opt/miniconda3/bin/python tools/test_elk_instance_mapping_entailments.py --output /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+ELK instance mapping entailment test: PASS
+
+==> Full local SOSA closure HermiT check
+$ /opt/miniconda3/bin/python tools/test_full_sosa_closure_hermit.py --output /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+Full local SOSA closure HermiT check: PASS
+
+==> Python compile check
+$ /opt/miniconda3/bin/python -m py_compile tools/current_assessment.py tools/current_checkpoint_successor.py tools/current_custody_dependencies.py tools/current_decision_applicability.py tools/current_documentary_workbook.py tools/current_portable_execution_evidence.py tools/current_publication_preservation.py tools/current_publication_readiness.py tools/current_retained_evidence.py tools/current_semantic_generation.py tools/current_semantic_invocation.py tools/current_semantic_validation.py tools/current_semantic_workbook.py tools/current_source_identity.py tools/current_validation_execution.py tools/current_validation_scope.py tests/test_current_assessment.py tests/test_current_checkpoint_successor.py tests/test_current_cross_track_preservation.py tests/test_current_custody_dependencies.py tests/test_current_documentary_decisions.py tests/test_current_documentary_workbook.py tests/test_current_documentation_policy.py tests/test_current_evidence_dependency_contract.py tests/test_current_evidence_freshness.py tests/test_current_identity_reporting.py tests/test_current_portable_execution_evidence.py tests/test_current_publication_preservation.py tests/test_current_publication_readiness.py tests/test_current_retained_evidence.py tests/test_current_retained_evidence_integration.py tests/test_current_semantic_applicability.py tests/test_current_semantic_generation.py tests/test_current_semantic_invocation.py tests/test_current_semantic_preservation.py tests/test_current_semantic_retry.py tests/test_current_semantic_schema.py tests/test_current_semantic_validation.py tests/test_current_semantic_workbook.py tests/test_current_source_identity.py tests/test_current_validation_execution.py tests/test_current_validation_scope.py tests/test_current_validation_selection.py tools/run_validation_suite.py tools/test_elk_instance_mapping_entailments.py tools/test_full_sosa_closure_hermit.py tools/test_object_property_typing_probes.py tools/test_instance_data.py tools/compare_mappings.py tools/coms_row_identity.py tools/coms_framework_integration.py tools/product_dispositions.py tools/modular_products.py tools/generate_mapping_from_coms.py tools/robot_template_generation_pilot.py tools/robot_property_chain_generation_pilot.py tools/robot_diff_pilot.py tools/robot_extract_pilot.py tools/robot_query_equivalence_pilot.py tools/robot_retained_example_validation_pilot.py tools/robot_verify_pilot.py tools/robot_reconstruction_validation.py tools/validate_robot_reconstruction.py tools/check_coms_mapping.py tools/sosa_source_version.py tools/check_sosa_source_version.py tools/product_role_policy.py tools/check_product_role_policy.py tools/sosa_release_scope.py tools/check_sosa_release_scope.py tools/check_sosa_next_mapping.py tools/generate_sosa_next_products.py tools/check_sosa_next_products.py tools/watch_coms_mapping.py tools/publication_metadata.py tools/check_publication_metadata.py tools/release_context.py tools/release_manifest.py tools/sosa_2023_release_manifest.py tools/sosa_2023_release_runtime.py tools/sosa_2023_build_release.py tools/sosa_2023_check_release.py tools/sosa_2023_release_archive.py tools/sosa_2023_rehearse_release.py tools/build_release.py tools/check_release.py tools/release_archive.py tools/rehearse_release.py tests/test_generate_mapping_from_coms.py tests/test_sosa_source_version.py tests/test_product_role_policy.py tests/test_sosa_release_scope.py tests/test_check_sosa_next_mapping.py tests/test_sosa_next_products.py tests/test_sosa_next_consumer_stack.py tests/test_sosa_2023_publication_metadata.py tests/test_sosa_2023_release_rendering.py tests/test_sosa_2023_release_manifest.py tests/test_sosa_2023_release_runtime.py tests/test_sosa_2023_build_release.py tests/test_sosa_2023_release_archive.py tests/test_sosa_2023_release_rehearsal.py tests/test_robot_template_generation_pilot.py tests/test_robot_property_chain_generation_pilot.py tests/test_robot_diff_pilot.py tests/test_robot_extract_pilot.py tests/test_robot_query_equivalence_pilot.py tests/test_robot_retained_example_validation_pilot.py tests/test_robot_verify_pilot.py tests/test_robot_reconstruction_validation.py tests/test_coms_row_identity.py tests/test_coms_framework_integration.py tests/test_product_dispositions.py tests/test_modular_products.py tests/test_strict_bfo_mapping.py tests/test_cco_extension.py tests/test_bfo_projection.py tests/test_publication_metadata.py tests/test_release_context.py tests/test_release_rendering.py tests/test_release_manifest.py tests/test_release_contract.py tests/test_build_release.py tests/test_release_archive.py tests/test_release_rehearsal.py tests/test_placeholder_catalog_migration.py
+Python compile check: PASS
+
+==> Git whitespace check
+$ git diff --check
+Git whitespace check: PASS
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: PASS
+- Current source/target byte identities: PASS
+- Current assessment inventory and report freshness: PASS
+- COMS row-identity focused tests: PASS
+- COMS framework shadow-integration tests: PASS
+- SOSA source-version authority focused tests: PASS
+- Uniform product-role policy focused tests: PASS
+- SOSA formal package-scope focused tests: PASS
+- Forthcoming SOSA COMS focused tests: PASS
+- SOSA-next maintained-product focused tests: PASS
+- SOSA-next catalog consumer-stack focused tests: PASS
+- SOSA-2023 publication-metadata focused tests: PASS
+- SOSA-2023 formal-rendering focused tests: PASS
+- SOSA-2023 release-manifest focused tests: PASS
+- SOSA-2023 release-package focused tests: PASS
+- SOSA-2023 release-archive focused tests: PASS
+- SOSA-2023 release-rehearsal focused tests: PASS
+- COMS product-disposition focused tests: PASS
+- Alignment-core modular-product focused tests: PASS
+- Strict-BFO modular-product focused tests: PASS
+- CCO-extension modular-product focused tests: PASS
+- BFO-projection role reconciliation focused tests: PASS
+- Publication metadata focused tests: PASS
+- Formal release-context focused tests: PASS
+- Formal ontology-rendering focused tests: PASS
+- Release manifest focused tests: PASS
+- Authenticated current release contract focused tests: PASS
+- Release package build and validation focused tests: PASS
+- Release archive focused tests: PASS
+- Release rehearsal focused tests: PASS
+- Placeholder and catalog migration focused tests: PASS
+- Publication metadata development check: PASS
+- COMS generator focused tests: PASS
+- ROBOT focused tests: PASS
+- Complete ROBOT reconstruction check: PASS
+- COMS workbook freshness and candidate quality check: PASS
+- SOSA source-version authority check: PASS
+- Uniform product-role policy check: PASS
+- SOSA formal package-scope check: PASS
+- Forthcoming SOSA COMS mapping check: PASS
+- SOSA-next maintained-product check: PASS
+- Instance-data smoke test: PASS
+- ELK instance mapping entailment test: PASS
+- Full local SOSA closure HermiT check: PASS
+- Python compile check: PASS
+- Git whitespace check: PASS
+
+Validation suite: PASS
+git diff --check
+git status --short
+ M Makefile
+ M SSN2BFO.ttl
+ M config/release-manifest-schema-v2.json
+ M docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md
+ M docs/VALIDATION-AND-RELEASES.md
+ M mappings/SSN2BFO-COMS.xlsx
+ M mappings/current-ssn-sosa-assessment.json
+ M releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+ M reports/coms-generation-validation.md
+ M reports/coms-product-dispositions.json
+ M reports/coms-source-term-coverage.md
+ M reports/coms-vs-pre-coms-legacy-diff.md
+ M reports/current-ssn-sosa-coverage.json
+ M reports/current-ssn-sosa-coverage.md
+ M reports/current-ssn-sosa-human-review.json
+ M reports/current-ssn-sosa-human-review.md
+ M reports/current-ssn-sosa-rationale-proposals.json
+ M reports/current-ssn-sosa-rationale-proposals.md
+ M tests/test_bfo_projection.py
+ M tests/test_build_release.py
+ M tests/test_cco_extension.py
+ M tests/test_coms_framework_integration.py
+ M tests/test_current_assessment.py
+ M tests/test_current_documentary_decisions.py
+ M tests/test_current_documentary_workbook.py
+ M tests/test_current_identity_reporting.py
+ M tests/test_current_publication_preservation.py
+ M tests/test_current_publication_readiness.py
+ M tests/test_current_semantic_validation.py
+ M tests/test_current_source_identity.py
+ M tests/test_generate_mapping_from_coms.py
+ M tests/test_modular_products.py
+ M tests/test_placeholder_catalog_migration.py
+ M tests/test_product_dispositions.py
+ M tests/test_release_manifest.py
+ M tests/test_release_rehearsal.py
+ M tests/test_release_rendering.py
+ M tests/test_robot_extract_pilot.py
+ M tests/test_robot_property_chain_generation_pilot.py
+ M tests/test_robot_query_equivalence_pilot.py
+ M tests/test_robot_reconstruction_validation.py
+ M tests/test_robot_template_generation_pilot.py
+ M tests/test_sosa_2023_release_archive.py
+ M tests/test_sosa_2023_release_manifest.py
+ M tests/test_sosa_2023_release_rehearsal.py
+ M tests/test_sosa_2023_release_runtime.py
+ M tests/test_strict_bfo_mapping.py
+ M tools/build_release.py
+ M tools/check_coms_mapping.py
+ M tools/check_release.py
+ M tools/current_assessment.py
+ M tools/current_documentary_workbook.py
+ M tools/current_publication_preservation.py
+ M tools/current_publication_readiness.py
+ M tools/current_semantic_validation.py
+ M tools/current_source_identity.py
+ M tools/generate_mapping_from_coms.py
+ M tools/generate_sosa_next_products.py
+ M tools/modular_products.py
+ M tools/rehearse_release.py
+ M tools/release_archive.py
+ M tools/release_context.py
+ M tools/release_manifest.py
+ M tools/robot_property_chain_generation_pilot.py
+ M tools/robot_query_equivalence_pilot.py
+ M tools/robot_reconstruction_validation.py
+ M tools/robot_template_generation_pilot.py
+ M tools/run_validation_suite.py
+ M tools/validate_robot_reconstruction.py
+ M tools/workflow_check.py
+?? docs/CURRENT-RETAINED-EVIDENCE.md
+?? docs/CURRENT-SEMANTIC-WORKBOOK-EVOLUTION.md
+?? docs/CURRENT-VALIDATION-INPUT-SCOPES.md
+?? reports/current-assessment/
+?? reports/current-decision-applicability/
+?? reports/current-human-decisions/2026-10-26-three-term-adjudication/
+?? reports/current-publication-validation/checkpoint-path-resume-20261028/
+?? reports/current-publication-validation/current-evidence.json
+?? reports/current-publication-validation/integration-repairs-20261028/
+?? reports/current-publication-validation/portable-reconciliation-20261028/
+?? reports/current-publication-validation/readiness-reconciliation-20261029/
+?? reports/current-publication-validation/semantic-20261028T154707292811Z/
+?? reports/current-publication-validation/semantic-20261029T210428413149Z/
+?? reports/current-publication-validation/three-term-20261028/
+?? reports/current-publication-validation/v2-migration-20261030/
+?? reports/current-publication-validation/v2-popen-continuation-20261030/
+?? reports/current-semantic-workbook/
+?? reports/retained-evidence/
+?? tests/fixtures/current-release-authority/
+?? tests/release_authority_fixture.py
+?? tests/test_current_checkpoint_successor.py
+?? tests/test_current_cross_track_preservation.py
+?? tests/test_current_custody_dependencies.py
+?? tests/test_current_documentation_policy.py
+?? tests/test_current_evidence_dependency_contract.py
+?? tests/test_current_evidence_freshness.py
+?? tests/test_current_portable_execution_evidence.py
+?? tests/test_current_retained_evidence.py
+?? tests/test_current_retained_evidence_integration.py
+?? tests/test_current_semantic_applicability.py
+?? tests/test_current_semantic_generation.py
+?? tests/test_current_semantic_preservation.py
+?? tests/test_current_semantic_workbook.py
+?? tests/test_current_validation_execution.py
+?? tests/test_current_validation_scope.py
+?? tests/test_current_validation_selection.py
+?? tests/test_release_contract.py
+?? tools/current_checkpoint_successor.py
+?? tools/current_custody_dependencies.py
+?? tools/current_decision_applicability.py
+?? tools/current_portable_execution_evidence.py
+?? tools/current_retained_evidence.py
+?? tools/current_semantic_generation.py
+?? tools/current_semantic_workbook.py
+?? tools/current_validation_execution.py
+?? tools/current_validation_scope.py

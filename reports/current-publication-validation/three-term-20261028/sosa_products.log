@@ -1,0 +1,41 @@
+Governed rows: 119
+Active mappings: 55
+Deferred mappings: 0
+No-direct-mapping decisions: 64
+Unreviewed rows: 0
+Legacy explicitly unmapped aggregate: 64
+Canonical authoritative axioms: 55
+Target categories: {'cco_bearing': 30, 'bfo_bearing': 24, 'mixed_bfo_cco': 1}
+Combined logical triples: 277
+integrated:
+  axioms: 55
+  logical triples: 277
+  total triples: 290
+  SHA-256: 3f502821476478252cdd9feb316b47612daa473e511597970a1351617d5cfc12
+  reasoning closure triples: 15240
+  unsatisfiable classes: 0
+strict_bfo_mapping:
+  axioms: 24
+  logical triples: 154
+  total triples: 162
+  SHA-256: 1ae415bc96940e4007d064102f556aa544593616a0eff984534406028b846efb
+  reasoning closure triples: 15117
+  unsatisfiable classes: 0
+cco_extension:
+  axioms: 31
+  logical triples: 123
+  total triples: 132
+  SHA-256: 53a7cc6c0f664e51bf9f7ac28e3d067fc4fdcc750e22a34fe5c12c766e51dc19
+  reasoning closure triples: 15248
+  unsatisfiable classes: 0
+ro_mapping:
+  axioms: 16
+  governed properties: 82
+  no direct mapping: 66
+  logical triples: 16
+  total triples: 18
+  SHA-256: 1747563c4bba01a0c6b34bd61660a1f0c9026c266cc147991e74bc1d314ac388
+  SKOS mappings: 0
+  reasoning: dedicated SOSA-2023 RO semantic regression
+Maintained products fresh: True
+Summary: PASS

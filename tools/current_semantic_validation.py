@@ -19,6 +19,7 @@ import subprocess
 import sys
 import time
 import current_semantic_invocation as invocation
+import current_portable_execution_evidence as portable_execution
 
 from rdflib import BNode, Graph, OWL, RDF, URIRef
 from rdflib.compare import to_isomorphic
@@ -41,6 +42,9 @@ REPORT_PATH = Path("reports/current-ssn-sosa-semantic-validation.json")
 ROBOT_SHA256 = "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
 INVOCATION_HELPER = Path("tools/current_semantic_invocation.py")
 INVOCATION_TESTS = Path("tests/test_current_semantic_invocation.py")
+CUSTODY_DEPENDENCIES = (Path("tools/current_portable_execution_evidence.py"),
+                        Path("tools/current_retained_evidence.py"),
+                        Path("tests/test_current_portable_execution_evidence.py"))
 # This is a validator contract, never a regime selected by a report field.
 CURRENT_EXECUTION_EVIDENCE_SCHEMA = 2
 HISTORICAL_ARCHIVE_PATH = Path("reports/current-publication-validation/semantic-20261010T190914985446Z/summary.json")
@@ -77,6 +81,7 @@ def command_input_snapshot(root: Path = ROOT) -> list[dict]:
     paths = {*SOURCE_PATHS, *TARGET_PATHS, MAPPING_PATH, WORKBOOK_PATH, IDENTITY_PATH,
              MANIFEST_PATH, FIXTURE_PATH, JAVA_SOURCE, ROBOT_JAR,
              Path("tools/current_semantic_validation.py"), INVOCATION_HELPER, INVOCATION_TESTS,
+             *CUSTODY_DEPENDENCIES,
              Path("config/validation-toolchain.env"),
              *source_examples(root)}
     manifest = json.loads((root / MANIFEST_PATH).read_text())
@@ -205,7 +210,8 @@ def expected_execution_plan(root: Path = ROOT, only_slot: str | None = None) -> 
     return plan
 
 
-def validate_execution_slot(raw: dict, expected: dict, report: dict, root: Path) -> None:
+def validate_execution_slot(raw: dict, expected: dict, report: dict, root: Path,
+                            portable=None) -> None:
     """Check recorded documents/command against an independently required slot."""
     identity, closure = expected["identity"], expected["closure"]
     identifier = identity["id"]
@@ -217,9 +223,11 @@ def validate_execution_slot(raw: dict, expected: dict, report: dict, root: Path)
         raise ValueError("Raw closure/input identity differs from required slot: " + identifier)
     document = raw.get("input_document", {})
     path = Path(document.get("path", ""))
-    if path.name != identifier + ".rdf" or not (root / path).is_file() or fingerprint(path, root) != document:
+    resolved = portable.resolve(document) if portable is not None else root / path
+    if (path.name != identifier + ".rdf" or not resolved.is_file()
+            or (portable is None and fingerprint(path, root) != document)):
         raise ValueError("Required execution graph document missing, changed, or belongs to another slot: " + identifier)
-    if graph_identity(Graph().parse(root / path, format="xml")) != identity["graph_identity"]:
+    if graph_identity(Graph().parse(resolved, format="xml")) != identity["graph_identity"]:
         raise ValueError("Execution graph differs from required closure/input identity: " + identifier)
     command = raw.get("attempt", {}).get("command")
     if command is None:
@@ -229,20 +237,25 @@ def validate_execution_slot(raw: dict, expected: dict, report: dict, root: Path)
     # The raw result cannot choose its build/helper directory. Current runs bind
     # it in the retained compiler command and execution freshness checks.
     build = Path(report.get("toolchain", {}).get("class_directory", ""))
-    if (root / path).parent != build:
+    if ((portable is None and (root / path).parent != build)
+            or (portable is not None and path.parent.as_posix() != portable.logical(str(build)))):
         raise ValueError("Execution graph/build directory differs from compiler provenance: " + identifier)
     expected_command = [shutil.which("java") or "java", "-Xmx4G", "-cp",
                         str(build) + ":" + str(root / ROBOT_JAR), "CurrentSemanticReasoner",
                         str(root / path), identity["command_identity"]["mode"]]
     if identity["queries"]:
         query_path = path.with_suffix(".queries.json")
-        if (raw.get("query_document") != fingerprint(query_path, root)
-                or json.loads((root / query_path).read_text()) != identity["queries"]):
+        query_document = raw.get("query_document")
+        resolved_query = portable.resolve(query_document) if portable is not None else root / query_path
+        if ((portable is None and query_document != fingerprint(query_path, root))
+                or (portable is not None and query_document.get("path") != query_path.as_posix())
+                or json.loads(resolved_query.read_text()) != identity["queries"]):
             raise ValueError("Execution query/test differs from required slot: " + identifier)
         expected_command.append(str(root / query_path))
     elif raw.get("query_document") is not None:
         raise ValueError("Unexpected query document for required slot: " + identifier)
-    if command != expected_command:
+    if ((portable is None and command != expected_command)
+            or (portable is not None and portable.command(command) != portable.command(expected_command))):
         raise ValueError("Execution command/tool/phase differs from required slot: " + identifier)
 
 
@@ -589,7 +602,7 @@ def execution_status(attempt: dict, payload: dict, closure: dict) -> str:
 
 
 def verify_invocation_chain(command: dict, raw: dict, expected: dict, report: dict,
-                            directory: Path, evidence: dict, root: Path) -> None:
+                            directory: Path, evidence: dict, root: Path, portable=None) -> None:
     """Authenticate one selected execution against its ticket and wrapper capture."""
     slot = expected["slot"]
     selected = report.get("selected_invocations", {}).get(slot)
@@ -606,8 +619,14 @@ def verify_invocation_chain(command: dict, raw: dict, expected: dict, report: di
             raise ValueError("Invocation artifact missing or changed: " + label)
         if kind in ("ticket", "capture", "envelope") and refs.get(kind) != binding:
             raise ValueError("Command invocation artifact differs from wrapper evidence: " + label)
-    receipt = invocation.verify_result(root / ticket_path, root=root, expected_slot=slot,
-                                       expected_invocation_id=selected)
+    if portable is None:
+        receipt = invocation.verify_result(root / ticket_path, root=root, expected_slot=slot,
+                                           expected_invocation_id=selected)
+    else:
+        portable.verify_tool(command)
+        receipt = portable.verify_result(root / ticket_path, expected=expected)
+        if receipt["ticket"]["invocation_id"] != selected:
+            raise ValueError("Portable invocation differs from selected identity")
     envelope = receipt["envelope"]
     if command.get("invocation_nonce") != envelope["nonce"] or raw.get("invocation_nonce") != envelope["nonce"]:
         raise ValueError("Mutable invocation nonce differs from ticket and helper envelope: " + slot)
@@ -670,6 +689,7 @@ def reconcile_raw_evidence(report: dict, root: Path = ROOT) -> tuple[dict, list[
     evidence = {item.get("path"): item for item in report.get("evidence_files", [])}
     directory = Path(report.get("evidence_directory", "."))
     try:
+        portable = portable_execution.context(report, root)
         plan = expected_execution_plan(root)
     except (OSError, ValueError, KeyError, TypeError, SyntaxError, ParserError, SAXParseException) as error:
         return derived, ["Cannot construct required semantic execution plan: " + str(error)]
@@ -692,8 +712,12 @@ def reconcile_raw_evidence(report: dict, root: Path = ROOT) -> tuple[dict, list[
             compiler = read_json(directory / "javac.command.json")
             expected_command = [shutil.which("javac") or "javac", "-cp", str(root / ROBOT_JAR),
                                 "-d", toolchain["class_directory"], str(root / JAVA_SOURCE)]
-            if compiler != toolchain.get("command") or compiler.get("command") != expected_command:
+            if (compiler != toolchain.get("command")
+                    or (portable is None and compiler.get("command") != expected_command)
+                    or (portable is not None and portable.command(compiler.get("command")) != portable.command(expected_command))):
                 errors.append("Compiler command/tool identity differs from required execution plan")
+            if portable is not None:
+                portable.verify_tool(compiler)
             if compiler.get("execution_status") != "completed" or compiler.get("returncode") != 0:
                 errors.append("Ready toolchain lacks a successful retained compiler execution")
         except (OSError, ValueError, KeyError, TypeError) as error:
@@ -707,7 +731,7 @@ def reconcile_raw_evidence(report: dict, root: Path = ROOT) -> tuple[dict, list[
         try:
             # Critically, the summary never selects the raw artifact to read.
             raw = read_json(directory / (identifier + ".result.json"))
-            validate_execution_slot(raw, expected, report, root)
+            validate_execution_slot(raw, expected, report, root, portable=portable)
             attempt = raw.get("attempt")
             if attempt is None:
                 # An honest compiler/launch precondition failure has no reasoner command.
@@ -719,7 +743,7 @@ def reconcile_raw_evidence(report: dict, root: Path = ROOT) -> tuple[dict, list[
                 if attempt != command:
                     errors.append("Raw result disagrees with retained command: " + identifier)
                 attempt = command
-                verify_invocation_chain(command, raw, expected, report, directory, evidence, root)
+                verify_invocation_chain(command, raw, expected, report, directory, evidence, root, portable=portable)
                 for channel in ("stdout", "stderr"):
                     binding = command.get(channel, {})
                     label = binding.get("path")
@@ -856,6 +880,7 @@ def validate_publication_execution_bindings(report: dict, root: Path = ROOT) -> 
     # Always enforce the current contract, including when called on its own.
     errors = reconcile_raw_evidence(report, root)[1]
     try:
+        portable = portable_execution.context(report, root)
         expected_head, expected_inputs = git_value("rev-parse", "HEAD"), command_input_snapshot(root)
         if any(item["sha256"] is None for item in expected_inputs):
             errors.append("Required semantic command input is missing; no successful publication evidence is possible")
@@ -879,12 +904,18 @@ def validate_publication_execution_bindings(report: dict, root: Path = ROOT) -> 
                 errors.append("Semantic command did not complete successfully: " + item["path"])
             tool = binding.get("tool", {})
             identity = command.get("command", [])
-            documents = command_document_snapshot(identity, root)
+            documents = (portable.command_documents(identity) if portable is not None
+                         else command_document_snapshot(identity, root))
             if (binding.get("documents_before") != documents or binding.get("documents_after") != documents
                     or ("CurrentSemanticReasoner" in identity and not documents)):
                 errors.append("Semantic command graph/query binding missing or stale: " + item["path"])
             if not identity or tool.get("path") != identity[0] or not tool.get("sha256"):
                 errors.append("Semantic command tool identity missing: " + item["path"])
+            elif portable is not None:
+                try:
+                    portable.verify_tool(command)
+                except (ValueError, OSError) as error:
+                    errors.append("Semantic portable command tool identity differs: " + str(error))
             elif not (root / tool["path"]).is_file() or sha256(root / tool["path"]) != tool["sha256"]:
                 errors.append("Semantic command tool changed: " + item["path"])
             evidence = {entry["path"]: entry for entry in report.get("evidence_files", [])}
@@ -908,6 +939,7 @@ def validate_stored(report: dict, root: Path = ROOT) -> list[str]:
                       Path("tools/current_semantic_validation.py"),
                       Path("tests/test_current_semantic_validation.py"),
                       Path("config/validation-toolchain.env"), *source_examples(root),
+                      *CUSTODY_DEPENDENCIES,
                       INVOCATION_HELPER, INVOCATION_TESTS}
     try:
         manifest = json.loads((root / MANIFEST_PATH).read_text())
@@ -1019,6 +1051,7 @@ def main(argv: list[str] | None = None) -> int:
     java_version = record_command([shutil.which("java") or "java", "-version"], evidence / "java-version")
     paths = (*SOURCE_PATHS, *TARGET_PATHS, MAPPING_PATH, WORKBOOK_PATH, MANIFEST_PATH,
              FIXTURE_PATH, Path(__file__).relative_to(ROOT), INVOCATION_HELPER, INVOCATION_TESTS, JAVA_SOURCE,
+             *CUSTODY_DEPENDENCIES,
              Path("tests/test_current_semantic_validation.py"), Path("config/validation-toolchain.env"))
     if (ROOT / IDENTITY_PATH).exists(): paths += (IDENTITY_PATH,)
     corpus = source_examples()

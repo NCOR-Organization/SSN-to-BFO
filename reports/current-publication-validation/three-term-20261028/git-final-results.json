@@ -1,0 +1,30 @@
+{
+  "git-diff-check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "/private/tmp/ssn-transition-evidence-5hvu4ebc/git-diff-check-final.txt"
+  },
+  "git-diff-stat": {
+    "command": [
+      "git",
+      "diff",
+      "--stat"
+    ],
+    "returncode": 0,
+    "output": "/private/tmp/ssn-transition-evidence-5hvu4ebc/git-diff-stat-final.txt"
+  },
+  "git-status": {
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "returncode": 0,
+    "output": "/private/tmp/ssn-transition-evidence-5hvu4ebc/git-status-final.txt"
+  }
+}

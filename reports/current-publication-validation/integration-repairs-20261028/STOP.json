@@ -1,0 +1,6 @@
+{
+  "authentication_errors": [],
+  "first_failure": "focused_checkpoint",
+  "receipt": "reports/current-publication-validation/integration-repairs-20261028/focused_checkpoint.command.json",
+  "returncode": 1
+}

@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -12,6 +13,11 @@ import current_publication_readiness as readiness
 
 
 class PublicationEvidenceTests(unittest.TestCase):
+    def setUp(self):
+        custody = patch.object(readiness, "native_ledger_errors", return_value=[])
+        custody.start()
+        self.addCleanup(custody.stop)
+
     def test_documentary_custody_evidence_is_part_of_validation_inputs(self):
         baseline = json.loads((readiness.ROOT / readiness.documentary.BASELINE).read_text())
         expected = {readiness.documentary.BASELINE, baseline["historical_workbook"]["path"],
@@ -41,12 +47,16 @@ class PublicationEvidenceTests(unittest.TestCase):
                   "log": "log", "log_sha256": log_hash, "result_artifacts": {"log": log_hash}}
         commands = []
         for name, expected in readiness.REQUIRED_COMMANDS.items():
-            item = {**copy.deepcopy(record), "name": name}
+            item = {**copy.deepcopy(record), "name": name,
+                    "input_scope": {"schema_version": 2, "profile": readiness.scopes.PROFILE, "role": name}}
             executable = str(Path(sys.executable if expected[0] == "python" else shutil.which(expected[0])).resolve())
             item["command"] = [executable, *expected[1:]]
             item["tool_identity"] = {"path": executable, "sha256": readiness.fingerprint(Path(executable))["sha256"]}
+            item.update({field: {} for field in (
+                "expected_execution_tools", "execution_tools_before", "execution_tools_after",
+                "expected_execution_environment", "execution_environment_before", "execution_environment_after")})
             commands.append(item)
-        return {"head": "candidate", "input_sha256": inputs,
+        return {"input_scope_profile": readiness.scopes.PROFILE, "head": "candidate", "input_sha256": inputs,
                 "commands": commands}
 
     def test_current_outer_ledger_cannot_launder_stale_command_evidence(self):
@@ -69,7 +79,12 @@ class PublicationEvidenceTests(unittest.TestCase):
                 "missing result": lambda c: c.update(result_artifacts={"absent": "old"}),
             }
             with patch.object(readiness, "ROOT", root), patch.object(readiness, "git", return_value="candidate"), \
-                 patch.object(readiness, "validation_inputs", return_value={"tool.py"}):
+                 patch.object(readiness.scopes, "execution_tools", return_value={}), \
+                 patch.object(readiness.scopes, "execution_environment", return_value={}), \
+                 patch.object(readiness.scopes, "ledger_inputs", return_value=good["input_sha256"]), \
+                 patch.object(readiness.scopes, "role_inputs", return_value=good["input_sha256"]), \
+                 patch.object(readiness.scopes, "scope_declaration", side_effect=lambda root, role:
+                              {"schema_version": 2, "profile": readiness.scopes.PROFILE, "role": role}):
                 self.assertEqual(readiness.validation_errors(good), [])
                 for attack, mutate in attacks.items():
                     with self.subTest(attack=attack):
@@ -136,6 +151,207 @@ class PublicationEvidenceTests(unittest.TestCase):
             document = {"head": "head", "commands": [{"name": "full_repository_gate", "log": "log", "log_sha256": readiness.fingerprint(root / "log")["sha256"], "returncode": 1}]}
             with patch.object(readiness, "ROOT", root), patch.object(readiness, "git", return_value="head"):
                 self.assertTrue(any("Validation failed: full_repository_gate" in e for e in readiness.validation_errors(document)))
+
+    def selection_fixture(self, root, ledger=None):
+        # These records exercise evidence selection, not semantic approval.
+        payloads = {
+            "reports/current-ssn-sosa-semantic-validation.json": b'{"historical": "semantic"}\n',
+            "reports/current-publication-validation/commands.json": b'{"historical": "commands"}\n',
+            "reports/current-publication-validation/successor/semantic.json":
+                b'{"execution_evidence_schema": 2, "status": "FAIL"}\n',
+            "reports/current-publication-validation/successor/commands.json":
+                (json.dumps(ledger if ledger is not None else {"commands": []}) + "\n").encode(),
+        }
+        for relative, payload in payloads.items():
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(payload)
+
+        def reference(relative):
+            return {"path": relative, "sha256": hashlib.sha256(payloads[relative]).hexdigest()}
+
+        document = {
+            "schema_version": 1,
+            "semantic": reference("reports/current-publication-validation/successor/semantic.json"),
+            "validation": reference("reports/current-publication-validation/successor/commands.json"),
+            "predecessors": {
+                "semantic": reference("reports/current-ssn-sosa-semantic-validation.json"),
+                "validation": reference("reports/current-publication-validation/commands.json"),
+            },
+        }
+        self.write_selector(root, document)
+        return document, payloads
+
+    def write_selector(self, root, document):
+        path = root / readiness.CURRENT_EVIDENCE
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(document) + "\n")
+
+    def test_no_selector_keeps_original_evidence_paths(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            semantic, validation, metadata = readiness.selected_evidence(root)
+            self.assertEqual(semantic, root / "reports/current-ssn-sosa-semantic-validation.json")
+            self.assertEqual(validation, root / "reports/current-publication-validation/commands.json")
+            self.assertEqual(metadata, {"selector": None, "mode": "original_records"})
+            self.assertEqual(list(root.iterdir()), [])
+
+    def test_successor_selection_preserves_all_evidence_bytes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            document, original_bytes = self.selection_fixture(root)
+            selector = root / readiness.CURRENT_EVIDENCE
+            selector_bytes = selector.read_bytes()
+            semantic, validation, metadata = readiness.selected_evidence(root)
+            self.assertEqual(semantic, root / document["semantic"]["path"])
+            self.assertEqual(validation, root / document["validation"]["path"])
+            self.assertEqual(metadata["mode"], "successor_records")
+            self.assertEqual(metadata["predecessors"], document["predecessors"])
+            self.assertEqual(metadata["selector"], {
+                "path": readiness.CURRENT_EVIDENCE.as_posix(),
+                "sha256": hashlib.sha256(selector_bytes).hexdigest(),
+            })
+            self.assertEqual(selector.read_bytes(), selector_bytes)
+            for relative, payload in original_bytes.items():
+                self.assertEqual((root / relative).read_bytes(), payload, relative)
+
+    def test_present_malformed_selector_never_falls_back_to_originals(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            good, _ = self.selection_fixture(root)
+            attacks = {
+                "unknown version": lambda d: d.update(schema_version=2),
+                "boolean version": lambda d: d.update(schema_version=True),
+                "unknown field": lambda d: d.update(allow_stale=True),
+                "missing successor": lambda d: d.pop("semantic"),
+                "missing predecessor": lambda d: d["predecessors"].pop("validation"),
+                "unknown predecessor": lambda d: d["predecessors"].update(other=d["semantic"]),
+                "unknown reference field": lambda d: d["semantic"].update(approved=True),
+                "missing reference hash": lambda d: d["validation"].pop("sha256"),
+                "nonstring hash": lambda d: d["semantic"].update(sha256=1),
+                "nonobject predecessor": lambda d: d.update(predecessors=[]),
+            }
+            for label, mutate in attacks.items():
+                with self.subTest(attack=label):
+                    bad = copy.deepcopy(good)
+                    mutate(bad)
+                    self.write_selector(root, bad)
+                    with self.assertRaises(ValueError):
+                        readiness.selected_evidence(root)
+            for invalid in ("not JSON", "[]", "null"):
+                with self.subTest(document=invalid):
+                    (root / readiness.CURRENT_EVIDENCE).write_text(invalid)
+                    with self.assertRaises(ValueError):
+                        readiness.selected_evidence(root)
+
+    def test_missing_or_changed_successor_and_predecessor_are_rejected(self):
+        for role in ("semantic", "validation"):
+            for historical in (False, True):
+                for mutation in ("missing", "changed"):
+                    with self.subTest(role=role, historical=historical, mutation=mutation), \
+                         tempfile.TemporaryDirectory() as temporary:
+                        root = Path(temporary)
+                        document, _ = self.selection_fixture(root)
+                        reference = document["predecessors"][role] if historical else document[role]
+                        path = root / reference["path"]
+                        if mutation == "missing":
+                            path.unlink()
+                        else:
+                            path.write_bytes(path.read_bytes() + b" ")
+                        with self.assertRaises(ValueError):
+                            readiness.selected_evidence(root)
+
+    def test_selector_rejects_escape_alias_and_historical_substitution(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            good, _ = self.selection_fixture(root)
+            relative = good["semantic"]["path"]
+            attacks = {
+                "absolute path": lambda d: d["semantic"].update(path=str(root / relative)),
+                "parent traversal": lambda d: d["semantic"].update(
+                    path="reports/current-publication-validation/../current-publication-validation/successor/semantic.json"),
+                "dot alias": lambda d: d["semantic"].update(
+                    path="reports/current-publication-validation/./successor/semantic.json"),
+                "outside evidence directory": lambda d: d.update(semantic=copy.deepcopy(d["predecessors"]["semantic"])),
+                "wrong predecessor identity": lambda d: d["predecessors"].update(semantic=copy.deepcopy(d["semantic"])),
+                "historical command substitution": lambda d: d.update(validation=copy.deepcopy(d["predecessors"]["validation"])),
+                "same successor for both roles": lambda d: d.update(validation=copy.deepcopy(d["semantic"])),
+            }
+            for label, mutate in attacks.items():
+                with self.subTest(attack=label):
+                    bad = copy.deepcopy(good)
+                    mutate(bad)
+                    self.write_selector(root, bad)
+                    with self.assertRaises(ValueError):
+                        readiness.selected_evidence(root)
+
+    def test_selector_rejects_symlinked_selector_records_and_parent(self):
+        cases = ("selector", "semantic successor", "validation successor",
+                 "semantic predecessor", "validation predecessor", "successor directory")
+        for case in cases:
+            with self.subTest(case=case), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                document, _ = self.selection_fixture(root)
+                if case == "selector":
+                    path = root / readiness.CURRENT_EVIDENCE
+                elif case == "successor directory":
+                    path = (root / document["semantic"]["path"]).parent
+                else:
+                    role, kind = case.split()
+                    path = root / (document["predecessors"][role] if kind == "predecessor" else document[role])["path"]
+                target = path.with_name(path.name + ".retained")
+                path.rename(target)
+                path.symlink_to(target, target_is_directory=target.is_dir())
+                with self.assertRaises(ValueError):
+                    readiness.selected_evidence(root)
+
+    def test_selected_successor_does_not_waive_stale_command_bindings(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            ledger = self.command_fixture(root)
+            ledger["commands"][0]["input_sha256"]["tool.py"] = "pre-transition"
+            self.selection_fixture(root, ledger)
+            _, selected, _ = readiness.selected_evidence(root)
+            with patch.object(readiness, "ROOT", root), patch.object(readiness, "git", return_value="candidate"), \
+                 patch.object(readiness.scopes, "execution_tools", return_value={}), \
+                 patch.object(readiness.scopes, "execution_environment", return_value={}), \
+                 patch.object(readiness.scopes, "ledger_inputs", return_value=ledger["input_sha256"]), \
+                 patch.object(readiness.scopes, "role_inputs", return_value=ledger["input_sha256"]), \
+                 patch.object(readiness.scopes, "scope_declaration", side_effect=lambda root, role:
+                              {"schema_version": 2, "profile": readiness.scopes.PROFILE, "role": role}):
+                errors = readiness.validation_errors(readiness.read(selected))
+            self.assertTrue(any("Command unit_tests" in error and "stale command inputs" in error
+                                for error in errors), errors)
+
+    def test_selected_partial_ledger_keeps_full_validation_outstanding(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            ledger = self.command_fixture(root)
+            ledger["commands"] = [command for command in ledger["commands"]
+                                  if command["name"] not in {"unit_tests", "full_repository_gate"}]
+            self.selection_fixture(root, ledger)
+            _, selected, _ = readiness.selected_evidence(root)
+            with patch.object(readiness, "ROOT", root), patch.object(readiness, "git", return_value="candidate"), \
+                 patch.object(readiness.scopes, "execution_tools", return_value={}), \
+                 patch.object(readiness.scopes, "execution_environment", return_value={}), \
+                 patch.object(readiness.scopes, "ledger_inputs", return_value=ledger["input_sha256"]), \
+                 patch.object(readiness.scopes, "role_inputs", return_value=ledger["input_sha256"]), \
+                 patch.object(readiness.scopes, "scope_declaration", side_effect=lambda root, role:
+                              {"schema_version": 2, "profile": readiness.scopes.PROFILE, "role": role}):
+                errors = readiness.validation_errors(readiness.read(selected))
+            self.assertCountEqual(errors, ["Required validation not run: unit_tests",
+                                           "Required validation not run: full_repository_gate"])
+
+    def test_selected_semantic_record_still_requires_current_execution_schema(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            document, _ = self.selection_fixture(root)
+            legacy = b'{"schema_version": 1, "status": "PASS"}\n'
+            (root / document["semantic"]["path"]).write_bytes(legacy)
+            document["semantic"]["sha256"] = hashlib.sha256(legacy).hexdigest()
+            self.write_selector(root, document)
+            selected, _, _ = readiness.selected_evidence(root)
+            self.assertTrue(readiness.semantic.current_schema_errors(readiness.read(selected)))
 
 
 if __name__ == "__main__":

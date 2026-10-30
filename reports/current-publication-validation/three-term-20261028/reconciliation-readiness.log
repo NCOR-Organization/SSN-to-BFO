@@ -1,0 +1,40 @@
+CURRENT TRACK NOT YET PUBLICATION READY — HUMAN SEMANTIC REVIEW REQUIRED
+- Complete the 74-term human review queue, retaining explicit decisions and rationale evidence; 0 terms are deferred and 74 unreviewed.
+- Resolve 1 judgment-sensitive rationale proposals before treating them as adequate publication rationales.
+- No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.
+- Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Exact-closure example success is not established for every source example and the separate fixture.
+- Source and target approximate deductive-difference comparisons do not both have a valid PASS result.
+- Human approval of selected positive and negative semantic expectations is outstanding.
+- Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.
+- Required validation not run: full_repository_gate
+- Required validation not run: unit_tests
+- Selected semantic execution evidence is incomplete or unsuccessful; inspect its execution diagnostics. A retained failed or historical attempt cannot certify a successful current semantic execution.
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/aligned-hierarchy.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-aligned.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-source.command.json
+- Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/source-hierarchy.command.json
+- Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.

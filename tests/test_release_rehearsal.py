@@ -193,7 +193,7 @@ def parse_formal_release_context(release_identifier, release_date, git_tag, sour
 MANIFEST_STUB = '''import json
 from types import SimpleNamespace
 ReleaseManifest = SimpleNamespace
-def load_and_validate_release_manifest(source):
+def load_and_validate_release_manifest(source, *, semantic: bool = True):
     return SimpleNamespace(**json.loads(source.read_bytes()))
 '''
 
@@ -278,7 +278,7 @@ class ReleaseRehearsalTests(unittest.TestCase):
         self.mock_resolver = resolver.start()
         self.addCleanup(resolver.stop)
 
-    def manifest_loader(self, path: Path):
+    def manifest_loader(self, path: Path, *, semantic: bool = True):
         return types.SimpleNamespace(**json.loads(path.read_bytes()))
 
     def rehearse(self, command: str = "verify", *, output: Path | None = None, notes: str = NOTES):

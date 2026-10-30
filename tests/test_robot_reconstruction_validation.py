@@ -59,7 +59,7 @@ class RobotReconstructionValidationTests(unittest.TestCase):
             ("sha256:mismatch",),
         )
 
-    def test_governed_workbook_reconstructs_all_103_axioms(self) -> None:
+    def test_governed_workbook_reconstructs_all_current_axioms(self) -> None:
         before = {
             path.relative_to(REPO_ROOT).as_posix(): sha256(path)
             for path in MAINTAINED_PRODUCTS
@@ -93,10 +93,16 @@ class RobotReconstructionValidationTests(unittest.TestCase):
                 self.assertTrue(
                     summary["property_chain_reconstruction_passed"]
                 )
-                self.assertEqual(summary["non_chain_axiom_count"], 100)
-                self.assertEqual(summary["property_chain_axiom_count"], 3)
-                self.assertEqual(summary["expected_axiom_count"], 103)
-                self.assertEqual(summary["actual_axiom_count"], 103)
+                self.assertEqual(summary["authenticated_active_mapping_count"], 100)
+                self.assertEqual(summary["excluded_blank_rows"], 5)
+                self.assertEqual(summary["non_chain_axiom_count"], 98)
+                self.assertEqual(summary["property_chain_axiom_count"], 2)
+                self.assertEqual(summary["expected_axiom_count"], 100)
+                self.assertEqual(summary["actual_axiom_count"], 100)
+                self.assertEqual(summary["non_chain_axiom_count"] + summary["property_chain_axiom_count"],
+                                 summary["actual_axiom_count"])
+                self.assertEqual(summary["actual_axiom_count"] + summary["excluded_blank_rows"],
+                                 summary["governed_row_count"])
                 self.assertEqual(summary["overlapping_axiom_ids"], [])
                 self.assertEqual(summary["missing_axiom_ids"], [])
                 self.assertEqual(summary["extra_axiom_ids"], [])

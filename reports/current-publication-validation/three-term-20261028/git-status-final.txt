@@ -1,0 +1,85 @@
+## publication/current-sosa-readiness
+ M SSN2BFO.ttl
+ M config/release-manifest-schema-v2.json
+ M docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md
+ M docs/VALIDATION-AND-RELEASES.md
+ M mappings/SSN2BFO-COMS.xlsx
+ M mappings/current-ssn-sosa-assessment.json
+ M releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+ M reports/coms-generation-validation.md
+ M reports/coms-product-dispositions.json
+ M reports/coms-source-term-coverage.md
+ M reports/coms-vs-pre-coms-legacy-diff.md
+ M reports/current-ssn-sosa-coverage.json
+ M reports/current-ssn-sosa-coverage.md
+ M reports/current-ssn-sosa-human-review.json
+ M reports/current-ssn-sosa-human-review.md
+ M reports/current-ssn-sosa-rationale-proposals.json
+ M reports/current-ssn-sosa-rationale-proposals.md
+ M tests/test_bfo_projection.py
+ M tests/test_build_release.py
+ M tests/test_cco_extension.py
+ M tests/test_coms_framework_integration.py
+ M tests/test_current_assessment.py
+ M tests/test_current_documentary_decisions.py
+ M tests/test_current_documentary_workbook.py
+ M tests/test_current_identity_reporting.py
+ M tests/test_current_publication_preservation.py
+ M tests/test_current_publication_readiness.py
+ M tests/test_current_source_identity.py
+ M tests/test_generate_mapping_from_coms.py
+ M tests/test_modular_products.py
+ M tests/test_placeholder_catalog_migration.py
+ M tests/test_product_dispositions.py
+ M tests/test_release_manifest.py
+ M tests/test_release_rehearsal.py
+ M tests/test_release_rendering.py
+ M tests/test_robot_extract_pilot.py
+ M tests/test_robot_property_chain_generation_pilot.py
+ M tests/test_robot_query_equivalence_pilot.py
+ M tests/test_robot_reconstruction_validation.py
+ M tests/test_robot_template_generation_pilot.py
+ M tests/test_strict_bfo_mapping.py
+ M tools/build_release.py
+ M tools/check_coms_mapping.py
+ M tools/check_release.py
+ M tools/current_assessment.py
+ M tools/current_documentary_workbook.py
+ M tools/current_publication_preservation.py
+ M tools/current_publication_readiness.py
+ M tools/current_source_identity.py
+ M tools/generate_mapping_from_coms.py
+ M tools/generate_sosa_next_products.py
+ M tools/modular_products.py
+ M tools/rehearse_release.py
+ M tools/release_archive.py
+ M tools/release_context.py
+ M tools/release_manifest.py
+ M tools/robot_property_chain_generation_pilot.py
+ M tools/robot_query_equivalence_pilot.py
+ M tools/robot_reconstruction_validation.py
+ M tools/robot_template_generation_pilot.py
+ M tools/validate_robot_reconstruction.py
+ M tools/workflow_check.py
+?? docs/CURRENT-RETAINED-EVIDENCE.md
+?? docs/CURRENT-SEMANTIC-WORKBOOK-EVOLUTION.md
+?? reports/current-decision-applicability/
+?? reports/current-human-decisions/2026-10-26-three-term-adjudication/
+?? reports/current-publication-validation/current-evidence.json
+?? reports/current-publication-validation/semantic-20261028T154707292811Z/
+?? reports/current-publication-validation/three-term-20261028/
+?? reports/current-semantic-workbook/
+?? reports/retained-evidence/
+?? tests/test_current_cross_track_preservation.py
+?? tests/test_current_evidence_freshness.py
+?? tests/test_current_retained_evidence.py
+?? tests/test_current_retained_evidence_integration.py
+?? tests/test_current_semantic_applicability.py
+?? tests/test_current_semantic_generation.py
+?? tests/test_current_semantic_preservation.py
+?? tests/test_current_semantic_workbook.py
+?? tests/test_release_contract.py
+?? tools/current_decision_applicability.py
+?? tools/current_retained_evidence.py
+?? tools/current_semantic_generation.py
+?? tools/current_semantic_workbook.py

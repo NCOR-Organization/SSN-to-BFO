@@ -15,6 +15,7 @@ from openpyxl import load_workbook
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import current_documentary_workbook as guard
+import current_semantic_workbook as semantic
 
 
 class DocumentaryWorkbookTests(unittest.TestCase):
@@ -85,14 +86,15 @@ class DocumentaryWorkbookTests(unittest.TestCase):
         self.assertEqual(self.validate().read_bytes(), self.original)
 
     def test_maintained_live_workbook_resolves_to_immutable_decision_snapshot(self):
-        # Exercise the actual installed chain separately from the isolated
+        # Exercise the actual mixed history separately from the isolated
         # historical scenarios; an unrecorded live edit must still fail.
         historical = self.baseline["historical_workbook"]
-        snapshot = guard.validate_workbook_evolution(ROOT, historical["sha256"])
+        snapshot = semantic.validate_workbook_evolution(ROOT, historical["sha256"])
         self.assertEqual(snapshot, ROOT / historical["path"])
         self.assertEqual(guard.digest(snapshot.read_bytes()), historical["sha256"])
+        self.assertEqual(guard.semantic_projection_sha256(snapshot), historical["semantic_projection_sha256"])
         self.assertEqual(guard.semantic_projection_sha256(ROOT / guard.WORKBOOK),
-                         historical["semantic_projection_sha256"])
+                         "566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44")
 
     def test_one_unrelated_reasoning_cell_passes_without_editing_live(self):
         edits = [("Sheet1", "D13", "Documentary description from retained evidence.")]

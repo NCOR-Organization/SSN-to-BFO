@@ -2,6 +2,7 @@ import copy
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -12,6 +13,10 @@ from openpyxl import load_workbook
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import current_publication_preservation as preservation
 import current_documentary_workbook as documentary
+import current_decision_applicability as applicability
+import current_retained_evidence as retained
+import current_semantic_workbook as semantic
+import current_source_identity as identity
 from current_source_identity import fingerprint
 
 
@@ -21,7 +26,25 @@ class CurrentPreservationTests(unittest.TestCase):
         # Start with the independently retained baseline, not a new checker-
         # generated fixture. Git objects supply a separate expected authority.
         cls.baseline = json.loads(preservation.BASELINE.read_text())
-        cls.protected = {path for paths in preservation.protected_groups().values() for path in paths}
+        groups = preservation.protected_groups()
+        cls.protected = {path for paths in groups.values() for path in paths}
+        historical = preservation.trusted_tree(preservation.ROOT, preservation.EXPECTED_BASELINE_HEAD)
+        cls.historical_bytes = {}
+        for relative in cls.protected:
+            head = (preservation.EXPECTED_BASELINE_HEAD if relative in historical
+                    else identity.ACCEPTED_CHECKPOINT_HEAD)
+            cls.historical_bytes[relative] = subprocess.check_output([
+                "git", "-C", str(preservation.ROOT), "show", f"{head}:{relative}"])
+        # Dependency discovery does not enlarge the immutable protection set.
+        cls.current_paths = {
+            *cls.protected, identity.WORKBOOK, preservation.ASSESSMENT,
+            *identity.CONFIGURATION, *semantic.SOURCE_TARGET_SHA256,
+            *semantic.GOVERNED_INPUT_SHA256, *semantic.evidence_paths(preservation.ROOT),
+            *applicability.evidence_paths(preservation.ROOT),
+        }
+        for relative in groups["historical_authorities"]:
+            cls.current_paths.update(retained.evidence_paths(
+                preservation.ROOT, relative, historical[relative]["sha256"]))
 
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
@@ -30,16 +53,20 @@ class CurrentPreservationTests(unittest.TestCase):
         # Read-only access to the real immutable object database; test mutations
         # go exclusively into copied candidate files and JSON dictionaries.
         (self.root / ".git").symlink_to(preservation.ROOT / ".git", target_is_directory=True)
-        for relative in self.protected:
+        # Historical unit scenarios use exact original protected bytes and
+        # additive checkpoint custody, not live post-transition artifacts.
+        for relative, data in self.historical_bytes.items():
+            path = self.root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+        self.baseline = copy.deepcopy(type(self).baseline)
+
+    def install_current_state(self):
+        """Copy the governed current state and its complete authentication closure."""
+        for relative in self.current_paths:
             path = self.root / relative
             path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(preservation.ROOT / relative, path)
-        # These fixtures test the pinned Git baseline and isolated transitions
-        # from it, rather than inheriting the maintained live documentary chain.
-        documentary_baseline = json.loads((preservation.ROOT / documentary.BASELINE).read_text())
-        shutil.copyfile(preservation.ROOT / documentary_baseline["historical_workbook"]["path"],
-                        self.root / preservation.WORKBOOK)
-        self.baseline = copy.deepcopy(type(self).baseline)
 
     def check(self):
         return preservation.preservation(self.root, self.baseline)
@@ -95,9 +122,19 @@ class CurrentPreservationTests(unittest.TestCase):
                 self.assertTrue(any("extra protected path" in error for error in result["errors"]))
 
     def test_candidate_publication_evidence_is_not_historical_protected_content(self):
-        path = self.root / "reports/new-publication-evidence.json"
+        self.install_current_state()
+        before = self.check()
+        self.assertEqual(before["status"], "PASS", before["errors"])
+        relative = "reports/new-publication-evidence.json"
+        path = self.root / relative
         path.write_text('{"status": "blocked"}\n')
-        self.assertEqual(self.check()["status"], "PASS")
+        result = self.check()
+        self.assertEqual(result["status"], "PASS", result["errors"])
+        self.assertTrue(path.is_file())
+        self.assertEqual(result["groups"], before["groups"])
+        self.assertNotIn(relative, self.protected)
+        for group in result["groups"].values():
+            self.assertNotIn(relative, group["expected_sha256"])
 
     def test_mutable_repository_heads_cannot_change_trust_root(self):
         for location in (self.baseline, self.baseline["external_coms"]):
@@ -166,14 +203,23 @@ class CurrentPreservationTests(unittest.TestCase):
         self.assertIn("differs from trusted Git blob", result["documentary_workbook_evolution"]["error"])
 
     def test_real_documentary_chain_and_forged_manifest_integration(self):
+        # The accepted checkpoint's existing documentary records are now
+        # immutable protected evidence. Extend their tail instead of inventing
+        # a competing history from the original workbook.
+        self.install_current_state()
         historical = self.documentary_candidate()
-        documentary_baseline = json.loads((preservation.ROOT / documentary.BASELINE).read_text())
-        paths = {documentary.BASELINE, documentary_baseline["historical_workbook"]["path"],
-                 *(ref["path"] for ref in documentary_baseline["immutable_evidence"])}
-        for relative in paths:
-            destination = self.root / relative
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(preservation.ROOT / relative, destination)
+        current = self.root / preservation.WORKBOOK
+        old_book = load_workbook(historical, read_only=True)
+        new_book = load_workbook(current, read_only=True)
+        try:
+            self.assertNotEqual(old_book["Sheet1"]["D4"].value,
+                                new_book["Sheet1"]["D4"].value)
+        finally:
+            old_book.close()
+            new_book.close()
+        self.assertNotEqual(fingerprint(historical)["sha256"], fingerprint(current)["sha256"])
+        self.assertEqual(documentary.semantic_projection_sha256(historical),
+                         documentary.semantic_projection_sha256(current))
         evidence_path = "imports/sosa.ttl"
         transition = documentary.create_update(
             self.root, historical, self.root / preservation.WORKBOOK,
@@ -184,6 +230,14 @@ class CurrentPreservationTests(unittest.TestCase):
         result = self.check()
         self.assertEqual(result["status"], "PASS", result["errors"])
         self.assertEqual(result["documentary_workbook_evolution"]["status"], "VALIDATED")
+        custody = result["assessment_row_id_evolution"]
+        self.assertEqual(custody["status"], "VALIDATED")
+        self.assertIn("http://www.w3.org/ns/ssn/systems/MeasurementRange",
+                      {item["source_iri"] for item in custody["new_human_decisions"]})
+        print("D4 documentary integration: D4 changed; full workbook SHA changed; "
+              "semantic projection unchanged; documentary transition authenticated; "
+              "MeasurementRange sufficiency evidence current; assessment custody authenticated.",
+              flush=True)
         forged = json.loads(transition.read_text())
         forged["changes"] = []
         transition.write_bytes(documentary.canonical_bytes(forged))

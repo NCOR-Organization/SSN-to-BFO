@@ -1,0 +1,11 @@
+{
+  "stage": "current-publication-readiness",
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "tools/current_publication_readiness.py"
+  ],
+  "exit_code": 1,
+  "seconds": 115.5,
+  "log": "/private/tmp/ssn-transition-evidence-5hvu4ebc/current-publication-readiness.log"
+}

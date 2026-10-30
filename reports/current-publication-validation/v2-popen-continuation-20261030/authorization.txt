@@ -1,0 +1,170 @@
+# Fix canonical Popen test compatibility and finish v2 migration
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch: `publication/current-sosa-readiness`
+
+HEAD: `dc314460fe3e875ba1c8ccfcb3c6840a7181e733`
+
+## Objective
+
+Resolve the single known canonical regression-test error, then complete the already-designed v2 migration.
+
+**Do not redesign infrastructure or reopen semantic decisions.**
+
+This run explicitly authorizes a new continuation after the previous STOP. Preserve the original STOP, receipts, logs and historical evidence unchanged.
+
+Do not stage, commit, tag or push.
+
+## 1. Diagnose and repair the single failure
+
+The latest `make check` failed because a test accesses:
+
+`subprocess.Popen.wait`
+
+but the canonical validation runner wraps `subprocess.Popen` as a function.
+
+Inspect the failing test, wrapper and relevant test fixtures.
+
+Determine whether the problem is:
+
+- an invalid assumption in the test about `Popen` being a class;
+- an incorrect test-runner wrapper;
+- or their interaction.
+
+Apply the smallest correct repair.
+
+Prefer correcting the test's mocking/inspection approach if it can exercise the same real behavior without relying on the global `Popen` class identity.
+
+Do not weaken its assertions or skip the test.
+
+Do not modify production process-handling semantics unless genuinely necessary.
+
+## 2. Validate the correction narrowly
+
+Run the previously failing test:
+
+1. Directly, without the canonical wrapper.
+2. Through the same wrapper/instrumentation used by `make check`.
+
+Both must pass.
+
+Also verify that the test still detects the failure condition it was originally designed to detect.
+
+Stop if the isolated repair fails.
+
+## 3. Reestablish the final v2 input state
+
+Because changing test code may change governed validation inputs:
+
+- inspect which v2 role-specific input maps changed;
+- retain historical receipts as authentic records of their original inputs;
+- do not relabel old receipts as current;
+- regenerate assessment successors only if their authenticated dependencies changed;
+- verify the 27 newly retained RDF objects and manifest remain valid;
+- finalize all governed inputs before issuing new execution receipts.
+
+Do not regenerate the RDF objects or rerun semantic execution unnecessarily.
+
+## 4. Complete the eight-role migration
+
+Using the implemented v2-native recorder, execute the required roles against the finalized input state.
+
+All eight must produce authentic PASS receipts:
+
+- unit_tests
+- assessment
+- source_identity
+- generation_freshness
+- sosa_source_version
+- sosa_products
+- static_checks
+- full_repository_gate
+
+Run the real `make check` and `make compile` where required.
+
+Do not fabricate or reconstruct PASS outcomes.
+
+If a role fails unexpectedly, preserve its receipt and stop.
+
+## 5. Authenticate semantic evidence
+
+Use the already completed semantic execution.
+
+Confirm:
+
+- 29 child executions completed;
+- 27 result slots are present;
+- its RDF outputs authenticate through portable custody;
+- the semantic outcome remains FAIL;
+- the known import/profile failures remain recorded.
+
+Do not rerun semantic execution merely to obtain a PASS.
+
+## 6. Activate selection and evaluate readiness
+
+Once all eight PASS receipts and the completed semantic FAIL authenticate:
+
+- activate the explicit current v2 evidence selection;
+- preserve the previous selector and historical records;
+- run publication readiness fresh.
+
+Classify diagnostics as:
+
+**Class A:** missing, stale, inapplicable or invalid evidence infrastructure.
+
+**Class B:** outstanding substantive semantic, review, reasoning, approval or environment requirements.
+
+Required infrastructure completion condition:
+
+**Zero transition-related Class A blockers.**
+
+Publication may remain NOT_READY because of Class B blockers.
+
+Do not change publication acceptance criteria.
+
+## 7. Final preservation and commit preparation
+
+Verify unchanged:
+
+- all six previously pinned semantic/product hashes;
+- 105 workbook rows, 100 active mappings, five blanks;
+- exactly three removals and zero additions;
+- 17 final and 74 unresolved assessments;
+- all RowIDs;
+- all 49 governed SOSA-2023 paths;
+- all historical receipts and STOP records;
+- all original retained objects.
+
+Run `git diff --check`.
+
+Prepare a precise staging inventory excluding the existing 61 unrelated/temporary paths.
+
+Do not stage or commit yet.
+
+## Final report
+
+Provide:
+
+1. Exact test/wrapper failure and minimal correction.
+2. Isolated test results in both execution environments.
+3. Final v2 assessment freshness.
+4. Eight-role execution results.
+5. Portable RDF custody result.
+6. Semantic FAIL authentication.
+7. Selected evidence identity.
+8. Fresh Class A and Class B counts.
+9. Confirmation that publication remains NOT_READY for substantive reasons.
+10. Semantic/product and historical preservation checks.
+11. Exact staging inventory and recommended commit sequence.
+12. Final Git status.
+
+If the migration completes, end:
+
+`V2 INFRASTRUCTURE MIGRATION COMPLETE — READY FOR CONTROLLED COMMIT — SEMANTIC REVIEW REMAINS OUTSTANDING`
+
+If another substantial architectural defect is discovered, stop and report it without launching a new redesign.
+
+End:
+
+`V2 MIGRATION BLOCKED — INFRASTRUCTURE SCOPE FROZEN FOR REVIEW`

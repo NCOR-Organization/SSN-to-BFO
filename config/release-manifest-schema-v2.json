@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/BFO-Mappings/SSN-to-BFO/blob/main/config/release-manifest-schema-v2.json",
-  "title": "SSN-to-BFO release manifest schema version 1",
+  "title": "SSN-to-BFO release manifest schema version 2",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -902,9 +902,6 @@
                   "properties": {
                     "product_key": {
                       "const": "integrated"
-                    },
-                    "fixed_closure_triple_count": {
-                      "const": 15907
                     }
                   }
                 }
@@ -919,9 +916,6 @@
                   "properties": {
                     "product_key": {
                       "const": "alignment_core"
-                    },
-                    "fixed_closure_triple_count": {
-                      "const": 1217
                     }
                   }
                 }
@@ -936,9 +930,6 @@
                   "properties": {
                     "product_key": {
                       "const": "strict_bfo_mapping"
-                    },
-                    "fixed_closure_triple_count": {
-                      "const": 14994
                     }
                   }
                 }
@@ -953,9 +944,6 @@
                   "properties": {
                     "product_key": {
                       "const": "cco_extension"
-                    },
-                    "fixed_closure_triple_count": {
-                      "const": 15929
                     }
                   }
                 }

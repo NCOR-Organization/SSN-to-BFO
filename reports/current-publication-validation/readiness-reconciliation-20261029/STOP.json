@@ -1,0 +1,9 @@
+{
+  "authentication_errors": [],
+  "first_failure": "semantic_execution",
+  "receipt": {
+    "path": "reports/current-publication-validation/readiness-reconciliation-20261029/semantic_execution.command.json",
+    "sha256": "71ca7e0d675e1df8b0fbec59e0dbd6e92b28b1c5f46bb4e802ccd4c3756142c2"
+  },
+  "returncode": 1
+}

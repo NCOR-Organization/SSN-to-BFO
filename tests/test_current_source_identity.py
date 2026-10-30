@@ -1,6 +1,7 @@
 import copy
 import json
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -100,21 +101,31 @@ class CurrentIdentityTests(unittest.TestCase):
 
     @contextmanager
     def documentary_candidate(self):
-        """Copied authorities only; the real workbook is never edited."""
+        """Coherent historical products and a documentary-only candidate."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root / ".git").symlink_to(identity.ROOT / ".git", target_is_directory=True)
-            paths = {identity.WORKBOOK, *identity.SOURCES, *identity.TARGETS,
-                     *identity.PRODUCTS, *identity.CONFIGURATION}
+            baseline = json.loads((identity.ROOT / documentary.BASELINE).read_text())
+            paths = {*identity.SOURCES, *identity.TARGETS, *identity.CONFIGURATION,
+                     documentary.BASELINE, baseline["historical_workbook"]["path"],
+                     *(ref["path"] for ref in baseline["immutable_evidence"])}
             for relative in paths:
                 destination = root / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(identity.ROOT / relative, destination)
+            # D-only workbook edits retain the original product bytes; live
+            # products may now belong to a later semantic transition.
+            for relative in identity.PRODUCTS:
+                destination = root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(subprocess.check_output([
+                    "git", "-C", str(identity.ROOT), "show",
+                    f"{identity.IDENTITY_BASELINE_HEAD}:{relative}"]))
             historical = root / "historical-workbook.xlsx"
-            baseline = json.loads((identity.ROOT / documentary.BASELINE).read_text())
             # The configured identity belongs to this retained historical
             # workbook, not to any later documented live version.
-            shutil.copyfile(identity.ROOT / baseline["historical_workbook"]["path"], historical)
+            shutil.copyfile(root / baseline["historical_workbook"]["path"], historical)
+            (root / identity.WORKBOOK).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(historical, root / identity.WORKBOOK)
             book = load_workbook(root / identity.WORKBOOK)
             book["Sheet1"]["D4"] = "Documentary fixture, with no semantic cell change."
@@ -151,13 +162,6 @@ class CurrentIdentityTests(unittest.TestCase):
 
     def test_real_documentary_chain_and_forged_manifest_integration(self):
         with self.documentary_candidate() as (root, historical):
-            baseline = json.loads((identity.ROOT / documentary.BASELINE).read_text())
-            paths = {documentary.BASELINE, baseline["historical_workbook"]["path"],
-                     *(ref["path"] for ref in baseline["immutable_evidence"])}
-            for relative in paths:
-                destination = root / relative
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(identity.ROOT / relative, destination)
             evidence_path = "imports/sosa.ttl"
             transition = documentary.create_update(
                 root, historical, root / identity.WORKBOOK,
@@ -166,6 +170,13 @@ class CurrentIdentityTests(unittest.TestCase):
                                 "reference": "Test fixture evidence for documentary-only evolution"}]},
                 editor_identity="Integration test fixture")
             self.assertEqual(identity.check_record(self.document, root), [])
+            baseline_path = root / documentary.BASELINE
+            original_baseline = baseline_path.read_bytes()
+            baseline_path.unlink()
+            errors = identity.check_record(self.document, root)
+            self.assertTrue(any("byte identity drift" in error and documentary.BASELINE in error
+                                for error in errors))
+            baseline_path.write_bytes(original_baseline)
             forged = json.loads(transition.read_text())
             forged["changes"] = []
             transition.write_bytes(documentary.canonical_bytes(forged))

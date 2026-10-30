@@ -1,0 +1,19 @@
+.....F
+======================================================================
+FAIL: test_fresh_checkout_without_execution_tree_reconciles_original_fail (tests.test_current_portable_execution_evidence.PortableExecutionEvidenceTests.test_fresh_checkout_without_execution_tree_reconciles_original_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_current_portable_execution_evidence.py", line 109, in test_fresh_checkout_without_execution_tree_reconciles_original_fail
+    self.assertEqual(errors, [])
+AssertionError: Lists differ: ['Cannot reconcile semantic execution sour[1257 chars]nce'] != []
+
+First list contains 12 additional elements.
+First extra element 0:
+'Cannot reconcile semantic execution source-hierarchy: execution path is outside the recorded/current checkout'
+
+Diff is 1411 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.874s
+
+FAILED (failures=1)

@@ -1,0 +1,36 @@
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+........................................................................................................................................................................D4 documentary integration: D4 changed; full workbook SHA changed; semantic projection unchanged; documentary transition authenticated; MeasurementRange sufficiency evidence current; assessment custody authenticated.
+................................................................................................................................................................................................................................................................E...................................
+======================================================================
+ERROR: test_parent_interruption_terminates_real_owned_child_and_is_not_completed (test_current_validation_execution.NativeExecutionTests.test_parent_interruption_terminates_real_owned_child_and_is_not_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_current_validation_execution.py", line 164, in test_parent_interruption_terminates_real_owned_child_and_is_not_completed
+    original_wait = subprocess.Popen.wait
+                    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'wait'
+
+----------------------------------------------------------------------
+Ran 460 tests in 1221.414s
+
+FAILED (errors=1)
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: FAIL (1)
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: FAIL
+
+Validation suite: FAIL (1 failed step)
+make: *** [validate] Error 1

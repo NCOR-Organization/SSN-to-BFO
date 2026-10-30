@@ -1,0 +1,89 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+  },
+  "assessment_outcome": "inheritance_sufficient",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json",
+    "record_sha256": "f6bc6159625abbe7d48e63ad329ee35efd9e3ae8a15ff09a0b23990a6591f38d",
+    "sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689"
+  },
+  "authority_scope": "New explicit human decision after fresh semantic adjudication. Agreement with historical July dispositions is corroborative only and is not authority for this transition.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "decision_basis": "inheritance_sufficiency",
+  "decision_date": "2026-10-26",
+  "decision_id": "urn:uuid:1eac024f-ed28-4815-8942-d6ba366a706a",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!45",
+    "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty",
+    "imports/cco.ttl",
+    "reports/system-property-process-profile-scope-review.md",
+    "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+    "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json"
+  ],
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": true,
+    "inherited_routes": [
+      {
+        "inverse_target_expression": false,
+        "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+        "source_path": [
+          "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+        ],
+        "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+        "via_source": "http://www.w3.org/ns/ssn/Property"
+      }
+    ],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "11bc0f60d039fa38c9876294a6d8c72c62b49acaa222c018df6cbc085dfd372d",
+  "formal_mapping_assertions": [],
+  "inheritance_sufficiency_evidence": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json",
+    "sha256": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3"
+  },
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+  ],
+  "no_additional_direct_mapping_required": true,
+  "question_response": "Finalize inheritance_sufficient. `ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+  "rationale": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+  "review_packet_scope": "Reconstructed approved-candidate packet using the retained unresolved assessment question and the exact approved workbook state. This is not represented as a packet that existed before human adjudication.",
+  "review_packet_snapshot": {
+    "item_sha256": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json",
+    "sha256": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4"
+  },
+  "review_question": "Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?",
+  "review_state": "final",
+  "review_timestamp": "2026-10-26T06:46:36+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "schema_version": 1,
+  "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+  "timestamp_scope": "Encoding timestamp for the explicit human adjudication dated 2026-10-26; not an inferred historical review timestamp."
+}

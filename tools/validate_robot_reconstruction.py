@@ -86,11 +86,12 @@ def run_validation(
     passed = (
         bool(template_summary["passed"])
         and bool(property_chain_summary["passed"])
-        and len(governed.processed_rows) == 105
-        and len(template_actual) == 100
-        and len(property_chain_actual) == 3
-        and len(expected) == 103
-        and len(actual) == 103
+        and len(governed.processed_rows) == governed.row_count
+        and len(template_actual) == governed.non_chain_count
+        and len(property_chain_actual) == governed.property_chain_count
+        and len(expected) == governed.active_count
+        and len(actual) == governed.active_count
+        and len(actual) + governed.blank_count == governed.row_count
         and not overlap
         and comparison.passed
     )
@@ -99,6 +100,8 @@ def run_validation(
         "passed": passed,
         "workbook": str(workbook_path),
         "governed_row_count": len(governed.processed_rows),
+        "authenticated_active_mapping_count": governed.active_count,
+        "excluded_blank_rows": governed.blank_count,
         "non_chain_reconstruction_passed": bool(
             template_summary["passed"]
         ),

@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 
 from rdflib import BNode, Graph, RDF, RDFS, OWL, URIRef
@@ -20,8 +21,20 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import generate_mapping_from_coms as coms  # noqa: E402
 import modular_products as modular  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
 from coms_row_identity import RowLocation  # noqa: E402
-from product_dispositions import ProductDisposition, load_disposition_document  # noqa: E402
+from current_semantic_generation import (  # noqa: E402
+    expected_count,
+    generated_expectations_context,
+    selection_policy,
+)
+from product_dispositions import (  # noqa: E402
+    PRODUCT_ROLE_ORDER,
+    ProductDisposition,
+    classify_target_category,
+    derive_product_dispositions,
+    load_disposition_document,
+)
 from publication_metadata import (  # noqa: E402
     load_metadata,
     ontology_metadata_rdf_triples,
@@ -84,6 +97,9 @@ EXPECTED_AXIOM_IDS = frozenset(
 class StrictBfoMappingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.enterClassContext(generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ))
         rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
         cls.processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
         cls.canonical_rows = tuple(
@@ -157,6 +173,7 @@ class StrictBfoMappingTests(unittest.TestCase):
         counts = {"provided_through_import": 0, "deferred": 0, "emitted_unchanged": 0}
         zero_axiom_rows = 0
         for row in self.disposition.rows:
+            self.assertLessEqual(len(row.authoritative_axioms), 1)
             if not row.authoritative_axioms:
                 zero_axiom_rows += 1
                 continue
@@ -164,15 +181,91 @@ class StrictBfoMappingTests(unittest.TestCase):
                 "strict_bfo_mapping"
             ]
             counts[disposition.status] += 1
-        self.assertEqual(zero_axiom_rows, 2)
+        expected = Counter()
+        policy = selection_policy("strict_bfo_mapping", modular.PRODUCT_SELECTION["strict_bfo_mapping"])
+        for _, status, _, count in policy.expected_disposition_totals:
+            expected[status] += count
+        self.assertEqual(zero_axiom_rows, expected_count("ZERO_AXIOM_ROW_COUNT", 2))
+        self.assertEqual(counts, expected)
+        # Independently processed workbook rows constrain the report totals.
+        self.assertEqual(zero_axiom_rows, sum(not audit.authoritative_axioms for audit in self.audits))
+        self.assertEqual(sum(counts.values()), sum(len(audit.authoritative_axioms) for audit in self.audits))
+        self.assertEqual(sum(counts.values()), expected_count("AUTHORITATIVE_AXIOM_COUNT", 103))
+        self.assertEqual(len(self.canonical_rows), expected_count("GOVERNED_ROW_COUNT", 105))
+        self.assertEqual(sum(counts.values()) + zero_axiom_rows, len(self.canonical_rows))
+        self.assertEqual(counts["emitted_unchanged"], len(self.strict_selected))
+        self.assertEqual(counts["provided_through_import"], len(self.core_selected))
+
+    def test_three_authorized_blanks_remove_only_non_strict_axioms(self) -> None:
+        history = semantic.resolve_history(REPO_ROOT)
+        transition = [record for record in history["chain"] if record["kind"] == "semantic"][-1]
+        self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+        old_path = semantic.snapshot(REPO_ROOT, transition["old_workbook_sha256"])
+        rows, stats = coms.read_workbook(old_path)
+        baseline = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+
+        def workbook_policy(processed):
+            blanks = set()
+            members = {status: {} for status in ("provided_through_import", "deferred", "emitted_unchanged")}
+            for processed_row in processed:
+                row = coms.disposition_input_for_processed_row(processed_row)
+                self.assertLessEqual(len(row.authoritative_axioms), 1)
+                if not row.authoritative_axioms:
+                    self.assertIsNone(row.predicate_lexical)
+                    self.assertIsNone(row.authoritative_target_lexical)
+                    blanks.add(row.row_id)
+                for axiom in row.authoritative_axioms:
+                    category = classify_target_category(axiom)
+                    disposition = dict(derive_product_dispositions(category, PRODUCT_ROLE_ORDER))["strict_bfo_mapping"]
+                    if disposition.status == "deferred":
+                        # Product policy deferral, separate from human assessment state.
+                        self.assertIn(category, {"cco_bearing", "mixed_bfo_cco"})
+                        self.assertEqual(disposition.reason_code, "NO_APPROVED_TRANSFORMATION_RULE")
+                    members[disposition.status][row.row_id] = "sha256:" + axiom.identity.sha256
+            return blanks, members
+
+        before_blanks, before = workbook_policy(baseline)
+        after_blanks, after = workbook_policy(self.processed)
+        cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
+        self.assertEqual(len(cleared), 3)
+        self.assertEqual(len(before_blanks), 2)
+        self.assertEqual(after_blanks - before_blanks, cleared)
+        self.assertEqual(before_blanks - after_blanks, set())
+        self.assertEqual(len(after_blanks), len(before_blanks) + len(cleared))
+        subjects = {row.row_id: row.subject_iri for row in self.canonical_rows}
         self.assertEqual(
-            counts,
-            {
-                "provided_through_import": 29,
-                "deferred": 55,
-                "emitted_unchanged": 19,
-            },
+            {subjects[row_id] for row_id in cleared},
+            {"http://www.w3.org/ns/ssn/forProperty",
+             "http://www.w3.org/ns/ssn/systems/SystemProperty",
+             "http://www.w3.org/ns/ssn/systems/MeasurementRange"},
         )
+        self.assertEqual(set(before["deferred"]) - set(after["deferred"]), cleared)
+        self.assertEqual(set(after["deferred"]) - set(before["deferred"]), set())
+        self.assertEqual(
+            {row_id: axiom_id for row_id, axiom_id in before["deferred"].items() if row_id not in cleared},
+            after["deferred"],
+        )
+        self.assertEqual(len(before["deferred"]), 55)
+        self.assertEqual(len(after["deferred"]), len(before["deferred"]) - len(cleared))
+        self.assertFalse(cleared & EXPECTED_ROW_IDS)
+        for phase, processed, blanks, members in (
+            ("before", baseline, before_blanks, before),
+            ("after", self.processed, after_blanks, after),
+        ):
+            expected = transition["generation_expectations"][phase]
+            counts = expected["counts"]
+            self.assertEqual(len(processed), counts["GOVERNED_ROW_COUNT"])
+            self.assertEqual(len(blanks), counts["ZERO_AXIOM_ROW_COUNT"])
+            self.assertEqual(sum(map(len, members.values())), counts["AUTHORITATIVE_AXIOM_COUNT"])
+            expected_statuses = Counter()
+            for item in expected["disposition_counts"]["strict_bfo_mapping"]:
+                expected_statuses[item["status"]] += item["count"]
+            self.assertEqual({status: len(values) for status, values in members.items()}, expected_statuses)
+            self.assertEqual(len(members["emitted_unchanged"]), 19)
+            self.assertEqual(set(members["emitted_unchanged"]), EXPECTED_ROW_IDS)
+            self.assertEqual(set(members["emitted_unchanged"].values()), EXPECTED_AXIOM_IDS)
+        self.assertEqual(before["emitted_unchanged"], after["emitted_unchanged"])
+        self.assertEqual(before["provided_through_import"], after["provided_through_import"])
 
     def test_wrong_disposition_category_and_prohibited_direct_selection_fail(self) -> None:
         cases = []
@@ -443,19 +536,21 @@ class StrictBfoMappingTests(unittest.TestCase):
             "from product_dispositions import load_disposition_document; "
             "from publication_metadata import load_metadata; "
             "from modular_products import select_product_axioms,build_strict_bfo_mapping; "
+            "from current_semantic_generation import generated_expectations_context; "
             "r,s=g.read_workbook(Path('mappings/SSN2BFO-COMS.xlsx')); "
             "p=g.validate_and_process_rows(r,g.Resolver(),s); "
             "c=[g.canonical_input_for_processed_row(x) for x in p]; "
             "a=[x.identity_audit for x in p]; "
             "d=load_disposition_document('reports/coms-product-dispositions.json'); "
             "m=load_metadata('config/publication-metadata.toml'); "
-            "x=build_strict_bfo_mapping(select_product_axioms('strict_bfo_mapping',c,a,d),m); "
-            "print(hashlib.sha256(x.serialized_bytes).hexdigest())"
+            "\nwith generated_expectations_context(Path.cwd(), Path('mappings/SSN2BFO-COMS.xlsx')):\n"
+            "    x=build_strict_bfo_mapping(select_product_axioms('strict_bfo_mapping',c,a,d),m)\n"
+            "    print(hashlib.sha256(x.serialized_bytes).hexdigest())"
         )
         values = []
         for _ in range(2):
             proc = subprocess.run(
-                [sys.executable, "-c", code],
+                [sys.executable, "-B", "-c", code],
                 cwd=REPO_ROOT,
                 env={"PYTHONPATH": str(REPO_ROOT / "tools")},
                 text=True,
@@ -542,6 +637,46 @@ class StrictBfoMappingTests(unittest.TestCase):
         self.assertEqual(result.profile_return_code, 0)
         self.assertTrue(result.source_sample_declarations_retained)
         self.assertEqual(result.unsat_classes, [])
+
+
+class RawStrictBfoGuardTests(unittest.TestCase):
+    def test_current_context_preserves_baseline_strict_axioms_and_bytes(self) -> None:
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        rows, stats = coms.read_workbook(workbook)
+        processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+        canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in processed)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = load_disposition_document(REPO_ROOT / "reports/coms-product-dispositions.json")
+        metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
+        product_path = "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl"
+        baseline_bytes = subprocess.check_output(
+            ["git", "--no-optional-locks", "show", "HEAD:" + product_path],
+            cwd=REPO_ROOT,
+        )
+        self.assertEqual(
+            hashlib.sha256(baseline_bytes).hexdigest(),
+            "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+        )
+        self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)
+
+        def assert_raw_baseline_rejects() -> None:
+            with self.assertRaises(modular.ModularProductError) as raised:
+                modular.select_product_axioms("strict_bfo_mapping", canonical_rows, audits, disposition)
+            self.assertEqual(
+                {issue.code for issue in raised.exception.issues},
+                {"PRODUCT_DISPOSITION_COUNT_MISMATCH"},
+            )
+
+        assert_raw_baseline_rejects()
+        with generated_expectations_context(REPO_ROOT, workbook):
+            selected = modular.select_product_axioms(
+                "strict_bfo_mapping", canonical_rows, audits, disposition
+            )
+            self.assertEqual({value.row_id for value in selected}, EXPECTED_ROW_IDS)
+            self.assertEqual({value.axiom_id for value in selected}, EXPECTED_AXIOM_IDS)
+            result = modular.build_strict_bfo_mapping(selected, metadata)
+            self.assertEqual(result.serialized_bytes, baseline_bytes)
+        assert_raw_baseline_rejects()
 
 
 if __name__ == "__main__":

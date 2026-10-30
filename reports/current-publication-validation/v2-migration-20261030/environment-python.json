@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "--version"
+  ],
+  "completed_at_utc": "2026-10-30T00:31:56.845361+00:00",
+  "elapsed_seconds": 0.017469333950430155,
+  "execution_status": "completed",
+  "launch_error": null,
+  "log": {
+    "bytes": 14,
+    "path": "reports/current-publication-validation/v2-migration-20261030/environment-python.log",
+    "sha256": "84cb1f1bb612c0ff1c818047eb464813fb74f08e27eb19946389e10fd7ccbb36"
+  },
+  "pid": 83333,
+  "preparation": {
+    "bytes": 435727,
+    "path": "reports/current-publication-validation/v2-migration-20261030/preparation.json",
+    "sha256": "4b22842124426a9c20302460f00caed3c6af5d1240b4c4c4afcab77b50d84858"
+  },
+  "returncode": 0,
+  "started_at_utc": "2026-10-30T00:31:56.827890+00:00"
+}

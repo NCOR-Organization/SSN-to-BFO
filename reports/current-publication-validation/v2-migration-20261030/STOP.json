@@ -1,0 +1,7 @@
+{
+  "native_execution_profile": "current-validation-execution-v2",
+  "policy": "No subsequent execution or ledger issuance in this run.",
+  "reason": "Actual outcome completed exit 2; drift=False",
+  "role": "full_repository_gate",
+  "stopped_at_utc": "2026-10-30T03:03:33.350520+00:00"
+}

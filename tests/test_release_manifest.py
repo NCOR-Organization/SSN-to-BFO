@@ -346,16 +346,13 @@ class ReleaseManifestTests(unittest.TestCase):
             ),
             manifest.PRODUCT_ORDER,
         )
-        self.assertEqual(
-            tuple(
-                (
-                    item["allOf"][1]["properties"]["product_key"]["const"],
-                    item["allOf"][1]["properties"]["fixed_closure_triple_count"]["const"],
-                )
-                for item in hermit["prefixItems"]
-            ),
-            manifest.FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS,
-        )
+        for item, product_key in zip(
+            hermit["prefixItems"], manifest.PRODUCT_ORDER, strict=True
+        ):
+            self.assertEqual(
+                item["allOf"][1]["properties"],
+                {"product_key": {"const": product_key}},
+            )
 
     def test_canonical_bytes_have_schema_order_utf8_and_one_newline(self) -> None:
         document = json.loads(self.serialized)
@@ -390,9 +387,16 @@ class ReleaseManifestTests(unittest.TestCase):
         document = json.loads(self.serialized)
         document["inputs"].reverse()
         noncanonical = (json.dumps(document, ensure_ascii=False, indent=2) + "\n").encode()
-        with self.assertRaises(manifest.ReleaseManifestError) as raised:
-            manifest.load_and_validate_release_manifest(noncanonical)
-        self.assertIn("NONCANONICAL_SERIALIZATION", {value.code for value in raised.exception.issues})
+        for semantic in (True, False):
+            with self.subTest(semantic=semantic):
+                with self.assertRaises(manifest.ReleaseManifestError) as raised:
+                    manifest.load_and_validate_release_manifest(
+                        noncanonical, semantic=semantic
+                    )
+                self.assertIn(
+                    "NONCANONICAL_SERIALIZATION",
+                    {value.code for value in raised.exception.issues},
+                )
         self.assertEqual(manifest.canonical_manifest_bytes(document), self.serialized)
 
     def test_unknown_fields_are_rejected_at_every_object_level(self) -> None:
@@ -482,29 +486,50 @@ class ReleaseManifestTests(unittest.TestCase):
         python_issues = manifest.validate_release_manifest_document(document)
         self.assertIn("HERMIT_RETURN_CODE", {item.code for item in python_issues})
 
-    def test_each_wrong_fixed_closure_count_is_rejected_by_both_models(self) -> None:
+    def test_each_wrong_fixed_closure_count_passes_shape_but_fails_semantics(self) -> None:
         positional = self.schema["$defs"]["validation"]["properties"][
             "hermit_results"
         ]["prefixItems"]
+        count_rule = self.schema["$defs"]["hermitResult"]["properties"][
+            "fixed_closure_triple_count"
+        ]
+        self.assertEqual(count_rule, {"type": "integer", "minimum": 0})
         for index, (product_key, _) in enumerate(
             manifest.FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS
         ):
             with self.subTest(product=product_key):
-                count_rule = positional[index]["allOf"][1]["properties"][
-                    "fixed_closure_triple_count"
-                ]
-                self.assertEqual(
-                    count_rule,
-                    {"const": manifest.FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS[index][1]},
+                self.assertNotIn(
+                    "fixed_closure_triple_count",
+                    positional[index]["allOf"][1]["properties"],
                 )
                 document = json.loads(self.serialized)
                 document["validation"]["hermit_results"][index][
                     "fixed_closure_triple_count"
                 ] = 999
+                self.assertEqual(
+                    manifest.validate_release_manifest_document(
+                        document, semantic=False
+                    ),
+                    (),
+                )
                 python_issues = manifest.validate_release_manifest_document(document)
                 self.assertIn(
                     "FIXED_CLOSURE_TRIPLE_COUNT_MISMATCH",
                     {item.code for item in python_issues},
+                )
+                serialized = manifest.canonical_manifest_bytes(document)
+                with self.assertRaises(manifest.ReleaseManifestError) as raised:
+                    manifest.load_and_validate_release_manifest(serialized)
+                self.assertIn(
+                    "FIXED_CLOSURE_TRIPLE_COUNT_MISMATCH",
+                    {item.code for item in raised.exception.issues},
+                )
+                loaded = manifest.load_and_validate_release_manifest(
+                    serialized, semantic=False
+                )
+                self.assertEqual(
+                    loaded.validation.hermit_results[index].fixed_closure_triple_count,
+                    999,
                 )
 
     def test_hermit_result_identity_count_and_cardinality_are_positional(self) -> None:
@@ -600,9 +625,20 @@ class ReleaseManifestTests(unittest.TestCase):
         boolean_count = json.loads(self.serialized)
         boolean_count["products"][0]["total_triple_count"] = True
         mutations.append(("boolean", boolean_count))
+        for value in (-1, True, "999"):
+            malformed_closure_count = json.loads(self.serialized)
+            malformed_closure_count["validation"]["hermit_results"][0][
+                "fixed_closure_triple_count"
+            ] = value
+            mutations.append((f"closure-{value!r}", malformed_closure_count))
         for name, document in mutations:
             with self.subTest(case=name):
                 self.assert_python_rejects(document)
+                self.assertTrue(
+                    manifest.validate_release_manifest_document(
+                        document, semantic=False
+                    )
+                )
 
     def test_context_validation_is_reused(self) -> None:
         document = json.loads(self.serialized)

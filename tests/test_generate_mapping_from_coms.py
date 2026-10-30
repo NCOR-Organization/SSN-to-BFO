@@ -29,6 +29,8 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import check_coms_mapping as checker  # noqa: E402
 import coms_row_identity as identity  # noqa: E402
+import current_semantic_generation as generation  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
 import generate_mapping_from_coms as coms  # noqa: E402
 import modular_products as modular  # noqa: E402
 import product_dispositions as dispositions  # noqa: E402
@@ -1138,12 +1140,10 @@ class ComsCheckerBytecodeIsolationTests(unittest.TestCase):
             repository,
             ignore=shutil.ignore_patterns(".git", ".cache", "__pycache__", "*.pyc", "*.pyo"),
         )
-        subprocess.run(
-            ["git", "init", "--quiet"],
-            cwd=repository,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+        # The copied current state needs its real historical Git authority.
+        # The check-only child reads objects; all working files remain isolated.
+        (repository / ".git").symlink_to(
+            REPO_ROOT / ".git", target_is_directory=True,
         )
         before_sentinels = self.create_sentinels(repository)
         before_bytecode = self.bytecode_paths(repository)
@@ -1577,29 +1577,101 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
 
     @staticmethod
     def generated_product_bytes(product_key: str) -> bytes:
-        rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
-        processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
-        canonical_rows = tuple(
-            coms.canonical_input_for_processed_row(row) for row in processed
-        )
-        audits = tuple(row.identity_audit for row in processed)
-        disposition = checker.load_disposition_document(
-            REPO_ROOT / "reports/coms-product-dispositions.json"
-        )
-        metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
-        selected = modular.select_product_axioms(
-            product_key, canonical_rows, audits, disposition
-        )
-        builders = {
-            "alignment_core": modular.build_alignment_core,
-            "strict_bfo_mapping": modular.build_strict_bfo_mapping,
-            "cco_extension": modular.build_cco_extension,
-        }
-        return builders[product_key](selected, metadata).serialized_bytes
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        with generation.generated_expectations_context(REPO_ROOT, workbook):
+            rows, stats = coms.read_workbook(workbook)
+            processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+            canonical_rows = tuple(
+                coms.canonical_input_for_processed_row(row) for row in processed
+            )
+            audits = tuple(row.identity_audit for row in processed)
+            disposition = checker.load_disposition_document(
+                REPO_ROOT / "reports/coms-product-dispositions.json"
+            )
+            metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
+            selected = modular.select_product_axioms(
+                product_key, canonical_rows, audits, disposition
+            )
+            builders = {
+                "alignment_core": modular.build_alignment_core,
+                "strict_bfo_mapping": modular.build_strict_bfo_mapping,
+                "cco_extension": modular.build_cco_extension,
+            }
+            return builders[product_key](selected, metadata).serialized_bytes
 
     @classmethod
     def generated_cco_extension_bytes(cls) -> bytes:
         return cls.generated_product_bytes("cco_extension")
+
+    def test_current_generation_context_preserves_raw_baseline_and_exact_delta(self) -> None:
+        history = semantic.resolve_history(REPO_ROOT)
+        transition = next(record for record in history["chain"] if
+                          record.get("transition_id") == "58481ff2-4e56-4931-a3d4-383357b16561")
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        baseline_path = semantic.snapshot(REPO_ROOT, transition["old_workbook_sha256"])
+
+        def inputs(path):
+            rows, stats = coms.read_workbook(path)
+            processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+            inventory = {
+                (row.identity_audit.row_id, "sha256:" + axiom.sha256): axiom.canonical_axiom
+                for row in processed for axiom in row.identity_audit.authoritative_axioms
+            }
+            return processed, stats, inventory
+
+        baseline, baseline_stats, before = inputs(baseline_path)
+        processed, stats, after = inputs(workbook)
+        self.assertEqual((len(baseline), len(before), baseline_stats.blank_mapping_rows), (105, 103, 2))
+        self.assertEqual((len(processed), len(after), stats.blank_mapping_rows), (105, 100, 5))
+        removed = before.keys() - after.keys()
+        cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
+        self.assertEqual(len(removed), 3)
+        self.assertEqual({row_id for row_id, _ in removed}, cleared)
+        self.assertEqual(after.keys() - before.keys(), set())
+        self.assertEqual(after, {key: value for key, value in before.items() if key not in removed})
+        delta = transition["generation_expectations"]["logical_axiom_delta"]
+        self.assertEqual(sorted(before[key] for key in removed), delta["removed"])
+        self.assertEqual(delta["added"], [])
+        self.assertEqual({row.row.subject_text for row in baseline
+                          if row.identity_audit.row_id in cleared},
+                         {"ssn:forProperty", "ssn-system:SystemProperty", "ssn-system:MeasurementRange"})
+        self.assertTrue(all(not row.identity_audit.authoritative_axioms for row in processed
+                            if row.identity_audit.row_id in cleared))
+
+        canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in processed)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = checker.load_disposition_document(REPO_ROOT / "reports/coms-product-dispositions.json")
+        metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
+
+        def assert_raw_rejection():
+            policy = modular.PRODUCT_SELECTION["alignment_core"]
+            self.assertEqual({category: count for category, _, _, count in policy.expected_disposition_totals},
+                             {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 25, "mixed_bfo_cco": 30})
+            self.assertEqual(generation.expected_count("AUTHORITATIVE_AXIOM_COUNT", 103), 103)
+            with self.assertRaises(modular.ModularProductError) as raised:
+                modular.select_product_axioms("alignment_core", canonical_rows, audits, disposition)
+            self.assertEqual({issue.code for issue in raised.exception.issues}, {"PRODUCT_DISPOSITION_COUNT_MISMATCH"})
+
+        assert_raw_rejection()
+        historical_output = self.root / "historical-root.ttl"
+        coms.generate_ontology(baseline, historical_output, metadata, require_current_counts=True)
+        self.assertEqual(hashlib.sha256(historical_output.read_bytes()).hexdigest(),
+                         "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11")
+        with generation.generated_expectations_context(REPO_ROOT, workbook):
+            generation.validate_row_counts(stats, audits)
+            reconciled = modular.reconcile_product_axioms("alignment_core", canonical_rows, audits, disposition)
+            self.assertEqual(reconciled.governed_axiom_count, 100)
+            self.assertEqual({item.target_category: item.count for item in reconciled.disposition_totals},
+                             {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
+            selected = modular.select_product_axioms("cco_extension", canonical_rows, audits, disposition)
+            self.assertEqual(len(selected), 52)
+            result = modular.build_cco_extension(selected, metadata)
+            self.assertEqual(result.serialized_bytes, (REPO_ROOT / generation.PRODUCT_PATHS["cco_extension"]).read_bytes())
+            current_output = self.root / "current-root.ttl"
+            graph = coms.generate_ontology(processed, current_output, metadata, require_current_counts=True)
+            self.assertEqual(current_output.read_bytes(), (REPO_ROOT / "SSN2BFO.ttl").read_bytes())
+            self.assertEqual(set(modular._canonical_graph_axioms(graph)), {axiom_id for _, axiom_id in after})
+        assert_raw_rejection()
 
     @staticmethod
 
@@ -1641,6 +1713,9 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
         )
 
     def test_maintained_root_has_exact_metadata_and_logical_partition(self) -> None:
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        self.enterContext(generation.generated_expectations_context(REPO_ROOT, workbook))
+        expected_bytes = generation.render_current_products(REPO_ROOT, workbook)["SSN2BFO.ttl"]
         maintained_path = REPO_ROOT / "SSN2BFO.ttl"
         metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
         maintained_graph = Graph().parse(maintained_path, format="turtle")
@@ -1654,14 +1729,14 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
             ),
             (),
         )
-        self.assertEqual(len(maintained_graph), 1114)
+        self.assertEqual(len(maintained_graph), generation.expected_count("ROOT_TOTAL_TRIPLE_COUNT", 1114))
         logical_graph = strip_emitted_ontology_header(
             maintained_graph,
             metadata,
             "integrated",
             checker.ROOT_ORDERED_IMPORTS,
         )
-        self.assertEqual(len(logical_graph), 1102)
+        self.assertEqual(len(logical_graph), generation.expected_count("ROOT_LOGICAL_TRIPLE_COUNT", 1102))
         self.assertNotEqual(
             hashlib.sha256(maintained_path.read_bytes()).hexdigest(),
             "fd6eadf1bcbd4bfc6dc06df58915116d8f909bc8c3238592b1f13509cec47d16",
@@ -1676,11 +1751,11 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
             metadata,
             require_current_counts=True,
         )
-        self.assertEqual(len(regenerated_graph), 1114)
+        self.assertEqual(len(regenerated_graph), generation.expected_count("ROOT_TOTAL_TRIPLE_COUNT", 1114))
         self.assertEqual(regenerated_path.read_bytes(), maintained_path.read_bytes())
         self.assertEqual(
             hashlib.sha256(maintained_path.read_bytes()).hexdigest(),
-            "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+            hashlib.sha256(expected_bytes).hexdigest(),
         )
         governed_axiom_ids = {
             f"sha256:{axiom.sha256}"
@@ -1688,9 +1763,12 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
             for axiom in item.identity_audit.authoritative_axioms
         }
         self.assertEqual(set(modular._canonical_graph_axioms(regenerated_graph)), governed_axiom_ids)
-        self.assertEqual(len(governed_axiom_ids), 103)
+        self.assertEqual(len(governed_axiom_ids), generation.expected_count("AUTHORITATIVE_AXIOM_COUNT", 103))
 
     def test_integrated_root_bytes_are_explicit_and_repeatable_without_rdflib_serialization(self) -> None:
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        self.enterContext(generation.generated_expectations_context(REPO_ROOT, workbook))
+        expected_bytes = generation.render_current_products(REPO_ROOT, workbook)["SSN2BFO.ttl"]
         rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
         processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
         publication_metadata = load_metadata(
@@ -1713,23 +1791,32 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
         self.assertEqual(first.read_bytes(), second.read_bytes())
         self.assertEqual(
             hashlib.sha256(first.read_bytes()).hexdigest(),
-            "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+            hashlib.sha256(expected_bytes).hexdigest(),
         )
         self.assertNotIn(".serialize(", inspect.getsource(coms._root_turtle_bytes))
         self.assertNotIn(".serialize(", inspect.getsource(coms.generate_ontology))
 
     def test_integrated_root_is_fresh_process_stable_across_hash_seeds_and_paths(self) -> None:
-        code = (
-            "from pathlib import Path; import hashlib,sys; "
-            "import generate_mapping_from_coms as g; "
-            "from publication_metadata import load_metadata; "
-            "rows,stats=g.read_workbook(Path('mappings/SSN2BFO-COMS.xlsx')); "
-            "processed=g.validate_and_process_rows(rows,g.Resolver(),stats); "
-            "output=Path(sys.argv[1]); "
-            "g.generate_ontology(processed,output,load_metadata(Path('config/publication-metadata.toml')),require_current_counts=True); "
-            "print(hashlib.sha256(output.read_bytes()).hexdigest())"
-        )
-        expected = "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11"
+        code = """from pathlib import Path
+import hashlib, sys
+import generate_mapping_from_coms as g
+from current_semantic_generation import generated_expectations_context
+from publication_metadata import load_metadata
+root = Path.cwd()
+workbook = root / 'mappings/SSN2BFO-COMS.xlsx'
+with generated_expectations_context(root, workbook):
+    rows, stats = g.read_workbook(workbook)
+    processed = g.validate_and_process_rows(rows, g.Resolver(), stats)
+    output = Path(sys.argv[1])
+    g.generate_ontology(processed, output,
+                        load_metadata(root / 'config/publication-metadata.toml'),
+                        require_current_counts=True)
+print(hashlib.sha256(output.read_bytes()).hexdigest())
+"""
+        expected_bytes = generation.render_current_products(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        )["SSN2BFO.ttl"]
+        expected = hashlib.sha256(expected_bytes).hexdigest()
         observed: dict[str, str] = {}
         for seed in ("0", "1", "42", "random"):
             with tempfile.TemporaryDirectory(prefix=f"root-seed-{seed}-") as directory:
@@ -1744,7 +1831,7 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
                     }
                 )
                 process = subprocess.run(
-                    [sys.executable, "-c", code, str(output)],
+                    [sys.executable, "-B", "-c", code, str(output)],
                     cwd=REPO_ROOT,
                     env=environment,
                     text=True,
@@ -2662,6 +2749,10 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
         self.assertEqual(list(cache_dir.glob("run-*")), [])
 
     def test_first_successful_update_creates_initially_absent_cco_extension(self) -> None:
+        with generation.generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ):
+            expected_triples = generation.expected_count("CCO_EXTENSION_TOTAL_TRIPLE_COUNT", 933)
         outputs = self.maintained_outputs()
         existing = {name: path for name, path in outputs.items() if name != "cco_extension"}
         for name, path in existing.items():
@@ -2700,7 +2791,7 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
                 set(graph.triples((None, OWL.imports, None))),
                 {(ontology_iri, OWL.imports, strict_iri)},
             )
-            self.assertEqual(len(graph), 933)
+            self.assertEqual(len(graph), expected_triples)
             validation_complete = True
             return {}
 

@@ -1,0 +1,90 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+  },
+  "assessment_outcome": "inheritance_sufficient",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json",
+    "record_sha256": "40f971c7b1633c5d56178a2951cad0a343f2a9152b231dedb917e4df967e3d21",
+    "sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689"
+  },
+  "authority_scope": "New explicit human decision after fresh semantic adjudication. Agreement with historical July dispositions is corroborative only and is not authority for this transition.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "decision_basis": "inheritance_sufficiency",
+  "decision_date": "2026-10-26",
+  "decision_id": "urn:uuid:ae218d28-d39e-4fa5-880b-9cbcbf945287",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!43",
+    "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MeasurementRange",
+    "imports/cco.ttl",
+    "reports/system-property-process-profile-scope-review.md",
+    "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+    "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json"
+  ],
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": true,
+    "inherited_routes": [
+      {
+        "inverse_target_expression": false,
+        "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+        "source_path": [
+          "ssn-system:MeasurementRange rdfs:subClassOf ssn-system:SystemProperty",
+          "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+        ],
+        "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+        "via_source": "http://www.w3.org/ns/ssn/Property"
+      }
+    ],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "ce354017d17ae1cf1d61cd91a8e380aafa81255af8dc36a66e582dc8c1d9d394",
+  "formal_mapping_assertions": [],
+  "inheritance_sufficiency_evidence": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json",
+    "sha256": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069"
+  },
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+  ],
+  "no_additional_direct_mapping_required": true,
+  "question_response": "Finalize inheritance_sufficient. `ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+  "rationale": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+  "review_packet_scope": "Reconstructed approved-candidate packet using the retained unresolved assessment question and the exact approved workbook state. This is not represented as a packet that existed before human adjudication.",
+  "review_packet_snapshot": {
+    "item_sha256": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json",
+    "sha256": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6"
+  },
+  "review_question": "Does the set of values the Sensor can return justify the current commitment to Function with an actual Observation caused by a specification-prescribed Stimulus, or does it describe a property/capability without those actual individuals?",
+  "review_state": "final",
+  "review_timestamp": "2026-10-26T06:46:36+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "schema_version": 1,
+  "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+  "timestamp_scope": "Encoding timestamp for the explicit human adjudication dated 2026-10-26; not an inferred historical review timestamp."
+}

@@ -1,0 +1,367 @@
+Implement the smallest project-local semantic-workbook transition mechanism needed to support historically authorized mapping restorations without invalidating unrelated prior human decisions.
+
+Repository:
+
+/Users/alecsculley/Documents/GitHub/SSN-to-BFO
+
+Branch:
+
+publication/current-sosa-readiness
+
+Required HEAD:
+
+dc314460fe3e875ba1c8ccfcb3c6840a7181e733
+
+DO NOT modify the authoritative workbook in this task.
+
+DO NOT:
+- apply the five-term restoration yet;
+- alter mapping predicates/targets;
+- alter assessments;
+- create new mapping-semantic decisions;
+- reopen the approved sample-pair decisions;
+- change SOSA-2023;
+- change generalized COMS architecture;
+- commit or tag.
+
+PURPOSE
+
+The repository already supports D-only documentary workbook evolution.
+
+It now also needs a narrowly governed mechanism for legitimate semantic workbook evolution where:
+
+- historical human decisions remain authenticated against the exact evidence originally reviewed;
+- later mapping changes are explicitly recorded;
+- prior decisions remain currently applicable when the semantic changes are demonstrably unrelated/non-material;
+- materially relevant changes force reopening/new human decision evidence;
+- no semantic change can masquerade as a documentary edit.
+
+The immediate future semantic delta has already been historically audited but MUST NOT be applied in this task:
+
+- add madeBySensor ⊑ cco:has_agent;
+- add madeObservation ⊑ cco:agent_in;
+- remove the rejected forProperty chain;
+- remove the unauthorized current MeasurementRange direct expression, restoring historical technical deferral;
+- remove the unauthorized current SystemProperty direct expression.
+
+PART 1 — KEEP HISTORICAL AUTHENTICATION IMMUTABLE
+
+Existing decision records must continue to authenticate against:
+
+- exact historical workbook bytes;
+- exact retained assessment snapshot;
+- exact retained review packet;
+- exact evidence files;
+- exact decision body;
+- reviewer identity;
+- original input hashes.
+
+Do NOT rewrite any existing sample-pair decision record.
+
+Do NOT replace historical workbook hashes with future workbook hashes.
+
+Historical authentication answers:
+
+“What evidence did the reviewer actually review?”
+
+That answer must never change.
+
+PART 2 — SEPARATE CURRENT APPLICABILITY
+
+Add a distinct current-applicability validation layer.
+
+For a historical human decision to remain applicable to a newer workbook, validate:
+
+1. the historical decision itself authenticates successfully;
+2. the reviewed source term still exists;
+3. all mapping rows directly governing that reviewed source term are compared old→current;
+4. relevant dependencies represented in the original packet are compared old→current;
+5. each semantic transition between workbook versions is governed;
+6. any changed dependency is classified as:
+   - NON_MATERIAL_TO_DECISION
+   - MATERIAL_REQUIRES_REOPEN
+7. only explicit governed NON_MATERIAL determinations allow carry-forward.
+
+Do not infer non-materiality merely because the changed row has a different source IRI.
+
+PART 3 — DEFINE SEMANTIC TRANSITION RECORD
+
+Create a PROJECT-LOCAL semantic transition record.
+
+Do not generalize it into COMS.
+
+Each transition must contain at minimum:
+
+- schema/version;
+- transition ID;
+- old workbook full SHA-256;
+- new workbook full SHA-256;
+- old semantic projection SHA-256;
+- new semantic projection SHA-256;
+- exact semantic workbook delta;
+- changed rows/cells;
+- old/new predicates;
+- old/new targets;
+- added rows with RowIDs;
+- removed/cleared mapping assertions;
+- documentary reasoning changes associated with the semantic transition;
+- historical authority supporting each change;
+- authorization type;
+- editor identity;
+- timestamp;
+- source/target identity hashes;
+- expected generated logical-axiom delta;
+- expected coverage delta.
+
+Unlike documentary transitions, semantic-projection hashes are expected to differ.
+
+The transition must fail if the actual workbook delta differs from the declared semantic delta.
+
+PART 4 — SEMANTIC AUTHORIZATION TYPES
+
+Support at least these project-local authorization categories:
+
+- RESTORE_PREVIOUSLY_APPROVED_DECISION
+- REMOVE_PREVIOUSLY_REJECTED_MAPPING
+- RESTORE_PREVIOUS_TECHNICAL_DEFERRAL
+- EXPLICIT_NEW_HUMAN_DECISION
+
+For the forthcoming five-term transition, only the first three should be needed.
+
+Do NOT use EXPLICIT_NEW_HUMAN_DECISION unless an actual new human semantic judgment exists.
+
+PART 5 — DEPENDENCY-APPLICABILITY RECORDS
+
+For an existing finalized human decision whose historical packet contains changed contextual dependencies, require an additive applicability record.
+
+The record must contain:
+
+- decision ID;
+- reviewed source IRI;
+- old workbook/version;
+- new workbook/version;
+- changed dependency;
+- exact old/new dependency state;
+- classification:
+  NON_MATERIAL_TO_DECISION
+  or
+  MATERIAL_REQUIRES_REOPEN;
+- rationale;
+- supporting evidence;
+- reviewer identity when human materiality judgment is required;
+- timestamp.
+
+Do not modify the original decision.
+
+PART 6 — SAMPLE-PAIR forProperty CONTEXT
+
+The original hasSample/isSampleOf packets contain the forProperty chain in their contextual `mapping_property_chains`.
+
+The retained human-review evidence explicitly stated:
+
+- the chain is `described_by ∘ is_about → ssn:forProperty`;
+- neither sample property occurs in that chain;
+- it supplies no mapping coverage for the sample pair.
+
+Therefore prepare applicability records for BOTH existing sample decisions classifying the forthcoming removal of that chain as:
+
+NON_MATERIAL_TO_DECISION
+
+Use reviewer identity:
+
+"Alec Sculley"
+
+The rationale should state narrowly:
+
+The removed `ssn:forProperty` chain was contextual evidence in the retained review packet, but neither `sosa:hasSample` nor `sosa:isSampleOf` participates in that chain, the chain supplied no formal coverage for either reviewed property, and the approved no-direct decisions were based on the semantics of sample representativeness and the reviewed representation/carrier candidates. Removing the unrelated chain therefore does not alter the semantic basis or outcome of either decision.
+
+Do NOT classify any other future dependency change automatically.
+
+PART 7 — MATERIALITY NEGATIVE TESTS
+
+These changes to a reviewed term or relevant dependency MUST require reopening:
+
+A. change the reviewed term’s mapping predicate
+
+B. change the reviewed term’s target
+
+C. add a new formal mapping for that reviewed term
+
+D. remove an approved mapping for that reviewed term
+
+E. alter its direct/inherited/rule coverage materially
+
+F. alter a contextual dependency that was used as a premise in the recorded rationale
+
+G. alter source or target ontology semantics relevant to the approved conclusion
+
+H. change RowID membership for reviewed semantic rows without an authorized transition
+
+A generic semantic transition record alone must NOT carry the old decision through those cases.
+
+PART 8 — NON-MATERIAL POSITIVE TESTS
+
+Using disposable fixtures, verify carry-forward can succeed where:
+
+A. an unrelated mapping row changes under a valid semantic transition and was absent from the reviewed packet
+
+B. a contextual row changes but a valid NON_MATERIAL applicability record exists
+
+C. the specific sample-pair forProperty removal occurs with the explicit applicability records above
+
+D. historical authentication remains byte-exact while current workbook bytes differ
+
+E. multiple semantic transitions form a valid authenticated chain
+
+PART 9 — SENSOR ROWID EVOLUTION
+
+The forthcoming restoration adds two new mapping rows:
+
+- sosa:madeBySensor / rdfs:subPropertyOf / cco:has_agent
+- sosa:madeObservation / rdfs:subPropertyOf / cco:agent_in
+
+Current assessment records require exact `mapping_row_ids`.
+
+Add support for an authorized semantic transition to update the row-ID membership of an UNREVIEWED assessment record without changing:
+
+- review_state;
+- assessment_outcome;
+- rationale;
+- human decision status.
+
+The update must be mechanically derived from the validated workbook transition.
+
+Do not permit this mechanism to modify finalized assessment row membership without current-applicability validation.
+
+PART 10 — SOURCE IDENTITY / PRESERVATION
+
+Update project-local source-identity and publication-preservation handling so an authorized semantic workbook transition may advance the current semantic workbook state while preserving:
+
+- historical snapshots;
+- old transition records;
+- old human decision evidence;
+- protected source/target ontologies.
+
+Do not redefine historical protected states as if they never existed.
+
+PART 11 — GENERATION EXPECTATIONS
+
+Current generation checks contain count expectations tied to the pre-transition workbook.
+
+Refactor ONLY as necessary so a validated semantic transition may carry explicit expected:
+
+- governed row count;
+- authoritative mapping/typing axiom count;
+- zero-axiom row count;
+- modular disposition counts;
+- CCO-extension/direct counts;
+- coverage counts where governed.
+
+Do not simply weaken or delete count checks.
+
+Preferred behavior:
+
+validated semantic transition declares the exact expected delta;
+generation validates actual output against that delta.
+
+Unexplained count drift must still fail.
+
+PART 12 — DO NOT APPLY implementationBy / implements
+
+The historical semantics of `implementedBy` / `implements` are process-mediated, but literal historical OWL chain restoration has known current profile/regularity problems.
+
+Do not solve that here.
+
+Do not modify those mappings.
+
+This task concerns custody infrastructure only.
+
+PART 13 — TESTS
+
+Add tests for:
+
+- semantic-transition creation and validation;
+- exact delta matching;
+- unauthorized B/C changes;
+- added/removed row handling;
+- RowID handling;
+- chain branching/cycles/missing transitions;
+- material dependency forcing reopen;
+- explicit non-material dependency carry-forward;
+- sample-pair forProperty applicability;
+- finalized-decision protection;
+- unreviewed-assessment RowID evolution;
+- source-identity transition handling;
+- preservation transition handling;
+- generation count/delta validation.
+
+Retain all existing:
+
+- documentary-transition tests;
+- finality tests;
+- custody tests;
+- publication-hardening tests;
+- COMS integration;
+- SOSA-2023 tests.
+
+Run:
+
+- all focused publication-hardening tests;
+- documentary guard tests;
+- new semantic-transition tests;
+- assessment validation;
+- source identity;
+- preservation;
+- generation/freshness;
+- COMS integration;
+- SOSA-2023 non-regression;
+- Python compilation;
+- git diff --check.
+
+Do not run expensive unrelated RO reasoning.
+
+PART 14 — WORKBOOK MUST REMAIN UNCHANGED
+
+At completion verify authoritative workbook SHA remains:
+
+9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14
+
+Current semantic projection must remain:
+
+d42340112492fa033216870de64848d899ffd39041be013b7ecc1b655d68136b
+
+No mapping row may change in this task.
+
+PART 15 — COMPLETION REPORT
+
+Return:
+
+1. files changed;
+2. pre/post Git state;
+3. historical-authentication model;
+4. current-applicability model;
+5. semantic-transition schema;
+6. authorization types;
+7. dependency-materiality model;
+8. sample-pair forProperty applicability records;
+9. material-change negative tests;
+10. non-material carry-forward tests;
+11. assessment RowID evolution behavior;
+12. source-identity/preservation behavior;
+13. generation-delta/count behavior;
+14. existing sample decisions non-regression;
+15. documentary-transition non-regression;
+16. publication-hardening tests;
+17. COMS/SOSA-2023 tests;
+18. confirmation workbook unchanged;
+19. exact next task for applying the five-term historical restoration.
+
+End with exactly one of:
+
+SEMANTIC WORKBOOK EVOLUTION GUARD READY — SAFE TO APPLY HISTORICAL RESTORATIONS
+
+or
+
+SEMANTIC WORKBOOK EVOLUTION STILL BLOCKS HISTORICAL RESTORATION
+
+Do not commit or tag.

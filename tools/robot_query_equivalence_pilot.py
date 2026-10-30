@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Compare governed RDFLib SELECT results with read-only ROBOT query results."""
+"""Compare RDFLib and ROBOT queries over the same local asserted execution graph.
+
+Only temporary query inputs omit owl:imports. The governed sources are unchanged,
+and the unresolved transitive import closure is not claimed to be complete.
+"""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +16,7 @@ from pathlib import Path
 from typing import Iterable
 
 from rdflib import Graph, Literal, URIRef
-from rdflib.compare import isomorphic
+from rdflib.compare import isomorphic, to_canonical_graph
 from rdflib.namespace import OWL
 
 import generate_mapping_from_coms as coms
@@ -25,11 +29,17 @@ UNMAPPED_QUERY = REPO_ROOT / "queries/unmapped-source-terms.rq"
 
 SOURCE_COLUMNS = ("term", "kind")
 UNMAPPED_COLUMNS = ("term", "kind", "coverageStatus")
+COMPARISON_SCOPE = (
+    "The query-equivalence workflow validates tool equivalence over the governed "
+    "asserted current-source graph. It does not claim that the unresolved "
+    "transitive import closure is locally complete."
+)
 
 
 @dataclass(frozen=True)
 class PilotArtifacts:
     source_graph_path: Path
+    source_execution_graph_path: Path
     coverage_graph_path: Path
     rdflib_source_csv_path: Path
     robot_source_csv_path: Path
@@ -51,6 +61,7 @@ class RobotQueryResult:
 def artifact_paths(output_dir: Path) -> PilotArtifacts:
     return PilotArtifacts(
         source_graph_path=output_dir / "source-graph.ttl",
+        source_execution_graph_path=output_dir / "source-query-input.ttl",
         coverage_graph_path=output_dir / "coverage-graph.ttl",
         rdflib_source_csv_path=output_dir / "rdflib-source-terms.csv",
         robot_source_csv_path=output_dir / "robot-source-terms.csv",
@@ -62,6 +73,22 @@ def artifact_paths(output_dir: Path) -> PilotArtifacts:
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def canonical_graph_bytes(graph: Graph) -> bytes:
+    """Serialize all asserted triples deterministically; N-Triples is valid Turtle."""
+    canonical = to_canonical_graph(graph)
+    lines = sorted(line for line in canonical.serialize(format="nt").splitlines() if line)
+    return ("\n".join(lines) + "\n").encode("utf-8")
+
+
+def asserted_query_graph(source_graph: Graph) -> Graph:
+    """Copy the local assertions, omitting only runtime import-loading directives."""
+    execution = Graph()
+    for subject, predicate, object_ in source_graph:
+        if predicate != OWL.imports:
+            execution.add((subject, predicate, object_))
+    return execution
 
 
 def ordered_rows(
@@ -108,6 +135,11 @@ def run_robot_query(
     query_path: Path,
     output_path: Path,
 ) -> RobotQueryResult:
+    # This pilot compares asserted graph queries, never import-loader behavior.
+    # Fail before launching ROBOT if a caller supplies an import-bearing input.
+    input_graph = Graph().parse(input_path, format="turtle")
+    if any(input_graph.triples((None, OWL.imports, None))):
+        raise ValueError("asserted-graph ROBOT query input must not contain owl:imports")
     output_path.unlink(missing_ok=True)
 
     completed = subprocess.run(
@@ -239,26 +271,43 @@ def run_pilot(
 
     governed = reconstruction.load_governed_coms_rows(workbook_path)
 
+    source_input_sha256 = {
+        path.as_posix(): sha256(REPO_ROOT / path)
+        for path in coms.SOURCE_IMPORTS
+    }
     source_graph = coms.build_source_graph()
-    source_rdflib_dicts = coms.run_select_query(source_graph, SOURCE_QUERY)
+    source_graph_bytes = canonical_graph_bytes(source_graph)
+    artifacts.source_graph_path.write_bytes(source_graph_bytes)
+    source_round_trip = Graph().parse(artifacts.source_graph_path, format="turtle")
+    import_triples = set(source_graph.triples((None, OWL.imports, None)))
+    execution_graph = asserted_query_graph(source_graph)
+    only_imports_removed = (
+        set(source_graph) - set(execution_graph) == import_triples
+        and not set(execution_graph) - set(source_graph)
+        and not any(execution_graph.triples((None, OWL.imports, None)))
+    )
+    if not only_imports_removed:
+        raise ValueError("asserted query execution graph changed non-import triples")
+    artifacts.source_execution_graph_path.write_bytes(canonical_graph_bytes(execution_graph))
+    # RDFLib reads the exact serialized artifact subsequently passed to ROBOT.
+    execution_round_trip = Graph().parse(artifacts.source_execution_graph_path, format="turtle")
+    execution_round_trip_ok = isomorphic(execution_graph, execution_round_trip)
+    if not execution_round_trip_ok:
+        raise ValueError("asserted query execution serialization changed RDF triples")
+    source_rdflib_dicts = coms.run_select_query(execution_round_trip, SOURCE_QUERY)
     source_rdflib_rows = ordered_rows(
         source_rdflib_dicts,
         SOURCE_COLUMNS,
     )
-    source_graph.serialize(artifacts.source_graph_path, format="turtle")
     write_csv_rows(
         artifacts.rdflib_source_csv_path,
         SOURCE_COLUMNS,
         source_rdflib_rows,
     )
 
-    source_round_trip = Graph().parse(
-        artifacts.source_graph_path,
-        format="turtle",
-    )
     source_robot = run_robot_query(
         robot,
-        artifacts.source_graph_path,
+        artifacts.source_execution_graph_path,
         SOURCE_QUERY,
         artifacts.robot_source_csv_path,
     )
@@ -267,17 +316,15 @@ def run_pilot(
         governed.processed_rows,
         source_rdflib_dicts,
     )
+    artifacts.coverage_graph_path.write_bytes(canonical_graph_bytes(coverage_graph))
+    coverage_round_trip = Graph().parse(artifacts.coverage_graph_path, format="turtle")
     coverage_rdflib_dicts = coms.run_select_query(
-        coverage_graph,
+        coverage_round_trip,
         UNMAPPED_QUERY,
     )
     coverage_rdflib_rows = ordered_rows(
         coverage_rdflib_dicts,
         UNMAPPED_COLUMNS,
-    )
-    coverage_graph.serialize(
-        artifacts.coverage_graph_path,
-        format="turtle",
     )
     write_csv_rows(
         artifacts.rdflib_unmapped_csv_path,
@@ -285,10 +332,6 @@ def run_pilot(
         coverage_rdflib_rows,
     )
 
-    coverage_round_trip = Graph().parse(
-        artifacts.coverage_graph_path,
-        format="turtle",
-    )
     coverage_robot = run_robot_query(
         robot,
         artifacts.coverage_graph_path,
@@ -320,6 +363,11 @@ def run_pilot(
         coverage_graph,
         coverage_round_trip,
     )
+    if source_input_sha256 != {
+        path.as_posix(): sha256(REPO_ROOT / path)
+        for path in coms.SOURCE_IMPORTS
+    }:
+        raise ValueError("governed source bytes changed during query equivalence")
 
     summary: dict[str, object] = {
         "passed": (
@@ -327,7 +375,12 @@ def run_pilot(
             and coverage_query_ok
             and source_round_trip_ok
             and coverage_round_trip_ok
+            and execution_round_trip_ok
+            and only_imports_removed
         ),
+        "comparison_scope": COMPARISON_SCOPE,
+        "full_transitive_import_closure_locally_complete": False,
+        "source_input_sha256": source_input_sha256,
         "robot_path": robot,
         "workbook": str(workbook_path),
         "governed_row_count": len(governed.processed_rows),
@@ -339,6 +392,15 @@ def run_pilot(
                 list(source_graph.triples((None, OWL.imports, None)))
             ),
             "sha256": sha256(artifacts.source_graph_path),
+        },
+        "source_execution_graph": {
+            "triple_count": len(execution_round_trip),
+            "removed_import_count": len(import_triples),
+            "removed_imports": sorted([str(subject), str(object_)] for subject, _, object_ in import_triples),
+            "only_imports_removed": only_imports_removed,
+            "round_trip_isomorphic": execution_round_trip_ok,
+            "owl_imports_count": len(list(execution_round_trip.triples((None, OWL.imports, None)))),
+            "sha256": sha256(artifacts.source_execution_graph_path),
         },
         "coverage_graph": {
             "triple_count": len(coverage_graph),
@@ -352,6 +414,7 @@ def run_pilot(
             "rdflib_row_count": len(source_rdflib_rows),
             "robot_row_count": len(source_robot.rows),
             "same_ordered_rows": source_rdflib_rows == source_robot.rows,
+            "same_normalized_rows": set(source_rdflib_rows) == set(source_robot.rows),
             "rdflib_only_rows": source_rdflib_only,
             "robot_only_rows": source_robot_only,
             "robot_return_code": source_robot.return_code,
@@ -366,6 +429,7 @@ def run_pilot(
             "rdflib_row_count": len(coverage_rdflib_rows),
             "robot_row_count": len(coverage_robot.rows),
             "same_ordered_rows": coverage_rdflib_rows == coverage_robot.rows,
+            "same_normalized_rows": set(coverage_rdflib_rows) == set(coverage_robot.rows),
             "rdflib_only_rows": coverage_rdflib_only,
             "robot_only_rows": coverage_robot_only,
             "robot_return_code": coverage_robot.return_code,
@@ -412,6 +476,9 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Governed rows: {summary['governed_row_count']}")
     print(f"Source graph triples: {summary['source_graph']['triple_count']}")
+    print(f"Imports omitted only for query execution: {summary['source_execution_graph']['removed_import_count']}")
+    print(f"Shared execution graph triples: {summary['source_execution_graph']['triple_count']}")
+    print(summary["comparison_scope"])
     print(f"Source RDFLib rows: {source['rdflib_row_count']}")
     print(f"Source ROBOT rows: {source['robot_row_count']}")
     print(f"Unmapped RDFLib rows: {unmapped['rdflib_row_count']}")

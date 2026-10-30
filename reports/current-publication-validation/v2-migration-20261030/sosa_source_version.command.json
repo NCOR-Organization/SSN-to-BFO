@@ -1,0 +1,193 @@
+{
+  "capture": {
+    "bytes": 4970,
+    "path": "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.capture.json",
+    "sha256": "8e29160fa5298b13a1a53a4ca26e64f47916719301a1ec8fe166c9b95894bfb7"
+  },
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "tools/check_sosa_source_version.py"
+  ],
+  "completed_at_utc": "2026-10-30T02:41:46.240982+00:00",
+  "cwd": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+  "elapsed_seconds": 0.08952937508001924,
+  "execution_environment_after": {
+    "JAVA_HOME": null,
+    "JAVA_TOOL_OPTIONS": null,
+    "JDK_JAVA_OPTIONS": null,
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "LC_CTYPE": "C.UTF-8",
+    "MAKEFLAGS": null,
+    "MFLAGS": null,
+    "PATH": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/TeX/texbin:/Users/alecsculley/.codex/tmp/arg0/codex-arg0S7avm9:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/opt/miniconda3/bin:/opt/miniconda3/condabin:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS",
+    "PYTHONHOME": null,
+    "PYTHONPATH": null,
+    "ROBOT_JAVA_ARGS": null,
+    "SHELL": "/bin/zsh",
+    "TZ": null
+  },
+  "execution_environment_before": {
+    "JAVA_HOME": null,
+    "JAVA_TOOL_OPTIONS": null,
+    "JDK_JAVA_OPTIONS": null,
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "LC_CTYPE": "C.UTF-8",
+    "MAKEFLAGS": null,
+    "MFLAGS": null,
+    "PATH": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/TeX/texbin:/Users/alecsculley/.codex/tmp/arg0/codex-arg0S7avm9:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/opt/miniconda3/bin:/opt/miniconda3/condabin:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS",
+    "PYTHONHOME": null,
+    "PYTHONPATH": null,
+    "ROBOT_JAVA_ARGS": null,
+    "SHELL": "/bin/zsh",
+    "TZ": null
+  },
+  "execution_status": "completed",
+  "execution_tools_after": {
+    "python": {
+      "bytes": 6768736,
+      "path": "/opt/miniconda3/bin/python3.12",
+      "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+    }
+  },
+  "execution_tools_before": {
+    "python": {
+      "bytes": 6768736,
+      "path": "/opt/miniconda3/bin/python3.12",
+      "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+    }
+  },
+  "expected_execution_environment": {
+    "JAVA_HOME": null,
+    "JAVA_TOOL_OPTIONS": null,
+    "JDK_JAVA_OPTIONS": null,
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "LC_CTYPE": "C.UTF-8",
+    "MAKEFLAGS": null,
+    "MFLAGS": null,
+    "PATH": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/TeX/texbin:/Users/alecsculley/.codex/tmp/arg0/codex-arg0S7avm9:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/opt/miniconda3/bin:/opt/miniconda3/condabin:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS",
+    "PYTHONHOME": null,
+    "PYTHONPATH": null,
+    "ROBOT_JAVA_ARGS": null,
+    "SHELL": "/bin/zsh",
+    "TZ": null
+  },
+  "expected_execution_tools": {
+    "python": {
+      "bytes": 6768736,
+      "path": "/opt/miniconda3/bin/python3.12",
+      "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+    }
+  },
+  "expected_head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+  "expected_input_sha256": {
+    "config/sosa-source-version.toml": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+    "requirements/coms-integration.txt": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+    "requirements/validation.txt": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+    "src/sosa-next/imports/sample-relations.ttl": "0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32",
+    "src/sosa-next/imports/sosa-actuation.ttl": "18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5",
+    "src/sosa-next/imports/sosa-common.ttl": "31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa",
+    "src/sosa-next/imports/sosa-deprecated.ttl": "5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987",
+    "src/sosa-next/imports/sosa-observation.ttl": "da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3",
+    "src/sosa-next/imports/sosa-sampling.ttl": "82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70",
+    "src/sosa-next/imports/sosa-source-declaration-overlay.ttl": "5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2",
+    "src/sosa-next/imports/sosa-system.ttl": "1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf",
+    "src/sosa-next/imports/sosa.ttl": "a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305",
+    "tools/check_sosa_source_version.py": "5ed05a93732e7c65158f13c7a928b4cda2ef9197434a4efd38b53d983670a130",
+    "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+    "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+    "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+  },
+  "final_head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+  "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+  "input_drift": [],
+  "input_scope": {
+    "absent_paths": [],
+    "custody_policy": {
+      "path": "tools/current_custody_dependencies.py",
+      "sha256": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388"
+    },
+    "migration_report_checkpoint": null,
+    "policy": {
+      "path": "tools/current_validation_scope.py",
+      "sha256": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9"
+    },
+    "profile": "current-validation-inputs-v2",
+    "role": "sosa_source_version",
+    "schema_version": 2
+  },
+  "input_sha256": {
+    "config/sosa-source-version.toml": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+    "requirements/coms-integration.txt": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+    "requirements/validation.txt": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+    "src/sosa-next/imports/sample-relations.ttl": "0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32",
+    "src/sosa-next/imports/sosa-actuation.ttl": "18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5",
+    "src/sosa-next/imports/sosa-common.ttl": "31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa",
+    "src/sosa-next/imports/sosa-deprecated.ttl": "5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987",
+    "src/sosa-next/imports/sosa-observation.ttl": "da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3",
+    "src/sosa-next/imports/sosa-sampling.ttl": "82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70",
+    "src/sosa-next/imports/sosa-source-declaration-overlay.ttl": "5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2",
+    "src/sosa-next/imports/sosa-system.ttl": "1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf",
+    "src/sosa-next/imports/sosa.ttl": "a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305",
+    "tools/check_sosa_source_version.py": "5ed05a93732e7c65158f13c7a928b4cda2ef9197434a4efd38b53d983670a130",
+    "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+    "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+    "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+  },
+  "input_sha256_after": {
+    "config/sosa-source-version.toml": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+    "requirements/coms-integration.txt": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+    "requirements/validation.txt": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+    "src/sosa-next/imports/sample-relations.ttl": "0f9c8561626e9c75cb364d3c0f6cdb3197e9e72b6727b095309fc3fb1d605e32",
+    "src/sosa-next/imports/sosa-actuation.ttl": "18c840cba0a4e148048e6147cb2b5fa9b36bbf09dcb60802ce65d3ecfb3175c5",
+    "src/sosa-next/imports/sosa-common.ttl": "31bb4a6fb3d4b8b7612998744f73b5a8194d34ef866184460ed22dc0f78a91aa",
+    "src/sosa-next/imports/sosa-deprecated.ttl": "5a99055ea8938f0e9384b81ad3ac1b3eaa13aaf50c54e308cab9551c88392987",
+    "src/sosa-next/imports/sosa-observation.ttl": "da6b3b2304a491c45a8822e70529f72c1d73606dda9a8b73b0c5360313ab30c3",
+    "src/sosa-next/imports/sosa-sampling.ttl": "82e59f8354debaff6cdcb3e354397ea17318e4bc45dc7a8a005c1fa5404d2d70",
+    "src/sosa-next/imports/sosa-source-declaration-overlay.ttl": "5cee7b4c6799df0ebff5f4c503b7495fce67f940c53711a2aecfa6896f8d3af2",
+    "src/sosa-next/imports/sosa-system.ttl": "1ac64f168163b7e6139bf632a07e35112837a58021ff706688d2c626e9cc1caf",
+    "src/sosa-next/imports/sosa.ttl": "a1875d19988b0bd17e5cd3a61f76440b6e0f7b1e07bd30237e6fb7341c170305",
+    "tools/check_sosa_source_version.py": "5ed05a93732e7c65158f13c7a928b4cda2ef9197434a4efd38b53d983670a130",
+    "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+    "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+    "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+  },
+  "log": "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.log",
+  "log_sha256": "5ab492cd94b2e78907273415ae44097a4f028e2f61413640c8ac63dff9ad255e",
+  "name": "sosa_source_version",
+  "native_execution_profile": "current-validation-execution-v2",
+  "receipt_sha256": "1bff60986bddb88f3f60351a8991f77d2f4852464a2bd348c9aed9f889fe90ab",
+  "recorder": {
+    "bytes": 27309,
+    "path": "tools/current_validation_execution.py",
+    "sha256": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37"
+  },
+  "result_artifacts": {
+    "reports/current-publication-validation/v2-migration-20261030/run.json": "a8888bd01ebc123db4692439c9dbc1359c2b01655303e4b85b2c4d6e016cd2ed",
+    "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.capture.json": "8e29160fa5298b13a1a53a4ca26e64f47916719301a1ec8fe166c9b95894bfb7",
+    "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.log": "5ab492cd94b2e78907273415ae44097a4f028e2f61413640c8ac63dff9ad255e",
+    "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.ticket.json": "dd81e19a50dfe66e56700fa0b17585464f58515c527b4c817c49f66bc8ec96a9",
+    "tests/test_current_validation_execution.py": "070415f01597020fbeebee0647ca32b487bf05a2666ff13a534556f2207d90b5",
+    "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37"
+  },
+  "returncode": 0,
+  "run_manifest": {
+    "bytes": 438899,
+    "path": "reports/current-publication-validation/v2-migration-20261030/run.json",
+    "sha256": "a8888bd01ebc123db4692439c9dbc1359c2b01655303e4b85b2c4d6e016cd2ed"
+  },
+  "started_at_utc": "2026-10-30T02:41:46.151497+00:00",
+  "ticket": {
+    "bytes": 9453,
+    "path": "reports/current-publication-validation/v2-migration-20261030/sosa_source_version.ticket.json",
+    "sha256": "dd81e19a50dfe66e56700fa0b17585464f58515c527b4c817c49f66bc8ec96a9"
+  },
+  "tool_identity": {
+    "bytes": 6768736,
+    "path": "/opt/miniconda3/bin/python3.12",
+    "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+  }
+}

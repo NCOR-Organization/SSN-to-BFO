@@ -1,0 +1,2285 @@
+{
+  "binding": {
+    "assessment_tool_sha256": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "input_scope": {
+      "custody": "authenticated_reachable_authorities",
+      "outputs": "reports/current-assessment/v2",
+      "policy": {
+        "path": "tools/current_custody_dependencies.py",
+        "sha256": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388"
+      },
+      "profile": "current-ssn-sosa-assessment-inputs-v2",
+      "schema_version": 2
+    },
+    "input_sha256": {
+      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
+      "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
+      "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+      "config/publication-metadata.toml": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
+      "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
+      "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
+      "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
+      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+      "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
+      "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
+      "reports/actuation-range-simplification-implementation.md": "53cf2dbe66689001a8fc02af62d538256676d125c10390b74ac8b84b1266f05d",
+      "reports/all-mapping-changes-and-rationales.md": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
+      "reports/all-source-domain-range-operationalization-evaluation.md": "fbdf4f75823b4d0a4f6d4cfea1e521c6c5220fc10a9b8a724e384353f0d2ea1b",
+      "reports/coms-frequency-correction-validation.md": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json": "09e17d3bf0a6c09e2c184db66aaaae331f610d7f78db33d5308a0df19890a80c",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty.json": "9d04174ff90b91dd48311189bd07d4bfac9eca46985d448cef569125d478e2de",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json": "da1f762851c24de45db6537bbf31fcd113a51382bd75040004fdbf92ca874ff2",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
+      "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
+      "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
+      "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
+      "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
+      "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json": "51ec899be8e1fb8939c504ab83e7ed67d1175ba21bd2c13c42a0db8b5f211c00",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2",
+      "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json": "3f4c4beae24ceced243cd33a461dfb5c23e2b1c04e4e326e03c77e4333d32bc5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
+      "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
+      "reports/hermit-observation-sensor-stimulus-evaluation.md": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
+      "reports/hermit-observedProperty-deferral-evaluation.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/hermit-observedProperty-reactivation-canary.md": "6ebf79a69871a2110c40806d2cdee124781f76ee0908d03f3ea61051b62660d3",
+      "reports/hermit-survival-property-source-restriction-explanation.md": "2e53188f4892f467d284936db945c0f5d024b58f0c2527b228097752cec289e4",
+      "reports/hermit-survival-range-deferral-evaluation.md": "48dca287da413b7f653f632b654985d7e646e911bc88c2a854ebc6274556d749",
+      "reports/hosts-implementedby-complex-mapping-review.md": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23",
+      "reports/input-output-cco-mapping-rationale-cleanup.md": "251b7b672c36dc19c06f60c00fdc9e9bd101dc4c9783f91e8947f9d51d3d9f1f",
+      "reports/inverse-side-direct-mapping-policy-review.md": "a87a2e0fb756b666651decd2fc1ab50c13245ba64dcb2a3bff3ddc0619271dd2",
+      "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md": "988d63ea89385938c9b79b9b2b2dc4bf7f6515a0d07c0aa0faa76cac53676487",
+      "reports/isHostedBy-hosts-full-closure-analysis.md": "5e13743261d6f8470970f3bbeba912457f5218a90df4ef19fed8eb88cafebd45",
+      "reports/isObservedBy-observes-full-closure-analysis.md": "595e9c38522522b8c6e7984db4e1067983cf75feed980e5034927a8d706ac79b",
+      "reports/isResultOf-hasResult-full-closure-analysis.md": "0c6189baf7fe30ca7c2141f77a05aefa0dbd43f948d1df34bc3b34e65bcdfea2",
+      "reports/madeByActuator-agent-mapping-adjustment-evaluation.md": "4d5b469eb57ffa2df538811407c5bc9b66777c3427771f3d57cfa8dc5ad78a3a",
+      "reports/madeByActuator-range-after-agent-deferral.md": "a6526175d5dfb3e6874c91e0b602241036386867801262b364b519eba6576be2",
+      "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/madeSampling-madeBySampler-full-closure-analysis.md": "ba0bac2453d6fbabdae7bae6cd1feff93deb930d33df9766c0987e1bee4941cc",
+      "reports/mapping-consistency-resolution-plan.md": "2d53b7634f62afe1bd04354077efec307c0ac2eea48f877216863bf8ebf71f94",
+      "reports/mapping-consistency-target-mismatch-review.md": "55fbefbd6125de5aec33a6701c4c753426819bf1a576eca76cceb4d091b21d33",
+      "reports/object-property-domain-range-fallback-policy-audit.md": "033ad6ace8956f3ab143bba4deec772b5f98bed141534eaf75afd099b6123be7",
+      "reports/observes-upper-mapping-decision.md": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
+      "reports/reasoner-unsafe-system-mapping-deferral.md": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
+      "reports/rerun-prior-clean-decisions-full-sosa.md": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+      "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json": "04f82200089e4325e0fe53d247d8042f034318418ac1633a46d3370a3c06b587",
+      "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "reports/sample-relationship-deferral.md": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
+      "reports/sample-representation-property-chains-review.md": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
+      "reports/sampler-equivalentclass-decision.md": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
+      "reports/sosa-2023-ro-mapping-decisions.md": "de720f911f169c672e005e8714c280fd35f8d152b93fac29f74dde3bcb498193",
+      "reports/sosa-next-crosswalk-reconciliation.md": "0817a644868d759487325b55fda05b64c3e88172c3cd0cfcea2254d6efa0e5a5",
+      "reports/sosa-sensor-version-alignment-deferral.md": "f4d9ea7c8b4f12c210c2c444177fea6a34e6080bef0d95cd5360f85667ed5a5f",
+      "reports/sosa-sensor-version-alignment-resolution.md": "cd51eeac2b611bc0cf63f9709e0f3f245cfd3ba6bff8b1a71a24c77082580b4d",
+      "reports/ssn-hasproperty-modeling-options.md": "0ed798703f9ccd523ffec02295609548168e28a470a2c86052eb7518d07fe009",
+      "reports/ssn-hasproperty-rule-mapping-artifact.md": "c854c814080397f9682c811b04a4858eb7ee356521e808a37108d51c75469d8b",
+      "reports/ssn-systems-dependence-reactivation-results.md": "d4845bada4f6f184016bfbbc447ee387c0c7d9f93f3850de8cd14c1ed834604d",
+      "reports/ssn-systems-domain-range-operationalization-evaluation.md": "7998be7effb2a994b189d3da5ab79629d13cf0377a28904f1ad41a40e02da447",
+      "reports/ssn-systems-property-split-mapping-review.md": "595473648a1cb1597f3f56abad3dcad2f8fcc656dc51f8ba6d788f2afe584ad3",
+      "reports/straightforward-op-mapping-candidates-review.md": "2837a2981b534abd25cf05da31e82088b55aa0c138f17d5ab80ab70c37007a18",
+      "reports/system-property-direct-mapping-deferral.md": "3a68343b54113f13408245463a053ef8773b46397574934b0b40adb7dd995df1",
+      "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
+      "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
+      "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
+      "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
+      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
+      "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+      "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
+      "tools/current_documentary_workbook.py": "191ae558a7a1498930bf8a37334c82c746c77400aaa1d09b24252cf7e51a3db5",
+      "tools/current_portable_execution_evidence.py": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+      "tools/current_publication_preservation.py": "91cc59ee12f5a1e3706ed854c895e7a727d6842b72043a91f8d7677aefbbef60",
+      "tools/current_publication_readiness.py": "c30df5212d41f9846353f22f3f7831299ba660d2ae881e6ac6a770ce8e961571",
+      "tools/current_retained_evidence.py": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+      "tools/current_semantic_generation.py": "f13b3b7726543382b9d6e968c5a4c48a9eea1996da1b614e2b2edbceebeb4710",
+      "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+      "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+      "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
+      "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
+      "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
+      "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
+      "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
+      "tools/publication_metadata.py": "b2e871b7d8d1c874b6c2daf1ac2904ede1e08092beb6207d4ccdb064e283aa09",
+      "tools/release_context.py": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
+      "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+    }
+  },
+  "method": "Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.",
+  "summary": {
+    "assertion_bearing_rows": 100,
+    "assessment_outcomes": {
+      "deferred": 0,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 2,
+      "no_direct_mapping": 5,
+      "unreviewed": 74
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 2,
+    "coverage_counts": {
+      "direct_formal_mapping": 67,
+      "explicit_blank": 5,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 16,
+      "rule_or_chain_route": 9,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 42,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 88,
+      "named": 192,
+      "some": 97,
+      "union": 15
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 5,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 2,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 32,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 0,
+      "final": 17,
+      "unreviewed": 74
+    },
+    "rows_with_expression_form": {
+      "intersection": 36,
+      "named": 73,
+      "some": 36,
+      "union": 14
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  },
+  "terms": [
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "sosa:ActuatableProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/ActuatableProperty",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:2a4f78b4-92cb-4095-9a6b-2ae03e00be4a"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Actuation",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+          "source_path": [
+            "sosa:Actuator rdfs:subClassOf ssn:System"
+          ],
+          "target": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)",
+          "via_source": "http://www.w3.org/ns/ssn/System"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Actuator",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/FeatureOfInterest",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "sosa:ObservableProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/ObservableProperty",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Observation",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Platform",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Procedure",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Result",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86",
+          "source_path": [
+            "sosa:Sample rdfs:subClassOf sosa:FeatureOfInterest"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile or bfo:MaterialEntity or bfo:Process)",
+          "via_source": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+        },
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f",
+          "source_path": [
+            "sosa:Sample rdfs:subClassOf sosa:Result"
+          ],
+          "target": "(cco:InformationContentEntity or bfo:MaterialEntity) and (cco:is_output_of some (sosa:Observation or sosa:Actuation or sosa:Sampling))",
+          "via_source": "http://www.w3.org/ns/sosa/Result"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Sample",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+          "source_path": [
+            "sosa:Sampler rdfs:subClassOf ssn:System"
+          ],
+          "target": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)",
+          "via_source": "http://www.w3.org/ns/ssn/System"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Sampler",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Sampling",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+          "source_path": [
+            "sosa:Sensor rdfs:subClassOf ssn:System"
+          ],
+          "target": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)",
+          "via_source": "http://www.w3.org/ns/ssn/System"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/Sensor",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:69e972da-23ad-4e50-822b-e41198c95795"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:8c9662e8-a69c-4ce1-9d17-381ec3cdc162",
+          "source_path": [
+            "sosa:actsOnProperty owl:inverseOf sosa:isActedOnBy"
+          ],
+          "target": "inverse(cco:is_affected_by)",
+          "via_source": "http://www.w3.org/ns/sosa/isActedOnBy"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/actsOnProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:b16f1d3a-3d10-4b75-9f12-2331e6c46d74",
+        "urn:uuid:01b1aff2-a12b-430b-9775-b43241c3a7cf"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:b4fc5247-7d44-4619-9d0b-8466f45218bf",
+          "source_path": [
+            "sosa:hasResult owl:inverseOf sosa:isResultOf"
+          ],
+          "target": "inverse(cco:is_output_of)",
+          "via_source": "http://www.w3.org/ns/sosa/isResultOf"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/hasResult",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/hasSample",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [
+        "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e"
+      ],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "conditions": "Reverse each chain relation and order; this infers source edges from target paths, not target edges from arbitrary source assertions.",
+          "mapping_row_id": "urn:uuid:e866de80-683d-4138-a713-be9646d37148",
+          "mode": "inverse_chain_head",
+          "source_path": [
+            "sosa:hosts owl:inverseOf sosa:isHostedBy"
+          ]
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/sosa/hosts",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:8c9662e8-a69c-4ce1-9d17-381ec3cdc162"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:69e972da-23ad-4e50-822b-e41198c95795",
+          "source_path": [
+            "sosa:isActedOnBy owl:inverseOf sosa:actsOnProperty"
+          ],
+          "target": "inverse(cco:affects)",
+          "via_source": "http://www.w3.org/ns/sosa/actsOnProperty"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/isActedOnBy",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:b5a532fc-5dea-4a47-9323-0a78a849c078",
+        "urn:uuid:e15cfee1-3c8e-4519-bce0-ec62729fd2fd"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [
+        "urn:uuid:e866de80-683d-4138-a713-be9646d37148"
+      ],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "conditions": "Reverse each chain relation and order; this infers source edges from target paths, not target edges from arbitrary source assertions.",
+          "mapping_row_id": "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e",
+          "mode": "inverse_chain_head",
+          "source_path": [
+            "sosa:isHostedBy owl:inverseOf sosa:hosts"
+          ]
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/sosa/isHostedBy",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/isObservedBy",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:d5712b64-a526-4112-ba23-520ec8dc5066",
+        "urn:uuid:37fac05e-0d70-420d-a0c0-78bc1d87cd63"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b4fc5247-7d44-4619-9d0b-8466f45218bf"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a",
+          "source_path": [
+            "sosa:isResultOf owl:inverseOf sosa:hasResult"
+          ],
+          "target": "inverse(cco:has_output)",
+          "via_source": "http://www.w3.org/ns/sosa/hasResult"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/isResultOf",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/isSampleOf",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeActuation",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:01085646-1b07-4c69-a39a-0c5c8ab53d33",
+        "urn:uuid:0f9d6fa9-00b9-4602-b31d-9e205f53e67d"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeByActuator",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:675bb221-ad63-4033-9f22-5190d0b6d545",
+        "urn:uuid:ac95c1e2-0d93-48de-be9d-4defbe6525f0"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca",
+          "source_path": [
+            "sosa:madeBySampler owl:inverseOf sosa:madeSampling"
+          ],
+          "target": "inverse(cco:agent_in)",
+          "via_source": "http://www.w3.org/ns/sosa/madeSampling"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySampler",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
+        "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
+        "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866",
+          "source_path": [
+            "sosa:madeSampling owl:inverseOf sosa:madeBySampler"
+          ],
+          "target": "inverse(cco:has_agent)",
+          "via_source": "http://www.w3.org/ns/sosa/madeBySampler"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/madeSampling",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/observes",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:61fc3404-f33a-4c4c-a25c-412d9972016c",
+        "urn:uuid:5ce06556-de99-44be-922d-a3d092a00dbb"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/phenomenonTime",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/RelationshipNature",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:f293250d-b1e8-4467-8b7d-a94fb2b9b705"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/natureOfRelationship",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/sampling/relatedSample",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/sosa/usedProcedure",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/Deployment",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/Input",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/Output",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/Property",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:23915904-0174-4f2f-b6cf-6a8671b92d7e"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/Stimulus",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/System",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804",
+          "source_path": [
+            "ssn:deployedOnPlatform owl:inverseOf ssn:inDeployment"
+          ],
+          "target": "inverse(bfo:participates_in)",
+          "via_source": "http://www.w3.org/ns/ssn/inDeployment"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4",
+          "source_path": [
+            "ssn:deployedSystem owl:inverseOf ssn:hasDeployment"
+          ],
+          "target": "inverse(bfo:participates_in)",
+          "via_source": "http://www.w3.org/ns/ssn/hasDeployment"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/deployedSystem",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:6335c13d-fb23-49fd-9662-fd682c79f172"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/detects",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5",
+          "source_path": [
+            "ssn:hasDeployment owl:inverseOf ssn:deployedSystem"
+          ],
+          "target": "inverse(bfo:has_participant)",
+          "via_source": "http://www.w3.org/ns/ssn/deployedSystem"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/hasDeployment",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/hasInput",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf549b607",
+        "urn:uuid:ab19659f-7e70-4f35-87f1-46b59ae80884"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/hasOutput",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:27ab2a4a-15a3-4585-885a-bbac1fe0a5bb",
+        "urn:uuid:766c2e20-d125-448b-bc37-642daebaf088"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/hasProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/hasSubSystem",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+          "source_path": [
+            "ssn:implementedBy owl:inverseOf ssn:implements"
+          ],
+          "target": "inverse(cco:prescribed_by)",
+          "via_source": "http://www.w3.org/ns/ssn/implements"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+          "source_path": [
+            "ssn:implements owl:inverseOf ssn:implementedBy"
+          ],
+          "target": "inverse(cco:prescribes)",
+          "via_source": "http://www.w3.org/ns/ssn/implementedBy"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/implements",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5",
+          "source_path": [
+            "ssn:inDeployment owl:inverseOf ssn:deployedOnPlatform"
+          ],
+          "target": "inverse(bfo:has_participant)",
+          "via_source": "http://www.w3.org/ns/ssn/deployedOnPlatform"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/inDeployment",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/isPropertyOf",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/isProxyFor",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:ebf4115f-fe96-4959-89a4-98c3a6031cff",
+        "urn:uuid:b7873da3-fc78-4a2a-92e1-ef83efb6d600"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Accuracy rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Accuracy",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:ActuationRange rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/ActuationRange",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0",
+          "source_path": [
+            "ssn-system:BatteryLifetime rdfs:subClassOf ssn-system:SurvivalProperty"
+          ],
+          "target": "bfo:Function and bfo:has_realization some (bfo:Process and cco:caused_by some (bfo:Process and bfo:realizes some (cco:Affordance and cco:prescribed_by some cco:ArtifactDesign)))",
+          "via_source": "http://www.w3.org/ns/ssn/systems/SurvivalProperty"
+        },
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:BatteryLifetime rdfs:subClassOf ssn-system:SurvivalProperty",
+            "ssn-system:SurvivalProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/BatteryLifetime",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Condition rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Condition",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:DetectionLimit rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/DetectionLimit",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Drift rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Drift",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:124e6b06-906a-47be-a459-92babef3992e"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Frequency rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Frequency",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Latency rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Latency",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1",
+          "source_path": [
+            "ssn-system:MaintenanceSchedule rdfs:subClassOf ssn-system:OperatingProperty"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and cco:prescribed_by some cco:ArtifactDesign",
+          "via_source": "http://www.w3.org/ns/ssn/systems/OperatingProperty"
+        },
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:MaintenanceSchedule rdfs:subClassOf ssn-system:OperatingProperty",
+            "ssn-system:OperatingProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/MaintenanceSchedule",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:MeasurementRange rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1",
+          "source_path": [
+            "ssn-system:OperatingPowerRange rdfs:subClassOf ssn-system:OperatingProperty"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and cco:prescribed_by some cco:ArtifactDesign",
+          "via_source": "http://www.w3.org/ns/ssn/systems/OperatingProperty"
+        },
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:OperatingPowerRange rdfs:subClassOf ssn-system:OperatingProperty",
+            "ssn-system:OperatingProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingPowerRange",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:OperatingProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingProperty",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:OperatingRange rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Precision rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Precision",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Resolution rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Resolution",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:ResponseTime rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/ResponseTime",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Selectivity rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Selectivity",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:Sensitivity rdfs:subClassOf ssn-system:SystemProperty",
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/Sensitivity",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:SurvivalProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SurvivalProperty",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:c15208c5-847f-4de3-a456-4037142ca542"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:SurvivalRange rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SurvivalRange",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:SystemCapability rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemCapability",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0",
+          "source_path": [
+            "ssn-system:SystemLifetime rdfs:subClassOf ssn-system:SurvivalProperty"
+          ],
+          "target": "bfo:Function and bfo:has_realization some (bfo:Process and cco:caused_by some (bfo:Process and bfo:realizes some (cco:Affordance and cco:prescribed_by some cco:ArtifactDesign)))",
+          "via_source": "http://www.w3.org/ns/ssn/systems/SurvivalProperty"
+        },
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:SystemLifetime rdfs:subClassOf ssn-system:SurvivalProperty",
+            "ssn-system:SurvivalProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemLifetime",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": false,
+          "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+          "source_path": [
+            "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+          ],
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+          "via_source": "http://www.w3.org/ns/ssn/Property"
+        }
+      ],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+      "source_kind": "class",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:265137eb-a279-4f9a-b1b9-e85d7ecb02a7",
+        "urn:uuid:8b87dd5b-298e-4ae7-8724-3778c0a67234"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:82ce9316-b7a7-4655-9c98-e16c314a0244",
+        "urn:uuid:bd5a2014-f338-49b8-b7ef-27f5b933d93b"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:5f25dce9-54a0-442e-a9de-f18cd21aab1d",
+        "urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d545f81"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
+        {
+          "artifact": "rules/ssn-hasproperty-conditional-mapping.rq",
+          "conditions": "Forward property assertion with source subproperty path to ssn:hasProperty; subject/object typed as independent continuant/SDC or occurrent/ProcessProfile. Requires executing query; not an OWL-product entailment.",
+          "mode": "conditional_external_query"
+        }
+      ],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": true,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/inCondition",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:79e12baa-9467-4494-bdf3-b6906f5a81a7"
+      ]
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:2018c5db-cb41-4a54-aa97-df5df82f0286"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    },
+    {
+      "chain_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd"
+      ],
+      "explicit_blank": false,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": false,
+      "rule_routes": [],
+      "source_iri": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+      "source_kind": "object_property",
+      "typing_only_in_workbook": false,
+      "typing_row_ids": []
+    }
+  ]
+}

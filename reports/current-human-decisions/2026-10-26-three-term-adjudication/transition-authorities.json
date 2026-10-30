@@ -1,0 +1,47 @@
+{
+  "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reference": "Decisions / forProperty; governance requirements",
+        "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json",
+      "sha256": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782"
+    },
+    "rationale": "Alec Sculley independently approved no_direct_mapping on 2026-10-26 after fresh semantic adjudication. Historical July agreement is corroborative only and is not the authority for this transition."
+  },
+  "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reference": "Decisions / SystemProperty; governance requirements",
+        "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json",
+      "sha256": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5"
+    },
+    "rationale": "Alec Sculley independently approved inheritance_sufficient on 2026-10-26 after fresh semantic adjudication. Historical July agreement is corroborative only and is not the authority for this transition."
+  },
+  "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reference": "Decisions / MeasurementRange; governance requirements",
+        "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json",
+      "sha256": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d"
+    },
+    "rationale": "Alec Sculley independently approved inheritance_sufficient on 2026-10-26 after fresh semantic adjudication. Historical July agreement is corroborative only and is not the authority for this transition."
+  }
+}

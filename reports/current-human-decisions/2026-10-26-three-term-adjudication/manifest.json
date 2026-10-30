@@ -1,0 +1,402 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+  },
+  "assessment_before": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json",
+    "sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689"
+  },
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "baseline_capture": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/baseline-capture.json",
+    "sha256": "47eaba4e615912c2a53e0b99f02f678145d65ab277ab8bf4dee23f046acc097e"
+  },
+  "candidate_semantic_projection_sha256": "566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44",
+  "candidate_workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+  "decision_date": "2026-10-26",
+  "historical_authority_scope": "Corroborative only. All historical decisions and prior prepared applicability determinations remain immutable.",
+  "human_decisions": [
+    {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json",
+      "sha256": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782"
+    },
+    {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json",
+      "sha256": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5"
+    },
+    {
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json",
+      "sha256": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d"
+    }
+  ],
+  "reviewer_identity": "Alec Sculley",
+  "schema_version": 1,
+  "semantic_delta": {
+    "added_rows": [],
+    "changed_rows": [
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet2!B49",
+            "new_value": null,
+            "old_cell": "Sheet2!B49",
+            "old_value": "owl:propertyChainAxiom"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet2!C49",
+            "new_value": null,
+            "old_cell": "Sheet2!C49",
+            "old_value": "cco:described_by o cco:is_about"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet2!D49",
+            "new_value": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+            "old_cell": "Sheet2!D49",
+            "old_value": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+          "row": 49,
+          "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+          "subject": "ssn:forProperty",
+          "target": null,
+          "worksheet": "Sheet2"
+        },
+        "old": {
+          "predicate": "owl:propertyChainAxiom",
+          "reasoning": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version.",
+          "row": 49,
+          "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+          "subject": "ssn:forProperty",
+          "target": "cco:described_by o cco:is_about",
+          "worksheet": "Sheet2"
+        },
+        "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+      },
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet1!B45",
+            "new_value": null,
+            "old_cell": "Sheet1!B45",
+            "old_value": "rdfs:subClassOf"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet1!C45",
+            "new_value": null,
+            "old_cell": "Sheet1!C45",
+            "old_value": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D45",
+            "new_value": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+            "old_cell": "Sheet1!D45",
+            "old_value": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+          "row": 45,
+          "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+          "subject": "ssn-system:SystemProperty",
+          "target": null,
+          "worksheet": "Sheet1"
+        },
+        "old": {
+          "predicate": "rdfs:subClassOf",
+          "reasoning": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression.",
+          "row": 45,
+          "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+          "subject": "ssn-system:SystemProperty",
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)",
+          "worksheet": "Sheet1"
+        },
+        "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+      },
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet1!B43",
+            "new_value": null,
+            "old_cell": "Sheet1!B43",
+            "old_value": "rdfs:subClassOf"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet1!C43",
+            "new_value": null,
+            "old_cell": "Sheet1!C43",
+            "old_value": "bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D43",
+            "new_value": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+            "old_cell": "Sheet1!D43",
+            "old_value": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+          "row": 43,
+          "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+          "subject": "ssn-system:MeasurementRange",
+          "target": null,
+          "worksheet": "Sheet1"
+        },
+        "old": {
+          "predicate": "rdfs:subClassOf",
+          "reasoning": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression.",
+          "row": 43,
+          "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+          "subject": "ssn-system:MeasurementRange",
+          "target": "bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))",
+          "worksheet": "Sheet1"
+        },
+        "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+      }
+    ],
+    "cleared_mapping_rows": [
+      {
+        "predicate": null,
+        "reasoning": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+        "row": 49,
+        "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+        "subject": "ssn:forProperty",
+        "target": null,
+        "worksheet": "Sheet2"
+      },
+      {
+        "predicate": null,
+        "reasoning": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+        "row": 45,
+        "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+        "subject": "ssn-system:SystemProperty",
+        "target": null,
+        "worksheet": "Sheet1"
+      },
+      {
+        "predicate": null,
+        "reasoning": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+        "row": 43,
+        "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+        "subject": "ssn-system:MeasurementRange",
+        "target": null,
+        "worksheet": "Sheet1"
+      }
+    ],
+    "documentary_reasoning_changes": [
+      {
+        "changes": [
+          {
+            "column": "D",
+            "new_cell": "Sheet2!D49",
+            "new_value": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+            "old_cell": "Sheet2!D49",
+            "old_value": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version."
+          }
+        ],
+        "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+      },
+      {
+        "changes": [
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D45",
+            "new_value": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+            "old_cell": "Sheet1!D45",
+            "old_value": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression."
+          }
+        ],
+        "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+      },
+      {
+        "changes": [
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D43",
+            "new_value": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+            "old_cell": "Sheet1!D43",
+            "old_value": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression."
+          }
+        ],
+        "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+      }
+    ],
+    "removed_mapping_assertions": [
+      {
+        "predicate": "owl:propertyChainAxiom",
+        "reasoning": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version.",
+        "row": 49,
+        "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+        "subject": "ssn:forProperty",
+        "target": "cco:described_by o cco:is_about",
+        "worksheet": "Sheet2"
+      },
+      {
+        "predicate": "rdfs:subClassOf",
+        "reasoning": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression.",
+        "row": 45,
+        "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+        "subject": "ssn-system:SystemProperty",
+        "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)",
+        "worksheet": "Sheet1"
+      },
+      {
+        "predicate": "rdfs:subClassOf",
+        "reasoning": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression.",
+        "row": 43,
+        "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+        "subject": "ssn-system:MeasurementRange",
+        "target": "bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))",
+        "worksheet": "Sheet1"
+      }
+    ],
+    "semantic_changes": [
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet2!B49",
+            "new_value": null,
+            "old_cell": "Sheet2!B49",
+            "old_value": "owl:propertyChainAxiom"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet2!C49",
+            "new_value": null,
+            "old_cell": "Sheet2!C49",
+            "old_value": "cco:described_by o cco:is_about"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet2!D49",
+            "new_value": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+            "old_cell": "Sheet2!D49",
+            "old_value": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+          "row": 49,
+          "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+          "subject": "ssn:forProperty",
+          "target": null,
+          "worksheet": "Sheet2"
+        },
+        "old": {
+          "predicate": "owl:propertyChainAxiom",
+          "reasoning": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version.",
+          "row": 49,
+          "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc",
+          "subject": "ssn:forProperty",
+          "target": "cco:described_by o cco:is_about",
+          "worksheet": "Sheet2"
+        },
+        "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+      },
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet1!B45",
+            "new_value": null,
+            "old_cell": "Sheet1!B45",
+            "old_value": "rdfs:subClassOf"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet1!C45",
+            "new_value": null,
+            "old_cell": "Sheet1!C45",
+            "old_value": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D45",
+            "new_value": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+            "old_cell": "Sheet1!D45",
+            "old_value": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+          "row": 45,
+          "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+          "subject": "ssn-system:SystemProperty",
+          "target": null,
+          "worksheet": "Sheet1"
+        },
+        "old": {
+          "predicate": "rdfs:subClassOf",
+          "reasoning": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression.",
+          "row": 45,
+          "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+          "subject": "ssn-system:SystemProperty",
+          "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)",
+          "worksheet": "Sheet1"
+        },
+        "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+      },
+      {
+        "changed_cells": [
+          {
+            "column": "B",
+            "new_cell": "Sheet1!B43",
+            "new_value": null,
+            "old_cell": "Sheet1!B43",
+            "old_value": "rdfs:subClassOf"
+          },
+          {
+            "column": "C",
+            "new_cell": "Sheet1!C43",
+            "new_value": null,
+            "old_cell": "Sheet1!C43",
+            "old_value": "bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))"
+          },
+          {
+            "column": "D",
+            "new_cell": "Sheet1!D43",
+            "new_value": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+            "old_cell": "Sheet1!D43",
+            "old_value": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression."
+          }
+        ],
+        "new": {
+          "predicate": null,
+          "reasoning": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+          "row": 43,
+          "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+          "subject": "ssn-system:MeasurementRange",
+          "target": null,
+          "worksheet": "Sheet1"
+        },
+        "old": {
+          "predicate": "rdfs:subClassOf",
+          "reasoning": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression.",
+          "row": 43,
+          "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db",
+          "subject": "ssn-system:MeasurementRange",
+          "target": "bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))",
+          "worksheet": "Sheet1"
+        },
+        "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+      }
+    ]
+  }
+}

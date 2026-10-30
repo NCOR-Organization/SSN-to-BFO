@@ -26,7 +26,8 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 import build_release as build  # noqa: E402
 import check_release as check  # noqa: E402
 import release_manifest as release_manifest  # noqa: E402
-from release_context import parse_formal_release_context  # noqa: E402
+from current_semantic_generation import generated_expectations_context  # noqa: E402
+from release_context import parse_formal_release_context, authenticated_release_expectations  # noqa: E402
 from release_manifest import load_and_validate_release_manifest  # noqa: E402
 
 
@@ -95,6 +96,12 @@ def package_file_state(root: Path) -> dict[str, tuple[bytes, int]]:
 class ReleasePackageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        # This package fixture consumes the maintained workbook and its
+        # authenticated history, rather than the historical release checkpoint.
+        cls.enterClassContext(generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ))
+        cls.expectations = cls.enterClassContext(authenticated_release_expectations(REPO_ROOT, SYNTHETIC_CONTEXT))
         status = NOTES_PATH.lstat()
         if not stat.S_ISREG(status.st_mode) or stat.S_ISLNK(status.st_mode):
             raise AssertionError("the committed synthetic release notes fixture must be a regular file")
@@ -126,7 +133,9 @@ class ReleasePackageTests(unittest.TestCase):
         return parent, destination
 
     def fast_build(self, context, notes: Path, output: Path, *, repository_root: Path = REPO_ROOT):
-        with mock.patch.object(build, "run_independent_reasoning", return_value=self.manifest.validation.hermit_results), mock.patch.object(
+        with generated_expectations_context(
+            repository_root, repository_root / "mappings/SSN2BFO-COMS.xlsx"
+        ), mock.patch.object(build, "run_independent_reasoning", return_value=self.manifest.validation.hermit_results), mock.patch.object(
             check, "validate_release_package", return_value=()
         ):
             return build.build_release_package(context, notes, output, repository_root)
@@ -155,7 +164,10 @@ class ReleasePackageTests(unittest.TestCase):
             if path.is_file()
         )
         self.assertEqual(observed, build.PACKAGE_FILE_PATHS)
-        self.assertEqual({path: self.baseline_hashes[path] for path in FORMAL_HASHES}, FORMAL_HASHES)
+        self.assertEqual(
+            {path: self.baseline_hashes[path] for path in FORMAL_HASHES},
+            {build.PRODUCT_PACKAGE_PATHS[value.key]: value.sha256 for value in self.expectations.products},
+        )
         self.assertEqual(
             [
                 (
@@ -172,10 +184,10 @@ class ReleasePackageTests(unittest.TestCase):
                 for value in self.manifest.products
             ],
             [
-                ("integrated", 1, 4, 7, 3, 1102, 1117, 103, 105),
-                ("alignment_core", 1, 0, 7, 3, 53, 64, 29, 29),
-                ("strict_bfo_mapping", 1, 1, 7, 3, 125, 137, 19, 48),
-                ("cco_extension", 1, 1, 7, 3, 924, 936, 55, 105),
+                (value.key, 1, release_manifest.PRODUCT_IMPORT_COUNTS[value.key], 7, 3,
+                 value.logical_triple_count, value.total_triple_count,
+                 value.direct_governed_axiom_count, value.governed_closure_axiom_count)
+                for value in self.expectations.products
             ],
         )
 
@@ -251,7 +263,7 @@ class ReleasePackageTests(unittest.TestCase):
             [(value.product_key, value.fixed_closure_triple_count, value.return_code, value.named_unsatisfiable_class_count) for value in self.manifest.validation.hermit_results],
             [
                 (key, count, 0, 0)
-                for key, count in release_manifest.FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS
+                for key, count in self.expectations.fixed_closure_counts
             ],
         )
         self.assertTrue(all(value.reasoned_output_produced for value in self.manifest.validation.hermit_results))
@@ -595,6 +607,8 @@ class ReleasePackageTests(unittest.TestCase):
             alternate_repository,
             ignore=shutil.ignore_patterns(".git", "__pycache__", "*.pyc", "*.pyo"),
         )
+        # Retain a read-only Git identity anchor for the copied current inputs.
+        (alternate_repository / ".git").symlink_to(REPO_ROOT / ".git", target_is_directory=True)
         alternate_notes = alternate_repository / "release-notes/SYNTHETIC-2099-01-02-ALTERNATE.md"
         alternate_notes.write_bytes(notes_bytes(" with alternate notes"))
         notes_output = parent / "notes" / "2099-01-02"
@@ -853,6 +867,16 @@ class ReleasePackageTests(unittest.TestCase):
     def test_fresh_process_hash_seeds_are_byte_identical(self) -> None:
         parent = Path(tempfile.mkdtemp(prefix="release-seed-builds-"))
         self.addCleanup(shutil.rmtree, parent, True)
+        script = "\n".join((
+            "import sys",
+            "from pathlib import Path",
+            "root = Path.cwd()",
+            "sys.path.insert(0, str(root / 'tools'))",
+            "import build_release as build",
+            "from current_semantic_generation import generated_expectations_context",
+            "with generated_expectations_context(root, root / 'mappings/SSN2BFO-COMS.xlsx'):",
+            "    raise SystemExit(build.main(sys.argv[1:]))",
+        ))
         observed: list[dict[str, str]] = []
         for seed in ("0", "1", "42", "random"):
             output = parent / seed / "2099-01-02"
@@ -863,7 +887,8 @@ class ReleasePackageTests(unittest.TestCase):
                 [
                     sys.executable,
                     "-B",
-                    "tools/build_release.py",
+                    "-c",
+                    script,
                     "--release-id", "2099-01-02",
                     "--release-date", "2099-01-02",
                     "--source-commit", SYNTHETIC_CONTEXT.source_commit,

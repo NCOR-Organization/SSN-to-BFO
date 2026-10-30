@@ -27,6 +27,7 @@ import modular_products as modular  # noqa: E402
 import publication_metadata as metadata  # noqa: E402
 from product_dispositions import load_disposition_document  # noqa: E402
 from release_context import parse_formal_release_context  # noqa: E402
+from current_source_identity import ACCEPTED_CHECKPOINT_HEAD  # noqa: E402
 
 
 SYNTHETIC_CONTEXT = parse_formal_release_context(
@@ -58,24 +59,32 @@ PRODUCT_PATHS = {
 }
 
 
-def build_formal_products(context=SYNTHETIC_CONTEXT):
-    rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
-    processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
-    audits = tuple(row.identity_audit for row in processed)
-    disposition = load_disposition_document(
-        REPO_ROOT / "reports/coms-product-dispositions.json"
-    )
-    publication = metadata.load_metadata(
-        REPO_ROOT / "config/publication-metadata.toml"
-    )
-    rendered = coms.render_formal_product_set(
-        processed,
-        audits,
-        disposition,
-        publication,
-        context,
-    )
-    return processed, audits, disposition, publication, rendered
+def checkpoint_bytes(path: Path) -> bytes:
+    """The locked formal-release fixtures retain their original input bytes."""
+    relative = path.relative_to(REPO_ROOT).as_posix()
+    return subprocess.check_output(
+        ["git", "-C", str(REPO_ROOT), "show", f"{ACCEPTED_CHECKPOINT_HEAD}:{relative}"])
+
+
+def build_formal_products(context=SYNTHETIC_CONTEXT, *, pinned=True):
+    # Semantic workbook evolution does not replace the independent formal
+    # package's byte pins. Exercise those fixtures with their accepted inputs;
+    # the separate current-rendering test below validates the evolved workbook.
+    with tempfile.TemporaryDirectory(prefix="formal-rendering-fixture-") as temporary:
+        root = Path(temporary) if pinned else REPO_ROOT
+        if pinned:
+            for relative in ("mappings/SSN2BFO-COMS.xlsx", "reports/coms-product-dispositions.json",
+                             "config/publication-metadata.toml"):
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(checkpoint_bytes(REPO_ROOT / relative))
+        rows, stats = coms.read_workbook(root / "mappings/SSN2BFO-COMS.xlsx")
+        processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = load_disposition_document(root / "reports/coms-product-dispositions.json")
+        publication = metadata.load_metadata(root / "config/publication-metadata.toml")
+        rendered = coms.render_formal_product_set(processed, audits, disposition, publication, context)
+        return processed, audits, disposition, publication, rendered
 
 
 def artifact_bytes(product_set) -> dict[str, bytes]:
@@ -368,7 +377,7 @@ class FormalReleaseRenderingTests(unittest.TestCase):
         }
         for key in PRODUCT_PATHS:
             with self.subTest(product=key):
-                development = Graph().parse(PRODUCT_PATHS[key], format="turtle")
+                development = Graph().parse(data=checkpoint_bytes(PRODUCT_PATHS[key]), format="turtle")
                 formal = Graph().parse(data=self.bytes[key], format="turtle")
                 development_logical = metadata.strip_emitted_ontology_header(
                     development,
@@ -843,12 +852,31 @@ class FormalReleaseRenderingTests(unittest.TestCase):
                     self.assertEqual(result.owl_nothing_count, 0)
                     self.assertEqual(result.unsat_classes, [])
 
-    def test_development_artifacts_remain_byte_identical(self) -> None:
+    def test_checkpoint_development_artifact_hashes_remain_locked(self) -> None:
         observed = {
-            key: hashlib.sha256(path.read_bytes()).hexdigest()
+            key: hashlib.sha256(checkpoint_bytes(path)).hexdigest()
             for key, path in PRODUCT_PATHS.items()
         }
         self.assertEqual(observed, DEVELOPMENT_HASHES)
+
+    def test_current_formal_rendering_preserves_evolved_development_logic(self) -> None:
+        from current_semantic_generation import generated_expectations_context
+        with generated_expectations_context(REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"):
+            _, audits, _, publication, products = build_formal_products(pinned=False)
+        self.assertEqual(sum(len(a.authoritative_axioms) for a in audits), 100)
+        imports = {"integrated": coms.ROOT_ORDERED_IMPORTS, "alignment_core": (),
+                   "strict_bfo_mapping": (modular.ALIGNMENT_CORE_IMPORT_IRI,),
+                   "cco_extension": (modular.STRICT_BFO_IMPORT_IRI,)}
+        for key, value in artifact_bytes(products).items():
+            with self.subTest(product=key):
+                development = Graph().parse(PRODUCT_PATHS[key], format="turtle")
+                formal = Graph().parse(data=value, format="turtle")
+                self.assertTrue(isomorphic(
+                    metadata.strip_emitted_ontology_header(development, publication, key, imports[key]),
+                    metadata.strip_emitted_ontology_header(
+                        formal, publication, key,
+                        metadata.release_project_imports(publication, key, SYNTHETIC_CONTEXT),
+                        SYNTHETIC_CONTEXT)))
 
     def test_rendering_creates_no_release_directory_or_artifact(self) -> None:
         self.assertFalse((REPO_ROOT / "releases/2099-01-02").exists())

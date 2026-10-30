@@ -1,0 +1,565 @@
+{
+  "before": {
+    "execution_environment": {
+      "JAVA_HOME": null,
+      "JAVA_TOOL_OPTIONS": null,
+      "JDK_JAVA_OPTIONS": null,
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "MAKEFLAGS": null,
+      "MFLAGS": null,
+      "PATH": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/TeX/texbin:/Users/alecsculley/.codex/tmp/arg0/codex-arg0S7avm9:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/opt/miniconda3/bin:/opt/miniconda3/condabin:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS",
+      "PYTHONHOME": null,
+      "PYTHONPATH": null,
+      "ROBOT_JAVA_ARGS": null,
+      "SHELL": "/bin/zsh",
+      "TZ": null
+    },
+    "execution_tools": {
+      "awk": {
+        "bytes": 302368,
+        "path": "/usr/bin/awk",
+        "sha256": "3693175058d0be720f941a8e9c645756f7d38848f3457abd938d8e27ba35f8ab"
+      },
+      "bash": {
+        "bytes": 1293840,
+        "path": "/bin/bash",
+        "sha256": "fde343ee184953c1fa1185abddeaa8be61c6acbebae4eb54db5d6b55b09a5755"
+      },
+      "chmod": {
+        "bytes": 120656,
+        "path": "/bin/chmod",
+        "sha256": "8146d61f2d2c100b512e8cefc190698133889317404563bfc93aba6ab5c148e1"
+      },
+      "dirname": {
+        "bytes": 101168,
+        "path": "/usr/bin/dirname",
+        "sha256": "043384f1825337fb638f6d13fb519ce03807135ae5a14baac634a4dfceaec3ac"
+      },
+      "git": {
+        "bytes": 118928,
+        "path": "/usr/bin/git",
+        "sha256": "179301dcb41ea78accc3fa0048a7e6f6710d891945a751a34addd622020c1818"
+      },
+      "installed_robot": {
+        "bytes": 126,
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/bin/robot",
+        "sha256": "84579b48ee16da8742026231d961dac1915f51803c9aefee9f66689c9b1a9d41"
+      },
+      "installer_env": {
+        "bytes": 102368,
+        "path": "/usr/bin/env",
+        "sha256": "6e506aec3c0cff703ac1e66cedc6f1945354ad41339a38db4425c7c88227128f"
+      },
+      "java": {
+        "bytes": 135664,
+        "path": "/usr/bin/java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "javac": {
+        "bytes": 135664,
+        "path": "/usr/bin/javac",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "mkdir": {
+        "bytes": 101472,
+        "path": "/bin/mkdir",
+        "sha256": "08a20adeeff9bea14bae05c0a7f3c77c638b2b83fc3ab37e1c646e047bac7002"
+      },
+      "mktemp": {
+        "bytes": 101728,
+        "path": "/usr/bin/mktemp",
+        "sha256": "7bb3299fdb41f16ea5d9f7748cb5cb654b93208e0a1d1d78360145dcbbfb21fe"
+      },
+      "mv": {
+        "bytes": 119440,
+        "path": "/bin/mv",
+        "sha256": "962a05325a1dea705cc0953f00482099719cad204b80522d74349435098c20b9"
+      },
+      "python": {
+        "bytes": 6768736,
+        "path": "/opt/miniconda3/bin/python3.12",
+        "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+      },
+      "rm": {
+        "bytes": 119184,
+        "path": "/bin/rm",
+        "sha256": "0e7aa0987cecc8d8ca629e1c61857321e8e281a6c1d0711b21163a15e454dc9d"
+      },
+      "robot": {
+        "bytes": 58,
+        "path": "/usr/local/bin/robot",
+        "sha256": "a88a0ad50ea0bdde6b8cbca3de2cd5ed05226c919bb716e1710fadd3ae6862c5"
+      },
+      "robot_jar": {
+        "bytes": 95221545,
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar",
+        "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+      },
+      "sh": {
+        "bytes": 101232,
+        "path": "/bin/sh",
+        "sha256": "ad5c194b05f83bc5e793c1cd67b148a4b680467b5a5730ab1a31fe4e6460ee9f"
+      },
+      "sha256sum": {
+        "bytes": 136576,
+        "path": "/sbin/sha256sum",
+        "sha256": "881f3812ac7be70d99bf635e5322b63f565af66f502be3b464036fef8f927300"
+      }
+    },
+    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "input_scope": {
+      "absent_paths": [],
+      "custody_policy": {
+        "path": "tools/current_custody_dependencies.py",
+        "sha256": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388"
+      },
+      "migration_report_checkpoint": null,
+      "policy": {
+        "path": "tools/current_validation_scope.py",
+        "sha256": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9"
+      },
+      "profile": "current-validation-inputs-v2",
+      "role": "generation_freshness",
+      "schema_version": 2
+    },
+    "inputs": {
+      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
+      "config/current-semantic-expectations.json": "04ad8905517a5a4f10215b2831649455fc644ec0ee3a9ab43d2e0ee8753a2dab",
+      "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
+      "config/current-ssn-sosa-identity.json": "be88991ff122f6c4960fdbc60d1dfb1836c761654a37ff56403a56837f58a35c",
+      "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+      "config/product-role-policy.toml": "b197656c54b98854d45e27634a960a2a602ea1c852eeb5c17eeaa5719398fdfa",
+      "config/publication-metadata.toml": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
+      "config/release-manifest-schema-v1.json": "1a1e9fab1b2f410e6685264aa2a4641e50a46fc0db9e90d4cb8cd3e45455c301",
+      "config/release-manifest-schema-v2.json": "99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b",
+      "config/sosa-2023-publication-metadata.toml": "864c52455bfbc06ddaa0f10213be290dcdcb53fdb68a3f8e91b3f5a627ddb229",
+      "config/sosa-2023-release-manifest-schema-v1.json": "5b75bfbd2a074b65a611f7ffcad15d5834df04319de8dca016b326fc14402482",
+      "config/sosa-2023-ro-product.toml": "376a139f934de7be8c45f0540f52b7ff2c92ecd4cff31ff03e36f8a432dd1263",
+      "config/sosa-2023-ro-source-version.toml": "86f175390974f7b51bfeaab2b3f346aad266dfa9adf8c192363e37f1e96690e4",
+      "config/sosa-release-scope.toml": "24a9ca3923247debf666b6aeb8b6fe96f57df574c7a447e29277d3832d22fb94",
+      "config/sosa-source-version.toml": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+      "config/validation-toolchain.env": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+      "imports/.DS_Store": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "legacy/SSN2BFO-pre-COMS.ttl": "11c2db8b7e389bf443046c4a9940865529e56f63a19a4a515e6a52c2a8212a59",
+      "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
+      "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
+      "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
+      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+      "queries/unmapped-source-terms.rq": "38162b78061612b90aa284e0fc445c3ec1f163e5161b9b96633faaed62e22dd3",
+      "queries/verify/unmapped-source-terms.rq": "7109d343361d1bc0c499a63ff50b7b15c7d72db5da5006e1574dbb124f5ab96f",
+      "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+      "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28",
+      "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
+      "reports/actuation-range-simplification-implementation.md": "53cf2dbe66689001a8fc02af62d538256676d125c10390b74ac8b84b1266f05d",
+      "reports/all-mapping-changes-and-rationales.md": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
+      "reports/coms-frequency-correction-validation.md": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
+      "reports/coms-generation-validation.md": "1bf217c6c094139ff93a5308ffe7a005f1978afc6825da2d1b0746f00f0676d6",
+      "reports/coms-product-dispositions.json": "568cb535a9d9a656b71d4df85376d75188b4ca70a32acd03e5f2ebb09f3242c5",
+      "reports/coms-source-term-coverage.md": "b70c13ecfc0c395039c13f1fff7406a254e50e886783225be3d5321b797e1d6f",
+      "reports/coms-vs-pre-coms-legacy-diff.md": "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json": "09e17d3bf0a6c09e2c184db66aaaae331f610d7f78db33d5308a0df19890a80c",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty.json": "9d04174ff90b91dd48311189bd07d4bfac9eca46985d448cef569125d478e2de",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json": "da1f762851c24de45db6537bbf31fcd113a51382bd75040004fdbf92ca874ff2",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
+      "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
+      "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
+      "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
+      "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
+      "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json": "51ec899be8e1fb8939c504ab83e7ed67d1175ba21bd2c13c42a0db8b5f211c00",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2",
+      "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json": "3f4c4beae24ceced243cd33a461dfb5c23e2b1c04e4e326e03c77e4333d32bc5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
+      "reports/hermit-observedProperty-deferral-evaluation.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/hermit-survival-range-deferral-evaluation.md": "48dca287da413b7f653f632b654985d7e646e911bc88c2a854ebc6274556d749",
+      "reports/input-output-cco-mapping-rationale-cleanup.md": "251b7b672c36dc19c06f60c00fdc9e9bd101dc4c9783f91e8947f9d51d3d9f1f",
+      "reports/inverse-side-direct-mapping-policy-review.md": "a87a2e0fb756b666651decd2fc1ab50c13245ba64dcb2a3bff3ddc0619271dd2",
+      "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md": "988d63ea89385938c9b79b9b2b2dc4bf7f6515a0d07c0aa0faa76cac53676487",
+      "reports/isHostedBy-hosts-full-closure-analysis.md": "5e13743261d6f8470970f3bbeba912457f5218a90df4ef19fed8eb88cafebd45",
+      "reports/isResultOf-hasResult-full-closure-analysis.md": "0c6189baf7fe30ca7c2141f77a05aefa0dbd43f948d1df34bc3b34e65bcdfea2",
+      "reports/madeByActuator-range-after-agent-deferral.md": "a6526175d5dfb3e6874c91e0b602241036386867801262b364b519eba6576be2",
+      "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/madeSampling-madeBySampler-full-closure-analysis.md": "ba0bac2453d6fbabdae7bae6cd1feff93deb930d33df9766c0987e1bee4941cc",
+      "reports/mapping-consistency-resolution-plan.md": "2d53b7634f62afe1bd04354077efec307c0ac2eea48f877216863bf8ebf71f94",
+      "reports/mapping-consistency-target-mismatch-review.md": "55fbefbd6125de5aec33a6701c4c753426819bf1a576eca76cceb4d091b21d33",
+      "reports/observes-upper-mapping-decision.md": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
+      "reports/reasoner-unsafe-system-mapping-deferral.md": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
+      "reports/rerun-prior-clean-decisions-full-sosa.md": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+      "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json": "04f82200089e4325e0fe53d247d8042f034318418ac1633a46d3370a3c06b587",
+      "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "reports/sample-relationship-deferral.md": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
+      "reports/sample-representation-property-chains-review.md": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
+      "reports/sampler-equivalentclass-decision.md": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
+      "reports/sosa-sensor-version-alignment-deferral.md": "f4d9ea7c8b4f12c210c2c444177fea6a34e6080bef0d95cd5360f85667ed5a5f",
+      "reports/sosa-sensor-version-alignment-resolution.md": "cd51eeac2b611bc0cf63f9709e0f3f245cfd3ba6bff8b1a71a24c77082580b4d",
+      "reports/ssn-hasproperty-rule-mapping-artifact.md": "c854c814080397f9682c811b04a4858eb7ee356521e808a37108d51c75469d8b",
+      "reports/ssn-systems-dependence-reactivation-results.md": "d4845bada4f6f184016bfbbc447ee387c0c7d9f93f3850de8cd14c1ed834604d",
+      "reports/straightforward-op-mapping-candidates-review.md": "2837a2981b534abd25cf05da31e82088b55aa0c138f17d5ab80ab70c37007a18",
+      "reports/system-property-direct-mapping-deferral.md": "3a68343b54113f13408245463a053ef8773b46397574934b0b40adb7dd995df1",
+      "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
+      "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
+      "requirements/coms-integration.txt": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+      "requirements/validation.txt": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+      "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
+      "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
+      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
+      "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+      "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
+      "tools/current_documentary_workbook.py": "191ae558a7a1498930bf8a37334c82c746c77400aaa1d09b24252cf7e51a3db5",
+      "tools/current_portable_execution_evidence.py": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+      "tools/current_publication_preservation.py": "91cc59ee12f5a1e3706ed854c895e7a727d6842b72043a91f8d7677aefbbef60",
+      "tools/current_publication_readiness.py": "c30df5212d41f9846353f22f3f7831299ba660d2ae881e6ac6a770ce8e961571",
+      "tools/current_retained_evidence.py": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+      "tools/current_semantic_generation.py": "f13b3b7726543382b9d6e968c5a4c48a9eea1996da1b614e2b2edbceebeb4710",
+      "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+      "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+      "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
+      "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
+      "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
+      "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/install_validation_robot.sh": "3ac2ffa7b2d30b22d60fb4d26ce5f3197f8429dd6c95f836726cddcf8e40b1d0",
+      "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
+      "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
+      "tools/publication_metadata.py": "b2e871b7d8d1c874b6c2daf1ac2904ede1e08092beb6207d4ccdb064e283aa09",
+      "tools/release_context.py": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
+      "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+    }
+  },
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "tools/check_coms_mapping.py",
+    "--check-only"
+  ],
+  "cwd": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+  "execution_id": "1b1eb92f-0275-4c02-889f-6ed3126e1b1f",
+  "expected": {
+    "execution_environment": {
+      "JAVA_HOME": null,
+      "JAVA_TOOL_OPTIONS": null,
+      "JDK_JAVA_OPTIONS": null,
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "LC_CTYPE": "C.UTF-8",
+      "MAKEFLAGS": null,
+      "MFLAGS": null,
+      "PATH": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/TeX/texbin:/Users/alecsculley/.codex/tmp/arg0/codex-arg0S7avm9:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/opt/miniconda3/bin:/opt/miniconda3/condabin:/Users/alecsculley/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS",
+      "PYTHONHOME": null,
+      "PYTHONPATH": null,
+      "ROBOT_JAVA_ARGS": null,
+      "SHELL": "/bin/zsh",
+      "TZ": null
+    },
+    "execution_tools": {
+      "awk": {
+        "bytes": 302368,
+        "path": "/usr/bin/awk",
+        "sha256": "3693175058d0be720f941a8e9c645756f7d38848f3457abd938d8e27ba35f8ab"
+      },
+      "bash": {
+        "bytes": 1293840,
+        "path": "/bin/bash",
+        "sha256": "fde343ee184953c1fa1185abddeaa8be61c6acbebae4eb54db5d6b55b09a5755"
+      },
+      "chmod": {
+        "bytes": 120656,
+        "path": "/bin/chmod",
+        "sha256": "8146d61f2d2c100b512e8cefc190698133889317404563bfc93aba6ab5c148e1"
+      },
+      "dirname": {
+        "bytes": 101168,
+        "path": "/usr/bin/dirname",
+        "sha256": "043384f1825337fb638f6d13fb519ce03807135ae5a14baac634a4dfceaec3ac"
+      },
+      "git": {
+        "bytes": 118928,
+        "path": "/usr/bin/git",
+        "sha256": "179301dcb41ea78accc3fa0048a7e6f6710d891945a751a34addd622020c1818"
+      },
+      "installed_robot": {
+        "bytes": 126,
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/bin/robot",
+        "sha256": "84579b48ee16da8742026231d961dac1915f51803c9aefee9f66689c9b1a9d41"
+      },
+      "installer_env": {
+        "bytes": 102368,
+        "path": "/usr/bin/env",
+        "sha256": "6e506aec3c0cff703ac1e66cedc6f1945354ad41339a38db4425c7c88227128f"
+      },
+      "java": {
+        "bytes": 135664,
+        "path": "/usr/bin/java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "javac": {
+        "bytes": 135664,
+        "path": "/usr/bin/javac",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "mkdir": {
+        "bytes": 101472,
+        "path": "/bin/mkdir",
+        "sha256": "08a20adeeff9bea14bae05c0a7f3c77c638b2b83fc3ab37e1c646e047bac7002"
+      },
+      "mktemp": {
+        "bytes": 101728,
+        "path": "/usr/bin/mktemp",
+        "sha256": "7bb3299fdb41f16ea5d9f7748cb5cb654b93208e0a1d1d78360145dcbbfb21fe"
+      },
+      "mv": {
+        "bytes": 119440,
+        "path": "/bin/mv",
+        "sha256": "962a05325a1dea705cc0953f00482099719cad204b80522d74349435098c20b9"
+      },
+      "python": {
+        "bytes": 6768736,
+        "path": "/opt/miniconda3/bin/python3.12",
+        "sha256": "7d44ae165b645e73d5dbcaf9c2152de742cfb4f891c0e2fd9f0b2cebcb97fd45"
+      },
+      "rm": {
+        "bytes": 119184,
+        "path": "/bin/rm",
+        "sha256": "0e7aa0987cecc8d8ca629e1c61857321e8e281a6c1d0711b21163a15e454dc9d"
+      },
+      "robot": {
+        "bytes": 58,
+        "path": "/usr/local/bin/robot",
+        "sha256": "a88a0ad50ea0bdde6b8cbca3de2cd5ed05226c919bb716e1710fadd3ae6862c5"
+      },
+      "robot_jar": {
+        "bytes": 95221545,
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar",
+        "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+      },
+      "sh": {
+        "bytes": 101232,
+        "path": "/bin/sh",
+        "sha256": "ad5c194b05f83bc5e793c1cd67b148a4b680467b5a5730ab1a31fe4e6460ee9f"
+      },
+      "sha256sum": {
+        "bytes": 136576,
+        "path": "/sbin/sha256sum",
+        "sha256": "881f3812ac7be70d99bf635e5322b63f565af66f502be3b464036fef8f927300"
+      }
+    },
+    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "input_scope": {
+      "absent_paths": [],
+      "custody_policy": {
+        "path": "tools/current_custody_dependencies.py",
+        "sha256": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388"
+      },
+      "migration_report_checkpoint": null,
+      "policy": {
+        "path": "tools/current_validation_scope.py",
+        "sha256": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9"
+      },
+      "profile": "current-validation-inputs-v2",
+      "role": "generation_freshness",
+      "schema_version": 2
+    },
+    "inputs": {
+      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
+      "config/current-semantic-expectations.json": "04ad8905517a5a4f10215b2831649455fc644ec0ee3a9ab43d2e0ee8753a2dab",
+      "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
+      "config/current-ssn-sosa-identity.json": "be88991ff122f6c4960fdbc60d1dfb1836c761654a37ff56403a56837f58a35c",
+      "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+      "config/product-role-policy.toml": "b197656c54b98854d45e27634a960a2a602ea1c852eeb5c17eeaa5719398fdfa",
+      "config/publication-metadata.toml": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
+      "config/release-manifest-schema-v1.json": "1a1e9fab1b2f410e6685264aa2a4641e50a46fc0db9e90d4cb8cd3e45455c301",
+      "config/release-manifest-schema-v2.json": "99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b",
+      "config/sosa-2023-publication-metadata.toml": "864c52455bfbc06ddaa0f10213be290dcdcb53fdb68a3f8e91b3f5a627ddb229",
+      "config/sosa-2023-release-manifest-schema-v1.json": "5b75bfbd2a074b65a611f7ffcad15d5834df04319de8dca016b326fc14402482",
+      "config/sosa-2023-ro-product.toml": "376a139f934de7be8c45f0540f52b7ff2c92ecd4cff31ff03e36f8a432dd1263",
+      "config/sosa-2023-ro-source-version.toml": "86f175390974f7b51bfeaab2b3f346aad266dfa9adf8c192363e37f1e96690e4",
+      "config/sosa-release-scope.toml": "24a9ca3923247debf666b6aeb8b6fe96f57df574c7a447e29277d3832d22fb94",
+      "config/sosa-source-version.toml": "bb47d49db25aff3b2a08b01384255df13c8c49e991ee87b449d189f5e9cb319e",
+      "config/validation-toolchain.env": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+      "imports/.DS_Store": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "legacy/SSN2BFO-pre-COMS.ttl": "11c2db8b7e389bf443046c4a9940865529e56f63a19a4a515e6a52c2a8212a59",
+      "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
+      "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
+      "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
+      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+      "queries/unmapped-source-terms.rq": "38162b78061612b90aa284e0fc445c3ec1f163e5161b9b96633faaed62e22dd3",
+      "queries/verify/unmapped-source-terms.rq": "7109d343361d1bc0c499a63ff50b7b15c7d72db5da5006e1574dbb124f5ab96f",
+      "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+      "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28",
+      "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
+      "reports/actuation-range-simplification-implementation.md": "53cf2dbe66689001a8fc02af62d538256676d125c10390b74ac8b84b1266f05d",
+      "reports/all-mapping-changes-and-rationales.md": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
+      "reports/coms-frequency-correction-validation.md": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
+      "reports/coms-generation-validation.md": "1bf217c6c094139ff93a5308ffe7a005f1978afc6825da2d1b0746f00f0676d6",
+      "reports/coms-product-dispositions.json": "568cb535a9d9a656b71d4df85376d75188b4ca70a32acd03e5f2ebb09f3242c5",
+      "reports/coms-source-term-coverage.md": "b70c13ecfc0c395039c13f1fff7406a254e50e886783225be3d5321b797e1d6f",
+      "reports/coms-vs-pre-coms-legacy-diff.md": "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json": "09e17d3bf0a6c09e2c184db66aaaae331f610d7f78db33d5308a0df19890a80c",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty.json": "9d04174ff90b91dd48311189bd07d4bfac9eca46985d448cef569125d478e2de",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json": "da1f762851c24de45db6537bbf31fcd113a51382bd75040004fdbf92ca874ff2",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
+      "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
+      "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
+      "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
+      "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
+      "reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json": "456c878ac349e842de807fe7e4f922dcd7950598b2598095baf6fafd9a1d62e7",
+      "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json": "51ec899be8e1fb8939c504ab83e7ed67d1175ba21bd2c13c42a0db8b5f211c00",
+      "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2",
+      "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json": "3f4c4beae24ceced243cd33a461dfb5c23e2b1c04e4e326e03c77e4333d32bc5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
+      "reports/hermit-observedProperty-deferral-evaluation.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/hermit-survival-range-deferral-evaluation.md": "48dca287da413b7f653f632b654985d7e646e911bc88c2a854ebc6274556d749",
+      "reports/input-output-cco-mapping-rationale-cleanup.md": "251b7b672c36dc19c06f60c00fdc9e9bd101dc4c9783f91e8947f9d51d3d9f1f",
+      "reports/inverse-side-direct-mapping-policy-review.md": "a87a2e0fb756b666651decd2fc1ab50c13245ba64dcb2a3bff3ddc0619271dd2",
+      "reports/isActedOnBy-actsOnProperty-full-closure-analysis.md": "988d63ea89385938c9b79b9b2b2dc4bf7f6515a0d07c0aa0faa76cac53676487",
+      "reports/isHostedBy-hosts-full-closure-analysis.md": "5e13743261d6f8470970f3bbeba912457f5218a90df4ef19fed8eb88cafebd45",
+      "reports/isResultOf-hasResult-full-closure-analysis.md": "0c6189baf7fe30ca7c2141f77a05aefa0dbd43f948d1df34bc3b34e65bcdfea2",
+      "reports/madeByActuator-range-after-agent-deferral.md": "a6526175d5dfb3e6874c91e0b602241036386867801262b364b519eba6576be2",
+      "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/madeSampling-madeBySampler-full-closure-analysis.md": "ba0bac2453d6fbabdae7bae6cd1feff93deb930d33df9766c0987e1bee4941cc",
+      "reports/mapping-consistency-resolution-plan.md": "2d53b7634f62afe1bd04354077efec307c0ac2eea48f877216863bf8ebf71f94",
+      "reports/mapping-consistency-target-mismatch-review.md": "55fbefbd6125de5aec33a6701c4c753426819bf1a576eca76cceb4d091b21d33",
+      "reports/observes-upper-mapping-decision.md": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
+      "reports/reasoner-unsafe-system-mapping-deferral.md": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
+      "reports/rerun-prior-clean-decisions-full-sosa.md": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+      "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json": "04f82200089e4325e0fe53d247d8042f034318418ac1633a46d3370a3c06b587",
+      "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "reports/sample-relationship-deferral.md": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
+      "reports/sample-representation-property-chains-review.md": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
+      "reports/sampler-equivalentclass-decision.md": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
+      "reports/sosa-sensor-version-alignment-deferral.md": "f4d9ea7c8b4f12c210c2c444177fea6a34e6080bef0d95cd5360f85667ed5a5f",
+      "reports/sosa-sensor-version-alignment-resolution.md": "cd51eeac2b611bc0cf63f9709e0f3f245cfd3ba6bff8b1a71a24c77082580b4d",
+      "reports/ssn-hasproperty-rule-mapping-artifact.md": "c854c814080397f9682c811b04a4858eb7ee356521e808a37108d51c75469d8b",
+      "reports/ssn-systems-dependence-reactivation-results.md": "d4845bada4f6f184016bfbbc447ee387c0c7d9f93f3850de8cd14c1ed834604d",
+      "reports/straightforward-op-mapping-candidates-review.md": "2837a2981b534abd25cf05da31e82088b55aa0c138f17d5ab80ab70c37007a18",
+      "reports/system-property-direct-mapping-deferral.md": "3a68343b54113f13408245463a053ef8773b46397574934b0b40adb7dd995df1",
+      "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
+      "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
+      "requirements/coms-integration.txt": "1675b361fbb9f8acdc786a7e0e41d28da467e08f24cbcceb84c80df6e15fe3af",
+      "requirements/validation.txt": "241640b6804af79abfd8ce80a6b0c02cd5999a42afa9683bd853f99f390fdd46",
+      "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
+      "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
+      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
+      "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
+      "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
+      "tools/current_documentary_workbook.py": "191ae558a7a1498930bf8a37334c82c746c77400aaa1d09b24252cf7e51a3db5",
+      "tools/current_portable_execution_evidence.py": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+      "tools/current_publication_preservation.py": "91cc59ee12f5a1e3706ed854c895e7a727d6842b72043a91f8d7677aefbbef60",
+      "tools/current_publication_readiness.py": "c30df5212d41f9846353f22f3f7831299ba660d2ae881e6ac6a770ce8e961571",
+      "tools/current_retained_evidence.py": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+      "tools/current_semantic_generation.py": "f13b3b7726543382b9d6e968c5a4c48a9eea1996da1b614e2b2edbceebeb4710",
+      "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+      "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+      "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
+      "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
+      "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
+      "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
+      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/install_validation_robot.sh": "3ac2ffa7b2d30b22d60fb4d26ce5f3197f8429dd6c95f836726cddcf8e40b1d0",
+      "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
+      "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
+      "tools/publication_metadata.py": "b2e871b7d8d1c874b6c2daf1ac2904ede1e08092beb6207d4ccdb064e283aa09",
+      "tools/release_context.py": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
+      "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
+    }
+  },
+  "issued_at_utc": "2026-10-30T02:41:17.012809+00:00",
+  "native_execution_profile": "current-validation-execution-v2",
+  "process_environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "producers": {
+    "tests/test_current_validation_execution.py": {
+      "bytes": 17522,
+      "path": "tests/test_current_validation_execution.py",
+      "sha256": "070415f01597020fbeebee0647ca32b487bf05a2666ff13a534556f2207d90b5"
+    },
+    "tools/current_validation_execution.py": {
+      "bytes": 27309,
+      "path": "tools/current_validation_execution.py",
+      "sha256": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37"
+    }
+  },
+  "role": "generation_freshness",
+  "run_id": "41455d02-d365-42d5-bb3b-9f0692ca9a7b",
+  "run_manifest": {
+    "bytes": 438899,
+    "path": "reports/current-publication-validation/v2-migration-20261030/run.json",
+    "sha256": "a8888bd01ebc123db4692439c9dbc1359c2b01655303e4b85b2c4d6e016cd2ed"
+  },
+  "timeout_seconds": null
+}

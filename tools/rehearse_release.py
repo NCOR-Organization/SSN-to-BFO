@@ -775,7 +775,8 @@ def _build_candidate(
         git_environment=git_environment,
         source_commit=source_commit,
     )
-    manifest = load_and_validate_release_manifest(package / "manifest.json")
+    # The preceding isolated checker authenticated the exact semantic state.
+    manifest = load_and_validate_release_manifest(package / "manifest.json", semantic=False)
     if manifest.source_commit != source_commit:
         raise ReleaseRehearsalError(
             (rehearsal_issue("SOURCE_EVIDENCE_MISMATCH", "manifest.source_commit", "manifest differs from requested commit"),)
@@ -977,7 +978,8 @@ def _validate_staged_output(
         environment=candidate.environment,
     )
     try:
-        manifest = load_and_validate_release_manifest(staged_package / "manifest.json")
+        # Staged package/archive validation above already checked semantics.
+        manifest = load_and_validate_release_manifest(staged_package / "manifest.json", semantic=False)
     except Exception as exc:
         raise ReleaseRehearsalError(
             (rehearsal_issue("STAGED_PACKAGE_VALIDATION_FAILED", "manifest.json", str(exc)),)

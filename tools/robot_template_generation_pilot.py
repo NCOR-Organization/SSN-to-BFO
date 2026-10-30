@@ -314,13 +314,15 @@ def run_pilot(
     workbook_path: Path,
     output_dir: Path,
     robot_path: str | None = None,
+    *,
+    historical: bool = False,
 ) -> dict[str, object]:
     workbook_path = workbook_path.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     artifacts = artifact_paths(output_dir)
 
     governed = reconstruction.load_governed_coms_rows(
-        workbook_path,
+        workbook_path, historical=historical,
     )
     processed = governed.processed_rows
     canonical_rows = governed.canonical_rows
@@ -331,6 +333,7 @@ def run_pilot(
         labels,
         artifacts.template_path,
     )
+    reconstruction.validate_selected_rows(governed, selected, SUPPORTED_MAPPING_TYPES)
     write_resolver_ontology(labels, artifacts.resolver_path)
 
     artifacts.output_path.unlink(missing_ok=True)
@@ -380,9 +383,9 @@ def run_pilot(
 
     passed = (
         completed.returncode == 0
-        and len(selected) == 100
-        and len(expected) == 100
-        and len(actual) == 100
+        and len(selected) == governed.non_chain_count
+        and len(expected) == governed.non_chain_count
+        and len(actual) == governed.non_chain_count
         and comparison.passed
     )
 
@@ -396,6 +399,8 @@ def run_pilot(
         ),
         "workbook": str(workbook_path),
         "governed_row_count": len(processed),
+        "authenticated_active_mapping_count": governed.active_count,
+        "excluded_blank_rows": governed.blank_count,
         "attempted_non_chain_rows": len(selected),
         "excluded_property_chain_rows": sum(
             row.mapping_type == "property_chain"

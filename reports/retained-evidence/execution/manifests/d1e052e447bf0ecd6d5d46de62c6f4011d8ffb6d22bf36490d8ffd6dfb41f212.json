@@ -1,0 +1,4502 @@
+{
+  "created_at": "2026-10-30T00:30:19.016883+00:00",
+  "documents": [
+    {
+      "bytes": 1996660,
+      "dependent_records": [
+        {
+          "bytes": 142765,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-aligned.result.json",
+          "sha256": "999d5bfc71ac980852222ab99ef35085d4c81482c37194c98e11c3264a13e7d7"
+        },
+        {
+          "bytes": 15720,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-aligned.command.json",
+          "sha256": "96e115d8681f69b4f98188f9761c0383b88bdcb0ae0c26953195bed815854a8a"
+        },
+        {
+          "bytes": 6265,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25.ticket.json",
+          "sha256": "d84c3a536567a1c13cb1f9ce3006b418185ac7f44e6d2f26227df4bc1fc2c8c3"
+        },
+        {
+          "bytes": 3339,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25.envelope.json",
+          "sha256": "689868153630e1b8f5e8d32deb80e4b378750c605cb22042091fc869fe2be302"
+        },
+        {
+          "bytes": 163734,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25.capture.json",
+          "sha256": "b2b33702cb19f91e805c1a2c57974e0f2a73288aa4b6bb7edc4acbba8ffb45aa"
+        },
+        {
+          "bytes": 122345,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25.stdout.log",
+          "sha256": "367d24877036c19c187b10ec10f647f0b74c3c135392caa449ce4390d3561c83"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "428e608dcdb84c18f696aa58ce7cd147437fd5251e460a2cac5e3e10b3a9008e",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 9496,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+            "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188"
+          }
+        ],
+        "graph_identity": "829df806e2fa8c51639ff077b5c3a5598e7cfbd33fe2015fa58550b5f9447672",
+        "id": "example-00-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-00-aligned"
+      },
+      "invocation_id": "8b4d7d69-44f7-47ff-84f4-c6a4fbbacf25",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-00-aligned.rdf",
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-aligned.command.json",
+        "sha256": "96e115d8681f69b4f98188f9761c0383b88bdcb0ae0c26953195bed815854a8a"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/e3ee0c2074b9511a4beb19b775fa204b8158b52062d46cc341a73e27124e1900",
+      "role": "execution_graph",
+      "sha256": "e3ee0c2074b9511a4beb19b775fa204b8158b52062d46cc341a73e27124e1900",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 9496,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+          "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188"
+        }
+      ]
+    },
+    {
+      "bytes": 155752,
+      "dependent_records": [
+        {
+          "bytes": 55073,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-source.result.json",
+          "sha256": "f38508f191726e94de9afbfd228916c9ceaf23755a8982d272a9d59d987f854b"
+        },
+        {
+          "bytes": 15712,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-source.command.json",
+          "sha256": "bc95ec3cb1bbcbecfa992fae90e812c2cc78c80661c78175980801632965ed55"
+        },
+        {
+          "bytes": 5096,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/418af200-02eb-4888-884b-2ff3178b000e.ticket.json",
+          "sha256": "1ba91b17e50ecb6727a45091a284a7df99aa82548398d7f0cf5bf95e86c9a429"
+        },
+        {
+          "bytes": 3104,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/418af200-02eb-4888-884b-2ff3178b000e.envelope.json",
+          "sha256": "bd6eb537eb874e64df211392e1c04627b2624a6249f816bc60a692a4a84c90bc"
+        },
+        {
+          "bytes": 48069,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/418af200-02eb-4888-884b-2ff3178b000e.capture.json",
+          "sha256": "ac59496e86ccd177d0a73efdb4f7731c8e0b7210b5fff145a7cdf2ab4f38193c"
+        },
+        {
+          "bytes": 35596,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/418af200-02eb-4888-884b-2ff3178b000e.stdout.log",
+          "sha256": "b525102a7db35ce1a63e4a0b44491131272458dfa9a578f913dba891f6ce583d"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/418af200-02eb-4888-884b-2ff3178b000e.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "b13e1381bc32001eb7c13fcccf4595d5aba7d4b27f570b9d9eebc30c4b4771b2",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 9496,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+            "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188"
+          }
+        ],
+        "graph_identity": "043f920424197bae5e6d815aecacaf3783ff039ff2bdcb31a68579c76dc626ca",
+        "id": "example-00-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-00-source"
+      },
+      "invocation_id": "418af200-02eb-4888-884b-2ff3178b000e",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-00-source.rdf",
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-source.command.json",
+        "sha256": "bc95ec3cb1bbcbecfa992fae90e812c2cc78c80661c78175980801632965ed55"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/cd901faab68ded7a2684a13a2dd0272b7135af5c5bd0eca933ed43f681bb93f4",
+      "role": "execution_graph",
+      "sha256": "cd901faab68ded7a2684a13a2dd0272b7135af5c5bd0eca933ed43f681bb93f4",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 9496,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+          "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188"
+        }
+      ]
+    },
+    {
+      "bytes": 1984295,
+      "dependent_records": [
+        {
+          "bytes": 118965,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-aligned.result.json",
+          "sha256": "d6ed85eb4b06bd78d2d9b834647e855751239b9e95f4300c5e2bb70a387376b9"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-aligned.command.json",
+          "sha256": "8b82da6dd82ce2ccde2e220d00212de071017f2004e7e2770757ea1c0c6c4aad"
+        },
+        {
+          "bytes": 6205,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8df1d359-8f86-4019-9dc7-f76d6b2082b9.ticket.json",
+          "sha256": "f9be387a29378d6c6dfee58802775050def88693f15dcaae41e3bdf756d060fd"
+        },
+        {
+          "bytes": 3302,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8df1d359-8f86-4019-9dc7-f76d6b2082b9.envelope.json",
+          "sha256": "eec8459b758c15acbb53b9d9c8ea6002163a6b9cd6313254785c3ec30f1d24ea"
+        },
+        {
+          "bytes": 132038,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8df1d359-8f86-4019-9dc7-f76d6b2082b9.capture.json",
+          "sha256": "7e65775513aa59872590603e7fc662d46d3f104ed69ec5934199621adc22996e"
+        },
+        {
+          "bytes": 98582,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8df1d359-8f86-4019-9dc7-f76d6b2082b9.stdout.log",
+          "sha256": "750401bc6feec57d1668e1b76f1ac50865967c13fd216d3ede9d4446cb584fac"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/8df1d359-8f86-4019-9dc7-f76d6b2082b9.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "e86c6b7ff0c720a0ed7e457977659f7d5ed3b4a92946d18ff91c0bce27359d7f",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 2439,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+            "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43"
+          }
+        ],
+        "graph_identity": "60ce4157a2f413d6419ec17e0d7c5b66fe595881e45f1d3d975efc9c62f057f0",
+        "id": "example-01-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-01-aligned"
+      },
+      "invocation_id": "8df1d359-8f86-4019-9dc7-f76d6b2082b9",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-01-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-aligned.command.json",
+        "sha256": "8b82da6dd82ce2ccde2e220d00212de071017f2004e7e2770757ea1c0c6c4aad"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/b40d24fb777025e32bde8a8c80bde087bcb2b01332691a27df07b040ed5b97ea",
+      "role": "execution_graph",
+      "sha256": "b40d24fb777025e32bde8a8c80bde087bcb2b01332691a27df07b040ed5b97ea",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 2439,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+          "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43"
+        }
+      ]
+    },
+    {
+      "bytes": 143387,
+      "dependent_records": [
+        {
+          "bytes": 31926,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-source.result.json",
+          "sha256": "446403c7e452674641de8ff5d6ff2308e20a996cb39488d656e4d2c2cb0fde56"
+        },
+        {
+          "bytes": 15713,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-source.command.json",
+          "sha256": "c27fcec76e6aed899dcd03ec666b21958c587854bd772224597acba558db47b1"
+        },
+        {
+          "bytes": 5036,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/996b43cd-dbff-4cbe-899a-e667593613a1.ticket.json",
+          "sha256": "11d83b0207b169ed460dfad51e1038ba9083f272aa86ecaa005a11915293c74e"
+        },
+        {
+          "bytes": 3069,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/996b43cd-dbff-4cbe-899a-e667593613a1.envelope.json",
+          "sha256": "2549030bbae30f1ef24a6d62147bb721c3ad9f65b2353272bea3dffc8b5f338e"
+        },
+        {
+          "bytes": 17241,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/996b43cd-dbff-4cbe-899a-e667593613a1.capture.json",
+          "sha256": "1030ab1a1d90d0393dc439d0ef8546d874092523f44dda7dc6ccc99b62fef849"
+        },
+        {
+          "bytes": 12484,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/996b43cd-dbff-4cbe-899a-e667593613a1.stdout.log",
+          "sha256": "86b956b26a1f029d5b877444209307bccb19c68bda2d136af0ea0a693405afac"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/996b43cd-dbff-4cbe-899a-e667593613a1.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "71cb35f0014db60b4a25b3edad1392c1eedcfd93c27597cd1f47a4ac7539250f",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 2439,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+            "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43"
+          }
+        ],
+        "graph_identity": "f633f1e6e78978f3396eefe0be741b801582ef2ff54a1f25a9f13eb4e9af016f",
+        "id": "example-01-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-01-source"
+      },
+      "invocation_id": "996b43cd-dbff-4cbe-899a-e667593613a1",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-01-source.rdf",
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-source.command.json",
+        "sha256": "c27fcec76e6aed899dcd03ec666b21958c587854bd772224597acba558db47b1"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/2858052d1947638c1bbeb094c90e5a3ec976421f82198680714451838dd49ed3",
+      "role": "execution_graph",
+      "sha256": "2858052d1947638c1bbeb094c90e5a3ec976421f82198680714451838dd49ed3",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 2439,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+          "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43"
+        }
+      ]
+    },
+    {
+      "bytes": 1984930,
+      "dependent_records": [
+        {
+          "bytes": 114705,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-aligned.result.json",
+          "sha256": "2515a9f8039d4ee8e35287d0daad4010b3ad590a7dd204ccee364fc0ec9443a1"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-aligned.command.json",
+          "sha256": "25cb9a9065d7c7730af905f4aae73a58ae45c5be83e7bc8e812dc45ad293b8b5"
+        },
+        {
+          "bytes": 6245,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0ac11c9a-c09d-41c5-a504-808c3b9dc407.ticket.json",
+          "sha256": "5c1fdba08a6a2977e5a3535a0350f99d310735b7469894f0a247c255210c13bc"
+        },
+        {
+          "bytes": 3326,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0ac11c9a-c09d-41c5-a504-808c3b9dc407.envelope.json",
+          "sha256": "fc1fd827e3bc7d44881863d5f48b409f2069a83a995f8d35fede46675e099ed6"
+        },
+        {
+          "bytes": 126334,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0ac11c9a-c09d-41c5-a504-808c3b9dc407.capture.json",
+          "sha256": "d0849af6d98db2e9bf68610708045318f4f71d828c06c141db32f0e172942044"
+        },
+        {
+          "bytes": 94298,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0ac11c9a-c09d-41c5-a504-808c3b9dc407.stdout.log",
+          "sha256": "ff5c4a098d8f5e78eeccd35032dd2e021f70740b508ea4a2470098c34d29f23a"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0ac11c9a-c09d-41c5-a504-808c3b9dc407.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "24fa0b4fb788897a014ecd3e8cbed68d84dca9c18dd4625db9020d4e93578df3",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 3275,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+            "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf"
+          }
+        ],
+        "graph_identity": "a6430504dbfee685b0326809a1725c21e8ece915cdc041e60e88ebe567c4143d",
+        "id": "example-02-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-02-aligned"
+      },
+      "invocation_id": "0ac11c9a-c09d-41c5-a504-808c3b9dc407",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-02-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-aligned.command.json",
+        "sha256": "25cb9a9065d7c7730af905f4aae73a58ae45c5be83e7bc8e812dc45ad293b8b5"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/3ee39b49926f821c861f475b869dabb7a65119437e1c4a077f64e6c89c17c88b",
+      "role": "execution_graph",
+      "sha256": "3ee39b49926f821c861f475b869dabb7a65119437e1c4a077f64e6c89c17c88b",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 3275,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+          "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf"
+        }
+      ]
+    },
+    {
+      "bytes": 144022,
+      "dependent_records": [
+        {
+          "bytes": 27725,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-source.result.json",
+          "sha256": "5c2cb78ee997341b86d46b845b38f55e8f87aaebdc5e1a0d5aa7680e8182deec"
+        },
+        {
+          "bytes": 15712,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-source.command.json",
+          "sha256": "58b9943ac15d3ba0982db152d6131e7c5557093a52dc117316cda9218ee0f3d5"
+        },
+        {
+          "bytes": 5076,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c.ticket.json",
+          "sha256": "33919046ad46f666b72e1b1e6456cbb674c6bedb38bca2be32b15cff9741dbb9"
+        },
+        {
+          "bytes": 3092,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c.envelope.json",
+          "sha256": "6a3a210157f5bdce9acd5eede0303fd4dd5c549e017a8616e28fddc597f94b9b"
+        },
+        {
+          "bytes": 11617,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c.capture.json",
+          "sha256": "61e80522d2b5de31641cb73e3763b0897dd2b0686114788779e3c91d5f7c796e"
+        },
+        {
+          "bytes": 8260,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c.stdout.log",
+          "sha256": "722bf263ea88d4d56a119d55538f1dad2cfed1ce73e40618e7d0ee054614f906"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "ffe23e70000a0528ad4fe75c8663fafdbd29265236dfdee39b4f69fff4093ff0",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 3275,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+            "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf"
+          }
+        ],
+        "graph_identity": "3755ae3405f264b7b21a2e647195cfb88bb40f5002bc75e05421d0f6915fe033",
+        "id": "example-02-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-02-source"
+      },
+      "invocation_id": "7a6e84b9-5ec1-4f1d-8a9f-d8eecaf6ce5c",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-02-source.rdf",
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-source.command.json",
+        "sha256": "58b9943ac15d3ba0982db152d6131e7c5557093a52dc117316cda9218ee0f3d5"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/037849a94ede24e56ea053dcc2bcf1d5ccb5487c6fda56101396979812541489",
+      "role": "execution_graph",
+      "sha256": "037849a94ede24e56ea053dcc2bcf1d5ccb5487c6fda56101396979812541489",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 3275,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+          "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf"
+        }
+      ]
+    },
+    {
+      "bytes": 1986910,
+      "dependent_records": [
+        {
+          "bytes": 118329,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-aligned.result.json",
+          "sha256": "aa30443f50d974233076e7c4ce5603bf5d27e0d62e1a23bc2bcdb07b89e52197"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-aligned.command.json",
+          "sha256": "2185f9be1e6583a6ea5984b4712a7d44c78cccc943c23a24a7b2df6578d5a881"
+        },
+        {
+          "bytes": 6260,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/31bbd396-a1e6-43c2-9891-a606b5d9c0a4.ticket.json",
+          "sha256": "ad310cfb8000b56d09f452d9c61f0921124bc7be9af98c0e4003267d817dd6e2"
+        },
+        {
+          "bytes": 3335,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/31bbd396-a1e6-43c2-9891-a606b5d9c0a4.envelope.json",
+          "sha256": "d7c27eb0821e317c13efeab99720bb2aa9f2722888ca860eeebd328c67f0ba10"
+        },
+        {
+          "bytes": 131157,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/31bbd396-a1e6-43c2-9891-a606b5d9c0a4.capture.json",
+          "sha256": "3be9372b7f0726a5a39fcb6f717d83ede372b4290928788811342f949a2daf63"
+        },
+        {
+          "bytes": 97913,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/31bbd396-a1e6-43c2-9891-a606b5d9c0a4.stdout.log",
+          "sha256": "9b812b4920fb8fd485797eb508a77c59fb487d329391819077864d9546c15bfa"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/31bbd396-a1e6-43c2-9891-a606b5d9c0a4.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "40fc6de1547e9abf1f5c9c619aaef0ed22d3ee3f199a83d475732736e613c90e",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 4159,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+            "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133"
+          }
+        ],
+        "graph_identity": "11ba5c71e3a2a022973234fb68acf3bab310ff66ca6693c6022a51fcacf48095",
+        "id": "example-03-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-03-aligned"
+      },
+      "invocation_id": "31bbd396-a1e6-43c2-9891-a606b5d9c0a4",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-03-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-aligned.command.json",
+        "sha256": "2185f9be1e6583a6ea5984b4712a7d44c78cccc943c23a24a7b2df6578d5a881"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/cdbc9ecdc368a66e7a5d0bd603b54ec4a462264ab3b762495fa41200fbfc2849",
+      "role": "execution_graph",
+      "sha256": "cdbc9ecdc368a66e7a5d0bd603b54ec4a462264ab3b762495fa41200fbfc2849",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 4159,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+          "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133"
+        }
+      ]
+    },
+    {
+      "bytes": 146002,
+      "dependent_records": [
+        {
+          "bytes": 31300,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-source.result.json",
+          "sha256": "d5e4335007fbc61090cd3935164a7d6bcee9df1fab507b457733bb5e16e42f39"
+        },
+        {
+          "bytes": 15713,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-source.command.json",
+          "sha256": "e0a968cac89e9c554ec6907e23fb84818a3c01f8c21f1dc7377a0bb7a6dbbc41"
+        },
+        {
+          "bytes": 5091,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9bff9240-c75e-42ba-95a2-9b557f3ca3b4.ticket.json",
+          "sha256": "85be9ab8f5384654d32ff0e2ec89cbd18aad71429dd3efd1c209791f3cd07b94"
+        },
+        {
+          "bytes": 3102,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9bff9240-c75e-42ba-95a2-9b557f3ca3b4.envelope.json",
+          "sha256": "d614b59b81f34b4487f013b6081a0aa409346edea86dc2b5234caffaade434be"
+        },
+        {
+          "bytes": 16372,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9bff9240-c75e-42ba-95a2-9b557f3ca3b4.capture.json",
+          "sha256": "6f1a7e21ba48e05a2af1971449f49c94dfb79a88cbba26f60f18943954ed584a"
+        },
+        {
+          "bytes": 11825,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9bff9240-c75e-42ba-95a2-9b557f3ca3b4.stdout.log",
+          "sha256": "74c7d4089072c9e41ceedd7939f614bcca30561365fd35bab841a868954787b8"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9bff9240-c75e-42ba-95a2-9b557f3ca3b4.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "5a88b5d32ec153f20c168c34dab182f7e72ecf9e7de7ceb6e591f821f89ce25f",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 4159,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+            "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133"
+          }
+        ],
+        "graph_identity": "4263884dc848a5aa2bfcb80eebc810cc02c47ebe120b682125dedd3f7f96c426",
+        "id": "example-03-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-03-source"
+      },
+      "invocation_id": "9bff9240-c75e-42ba-95a2-9b557f3ca3b4",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-03-source.rdf",
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-source.command.json",
+        "sha256": "e0a968cac89e9c554ec6907e23fb84818a3c01f8c21f1dc7377a0bb7a6dbbc41"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/8b5c6d68575f6a2b111a84e39cb3117d2072460ee3584b94ac5135c55c2f7b3f",
+      "role": "execution_graph",
+      "sha256": "8b5c6d68575f6a2b111a84e39cb3117d2072460ee3584b94ac5135c55c2f7b3f",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 4159,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+          "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133"
+        }
+      ]
+    },
+    {
+      "bytes": 2005930,
+      "dependent_records": [
+        {
+          "bytes": 161639,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-aligned.result.json",
+          "sha256": "09a258a3ff8d2ca605028a8368feb67a7c8c9b5c03b5d76bbcff29486d69cf6e"
+        },
+        {
+          "bytes": 15720,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-aligned.command.json",
+          "sha256": "fb9791c7d3bc7c32246f4b669c4a1cd9ea69f1ac0ec1c58bbae9684334f75949"
+        },
+        {
+          "bytes": 6208,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/6e222302-57ff-42b7-8fbd-7d787b33de8d.ticket.json",
+          "sha256": "6758d88874471b01be1b914cb161d2e716542876ee5ef7abccc81a1544b6349e"
+        },
+        {
+          "bytes": 3304,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/6e222302-57ff-42b7-8fbd-7d787b33de8d.envelope.json",
+          "sha256": "19bc071ec5314d0301b8fd6fb1ee474b00a8ed1f29e6ee10d7c879ba7d62f06e"
+        },
+        {
+          "bytes": 188934,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/6e222302-57ff-42b7-8fbd-7d787b33de8d.capture.json",
+          "sha256": "012e0a7666017c2773be68d705e9de41ac1dd8435ef9d2e304f644b9b54b86c0"
+        },
+        {
+          "bytes": 141253,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/6e222302-57ff-42b7-8fbd-7d787b33de8d.stdout.log",
+          "sha256": "cea8f22d06fbb4711f383718c774d8fd3fdd92d41ee4106e7cae488704582f3e"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/6e222302-57ff-42b7-8fbd-7d787b33de8d.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "5585a7369f7e43201c5e03fcb2106627b43f0eeac268351df277b5741e684805",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 15599,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+            "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e"
+          }
+        ],
+        "graph_identity": "41d888f31d651659539451880fe2354a5b90ac0786383ff57b39921e81772e71",
+        "id": "example-04-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-04-aligned"
+      },
+      "invocation_id": "6e222302-57ff-42b7-8fbd-7d787b33de8d",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-04-aligned.rdf",
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-aligned.command.json",
+        "sha256": "fb9791c7d3bc7c32246f4b669c4a1cd9ea69f1ac0ec1c58bbae9684334f75949"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/7f2838f4bedc448d6cabb77be8a1a0664d5399691ff4c0167c21c4c62279a684",
+      "role": "execution_graph",
+      "sha256": "7f2838f4bedc448d6cabb77be8a1a0664d5399691ff4c0167c21c4c62279a684",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 15599,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+          "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e"
+        }
+      ]
+    },
+    {
+      "bytes": 165022,
+      "dependent_records": [
+        {
+          "bytes": 74329,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-source.result.json",
+          "sha256": "d8f9e8e90a98ef8411cc464a03a7f9537c20ba7dad2eff8683f060e0c9317220"
+        },
+        {
+          "bytes": 15713,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-source.command.json",
+          "sha256": "674fbc903cc093eb00d2ec5284144f0f37b1c2e96aeb61f5b1345092218e09be"
+        },
+        {
+          "bytes": 5039,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5.ticket.json",
+          "sha256": "30e15c397d14460f10d3262bbe51999af93e775d0a506b6724d8b09201297ce3"
+        },
+        {
+          "bytes": 3070,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5.envelope.json",
+          "sha256": "bf69e76f7323c24bf465ef036d15bda4ce1ae663f65950ee7fd30960d444a130"
+        },
+        {
+          "bytes": 73773,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5.capture.json",
+          "sha256": "a47a168787ee216d56b34f599e5ac8e739229211587439484747ae56c7502713"
+        },
+        {
+          "bytes": 54885,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5.stdout.log",
+          "sha256": "8ebaa26e5b3565198a0c308856c19f6dbfd7c4b8368ce59c76a22d8d652d4625"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "e7b70b157b6e9b223d25aade9bc7fd8c2e0f072a0a0fab4ee521cb71931e0962",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 15599,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+            "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e"
+          }
+        ],
+        "graph_identity": "9335c9f9dc1fc17c103f09728ef555546042da6413e4f142e3406ed60f2cb204",
+        "id": "example-04-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-04-source"
+      },
+      "invocation_id": "b95b7c1b-e47d-4f48-a979-8a6f3bf4e0e5",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-04-source.rdf",
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-source.command.json",
+        "sha256": "674fbc903cc093eb00d2ec5284144f0f37b1c2e96aeb61f5b1345092218e09be"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/9d4e2659b54b90138d14a43bdffd6a8cc76f731e757c0f0034141ed36f55e49b",
+      "role": "execution_graph",
+      "sha256": "9d4e2659b54b90138d14a43bdffd6a8cc76f731e757c0f0034141ed36f55e49b",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 15599,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+          "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e"
+        }
+      ]
+    },
+    {
+      "bytes": 1991167,
+      "dependent_records": [
+        {
+          "bytes": 128187,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-aligned.result.json",
+          "sha256": "d2a064002520769a0ad7cd7a174657baf2ba6eadad28c474900d5ab91567e430"
+        },
+        {
+          "bytes": 15720,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-aligned.command.json",
+          "sha256": "784e376557a72970a7a1367efd916e40fecfe163f26eb9e5f12e16bd951b845e"
+        },
+        {
+          "bytes": 6200,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/3882081d-7c32-4c3f-ab0a-519e98566e7e.ticket.json",
+          "sha256": "f5e0a1b1ae142f3d41ee05f179e759491fa5cc0abaebec9c49887f01fc68b6b0"
+        },
+        {
+          "bytes": 3300,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/3882081d-7c32-4c3f-ab0a-519e98566e7e.envelope.json",
+          "sha256": "46039d297bf21540fcefd320f3107d5f294a18649fbdaf4413046300a166e22c"
+        },
+        {
+          "bytes": 144337,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/3882081d-7c32-4c3f-ab0a-519e98566e7e.capture.json",
+          "sha256": "58ae880b0417df0ed19dfdf1b8439fabc287cb3a935596328fe2239a4c44274d"
+        },
+        {
+          "bytes": 107806,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/3882081d-7c32-4c3f-ab0a-519e98566e7e.stdout.log",
+          "sha256": "8d2dae220edb85e9209c2d38015bd79a049f51a5c330bdc0bb3f0f8ceeee21af"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/3882081d-7c32-4c3f-ab0a-519e98566e7e.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "5daebfcba35b57da96e5af420c9dde33bbafa2380a71fdce962022e292cf6ce1",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 4932,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+            "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6"
+          }
+        ],
+        "graph_identity": "1fe89e389d62fd2d040d9142648fa8c1b2f2a43d1718a608a0530739b80eaeaf",
+        "id": "example-05-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-05-aligned"
+      },
+      "invocation_id": "3882081d-7c32-4c3f-ab0a-519e98566e7e",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-05-aligned.rdf",
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-aligned.command.json",
+        "sha256": "784e376557a72970a7a1367efd916e40fecfe163f26eb9e5f12e16bd951b845e"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/ec672771aee5800f0c48eb1a96607051c8834e7d218134373691f6c4f0f8b9c0",
+      "role": "execution_graph",
+      "sha256": "ec672771aee5800f0c48eb1a96607051c8834e7d218134373691f6c4f0f8b9c0",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 4932,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+          "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6"
+        }
+      ]
+    },
+    {
+      "bytes": 150259,
+      "dependent_records": [
+        {
+          "bytes": 40803,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-source.result.json",
+          "sha256": "5688aeeffdd1c5e0abe94964c3a5864fbe9f01d55fc6e02db44d830b291f432c"
+        },
+        {
+          "bytes": 15713,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-source.command.json",
+          "sha256": "dee042a49881edef5ae5e14a8069c4ff4ffc32f08100fcc57f8ff3a7b9da13ff"
+        },
+        {
+          "bytes": 5031,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4649636b-8433-4e97-b941-abe73a27ac0c.ticket.json",
+          "sha256": "2708ae79600a968e5f5372387eb6a2d6e59fac52b391c7c9795932af594deeef"
+        },
+        {
+          "bytes": 3066,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4649636b-8433-4e97-b941-abe73a27ac0c.envelope.json",
+          "sha256": "3a7dd54e5e4f29a6c3344a9d951c5c97d903aa4d4e0bf5d027d79bd3d90c78a6"
+        },
+        {
+          "bytes": 29080,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4649636b-8433-4e97-b941-abe73a27ac0c.capture.json",
+          "sha256": "cf27a257723ac771eb9e9b80cf83b6f33be222f73a9d60603b2bfd7d782ef4c0"
+        },
+        {
+          "bytes": 21364,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4649636b-8433-4e97-b941-abe73a27ac0c.stdout.log",
+          "sha256": "f104f97385e0390d49c95ec2b7e6bc2df56d90969bc1417a1166ac3dc144f4e3"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4649636b-8433-4e97-b941-abe73a27ac0c.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "644cb95cd2726983429f834ef599a932fad559b7fa1568a13e283b8fbcbd77cc",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 4932,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+            "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6"
+          }
+        ],
+        "graph_identity": "be5972786a886b02bc1adfe3077baaf31eba053fd35cedd5689a66a3a956551a",
+        "id": "example-05-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-05-source"
+      },
+      "invocation_id": "4649636b-8433-4e97-b941-abe73a27ac0c",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-05-source.rdf",
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-source.command.json",
+        "sha256": "dee042a49881edef5ae5e14a8069c4ff4ffc32f08100fcc57f8ff3a7b9da13ff"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/ca25d41c25100d1c888ce5669c15f77591108d97b814013a0aa721c403c6cf71",
+      "role": "execution_graph",
+      "sha256": "ca25d41c25100d1c888ce5669c15f77591108d97b814013a0aa721c403c6cf71",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 4932,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+          "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6"
+        }
+      ]
+    },
+    {
+      "bytes": 1983689,
+      "dependent_records": [
+        {
+          "bytes": 112742,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-aligned.result.json",
+          "sha256": "b9b871acfe98e72857ca187a966d500a05a118583639ece610590bc896f727bf"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-aligned.command.json",
+          "sha256": "ddaf246f6190699b877872aeb620581e1e59710b6d7d8ad4833fa77c5f2b2a76"
+        },
+        {
+          "bytes": 6285,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/70d57cdf-a3ab-47f4-a37b-65017efbe8ca.ticket.json",
+          "sha256": "513713dddd1e9deba979fb44cc6c69a61606ca195bcf1d44f04c24768864a1dc"
+        },
+        {
+          "bytes": 3350,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/70d57cdf-a3ab-47f4-a37b-65017efbe8ca.envelope.json",
+          "sha256": "69fcfa793db44d073fee1c58c77286f6a3e445d3a1691ea86fc6c688094058a8"
+        },
+        {
+          "bytes": 123694,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/70d57cdf-a3ab-47f4-a37b-65017efbe8ca.capture.json",
+          "sha256": "30fd3d85726c55f364ecd6e53cfdf47f71eabeae16d885e5b2a4e10496196c70"
+        },
+        {
+          "bytes": 92311,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/70d57cdf-a3ab-47f4-a37b-65017efbe8ca.stdout.log",
+          "sha256": "7895737d252053a6ca7487d82ac98627dbf0f3c011996530439805be187ab0d7"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/70d57cdf-a3ab-47f4-a37b-65017efbe8ca.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "a5dc70e5732b76aff0d0d714f29bc991fd92a6a8681c143638b97647e43b426c",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 2390,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+            "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df"
+          }
+        ],
+        "graph_identity": "53d412356bf96cc14b68899f663704b75c49cd6386316acd77608e276a1e2a91",
+        "id": "example-06-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-06-aligned"
+      },
+      "invocation_id": "70d57cdf-a3ab-47f4-a37b-65017efbe8ca",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-06-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-aligned.command.json",
+        "sha256": "ddaf246f6190699b877872aeb620581e1e59710b6d7d8ad4833fa77c5f2b2a76"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/b65fa589cbc4f4e5b29b17e52891a85abd0ab70c7ebe8f10e13883bc93d15bcb",
+      "role": "execution_graph",
+      "sha256": "b65fa589cbc4f4e5b29b17e52891a85abd0ab70c7ebe8f10e13883bc93d15bcb",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 2390,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+          "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df"
+        }
+      ]
+    },
+    {
+      "bytes": 142781,
+      "dependent_records": [
+        {
+          "bytes": 25771,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-source.result.json",
+          "sha256": "9df21771fb61790f3024539cc92f9cfd01bcf660bce48d18ef5f78ab5bfc7562"
+        },
+        {
+          "bytes": 15711,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-source.command.json",
+          "sha256": "b5f52bf82193a26c07e2a8b9e7818e23b66133db58a4140604a7690920b2f6fc"
+        },
+        {
+          "bytes": 5116,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/14cbd6d7-ef45-45db-9817-6513c58376a4.ticket.json",
+          "sha256": "6c298b112a29f113c45c9d9069e0ac01356a0f154448a56622a52742f45dfb27"
+        },
+        {
+          "bytes": 3116,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/14cbd6d7-ef45-45db-9817-6513c58376a4.envelope.json",
+          "sha256": "5fd7ec656f3eeafad3496668efb8262895c29f04826d88f21611c2c725619ce9"
+        },
+        {
+          "bytes": 8989,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/14cbd6d7-ef45-45db-9817-6513c58376a4.capture.json",
+          "sha256": "d2a613cb37f7a340977e09d2e2b4010641891a89370c22f6fb8d1fe791b33eef"
+        },
+        {
+          "bytes": 6283,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/14cbd6d7-ef45-45db-9817-6513c58376a4.stdout.log",
+          "sha256": "63d046753735746f75c883674a447084b5d62f87138dce09d3b91b36c7a47013"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/14cbd6d7-ef45-45db-9817-6513c58376a4.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "bbf26cb7ecfd6a9db86733e968a7dad8ddf4385ac5b7ff19c256fea313359250",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 2390,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+            "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df"
+          }
+        ],
+        "graph_identity": "46129cefb0892493eee922575312b2381e03674fa503b8599f113fe337c86ec1",
+        "id": "example-06-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-06-source"
+      },
+      "invocation_id": "14cbd6d7-ef45-45db-9817-6513c58376a4",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-06-source.rdf",
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-source.command.json",
+        "sha256": "b5f52bf82193a26c07e2a8b9e7818e23b66133db58a4140604a7690920b2f6fc"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/a3c56e7d27734d627b0f75800db3aacdf3c9c4fc9f7d8ad4680b20028f5f89f7",
+      "role": "execution_graph",
+      "sha256": "a3c56e7d27734d627b0f75800db3aacdf3c9c4fc9f7d8ad4680b20028f5f89f7",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 2390,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+          "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df"
+        }
+      ]
+    },
+    {
+      "bytes": 1983111,
+      "dependent_records": [
+        {
+          "bytes": 114286,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-aligned.result.json",
+          "sha256": "0eae7b6b5452e1c33e27e6462360aa21e6c691d0dcfd1db4185072a85e7f5fda"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-aligned.command.json",
+          "sha256": "c0f6c549a1823b20690fe353ca9946be6e371985d6dcad5e9a52c445666b5675"
+        },
+        {
+          "bytes": 6235,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/71e692ce-1541-4f65-9e93-26a94f3aee1b.ticket.json",
+          "sha256": "5797e7295a41d5e668522f5f2dc1cf12fce6a733b6ac300980a7cd3bbe0ca920"
+        },
+        {
+          "bytes": 3320,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/71e692ce-1541-4f65-9e93-26a94f3aee1b.envelope.json",
+          "sha256": "3bef26add8b681fc46f5394243b2400aea55424d8cad0565871ee269eb17165d"
+        },
+        {
+          "bytes": 125780,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/71e692ce-1541-4f65-9e93-26a94f3aee1b.capture.json",
+          "sha256": "c811221143a7b815e122ac3ee0533add7de85cffaba1d1e7a4ca62fc31b81570"
+        },
+        {
+          "bytes": 93885,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/71e692ce-1541-4f65-9e93-26a94f3aee1b.stdout.log",
+          "sha256": "ff4e57539168817b93597ce02b79a4f143a8bdb3ec1e10e54bf32ca6029d3c72"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/71e692ce-1541-4f65-9e93-26a94f3aee1b.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "f5045add5010f2cb7556be24dc23617462380ac019161dfa7fb10d4592c655c7",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 1920,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+            "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270"
+          }
+        ],
+        "graph_identity": "8cec0adf07fe6a16397b24eb9b3ed1eb73d2792f73cd6c7b35da08bd0546e0a4",
+        "id": "example-07-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-07-aligned"
+      },
+      "invocation_id": "71e692ce-1541-4f65-9e93-26a94f3aee1b",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-07-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-aligned.command.json",
+        "sha256": "c0f6c549a1823b20690fe353ca9946be6e371985d6dcad5e9a52c445666b5675"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/cf007539e2b648b58434f518e9b28f24d276c0b5643b080002ea0a43f36e5606",
+      "role": "execution_graph",
+      "sha256": "cf007539e2b648b58434f518e9b28f24d276c0b5643b080002ea0a43f36e5606",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 1920,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+          "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270"
+        }
+      ]
+    },
+    {
+      "bytes": 142203,
+      "dependent_records": [
+        {
+          "bytes": 26989,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-source.result.json",
+          "sha256": "4a89d1eebee66c2227766563e3f3600291cfa3532accc8e77ec2d6d2a6d031e4"
+        },
+        {
+          "bytes": 15712,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-source.command.json",
+          "sha256": "b1d67d01c32bc07fba8d4d4bfba0c582c239c311956190c20429c33515a9c99d"
+        },
+        {
+          "bytes": 5066,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0464d906-6c44-43db-9f22-3f6dd1a35a99.ticket.json",
+          "sha256": "fcf9e0789751788d7aa88fe737f66490007caba833c7365ee3e20a0f92739d26"
+        },
+        {
+          "bytes": 3086,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0464d906-6c44-43db-9f22-3f6dd1a35a99.envelope.json",
+          "sha256": "bbfa74ce74cb5f5299e24203a1d56f445e1e2aa07bc59a698eb3e5b8f7c06dd8"
+        },
+        {
+          "bytes": 10639,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0464d906-6c44-43db-9f22-3f6dd1a35a99.capture.json",
+          "sha256": "e8c0a4aa989139124ba4bb53a05c34540c757e6f10d70966eb03590ac0462cfc"
+        },
+        {
+          "bytes": 7530,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0464d906-6c44-43db-9f22-3f6dd1a35a99.stdout.log",
+          "sha256": "22e4bedc4f8d88f0401e926ee07f4b5dfaf7f5ec254583afca313032d3bdb62a"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/0464d906-6c44-43db-9f22-3f6dd1a35a99.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "cda7fdea22a7c9266c94b213d9bd30955ba0548b816454791e33d0cb994851ed",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1920,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+            "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270"
+          }
+        ],
+        "graph_identity": "4a02d925db53c86183c3b2eaeb1c93ac1c2bd3203d19f6a8f68b31f65c5c50f3",
+        "id": "example-07-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-07-source"
+      },
+      "invocation_id": "0464d906-6c44-43db-9f22-3f6dd1a35a99",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-07-source.rdf",
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-source.command.json",
+        "sha256": "b1d67d01c32bc07fba8d4d4bfba0c582c239c311956190c20429c33515a9c99d"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/65fa6f8a898bd1015cab8a66d3971a0678bb183725a528fbd56e4474dc8dd30b",
+      "role": "execution_graph",
+      "sha256": "65fa6f8a898bd1015cab8a66d3971a0678bb183725a528fbd56e4474dc8dd30b",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1920,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+          "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270"
+        }
+      ]
+    },
+    {
+      "bytes": 1983895,
+      "dependent_records": [
+        {
+          "bytes": 116171,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-aligned.result.json",
+          "sha256": "bb97bacae585516e6331198c18c3395d3a722cf3db69ace63db0f633954d0f75"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-aligned.command.json",
+          "sha256": "fa9ad3e54cc0913906a2c0dfd49b662100399a5df8f18f0b1a44001dbf408849"
+        },
+        {
+          "bytes": 6245,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9427066c-1b59-4511-85e6-1aeff5fa6cea.ticket.json",
+          "sha256": "66b380124ed8b12a051ff32cab28940b29a6948114d1c7fee9fdc9dd9a096f90"
+        },
+        {
+          "bytes": 3326,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9427066c-1b59-4511-85e6-1aeff5fa6cea.envelope.json",
+          "sha256": "84e8a0980ecaf5f027bc068d14f55e9ca81034c331763dd85f6afba63f1e87b0"
+        },
+        {
+          "bytes": 128290,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9427066c-1b59-4511-85e6-1aeff5fa6cea.capture.json",
+          "sha256": "57eadc71a0b16f236ec9dc86a26263e7f7dfe3388ff29467b1a1c1ae60744386"
+        },
+        {
+          "bytes": 95764,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9427066c-1b59-4511-85e6-1aeff5fa6cea.stdout.log",
+          "sha256": "bf415beeb2f6e4d765d9656b2eb41e4bbc246de981209b4f1b6861b673a6fdec"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/9427066c-1b59-4511-85e6-1aeff5fa6cea.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "37087066a57a3c3e0294dc147895ae1e2420a5aacfea4e9f69f67509d99fcb05",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 2363,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+            "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3"
+          }
+        ],
+        "graph_identity": "98bcb9d46a5ebfb28156146b87605d2b82e0acd5ea5d8bf7e217ff64b87c4a88",
+        "id": "example-08-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-08-aligned"
+      },
+      "invocation_id": "9427066c-1b59-4511-85e6-1aeff5fa6cea",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-08-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-aligned.command.json",
+        "sha256": "fa9ad3e54cc0913906a2c0dfd49b662100399a5df8f18f0b1a44001dbf408849"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/7c76c962548c807631da94c73841d05fa291639d6134199862c0b35844bdc4ae",
+      "role": "execution_graph",
+      "sha256": "7c76c962548c807631da94c73841d05fa291639d6134199862c0b35844bdc4ae",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 2363,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+          "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3"
+        }
+      ]
+    },
+    {
+      "bytes": 142987,
+      "dependent_records": [
+        {
+          "bytes": 29171,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-source.result.json",
+          "sha256": "f3d04f24ce26dbfd88e1db855202c66302e2ac8f3562ed8fee02ca5ccd674af9"
+        },
+        {
+          "bytes": 15712,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-source.command.json",
+          "sha256": "8745ba7fbb6b696ffb725b6ef65713ada4e0579c519ec8bf4704f7012fd062fa"
+        },
+        {
+          "bytes": 5076,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7e68feff-1181-4f55-93c2-5bcd9431d427.ticket.json",
+          "sha256": "de27edab237139d5ff5829bba9e4f584901aeb024d679f998f50085c7c745fa2"
+        },
+        {
+          "bytes": 3092,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7e68feff-1181-4f55-93c2-5bcd9431d427.envelope.json",
+          "sha256": "67b214f717f015f5d605169b390c19286458f47e9d0b1307d5458e9629674908"
+        },
+        {
+          "bytes": 13545,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7e68feff-1181-4f55-93c2-5bcd9431d427.capture.json",
+          "sha256": "1c7342d6a794a94a6867ae9a5a8e1aa40c1cfd063347a4ae54ed659e8e6e64c0"
+        },
+        {
+          "bytes": 9706,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7e68feff-1181-4f55-93c2-5bcd9431d427.stdout.log",
+          "sha256": "97f2914e9b8ccacb66cbd02e52b87b1d1a46bc68814bf007a4fb053ef168e27f"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/7e68feff-1181-4f55-93c2-5bcd9431d427.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "090c41d3ea5771447a54a7584084cdb568fa00c6e45628d526af949564e8bed8",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 2363,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+            "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3"
+          }
+        ],
+        "graph_identity": "9eca905ca5361d3a8bbdb4588262f9858cdb57c64150fb5b576e869a0223f3e4",
+        "id": "example-08-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-08-source"
+      },
+      "invocation_id": "7e68feff-1181-4f55-93c2-5bcd9431d427",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-08-source.rdf",
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-source.command.json",
+        "sha256": "8745ba7fbb6b696ffb725b6ef65713ada4e0579c519ec8bf4704f7012fd062fa"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/174c9c851787bc53912792789d5adbcd50a6a6ce978da1e9c3f7a532b7a8e1ed",
+      "role": "execution_graph",
+      "sha256": "174c9c851787bc53912792789d5adbcd50a6a6ce978da1e9c3f7a532b7a8e1ed",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 2363,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+          "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3"
+        }
+      ]
+    },
+    {
+      "bytes": 1981825,
+      "dependent_records": [
+        {
+          "bytes": 112624,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-aligned.result.json",
+          "sha256": "1576dd79d944be001163442f7792bf8d7b380dbadabdb210745b6ef84120b3bb"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-aligned.command.json",
+          "sha256": "4c69f537401246965e1f60882592749247598837d03803038b90e465a20a5793"
+        },
+        {
+          "bytes": 6220,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e59f15e2-afe8-4b4b-9164-fa834a354705.ticket.json",
+          "sha256": "c19d3fae290f69e96b59f085d3f6e13e2bcba2cb7724fb1a62cbf1c179354404"
+        },
+        {
+          "bytes": 3311,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e59f15e2-afe8-4b4b-9164-fa834a354705.envelope.json",
+          "sha256": "56ee9fe2e12778d5a10c697b9b5addb28b2270fe1471c5b3ec57276e37ab11f7"
+        },
+        {
+          "bytes": 123573,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e59f15e2-afe8-4b4b-9164-fa834a354705.capture.json",
+          "sha256": "492fbff59c7a5b6f25d2b65010beb6691b4e1198ea798877bb1adceb3f1bd2a4"
+        },
+        {
+          "bytes": 92232,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e59f15e2-afe8-4b4b-9164-fa834a354705.stdout.log",
+          "sha256": "94b73df3f67360743571e954659ac80f7752450429b616c325dc402dfcd7dc2e"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e59f15e2-afe8-4b4b-9164-fa834a354705.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "f3033804ceccbdeacf19b4f9ccfad433855d6a44d18678f5a604b063d0a5ea36",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 1146,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+            "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4"
+          }
+        ],
+        "graph_identity": "6828cfdb225907e78d8b249f48c29b44b003fee6d693f65c27b79f254efbde52",
+        "id": "example-09-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-09-aligned"
+      },
+      "invocation_id": "e59f15e2-afe8-4b4b-9164-fa834a354705",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-09-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-aligned.command.json",
+        "sha256": "4c69f537401246965e1f60882592749247598837d03803038b90e465a20a5793"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/1ed07b0d4c18ceec5df9d499c9bbe26a7aef8a44ab9fd72e2cac8f0c9f099357",
+      "role": "execution_graph",
+      "sha256": "1ed07b0d4c18ceec5df9d499c9bbe26a7aef8a44ab9fd72e2cac8f0c9f099357",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 1146,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+          "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4"
+        }
+      ]
+    },
+    {
+      "bytes": 140917,
+      "dependent_records": [
+        {
+          "bytes": 25683,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-source.result.json",
+          "sha256": "82a63acd1afd97b20b166ba1a4b4a5bf6880cd8ede91df79b3045017b8badc7b"
+        },
+        {
+          "bytes": 15711,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-source.command.json",
+          "sha256": "6c78d80102aea9c9c88991159ff2daa6e533323a5f92d4aeb1c69d6c24dc1132"
+        },
+        {
+          "bytes": 5051,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/69da9774-9b9d-4039-a455-7d4ff4dbea30.ticket.json",
+          "sha256": "62ad10e6a49ee30255f182d6bc41f6379728435f3c3ff96a0d708cedeccaeb90"
+        },
+        {
+          "bytes": 3077,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/69da9774-9b9d-4039-a455-7d4ff4dbea30.envelope.json",
+          "sha256": "fa1cb8ed319d2676be919d7e980fe95aa14d1a2df2cb4c77c2858616ce77f2eb"
+        },
+        {
+          "bytes": 8908,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/69da9774-9b9d-4039-a455-7d4ff4dbea30.capture.json",
+          "sha256": "e1a1166ef55445842d27d02a5c0e2652235bce2d9df3431eb0ffd5a5bb7decba"
+        },
+        {
+          "bytes": 6234,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/69da9774-9b9d-4039-a455-7d4ff4dbea30.stdout.log",
+          "sha256": "57da912e2869ca320696909233881f7913e12beed0e2045eff707823f77721fb"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/69da9774-9b9d-4039-a455-7d4ff4dbea30.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "377d6bad45cd443d261441745a43fd52f92aa74e47fb84155461c59105fa7d73",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1146,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+            "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4"
+          }
+        ],
+        "graph_identity": "94e258132f9f30a637c3faeff722ced59506a7e641a58226f442fd643dd2edf9",
+        "id": "example-09-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-09-source"
+      },
+      "invocation_id": "69da9774-9b9d-4039-a455-7d4ff4dbea30",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-09-source.rdf",
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-source.command.json",
+        "sha256": "6c78d80102aea9c9c88991159ff2daa6e533323a5f92d4aeb1c69d6c24dc1132"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/44d1136dd11bd96aecdc357fe8d4f46d6ab468575dc05faa73bf8e51fc4cf849",
+      "role": "execution_graph",
+      "sha256": "44d1136dd11bd96aecdc357fe8d4f46d6ab468575dc05faa73bf8e51fc4cf849",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1146,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+          "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4"
+        }
+      ]
+    },
+    {
+      "bytes": 1981788,
+      "dependent_records": [
+        {
+          "bytes": 111957,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-aligned.result.json",
+          "sha256": "2a555ff9809df619da1c8804d0bcb2166c1701d0031fe9e14a3f08f2ebac8c9d"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-aligned.command.json",
+          "sha256": "a13ca524d6f2113f01d6b588b21e1a9a242bd503c8d2fb1dd4311c6fc7fd5956"
+        },
+        {
+          "bytes": 6232,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/350db027-13fc-4747-8203-a6dffadc401a.ticket.json",
+          "sha256": "f60e96a0303a60737127e2974e2c156fbb0c1f77ae691bd46738402f1a0509dc"
+        },
+        {
+          "bytes": 3319,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/350db027-13fc-4747-8203-a6dffadc401a.envelope.json",
+          "sha256": "a00baf89ff3b1c0a428b353e0348f25ec10726c7d990bea7a7dd62158003ea2d"
+        },
+        {
+          "bytes": 122680,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/350db027-13fc-4747-8203-a6dffadc401a.capture.json",
+          "sha256": "5a1641a7b750cf52d71a5b6c603cee793463071480e7b2e2965fb0ea55b60214"
+        },
+        {
+          "bytes": 91558,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/350db027-13fc-4747-8203-a6dffadc401a.stdout.log",
+          "sha256": "9053117ac180d1043bab91181a01dc8d55bcec5449f202968eb33d52078eb307"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/350db027-13fc-4747-8203-a6dffadc401a.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "c76ac170f7173951b9b7187fbfc2f7ba7654361200d4596adbf9433b3c46b528",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 987,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+            "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14"
+          }
+        ],
+        "graph_identity": "515289ccd41cb2be70822c0310a90313d582f94f6ce1350d2c7d1a53ba87ac44",
+        "id": "example-10-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-10-aligned"
+      },
+      "invocation_id": "350db027-13fc-4747-8203-a6dffadc401a",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-10-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-aligned.command.json",
+        "sha256": "a13ca524d6f2113f01d6b588b21e1a9a242bd503c8d2fb1dd4311c6fc7fd5956"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/9f0c1f106ea9d28357816e30518934a3f411b94fba0991918eb528c0d044f9d6",
+      "role": "execution_graph",
+      "sha256": "9f0c1f106ea9d28357816e30518934a3f411b94fba0991918eb528c0d044f9d6",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 987,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+          "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14"
+        }
+      ]
+    },
+    {
+      "bytes": 140880,
+      "dependent_records": [
+        {
+          "bytes": 25006,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-source.result.json",
+          "sha256": "c0f0de4ae87625c01f9d35771f29a72a0936b0d3002da84e4b63f4b11bb961a6"
+        },
+        {
+          "bytes": 15711,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-source.command.json",
+          "sha256": "824334c2d94dc7c42cbff192c0598f3a38e6094dedfca3c2214c5fa832e4a72a"
+        },
+        {
+          "bytes": 5063,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4afbfa39-10f3-460e-bd58-1628fec8f465.ticket.json",
+          "sha256": "3727d8fb3588daf6db15b59946226da3c8e5eecb06bb88de077fbafc5883a71d"
+        },
+        {
+          "bytes": 3085,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4afbfa39-10f3-460e-bd58-1628fec8f465.envelope.json",
+          "sha256": "dfd43609666e31d4ef6102b6fc20abfb9fe22b04a1c6a4ddb0b5ed5dc65e5ccf"
+        },
+        {
+          "bytes": 7999,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4afbfa39-10f3-460e-bd58-1628fec8f465.capture.json",
+          "sha256": "5a5fc8a8c58b486db68264973b856a0b08023c77e98e70d9a960de36812f0d56"
+        },
+        {
+          "bytes": 5550,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4afbfa39-10f3-460e-bd58-1628fec8f465.stdout.log",
+          "sha256": "916b145f60c76e7c4a566e42a01a212fcf38909fbda26a33122059af5c5d6faf"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/4afbfa39-10f3-460e-bd58-1628fec8f465.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "f28f43c64cd911cdb0bb26a0bb5bffc55af672020719889eb98192906a6aa5be",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+        "execution_role": "source_example",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 987,
+            "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+            "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14"
+          }
+        ],
+        "graph_identity": "772c8f819bc12aa4f1d27637b92bc49481ca61148a9e04cf062a9c0e33378a33",
+        "id": "example-10-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-10-source"
+      },
+      "invocation_id": "4afbfa39-10f3-460e-bd58-1628fec8f465",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-10-source.rdf",
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-source.command.json",
+        "sha256": "824334c2d94dc7c42cbff192c0598f3a38e6094dedfca3c2214c5fa832e4a72a"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/fd21e937dea606252c7f767143ffcc59181ad56e742b5b2e1a86f117e1975dc6",
+      "role": "execution_graph",
+      "sha256": "fd21e937dea606252c7f767143ffcc59181ad56e742b5b2e1a86f117e1975dc6",
+      "slot": "examples/src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 987,
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+          "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14"
+        }
+      ]
+    },
+    {
+      "bytes": 1981218,
+      "dependent_records": [
+        {
+          "bytes": 111046,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-aligned.result.json",
+          "sha256": "f1e6a77d7f84de96ff56f5863a04b6d2e8e2b04f4e261745d48e60cf4105a3a8"
+        },
+        {
+          "bytes": 15719,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-aligned.command.json",
+          "sha256": "7b43761b2d0b3141578f70b0a53700a1c0abacc93c9ac7ac2519adb18bbeaf6f"
+        },
+        {
+          "bytes": 6133,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e36b7e6d-323d-4276-b501-fbb79d5224da.ticket.json",
+          "sha256": "bc2425913aad30b07da885794cf401309d9d7a4774a998ec1aba46f7eb91fb9c"
+        },
+        {
+          "bytes": 3238,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e36b7e6d-323d-4276-b501-fbb79d5224da.envelope.json",
+          "sha256": "817822ee50eaf4c6acb02392962b5a6c5280302dbc1cd7fc6f4994c5de7b1d76"
+        },
+        {
+          "bytes": 121430,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e36b7e6d-323d-4276-b501-fbb79d5224da.capture.json",
+          "sha256": "15a85cf87cfcbda02c2eaf2a89f237dda57af28114df792c74d82cc1dd429949"
+        },
+        {
+          "bytes": 90671,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e36b7e6d-323d-4276-b501-fbb79d5224da.stdout.log",
+          "sha256": "fc2e0026e982f2dd110cbff24575b1565a72c211bdf85c69e449e7c728ad4e87"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e36b7e6d-323d-4276-b501-fbb79d5224da.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "4f0aed446a442cecc2b5fa03f66249ba74c0c924c2cb85aac55bd2e87cc162b9",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "tests/fixtures/current-semantic/sample-relationship.ttl",
+        "execution_role": "synthetic_fixture",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          },
+          {
+            "bytes": 547,
+            "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+            "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa"
+          }
+        ],
+        "graph_identity": "3185a3582d90977231c6025b10cafcfd74f2e46e4076525e9dba190b08de3ae9",
+        "id": "example-11-aligned",
+        "phase": "aligned",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-11-aligned"
+      },
+      "invocation_id": "e36b7e6d-323d-4276-b501-fbb79d5224da",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-11-aligned.rdf",
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-aligned.command.json",
+        "sha256": "7b43761b2d0b3141578f70b0a53700a1c0abacc93c9ac7ac2519adb18bbeaf6f"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/2139f7f0207eb9f7102152e44b16dda6bcdd778c693e4e345bab6a4302327a0d",
+      "role": "execution_graph",
+      "sha256": "2139f7f0207eb9f7102152e44b16dda6bcdd778c693e4e345bab6a4302327a0d",
+      "slot": "fixture/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        },
+        {
+          "bytes": 547,
+          "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+          "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa"
+        }
+      ]
+    },
+    {
+      "bytes": 140310,
+      "dependent_records": [
+        {
+          "bytes": 24095,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-source.result.json",
+          "sha256": "e1f12d1b1224f1ff61976079114ffcb5ade32d43486ede8ec30ec56fdbb90c66"
+        },
+        {
+          "bytes": 15711,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-source.command.json",
+          "sha256": "d84d9c9ffd510f4a62c4eb716061fe86f1fee42bc662fc65bc8a1baae4c44ba2"
+        },
+        {
+          "bytes": 4964,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111.ticket.json",
+          "sha256": "1bc6e759e1d109c627103d23ed9af72cc46635cbc11067de13fe74ca28403aad"
+        },
+        {
+          "bytes": 3004,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111.envelope.json",
+          "sha256": "70a5912f1d72d33e517943d608796119c1da7d4c11881f9d706e312449b00c58"
+        },
+        {
+          "bytes": 6753,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111.capture.json",
+          "sha256": "981524ad4e7066d99b99cc69a726adae42caf72ec62eb69fc585d32549db7c7f"
+        },
+        {
+          "bytes": 4663,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111.stdout.log",
+          "sha256": "373d7414a5c89a560dd3c6e231d7d362a61880d367f68ed369c26cb84d22ab6d"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "consistency",
+        "closure_identity": "e98bda0bba3be7a07f233828135bf99d0946fb38a86a7825b2f90a1fec6c8f92",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "consistency"
+        },
+        "comparison_side": null,
+        "corpus_id": "tests/fixtures/current-semantic/sample-relationship.ttl",
+        "execution_role": "synthetic_fixture",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 547,
+            "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+            "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa"
+          }
+        ],
+        "graph_identity": "e9ba46fbd749d715036d669ac385fb96eef467c70d0ee118ed2666875d5ab693",
+        "id": "example-11-source",
+        "phase": "source-only",
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "example-11-source"
+      },
+      "invocation_id": "604e5bbd-71b0-4a8b-88d7-0a6f8bf6f111",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/example-11-source.rdf",
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-source.command.json",
+        "sha256": "d84d9c9ffd510f4a62c4eb716061fe86f1fee42bc662fc65bc8a1baae4c44ba2"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/c6636ef11c16f9f96c7de44b202233396260a922059bafdf052873b29a4c200c",
+      "role": "execution_graph",
+      "sha256": "c6636ef11c16f9f96c7de44b202233396260a922059bafdf052873b29a4c200c",
+      "slot": "fixture/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 547,
+          "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+          "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa"
+        }
+      ]
+    },
+    {
+      "bytes": 1980309,
+      "dependent_records": [
+        {
+          "bytes": 110668,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/aligned-hierarchy.result.json",
+          "sha256": "f9287c8e66f73a5b7e44103e0c7e6bec0938bc9485ef24587dcb02c3075eefae"
+        },
+        {
+          "bytes": 15714,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/aligned-hierarchy.command.json",
+          "sha256": "cc3c3b8faa54b9b42096fda9a912bc2656ab7fe3ff97e680cde1412fe947e69d"
+        },
+        {
+          "bytes": 5605,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e436f812-3973-487b-9922-080224769765.ticket.json",
+          "sha256": "0ed9e95ee27deb4b3aaea5050bc94f089c30a4ed821dbf12dbb6a8924ae9bfc4"
+        },
+        {
+          "bytes": 3021,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e436f812-3973-487b-9922-080224769765.envelope.json",
+          "sha256": "cdf511c9dc05a88260f9db21b71e274aa4f751ab4e22ff93001e5d3afa347742"
+        },
+        {
+          "bytes": 121432,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e436f812-3973-487b-9922-080224769765.capture.json",
+          "sha256": "34d1b4cd1f7b471e1373968c12912bf1f7f3a6639370613f8516aec44e3e3e53"
+        },
+        {
+          "bytes": 90671,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e436f812-3973-487b-9922-080224769765.stdout.log",
+          "sha256": "98986aea9d4c4830ff9eb1a90dcc8da6c9b2d1b6b54fcc200668c9a27358f555"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/e436f812-3973-487b-9922-080224769765.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "named_hierarchy",
+        "closure_identity": "62916df774d1936ec0eaec4a699e88d16421aaebcc93eb1ceebab955196f1817",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "hierarchy"
+        },
+        "comparison_side": "aligned",
+        "corpus_id": null,
+        "execution_role": "hierarchy",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          },
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          },
+          {
+            "bytes": 170023,
+            "path": "SSN2BFO.ttl",
+            "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+          }
+        ],
+        "graph_identity": "73d56c0b0beb200093793b6bb02b49d5a752fa582ca70435cf95bdaa794fd7ed",
+        "id": "aligned-hierarchy",
+        "phase": null,
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "aligned-hierarchy"
+      },
+      "invocation_id": "e436f812-3973-487b-9922-080224769765",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/aligned-hierarchy.rdf",
+      "producer": {
+        "bytes": 15714,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/aligned-hierarchy.command.json",
+        "sha256": "cc3c3b8faa54b9b42096fda9a912bc2656ab7fe3ff97e680cde1412fe947e69d"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/796fbca331b52d7e2856364b2496a02c1b327e7960045a78439e2697ed9c1ec1",
+      "role": "execution_graph",
+      "sha256": "796fbca331b52d7e2856364b2496a02c1b327e7960045a78439e2697ed9c1ec1",
+      "slot": "hierarchy/aligned",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        },
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        },
+        {
+          "bytes": 170023,
+          "path": "SSN2BFO.ttl",
+          "sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+        }
+      ]
+    },
+    {
+      "bytes": 139401,
+      "dependent_records": [
+        {
+          "bytes": 23712,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/source-hierarchy.result.json",
+          "sha256": "8c2307a6d6f4b3d8ab3e273bdf8d25415ce1e414053c0f3e64196a93d0f8ec51"
+        },
+        {
+          "bytes": 15706,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/source-hierarchy.command.json",
+          "sha256": "f9c8c7e75608e978fc47fae27aea2554f4ee415907a5c405009f38d890e6e8b3"
+        },
+        {
+          "bytes": 4431,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/f861634e-56ec-46ec-9978-b57bc2b977ef.ticket.json",
+          "sha256": "cba8dafd7870fb628ef07ab255473c12ea2059b7f54615a342820cee1592bdc6"
+        },
+        {
+          "bytes": 2782,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/f861634e-56ec-46ec-9978-b57bc2b977ef.envelope.json",
+          "sha256": "10d19b026a3e28c77393afd9d2c125d0c218f3125c72bf3b55c9e820a52fa3ff"
+        },
+        {
+          "bytes": 6755,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/f861634e-56ec-46ec-9978-b57bc2b977ef.capture.json",
+          "sha256": "23e592351cf9ef06a1824dfeaaf8fe600057cd50cd6854e13ed1c88e67a8ab17"
+        },
+        {
+          "bytes": 4663,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/f861634e-56ec-46ec-9978-b57bc2b977ef.stdout.log",
+          "sha256": "b9a0ec5ea7f0620bb4cf0ee0db67afcaab73240d25a7fc4c40d2f787a6898a6e"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/f861634e-56ec-46ec-9978-b57bc2b977ef.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "named_hierarchy",
+        "closure_identity": "4f68869eaab98815aaae72636eb2ca2b2f91889c1fbfad782fa7273d17c5ac67",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "hierarchy"
+        },
+        "comparison_side": "source",
+        "corpus_id": null,
+        "execution_role": "hierarchy",
+        "governed_inputs": [
+          {
+            "bytes": 34854,
+            "path": "imports/sosa.ttl",
+            "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+          },
+          {
+            "bytes": 3604,
+            "path": "imports/sosa-sampling.ttl",
+            "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+          },
+          {
+            "bytes": 38450,
+            "path": "imports/ssn.ttl",
+            "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+          },
+          {
+            "bytes": 41076,
+            "path": "imports/ssn-systems.ttl",
+            "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+          }
+        ],
+        "graph_identity": "8c3027f3b1ef2f5ee0f3fe4ed4c2c24281f3fd9b438f3e7c21db5ee2d632e25b",
+        "id": "source-hierarchy",
+        "phase": null,
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "source-hierarchy"
+      },
+      "invocation_id": "f861634e-56ec-46ec-9978-b57bc2b977ef",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/source-hierarchy.rdf",
+      "producer": {
+        "bytes": 15706,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/source-hierarchy.command.json",
+        "sha256": "f9c8c7e75608e978fc47fae27aea2554f4ee415907a5c405009f38d890e6e8b3"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/f10379610807d6859df943f169fe830828c0560a261089b069f217ba1e804a7f",
+      "role": "execution_graph",
+      "sha256": "f10379610807d6859df943f169fe830828c0560a261089b069f217ba1e804a7f",
+      "slot": "hierarchy/source",
+      "source_inputs": [
+        {
+          "bytes": 34854,
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+        },
+        {
+          "bytes": 3604,
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+        },
+        {
+          "bytes": 38450,
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+        },
+        {
+          "bytes": 41076,
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+        }
+      ]
+    },
+    {
+      "bytes": 1724071,
+      "dependent_records": [
+        {
+          "bytes": 1478430,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/target-hierarchy.result.json",
+          "sha256": "d2a4da6642c428ef4df3094160ce268a3a6ce47268a296864b74b4563e166fc3"
+        },
+        {
+          "bytes": 15713,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/target-hierarchy.command.json",
+          "sha256": "c2e2cf3d2a710fde2feeb0b425afa57c4e3a48b61b909cee44be43a7774d4fb1"
+        },
+        {
+          "bytes": 2721,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/d89aede5-9f4f-4e59-b67a-91a0fc6473cf.ticket.json",
+          "sha256": "e02e104cbeee33335c16f7ab52535157b892d4815a4478784aea5058a8af1666"
+        },
+        {
+          "bytes": 2417,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/d89aede5-9f4f-4e59-b67a-91a0fc6473cf.envelope.json",
+          "sha256": "740fbf6c7f3c4f07ba19a121d7ef22e9cbfa5dcb28629e675be99381cdd5eb62"
+        },
+        {
+          "bytes": 1948287,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/d89aede5-9f4f-4e59-b67a-91a0fc6473cf.capture.json",
+          "sha256": "10934e0b50f7f45b9bc856932131736897c6acf99b83ecc188fe18db0b33123f"
+        },
+        {
+          "bytes": 1460812,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/d89aede5-9f4f-4e59-b67a-91a0fc6473cf.stdout.log",
+          "sha256": "366d28e686bb2351d4e217edd029e8d9b1b7e749f371c9c0cbca016043b294e9"
+        },
+        {
+          "bytes": 0,
+          "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/invocations/d89aede5-9f4f-4e59-b67a-91a0fc6473cf.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "execution_identity": {
+        "analysis_kind": "named_hierarchy",
+        "closure_identity": "6d64d6cc4a59f175b5bbf30e5254814f298a16ed621fdc825ea822d7336ebeb3",
+        "command_identity": {
+          "entrypoint": "CurrentSemanticReasoner",
+          "helper": {
+            "bytes": 8896,
+            "path": "tools/java/CurrentSemanticReasoner.java",
+            "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+          },
+          "jar": {
+            "path": "build/lib/robot-1.9.7/robot.jar",
+            "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+          },
+          "jvm_options": [
+            "-Xmx4G"
+          ],
+          "mode": "hierarchy"
+        },
+        "comparison_side": "target",
+        "corpus_id": null,
+        "execution_role": "hierarchy",
+        "governed_inputs": [
+          {
+            "bytes": 1229197,
+            "path": "imports/cco.ttl",
+            "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+          }
+        ],
+        "graph_identity": "ff4820c02bf60ec70d5ef2e253bb8f65317a960e912355679644640df3f75e6a",
+        "id": "target-hierarchy",
+        "phase": null,
+        "queries": [],
+        "query_id": null,
+        "schema_version": 1,
+        "test_id": "target-hierarchy"
+      },
+      "invocation_id": "d89aede5-9f4f-4e59-b67a-91a0fc6473cf",
+      "logical_path": "build/current-semantic-validation/20261029T210428413149Z/target-hierarchy.rdf",
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/target-hierarchy.command.json",
+        "sha256": "c2e2cf3d2a710fde2feeb0b425afa57c4e3a48b61b909cee44be43a7774d4fb1"
+      },
+      "retained_path": "reports/retained-evidence/execution/sha256/a1f5929a11e93d5991f2a953cc8ba6b5951b0737ccf572979b532fa3758bb796",
+      "role": "execution_graph",
+      "sha256": "a1f5929a11e93d5991f2a953cc8ba6b5951b0737ccf572979b532fa3758bb796",
+      "slot": "hierarchy/target",
+      "source_inputs": [
+        {
+          "bytes": 1229197,
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+        }
+      ]
+    }
+  ],
+  "origin_repository_root": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+  "policy": "Exact historical execution custody only; original outcomes, HEAD/input freshness and environment qualification are not changed.",
+  "profile": "current-ssn-sosa-portable-execution-v1",
+  "recorded_semantic_status": "FAIL",
+  "report_identity": "d1e052e447bf0ecd6d5d46de62c6f4011d8ffb6d22bf36490d8ffd6dfb41f212",
+  "schema_version": 1,
+  "source_report": {
+    "bytes": 973761,
+    "path": "reports/current-publication-validation/readiness-reconciliation-20261029/semantic.json",
+    "sha256": "51fa9ad7b8fda1602123e36600ca483814a1611f2169e0829f93de8ccc0bd926"
+  },
+  "toolchain": {
+    "configured_environment": {
+      "bytes": 334,
+      "path": "config/validation-toolchain.env",
+      "sha256": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f"
+    },
+    "environment_qualification": "NOT_CLAIMED_BY_RETENTION",
+    "reasoner_jar": {
+      "bytes": 95221545,
+      "path": "build/lib/robot-1.9.7/robot.jar",
+      "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d"
+    },
+    "reasoner_source": {
+      "bytes": 8896,
+      "path": "tools/java/CurrentSemanticReasoner.java",
+      "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591"
+    },
+    "runtime_policy": "Historical measured version output and configured JAR identity are retained; a relocated host still requires existing environment qualification and executable/content checks.",
+    "version_command": {
+      "bytes": 18178,
+      "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/java-version.command.json",
+      "sha256": "e3b45b6dbca3e9c29441f0b1f603f0559fd5956a04f8df13a920e9ffd8567ac3"
+    },
+    "version_outputs": [
+      {
+        "bytes": 0,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/java-version.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 160,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/java-version.stderr.log",
+        "sha256": "42bafe9a39f0540426f62ce72e51c395e1bb42fa545e01bc45118397a70427a9"
+      }
+    ]
+  },
+  "tools": [
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/aligned-hierarchy.rdf",
+        "hierarchy"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15714,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/aligned-hierarchy.command.json",
+        "sha256": "cc3c3b8faa54b9b42096fda9a912bc2656ab7fe3ff97e680cde1412fe947e69d"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-00-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-aligned.command.json",
+        "sha256": "96e115d8681f69b4f98188f9761c0383b88bdcb0ae0c26953195bed815854a8a"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-00-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-00-source.command.json",
+        "sha256": "bc95ec3cb1bbcbecfa992fae90e812c2cc78c80661c78175980801632965ed55"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-01-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-aligned.command.json",
+        "sha256": "8b82da6dd82ce2ccde2e220d00212de071017f2004e7e2770757ea1c0c6c4aad"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-01-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-01-source.command.json",
+        "sha256": "c27fcec76e6aed899dcd03ec666b21958c587854bd772224597acba558db47b1"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-02-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-aligned.command.json",
+        "sha256": "25cb9a9065d7c7730af905f4aae73a58ae45c5be83e7bc8e812dc45ad293b8b5"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-02-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-02-source.command.json",
+        "sha256": "58b9943ac15d3ba0982db152d6131e7c5557093a52dc117316cda9218ee0f3d5"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-03-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-aligned.command.json",
+        "sha256": "2185f9be1e6583a6ea5984b4712a7d44c78cccc943c23a24a7b2df6578d5a881"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-03-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-03-source.command.json",
+        "sha256": "e0a968cac89e9c554ec6907e23fb84818a3c01f8c21f1dc7377a0bb7a6dbbc41"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-04-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-aligned.command.json",
+        "sha256": "fb9791c7d3bc7c32246f4b669c4a1cd9ea69f1ac0ec1c58bbae9684334f75949"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-04-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-04-source.command.json",
+        "sha256": "674fbc903cc093eb00d2ec5284144f0f37b1c2e96aeb61f5b1345092218e09be"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-05-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15720,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-aligned.command.json",
+        "sha256": "784e376557a72970a7a1367efd916e40fecfe163f26eb9e5f12e16bd951b845e"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-05-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-05-source.command.json",
+        "sha256": "dee042a49881edef5ae5e14a8069c4ff4ffc32f08100fcc57f8ff3a7b9da13ff"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-06-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-aligned.command.json",
+        "sha256": "ddaf246f6190699b877872aeb620581e1e59710b6d7d8ad4833fa77c5f2b2a76"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-06-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-06-source.command.json",
+        "sha256": "b5f52bf82193a26c07e2a8b9e7818e23b66133db58a4140604a7690920b2f6fc"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-07-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-aligned.command.json",
+        "sha256": "c0f6c549a1823b20690fe353ca9946be6e371985d6dcad5e9a52c445666b5675"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-07-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-07-source.command.json",
+        "sha256": "b1d67d01c32bc07fba8d4d4bfba0c582c239c311956190c20429c33515a9c99d"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-08-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-aligned.command.json",
+        "sha256": "fa9ad3e54cc0913906a2c0dfd49b662100399a5df8f18f0b1a44001dbf408849"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-08-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15712,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-08-source.command.json",
+        "sha256": "8745ba7fbb6b696ffb725b6ef65713ada4e0579c519ec8bf4704f7012fd062fa"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-09-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-aligned.command.json",
+        "sha256": "4c69f537401246965e1f60882592749247598837d03803038b90e465a20a5793"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-09-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-09-source.command.json",
+        "sha256": "6c78d80102aea9c9c88991159ff2daa6e533323a5f92d4aeb1c69d6c24dc1132"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-10-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-aligned.command.json",
+        "sha256": "a13ca524d6f2113f01d6b588b21e1a9a242bd503c8d2fb1dd4311c6fc7fd5956"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-10-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-10-source.command.json",
+        "sha256": "824334c2d94dc7c42cbff192c0598f3a38e6094dedfca3c2214c5fa832e4a72a"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-11-aligned.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15719,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-aligned.command.json",
+        "sha256": "7b43761b2d0b3141578f70b0a53700a1c0abacc93c9ac7ac2519adb18bbeaf6f"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/example-11-source.rdf",
+        "consistency"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15711,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/example-11-source.command.json",
+        "sha256": "d84d9c9ffd510f4a62c4eb716061fe86f1fee42bc662fc65bc8a1baae4c44ba2"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 18178,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/java-version.command.json",
+        "sha256": "e3b45b6dbca3e9c29441f0b1f603f0559fd5956a04f8df13a920e9ffd8567ac3"
+      }
+    },
+    {
+      "command": [
+        "javac",
+        "-cp",
+        "repo:build/lib/robot-1.9.7/robot.jar",
+        "-d",
+        "repo:build/current-semantic-validation/20261029T210428413149Z",
+        "repo:tools/java/CurrentSemanticReasoner.java"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "javac",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 18460,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/javac.command.json",
+        "sha256": "ebd17c32732064c4bfb9f8d8e4903f7a06f04678fc7857b50c6ec01849019496"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/source-hierarchy.rdf",
+        "hierarchy"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15706,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/source-hierarchy.command.json",
+        "sha256": "f9c8c7e75608e978fc47fae27aea2554f4ee415907a5c405009f38d890e6e8b3"
+      }
+    },
+    {
+      "command": [
+        "java",
+        "-Xmx4G",
+        "-cp",
+        "repo:build/current-semantic-validation/20261029T210428413149Z:repo:build/lib/robot-1.9.7/robot.jar",
+        "CurrentSemanticReasoner",
+        "repo:build/current-semantic-validation/20261029T210428413149Z/target-hierarchy.rdf",
+        "hierarchy"
+      ],
+      "executable": {
+        "bytes": 135664,
+        "name": "java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32"
+      },
+      "producer": {
+        "bytes": 15713,
+        "path": "reports/current-publication-validation/semantic-20261029T210428413149Z/target-hierarchy.command.json",
+        "sha256": "c2e2cf3d2a710fde2feeb0b425afa57c4e3a48b61b909cee44be43a7774d4fb1"
+      }
+    }
+  ]
+}

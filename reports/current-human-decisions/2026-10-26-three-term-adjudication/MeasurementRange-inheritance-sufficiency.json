@@ -1,0 +1,35 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+  },
+  "assessment_outcome": "inheritance_sufficient",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "decision_date": "2026-10-26",
+  "inherited_routes": [
+    {
+      "inverse_target_expression": false,
+      "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+      "source_path": [
+        "ssn-system:MeasurementRange rdfs:subClassOf ssn-system:SystemProperty",
+        "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+      ],
+      "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+      "via_source": "http://www.w3.org/ns/ssn/Property"
+    }
+  ],
+  "inherited_routes_sha256": "d2a14b64989bebc0359817074ad50f344245f48da42fdb34e63f0206eca802ff",
+  "input_sha256": {
+    "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+    "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+    "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+    "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+    "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+    "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9"
+  },
+  "no_additional_direct_mapping_required": true,
+  "rationale": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
+  "reviewer_identity": "Alec Sculley",
+  "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange"
+}

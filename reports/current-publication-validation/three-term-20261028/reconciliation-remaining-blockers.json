@@ -1,0 +1,1441 @@
+{
+  "scope": "Classification of every fresh default readiness blocker. No semantic adjudication or readiness waiver. Old Class B evidence-metadata diagnostics may leave the selected record atomically; all independent substantive requirements remain blocked.",
+  "source_log": {
+    "path": "/private/tmp/ssn-transition-evidence-5hvu4ebc/current-publication-readiness.log",
+    "sha256": "ad103f372ecdd5a82455cd375a97ef3069ce45ae0e50f302ed7b1554afb8c432"
+  },
+  "source_receipt": {
+    "path": "/private/tmp/ssn-transition-evidence-5hvu4ebc/current-publication-readiness-result.json",
+    "sha256": "519d56d92904d0426198f0572a20c3d07ae85180c1e18ca40765365acee3b69c"
+  },
+  "original_classification": {
+    "path": "/private/tmp/ssn-three-term-scoped-st3ea47l/readiness-blocker-classification.json",
+    "sha256": "7c13428c8d52f21cc894ff0805e705a1cc8f2ece96748a0fb228c81c82beea48"
+  },
+  "counts": {
+    "B": 39,
+    "A": 0
+  },
+  "category_counts": {
+    "human_review_queue": 1,
+    "rationale_feature_of_interest": 1,
+    "closure_profile_examples_expectations": 7,
+    "missing_whole_repository_runs": 2,
+    "unsuccessful_semantic_execution_summary": 1,
+    "profile_failed_semantic_commands": 26,
+    "declared_environment": 1
+  },
+  "rows": [
+    {
+      "blocker_number": 1,
+      "log_line": 2,
+      "text": "Complete the 74-term human review queue, retaining explicit decisions and rationale evidence; 0 terms are deferred and 74 unreviewed.",
+      "classification": "B",
+      "category": "human_review_queue",
+      "explanation": "All 74 are unreviewed; none is one of the three exact adjudicated IRIs.",
+      "evidence": "reports/current-ssn-sosa-human-review.json /items[*]/source_iri",
+      "original_blocker_number": 1
+    },
+    {
+      "blocker_number": 2,
+      "log_line": 3,
+      "text": "Resolve 1 judgment-sensitive rationale proposals before treating them as adequate publication rationales.",
+      "classification": "B",
+      "category": "rationale_feature_of_interest",
+      "explanation": "Only human_review_required rationale is sosa:FeatureOfInterest, not one of the three decisions.",
+      "evidence": "reports/current-ssn-sosa-rationale-proposals.json /proposals; source_iri=http://www.w3.org/ns/sosa/FeatureOfInterest",
+      "original_blocker_number": 2
+    },
+    {
+      "blocker_number": 3,
+      "log_line": 4,
+      "text": "No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 3
+    },
+    {
+      "blocker_number": 4,
+      "log_line": 5,
+      "text": "Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 4
+    },
+    {
+      "blocker_number": 5,
+      "log_line": 6,
+      "text": "Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 5
+    },
+    {
+      "blocker_number": 6,
+      "log_line": 7,
+      "text": "Exact-closure example success is not established for every source example and the separate fixture.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 6
+    },
+    {
+      "blocker_number": 7,
+      "log_line": 8,
+      "text": "Source and target approximate deductive-difference comparisons do not both have a valid PASS result.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 7
+    },
+    {
+      "blocker_number": 8,
+      "log_line": 9,
+      "text": "Human approval of selected positive and negative semantic expectations is outstanding.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 8
+    },
+    {
+      "blocker_number": 9,
+      "log_line": 10,
+      "text": "Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.",
+      "classification": "B",
+      "category": "closure_profile_examples_expectations",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "original_blocker_number": 9
+    },
+    {
+      "blocker_number": 10,
+      "log_line": 11,
+      "text": "Required validation not run: full_repository_gate",
+      "classification": "B",
+      "category": "missing_whole_repository_runs",
+      "explanation": "Historical ledger explicitly records whole unittest discovery and make check as not rerun; external partial/family runs do not populate that ledger.",
+      "evidence": "commands.json /not_run; tools/current_publication_readiness.py REQUIRED_COMMANDS",
+      "original_blocker_number": 146
+    },
+    {
+      "blocker_number": 11,
+      "log_line": 12,
+      "text": "Required validation not run: unit_tests",
+      "classification": "B",
+      "category": "missing_whole_repository_runs",
+      "explanation": "Historical ledger explicitly records whole unittest discovery and make check as not rerun; external partial/family runs do not populate that ledger.",
+      "evidence": "commands.json /not_run; tools/current_publication_readiness.py REQUIRED_COMMANDS",
+      "original_blocker_number": 147
+    },
+    {
+      "blocker_number": 12,
+      "log_line": 13,
+      "text": "Selected semantic execution evidence is incomplete or unsuccessful; inspect its execution diagnostics. A retained failed or historical attempt cannot certify a successful current semantic execution.",
+      "classification": "B",
+      "category": "unsuccessful_semantic_execution_summary",
+      "explanation": "Current custody authenticates. This aggregate reflects the 26 actual profile-failure exits and does not claim a missing ticket or stale transition binding.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/three-term-20261028/scoped-authentication.json",
+        "sha256": "ebfeb0a8ed71c163ff81d31931cde4ae08d8f94caa9e2ad0feb6e30c38b3977c"
+      }
+    },
+    {
+      "blocker_number": 13,
+      "log_line": 14,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/aligned-hierarchy.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/aligned-hierarchy.command.json",
+        "sha256": "36aa85332e87bcb06dd15463ff37918fd40d076f04b1332546f3948906dcb7e3"
+      },
+      "execution_id": "aligned-hierarchy",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 3,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/adms#status> in annotation [Annotation(<http://www.w3.org/ns/adms#status> <http://www.sks.ai/SSN2BFO/authority-status/maintained-authoritative-development>) in null]",
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]"
+      ]
+    },
+    {
+      "blocker_number": 14,
+      "log_line": 15,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-aligned.command.json",
+        "sha256": "a6d017be0ccaa0ebaa769bb61b0b6e51b51a2aca6f1eb8fe436e6c5418cd2dbc"
+      },
+      "execution_id": "example-00-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 105,
+      "profile_violation_examples": [
+        "Use of defined datatype in datatype restriction \"POINT(-79.35553 43.66372)\"^^<http://www.opengis.net/ont/geosparql#wktLiteral> [DataPropertyAssertion(<http://www.opengis.net/ont/geosparql#asWKT> <http://example.org/data/gpsLocation> \"POINT(-79.35553 43.66372)\"^^<http://www.opengis.net/ont/geosparql#wktLiteral>) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]",
+        "Use of reserved vocabulary for annotation property IRI: rdf:comment [AnnotationAssertion(rdf:comment <http://example.org/data/12345/HumiditySensor> \"This is the instance of the humidity sensor instance.\"@en) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]",
+        "Use of reserved vocabulary for annotation property IRI: rdf:comment [AnnotationAssertion(rdf:comment <http://example.org/data/12345/TemperatureSensor> \"This is the instance of the temperature sensor instance.\"@en) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]",
+        "Use of undeclared annotation property: <http://example.org/deviceAddress> in annotation [Annotation(<http://example.org/deviceAddress> \"12:34:56:12:34:56\") in AnnotationAssertion(<http://example.org/deviceAddress> <http://example.org/data/12345/someTH2> \"12:34:56:12:34:56\")]"
+      ]
+    },
+    {
+      "blocker_number": 15,
+      "log_line": 16,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-source.command.json",
+        "sha256": "3bbfd060f57294ba4e942cb585078e096e87aa90011df8d34c08fc69293bd94d"
+      },
+      "execution_id": "example-00-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 102,
+      "profile_violation_examples": [
+        "Use of reserved vocabulary for annotation property IRI: rdf:comment [AnnotationAssertion(rdf:comment <http://example.org/data/12345/HumiditySensor> \"This is the instance of the humidity sensor instance.\"@en) in OntologyID(OntologyIRI(<http://www.w3.org/ns/sosa/>) VersionIRI(<null>))]",
+        "Use of reserved vocabulary for annotation property IRI: rdf:comment [AnnotationAssertion(rdf:comment <http://example.org/data/12345/TemperatureSensor> \"This is the instance of the temperature sensor instance.\"@en) in OntologyID(OntologyIRI(<http://www.w3.org/ns/sosa/>) VersionIRI(<null>))]",
+        "Use of undeclared annotation property: <http://example.org/deviceAddress> in annotation [Annotation(<http://example.org/deviceAddress> \"12:34:56:12:34:56\") in AnnotationAssertion(<http://example.org/deviceAddress> <http://example.org/data/12345/someTH2> \"12:34:56:12:34:56\")]",
+        "Use of undeclared annotation property: <http://id.loc.gov/vocabulary/relators/own> in annotation [Annotation(<http://id.loc.gov/vocabulary/relators/own> <http://example.org/data/acmeBreweryCo>) in AnnotationAssertion(<http://id.loc.gov/vocabulary/relators/own> <http://example.org/data/12345/someTH2> <http://example.org/data/acmeBreweryCo>)]"
+      ]
+    },
+    {
+      "blocker_number": 16,
+      "log_line": 17,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-aligned.command.json",
+        "sha256": "a92c0370c9c464f2155fb87e4102f6b298268a09e8ee832586c223f7184e2db0"
+      },
+      "execution_id": "example-01-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 28,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/PERCENT>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483650 <http://qudt.org/vocab/unit/PERCENT>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"92.5\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483650 \"92.5\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#exactMatch> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://qudt.org/vocab/quantitykind/RelativeHumidity>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://example.org/data/RelativeHumidity> <http://qudt.org/vocab/quantitykind/RelativeHumidity>)]"
+      ]
+    },
+    {
+      "blocker_number": 17,
+      "log_line": 18,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-source.command.json",
+        "sha256": "c6f6dfb5c313798bfffbb1a911e7011320fe8fc42145bd247c33464846afb514"
+      },
+      "execution_id": "example-01-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 26,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/PERCENT>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483648 <http://qudt.org/vocab/unit/PERCENT>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"92.5\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483648 \"92.5\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#exactMatch> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://qudt.org/vocab/quantitykind/RelativeHumidity>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://example.org/data/RelativeHumidity> <http://qudt.org/vocab/quantitykind/RelativeHumidity>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa#hasFeatureOfInterest> in annotation [Annotation(<http://www.w3.org/ns/sosa#hasFeatureOfInterest> <https://example.org/data/COPR_SL>) in AnnotationAssertion(<http://www.w3.org/ns/sosa#hasFeatureOfInterest> <https://example.org/data/RH_avg_1_COPR_15min_201706020300PM> <https://example.org/data/COPR_SL>)]"
+      ]
+    },
+    {
+      "blocker_number": 18,
+      "log_line": 19,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-aligned.command.json",
+        "sha256": "64ff30465b5dfdd49011f54e0aece6f9b6ca1b49865f650231841007deec5013"
+      },
+      "execution_id": "example-02-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 15,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloW-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483652 <http://qudt.org/vocab/unit/KiloW-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"22.4\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483652 \"22.4\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2006/time#hasBeginning> in annotation [Annotation(<http://www.w3.org/2006/time#hasBeginning> _:genid2147483657) in AnnotationAssertion(<http://www.w3.org/2006/time#hasBeginning> _:genid2147483655 _:genid2147483657)]"
+      ]
+    },
+    {
+      "blocker_number": 19,
+      "log_line": 20,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-source.command.json",
+        "sha256": "21ec162bccbdc59eb0cca42f49886ec38730ad6f8528c001fa4444816b62328a"
+      },
+      "execution_id": "example-02-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 13,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloW-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483650 <http://qudt.org/vocab/unit/KiloW-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"22.4\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483650 \"22.4\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2006/time#hasBeginning> in annotation [Annotation(<http://www.w3.org/2006/time#hasBeginning> _:genid2147483657) in AnnotationAssertion(<http://www.w3.org/2006/time#hasBeginning> _:genid2147483655 _:genid2147483657)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2006/time#hasEnd> in annotation [Annotation(<http://www.w3.org/2006/time#hasEnd> _:genid2147483656) in AnnotationAssertion(<http://www.w3.org/2006/time#hasEnd> _:genid2147483655 _:genid2147483656)]"
+      ]
+    },
+    {
+      "blocker_number": 20,
+      "log_line": 21,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-aligned.command.json",
+        "sha256": "0790e75b5dc4c33fe634ce45bee061e4c0b42a4147b148ad520b10c01d84c94b"
+      },
+      "execution_id": "example-03-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 26,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/adms#status> in annotation [Annotation(<http://www.w3.org/ns/adms#status> <http://www.sks.ai/SSN2BFO/authority-status/maintained-authoritative-development>) in null]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedOnPlatform> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245_east>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room145Deployment> <https://example.org/data/Room245_east>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedOnPlatform> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245_south>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room145Deployment> <https://example.org/data/Room245_south>)]"
+      ]
+    },
+    {
+      "blocker_number": 21,
+      "log_line": 22,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-source.command.json",
+        "sha256": "5443899cd2dacba641825c75bc694bc4659d9ab1fbd7bcd92b21742ea24cf0a5"
+      },
+      "execution_id": "example-03-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 24,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedOnPlatform> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245_east>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room145Deployment> <https://example.org/data/Room245_east>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedOnPlatform> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245_south>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room145Deployment> <https://example.org/data/Room245_south>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedOnPlatform> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245_south>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedOnPlatform> <https://example.org/data/Room245Deployment> <https://example.org/data/Room245_south>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/deployedSystem> in annotation [Annotation(<http://www.w3.org/ns/sosa/deployedSystem> <https://example.org/data/PCBBoard1>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/deployedSystem> <https://example.org/data/Room145Deployment> <https://example.org/data/PCBBoard1>)]"
+      ]
+    },
+    {
+      "blocker_number": 22,
+      "log_line": 23,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-aligned.command.json",
+        "sha256": "924d250d05ea1512a676ff79c8018998b1eb046881b5036c4908ce0211c6e8b3"
+      },
+      "execution_id": "example-04-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 148,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/conformsTo> in annotation [Annotation(<http://purl.org/dc/terms/conformsTo> <https://example.org/data/myProfile>) in AnnotationAssertion(<http://purl.org/dc/terms/conformsTo> <https://example.org/data/DHT22_output> <https://example.org/data/myProfile>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/conformsTo> in annotation [Annotation(<http://purl.org/dc/terms/conformsTo> <https://www.w3.org/TR/shacl/>) in AnnotationAssertion(<http://purl.org/dc/terms/conformsTo> _:genid2147483648 <https://www.w3.org/TR/shacl/>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/format> in annotation [Annotation(<http://purl.org/dc/terms/format> <https://w3id.org/mediatype/text/turtle>) in AnnotationAssertion(<http://purl.org/dc/terms/format> <https://example.org/data/DHT22_output> <https://w3id.org/mediatype/text/turtle>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/format> in annotation [Annotation(<http://purl.org/dc/terms/format> <https://w3id.org/mediatype/text/turtle>) in AnnotationAssertion(<http://purl.org/dc/terms/format> _:genid2147483648 <https://w3id.org/mediatype/text/turtle>)]"
+      ]
+    },
+    {
+      "blocker_number": 23,
+      "log_line": 24,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-source.command.json",
+        "sha256": "a4579c2fd4768cffd8f8e382937cdd17d031b8b5c296b84442e21c226a1bde93"
+      },
+      "execution_id": "example-04-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 146,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/conformsTo> in annotation [Annotation(<http://purl.org/dc/terms/conformsTo> <https://example.org/data/myProfile>) in AnnotationAssertion(<http://purl.org/dc/terms/conformsTo> <https://example.org/data/DHT22_output> <https://example.org/data/myProfile>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/conformsTo> in annotation [Annotation(<http://purl.org/dc/terms/conformsTo> <https://www.w3.org/TR/shacl/>) in AnnotationAssertion(<http://purl.org/dc/terms/conformsTo> _:genid2147483648 <https://www.w3.org/TR/shacl/>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/format> in annotation [Annotation(<http://purl.org/dc/terms/format> <https://w3id.org/mediatype/text/turtle>) in AnnotationAssertion(<http://purl.org/dc/terms/format> <https://example.org/data/DHT22_output> <https://w3id.org/mediatype/text/turtle>)]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/format> in annotation [Annotation(<http://purl.org/dc/terms/format> <https://w3id.org/mediatype/text/turtle>) in AnnotationAssertion(<http://purl.org/dc/terms/format> _:genid2147483648 <https://w3id.org/mediatype/text/turtle>)]"
+      ]
+    },
+    {
+      "blocker_number": 24,
+      "log_line": 25,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-aligned.command.json",
+        "sha256": "c62658a03b8c3ab5b5f3097fc22d5e80618a4646094d83180d576f19b0c2134f"
+      },
+      "execution_id": "example-05-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 56,
+      "profile_violation_examples": [
+        "Use of defined datatype in datatype restriction \"POINT (4.85 45.75)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral> [DataPropertyAssertion(<http://www.opengis.net/ont/geosparql#asWKT> _:genid2147483649 \"POINT (4.85 45.75)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral>) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://purl.org/goodrelations/v1#hasBrand> in annotation [Annotation(<http://purl.org/goodrelations/v1#hasBrand> _:genid2147483654) in AnnotationAssertion(<http://purl.org/goodrelations/v1#hasBrand> <https://example.org/data/Sensor_SL-T-P1> _:genid2147483654)]",
+        "Use of undeclared annotation property: <http://purl.org/goodrelations/v1#name> in annotation [Annotation(<http://purl.org/goodrelations/v1#name> \"Sensing Labs\"@en) in AnnotationAssertion(<http://purl.org/goodrelations/v1#name> _:genid2147483654 \"Sensing Labs\"@en)]"
+      ]
+    },
+    {
+      "blocker_number": 25,
+      "log_line": 26,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-source.command.json",
+        "sha256": "b3102ca94bef2d960ec87ccc88fb2b9ef48c005241ffb1242e11151ca9ac1ca5"
+      },
+      "execution_id": "example-05-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 53,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/goodrelations/v1#hasBrand> in annotation [Annotation(<http://purl.org/goodrelations/v1#hasBrand> _:genid2147483655) in AnnotationAssertion(<http://purl.org/goodrelations/v1#hasBrand> <https://example.org/data/Sensor_SL-T-P1> _:genid2147483655)]",
+        "Use of undeclared annotation property: <http://purl.org/goodrelations/v1#name> in annotation [Annotation(<http://purl.org/goodrelations/v1#name> \"Sensing Labs\"@en) in AnnotationAssertion(<http://purl.org/goodrelations/v1#name> _:genid2147483655 \"Sensing Labs\"@en)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/DEG_C>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483656 <http://qudt.org/vocab/unit/DEG_C>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/DEG_C>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483658 <http://qudt.org/vocab/unit/DEG_C>)]"
+      ]
+    },
+    {
+      "blocker_number": 26,
+      "log_line": 27,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-aligned.command.json",
+        "sha256": "688dfce82de2d2a6d6cc3f38aeffe66a00f8802489b7af16d35c182498a64812"
+      },
+      "execution_id": "example-06-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 9,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/HectoPA>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483649 <http://qudt.org/vocab/unit/HectoPA>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/PA>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483655 <http://qudt.org/vocab/unit/PA>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"101936\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483655 \"101936\"^^xsd:decimal)]"
+      ]
+    },
+    {
+      "blocker_number": 27,
+      "log_line": 28,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-source.command.json",
+        "sha256": "946ed1a6cc0e6686595f8c486e0f21b8b1698194292f3749c340335e87e22be4"
+      },
+      "execution_id": "example-06-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 7,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/HectoPA>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483648 <http://qudt.org/vocab/unit/HectoPA>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/PA>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483653 <http://qudt.org/vocab/unit/PA>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"101936\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483653 \"101936\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"1021.45\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483648 \"1021.45\"^^xsd:decimal)]"
+      ]
+    },
+    {
+      "blocker_number": 28,
+      "log_line": 29,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-aligned.command.json",
+        "sha256": "a1236d9d1de1c7d9e06905f68784c98445e9a7aadc0988498ac7d8cee45db395"
+      },
+      "execution_id": "example-07-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 13,
+      "profile_violation_examples": [
+        "Use of defined datatype in datatype restriction \"POINT (-120.6195831 35.8648067)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral> [DataPropertyAssertion(<http://www.opengis.net/ont/geosparql#asWKT> _:genid2147483655 \"POINT (-120.6195831 35.8648067)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral>) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]",
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/CentiM-PER-SEC>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483650 <http://qudt.org/vocab/unit/CentiM-PER-SEC>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"5.0E-4\"^^xsd:double) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483650 \"5.0E-4\"^^xsd:double)]"
+      ]
+    },
+    {
+      "blocker_number": 29,
+      "log_line": 30,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-source.command.json",
+        "sha256": "0777fd9bd9cc96a2d36ff87750305748e1b47de0190f92b4b6c7a35a73e68d7a"
+      },
+      "execution_id": "example-07-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 10,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/CentiM-PER-SEC>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483651 <http://qudt.org/vocab/unit/CentiM-PER-SEC>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"5.0E-4\"^^xsd:double) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483651 \"5.0E-4\"^^xsd:double)]",
+        "Use of undeclared annotation property: <http://www.opengis.net/ont/geosparql#asWKT> in annotation [Annotation(<http://www.opengis.net/ont/geosparql#asWKT> \"POINT (-120.6195831 35.8648067)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral>) in AnnotationAssertion(<http://www.opengis.net/ont/geosparql#asWKT> _:genid2147483652 \"POINT (-120.6195831 35.8648067)\"^^<http://www.opengis.net/ont/geosparql#WktLiteral>)]",
+        "Use of undeclared annotation property: <http://www.opengis.net/ont/geosparql#hasGeometry> in annotation [Annotation(<http://www.opengis.net/ont/geosparql#hasGeometry> _:genid2147483652) in AnnotationAssertion(<http://www.opengis.net/ont/geosparql#hasGeometry> <https://example.org/data/VCAB-DP1-BP-40_location> _:genid2147483652)]"
+      ]
+    },
+    {
+      "blocker_number": 30,
+      "log_line": 31,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-aligned.command.json",
+        "sha256": "dceb48e3789fb04a5326b84bbbe5b841eb35ef8487377bf86bf261e8063456d4"
+      },
+      "execution_id": "example-08-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 19,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloM-PER-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483650 <http://qudt.org/vocab/unit/KiloM-PER-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloM-PER-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483653 <http://qudt.org/vocab/unit/KiloM-PER-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"47.0\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483650 \"47.0\"^^xsd:decimal)]"
+      ]
+    },
+    {
+      "blocker_number": 31,
+      "log_line": 32,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-source.command.json",
+        "sha256": "d62fbab49629e154a8d9e89190d3cc2f9f8308da9d218e844795a5ad550a8bd4"
+      },
+      "execution_id": "example-08-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 17,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloM-PER-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483653 <http://qudt.org/vocab/unit/KiloM-PER-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/KiloM-PER-HR>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483654 <http://qudt.org/vocab/unit/KiloM-PER-HR>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"47.0\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483653 \"47.0\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"47.0\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483654 \"47.0\"^^xsd:decimal)]"
+      ]
+    },
+    {
+      "blocker_number": 32,
+      "log_line": 33,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-aligned.command.json",
+        "sha256": "63cc65323296f212a714b4730a230ccb56c06f3d04b56564be046bec9d69735d"
+      },
+      "execution_id": "example-09-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 8,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#broader> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Count>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#broader> <https://example.org/data/sunspotCount> <http://qudt.org/vocab/quantitykind/Count>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#exactMatch> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q525>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://example.org/data/Sun> <https://www.wikidata.org/wiki/Q525>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2006/time#inXSDDateTimeStamp> in annotation [Annotation(<http://www.w3.org/2006/time#inXSDDateTimeStamp> \"2017-03-31T11:51:42+00:00\"^^xsd:dateTime) in AnnotationAssertion(<http://www.w3.org/2006/time#inXSDDateTimeStamp> _:genid2147483652 \"2017-03-31T11:51:42+00:00\"^^xsd:dateTime)]"
+      ]
+    },
+    {
+      "blocker_number": 33,
+      "log_line": 34,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-source.command.json",
+        "sha256": "7c9cc5f12be7016b2fe61aecd1007b6781019dd132ddb1fd06acbeb5c5f03906"
+      },
+      "execution_id": "example-09-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 6,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#broader> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#broader> <http://qudt.org/vocab/quantitykind/Count>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#broader> <https://example.org/data/sunspotCount> <http://qudt.org/vocab/quantitykind/Count>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2004/02/skos/core#exactMatch> in annotation [Annotation(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q525>) in AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <https://example.org/data/Sun> <https://www.wikidata.org/wiki/Q525>)]",
+        "Use of undeclared annotation property: <http://www.w3.org/2006/time#inXSDDateTimeStamp> in annotation [Annotation(<http://www.w3.org/2006/time#inXSDDateTimeStamp> \"2017-03-31T11:51:42+00:00\"^^xsd:dateTime) in AnnotationAssertion(<http://www.w3.org/2006/time#inXSDDateTimeStamp> _:genid2147483654 \"2017-03-31T11:51:42+00:00\"^^xsd:dateTime)]",
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<http://www.w3.org/ns/sosa/>) VersionIRI(<null>))]"
+      ]
+    },
+    {
+      "blocker_number": 34,
+      "log_line": 35,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-aligned.command.json",
+        "sha256": "8b21b8e3211a18c2ae2938af5aa629d1f8e1aa8e3243a4f9141c9d60b7b65d37"
+      },
+      "execution_id": "example-10-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 6,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/M>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483654 <http://qudt.org/vocab/unit/M>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"15.3\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483654 \"15.3\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/adms#status> in annotation [Annotation(<http://www.w3.org/ns/adms#status> <http://www.sks.ai/SSN2BFO/authority-status/maintained-authoritative-development>) in null]"
+      ]
+    },
+    {
+      "blocker_number": 35,
+      "log_line": 36,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-source.command.json",
+        "sha256": "31fbb6766ac2a6aa0504cbe4ac6dbb26268b92f94081cef9e1d74d69ecd747a7"
+      },
+      "execution_id": "example-10-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 4,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/hasUnit> in annotation [Annotation(<http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/M>) in AnnotationAssertion(<http://qudt.org/schema/qudt/hasUnit> _:genid2147483654 <http://qudt.org/vocab/unit/M>)]",
+        "Use of undeclared annotation property: <http://qudt.org/schema/qudt/value> in annotation [Annotation(<http://qudt.org/schema/qudt/value> \"15.3\"^^xsd:decimal) in AnnotationAssertion(<http://qudt.org/schema/qudt/value> _:genid2147483654 \"15.3\"^^xsd:decimal)]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/sosa/hasProperty> in annotation [Annotation(<http://www.w3.org/ns/sosa/hasProperty> <http://qudt.org/vocab/quantitykind/Height>) in AnnotationAssertion(<http://www.w3.org/ns/sosa/hasProperty> <https://example.org/data/tree_124> <http://qudt.org/vocab/quantitykind/Height>)]",
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<http://www.w3.org/ns/sosa/>) VersionIRI(<null>))]"
+      ]
+    },
+    {
+      "blocker_number": 36,
+      "log_line": 37,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-aligned.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-aligned.command.json",
+        "sha256": "e2deec2b405d84e7009faf5da2dde5f37baf68d20202c01830bb512b91787971"
+      },
+      "execution_id": "example-11-aligned",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 3,
+      "profile_violation_examples": [
+        "Use of undeclared annotation property: <http://purl.org/dc/terms/type> in annotation [Annotation(<http://purl.org/dc/terms/type> <http://www.sks.ai/SSN2BFO/product-type/integrated>) in null]",
+        "Use of undeclared annotation property: <http://www.w3.org/ns/adms#status> in annotation [Annotation(<http://www.w3.org/ns/adms#status> <http://www.sks.ai/SSN2BFO/authority-status/maintained-authoritative-development>) in null]",
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<https://www.commoncoreontologies.org/CommonCoreOntologiesMerged>) VersionIRI(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>))]"
+      ]
+    },
+    {
+      "blocker_number": 37,
+      "log_line": 38,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-source.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-source.command.json",
+        "sha256": "dd12a6f39ed7adfb4a953c84629032ebab6669d1d21852016e8d60a74d1dbf99"
+      },
+      "execution_id": "example-11-source",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 1,
+      "profile_violation_examples": [
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<http://www.w3.org/ns/ssn/systems/>) VersionIRI(<null>))]"
+      ]
+    },
+    {
+      "blocker_number": 38,
+      "log_line": 39,
+      "text": "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/source-hierarchy.command.json",
+      "classification": "B",
+      "category": "profile_failed_semantic_commands",
+      "explanation": "A completed current reasoner command returned exit 2 for profile_failure. Input, HEAD, ticket, envelope, capture, graph and tool custody authenticate; this is an independent closure/profile blocker, not a three-term transition binding failure.",
+      "evidence": {
+        "path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-publication-validation/semantic-20261028T154707292811Z/source-hierarchy.command.json",
+        "sha256": "3f2542b94308bdf4d3d4cff68277ef4f8aa251b5d8461d57d310e6fc83b7e004"
+      },
+      "execution_id": "source-hierarchy",
+      "returncode": 2,
+      "reasoner_status": "profile_failure",
+      "profile_violation_count": 1,
+      "profile_violation_examples": [
+        "Use of undeclared class: <http://www.w3.org/2004/02/skos/core#Concept> [SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <http://www.w3.org/2004/02/skos/core#Concept>) in OntologyID(OntologyIRI(<http://www.w3.org/ns/sosa/>) VersionIRI(<null>))]"
+      ]
+    },
+    {
+      "blocker_number": 39,
+      "log_line": 40,
+      "text": "Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.",
+      "classification": "B",
+      "category": "declared_environment",
+      "explanation": "Historical ledger records declared Temurin 22 versus observed Oracle Java 22.0.2 and declared_environment_match=false.",
+      "evidence": "commands.json /declared_environment_match,/environment_note",
+      "original_blocker_number": 149
+    }
+  ],
+  "three_term_review_queue_intersection": [],
+  "unresolved_rationale_source_iris": [
+    "http://www.w3.org/ns/sosa/FeatureOfInterest"
+  ],
+  "original_B_count": 66,
+  "original_B_still_printed_verbatim": 12,
+  "original_B_dispositions": [
+    {
+      "blocker_number": 1,
+      "log_line": 2,
+      "text": "Complete the 74-term human review queue, retaining explicit decisions and rationale evidence; 0 terms are deferred and 74 unreviewed.",
+      "classification": "B",
+      "group": "human_review_queue",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 2,
+      "log_line": 3,
+      "text": "Resolve 1 judgment-sensitive rationale proposals before treating them as adequate publication rationales.",
+      "classification": "B",
+      "group": "rationale_feature_of_interest",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 3,
+      "log_line": 4,
+      "text": "No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 4,
+      "log_line": 5,
+      "text": "Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 5,
+      "log_line": 6,
+      "text": "Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 6,
+      "log_line": 7,
+      "text": "Exact-closure example success is not established for every source example and the separate fixture.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 7,
+      "log_line": 8,
+      "text": "Source and target approximate deductive-difference comparisons do not both have a valid PASS result.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 8,
+      "log_line": 9,
+      "text": "Human approval of selected positive and negative semantic expectations is outstanding.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 9,
+      "log_line": 10,
+      "text": "Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 10,
+      "log_line": 11,
+      "text": "Current semantic evidence requires execution_evidence_schema=2 and invocation tickets, envelopes and captures; no legacy fallback",
+      "classification": "B",
+      "group": "legacy_execution_custody",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 11,
+      "log_line": 12,
+      "text": "Stored semantic evidence HEAD differs from current HEAD",
+      "classification": "B",
+      "group": "historical_head",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 12,
+      "log_line": 13,
+      "text": "Required semantic evidence binding missing: tests/test_current_semantic_invocation.py",
+      "classification": "B",
+      "group": "legacy_execution_custody",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 13,
+      "log_line": 14,
+      "text": "Required semantic evidence binding missing: tools/current_semantic_invocation.py",
+      "classification": "B",
+      "group": "legacy_execution_custody",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 15,
+      "log_line": 16,
+      "text": "Stored semantic evidence hash differs: config/current-semantic-expectations.json",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 17,
+      "log_line": 18,
+      "text": "Stored semantic evidence hash differs: tests/test_current_semantic_validation.py",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 18,
+      "log_line": 19,
+      "text": "Stored semantic evidence hash differs: tools/current_semantic_validation.py",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 19,
+      "log_line": 20,
+      "text": "Validation execution HEAD is stale",
+      "classification": "B",
+      "group": "historical_head",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 37,
+      "log_line": 38,
+      "text": "Validation execution input changed: tests/test_current_publication_readiness.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tests/test_current_publication_readiness.py",
+      "ledger_sha256": "7dd7f282e03d80e9d9e2dcda8c9f74f00cd9d66ce1b8cb5195e520cebf0ab58d",
+      "pre_adjudication_sha256": "73d6d4c59a7faf6c2c9c29f0276dd010580e938733458c1e8aafd60145eb2f65",
+      "current_sha256": "73d6d4c59a7faf6c2c9c29f0276dd010580e938733458c1e8aafd60145eb2f65",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 38,
+      "log_line": 39,
+      "text": "Validation execution input changed: tests/test_current_semantic_validation.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tests/test_current_semantic_validation.py",
+      "ledger_sha256": "d8443382fcf2c6c054b01b8bb8a7e363262f817777a1e387c4c999c67b4b9d41",
+      "pre_adjudication_sha256": "20dcd56dd4c3256b5be44177bffbcb8e4aaf7253bba558baeb0241894a3b1b1c",
+      "current_sha256": "20dcd56dd4c3256b5be44177bffbcb8e4aaf7253bba558baeb0241894a3b1b1c",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 54,
+      "log_line": 55,
+      "text": "Validation execution input changed: tools/check_coms_mapping.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/check_coms_mapping.py",
+      "ledger_sha256": "832660718e7c692760681b592bee87ff7b57147c434eb3d854bd83080c00bdf6",
+      "pre_adjudication_sha256": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "current_sha256": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 59,
+      "log_line": 60,
+      "text": "Validation execution input changed: tools/current_semantic_validation.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/current_semantic_validation.py",
+      "ledger_sha256": "94f6fab0a1c649d72c018c2b3b64447222a23c75cee107912f63cbf40d3af495",
+      "pre_adjudication_sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+      "current_sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 60,
+      "log_line": 61,
+      "text": "Validation execution input changed: tools/current_source_identity.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/current_source_identity.py",
+      "ledger_sha256": "fefc7e10c7594bc4e159323c16a2100b57ee436462b28ee3096b6fe03313a75a",
+      "pre_adjudication_sha256": "c8fa49ade5b9cebf62db097ff1af29949161f9d55989745af993167b3b8d63da",
+      "current_sha256": "c8fa49ade5b9cebf62db097ff1af29949161f9d55989745af993167b3b8d63da",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 61,
+      "log_line": 62,
+      "text": "Validation execution input changed: tools/generate_mapping_from_coms.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/generate_mapping_from_coms.py",
+      "ledger_sha256": "9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843",
+      "pre_adjudication_sha256": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "current_sha256": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 63,
+      "log_line": 64,
+      "text": "Validation execution input changed: tools/modular_products.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/modular_products.py",
+      "ledger_sha256": "8874e996c243dde4dcedaf3701629048b5430168318f8710e4b537649a9cb0fb",
+      "pre_adjudication_sha256": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "current_sha256": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "unchanged_since_pre_adjudication": true,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 69,
+      "log_line": 70,
+      "text": "Validation execution input changed: tools/robot_query_equivalence_pilot.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/robot_query_equivalence_pilot.py",
+      "ledger_sha256": "67e821dbe74f29d8411e5045d9a016176ed3f6b713c8f0cb3f733e7f193bdca6",
+      "pre_adjudication_sha256": "67e821dbe74f29d8411e5045d9a016176ed3f6b713c8f0cb3f733e7f193bdca6",
+      "current_sha256": "c279ddbb1c6b0011c85b125b2d25675ab45dcf495b84d4887a8fa83290978900",
+      "unchanged_since_pre_adjudication": false,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 73,
+      "log_line": 74,
+      "text": "Validation execution input changed: tools/workflow_check.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/workflow_check.py",
+      "ledger_sha256": "93a524849f6851a534cdc83c53a05816bd6be31878ac666d4727360b182922fb",
+      "pre_adjudication_sha256": "93a524849f6851a534cdc83c53a05816bd6be31878ac666d4727360b182922fb",
+      "current_sha256": "dd82016708431eae909c52b56bbd0647acfc28c57183979887ecee9677b76e0a",
+      "unchanged_since_pre_adjudication": false,
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 74,
+      "log_line": 75,
+      "text": "Command affected_integration_tests: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 75,
+      "log_line": 76,
+      "text": "Command affected_integration_tests: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 76,
+      "log_line": 77,
+      "text": "Command affected_integration_tests: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 80,
+      "log_line": 81,
+      "text": "Command assessment: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 81,
+      "log_line": 82,
+      "text": "Command assessment: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 82,
+      "log_line": 83,
+      "text": "Command assessment: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 86,
+      "log_line": 87,
+      "text": "Command current_focused_tests: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 87,
+      "log_line": 88,
+      "text": "Command current_focused_tests: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 88,
+      "log_line": 89,
+      "text": "Command current_focused_tests: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 92,
+      "log_line": 93,
+      "text": "Command generation_freshness: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 93,
+      "log_line": 94,
+      "text": "Command generation_freshness: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 94,
+      "log_line": 95,
+      "text": "Command generation_freshness: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 98,
+      "log_line": 99,
+      "text": "Command preservation: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 99,
+      "log_line": 100,
+      "text": "Command preservation: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 100,
+      "log_line": 101,
+      "text": "Command preservation: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 104,
+      "log_line": 105,
+      "text": "Command semantic_stored_consistency: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 105,
+      "log_line": 106,
+      "text": "Command semantic_stored_consistency: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 106,
+      "log_line": 107,
+      "text": "Command semantic_stored_consistency: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 110,
+      "log_line": 111,
+      "text": "Command sosa_2023_nonregression: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 111,
+      "log_line": 112,
+      "text": "Command sosa_2023_nonregression: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 112,
+      "log_line": 113,
+      "text": "Command sosa_2023_nonregression: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 116,
+      "log_line": 117,
+      "text": "Command sosa_products: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 117,
+      "log_line": 118,
+      "text": "Command sosa_products: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 118,
+      "log_line": 119,
+      "text": "Command sosa_products: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 122,
+      "log_line": 123,
+      "text": "Command sosa_source_version: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 123,
+      "log_line": 124,
+      "text": "Command sosa_source_version: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 124,
+      "log_line": 125,
+      "text": "Command sosa_source_version: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 128,
+      "log_line": 129,
+      "text": "Command source_identity: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 129,
+      "log_line": 130,
+      "text": "Command source_identity: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 130,
+      "log_line": 131,
+      "text": "Command source_identity: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 134,
+      "log_line": 135,
+      "text": "Command static_checks: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 135,
+      "log_line": 136,
+      "text": "Command static_checks: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 136,
+      "log_line": 137,
+      "text": "Command static_checks: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 140,
+      "log_line": 141,
+      "text": "Command whitespace: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 141,
+      "log_line": 142,
+      "text": "Command whitespace: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 142,
+      "log_line": 143,
+      "text": "Command whitespace: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 146,
+      "log_line": 147,
+      "text": "Required validation not run: full_repository_gate",
+      "classification": "B",
+      "group": "missing_whole_repository_runs",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 147,
+      "log_line": 148,
+      "text": "Required validation not run: unit_tests",
+      "classification": "B",
+      "group": "missing_whole_repository_runs",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 148,
+      "log_line": 149,
+      "text": "Retained historical semantic diagnostics lack pre-execution tickets and helper result envelopes. Their old code/input bindings are now stale, so they cannot certify a new semantic execution; rerun only with the reviewed closure and resolved profile/import blockers.",
+      "classification": "B",
+      "group": "legacy_execution_custody",
+      "still_printed_verbatim": false,
+      "disposition": "Original immutable record retains this deficiency; no longer selected as current evidence after coherent successor execution. No independent semantic work or environment/full-suite approval performed.",
+      "historical_bytes_preserved": true
+    },
+    {
+      "blocker_number": 149,
+      "log_line": 150,
+      "text": "Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.",
+      "classification": "B",
+      "group": "declared_environment",
+      "still_printed_verbatim": true,
+      "disposition": "Independent requirement remains blocked",
+      "historical_bytes_preserved": true
+    }
+  ],
+  "newly_exposed_profile_command_diagnostics": 26,
+  "new_semantic_failure_summary_count": 1
+}

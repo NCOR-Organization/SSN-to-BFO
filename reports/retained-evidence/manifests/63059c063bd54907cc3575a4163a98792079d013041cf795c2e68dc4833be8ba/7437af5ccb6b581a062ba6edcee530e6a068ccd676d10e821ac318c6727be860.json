@@ -1,0 +1,13 @@
+{
+  "bytes": 32175,
+  "creation_date": "2026-10-27T01:55:59.083058+00:00",
+  "custody_classification": "immutable retained historical evidence",
+  "logical_path": "reports/coms-vs-pre-coms-legacy-diff.md",
+  "profile": "current-ssn-sosa-retained-evidence-v1",
+  "reason": "Historical evidence path later became a regenerable current-state report; preserve exact documentary/publication evidence without rewriting its binding or the live report.",
+  "schema_version": 1,
+  "sha256": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+  "snapshot_path": "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md",
+  "source_git_blob": "070ff7ded06132e60ddb93b5862c0e6d29789879",
+  "source_git_commit": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733"
+}

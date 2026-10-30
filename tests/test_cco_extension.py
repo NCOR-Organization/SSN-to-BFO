@@ -9,6 +9,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+from collections import Counter
 from pathlib import Path
 
 from rdflib import BNode, Graph, RDF, RDFS, OWL, URIRef
@@ -19,8 +21,19 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import generate_mapping_from_coms as coms  # noqa: E402
 import modular_products as modular  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
+from current_source_identity import ACCEPTED_CHECKPOINT_HEAD  # noqa: E402
 from coms_row_identity import RowLocation  # noqa: E402
-from product_dispositions import ProductDisposition, load_disposition_document  # noqa: E402
+from current_semantic_generation import (  # noqa: E402
+    expected_count,
+    generated_expectations_context,
+    selection_policy,
+)
+from product_dispositions import (  # noqa: E402
+    ProductDisposition,
+    classify_target_category,
+    load_disposition_document,
+)
 from publication_metadata import (  # noqa: E402
     load_metadata,
     ontology_metadata_rdf_triples,
@@ -29,6 +42,7 @@ from publication_metadata import (  # noqa: E402
 )
 
 
+# Historical locks: current expectations remove only authenticated transition rows.
 EXPECTED_INVENTORY = tuple(
     ("urn:uuid:" + row_id, "sha256:" + axiom_id)
     for row_id, axiom_id in (
@@ -92,11 +106,59 @@ EXPECTED_INVENTORY = tuple(
 EXPECTED_ROW_IDS = frozenset(row_id for row_id, _ in EXPECTED_INVENTORY)
 EXPECTED_AXIOM_IDS = frozenset(axiom_id for _, axiom_id in EXPECTED_INVENTORY)
 EXPECTED_INVENTORY_SHA256 = "c5587418a9fa0a16b1309609da0eddc8e34e2c2b8ea421069e2f46dd576ac590"
+CURRENT_CCO_SHA256 = "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+HISTORICAL_CCO_SHA256 = "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
+CCO_PRODUCT_PATH = "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl"
+
+
+def historical_cco_bytes() -> bytes:
+    """Retain the governed checkpoint even after a current-product commit."""
+    return subprocess.check_output(
+        ["git", "--no-optional-locks", "show",
+         f"{ACCEPTED_CHECKPOINT_HEAD}:{CCO_PRODUCT_PATH}"],
+        cwd=REPO_ROOT,
+    )
+
+
+def processed_cco_inventory(processed) -> dict[tuple[str, str], str]:
+    inventory = {}
+    for processed_row in processed:
+        row = coms.disposition_input_for_processed_row(processed_row)
+        for axiom in row.authoritative_axioms:
+            if classify_target_category(axiom) in modular.PRODUCT_SELECTION["cco_extension"].categories:
+                inventory[(row.row_id, "sha256:" + axiom.identity.sha256)] = axiom.identity.canonical_axiom
+    return inventory
+
+
+def inventory_digest(inventory: dict[tuple[str, str], str]) -> str:
+    payload = "\n".join(f"{row_id}|{axiom_id}|{inventory[row_id, axiom_id]}"
+                        for row_id, axiom_id in sorted(inventory))
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def authenticated_baseline():
+    history = semantic.resolve_history(REPO_ROOT)
+    transition = [record for record in history["chain"] if record["kind"] == "semantic"][-1]
+    if transition["transition_id"] != "58481ff2-4e56-4931-a3d4-383357b16561":
+        raise AssertionError("unexpected maintained-current semantic transition")
+    rows, stats = coms.read_workbook(semantic.snapshot(REPO_ROOT, transition["old_workbook_sha256"]))
+    processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+    return transition, processed, processed_cco_inventory(processed)
 
 
 class CcoExtensionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.enterClassContext(generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ))
+        cls.transition, _, cls.baseline_inventory = authenticated_baseline()
+        cleared = {row["row_id"] for row in cls.transition["delta"]["cleared_mapping_rows"]}
+        cls.expected_current_inventory = {
+            pair: expression for pair, expression in cls.baseline_inventory.items()
+            if pair[0] not in cleared
+        }
+        cls.expected_current_row_ids = {row_id for row_id, _ in cls.expected_current_inventory}
         rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
         cls.processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
         cls.canonical_rows = tuple(
@@ -172,31 +234,30 @@ class CcoExtensionTests(unittest.TestCase):
         }
 
     def test_exact_identity_inventory_digest_categories_and_distribution(self) -> None:
-        self.assertEqual({value.row_id for value in self.cco_selected}, EXPECTED_ROW_IDS)
-        self.assertEqual({value.axiom_id for value in self.cco_selected}, EXPECTED_AXIOM_IDS)
-        payload = "\n".join(
-            f"{value.row_id}|{value.axiom_id}|{value.identity.canonical_axiom}"
-            for value in sorted(
-                self.cco_selected, key=lambda item: (item.row_id, item.axiom_id)
-            )
-        )
-        self.assertEqual(hashlib.sha256(payload.encode()).hexdigest(), EXPECTED_INVENTORY_SHA256)
+        self.assertEqual(set(self.baseline_inventory), set(EXPECTED_INVENTORY))
+        self.assertEqual(inventory_digest(self.baseline_inventory), EXPECTED_INVENTORY_SHA256)
+        actual = {(value.row_id, value.axiom_id): value.identity.canonical_axiom
+                  for value in self.cco_selected}
+        self.assertEqual(actual, self.expected_current_inventory)
+        self.assertEqual(inventory_digest(actual), inventory_digest(self.expected_current_inventory))
+        self.assertEqual(len(self.cco_selected), expected_count("CCO_EXTENSION_AXIOM_COUNT", 55))
         categories = [value.target_category for value in self.cco_selected]
-        self.assertEqual(categories.count("cco_bearing"), 25)
-        self.assertEqual(categories.count("mixed_bfo_cco"), 30)
+        self.assertEqual(categories.count("cco_bearing"), expected_count("CCO_EXTENSION_CCO_BEARING_COUNT", 25))
+        self.assertEqual(categories.count("mixed_bfo_cco"), expected_count("CCO_EXTENSION_MIXED_COUNT", 30))
         predicates = [value.canonical_input.predicate_iri for value in self.cco_selected]
-        self.assertEqual(predicates.count(str(RDFS.subClassOf)), 31)
+        self.assertEqual(predicates.count(str(RDFS.subClassOf)), expected_count("CCO_EXTENSION_SUBCLASS_COUNT", 31))
         self.assertEqual(predicates.count(str(OWL.equivalentClass)), 7)
         self.assertEqual(predicates.count(str(RDFS.subPropertyOf)), 16)
         self.assertEqual(
             sum(value.canonical_input.mapping_type == "property_chain" for value in self.cco_selected),
-            1,
+            expected_count("CCO_EXTENSION_PROPERTY_CHAIN_COUNT", 1),
         )
 
     def test_nonselected_product_policy_is_reconciled(self) -> None:
         counts: dict[str, int] = {}
         zero_axiom_rows = 0
         for row in self.disposition.rows:
+            self.assertLessEqual(len(row.authoritative_axioms), 1)
             if not row.authoritative_axioms:
                 zero_axiom_rows += 1
                 continue
@@ -204,14 +265,19 @@ class CcoExtensionTests(unittest.TestCase):
                 "cco_extension"
             ]
             counts[disposition.status] = counts.get(disposition.status, 0) + 1
-        self.assertEqual(zero_axiom_rows, 2)
-        self.assertEqual(
-            counts,
-            {"emitted_unchanged": 55, "provided_through_import": 19, "provided_transitively": 29},
-        )
+        expected = Counter()
+        policy = selection_policy("cco_extension", modular.PRODUCT_SELECTION["cco_extension"])
+        for _, status, _, count in policy.expected_disposition_totals:
+            expected[status] += count
+        self.assertEqual(zero_axiom_rows, expected_count("ZERO_AXIOM_ROW_COUNT", 2))
+        self.assertEqual(counts, expected)
+        self.assertEqual(zero_axiom_rows, sum(not audit.authoritative_axioms for audit in self.audits))
+        self.assertEqual(sum(counts.values()), sum(len(audit.authoritative_axioms) for audit in self.audits))
+        self.assertEqual(sum(counts.values()), expected_count("AUTHORITATIVE_AXIOM_COUNT", 103))
+        self.assertEqual(sum(counts.values()) + zero_axiom_rows, expected_count("GOVERNED_ROW_COUNT", 105))
 
     def test_wrong_disposition_category_and_imported_direct_selection_fail(self) -> None:
-        selected_row = next(row for row in self.disposition.rows if row.row_id in EXPECTED_ROW_IDS)
+        selected_row = next(row for row in self.disposition.rows if row.row_id in self.expected_current_row_ids)
         selected_axiom = selected_row.authoritative_axioms[0]
         wrong = tuple(
             (key, ProductDisposition("provided_through_import"))
@@ -274,7 +340,7 @@ class CcoExtensionTests(unittest.TestCase):
                     "cco_extension", rows, self.audits, self.disposition
                 )
 
-        selected_row = next(row for row in self.disposition.rows if row.row_id in EXPECTED_ROW_IDS)
+        selected_row = next(row for row in self.disposition.rows if row.row_id in self.expected_current_row_ids)
         axiom = selected_row.authoritative_axioms[0]
         for changed in (
             dataclasses.replace(selected_row, authoritative_axioms=()),
@@ -327,11 +393,11 @@ class CcoExtensionTests(unittest.TestCase):
         strict = URIRef("http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping")
         self.assertEqual(set(graph.subjects(RDF.type, OWL.Ontology)), {ontology})
         self.assertEqual(set(graph.triples((None, OWL.imports, None))), {(ontology, OWL.imports, strict)})
-        self.assertEqual(self.cco_result.logical_triple_count, 924)
+        self.assertEqual(self.cco_result.logical_triple_count, expected_count("CCO_EXTENSION_LOGICAL_TRIPLE_COUNT", 924))
         self.assertEqual(self.cco_result.ontology_declaration_triple_count, 1)
         self.assertEqual(self.cco_result.import_triple_count, 1)
         self.assertEqual(self.cco_result.metadata_annotation_count, 7)
-        self.assertEqual(len(graph), 933)
+        self.assertEqual(len(graph), expected_count("CCO_EXTENSION_TOTAL_TRIPLE_COUNT", 933))
         self.assertEqual(
             set(ontology_metadata_rdf_triples(self.metadata, "cco_extension")),
             set(graph.triples((ontology, None, None)))
@@ -358,13 +424,13 @@ class CcoExtensionTests(unittest.TestCase):
                     (str(strict),),
                 )
             ),
-            924,
+            expected_count("CCO_EXTENSION_LOGICAL_TRIPLE_COUNT", 924),
         )
-        self.assertEqual(len(set(graph.subjects(OWL.unionOf, None))), 7)
-        self.assertEqual(len(set(graph.subjects(OWL.intersectionOf, None))), 86)
-        self.assertEqual(len(set(graph.subjects(OWL.someValuesFrom, None))), 95)
-        self.assertEqual(len(set(graph.subjects(OWL.propertyChainAxiom, None))), 1)
-        self.assertEqual(self.cco_result.rdf_list_count, 94)
+        self.assertEqual(len(set(graph.subjects(OWL.unionOf, None))), expected_count("CCO_EXTENSION_UNION_COUNT", 7))
+        self.assertEqual(len(set(graph.subjects(OWL.intersectionOf, None))), expected_count("CCO_EXTENSION_INTERSECTION_COUNT", 86))
+        self.assertEqual(len(set(graph.subjects(OWL.someValuesFrom, None))), expected_count("CCO_EXTENSION_EXISTENTIAL_COUNT", 95))
+        self.assertEqual(len(set(graph.subjects(OWL.propertyChainAxiom, None))), expected_count("CCO_EXTENSION_PROPERTY_CHAIN_COUNT", 1))
+        self.assertEqual(self.cco_result.rdf_list_count, expected_count("CCO_EXTENSION_RDF_LIST_COUNT", 94))
         self.assertFalse(any(True for _ in graph.triples((None, OWL.inverseOf, None))))
         self.assertEqual(self.validate_bytes(self.cco_result.serialized_bytes), set())
 
@@ -409,7 +475,11 @@ class CcoExtensionTests(unittest.TestCase):
         self.assertFalse(self.cco_result.serialized_bytes.endswith(b"\n\n"))
         self.assertEqual(
             self.cco_result.sha256,
-            "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+            CURRENT_CCO_SHA256,
+        )
+        self.assertEqual(
+            self.cco_result.serialized_bytes,
+            (REPO_ROOT / "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl").read_bytes(),
         )
         self.assertEqual(
             hashlib.sha256(self.core_result.serialized_bytes).hexdigest(),
@@ -439,19 +509,21 @@ class CcoExtensionTests(unittest.TestCase):
             "from product_dispositions import load_disposition_document; "
             "from publication_metadata import load_metadata; "
             "from modular_products import select_product_axioms,build_cco_extension; "
+            "from current_semantic_generation import generated_expectations_context; "
             "r,s=g.read_workbook(Path('mappings/SSN2BFO-COMS.xlsx')); "
             "p=g.validate_and_process_rows(r,g.Resolver(),s); "
             "c=[g.canonical_input_for_processed_row(x) for x in p]; "
             "a=[x.identity_audit for x in p]; "
             "d=load_disposition_document('reports/coms-product-dispositions.json'); "
             "m=load_metadata('config/publication-metadata.toml'); "
-            "x=build_cco_extension(select_product_axioms('cco_extension',c,a,d),m); "
-            "print(hashlib.sha256(x.serialized_bytes).hexdigest())"
+            "\nwith generated_expectations_context(Path.cwd(), Path('mappings/SSN2BFO-COMS.xlsx')):\n"
+            "    x=build_cco_extension(select_product_axioms('cco_extension',c,a,d),m)\n"
+            "    print(hashlib.sha256(x.serialized_bytes).hexdigest())"
         )
         values = []
         for _ in range(2):
             proc = subprocess.run(
-                [sys.executable, "-c", code],
+                [sys.executable, "-B", "-c", code],
                 cwd=REPO_ROOT,
                 env={"PYTHONPATH": str(REPO_ROOT / "tools")},
                 text=True,
@@ -470,15 +542,15 @@ class CcoExtensionTests(unittest.TestCase):
         self.assertFalse(cco_ids & strict_ids)
         self.assertFalse(cco_ids & core_ids)
         self.assertFalse(strict_ids & core_ids)
-        self.assertEqual(len(cco_ids | strict_ids | core_ids), 103)
+        self.assertEqual(len(cco_ids | strict_ids | core_ids), expected_count("CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT", 103))
         graph = Graph().parse(data=self.cco_result.serialized_bytes.decode(), format="turtle")
         graph.parse(data=self.strict_result.serialized_bytes.decode(), format="turtle")
         graph.parse(data=self.core_result.serialized_bytes.decode(), format="turtle")
-        self.assertEqual(len(graph), 1128)
+        self.assertEqual(len(graph), expected_count("CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT", 1128))
         for triple in list(graph.triples((None, OWL.imports, None))):
             graph.remove(triple)
-        self.assertEqual(len(graph), 1126)
-        self.assertEqual(len(self.fixed_closure), 15920)
+        self.assertEqual(len(graph), expected_count("CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 1126))
+        self.assertEqual(len(self.fixed_closure), expected_count("CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT", 15920))
         self.assertTrue(
             all(
                 triple in self.fixed_closure
@@ -502,13 +574,112 @@ class CcoExtensionTests(unittest.TestCase):
         self.assertTrue(result.passed, result.robot_output)
         self.assertEqual(result.return_code, 0)
         self.assertTrue(result.reasoned_output_produced)
-        self.assertEqual(result.closure_triple_count, 15920)
+        self.assertEqual(result.closure_triple_count, expected_count("CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT", 15920))
         self.assertTrue(result.profile_checked)
-        self.assertEqual(result.profile_triple_count, 15924)
         self.assertEqual(result.profile_declaration_completion_count, 4)
+        self.assertEqual(result.profile_triple_count,
+                         expected_count("CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT", 15920) + 4)
         self.assertEqual(result.profile_return_code, 0)
         self.assertTrue(result.source_sample_declarations_retained)
         self.assertEqual(result.unsat_classes, [])
+
+
+class RawCcoTransitionTests(unittest.TestCase):
+    def test_historical_fixture_is_independent_of_a_simulated_head_advance(self) -> None:
+        historical = historical_cco_bytes()
+        current = (REPO_ROOT / CCO_PRODUCT_PATH).read_bytes()
+        self.assertEqual(hashlib.sha256(historical).hexdigest(), HISTORICAL_CCO_SHA256)
+        self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)
+        self.assertNotEqual(historical, current)
+        actual_check_output = subprocess.check_output
+
+        # Only the moving HEAD view is simulated. Historical retrieval still
+        # reads the actual immutable Git object; no repository is committed.
+        for head_bytes in (historical, current):
+            with self.subTest(head_sha256=hashlib.sha256(head_bytes).hexdigest()):
+                def simulated_head(command, **kwargs):
+                    if command[-1] == f"HEAD:{CCO_PRODUCT_PATH}":
+                        return head_bytes
+                    return actual_check_output(command, **kwargs)
+
+                with patch.object(subprocess, "check_output", side_effect=simulated_head):
+                    self.assertEqual(subprocess.check_output(
+                        ["git", "--no-optional-locks", "show", f"HEAD:{CCO_PRODUCT_PATH}"],
+                        cwd=REPO_ROOT,
+                    ), head_bytes)
+                    self.assertEqual(historical_cco_bytes(), historical)
+
+    def test_authenticated_three_axiom_delta_preserves_raw_baseline_guard(self) -> None:
+        transition, baseline, baseline_inventory = authenticated_baseline()
+        self.assertEqual(len(baseline_inventory), 55)
+        self.assertEqual(set(baseline_inventory), set(EXPECTED_INVENTORY))
+        self.assertEqual(inventory_digest(baseline_inventory), EXPECTED_INVENTORY_SHA256)
+        historical_bytes = historical_cco_bytes()
+        self.assertEqual(hashlib.sha256(historical_bytes).hexdigest(),
+                         HISTORICAL_CCO_SHA256)
+
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        rows, stats = coms.read_workbook(workbook)
+        processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+        canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in processed)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = load_disposition_document(REPO_ROOT / "reports/coms-product-dispositions.json")
+        metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
+
+        def assert_raw_baseline_rejects() -> None:
+            policy = modular.PRODUCT_SELECTION["cco_extension"]
+            self.assertEqual(policy.expected_count, 55)
+            self.assertEqual(dict(policy.expected_category_counts), {"cco_bearing": 25, "mixed_bfo_cco": 30})
+            with self.assertRaises(modular.ModularProductError) as raised:
+                modular.select_product_axioms("cco_extension", canonical_rows, audits, disposition)
+            self.assertEqual({issue.code for issue in raised.exception.issues},
+                             {"PRODUCT_AXIOM_COUNT_MISMATCH", "PRODUCT_CATEGORY_COUNT_MISMATCH",
+                              "PRODUCT_DISPOSITION_COUNT_MISMATCH"})
+
+        assert_raw_baseline_rejects()
+        with generated_expectations_context(REPO_ROOT, workbook):
+            selected = modular.select_product_axioms("cco_extension", canonical_rows, audits, disposition)
+            actual = {(value.row_id, value.axiom_id): value.identity.canonical_axiom for value in selected}
+            self.assertEqual(len(selected), 52)
+            self.assertEqual(Counter(value.target_category for value in selected),
+                             {"cco_bearing": 24, "mixed_bfo_cco": 28})
+            removed = baseline_inventory.keys() - actual.keys()
+            cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
+            self.assertEqual(len(removed), 3)
+            self.assertEqual({row_id for row_id, _ in removed}, cleared)
+            self.assertEqual(actual.keys() - baseline_inventory.keys(), set())
+            self.assertEqual(actual, {pair: expression for pair, expression in baseline_inventory.items()
+                                      if pair not in removed})
+            delta = transition["generation_expectations"]["logical_axiom_delta"]
+            self.assertEqual(sorted(baseline_inventory[pair] for pair in removed), delta["removed"])
+            self.assertEqual(delta["added"], [])
+
+            baseline_rows = {row.row_id: row for row in
+                             map(coms.disposition_input_for_processed_row, baseline)}
+            signatures = set()
+            for row_id in cleared:
+                row = baseline_rows[row_id]
+                self.assertEqual(len(row.authoritative_axioms), 1)
+                signatures.add((row.canonical_row.subject_iri, row.mapping_type,
+                                classify_target_category(row.authoritative_axioms[0])))
+            self.assertEqual(signatures, {
+                ("http://www.w3.org/ns/ssn/forProperty", "property_chain", "cco_bearing"),
+                ("http://www.w3.org/ns/ssn/systems/SystemProperty", "class_mapping", "mixed_bfo_cco"),
+                ("http://www.w3.org/ns/ssn/systems/MeasurementRange", "class_mapping", "mixed_bfo_cco"),
+            })
+            before_blanks = {row_id for row_id, row in baseline_rows.items() if not row.authoritative_axioms}
+            after_blanks = {audit.row_id for audit in audits if not audit.authoritative_axioms}
+            self.assertEqual(len(before_blanks), 2)
+            self.assertEqual(len(after_blanks), 5)
+            self.assertEqual(after_blanks - before_blanks, cleared)
+            self.assertEqual(before_blanks - after_blanks, set())
+            self.assertEqual(len(processed), 105)
+            self.assertEqual(sum(len(audit.authoritative_axioms) for audit in audits), 100)
+            result = modular.build_cco_extension(selected, metadata)
+            self.assertEqual(result.sha256, CURRENT_CCO_SHA256)
+            self.assertEqual(result.serialized_bytes,
+                             (REPO_ROOT / "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl").read_bytes())
+        assert_raw_baseline_rejects()
 
 
 if __name__ == "__main__":

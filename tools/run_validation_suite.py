@@ -466,6 +466,7 @@ def compile_check() -> StepResult:
             "tests/test_release_context.py",
             "tests/test_release_rendering.py",
             "tests/test_release_manifest.py",
+            "tests/test_release_contract.py",
             "tests/test_build_release.py",
             "tests/test_release_archive.py",
             "tests/test_release_rehearsal.py",
@@ -886,6 +887,22 @@ def run_validation_suite(args: argparse.Namespace) -> int:
                     "tests",
                     "-p",
                     "test_release_manifest.py",
+                ],
+            )
+        )
+    if results[-1].passed:
+        results.append(
+            run_command(
+                "Authenticated current release contract focused tests",
+                [
+                    sys.executable,
+                    "-m",
+                    "unittest",
+                    "discover",
+                    "-s",
+                    "tests",
+                    "-p",
+                    "test_release_contract.py",
                 ],
             )
         )

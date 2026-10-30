@@ -8,7 +8,7 @@ import os
 import tempfile
 from pathlib import Path
 
-from release_context import FormalReleaseContextError, parse_formal_release_context
+from release_context import FormalReleaseContextError, parse_formal_release_context, authenticated_release_expectations
 from release_manifest import (
     PRODUCT_ORDER,
     ReleaseManifestError,
@@ -122,7 +122,7 @@ def _local_path_leakage_issues(package_dir: Path, repository_root: Path) -> tupl
     return tuple(sorted(set(issues), key=lambda value: value.sort_key))
 
 
-def validate_release_package(
+def _validate_release_package(
     package_dir: Path,
     *,
     repository_root: Path = REPO_ROOT,
@@ -233,6 +233,31 @@ def validate_release_package(
             return tuple(sorted(set(issues), key=lambda value: value.sort_key))
     issues.extend(development_snapshot_issues(repository_root, snapshots))
     return tuple(sorted(set(issues), key=lambda value: value.sort_key))
+
+
+def validate_release_package(
+    package_dir: Path,
+    *,
+    repository_root: Path = REPO_ROOT,
+    toolchain: ResolvedValidationToolchain | None = None,
+) -> tuple[ReleasePackageIssue, ...]:
+    package_dir = Path(package_dir)
+    layout = _layout_issues(package_dir)
+    if layout:
+        return layout
+    try:
+        # Read representation first to identify the release. This is never
+        # acceptance: the exact authenticated semantic check follows below.
+        manifest = load_and_validate_release_manifest(package_dir / "manifest.json", semantic=False)
+        context = parse_formal_release_context(
+            manifest.release_identifier, manifest.release_date, manifest.git_tag, manifest.source_commit
+        )
+        with authenticated_release_expectations(repository_root, context):
+            return _validate_release_package(package_dir, repository_root=repository_root, toolchain=toolchain)
+    except ReleaseManifestError as exc:
+        return tuple(package_issue(value.code, value.field, value.message) for value in exc.issues)
+    except Exception as exc:
+        return (package_issue("RELEASE_PREFLIGHT_AUTHENTICATION", "repository", str(exc)),)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

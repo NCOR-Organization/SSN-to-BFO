@@ -16,6 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import coms_row_identity as identity  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
 import generate_mapping_from_coms as generator  # noqa: E402
 import product_dispositions as dispositions  # noqa: E402
 from publication_metadata import load_metadata  # noqa: E402
@@ -213,21 +214,39 @@ class ProductDispositionTests(unittest.TestCase):
                 dispositions.serialize_disposition_document(document),
             )
 
-    def current_document(self) -> dispositions.DispositionDocument:
-        rows, stats = generator.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
+    def current_document(self, workbook_path: Path | None = None) -> dispositions.DispositionDocument:
+        rows, stats = generator.read_workbook(workbook_path or REPO_ROOT / semantic.WORKBOOK)
         processed = generator.validate_and_process_rows(rows, generator.Resolver(), stats)
         inputs = [generator.disposition_input_for_processed_row(row) for row in processed]
         return dispositions.build_disposition_document(inputs, self.metadata, hashes())
 
+    def current_transition(self) -> dict:
+        history = semantic.resolve_history(REPO_ROOT)
+        transitions = [record for record in history["chain"] if record["kind"] == "semantic"]
+        self.assertTrue(transitions)
+        transition = transitions[-1]
+        self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+        return transition
+
     def test_current_workbook_totals_and_product_order(self) -> None:
+        expected = self.current_transition()["generation_expectations"]["after"]
+        counts = expected["counts"]
+
+        def partition_count(*metrics: str) -> int:
+            # These disjoint product partitions cover the authoritative axioms.
+            return sum(counts[f"{prefix}_{metric}_COUNT"]
+                       for prefix in ("ALIGNMENT_CORE", "STRICT_BFO", "CCO_EXTENSION")
+                       for metric in metrics)
+
         document = self.current_document()
         summary = document.summary
         self.assertEqual(document.product_order, self.product_order)
-        self.assertEqual(summary.governed_row_count, 105)
-        self.assertEqual(summary.unique_row_id_count, 105)
-        self.assertEqual(summary.authoritative_axiom_count, 103)
-        self.assertEqual(summary.unique_authoritative_axiom_count, 103)
-        self.assertEqual(summary.zero_axiom_row_count, 2)
+        self.assertEqual(summary.governed_row_count, counts["GOVERNED_ROW_COUNT"])
+        self.assertEqual(summary.unique_row_id_count, counts["GOVERNED_ROW_COUNT"])
+        self.assertEqual(summary.authoritative_axiom_count, counts["AUTHORITATIVE_AXIOM_COUNT"])
+        self.assertEqual(summary.unique_authoritative_axiom_count, len(set(expected["canonical_axioms"])))
+        self.assertEqual(summary.zero_axiom_row_count, counts["ZERO_AXIOM_ROW_COUNT"])
+        self.assertEqual(summary.explicitly_unmapped_row_count, counts["ZERO_AXIOM_ROW_COUNT"])
         self.assertEqual(
             (
                 summary.target_neutral_axiom_count,
@@ -235,7 +254,8 @@ class ProductDispositionTests(unittest.TestCase):
                 summary.cco_bearing_axiom_count,
                 summary.mixed_bfo_cco_axiom_count,
             ),
-            (29, 19, 25, 30),
+            tuple(expected["category_counts"][category] for category in
+                  ("target_neutral", "bfo_bearing", "cco_bearing", "mixed_bfo_cco")),
         )
         self.assertEqual(
             (
@@ -244,16 +264,76 @@ class ProductDispositionTests(unittest.TestCase):
                 summary.property_chain_row_count,
                 summary.property_typing_row_count,
             ),
-            (44, 25, 3, 31),
+            (partition_count("SUBCLASS", "EQUIVALENT_CLASS"),
+             partition_count("DIRECT_SUBPROPERTY"),
+             partition_count("PROPERTY_CHAIN"),
+             partition_count("DOMAIN", "RANGE")),
         )
         self.assertEqual(
             sum(not row.authoritative_axioms for row in document.rows),
-            2,
+            counts["ZERO_AXIOM_ROW_COUNT"],
         )
         self.assertEqual(
             sum(len(row.authoritative_axioms) == 1 for row in document.rows),
-            103,
+            counts["AUTHORITATIVE_AXIOM_COUNT"],
         )
+
+    def test_current_disposition_delta_matches_authenticated_transition(self) -> None:
+        transition = self.current_transition()
+        baseline = self.current_document(semantic.snapshot(REPO_ROOT, transition["old_workbook_sha256"]))
+        current = self.current_document()
+        before = {row.row_id: row for row in baseline.rows}
+        after = {row.row_id: row for row in current.rows}
+        self.assertEqual(before.keys(), after.keys())
+        self.assertEqual(len(after), 105)
+        cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
+        mapped_to_blank = {key for key in before
+                           if before[key].authoritative_axioms and not after[key].authoritative_axioms}
+        blank_to_mapped = {key for key in before
+                           if not before[key].authoritative_axioms and after[key].authoritative_axioms}
+        self.assertEqual(mapped_to_blank, cleared)
+        self.assertEqual(len(cleared), 3)
+        self.assertEqual(blank_to_mapped, set())
+        for key in before:
+            with self.subTest(row_id=key):
+                self.assertEqual((before[key].location, before[key].subject),
+                                 (after[key].location, after[key].subject))
+                if key not in cleared:
+                    # Documentary reasoning is separate from product disposition.
+                    self.assertEqual(replace(before[key], reasoning=""), replace(after[key], reasoning=""))
+
+        old_axioms = {axiom.canonical_expression for row in baseline.rows for axiom in row.authoritative_axioms}
+        new_axioms = {axiom.canonical_expression for row in current.rows for axiom in row.authoritative_axioms}
+        self.assertEqual(sorted(old_axioms - new_axioms),
+                         transition["generation_expectations"]["logical_axiom_delta"]["removed"])
+        self.assertEqual(new_axioms - old_axioms, set())
+        self.assertEqual(current.summary.authoritative_axiom_count,
+                         transition["generation_expectations"]["after"]["counts"]["AUTHORITATIVE_AXIOM_COUNT"])
+        self.assertEqual((current.summary.authoritative_axiom_count, current.summary.zero_axiom_row_count), (100, 5))
+
+        outcomes = {
+            "http://www.w3.org/ns/ssn/forProperty": "no_direct_mapping",
+            "http://www.w3.org/ns/ssn/systems/SystemProperty": "inheritance_sufficient",
+            "http://www.w3.org/ns/ssn/systems/MeasurementRange": "inheritance_sufficient",
+        }
+        self.assertEqual({after[key].subject.iri for key in cleared}, set(outcomes))
+        assessment = json.loads((REPO_ROOT / "mappings/current-ssn-sosa-assessment.json").read_text())
+        records = {record["source_iri"]: record for record in assessment["records"]}
+        for key in cleared:
+            row = after[key]
+            record = records[row.subject.iri]
+            # resolve_history already authenticated this bound human decision.
+            authority = transition["authorities"][key]
+            decision = json.loads((REPO_ROOT / authority["human_decision"]["path"]).read_text())
+            with self.subTest(source=row.subject.iri):
+                self.assertEqual(authority["authorization_type"], "EXPLICIT_NEW_HUMAN_DECISION")
+                self.assertEqual((record["review_state"], record["assessment_outcome"]),
+                                 ("final", outcomes[row.subject.iri]))
+                self.assertEqual(decision["assessment_outcome"], outcomes[row.subject.iri])
+                self.assertIn(key, record["mapping_row_ids"])
+                self.assertIsNone(row.predicate)
+                self.assertIsNone(row.authoritative_target_lexical)
+                self.assertEqual(row.coverage_classification, "explicitly_unmapped")
 
     def test_role_order_is_independent_of_materialized_products(self) -> None:
         reduced_metadata = replace(

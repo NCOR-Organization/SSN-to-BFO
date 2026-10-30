@@ -1,9 +1,9 @@
 {
   "binding": {
-    "assessment_tool_sha256": "bd0b440ae6fe5b35925422454c47b621bc6892613e97e8c4236de65169dcf247",
-    "head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+    "assessment_tool_sha256": "7280bf44ef0896a0045e3f0a3beaa0a3407ec75fe6bf3ffbe18e04dccbe0be0c",
+    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
     "input_sha256": {
-      "SSN2BFO.ttl": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -15,8 +15,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
-      "mappings/current-ssn-sosa-assessment.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -24,7 +24,13 @@
       "reports/all-mapping-changes-and-rationales.md": "91bdde9cd34403c1808467f0c11a2b577f4a4284ec0ebe130d070b276e05ce23",
       "reports/all-source-domain-range-operationalization-evaluation.md": "fbdf4f75823b4d0a4f6d4cfea1e521c6c5220fc10a9b8a724e384353f0d2ea1b",
       "reports/coms-frequency-correction-validation.md": "011b5ebea5cc0be524a8e5c86739debf10449e1487deb4dd40f0f846ac2e6e9e",
-      "reports/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "reports/coms-vs-pre-coms-legacy-diff.md": "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json": "09e17d3bf0a6c09e2c184db66aaaae331f610d7f78db33d5308a0df19890a80c",
+      "reports/current-decision-applicability/prepared/hasSample-forProperty.json": "9d04174ff90b91dd48311189bd07d4bfac9eca46985d448cef569125d478e2de",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json": "da1f762851c24de45db6537bbf31fcd113a51382bd75040004fdbf92ca874ff2",
+      "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
+      "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
+      "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
       "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
       "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
       "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
@@ -37,6 +43,19 @@
       "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json": "51ec899be8e1fb8939c504ab83e7ed67d1175ba21bd2c13c42a0db8b5f211c00",
       "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2",
       "reports/current-human-decisions/2026-10-25-sample-pair/manifest.json": "3f4c4beae24ceced243cd33a461dfb5c23e2b1c04e4e326e03c77e4333d32bc5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json": "e22c6271044cf2d224cc5b75932e071c16ec6fcba5273986276d80c99d2d1af6",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json": "d9bf35e5dbffdfcbcda626523bdcc325a088487948d4ed1053e94af1b8859ff4",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+      "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
       "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
       "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
       "reports/hermit-observation-sensor-stimulus-evaluation.md": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
@@ -61,6 +80,38 @@
       "reports/observes-upper-mapping-decision.md": "41b172bca2aeda569a8a835c2de2c795a5144b7a47f479c8832f30ccdffa1606",
       "reports/reasoner-unsafe-system-mapping-deferral.md": "696bf7e4074bee8a22f87ab34d7a52b7d7d3f4914fb3ffacef4b0ac7c1282c69",
       "reports/rerun-prior-clean-decisions-full-sosa.md": "0f86aedb85b56d25ef2c4587db69217b083ad4ed040f1b3dc590dcbfbf7b1674",
+      "reports/retained-evidence/execution/manifests/66262154210cb9e41136bd28622d915eac4df7d498ed87d2a5d08eeb2a99b38a.json": "36879ba5baf9bc48984f1c91ba9eb5cd720866a5a52e118dd5c7802b4b0f57ed",
+      "reports/retained-evidence/execution/sha256/047e23401212193ae2df1042785775615fef4c06edf7828bb862f18534d0c402": "047e23401212193ae2df1042785775615fef4c06edf7828bb862f18534d0c402",
+      "reports/retained-evidence/execution/sha256/19f19ddbc2b8722cece39e450e7ae271556613ae7b52ac290c2c4a00a079124d": "19f19ddbc2b8722cece39e450e7ae271556613ae7b52ac290c2c4a00a079124d",
+      "reports/retained-evidence/execution/sha256/19f3bb625fb8b2ae7f565ac8a78693ce60af184edcbbe0746ac26708ad1b92fa": "19f3bb625fb8b2ae7f565ac8a78693ce60af184edcbbe0746ac26708ad1b92fa",
+      "reports/retained-evidence/execution/sha256/20a809b075d5f32bffb1e275ac1bc9b104c6f49d62b63411045ec51f4c9c260f": "20a809b075d5f32bffb1e275ac1bc9b104c6f49d62b63411045ec51f4c9c260f",
+      "reports/retained-evidence/execution/sha256/21d708db0fd127886911a3ee81a8e78ddc580a9f25f5d3a2b269099b586342a1": "21d708db0fd127886911a3ee81a8e78ddc580a9f25f5d3a2b269099b586342a1",
+      "reports/retained-evidence/execution/sha256/3105f57fc3af2d1ee8db3077d4caa76fd840c126d13145445cf6c806652c7223": "3105f57fc3af2d1ee8db3077d4caa76fd840c126d13145445cf6c806652c7223",
+      "reports/retained-evidence/execution/sha256/43f882cf78f7d1938c118162551da43efae5a8acd96d4f58427b7b778a3c637f": "43f882cf78f7d1938c118162551da43efae5a8acd96d4f58427b7b778a3c637f",
+      "reports/retained-evidence/execution/sha256/57142e6604aa42612f6c8e98cc0eb689a49b1bcb24411d305d66e1439b944170": "57142e6604aa42612f6c8e98cc0eb689a49b1bcb24411d305d66e1439b944170",
+      "reports/retained-evidence/execution/sha256/60219a32fae197fa7d14928f945340a8488d4d59be071ab0617543cdc74eb766": "60219a32fae197fa7d14928f945340a8488d4d59be071ab0617543cdc74eb766",
+      "reports/retained-evidence/execution/sha256/71ba5dadf181e1790e632b20ba64dbc047b13bb822b79224746c95975ab6758c": "71ba5dadf181e1790e632b20ba64dbc047b13bb822b79224746c95975ab6758c",
+      "reports/retained-evidence/execution/sha256/77c707afa28244e0ecc1a36527c653ee63342afc8ace2695947ba755315603c6": "77c707afa28244e0ecc1a36527c653ee63342afc8ace2695947ba755315603c6",
+      "reports/retained-evidence/execution/sha256/7b54ed32a0e5247bd270554bab802667c4acac79c93e270e33759710243dc71f": "7b54ed32a0e5247bd270554bab802667c4acac79c93e270e33759710243dc71f",
+      "reports/retained-evidence/execution/sha256/80a8b4dbca590045249c8ff7f7402dd7915a461ef1834f0414437d41327fb9cb": "80a8b4dbca590045249c8ff7f7402dd7915a461ef1834f0414437d41327fb9cb",
+      "reports/retained-evidence/execution/sha256/948c8b4bbf907204830d28bf5d8cfc3c77365baf45495dfd8ea930d9d133d153": "948c8b4bbf907204830d28bf5d8cfc3c77365baf45495dfd8ea930d9d133d153",
+      "reports/retained-evidence/execution/sha256/9abbe2794260971e2cfa6628a253e6c669237230a0725e553c5cabb08b912de5": "9abbe2794260971e2cfa6628a253e6c669237230a0725e553c5cabb08b912de5",
+      "reports/retained-evidence/execution/sha256/9e84edae281c89c935d4a8169ca01f83dae533aa6ffa187d5d988755bdb63bbb": "9e84edae281c89c935d4a8169ca01f83dae533aa6ffa187d5d988755bdb63bbb",
+      "reports/retained-evidence/execution/sha256/a582cc448cc3f2330467df7c32093f2872fc244b8ec755c2e4831970b3735857": "a582cc448cc3f2330467df7c32093f2872fc244b8ec755c2e4831970b3735857",
+      "reports/retained-evidence/execution/sha256/ac7485409516c2d7323993948fd68d4432644ae7f405994623a4a974674ee95b": "ac7485409516c2d7323993948fd68d4432644ae7f405994623a4a974674ee95b",
+      "reports/retained-evidence/execution/sha256/c3c657272a8917d2a755ae8a469014bfb02e214257b2fa9597cd795189d97ecc": "c3c657272a8917d2a755ae8a469014bfb02e214257b2fa9597cd795189d97ecc",
+      "reports/retained-evidence/execution/sha256/c54ad6388a48dcba9d6528e0d1cc372c2a0f75036b6814d6a9f10a2e499e461b": "c54ad6388a48dcba9d6528e0d1cc372c2a0f75036b6814d6a9f10a2e499e461b",
+      "reports/retained-evidence/execution/sha256/cac9dd16631e8789684e8715edc5412a0284c1fb6c520bba3d606c25853a31fd": "cac9dd16631e8789684e8715edc5412a0284c1fb6c520bba3d606c25853a31fd",
+      "reports/retained-evidence/execution/sha256/cc55270713eeb37aeb51eb5069ae8e842270bbd17b5ff69757a78107faca4fc5": "cc55270713eeb37aeb51eb5069ae8e842270bbd17b5ff69757a78107faca4fc5",
+      "reports/retained-evidence/execution/sha256/d1aaad22a22d3a889e98ba8e96b54c3d3759529067719584f7f6bcb87b6b7c4d": "d1aaad22a22d3a889e98ba8e96b54c3d3759529067719584f7f6bcb87b6b7c4d",
+      "reports/retained-evidence/execution/sha256/d3a912bf42cfc0e0dce9b96666180b016e3504fde06ba089f3dc2c801b65329d": "d3a912bf42cfc0e0dce9b96666180b016e3504fde06ba089f3dc2c801b65329d",
+      "reports/retained-evidence/execution/sha256/e736fc62376e5683b5ee23dca3c7740fbbb7e3a214004aad3f03d248e29b8302": "e736fc62376e5683b5ee23dca3c7740fbbb7e3a214004aad3f03d248e29b8302",
+      "reports/retained-evidence/execution/sha256/ea9ee673bf2475ddffe51a0e09aa15a9cedc4d0d312c8da0436e1df8c4fd353d": "ea9ee673bf2475ddffe51a0e09aa15a9cedc4d0d312c8da0436e1df8c4fd353d",
+      "reports/retained-evidence/execution/sha256/fbfbe6717c2a0980f644ec67b75b2ecbf2b28773c50bec4aaf75685a8f8e90ef": "fbfbe6717c2a0980f644ec67b75b2ecbf2b28773c50bec4aaf75685a8f8e90ef",
+      "reports/retained-evidence/manifests/2adf99bf936ef2f39d6ed96c48a92a5e74111d83b8cb3d9521e2c679ec1c59ed/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c.json": "d7435fc4c3333c419b1362218e7182932cc82ef3daf93b692bc71affbe000b98",
+      "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json": "04f82200089e4325e0fe53d247d8042f034318418ac1633a46d3370a3c06b587",
+      "reports/retained-evidence/sha256/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c/coms-source-term-coverage.md": "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c",
+      "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
       "reports/sample-relationship-deferral.md": "4caf0b42589a4ef0eebe512ed1da0a2dc591c69e83c1b6ea3e90979681c92eef",
       "reports/sample-representation-property-chains-review.md": "106be4cfad0231a9757a16410b1ef450d2ad98c0d666c2f11570cde0c3336c59",
       "reports/sampler-equivalentclass-decision.md": "be14dca22db028f21b499206de9f3530cacd4eff6e058c6f77088b662508f4e9",
@@ -78,7 +129,8 @@
       "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
       "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
       "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
-      "tools/current_documentary_workbook.py": "5a7c8dfae0c1507c4290be9dbd71c53407513d0d7b48d8786181c8deaab61bf5"
+      "tools/current_documentary_workbook.py": "191ae558a7a1498930bf8a37334c82c746c77400aaa1d09b24252cf7e51a3db5",
+      "tools/current_retained_evidence.py": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c"
     }
   },
   "proposals": [
@@ -1373,7 +1425,7 @@
     },
     {
       "critical_features": [
-        "property_chain",
+        "explicit_blank",
         "material_cross_track_difference"
       ],
       "documentary_consistency_issues": [],
@@ -1382,17 +1434,18 @@
         "imports/ssn.ttl#http://www.w3.org/ns/ssn/forProperty",
         "imports/cco.ttl",
         "reports/observes-upper-mapping-decision.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version."
+        "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping."
       ],
       "mapping_row_ids": [
         "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: current COMS asserts the described_by followed by is_about chain, while retained human review explicitly rejected that chain. Reconciliation remains unresolved; this note does not choose either mapping version.",
+      "proposed_documentary_rationale": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/ssn/forProperty",
       "status": "safe_to_adopt"
     },
@@ -1886,8 +1939,7 @@
     },
     {
       "critical_features": [
-        "existential_restriction",
-        "complex_expression",
+        "explicit_blank",
         "target_category_commitment"
       ],
       "documentary_consistency_issues": [],
@@ -1896,17 +1948,19 @@
         "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MeasurementRange",
         "imports/cco.ttl",
         "reports/system-property-process-profile-scope-review.md",
-        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression."
+        "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment."
       ],
       "mapping_row_ids": [
         "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: the historical workbook expression and rationale use cco:is_affected_by for the Observation-to-Stimulus restriction; the current COMS expression uses cco:caused_by. A retained semantic explanation reconciling that change was not identified. This note records the discrepancy without endorsing either form or changing the current expression.",
+      "proposed_documentary_rationale": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
       "status": "safe_to_adopt"
     },
@@ -2224,8 +2278,7 @@
     },
     {
       "critical_features": [
-        "existential_restriction",
-        "complex_expression",
+        "explicit_blank",
         "target_category_commitment"
       ],
       "documentary_consistency_issues": [],
@@ -2234,17 +2287,19 @@
         "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty",
         "imports/cco.ttl",
         "reports/system-property-process-profile-scope-review.md",
-        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression."
+        "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping."
       ],
       "mapping_row_ids": [
         "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: the implemented historical decision removed the direct class expression because its ArtifactFunctionSpecification prescription was over-specific, retaining broader typing through ssn:Property. Current COMS reinstates that prescription. A retained semantic explanation reconciling the reinstatement was not identified. This note records the discrepancy without endorsing either treatment or changing the current expression.",
+      "proposed_documentary_rationale": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
       "status": "safe_to_adopt"
     },
@@ -2479,6 +2534,6 @@
     "existing_workbook_rationale_terms": 91,
     "human_review_required_proposals": 1,
     "safe_documentary_proposals": 90,
-    "semantic_review_terms": 77
+    "semantic_review_terms": 74
   }
 }

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "--version"
+  ],
+  "completed_at_utc": "2026-10-30T03:44:16.373336+00:00",
+  "elapsed_seconds": 0.008148541674017906,
+  "execution_status": "completed",
+  "launch_error": null,
+  "log": {
+    "bytes": 14,
+    "path": "reports/current-publication-validation/v2-popen-continuation-20261030/environment-python.log",
+    "sha256": "84cb1f1bb612c0ff1c818047eb464813fb74f08e27eb19946389e10fd7ccbb36"
+  },
+  "pid": 17903,
+  "preparation": {
+    "bytes": 435736,
+    "path": "reports/current-publication-validation/v2-popen-continuation-20261030/preparation.json",
+    "sha256": "37aadedac4f4fa58b79861bf936ce0e30a60382bf61212203f19d11e4e41d1b1"
+  },
+  "returncode": 0,
+  "started_at_utc": "2026-10-30T03:44:16.365188+00:00"
+}

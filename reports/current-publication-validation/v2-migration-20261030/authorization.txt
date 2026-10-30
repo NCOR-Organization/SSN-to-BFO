@@ -1,0 +1,200 @@
+# Complete the v2 validation-evidence migration
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch: `publication/current-sosa-readiness`
+
+## Objective
+
+Complete the infrastructure migration specified in:
+
+`docs/CURRENT-VALIDATION-INPUT-SCOPES.md`
+
+The versioned dependency contract, `current-validation-inputs-v2`, has already been implemented and passed 136 focused/integration tests.
+
+**This is the final planned infrastructure-development milestone.**
+
+Do not redesign the evidence architecture, introduce additional governance subsystems, or expand the scope to resolve outstanding semantic-review issues.
+
+## Completion criteria
+
+The migration is complete when:
+
+1. A v2-native execution recorder is implemented and validated.
+2. The 27 existing semantic RDF outputs are retained portably.
+3. Current v2 assessment reports are generated and fresh.
+4. All eight required validation roles have authentic current v2 execution receipts.
+5. The previously completed semantic FAIL is authenticated and selected without changing its outcome.
+6. Readiness reports zero transition-related evidence/infrastructure blockers.
+7. Overall publication readiness accurately remains NOT_READY for outstanding semantic and review requirements.
+8. The repository is reproducible, internally consistent, and ready for a controlled commit.
+
+**Do not require all semantic mappings to be approved or the full publication-readiness gate to pass.**
+
+## 1. Establish a stable v2 input state
+
+Inspect the existing v2 policy and migration sequence.
+
+Finalize the v2-native recorder and its tests before issuing new execution receipts.
+
+The recorder must:
+
+- use the versioned role-specific input scopes;
+- bind exact governed inputs, tool identities, and environment requirements;
+- record genuine exit codes and completed executions;
+- reject forged, interrupted, timed-out, or signal-terminated completions;
+- preserve immutable historical receipts;
+- avoid treating future execution receipts as inputs to their producer.
+
+Run focused tests.
+
+Stop if the implementation requires a substantial redesign rather than completing the documented v2 contract.
+
+## 2. Retain the 27 semantic RDF outputs
+
+Retain the already-generated 27 RDF files using the existing content-addressed evidence store.
+
+Preserve exact bytes, hashes, logical roles, producer identities, and dependencies.
+
+Verify portability from a fresh checkout without the ignored execution tree.
+
+Do not rerun the semantic driver merely because its recorded result is FAIL.
+
+Preserve the original retained RDF objects and their manifests.
+
+## 3. Generate the v2 assessment successors
+
+Use the canonical v2 process to generate and validate the six assessment successors under:
+
+`reports/current-assessment/v2`
+
+Do not overwrite historical reports.
+
+Verify:
+
+- identical substantive assessment decisions;
+- 17 final and 74 unresolved/unreviewed;
+- outcomes 10 formal / 5 no-direct / 2 inheritance-sufficient;
+- current provenance and input bindings;
+- deterministic regeneration.
+
+Finalize all code, configuration, governed input artifacts, and report dependencies before executing the eight validation roles.
+
+## 4. Execute the eight required v2 roles
+
+Using the finalized input scopes, execute and record:
+
+1. `unit_tests`
+2. `assessment`
+3. `source_identity`
+4. `generation_freshness`
+5. `sosa_source_version`
+6. `sosa_products`
+7. `static_checks`
+8. `full_repository_gate`
+
+Use actual executions, not reconstructed PASS assertions.
+
+Run `make check` and `make compile` as required by their roles.
+
+Authenticate the complete v2 receipts. Ensure recording their outputs does not change their own required input identities.
+
+Stop on an unexpected failure.
+
+## 5. Authenticate the semantic FAIL
+
+Authenticate the previously completed semantic execution and its now-retained RDF artifacts.
+
+Confirm:
+
+- all 29 child executions completed;
+- all 27 semantic result slots are present;
+- the known missing-import/profile problems remain accurately recorded;
+- semantic result remains FAIL;
+- the completed FAIL is eligible for evidence selection under existing policy.
+
+Do not convert the result into PASS.
+
+## 6. Activate current evidence selection
+
+Using the established selector, select:
+
+- the eight authenticated current v2 PASS roles;
+- the authenticated completed semantic FAIL;
+- the corresponding portable custody evidence.
+
+Preserve the previous selection and historical STOP records.
+
+Require exact applicability, provenance, and unambiguous identity.
+
+## 7. Run readiness and classify the results
+
+Run the actual publication-readiness gate.
+
+A NOT_READY outcome is acceptable and expected.
+
+Classify every remaining diagnostic:
+
+- **Class A:** outstanding defects in current evidence binding, applicability, custody, portability, or selection.
+- **Class B:** genuine outstanding semantic-review, import-closure, reasoning, approval, or environment requirements.
+
+The migration succeeds only if no transition-related Class A defects remain.
+
+Do not conceal semantic failures or relax readiness requirements.
+
+## 8. Final verification
+
+Confirm:
+
+- 105 workbook rows;
+- 100 active mappings;
+- five blanks;
+- exactly three approved removals;
+- zero additions;
+- unchanged RowIDs;
+- all six previously pinned semantic/product hashes unchanged;
+- all 49 governed SOSA-2023 paths unchanged;
+- all historical receipts and custody preserved;
+- new portable evidence authenticates from a fresh checkout;
+- v2 execution inputs remain stable after receipt issuance.
+
+Run all applicable focused v2 regression tests.
+
+Run `git diff --check`.
+
+## 9. Prepare the commit boundary
+
+Identify the exact files required for a reproducible v2 checkpoint.
+
+Preserve the existing 61 exclusions, including the unrelated restoration archive and four unbound construction/backup artifacts.
+
+Do not use `git add -A`.
+
+Prepare the coherent main-checkpoint and actual-SHA-successor-binding commit sequence.
+
+**Do not stage or commit in this run.** The final file inventory and validation outcome must be reviewed first.
+
+## 10. Final report
+
+Provide:
+
+1. v2 recorder implementation and tests.
+2. New retained RDF manifest and portability result.
+3. Assessment successor results.
+4. Eight-role execution results.
+5. Semantic FAIL custody result.
+6. Current selector identity.
+7. Fresh readiness Class A/Class B counts.
+8. Confirmation all substantive semantic failures remain visible.
+9. Preservation and deterministic-validation results.
+10. Exact staging candidate inventory and exclusions.
+11. Commit sequence and any prerequisites.
+12. Final Git status.
+
+If successful, end:
+
+`V2 INFRASTRUCTURE MIGRATION COMPLETE — READY FOR CONTROLLED COMMIT — SEMANTIC REVIEW REMAINS OUTSTANDING`
+
+If a substantial new architectural problem arises, stop and document it rather than initiating another major repair cycle. End:
+
+`V2 MIGRATION BLOCKED — INFRASTRUCTURE SCOPE FROZEN FOR REVIEW`

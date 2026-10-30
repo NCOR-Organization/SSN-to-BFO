@@ -12,7 +12,7 @@ from pathlib import Path, PurePosixPath
 from typing import Iterable
 from urllib.parse import urlsplit
 
-from release_context import FormalReleaseContextError, parse_formal_release_context
+from release_context import FormalReleaseContextError, parse_formal_release_context, active_release_expectations, CONTEXT_FIELDS
 
 
 SCHEMA_VERSION = 2
@@ -520,7 +520,7 @@ def _iri(value: object, field: str, issues: list[ReleaseManifestIssue], *, nulla
         issues.append(_issue("IRI_VALUE", field, "expected absolute HTTP(S) IRI without fragment"))
 
 
-def validate_release_manifest_document(document: object) -> tuple[ReleaseManifestIssue, ...]:
+def validate_release_manifest_document(document: object, *, semantic: bool = True) -> tuple[ReleaseManifestIssue, ...]:
     issues: list[ReleaseManifestIssue] = []
     top = _check_fields(document, TOP_LEVEL_FIELDS, "manifest", issues)
     if top is None:
@@ -672,8 +672,10 @@ def validate_release_manifest_document(document: object) -> tuple[ReleaseManifes
                     f"{path}.fixed_closure_triple_count",
                     issues,
                 )
-                if index < len(FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS):
-                    expected_key, expected_count = FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS[index]
+                active = active_release_expectations() if semantic else None
+                exact_counts = active.fixed_closure_counts if active is not None else FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS
+                if semantic and index < len(exact_counts):
+                    expected_key, expected_count = exact_counts[index]
                     if closure_count is not None and closure_count != expected_count:
                         issues.append(
                             _issue(
@@ -733,6 +735,24 @@ def validate_release_manifest_document(document: object) -> tuple[ReleaseManifes
         prohibited = {"manifest.json", "SHA256SUMS"} & set(paths)
         if prohibited:
             issues.append(_issue("MANIFEST_SELF_REFERENCE", "included_files", f"prohibited paths: {sorted(prohibited)!r}"))
+    active = active_release_expectations() if semantic else None
+    if active is not None:
+        for field in CONTEXT_FIELDS:
+            if top.get(field) != getattr(active.context, field):
+                issues.append(_issue("RELEASE_EXPECTATION_IDENTITY", field, "differs from authenticated release context"))
+        for record in top.get("products", []) if isinstance(top.get("products"), list) else []:
+            if not isinstance(record, dict) or record.get("key") not in PRODUCT_ORDER:
+                continue
+            expected = active.product(record["key"])
+            for field in ("sha256", "byte_size", "logical_triple_count", "total_triple_count",
+                          "direct_governed_axiom_count", "governed_closure_axiom_count"):
+                if record.get(field) != getattr(expected, field):
+                    issues.append(_issue("PRODUCT_EVIDENCE_MISMATCH", f"products.{expected.key}.{field}", "differs from authenticated formal product"))
+        inputs = dict(active.input_sha256)
+        for record in top.get("inputs", []) if isinstance(top.get("inputs"), list) else []:
+            if (isinstance(record, dict) and isinstance(record.get("source_path"), str) and
+                    record["source_path"] in inputs and record.get("sha256") != inputs[record["source_path"]]):
+                issues.append(_issue("INPUT_EVIDENCE_MISMATCH", "inputs", "differs from authenticated release inputs"))
     return tuple(sorted(set(issues), key=lambda value: value.sort_key))
 
 
@@ -776,10 +796,10 @@ def build_release_manifest(**values: object) -> ReleaseManifest:
     return _manifest_from_document(document)
 
 
-def load_and_validate_release_manifest(source: Path | bytes) -> ReleaseManifest:
+def load_and_validate_release_manifest(source: Path | bytes, *, semantic: bool = True) -> ReleaseManifest:
     serialized = source.read_bytes() if isinstance(source, Path) else source
     document = _strict_json_loads(serialized)
-    issues = list(validate_release_manifest_document(document))
+    issues = list(validate_release_manifest_document(document, semantic=semantic))
     if canonical_manifest_bytes(document) != serialized:
         issues.append(
             _issue(

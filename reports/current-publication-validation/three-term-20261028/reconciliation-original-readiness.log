@@ -1,0 +1,150 @@
+CURRENT TRACK NOT YET PUBLICATION READY — HUMAN SEMANTIC REVIEW REQUIRED
+- Complete the 74-term human review queue, retaining explicit decisions and rationale evidence; 0 terms are deferred and 74 unreviewed.
+- Resolve 1 judgment-sensitive rationale proposals before treating them as adequate publication rationales.
+- No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.
+- Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.
+- Exact-closure example success is not established for every source example and the separate fixture.
+- Source and target approximate deductive-difference comparisons do not both have a valid PASS result.
+- Human approval of selected positive and negative semantic expectations is outstanding.
+- Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.
+- Current semantic evidence requires execution_evidence_schema=2 and invocation tickets, envelopes and captures; no legacy fallback
+- Stored semantic evidence HEAD differs from current HEAD
+- Required semantic evidence binding missing: tests/test_current_semantic_invocation.py
+- Required semantic evidence binding missing: tools/current_semantic_invocation.py
+- Stored semantic evidence hash differs: SSN2BFO.ttl
+- Stored semantic evidence hash differs: config/current-semantic-expectations.json
+- Stored semantic evidence hash differs: mappings/SSN2BFO-COMS.xlsx
+- Stored semantic evidence hash differs: tests/test_current_semantic_validation.py
+- Stored semantic evidence hash differs: tools/current_semantic_validation.py
+- Validation execution HEAD is stale
+- Validation input bindings are missing, extra, or incomplete for the current candidate
+- Validation execution input changed: SSN2BFO.ttl
+- Validation execution input changed: config/release-manifest-schema-v2.json
+- Validation execution input changed: mappings/SSN2BFO-COMS.xlsx
+- Validation execution input changed: mappings/current-ssn-sosa-assessment.json
+- Validation execution input changed: releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+- Validation execution input changed: reports/coms-generation-validation.md
+- Validation execution input changed: reports/coms-product-dispositions.json
+- Validation execution input changed: reports/coms-source-term-coverage.md
+- Validation execution input changed: reports/coms-vs-pre-coms-legacy-diff.md
+- Validation execution input changed: tests/test_bfo_projection.py
+- Validation execution input changed: tests/test_build_release.py
+- Validation execution input changed: tests/test_cco_extension.py
+- Validation execution input changed: tests/test_coms_framework_integration.py
+- Validation execution input changed: tests/test_current_assessment.py
+- Validation execution input changed: tests/test_current_identity_reporting.py
+- Validation execution input changed: tests/test_current_publication_preservation.py
+- Validation execution input changed: tests/test_current_publication_readiness.py
+- Validation execution input changed: tests/test_current_semantic_validation.py
+- Validation execution input changed: tests/test_current_source_identity.py
+- Validation execution input changed: tests/test_generate_mapping_from_coms.py
+- Validation execution input changed: tests/test_modular_products.py
+- Validation execution input changed: tests/test_placeholder_catalog_migration.py
+- Validation execution input changed: tests/test_product_dispositions.py
+- Validation execution input changed: tests/test_release_manifest.py
+- Validation execution input changed: tests/test_release_rehearsal.py
+- Validation execution input changed: tests/test_release_rendering.py
+- Validation execution input changed: tests/test_robot_extract_pilot.py
+- Validation execution input changed: tests/test_robot_property_chain_generation_pilot.py
+- Validation execution input changed: tests/test_robot_query_equivalence_pilot.py
+- Validation execution input changed: tests/test_robot_reconstruction_validation.py
+- Validation execution input changed: tests/test_robot_template_generation_pilot.py
+- Validation execution input changed: tests/test_strict_bfo_mapping.py
+- Validation execution input changed: tools/build_release.py
+- Validation execution input changed: tools/check_coms_mapping.py
+- Validation execution input changed: tools/check_release.py
+- Validation execution input changed: tools/current_assessment.py
+- Validation execution input changed: tools/current_publication_preservation.py
+- Validation execution input changed: tools/current_publication_readiness.py
+- Validation execution input changed: tools/current_semantic_validation.py
+- Validation execution input changed: tools/current_source_identity.py
+- Validation execution input changed: tools/generate_mapping_from_coms.py
+- Validation execution input changed: tools/generate_sosa_next_products.py
+- Validation execution input changed: tools/modular_products.py
+- Validation execution input changed: tools/rehearse_release.py
+- Validation execution input changed: tools/release_archive.py
+- Validation execution input changed: tools/release_context.py
+- Validation execution input changed: tools/release_manifest.py
+- Validation execution input changed: tools/robot_property_chain_generation_pilot.py
+- Validation execution input changed: tools/robot_query_equivalence_pilot.py
+- Validation execution input changed: tools/robot_reconstruction_validation.py
+- Validation execution input changed: tools/robot_template_generation_pilot.py
+- Validation execution input changed: tools/validate_robot_reconstruction.py
+- Validation execution input changed: tools/workflow_check.py
+- Command affected_integration_tests: head missing or stale HEAD
+- Command affected_integration_tests: expected_head missing or stale HEAD
+- Command affected_integration_tests: final_head missing or stale HEAD
+- Command affected_integration_tests: expected_input_sha256 bindings missing or stale command inputs
+- Command affected_integration_tests: input_sha256 bindings missing or stale command inputs
+- Command affected_integration_tests: input_sha256_after bindings missing or stale command inputs
+- Command assessment: head missing or stale HEAD
+- Command assessment: expected_head missing or stale HEAD
+- Command assessment: final_head missing or stale HEAD
+- Command assessment: expected_input_sha256 bindings missing or stale command inputs
+- Command assessment: input_sha256 bindings missing or stale command inputs
+- Command assessment: input_sha256_after bindings missing or stale command inputs
+- Command current_focused_tests: head missing or stale HEAD
+- Command current_focused_tests: expected_head missing or stale HEAD
+- Command current_focused_tests: final_head missing or stale HEAD
+- Command current_focused_tests: expected_input_sha256 bindings missing or stale command inputs
+- Command current_focused_tests: input_sha256 bindings missing or stale command inputs
+- Command current_focused_tests: input_sha256_after bindings missing or stale command inputs
+- Command generation_freshness: head missing or stale HEAD
+- Command generation_freshness: expected_head missing or stale HEAD
+- Command generation_freshness: final_head missing or stale HEAD
+- Command generation_freshness: expected_input_sha256 bindings missing or stale command inputs
+- Command generation_freshness: input_sha256 bindings missing or stale command inputs
+- Command generation_freshness: input_sha256_after bindings missing or stale command inputs
+- Command preservation: head missing or stale HEAD
+- Command preservation: expected_head missing or stale HEAD
+- Command preservation: final_head missing or stale HEAD
+- Command preservation: expected_input_sha256 bindings missing or stale command inputs
+- Command preservation: input_sha256 bindings missing or stale command inputs
+- Command preservation: input_sha256_after bindings missing or stale command inputs
+- Command semantic_stored_consistency: head missing or stale HEAD
+- Command semantic_stored_consistency: expected_head missing or stale HEAD
+- Command semantic_stored_consistency: final_head missing or stale HEAD
+- Command semantic_stored_consistency: expected_input_sha256 bindings missing or stale command inputs
+- Command semantic_stored_consistency: input_sha256 bindings missing or stale command inputs
+- Command semantic_stored_consistency: input_sha256_after bindings missing or stale command inputs
+- Command sosa_2023_nonregression: head missing or stale HEAD
+- Command sosa_2023_nonregression: expected_head missing or stale HEAD
+- Command sosa_2023_nonregression: final_head missing or stale HEAD
+- Command sosa_2023_nonregression: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_2023_nonregression: input_sha256 bindings missing or stale command inputs
+- Command sosa_2023_nonregression: input_sha256_after bindings missing or stale command inputs
+- Command sosa_products: head missing or stale HEAD
+- Command sosa_products: expected_head missing or stale HEAD
+- Command sosa_products: final_head missing or stale HEAD
+- Command sosa_products: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_products: input_sha256 bindings missing or stale command inputs
+- Command sosa_products: input_sha256_after bindings missing or stale command inputs
+- Command sosa_source_version: head missing or stale HEAD
+- Command sosa_source_version: expected_head missing or stale HEAD
+- Command sosa_source_version: final_head missing or stale HEAD
+- Command sosa_source_version: expected_input_sha256 bindings missing or stale command inputs
+- Command sosa_source_version: input_sha256 bindings missing or stale command inputs
+- Command sosa_source_version: input_sha256_after bindings missing or stale command inputs
+- Command source_identity: head missing or stale HEAD
+- Command source_identity: expected_head missing or stale HEAD
+- Command source_identity: final_head missing or stale HEAD
+- Command source_identity: expected_input_sha256 bindings missing or stale command inputs
+- Command source_identity: input_sha256 bindings missing or stale command inputs
+- Command source_identity: input_sha256_after bindings missing or stale command inputs
+- Command static_checks: head missing or stale HEAD
+- Command static_checks: expected_head missing or stale HEAD
+- Command static_checks: final_head missing or stale HEAD
+- Command static_checks: expected_input_sha256 bindings missing or stale command inputs
+- Command static_checks: input_sha256 bindings missing or stale command inputs
+- Command static_checks: input_sha256_after bindings missing or stale command inputs
+- Command whitespace: head missing or stale HEAD
+- Command whitespace: expected_head missing or stale HEAD
+- Command whitespace: final_head missing or stale HEAD
+- Command whitespace: expected_input_sha256 bindings missing or stale command inputs
+- Command whitespace: input_sha256 bindings missing or stale command inputs
+- Command whitespace: input_sha256_after bindings missing or stale command inputs
+- Required validation not run: full_repository_gate
+- Required validation not run: unit_tests
+- Retained historical semantic diagnostics lack pre-execution tickets and helper result envelopes. Their old code/input bindings are now stale, so they cannot certify a new semantic execution; rerun only with the reviewed closure and resolved profile/import blockers.
+- Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.

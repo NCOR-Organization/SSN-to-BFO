@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "scope": "Post-report integrity and current selected receipt checks; no whole-suite or semantic adjudication claim",
+  "baseline_files": 974,
+  "unchanged_baseline_files": 972,
+  "changed_existing": [
+    "tests/test_current_publication_readiness.py",
+    "tools/current_publication_readiness.py"
+  ],
+  "missing": [],
+  "six_pins_unchanged": true,
+  "all_83_entries_retained": true,
+  "remaining_blockers": {
+    "A": 0,
+    "B": 39
+  },
+  "current_ledger_only_errors": [
+    "Required validation not run: full_repository_gate",
+    "Required validation not run: unit_tests"
+  ],
+  "selected_evidence": {
+    "selector": {
+      "path": "reports/current-publication-validation/current-evidence.json",
+      "sha256": "c530f7e93a984e850b709e977d3b59773c5d28689addc7f3e7e06fb234d6a884"
+    },
+    "mode": "successor_records",
+    "schema_version": 1,
+    "semantic": {
+      "path": "reports/current-publication-validation/three-term-20261028/semantic.json",
+      "sha256": "dfbf1d7bfc66a8612de94f2ccef12cae8afee4a345f7855f5195b47829e63d32"
+    },
+    "validation": {
+      "path": "reports/current-publication-validation/three-term-20261028/commands.json",
+      "sha256": "5b3069bac820fec2c0483f66a253fe3356e7b4d91ea6afff9ac1861b21c3566a"
+    },
+    "predecessors": {
+      "semantic": {
+        "path": "reports/current-ssn-sosa-semantic-validation.json",
+        "sha256": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a"
+      },
+      "validation": {
+        "path": "reports/current-publication-validation/commands.json",
+        "sha256": "656557d39e0a2e73888407924ca7bec6f56d4e0640cc0c5f5be920fb41e60ff1"
+      }
+    }
+  },
+  "report_references_verified": true,
+  "overview_links_verified": 12,
+  "git": {
+    "git-diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "retained_output": "reports/current-publication-validation/three-term-20261028/git-diff-check-final.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "git-diff-stat": {
+      "command": [
+        "git",
+        "diff",
+        "--stat"
+      ],
+      "returncode": 0,
+      "retained_output": "reports/current-publication-validation/three-term-20261028/git-diff-stat-final.txt",
+      "sha256": "0ea45cd01d96208ca724095fcf626b27fcc745beff582654239b17c092ed7edb"
+    },
+    "git-status": {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "retained_output": "reports/current-publication-validation/three-term-20261028/git-status-final.txt",
+      "sha256": "22a5cd6ba548f179360934f0c75ae9ac5da3b76379d851c384a3283a77ead88b"
+    }
+  },
+  "modified_tracked_files": 62,
+  "untracked_entries": 22,
+  "staged_paths": [],
+  "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733"
+}

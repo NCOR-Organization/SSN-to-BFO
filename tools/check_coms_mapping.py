@@ -9,6 +9,8 @@ maintained outputs and fails when they are stale.
 
 from __future__ import annotations
 
+from current_semantic_generation import expected_count, generated_expectations_context
+
 import argparse
 import hashlib
 import json
@@ -735,16 +737,16 @@ def validate_temporary_outputs(
     expected_alignment = {
         "product_key": "alignment_core",
         "stable_ontology_iri": alignment_metadata.stable_ontology_iri,
-        "governed_axiom_count": 29,
-        "logical_triple_count": 53,
+        "governed_axiom_count": expected_count("ALIGNMENT_CORE_AXIOM_COUNT", 29),
+        "logical_triple_count": expected_count("ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT", 53),
         "ontology_declaration_triple_count": 1,
         "import_triple_count": 0,
         "metadata_annotation_count": 7,
-        "total_triple_count": 61,
-        "domain_axiom_count": 15,
-        "range_axiom_count": 14,
-        "named_target_count": 26,
-        "union_target_count": 3,
+        "total_triple_count": expected_count("ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT", 61),
+        "domain_axiom_count": expected_count("ALIGNMENT_CORE_DOMAIN_COUNT", 15),
+        "range_axiom_count": expected_count("ALIGNMENT_CORE_RANGE_COUNT", 14),
+        "named_target_count": expected_count("ALIGNMENT_CORE_NAMED_TARGET_COUNT", 26),
+        "union_target_count": expected_count("ALIGNMENT_CORE_UNION_TARGET_COUNT", 3),
         "hermit_return_code": 0,
         "hermit_result": "PASS",
         "named_unsat_count": 0,
@@ -770,14 +772,14 @@ def validate_temporary_outputs(
     alignment_logical = strip_emitted_ontology_header(
         alignment_graph, publication_metadata, "alignment_core", ()
     )
-    if len(alignment_logical) != 53 or len(alignment_graph) != 61:
+    if len(alignment_logical) != expected_count("ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT", 53) or len(alignment_graph) != expected_count("ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT", 61):
         raise CheckFailure(
             "alignment-core triple partition mismatch: expected 1 declaration, "
-            f"0 imports, 7 metadata, 53 logical, 61 total; got {len(alignment_graph)} total"
+            f"0 imports, 7 metadata, {expected_count('ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT', 53)} logical, {expected_count('ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT', 61)} total; got {len(alignment_graph)} total"
         )
     emit(
         "Alignment core: PASS (1 declaration; 0 imports; 7 metadata; "
-        "29 governed axioms; 53 logical triples; 61 total triples)",
+        f"{expected_count('ALIGNMENT_CORE_AXIOM_COUNT', 29)} governed axioms; {expected_count('ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT', 53)} logical triples; {expected_count('ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT', 61)} total triples)",
         log,
     )
 
@@ -794,28 +796,28 @@ def validate_temporary_outputs(
     expected_strict = {
         "product_key": "strict_bfo_mapping",
         "stable_ontology_iri": strict_metadata.stable_ontology_iri,
-        "governed_axiom_count": 19,
-        "logical_triple_count": 125,
+        "governed_axiom_count": expected_count("STRICT_BFO_AXIOM_COUNT", 19),
+        "logical_triple_count": expected_count("STRICT_BFO_LOGICAL_TRIPLE_COUNT", 125),
         "ontology_declaration_triple_count": 1,
         "import_triple_count": 1,
         "metadata_annotation_count": 7,
-        "total_triple_count": 134,
-        "subclass_axiom_count": 3,
-        "equivalent_class_axiom_count": 3,
-        "direct_subproperty_axiom_count": 9,
-        "property_chain_axiom_count": 2,
-        "domain_axiom_count": 1,
-        "range_axiom_count": 1,
-        "union_expression_count": 6,
-        "intersection_expression_count": 6,
-        "existential_restriction_count": 6,
-        "rdf_list_count": 14,
-        "project_closure_governed_axiom_count": 48,
-        "project_graph_triple_count": 195,
-        "local_project_graph_triple_count": 194,
+        "total_triple_count": expected_count("STRICT_BFO_TOTAL_TRIPLE_COUNT", 134),
+        "subclass_axiom_count": expected_count("STRICT_BFO_SUBCLASS_COUNT", 3),
+        "equivalent_class_axiom_count": expected_count("STRICT_BFO_EQUIVALENT_CLASS_COUNT", 3),
+        "direct_subproperty_axiom_count": expected_count("STRICT_BFO_DIRECT_SUBPROPERTY_COUNT", 9),
+        "property_chain_axiom_count": expected_count("STRICT_BFO_PROPERTY_CHAIN_COUNT", 2),
+        "domain_axiom_count": expected_count("STRICT_BFO_DOMAIN_COUNT", 1),
+        "range_axiom_count": expected_count("STRICT_BFO_RANGE_COUNT", 1),
+        "union_expression_count": expected_count("STRICT_BFO_UNION_COUNT", 6),
+        "intersection_expression_count": expected_count("STRICT_BFO_INTERSECTION_COUNT", 6),
+        "existential_restriction_count": expected_count("STRICT_BFO_EXISTENTIAL_COUNT", 6),
+        "rdf_list_count": expected_count("STRICT_BFO_RDF_LIST_COUNT", 14),
+        "project_closure_governed_axiom_count": expected_count("STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT", 48),
+        "project_graph_triple_count": expected_count("STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT", 195),
+        "local_project_graph_triple_count": expected_count("STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 194),
         "hermit_return_code": 0,
         "hermit_result": "PASS",
-        "closure_triple_count": 14988,
+        "closure_triple_count": expected_count("STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT", 14988),
         "named_unsat_count": 0,
     }
     for field, expected in expected_strict.items():
@@ -847,15 +849,15 @@ def validate_temporary_outputs(
         "strict_bfo_mapping",
         (str(expected_import),),
     )
-    if len(strict_logical) != 125 or len(strict_graph) != 134:
+    if len(strict_logical) != expected_count("STRICT_BFO_LOGICAL_TRIPLE_COUNT", 125) or len(strict_graph) != expected_count("STRICT_BFO_TOTAL_TRIPLE_COUNT", 134):
         raise CheckFailure(
             "strict-BFO triple partition mismatch: expected 1 declaration, 1 import, "
-            f"7 metadata, 125 logical, 134 total; got {len(strict_graph)} total"
+            f"7 metadata, {expected_count('STRICT_BFO_LOGICAL_TRIPLE_COUNT', 125)} logical, {expected_count('STRICT_BFO_TOTAL_TRIPLE_COUNT', 134)} total; got {len(strict_graph)} total"
         )
     emit(
         "Strict BFO mapping: PASS "
         "(1 declaration; 1 import; 7 metadata; 19 direct governed axioms; "
-        "125 logical triples; 134 total triples)",
+        f"{expected_count('STRICT_BFO_LOGICAL_TRIPLE_COUNT', 125)} logical triples; {expected_count('STRICT_BFO_TOTAL_TRIPLE_COUNT', 134)} total triples)",
         log,
     )
 
@@ -872,28 +874,28 @@ def validate_temporary_outputs(
     expected_cco = {
         "product_key": "cco_extension",
         "stable_ontology_iri": cco_metadata.stable_ontology_iri,
-        "governed_axiom_count": 55,
-        "cco_bearing_axiom_count": 25,
-        "mixed_bfo_cco_axiom_count": 30,
-        "logical_triple_count": 924,
+        "governed_axiom_count": expected_count("CCO_EXTENSION_AXIOM_COUNT", 55),
+        "cco_bearing_axiom_count": expected_count("CCO_EXTENSION_CCO_BEARING_COUNT", 25),
+        "mixed_bfo_cco_axiom_count": expected_count("CCO_EXTENSION_MIXED_COUNT", 30),
+        "logical_triple_count": expected_count("CCO_EXTENSION_LOGICAL_TRIPLE_COUNT", 924),
         "ontology_declaration_triple_count": 1,
         "import_triple_count": 1,
         "metadata_annotation_count": 7,
-        "total_triple_count": 933,
-        "subclass_axiom_count": 31,
-        "equivalent_class_axiom_count": 7,
-        "direct_subproperty_axiom_count": 16,
-        "property_chain_axiom_count": 1,
-        "union_expression_count": 7,
-        "intersection_expression_count": 86,
-        "existential_restriction_count": 95,
-        "rdf_list_count": 94,
-        "project_closure_governed_axiom_count": 103,
-        "project_graph_triple_count": 1128,
-        "local_project_graph_triple_count": 1126,
+        "total_triple_count": expected_count("CCO_EXTENSION_TOTAL_TRIPLE_COUNT", 933),
+        "subclass_axiom_count": expected_count("CCO_EXTENSION_SUBCLASS_COUNT", 31),
+        "equivalent_class_axiom_count": expected_count("CCO_EXTENSION_EQUIVALENT_CLASS_COUNT", 7),
+        "direct_subproperty_axiom_count": expected_count("CCO_EXTENSION_DIRECT_SUBPROPERTY_COUNT", 16),
+        "property_chain_axiom_count": expected_count("CCO_EXTENSION_PROPERTY_CHAIN_COUNT", 1),
+        "union_expression_count": expected_count("CCO_EXTENSION_UNION_COUNT", 7),
+        "intersection_expression_count": expected_count("CCO_EXTENSION_INTERSECTION_COUNT", 86),
+        "existential_restriction_count": expected_count("CCO_EXTENSION_EXISTENTIAL_COUNT", 95),
+        "rdf_list_count": expected_count("CCO_EXTENSION_RDF_LIST_COUNT", 94),
+        "project_closure_governed_axiom_count": expected_count("CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT", 103),
+        "project_graph_triple_count": expected_count("CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT", 1128),
+        "local_project_graph_triple_count": expected_count("CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 1126),
         "hermit_return_code": 0,
         "hermit_result": "PASS",
-        "closure_triple_count": 15920,
+        "closure_triple_count": expected_count("CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT", 15920),
         "named_unsat_count": 0,
     }
     for field, expected in expected_cco.items():
@@ -925,15 +927,15 @@ def validate_temporary_outputs(
         "cco_extension",
         (str(expected_cco_import),),
     )
-    if len(cco_logical) != 924 or len(cco_graph) != 933:
+    if len(cco_logical) != expected_count("CCO_EXTENSION_LOGICAL_TRIPLE_COUNT", 924) or len(cco_graph) != expected_count("CCO_EXTENSION_TOTAL_TRIPLE_COUNT", 933):
         raise CheckFailure(
             "CCO-extension triple partition mismatch: expected 1 declaration, "
-            f"1 import, 7 metadata, 924 logical, 933 total; got {len(cco_graph)} total"
+            f"1 import, 7 metadata, {expected_count('CCO_EXTENSION_LOGICAL_TRIPLE_COUNT', 924)} logical, {expected_count('CCO_EXTENSION_TOTAL_TRIPLE_COUNT', 933)} total; got {len(cco_graph)} total"
         )
     emit(
         "CCO extension: PASS "
-        "(1 declaration; 1 import; 7 metadata; 55 direct governed axioms; "
-        "924 logical triples; 933 total triples)",
+        f"(1 declaration; 1 import; 7 metadata; {expected_count('CCO_EXTENSION_AXIOM_COUNT', 55)} direct governed axioms; "
+        f"{expected_count('CCO_EXTENSION_LOGICAL_TRIPLE_COUNT', 924)} logical triples; {expected_count('CCO_EXTENSION_TOTAL_TRIPLE_COUNT', 933)} total triples)",
         log,
     )
 
@@ -968,7 +970,7 @@ def validate_temporary_outputs(
         "generated_candidate_ontology_declaration_triple_count": 1,
         "generated_candidate_import_triple_count": 4,
         "generated_candidate_metadata_annotation_count": 7,
-        "generated_candidate_logical_triple_count": 1102,
+        "generated_candidate_logical_triple_count": expected_count("ROOT_LOGICAL_TRIPLE_COUNT", 1102),
     }
     for field, expected in root_partition.items():
         if summary.get(field) != expected:
@@ -988,17 +990,17 @@ def validate_temporary_outputs(
         "integrated",
         ROOT_ORDERED_IMPORTS,
     )
-    if len(root_logical) != 1102 or len(graph) != 1114:
+    if len(root_logical) != expected_count("ROOT_LOGICAL_TRIPLE_COUNT", 1102) or len(graph) != expected_count("ROOT_TOTAL_TRIPLE_COUNT", 1114):
         raise CheckFailure(
             "integrated-root triple partition mismatch: expected 1 declaration, "
-            f"4 imports, 7 metadata, 1102 logical, 1114 total; got {len(graph)} total"
+            f"4 imports, 7 metadata, {expected_count('ROOT_LOGICAL_TRIPLE_COUNT', 1102)} logical, {expected_count('ROOT_TOTAL_TRIPLE_COUNT', 1114)} total; got {len(graph)} total"
         )
     candidate_hash = sha256_file(paths["candidate"])
     if summary.get("generated_candidate_sha256") != candidate_hash:
         raise CheckFailure("generated candidate hash does not match generator summary")
     emit(
         "Generated candidate parse: PASS "
-        f"(1 declaration; 4 imports; 7 metadata; 1102 logical; {len(graph)} total)",
+        f"(1 declaration; 4 imports; 7 metadata; {expected_count('ROOT_LOGICAL_TRIPLE_COUNT', 1102)} logical; {len(graph)} total)",
         log,
     )
 
@@ -1012,9 +1014,9 @@ def validate_temporary_outputs(
         raise CheckFailure(f"candidate closure has owl:Nothing count {summary.get('owl_nothing_count')}")
     if summary.get("named_unsat_count") != 0 or summary.get("named_unsat_set"):
         raise CheckFailure(f"candidate closure has named unsatisfiable classes: {summary.get('named_unsat_set')}")
-    if summary.get("candidate_closure_triple_count") != 15904:
+    if summary.get("candidate_closure_triple_count") != expected_count("ROOT_FIXED_CLOSURE_TRIPLE_COUNT", 15904):
         raise CheckFailure(
-            "candidate closure triple-count mismatch: expected 15904, got "
+            f"candidate closure triple-count mismatch: expected {expected_count('ROOT_FIXED_CLOSURE_TRIPLE_COUNT', 15904)}, got "
             f"{summary.get('candidate_closure_triple_count')!r}"
         )
     emit(
@@ -1399,7 +1401,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(argv: list[str] | None = None) -> int:
+def _main(argv: list[str] | None = None) -> int:
     args = parse_args(sys.argv[1:] if argv is None else argv)
     if args.status:
         return print_status()
@@ -1452,6 +1454,19 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         if transaction_dir is not None:
             shutil.rmtree(transaction_dir, ignore_errors=True)
+
+
+def main(argv: list[str] | None = None) -> int:
+    # Baseline invocations retain their existing checks; only a semantic
+    # archive can request different expectations, and its full chain validates.
+    if not (REPO_ROOT / "reports/current-semantic-workbook/transitions").exists():
+        return _main(argv)
+    try:
+        with generated_expectations_context(REPO_ROOT, WORKBOOK):
+            return _main(argv)
+    except ValueError as exc:
+        print(f"COMS semantic workbook custody: FAIL ({exc})", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

@@ -1,0 +1,291 @@
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+.....................................................................................................................................................D4 documentary integration: D4 changed; full workbook SHA changed; semantic projection unchanged; documentary transition authenticated; MeasurementRange sufficiency evidence current; assessment custody authenticated.
+.........................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 398 tests in 1069.428s
+
+OK
+Current source/target/workbook/product/configuration identities: PASS
+{
+  "rationales": {
+    "existing_workbook_rationale_rows": 105,
+    "existing_workbook_rationale_terms": 91,
+    "human_review_required_proposals": 1,
+    "safe_documentary_proposals": 90,
+    "semantic_review_terms": 74
+  },
+  "status": "PASS",
+  "summary": {
+    "assertion_bearing_rows": 100,
+    "assessment_outcomes": {
+      "deferred": 0,
+      "formal_mapping_adopted": 10,
+      "inheritance_sufficient": 2,
+      "no_direct_mapping": 5,
+      "unreviewed": 74
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 2,
+    "coverage_counts": {
+      "direct_formal_mapping": 67,
+      "explicit_blank": 5,
+      "inherited_formal_mapping": 41,
+      "no_established_formal_route": 16,
+      "rule_or_chain_route": 9,
+      "typing_only_in_workbook": 17
+    },
+    "direct_classes": 42,
+    "direct_object_properties": 25,
+    "expression_occurrences": {
+      "intersection": 88,
+      "named": 192,
+      "some": 97,
+      "union": 15
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 5,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 2,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 32,
+      "rdfs:subPropertyOf": 25
+    },
+    "review_states": {
+      "deferred": 0,
+      "final": 17,
+      "unreviewed": 74
+    },
+    "rows_with_expression_form": {
+      "intersection": 36,
+      "named": 73,
+      "some": 36,
+      "union": 14
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 105
+  }
+}
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.262s
+
+OK
+.........................
+----------------------------------------------------------------------
+Ran 25 tests in 24.664s
+
+OK
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.013s
+
+OK
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 6.247s
+
+OK
+..
+----------------------------------------------------------------------
+Ran 2 tests in 36.693s
+
+OK
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.659s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK
+............
+----------------------------------------------------------------------
+Ran 12 tests in 1.019s
+
+OK
+.FFFFFFF...........
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tools/release_manifest.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: '004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba' != '89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5'
+- 004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba
++ 89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='config/release-manifest-schema-v2.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: '99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b' != 'b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c'
+- 99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b
++ b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tests/test_release_manifest.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: '24c26220dd65a7683ca42089b82dec4814c02a75eb7ad52e386a29dc6ffc83c0' != '6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51'
+- 24c26220dd65a7683ca42089b82dec4814c02a75eb7ad52e386a29dc6ffc83c0
++ 6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tools/build_release.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: 'd314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5' != '3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76'
+- d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5
++ 3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tools/check_release.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: 'c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41' != '3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a'
+- c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41
++ 3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tools/release_archive.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: '00d5954bff06ae3d541ed0edeb579f04966c1bdf3d81f722415e4b45cd7f9c00' != '8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974'
+- 00d5954bff06ae3d541ed0edeb579f04966c1bdf3d81f722415e4b45cd7f9c00
++ 8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974
+
+
+======================================================================
+FAIL: test_current_release_authorities_remain_byte_locked (test_sosa_2023_release_manifest.Sosa2023ReleaseManifestTests.test_current_release_authorities_remain_byte_locked) (relative='tools/rehearse_release.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_sosa_2023_release_manifest.py", line 809, in test_current_release_authorities_remain_byte_locked
+    self.assertEqual(
+AssertionError: '3eb97663a6c8589e4841ca270682fd245afe657ab18e9f535b12a2e62f4c9b6a' != '737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d'
+- 3eb97663a6c8589e4841ca270682fd245afe657ab18e9f535b12a2e62f4c9b6a
++ 737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.598s
+
+FAILED (failures=7)
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: PASS
+
+==> Current source/target byte identities
+$ /opt/miniconda3/bin/python tools/current_source_identity.py
+Current source/target byte identities: PASS
+
+==> Current assessment inventory and report freshness
+$ /opt/miniconda3/bin/python tools/current_assessment.py
+Current assessment inventory and report freshness: PASS
+
+==> COMS row-identity focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_row_identity.py
+COMS row-identity focused tests: PASS
+
+==> COMS framework shadow-integration tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_coms_framework_integration.py
+COMS framework shadow-integration tests: PASS
+
+==> SOSA source-version authority focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_source_version.py
+SOSA source-version authority focused tests: PASS
+
+==> Uniform product-role policy focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_product_role_policy.py
+Uniform product-role policy focused tests: PASS
+
+==> SOSA formal package-scope focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_release_scope.py
+SOSA formal package-scope focused tests: PASS
+
+==> Forthcoming SOSA COMS focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_check_sosa_next_mapping.py
+Forthcoming SOSA COMS focused tests: PASS
+
+==> SOSA-next maintained-product focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_products.py
+SOSA-next maintained-product focused tests: PASS
+
+==> SOSA-next catalog consumer-stack focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_next_consumer_stack.py
+SOSA-next catalog consumer-stack focused tests: PASS
+
+==> SOSA-2023 publication-metadata focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_publication_metadata.py
+SOSA-2023 publication-metadata focused tests: PASS
+
+==> SOSA-2023 formal-rendering focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_rendering.py
+SOSA-2023 formal-rendering focused tests: PASS
+
+==> SOSA-2023 release-manifest focused tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p test_sosa_2023_release_manifest.py
+SOSA-2023 release-manifest focused tests: FAIL (1)
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: PASS
+- Current source/target byte identities: PASS
+- Current assessment inventory and report freshness: PASS
+- COMS row-identity focused tests: PASS
+- COMS framework shadow-integration tests: PASS
+- SOSA source-version authority focused tests: PASS
+- Uniform product-role policy focused tests: PASS
+- SOSA formal package-scope focused tests: PASS
+- Forthcoming SOSA COMS focused tests: PASS
+- SOSA-next maintained-product focused tests: PASS
+- SOSA-next catalog consumer-stack focused tests: PASS
+- SOSA-2023 publication-metadata focused tests: PASS
+- SOSA-2023 formal-rendering focused tests: PASS
+- SOSA-2023 release-manifest focused tests: FAIL
+
+Validation suite: FAIL (1 failed step)
+make: *** [validate] Error 1

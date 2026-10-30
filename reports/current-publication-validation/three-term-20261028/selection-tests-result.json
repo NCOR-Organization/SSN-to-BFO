@@ -1,0 +1,15 @@
+{
+  "stage": "selection-tests",
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "-f",
+    "-v",
+    "tests.test_current_publication_readiness"
+  ],
+  "exit_code": 0,
+  "seconds": 8.216,
+  "log": "/private/tmp/ssn-transition-evidence-5hvu4ebc/selection-tests.log"
+}

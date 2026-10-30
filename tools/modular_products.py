@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from current_semantic_generation import expected_count, selection_policy as semantic_selection_policy
+
 import hashlib
 import re
 from dataclasses import dataclass
@@ -419,7 +421,7 @@ def reconcile_product_axioms(
     """Reconcile every governed identity and derive a product selection."""
 
     issues: list[ModularProductValidationIssue] = []
-    selection_policy = PRODUCT_SELECTION.get(product_key)
+    selection_policy = semantic_selection_policy(product_key, PRODUCT_SELECTION.get(product_key))
     if selection_policy is None:
         raise ModularProductError(
             [issue("UNSUPPORTED_PRODUCT", f"generation is not implemented for {product_key!r}")]
@@ -841,8 +843,8 @@ def build_alignment_core(
     selected = tuple(sorted(selected_axioms, key=lambda value: value.axiom_id))
     metadata = _product_metadata(publication_metadata, ALIGNMENT_CORE_KEY)
     issues: list[ModularProductValidationIssue] = []
-    if len(selected) != ALIGNMENT_CORE_AXIOM_COUNT:
-        issues.append(issue("PRODUCT_AXIOM_COUNT_MISMATCH", f"expected 29 axioms, got {len(selected)}"))
+    if len(selected) != expected_count('ALIGNMENT_CORE_AXIOM_COUNT', ALIGNMENT_CORE_AXIOM_COUNT):
+        issues.append(issue("PRODUCT_AXIOM_COUNT_MISMATCH", f"expected {expected_count('ALIGNMENT_CORE_AXIOM_COUNT', ALIGNMENT_CORE_AXIOM_COUNT)} axioms, got {len(selected)}"))
     axiom_ids = [value.axiom_id for value in selected]
     if len(axiom_ids) != len(set(axiom_ids)):
         issues.append(issue("DUPLICATE_AUTHORITATIVE_AXIOM", "selected axiom IDs must be unique"))
@@ -854,10 +856,10 @@ def build_alignment_core(
     named = sum(value.canonical_input.expression is not None and value.canonical_input.expression.kind == "named" for value in selected)
     unions = sum(value.canonical_input.expression is not None and value.canonical_input.expression.kind == "union" for value in selected)
     if (domains, ranges, named, unions) != (
-        ALIGNMENT_CORE_DOMAIN_COUNT,
-        ALIGNMENT_CORE_RANGE_COUNT,
-        ALIGNMENT_CORE_NAMED_TARGET_COUNT,
-        ALIGNMENT_CORE_UNION_TARGET_COUNT,
+        expected_count('ALIGNMENT_CORE_DOMAIN_COUNT', ALIGNMENT_CORE_DOMAIN_COUNT),
+        expected_count('ALIGNMENT_CORE_RANGE_COUNT', ALIGNMENT_CORE_RANGE_COUNT),
+        expected_count('ALIGNMENT_CORE_NAMED_TARGET_COUNT', ALIGNMENT_CORE_NAMED_TARGET_COUNT),
+        expected_count('ALIGNMENT_CORE_UNION_TARGET_COUNT', ALIGNMENT_CORE_UNION_TARGET_COUNT),
     ):
         issues.append(
             issue(
@@ -878,7 +880,7 @@ def build_alignment_core(
         context=context,
     )
     graph = Graph().parse(data=serialized.decode("utf-8"), format="turtle")
-    logical_count = ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT
+    logical_count = expected_count('ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT', ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT)
     return ModularProductResult(
         metadata=metadata,
         selected_rows=_selected_rows(selected),
@@ -913,11 +915,11 @@ def build_strict_bfo_mapping(
     selected = tuple(sorted(selected_axioms, key=lambda value: value.axiom_id))
     metadata = _product_metadata(publication_metadata, STRICT_BFO_MAPPING_KEY)
     issues: list[ModularProductValidationIssue] = []
-    if len(selected) != STRICT_BFO_AXIOM_COUNT:
+    if len(selected) != expected_count('STRICT_BFO_AXIOM_COUNT', STRICT_BFO_AXIOM_COUNT):
         issues.append(
             issue(
                 "PRODUCT_AXIOM_COUNT_MISMATCH",
-                f"expected {STRICT_BFO_AXIOM_COUNT} axioms, got {len(selected)}",
+                f"expected {expected_count('STRICT_BFO_AXIOM_COUNT', STRICT_BFO_AXIOM_COUNT)} axioms, got {len(selected)}",
             )
         )
     axiom_ids = [value.axiom_id for value in selected]
@@ -955,16 +957,16 @@ def build_strict_bfo_mapping(
         rdf_lists,
     )
     expected_composition = (
-        STRICT_BFO_SUBCLASS_COUNT,
-        STRICT_BFO_EQUIVALENT_CLASS_COUNT,
-        STRICT_BFO_DIRECT_SUBPROPERTY_COUNT,
-        STRICT_BFO_PROPERTY_CHAIN_COUNT,
-        STRICT_BFO_DOMAIN_COUNT,
-        STRICT_BFO_RANGE_COUNT,
-        STRICT_BFO_UNION_COUNT,
-        STRICT_BFO_INTERSECTION_COUNT,
-        STRICT_BFO_EXISTENTIAL_COUNT,
-        STRICT_BFO_RDF_LIST_COUNT,
+        expected_count('STRICT_BFO_SUBCLASS_COUNT', STRICT_BFO_SUBCLASS_COUNT),
+        expected_count('STRICT_BFO_EQUIVALENT_CLASS_COUNT', STRICT_BFO_EQUIVALENT_CLASS_COUNT),
+        expected_count('STRICT_BFO_DIRECT_SUBPROPERTY_COUNT', STRICT_BFO_DIRECT_SUBPROPERTY_COUNT),
+        expected_count('STRICT_BFO_PROPERTY_CHAIN_COUNT', STRICT_BFO_PROPERTY_CHAIN_COUNT),
+        expected_count('STRICT_BFO_DOMAIN_COUNT', STRICT_BFO_DOMAIN_COUNT),
+        expected_count('STRICT_BFO_RANGE_COUNT', STRICT_BFO_RANGE_COUNT),
+        expected_count('STRICT_BFO_UNION_COUNT', STRICT_BFO_UNION_COUNT),
+        expected_count('STRICT_BFO_INTERSECTION_COUNT', STRICT_BFO_INTERSECTION_COUNT),
+        expected_count('STRICT_BFO_EXISTENTIAL_COUNT', STRICT_BFO_EXISTENTIAL_COUNT),
+        expected_count('STRICT_BFO_RDF_LIST_COUNT', STRICT_BFO_RDF_LIST_COUNT),
     )
     if composition != expected_composition:
         issues.append(
@@ -999,7 +1001,7 @@ def build_strict_bfo_mapping(
         selected_rows=_selected_rows(selected),
         serialized_bytes=serialized,
         governed_axiom_count=len(selected),
-        logical_triple_count=STRICT_BFO_LOGICAL_TRIPLE_COUNT,
+        logical_triple_count=expected_count('STRICT_BFO_LOGICAL_TRIPLE_COUNT', STRICT_BFO_LOGICAL_TRIPLE_COUNT),
         ontology_declaration_triple_count=1,
         metadata_annotation_count=7,
         formal_metadata_annotation_count=3 if context else 0,
@@ -1030,11 +1032,11 @@ def build_cco_extension(
     selected = tuple(sorted(selected_axioms, key=lambda value: value.axiom_id))
     metadata = _product_metadata(publication_metadata, CCO_EXTENSION_KEY)
     issues: list[ModularProductValidationIssue] = []
-    if len(selected) != CCO_EXTENSION_AXIOM_COUNT:
+    if len(selected) != expected_count('CCO_EXTENSION_AXIOM_COUNT', CCO_EXTENSION_AXIOM_COUNT):
         issues.append(
             issue(
                 "PRODUCT_AXIOM_COUNT_MISMATCH",
-                f"expected {CCO_EXTENSION_AXIOM_COUNT} axioms, got {len(selected)}",
+                f"expected {expected_count('CCO_EXTENSION_AXIOM_COUNT', CCO_EXTENSION_AXIOM_COUNT)} axioms, got {len(selected)}",
             )
         )
     axiom_ids = [value.axiom_id for value in selected]
@@ -1053,8 +1055,8 @@ def build_cco_extension(
         ),
     }
     expected_category_counts = {
-        "cco_bearing": CCO_EXTENSION_CCO_BEARING_COUNT,
-        "mixed_bfo_cco": CCO_EXTENSION_MIXED_COUNT,
+        "cco_bearing": expected_count('CCO_EXTENSION_CCO_BEARING_COUNT', CCO_EXTENSION_CCO_BEARING_COUNT),
+        "mixed_bfo_cco": expected_count('CCO_EXTENSION_MIXED_COUNT', CCO_EXTENSION_MIXED_COUNT),
     }
     if category_counts != expected_category_counts:
         issues.append(
@@ -1117,18 +1119,18 @@ def build_cco_extension(
         rdf_lists,
     )
     expected_composition = (
-        CCO_EXTENSION_SUBCLASS_COUNT,
-        CCO_EXTENSION_EQUIVALENT_CLASS_COUNT,
-        CCO_EXTENSION_DIRECT_SUBPROPERTY_COUNT,
-        CCO_EXTENSION_PROPERTY_CHAIN_COUNT,
-        CCO_EXTENSION_DOMAIN_COUNT,
-        CCO_EXTENSION_RANGE_COUNT,
-        CCO_EXTENSION_NAMED_TARGET_COUNT,
-        CCO_EXTENSION_COMPLEX_TARGET_COUNT,
-        CCO_EXTENSION_UNION_COUNT,
-        CCO_EXTENSION_INTERSECTION_COUNT,
-        CCO_EXTENSION_EXISTENTIAL_COUNT,
-        CCO_EXTENSION_RDF_LIST_COUNT,
+        expected_count('CCO_EXTENSION_SUBCLASS_COUNT', CCO_EXTENSION_SUBCLASS_COUNT),
+        expected_count('CCO_EXTENSION_EQUIVALENT_CLASS_COUNT', CCO_EXTENSION_EQUIVALENT_CLASS_COUNT),
+        expected_count('CCO_EXTENSION_DIRECT_SUBPROPERTY_COUNT', CCO_EXTENSION_DIRECT_SUBPROPERTY_COUNT),
+        expected_count('CCO_EXTENSION_PROPERTY_CHAIN_COUNT', CCO_EXTENSION_PROPERTY_CHAIN_COUNT),
+        expected_count('CCO_EXTENSION_DOMAIN_COUNT', CCO_EXTENSION_DOMAIN_COUNT),
+        expected_count('CCO_EXTENSION_RANGE_COUNT', CCO_EXTENSION_RANGE_COUNT),
+        expected_count('CCO_EXTENSION_NAMED_TARGET_COUNT', CCO_EXTENSION_NAMED_TARGET_COUNT),
+        expected_count('CCO_EXTENSION_COMPLEX_TARGET_COUNT', CCO_EXTENSION_COMPLEX_TARGET_COUNT),
+        expected_count('CCO_EXTENSION_UNION_COUNT', CCO_EXTENSION_UNION_COUNT),
+        expected_count('CCO_EXTENSION_INTERSECTION_COUNT', CCO_EXTENSION_INTERSECTION_COUNT),
+        expected_count('CCO_EXTENSION_EXISTENTIAL_COUNT', CCO_EXTENSION_EXISTENTIAL_COUNT),
+        expected_count('CCO_EXTENSION_RDF_LIST_COUNT', CCO_EXTENSION_RDF_LIST_COUNT),
     )
     if composition != expected_composition:
         issues.append(
@@ -1159,7 +1161,7 @@ def build_cco_extension(
         selected_rows=_selected_rows(selected),
         serialized_bytes=serialized,
         governed_axiom_count=len(selected),
-        logical_triple_count=CCO_EXTENSION_LOGICAL_TRIPLE_COUNT,
+        logical_triple_count=expected_count('CCO_EXTENSION_LOGICAL_TRIPLE_COUNT', CCO_EXTENSION_LOGICAL_TRIPLE_COUNT),
         ontology_declaration_triple_count=1,
         metadata_annotation_count=7,
         formal_metadata_annotation_count=3 if context else 0,
@@ -1344,7 +1346,7 @@ def validate_alignment_core(
     if imports:
         issues.append(issue("PROHIBITED_IMPORT", f"expected zero owl:imports triples, got {len(imports)}"))
     expected_total = (
-        ALIGNMENT_CORE_FORMAL_TOTAL_TRIPLE_COUNT if context else ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT
+        expected_count('ALIGNMENT_CORE_FORMAL_TOTAL_TRIPLE_COUNT', ALIGNMENT_CORE_FORMAL_TOTAL_TRIPLE_COUNT) if context else expected_count('ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT', ALIGNMENT_CORE_TOTAL_TRIPLE_COUNT)
     )
     if len(graph) != expected_total:
         issues.append(
@@ -1360,8 +1362,8 @@ def validate_alignment_core(
         expected_imports,
         context,
     )
-    if len(logical_graph) != ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT:
-        issues.append(issue("LOGICAL_TRIPLE_COUNT_MISMATCH", f"expected 53, got {len(logical_graph)}"))
+    if len(logical_graph) != expected_count('ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT', ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT):
+        issues.append(issue("LOGICAL_TRIPLE_COUNT_MISMATCH", f"expected {expected_count('ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT', ALIGNMENT_CORE_LOGICAL_TRIPLE_COUNT)}, got {len(logical_graph)}"))
 
     core_axioms = _canonical_graph_axioms(graph)
     selected_by_id = {value.axiom_id: value for value in selected}
@@ -1385,8 +1387,8 @@ def validate_alignment_core(
         issues.append(issue("ANNOTATION_ONLY_PSEUDO_MAPPING", "owl:Axiom records are prohibited"))
 
     union_roots = [target for _, _, target in graph.triples((None, None, None)) if isinstance(target, BNode) and (target, OWL.unionOf, None) in graph]
-    if len(set(union_roots)) != ALIGNMENT_CORE_UNION_TARGET_COUNT:
-        issues.append(issue("UNION_COUNT_MISMATCH", f"expected 3 distinct union expressions, got {len(set(union_roots))}"))
+    if len(set(union_roots)) != expected_count('ALIGNMENT_CORE_UNION_TARGET_COUNT', ALIGNMENT_CORE_UNION_TARGET_COUNT):
+        issues.append(issue("UNION_COUNT_MISMATCH", f"expected {expected_count('ALIGNMENT_CORE_UNION_TARGET_COUNT', ALIGNMENT_CORE_UNION_TARGET_COUNT)} distinct union expressions, got {len(set(union_roots))}"))
     closures = [_reachable_bnodes(graph, root) for root in set(union_roots)]
     for index, first in enumerate(closures):
         for second in closures[index + 1:]:
@@ -1486,7 +1488,7 @@ def validate_strict_bfo_mapping(
                 f"expected only alignment-core import, got {sorted(map(str, imports))}",
             )
         )
-    expected_total = STRICT_BFO_FORMAL_TOTAL_TRIPLE_COUNT if context else STRICT_BFO_TOTAL_TRIPLE_COUNT
+    expected_total = expected_count('STRICT_BFO_FORMAL_TOTAL_TRIPLE_COUNT', STRICT_BFO_FORMAL_TOTAL_TRIPLE_COUNT) if context else expected_count('STRICT_BFO_TOTAL_TRIPLE_COUNT', STRICT_BFO_TOTAL_TRIPLE_COUNT)
     if len(graph) != expected_total:
         issues.append(
             issue(
@@ -1502,11 +1504,11 @@ def validate_strict_bfo_mapping(
         expected_import_values,
         context,
     )
-    if len(logical_graph) != STRICT_BFO_LOGICAL_TRIPLE_COUNT:
+    if len(logical_graph) != expected_count('STRICT_BFO_LOGICAL_TRIPLE_COUNT', STRICT_BFO_LOGICAL_TRIPLE_COUNT):
         issues.append(
             issue(
                 "LOGICAL_TRIPLE_COUNT_MISMATCH",
-                f"expected {STRICT_BFO_LOGICAL_TRIPLE_COUNT}, got {len(logical_graph)}",
+                f"expected {expected_count('STRICT_BFO_LOGICAL_TRIPLE_COUNT', STRICT_BFO_LOGICAL_TRIPLE_COUNT)}, got {len(logical_graph)}",
             )
         )
 
@@ -1594,11 +1596,11 @@ def validate_strict_bfo_mapping(
         len(list_heads),
     )
     expected_structure = (
-        STRICT_BFO_UNION_COUNT,
-        STRICT_BFO_INTERSECTION_COUNT,
-        STRICT_BFO_EXISTENTIAL_COUNT,
-        STRICT_BFO_PROPERTY_CHAIN_COUNT,
-        STRICT_BFO_RDF_LIST_COUNT,
+        expected_count('STRICT_BFO_UNION_COUNT', STRICT_BFO_UNION_COUNT),
+        expected_count('STRICT_BFO_INTERSECTION_COUNT', STRICT_BFO_INTERSECTION_COUNT),
+        expected_count('STRICT_BFO_EXISTENTIAL_COUNT', STRICT_BFO_EXISTENTIAL_COUNT),
+        expected_count('STRICT_BFO_PROPERTY_CHAIN_COUNT', STRICT_BFO_PROPERTY_CHAIN_COUNT),
+        expected_count('STRICT_BFO_RDF_LIST_COUNT', STRICT_BFO_RDF_LIST_COUNT),
     )
     if structure != expected_structure:
         issues.append(
@@ -1655,11 +1657,11 @@ def validate_strict_bfo_mapping(
                 "project-module governed axiom IDs do not reconcile",
             )
         )
-    if len(actual_closure_ids) != STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT:
+    if len(actual_closure_ids) != expected_count('STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT', STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT):
         issues.append(
             issue(
                 "PROJECT_CLOSURE_COUNT_MISMATCH",
-                f"expected {STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT}, "
+                f"expected {expected_count('STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT', STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT)}, "
                 f"got {len(actual_closure_ids)}",
             )
         )
@@ -1669,9 +1671,9 @@ def validate_strict_bfo_mapping(
     for triple in core_graph:
         project_graph.add(triple)
     expected_project_count = (
-        STRICT_BFO_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT
+        expected_count('STRICT_BFO_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT', STRICT_BFO_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT)
         if context
-        else STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT
+        else expected_count('STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT', STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT)
     )
     if len(project_graph) != expected_project_count:
         issues.append(
@@ -1683,9 +1685,9 @@ def validate_strict_bfo_mapping(
     for triple in list(project_graph.triples((None, OWL.imports, None))):
         project_graph.remove(triple)
     expected_local_count = (
-        STRICT_BFO_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT
+        expected_count('STRICT_BFO_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT', STRICT_BFO_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT)
         if context
-        else STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT
+        else expected_count('STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT', STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT)
     )
     if len(project_graph) != expected_local_count:
         issues.append(
@@ -1727,9 +1729,9 @@ def validate_strict_bfo_mapping(
                 issue("FIXED_CLOSURE_IMPORT", "fixed semantic closure retains imports")
             )
         expected_fixed_count = (
-            STRICT_BFO_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT
+            expected_count('STRICT_BFO_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT', STRICT_BFO_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT)
             if context
-            else STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT
+            else expected_count('STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT', STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT)
         )
         if len(fixed_semantic_closure) != expected_fixed_count:
             issues.append(
@@ -1837,7 +1839,7 @@ def validate_cco_extension(
                 f"expected only strict-BFO import, got {sorted(map(str, imports))}",
             )
         )
-    expected_total = CCO_EXTENSION_FORMAL_TOTAL_TRIPLE_COUNT if context else CCO_EXTENSION_TOTAL_TRIPLE_COUNT
+    expected_total = expected_count('CCO_EXTENSION_FORMAL_TOTAL_TRIPLE_COUNT', CCO_EXTENSION_FORMAL_TOTAL_TRIPLE_COUNT) if context else expected_count('CCO_EXTENSION_TOTAL_TRIPLE_COUNT', CCO_EXTENSION_TOTAL_TRIPLE_COUNT)
     if len(graph) != expected_total:
         issues.append(
             issue(
@@ -1853,11 +1855,11 @@ def validate_cco_extension(
         expected_import_values,
         context,
     )
-    if len(logical_graph) != CCO_EXTENSION_LOGICAL_TRIPLE_COUNT:
+    if len(logical_graph) != expected_count('CCO_EXTENSION_LOGICAL_TRIPLE_COUNT', CCO_EXTENSION_LOGICAL_TRIPLE_COUNT):
         issues.append(
             issue(
                 "LOGICAL_TRIPLE_COUNT_MISMATCH",
-                f"expected {CCO_EXTENSION_LOGICAL_TRIPLE_COUNT}, got {len(logical_graph)}",
+                f"expected {expected_count('CCO_EXTENSION_LOGICAL_TRIPLE_COUNT', CCO_EXTENSION_LOGICAL_TRIPLE_COUNT)}, got {len(logical_graph)}",
             )
         )
 
@@ -1953,11 +1955,11 @@ def validate_cco_extension(
         len(list_heads),
     )
     expected_structure = (
-        CCO_EXTENSION_UNION_COUNT,
-        CCO_EXTENSION_INTERSECTION_COUNT,
-        CCO_EXTENSION_EXISTENTIAL_COUNT,
-        CCO_EXTENSION_PROPERTY_CHAIN_COUNT,
-        CCO_EXTENSION_RDF_LIST_COUNT,
+        expected_count('CCO_EXTENSION_UNION_COUNT', CCO_EXTENSION_UNION_COUNT),
+        expected_count('CCO_EXTENSION_INTERSECTION_COUNT', CCO_EXTENSION_INTERSECTION_COUNT),
+        expected_count('CCO_EXTENSION_EXISTENTIAL_COUNT', CCO_EXTENSION_EXISTENTIAL_COUNT),
+        expected_count('CCO_EXTENSION_PROPERTY_CHAIN_COUNT', CCO_EXTENSION_PROPERTY_CHAIN_COUNT),
+        expected_count('CCO_EXTENSION_RDF_LIST_COUNT', CCO_EXTENSION_RDF_LIST_COUNT),
     )
     if structure != expected_structure:
         issues.append(
@@ -2030,11 +2032,11 @@ def validate_cco_extension(
                 "project-module governed axiom IDs do not reconcile",
             )
         )
-    if len(actual_closure_ids) != CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT:
+    if len(actual_closure_ids) != expected_count('CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT', CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT):
         issues.append(
             issue(
                 "PROJECT_CLOSURE_COUNT_MISMATCH",
-                f"expected {CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT}, "
+                f"expected {expected_count('CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT', CCO_EXTENSION_PROJECT_CLOSURE_AXIOM_COUNT)}, "
                 f"got {len(actual_closure_ids)}",
             )
         )
@@ -2043,9 +2045,9 @@ def validate_cco_extension(
         for triple in product_graph:
             project_graph.add(triple)
     expected_project_count = (
-        CCO_EXTENSION_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT
+        expected_count('CCO_EXTENSION_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT', CCO_EXTENSION_FORMAL_PROJECT_GRAPH_TRIPLE_COUNT)
         if context
-        else CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT
+        else expected_count('CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT', CCO_EXTENSION_PROJECT_GRAPH_TRIPLE_COUNT)
     )
     if len(project_graph) != expected_project_count:
         issues.append(
@@ -2058,9 +2060,9 @@ def validate_cco_extension(
     for triple in list(project_graph.triples((None, OWL.imports, None))):
         project_graph.remove(triple)
     expected_local_count = (
-        CCO_EXTENSION_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT
+        expected_count('CCO_EXTENSION_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT', CCO_EXTENSION_FORMAL_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT)
         if context
-        else CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT
+        else expected_count('CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT', CCO_EXTENSION_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT)
     )
     if len(project_graph) != expected_local_count:
         issues.append(
@@ -2122,9 +2124,9 @@ def validate_cco_extension(
     cco_count = sum(iri.startswith(CCO_NAMESPACE) for iri in referenced_target_iris)
     bfo_count = sum(iri.startswith(BFO_NAMESPACE) for iri in referenced_target_iris)
     expected_term_counts = (
-        CCO_EXTENSION_SOURCE_TERM_COUNT,
-        CCO_EXTENSION_CCO_TERM_COUNT,
-        CCO_EXTENSION_BFO_TERM_COUNT,
+        expected_count('CCO_EXTENSION_SOURCE_TERM_COUNT', CCO_EXTENSION_SOURCE_TERM_COUNT),
+        expected_count('CCO_EXTENSION_CCO_TERM_COUNT', CCO_EXTENSION_CCO_TERM_COUNT),
+        expected_count('CCO_EXTENSION_BFO_TERM_COUNT', CCO_EXTENSION_BFO_TERM_COUNT),
     )
     if (source_count, cco_count, bfo_count) != expected_term_counts:
         issues.append(
@@ -2177,9 +2179,9 @@ def validate_cco_extension(
                 issue("FIXED_CLOSURE_IMPORT", "fixed semantic closure retains imports")
             )
         expected_fixed_count = (
-            CCO_EXTENSION_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT
+            expected_count('CCO_EXTENSION_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT', CCO_EXTENSION_FORMAL_FIXED_CLOSURE_TRIPLE_COUNT)
             if context
-            else CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT
+            else expected_count('CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT', CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT)
         )
         if len(fixed_semantic_closure) != expected_fixed_count:
             issues.append(

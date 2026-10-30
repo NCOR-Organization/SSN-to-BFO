@@ -1,0 +1,667 @@
+Continue in:
+
+`/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch:
+
+`publication/current-sosa-readiness`
+
+HEAD:
+
+`dc314460fe3e875ba1c8ccfcb3c6840a7181e733`
+
+Do not change any semantic mapping, adjudication, assessment outcome, semantic-transition record, retained historical evidence, or ontology axiom merely to make the release package pass.
+
+## Current authorized semantic state
+
+Maintained workbook:
+
+- 105 rows
+- 100 assertions
+- 5 blank mappings
+- exactly 3 authorized removals
+- 0 additions
+
+Approved decisions:
+
+- `ssn:forProperty` → final / `no_direct_mapping`
+- `ssn-system:SystemProperty` → final / `inheritance_sufficient`
+- `ssn-system:MeasurementRange` → final / `inheritance_sufficient`
+
+Authenticated semantic transition:
+
+`reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json`
+
+Current partitions:
+
+- target-neutral = 29
+- BFO-bearing = 19
+- CCO-bearing = 24
+- mixed = 28
+
+Baseline:
+
+- target-neutral = 29
+- BFO-bearing = 19
+- CCO-bearing = 25
+- mixed = 30
+
+Current CCO axioms:
+
+`55 − 3 = 52`
+
+## Current blocking failure
+
+Authenticated release-package preflight now succeeds through current product evolution and formal-current reasoning, but the production release package contract still requires historical reasoner closure counts.
+
+Current failure:
+
+| Product | Historical package requirement | Authenticated current |
+|---|---:|---:|
+| Integrated | 15,907 | 15,858 |
+| CCO extension | 15,929 | 15,880 |
+
+Both decrease by exactly 49 triples.
+
+The release builder raises:
+
+`HERMIT_CLOSURE_COUNT`
+
+The release manifest validator and JSON schema independently encode the same historical requirements.
+
+Do not bypass this check.
+
+## Already established package impact
+
+Authenticated formal-current products are valid:
+
+- current product evolution: PASS
+- `55 − 3 = 52`: PASS
+- zero additions
+- deterministic maintained bytes: PASS
+- structural validation: PASS
+- OWL-profile/HermiT for all four formal-current products: PASS
+- zero named unsatisfiable classes
+
+Current integrated reasoning:
+
+- HermiT closure = 15,858 triples
+- profile graph = 15,862 after four declaration completions
+
+The two changed formal products each lose exactly:
+
+- the three approved mapping blocks
+- 49 RDF triples
+- 7,661 bytes
+
+Formal release-product SHA changes:
+
+Integrated:
+
+historical:
+`1e933f8bcf80a3479dc5eba88ccc0f3dfefd3b83c248ddfffd8222d2b5a57954`
+
+current:
+`9d307178cf479087765608bba5dc6ef1983125631f32839fd0dc77764b6142f2`
+
+CCO extension:
+
+historical:
+`b8645db9d6c8cf49f8b223ce0bd37c65bffed9aac8bf6d41f53d37b51a38d300`
+
+current:
+`2a9dc45056d5186c5cf8c7924b8e7ed96f590f9a255dda2d8af727f96dd2d235`
+
+Six inspected package payload members remain byte-identical:
+
+- alignment-core
+- strict-BFO
+- license
+- synthetic release notes
+- catalog
+- publication metadata
+
+Changed inspected package members:
+
+- `SSN2BFO.ttl`
+- CCO extension
+- workbook
+- disposition evidence
+
+Manifest/checksum/archive bytes were not produced because preflight stopped before package creation.
+
+## Important distinction
+
+Development-product hashes and formal release-product hashes are not interchangeable.
+
+Current development hashes remain:
+
+Integrated development product:
+`98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c`
+
+CCO development product:
+`5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28`
+
+The formal package versions include canonical formal-release rendering/header treatment and therefore have the separate formal hashes above.
+
+Preserve this distinction.
+
+# Goal
+
+Determine what the historical closure-count literals mean in the release contract, then make the **maintained-current release contract** accurately validate the authenticated post-transition products without weakening historical release validation.
+
+Do not merely replace `15907` with `15858` and `15929` with `15880` everywhere.
+
+## 1. Trace the release reasoning contract completely
+
+Before editing, find every source of the historical closure-count requirements.
+
+Inspect at minimum:
+
+- release builder code
+- release manifest validator
+- release JSON schema
+- release-context generation
+- release manifest generation
+- release rehearsal/archive validation
+- package fixtures/tests
+- publication/reasoning metadata
+- any constants corresponding to:
+  - 15,907
+  - 15,929
+  - `governed_closure_axiom_count`
+  - governed/source axiom counts
+  - profile counts
+  - reasoner counts
+
+Report for each occurrence:
+
+1. path and field/function;
+2. whether it describes:
+   - an immutable historical accepted release,
+   - a maintained-current candidate,
+   - a schema invariant,
+   - or a dynamically generated measured value;
+3. whether the value is intended to be:
+   - historical evidence,
+   - current expected output,
+   - or merely shape/type validation.
+
+Do not edit until this is classified.
+
+## 2. Determine whether static closure counts belong in the JSON schema
+
+Pay special attention to the JSON schema.
+
+A JSON schema may legitimately require:
+
+- presence;
+- integer type;
+- nonnegative value;
+- required reasoning fields;
+
+but a fixed historical closure count should not silently become the permanent semantic definition of every future authorized release unless that is explicitly the repository design.
+
+Determine whether the schema's exact closure-count literals are:
+
+### A. Release-version-specific constants
+
+If so, preserve the historical schema/contract for historical releases and introduce/update the maintained-current release contract appropriately.
+
+### B. Accidental historical-state constants in a general schema
+
+If so, move exact current-state verification into authenticated release validation while keeping the schema structurally strict.
+
+Do not weaken exact count verification overall.
+
+The desired architecture is:
+
+- schema validates representation/shape;
+- governed authenticated release validator verifies exact semantic/reasoning expectations for the release state;
+
+unless the repository intentionally uses a version-specific schema.
+
+## 3. Preserve immutable historical package contracts
+
+Identify any retained or accepted historical package/release whose contract legitimately requires:
+
+- integrated closure = 15,907
+- CCO closure = 15,929
+
+Those historical expectations must remain unchanged.
+
+Historical package fixtures must continue to validate against historical values.
+
+Do not rewrite historical manifests or accepted release evidence.
+
+## 4. Derive maintained-current reasoning expectations from authenticated evolution
+
+For the maintained current release, exact reasoning expectations should follow from the authenticated current formal products.
+
+Use existing transition-aware/current-product authentication rather than duplicating term-specific logic.
+
+The current reasoning contract must authenticate:
+
+Integrated:
+
+- current formal product SHA:
+  `9d307178cf479087765608bba5dc6ef1983125631f32839fd0dc77764b6142f2`
+- closure = 15,858
+- profile graph = 15,862 if that is the corresponding governed field
+- zero named unsatisfiable classes
+
+CCO extension:
+
+- current formal product SHA:
+  `2a9dc45056d5186c5cf8c7924b8e7ed96f590f9a255dda2d8af727f96dd2d235`
+- closure = 15,880
+- determine and record the corresponding current profile count from the already authenticated formal-current reasoning result
+- zero named unsatisfiable classes
+
+Alignment-core and strict-BFO must retain their existing governed counts/hashes because the transition did not affect them.
+
+Do not invent any missing count: run/inspect the canonical reasoning result.
+
+## 5. Explain the exact 49-triple closure delta
+
+Before changing maintained-current closure expectations, prove that:
+
+- integrated closure changes exactly `15,907 → 15,858`;
+- CCO closure changes exactly `15,929 → 15,880`;
+- both are `−49`;
+- the difference is the reasoning consequence of removing exactly the three authenticated mapping blocks;
+- zero unrelated asserted or inferred triples disappear;
+- zero unauthorized inferred triples appear.
+
+If practical, generate a normalized closure diff and classify every removed closure triple by dependency on one of the three removed mapping blocks.
+
+It is acceptable if many inferred triples have indirect dependency paths, but the report must establish that no independent unrelated semantic change explains the −49.
+
+If the −49 cannot be explained by the authorized transition, stop.
+
+## 6. Audit `governed_closure_axiom_count` separately
+
+The previous preflight noted production `governed_closure_axiom_count` values, including `105`, and intentionally did not change them.
+
+Determine exactly what this field counts.
+
+Do not conflate:
+
+- workbook rows = 105
+- governed asserted mappings = 100
+- CCO extension axioms = 52
+- logical triples
+- closure triples
+
+If `105` means source/governed row identity rather than active mapping axioms, it may correctly remain 105.
+
+Document its semantics and leave it unchanged if appropriate.
+
+If it actually claims to count active governed axioms, diagnose the inconsistency before editing.
+
+## 7. Implement a generic maintained-current release expectation mechanism
+
+Preferred design:
+
+The release builder/validator obtains exact current formal-product and reasoning expectations from an authenticated current-release expectation object/context derived from:
+
+- baseline identity;
+- authenticated documentary history;
+- authenticated semantic history;
+- semantic transition;
+- deterministic formal rendering;
+- governed reasoner results.
+
+Do not add special logic for:
+
+- `forProperty`
+- `SystemProperty`
+- `MeasurementRange`
+
+The release system should only know that authenticated product evolution authorizes a current release state.
+
+If an existing release-context object can carry these expectations, extend/reuse it rather than creating a parallel mechanism.
+
+## 8. Keep preflight and post-build preservation separate
+
+The release build should establish:
+
+### Preflight
+
+The inputs correspond exactly to an authenticated authorized current state.
+
+### Build
+
+The package is generated deterministically from those inputs.
+
+### Post-build
+
+The package manifest/checksums/reasoning metadata exactly describe the generated package.
+
+### Historical preservation
+
+Historical accepted release contracts remain unchanged.
+
+Do not use historical HEAD/current constants as a substitute for current authenticated expectations.
+
+## 9. Update maintained-current package tests only after deriving the contract
+
+Once the production/current release contract is correct, finish the release-build test repair.
+
+For maintained-current tests, use canonical authenticated context.
+
+Update current expected formal-package values only from independently authenticated outputs.
+
+Do not alter historical rendering/package fixtures.
+
+## 10. Add focused release-contract tests
+
+Add tests covering:
+
+### Historical accepted release
+Old closure values remain valid for the historical package.
+
+### Maintained current authorized transition
+Current package validates:
+
+- integrated closure 15,858
+- CCO closure 15,880
+- current formal hashes
+- zero unsatisfiable named classes
+
+### Unauthorized product mutation
+Fails release preflight.
+
+### Unauthorized closure-count mutation
+Fails manifest validation even if the field is schema-valid.
+
+### Wrong formal-product hash
+Fails.
+
+### Broken semantic transition
+Fails before packaging.
+
+### Consequential manifest changes
+Current product hash/size changes propagate deterministically into:
+
+- manifest
+- checksums
+- archive metadata as applicable
+
+### Unchanged package members
+Alignment-core and strict-BFO remain byte-identical.
+
+## 11. Run authenticated package preflight again
+
+Before running the full test module, rerun the exact package preflight that previously failed.
+
+Expected:
+
+PASS.
+
+Report exact current reasoning contract for all four formal products.
+
+If it fails, stop.
+
+## 12. Run isolated release-build selector
+
+Run the original setup-triggering selector.
+
+Expected:
+
+PASS.
+
+If it fails, stop.
+
+## 13. Run complete release-build suite
+
+Run:
+
+`tests/test_build_release.py`
+
+Report exact count.
+
+Stop at first failure.
+
+## 14. Complete actual candidate package build in temporary output
+
+If the release-build tests pass, create the maintained-current package in a temporary/non-repository destination.
+
+Now capture the previously unavailable consequential artifacts:
+
+- release manifest bytes/hash;
+- checksum file bytes/hash;
+- archive bytes/hash;
+- member sizes;
+- package inventory;
+- reasoning metadata.
+
+Compare against historical package output.
+
+Classify every changed package member as:
+
+- directly changed formal product;
+- directly changed workbook/report evidence;
+- consequential manifest/checksum/archive change;
+- unexpected.
+
+There must be no unexpected change.
+
+Do not write the candidate package into governed release locations unless the normal test/build workflow explicitly does so transactionally.
+
+## 15. Continue the remaining 12 modules
+
+Only after release build passes, continue:
+
+- release archive
+- release rehearsal
+- placeholder-catalog migration
+- COMS generation
+- all eight ROBOT suites
+
+Stop on the first failure.
+
+## 16. Re-run release family
+
+Run fresh:
+
+- publication metadata
+- release context
+- release rendering
+- release manifest
+- release build
+- release archive
+- release rehearsal
+
+All must agree on the authenticated current package contract.
+
+## 17. Re-run product family
+
+Run fresh:
+
+- product dispositions
+- modular products
+- strict-BFO
+- CCO extension
+- BFO projection
+
+Confirm package inputs match the same authenticated product state.
+
+## 18. Final fresh current regression
+
+Rerun the complete current regression from zero.
+
+Expected:
+
+**346 passed**
+
+## 19. Fresh complete custody/history/applicability authentication
+
+Run from scratch:
+
+- documentary history authentication
+- semantic history authentication
+- human-decision authentication
+- applicability authentication
+- retained-evidence authentication
+- semantic-transition authentication
+
+Confirm all historical custody objects remain unchanged.
+
+## 20. Fresh canonical current-product validation
+
+Confirm:
+
+- 55 − 3 = 52
+- deterministic current bytes
+- zero structural issues
+- partitions 29/19/24/28
+
+## 21. Fresh authoritative COMS validation
+
+Confirm:
+
+- 105 rows
+- 100 assertions
+- 5 blanks
+- 3 authorized removals
+- 0 additions
+- unchanged RowIDs
+- no unrelated semantic changes
+
+## 22. Fresh integrated-current profile/HermiT
+
+Run the full governed current closure.
+
+Expected:
+
+- integrated closure = 15,858
+- integrated profile = 15,862 if still confirmed by canonical final run
+- zero named unsatisfiable classes
+
+Report the final CCO-extension closure/profile counts as well.
+
+## 23. Fresh full SOSA-2023 transaction
+
+Run complete canonical SOSA-2023 generation with authenticated pre/post current-state preservation.
+
+Confirm:
+
+- 119 rows
+- 55 active mappings
+- 64 explicitly unmapped
+- all 49 governed SOSA-2023 paths unchanged
+- current-track protected artifacts unchanged
+
+## 24. Fresh final publication/static gates
+
+Run:
+
+- publication preservation
+- publication freshness
+- release rendering
+- source identity
+- current publication workflow
+- applicable SOSA-2023/RO preservation
+- static validation
+- `git diff --check`
+
+## 25. Final assessment invariants
+
+Confirm:
+
+- 17 final
+- 0 deferred
+- 74 unresolved/unreviewed
+- 10 formal_mapping_adopted
+- 5 no_direct_mapping
+- 2 inheritance_sufficient
+
+Specific decisions unchanged.
+
+## 26. Primary current hashes
+
+Development artifacts:
+
+Workbook:
+`778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c`
+
+Semantic projection:
+`566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44`
+
+Integrated:
+`98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c`
+
+CCO extension:
+`5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28`
+
+Alignment-core:
+`17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770`
+
+Strict-BFO:
+`676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af`
+
+Current formal release products already independently established:
+
+Integrated formal:
+`9d307178cf479087765608bba5dc6ef1983125631f32839fd0dc77764b6142f2`
+
+CCO formal:
+`2a9dc45056d5186c5cf8c7924b8e7ed96f590f9a255dda2d8af727f96dd2d235`
+
+Do not substitute development hashes for formal hashes.
+
+## 27. Final integrity
+
+Run:
+
+- `git diff --check`
+- `git diff --stat`
+- `git status --short --branch`
+
+Report separately:
+
+- production release-contract changes;
+- release-build test changes;
+- new release-contract tests;
+- pre-existing worktree changes.
+
+Do not commit, tag, or push.
+
+## Final report
+
+Include:
+
+1. every location encoding historical closure counts;
+2. classification of each as historical vs maintained-current;
+3. semantics of `governed_closure_axiom_count`;
+4. exact explanation of the −49 closure delta;
+5. exact production release-contract repair;
+6. proof historical release contracts remain unchanged;
+7. current reasoning contract for all formal products;
+8. authenticated package-preflight result;
+9. release-build suite result;
+10. actual temporary current package diff, including manifest/checksum/archive;
+11. remaining 12-module results;
+12. combined release-family results;
+13. combined product-family results;
+14. fresh 346-test regression;
+15. complete custody/history/applicability authentication;
+16. fresh 55 − 3 = 52 validation;
+17. authoritative COMS result;
+18. integrated/CCO OWL-profile/HermiT results;
+19. full SOSA-2023 transaction;
+20. final publication/freshness/rendering/source-identity/workflow results;
+21. assessment counts;
+22. final development and formal-release hashes;
+23. final Git status.
+
+Explicitly state whether any semantic behavior changed. A release-contract change that recognizes already-authorized semantic evolution is not a new mapping decision.
+
+If everything passes, end:
+
+`THREE-TERM CURRENT ADJUDICATION FULLY VALIDATED — RELEASE REASONING CONTRACT TRANSITION-AWARE — HISTORICAL CUSTODY INTACT — NOT COMMITTED`
+
+If another validation failure occurs, stop immediately and end:
+
+`THREE-TERM CURRENT ADJUDICATION VALIDATION INCOMPLETE — HISTORICAL CUSTODY INTACT — NOT COMMITTED`

@@ -1,0 +1,566 @@
+Continue in:
+
+`/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch:
+
+`publication/current-sosa-readiness`
+
+HEAD:
+
+`dc314460fe3e875ba1c8ccfcb3c6840a7181e733`
+
+Do **not** stage, commit, tag, push, reset, stash, or discard anything.
+
+Stop at the first genuine validation failure.
+
+## Current validated state
+
+Fresh canonical validation is green:
+
+- `make check`: **1,028 tests passed**
+- all **47 canonical steps passed**
+- 0 failures
+- 0 errors
+- 0 skips
+- `make compile`: **PASS**
+- all invoked reasoners completed normally
+
+All six semantic/product hashes remain unchanged.
+
+Maintained semantic state remains:
+
+- 105 workbook rows
+- 100 active mappings
+- 5 blanks
+- 98 ordinary mappings
+- 2 chains
+- 3 authorized removals
+- 0 additions
+- unchanged RowIDs
+- 17 final
+- 74 unresolved/unreviewed
+- outcome counts 10 formal / 5 no-direct / 2 inheritance-sufficient
+
+SOSA-2023 remains unchanged:
+
+- 49 governed paths unchanged
+- 119 rows
+- 55 active
+- 64 explicitly unmapped
+
+Portable retained evidence remains:
+
+- 27 retained RDF objects
+- 29,443,721 bytes
+- hashes unchanged
+
+## Current blocking condition
+
+Fresh publication-readiness exits 1 with:
+
+- **74 Class A diagnostics**
+- **36 Class B diagnostics**
+
+The Class A diagnostics are reported as:
+
+- stale evidence bindings;
+- missing selected validation records.
+
+This is now the only pre-staging blocker.
+
+Do not treat a successful `make check` as automatically satisfying readiness. Determine exactly what evidence the readiness gate requires and why the fresh successful validation is not selected/authenticated.
+
+# Goal
+
+Reconcile the readiness evidence model with the fresh successful canonical validation **without rewriting historical receipts, weakening evidence requirements, or fabricating validation records**.
+
+The desired end state is:
+
+- fresh successful executions are represented by durable authenticated current evidence;
+- readiness selects those current records;
+- historical PASS/FAIL receipts remain immutable;
+- transition-related Class A blockers fall to zero;
+- independent Class B blockers remain visible.
+
+---
+
+# 1. Inventory all 74 Class A diagnostics exactly
+
+Read the fresh readiness output.
+
+For every Class A diagnostic record:
+
+- exact diagnostic text;
+- evidence type/role;
+- expected validation/gate;
+- currently selected record, if any;
+- reason selection fails;
+- stale bound hash/value, if applicable;
+- current required hash/value;
+- whether a fresh successful execution already occurred in the latest:
+  - `make check`,
+  - `make compile`,
+  - focused validation,
+  - reasoner/profile run.
+
+Produce a complete matrix:
+
+| # | Diagnostic | Evidence role | Current selection | Failure reason | Fresh execution exists? |
+|---|---|---|---|---|---|
+
+Do not edit yet.
+
+---
+
+# 2. Group the 74 diagnostics by root cause
+
+Do not fix 74 symptoms independently.
+
+Classify them into root-cause groups such as:
+
+### A. Stale artifact binding
+Evidence exists but binds pre-transition workbook/product/report bytes.
+
+### B. Fresh execution exists but no durable selected record
+The validation ran successfully, but readiness has no current authenticated receipt to select.
+
+### C. Fresh durable record exists but selector ignores it
+Selection logic prefers historical/default evidence.
+
+### D. Aggregate/bundle binding is stale
+A multi-product or multi-step record contains one or more old identities.
+
+### E. Execution record is non-portable or incomplete
+Required provenance/dependency identity is absent.
+
+### F. Genuine missing validation
+No corresponding fresh successful execution actually exists.
+
+Report counts by root cause.
+
+If any Class A item is genuinely category F, identify the exact missing execution before changing evidence.
+
+---
+
+# 3. Trace readiness evidence selection
+
+Inspect the readiness implementation that chooses validation evidence.
+
+For each required evidence role determine:
+
+- where candidate records are discovered;
+- precedence/order rules;
+- historical vs current distinction;
+- freshness criteria;
+- artifact-binding criteria;
+- checkpoint/predecessor criteria;
+- whether successor/current records are supported;
+- whether records are selected by filename, timestamp, HEAD, hash, logical role, or explicit manifest.
+
+Identify exactly why the fresh successful run is not sufficient today.
+
+Do not simply select the newest file.
+
+Selection must remain deterministic and authenticated.
+
+---
+
+# 4. Separate execution from evidence issuance
+
+Determine whether the repository distinguishes:
+
+1. executing a validation;
+2. recording its raw result;
+3. issuing a durable readiness evidence record;
+4. selecting that evidence for current readiness.
+
+If `make check`/`make compile` currently perform (1) but not (3), identify the canonical evidence-issuance mechanism.
+
+Do not invent synthetic PASS receipts from test output.
+
+A readiness record may only claim PASS if supported by an actual completed successful execution.
+
+---
+
+# 5. Map fresh successful executions to required readiness roles
+
+Use the just-completed canonical run as factual execution history only where durable captured evidence supports it.
+
+For each Class A evidence role, determine whether its required validation was actually completed in the fresh run.
+
+At minimum audit bindings for:
+
+- workbook/current assessment;
+- integrated product;
+- alignment core;
+- strict BFO;
+- CCO extension;
+- current mapping reconstruction;
+- release contract;
+- release manifest/archive;
+- source identity;
+- preservation;
+- publication metadata;
+- rendering/freshness;
+- reasoning/profile/HermiT;
+- SOSA-2023 preservation;
+- retained evidence;
+- checkpoint/successor policy;
+- portable execution evidence;
+- compile/package results.
+
+Do not infer coverage solely from test names; use actual gate/execution records.
+
+---
+
+# 6. Determine the proper evidence lifecycle
+
+For each stale or missing current record, choose among:
+
+### Historical record preserved
+Old record remains immutable and is not current readiness evidence.
+
+### Current successor record
+Create an additive successor binding current validated artifacts to an actual completed execution.
+
+### Current selection manifest update
+If durable current evidence already exists, update only the current selector/manifest so it points to the authenticated record.
+
+### Regeneration required
+If repository policy requires the underlying validation to generate its own receipt and no durable record exists, rerun only that specific validation to create it.
+
+Do not overwrite historical receipts in place.
+
+---
+
+# 7. Use exact current identities
+
+Any new current readiness evidence must bind exact current identities, including as applicable:
+
+Workbook:
+`778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c`
+
+Assessment:
+`a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253`
+
+Integrated:
+`98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c`
+
+Alignment core:
+`17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770`
+
+Strict BFO:
+`676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af`
+
+CCO extension:
+`5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28`
+
+Do not alter these values.
+
+---
+
+# 8. Preserve historical failures
+
+Some historical semantic/reasoner execution records intentionally contain FAIL outcomes.
+
+Those must remain FAIL.
+
+Do not convert them to PASS.
+
+Instead represent the later successful current execution as additive successor/current evidence.
+
+The evidence graph should be able to express:
+
+historical execution X → FAIL  
+later current execution Y → PASS
+
+without mutating X.
+
+---
+
+# 9. Avoid duplicate or fabricated receipts
+
+Before creating any new record:
+
+- search for an existing durable record representing the fresh successful execution;
+- verify its hashes;
+- verify its role;
+- verify command/tool identity;
+- verify completion status;
+- verify dependencies.
+
+If one already exists, select/bind it rather than duplicating it.
+
+If no durable record exists but the gate was genuinely executed successfully, use the established issuance workflow.
+
+Do not manually write `"result": "PASS"` into JSON.
+
+---
+
+# 10. Repair readiness selection generically
+
+If selection logic is stale, make it successor-aware generically.
+
+It should prefer:
+
+- authenticated evidence applicable to the current governed state;
+
+not:
+
+- historical evidence merely because it has a canonical filename;
+- newest timestamp;
+- mutable HEAD-relative state.
+
+Required negative coverage:
+
+- stale historical PASS does not satisfy current state;
+- stale historical FAIL does not block a later authenticated current PASS;
+- forged current PASS fails;
+- wrong artifact hash fails;
+- wrong predecessor/checkpoint fails;
+- missing command provenance fails;
+- incomplete execution fails;
+- unrelated task evidence fails;
+- duplicate ambiguous current candidates fail closed unless policy explicitly resolves precedence.
+
+---
+
+# 11. Handle missing selected-validation records
+
+For every Class A diagnostic caused by a missing selected record:
+
+Determine whether:
+
+### Case 1
+Fresh durable evidence already exists but is unselected.
+
+Repair selection.
+
+### Case 2
+Fresh successful execution occurred but no durable receipt was issued.
+
+Use canonical receipt issuance from that gate, rerunning the specific gate only if necessary.
+
+### Case 3
+Validation never actually ran.
+
+Run that exact validation and issue evidence only if it passes.
+
+Do not rerun the entire 1,028-test canonical suite unless required by policy.
+
+---
+
+# 12. Produce a readiness-evidence reconciliation matrix
+
+Create a durable current report under the established readiness-validation reporting area.
+
+For every original Class A diagnostic include:
+
+- original diagnostic;
+- root cause;
+- historical evidence preserved;
+- current evidence selected/issued;
+- exact artifact bindings;
+- exact execution supporting the result;
+- final disposition.
+
+Do not claim overall publication readiness.
+
+---
+
+# 13. Run focused readiness-evidence tests
+
+Add or update tests covering:
+
+- current evidence selection;
+- historical/current coexistence;
+- stale binding rejection;
+- current successor selection;
+- missing receipt rejection;
+- forged PASS rejection;
+- ambiguous candidate rejection;
+- incomplete execution rejection;
+- preservation of historical FAIL;
+- current PASS supersession without mutation.
+
+Run all directly affected evidence/readiness suites.
+
+Stop on first failure.
+
+---
+
+# 14. Run readiness gate fresh
+
+Only after focused evidence tests pass.
+
+Run the same publication-readiness command that produced:
+
+- 74 Class A
+- 36 Class B.
+
+Reclassify from scratch.
+
+Success condition:
+
+**0 Class A diagnostics.**
+
+Do not attempt to eliminate Class B diagnostics.
+
+Report:
+
+- total diagnostics;
+- Class A count;
+- Class B count;
+- exact Class B categories/counts.
+
+If Class A > 0, stop and report the remaining evidence defects.
+
+---
+
+# 15. Re-run canonical validation only if production validation logic changed materially
+
+If the repair changes only:
+
+- readiness evidence selection;
+- evidence issuance;
+- readiness-specific fixtures/reports;
+
+run the focused suites and the readiness gate.
+
+Do not automatically repeat all 1,028 tests.
+
+However, if shared validation/evidence infrastructure used by `make check` changes, rerun:
+
+`make check`
+
+and `make compile`
+
+before declaring pre-staging readiness.
+
+State explicitly which case applies.
+
+---
+
+# 16. Reconfirm semantic/product invariants
+
+Verify all six hashes remain exact and counts unchanged.
+
+No ontology semantics, RowIDs, or assessment dispositions may move.
+
+Any semantic change is a failure.
+
+---
+
+# 17. Reconfirm preservation
+
+Verify:
+
+- 49 governed SOSA-2023 paths unchanged;
+- 27 retained RDF objects unchanged;
+- total retained RDF bytes = 29,443,721;
+- historical receipts unchanged unless a current selector manifest explicitly and legitimately changes;
+- historical FAIL records remain FAIL.
+
+---
+
+# 18. Update candidate inventory
+
+Previous state:
+
+- 534 reviewed paths
+- 473 conditional candidates
+- 61 exclusions
+
+Update only for readiness-evidence reconciliation.
+
+Maintain exclusions:
+
+- 57-file inactive restoration archive;
+- 4 unbound construction/backup artifacts.
+
+Do not add temporary logs or runtime trees.
+
+---
+
+# 19. Determine staging threshold
+
+The change set becomes staging-ready only if:
+
+- 0 Class A readiness diagnostics;
+- required focused validation passes;
+- canonical `make check` remains valid or is rerun successfully if affected;
+- `make compile` remains valid or is rerun successfully if affected;
+- semantic/product hashes unchanged;
+- preservation invariants unchanged.
+
+Class B publication backlog may remain.
+
+---
+
+# 20. Produce the actual staging plan if threshold is reached
+
+Do not stage yet.
+
+Because the change set is validation-coupled, prefer:
+
+## Commit 1 — validated prepared checkpoint
+
+Include the mutually dependent:
+
+- semantic transition;
+- semantic-evolution infrastructure;
+- product/release integration;
+- retained/portable evidence;
+- readiness evidence reconciliation;
+- tests;
+- current durable reports.
+
+## Commit 2 — actual Git-SHA successor binding
+
+Only after Commit 1 is created and its actual SHA is known.
+
+Do not fabricate the future SHA.
+
+If a smaller commit decomposition can independently satisfy the full applicable gates, document it; otherwise keep the checkpoint atomic.
+
+---
+
+# 21. Final integrity
+
+Run:
+
+- `git diff --check`
+- `git diff --stat`
+- `git status --short --branch`
+
+Confirm the index remains empty.
+
+## Final report
+
+Include:
+
+1. all 74 original Class A diagnostics grouped by root cause;
+2. readiness evidence-selection root cause;
+3. records preserved as historical;
+4. records newly issued or selected as current;
+5. validation basis for each current PASS;
+6. evidence-selection implementation changes;
+7. focused evidence/readiness test results;
+8. fresh readiness result;
+9. final Class A count;
+10. final Class B count/categories;
+11. whether canonical `make check`/`make compile` were rerun and why;
+12. semantic/product invariant proof;
+13. SOSA-2023 and retained-evidence preservation;
+14. updated inventory;
+15. staging plan if threshold is reached;
+16. final Git status.
+
+If Class A reaches zero and all required validation remains green, end:
+
+`PRE-STAGING INTEGRATION REVIEW PASSED — CHANGE SET READY FOR STAGING PLAN — NOTHING STAGED OR COMMITTED`
+
+Otherwise end:
+
+`PRE-STAGING INTEGRATION REVIEW INCOMPLETE — NOTHING STAGED OR COMMITTED`

@@ -1,0 +1,6 @@
+{
+  "authentication_errors": [],
+  "first_failure": "full_repository_gate",
+  "receipt": "reports/current-publication-validation/portable-reconciliation-20261028/full_repository_gate.command.json",
+  "returncode": 2
+}

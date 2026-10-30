@@ -438,3 +438,41 @@ make -C src validate-examples
 ```
 
 The checks parse every current-track Turtle example and write only temporary output beneath `src/current-ssn-sosa/build/artifacts/`.
+
+### Authenticated current release expectations
+
+The current-track schema v2 describes the manifest representation. It requires
+integer, nonnegative closure counts and the exact product order; an arbitrary
+schema-valid count is not semantic acceptance. The manifest validator retains
+the checkpoint's exact historical closure expectations when no authenticated
+current release context is active. Retained schema v1 and historical evidence
+are unchanged.
+
+For maintained-current inputs, the builder and checker enter
+`release_context.authenticated_release_expectations`. This authenticates the
+accepted Git identity record, source/target/configuration identities, mixed
+workbook history, and deterministic maintained products before creating package
+output. Canonical formal rendering and the fixed pinned dependency unions then
+supply exact expected formal hashes, sizes, mapping counts, closure counts, and
+profile declaration completions. The context is bound to the release identity
+and input fingerprints, which are checked again after a successful operation.
+No term-specific mapping decisions are encoded in this mechanism.
+
+`fixed_closure_triple_count` counts asserted RDF in the import-free product plus
+pinned dependency union supplied to HermiT. It does not count inferred output.
+Profile checks use that union plus the governed declaration completions. HermiT
+must still pass with zero named unsatisfiable classes. Profile counts are checked
+against the authenticated expectation object; they are not additional schema-v2
+manifest fields.
+
+`governed_closure_axiom_count` counts distinct active mapping identities supplied
+by the product and its project imports, not workbook rows or RDF triples. The
+legacy integrated/CCO value 105 is retained only for historical serialization;
+it was already stale against the checkpoint's 103 active mappings. Current
+release records derive the counts from the selected active mappings (currently
+100 integrated, 29 core, 48 strict, and 100 CCO closure).
+
+Archive and rehearsal operations continue to require full package validation.
+Their subsequent manifest reads use structural/canonical validation only to
+inspect identity, because the isolated package checker has already verified the
+exact semantic contract. Structural reads cannot authorize an archive or release.

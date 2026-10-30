@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/usr/bin/java",
+    "-version"
+  ],
+  "completed_at_utc": "2026-10-30T03:44:16.417003+00:00",
+  "elapsed_seconds": 0.04235350014641881,
+  "execution_status": "completed",
+  "launch_error": null,
+  "log": {
+    "bytes": 160,
+    "path": "reports/current-publication-validation/v2-popen-continuation-20261030/environment-java.log",
+    "sha256": "42bafe9a39f0540426f62ce72e51c395e1bb42fa545e01bc45118397a70427a9"
+  },
+  "pid": 17904,
+  "preparation": {
+    "bytes": 435736,
+    "path": "reports/current-publication-validation/v2-popen-continuation-20261030/preparation.json",
+    "sha256": "37aadedac4f4fa58b79861bf936ce0e30a60382bf61212203f19d11e4e41d1b1"
+  },
+  "returncode": 0,
+  "started_at_utc": "2026-10-30T03:44:16.374679+00:00"
+}

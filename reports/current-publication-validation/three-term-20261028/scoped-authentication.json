@@ -1,0 +1,148 @@
+{
+  "scope": "Transition authenticity and current execution custody; no claim of full semantic or publication PASS",
+  "comparison_baseline": {
+    "path": "reports/current-publication-validation/three-term-20261028/pre-reconciliation-state.json",
+    "sha256": "fc0e627b4c8cdef24aaa743defef8c8a3e447515a292a463d127f6693ae34a26"
+  },
+  "stages": {
+    "documentary_history": {
+      "status": "PASS",
+      "updates": 1
+    },
+    "semantic_history": {
+      "status": "PASS",
+      "tail_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "chain_kinds": {
+        "documentary": 1,
+        "semantic": 1
+      }
+    },
+    "human_decisions_and_current_applicability": {
+      "status": "PASS",
+      "decisions": {
+        "http://www.w3.org/ns/ssn/forProperty": {
+          "outcome": "no_direct_mapping",
+          "record": {
+            "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json",
+            "sha256": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782"
+          }
+        },
+        "http://www.w3.org/ns/ssn/systems/MeasurementRange": {
+          "outcome": "inheritance_sufficient",
+          "record": {
+            "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json",
+            "sha256": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d"
+          }
+        },
+        "http://www.w3.org/ns/ssn/systems/SystemProperty": {
+          "outcome": "inheritance_sufficient",
+          "record": {
+            "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json",
+            "sha256": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5"
+          }
+        }
+      }
+    },
+    "applicability_records": {
+      "status": "PASS",
+      "bound_records": 2
+    },
+    "retained_evidence": {
+      "status": "PASS",
+      "bindings": [
+        {
+          "manifest": "reports/retained-evidence/manifests/2adf99bf936ef2f39d6ed96c48a92a5e74111d83b8cb3d9521e2c679ec1c59ed/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c.json",
+          "snapshot": "reports/retained-evidence/sha256/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c/coms-source-term-coverage.md",
+          "sha256": "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c"
+        },
+        {
+          "manifest": "reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json",
+          "snapshot": "reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md",
+          "sha256": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860"
+        }
+      ]
+    },
+    "semantic_transition": {
+      "status": "PASS",
+      "path": "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json",
+      "sha256": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "removed": [
+        "SubClassOf(<http://www.w3.org/ns/ssn/systems/MeasurementRange> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000034> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> ObjectIntersectionOf(<http://www.w3.org/ns/sosa/Observation> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001819> ObjectIntersectionOf(<http://www.w3.org/ns/ssn/Stimulus> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <https://www.commoncoreontologies.org/ont00000118>)))))))",
+        "SubClassOf(<http://www.w3.org/ns/ssn/systems/SystemProperty> ObjectIntersectionOf(ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <https://www.commoncoreontologies.org/ont00000118>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000144>)))",
+        "SubObjectPropertyOf(ObjectPropertyChain(<https://www.commoncoreontologies.org/ont00001917> <https://www.commoncoreontologies.org/ont00001808>) <http://www.w3.org/ns/ssn/forProperty>)"
+      ],
+      "added": []
+    },
+    "historical_preservation": {
+      "status": "PASS",
+      "custody_files": 135,
+      "retained_files": 4
+    },
+    "current_semantic_execution_custody": {
+      "status": "PASS",
+      "semantic_gate_status": "FAIL",
+      "publication_execution_errors": [
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/aligned-hierarchy.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-00-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-01-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-02-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-03-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-04-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-05-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-06-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-07-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-08-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-09-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-10-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-aligned.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/example-11-source.command.json",
+        "Semantic command did not complete successfully: reports/current-publication-validation/semantic-20261028T154707292811Z/source-hierarchy.command.json"
+      ],
+      "report": {
+        "path": "reports/current-publication-validation/three-term-20261028/semantic.json",
+        "sha256": "dfbf1d7bfc66a8612de94f2ccef12cae8afee4a345f7855f5195b47829e63d32"
+      }
+    },
+    "current_command_execution_custody": {
+      "status": "PASS",
+      "receipts": [
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/assessment.command.json",
+          "sha256": "cfe323c49911e5c3ed9c7d388442172ce46bf51dd2e804d694d2e00f91051046"
+        },
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/source_identity.command.json",
+          "sha256": "d62cede90a19b9ebb2d07c00ddeb0b7dc0b146392e4c47be1f73cdd46379899b"
+        },
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/generation_freshness.command.json",
+          "sha256": "be85a8bc36adc1cfd4b99c2a2a6053ec4bd05306ff095663961d46af3c241436"
+        },
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/sosa_source_version.command.json",
+          "sha256": "899833cde63dcd6ac625679f0e62d9efa2960e0f67788ee61f08734d924be86f"
+        },
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/sosa_products.command.json",
+          "sha256": "16133b9e36028ff42db2851682115a6461df1d1d11cf17e3e7047b1152a2bbf7"
+        },
+        {
+          "path": "reports/current-publication-validation/three-term-20261028/static_checks.command.json",
+          "sha256": "5e7ab5baa668e1360a5f512fa67757fcabc838134b0f4851470b6592f8a9ec14"
+        }
+      ]
+    }
+  },
+  "status": "PASS"
+}

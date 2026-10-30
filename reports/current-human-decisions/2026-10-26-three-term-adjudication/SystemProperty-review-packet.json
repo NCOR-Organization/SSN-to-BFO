@@ -1,0 +1,207 @@
+{
+  "available_alternatives": [
+    "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
+    "Review the inherited source superclass alignment before retaining the additional SystemProperty restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change."
+  ],
+  "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
+  "coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": true,
+    "inherited_routes": [
+      {
+        "inverse_target_expression": false,
+        "mapping_row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+        "source_path": [
+          "ssn-system:SystemProperty rdfs:subClassOf ssn:Property"
+        ],
+        "target": "(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile)",
+        "via_source": "http://www.w3.org/ns/ssn/Property"
+      }
+    ],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "critical_features": [
+    "explicit_blank",
+    "target_category_commitment"
+  ],
+  "current_mapping_state": [
+    {
+      "assertion_status": "explicit_blank",
+      "existing_rationale": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
+      "expression_forms": {},
+      "location": "Sheet1!45",
+      "predicate": "",
+      "provenance": "mapping",
+      "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4",
+      "target": ""
+    }
+  ],
+  "derived_consequences": [],
+  "evidence": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!45",
+    "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty",
+    "imports/cco.ttl",
+    "reports/system-property-process-profile-scope-review.md",
+    "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+  ],
+  "formal_consequences": [
+    "ssn-system:SystemProperty contributes zero mapping axioms; native source axioms remain present."
+  ],
+  "human_question": "Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?",
+  "mapping_property_chains": [],
+  "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
+  "pinned_track_comparison": null,
+  "priority": 1,
+  "recommendation": "Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional SystemProperty restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.",
+  "review_clarifications": [],
+  "review_state": "unreviewed",
+  "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+  "source_semantics": {
+    "assertion_status": "asserted_except_derived_consequences",
+    "contextual_axioms": [
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Accuracy rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Accuracy"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:ActuationRange rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/ActuationRange"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:DetectionLimit rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/DetectionLimit"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Drift rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Drift"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Frequency rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Frequency"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Latency rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Latency"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:MeasurementRange rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/MeasurementRange"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Precision rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Precision"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Resolution rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Resolution"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:ResponseTime rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/ResponseTime"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Selectivity rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Selectivity"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:Sensitivity rdfs:subClassOf ssn-system:SystemProperty",
+        "object": "ssn-system:SystemProperty",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "incoming",
+        "subject": "http://www.w3.org/ns/ssn/systems/Sensitivity"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn-system:SystemCapability rdfs:subClassOf (ssn-system:hasSystemProperty owl:allValuesFrom ssn-system:SystemProperty)",
+        "object": "(ssn-system:hasSystemProperty owl:allValuesFrom ssn-system:SystemProperty)",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "expression_reference",
+        "subject": "http://www.w3.org/ns/ssn/systems/SystemCapability"
+      }
+    ],
+    "definitions": [
+      "An identifiable and observable characteristic that represents the System's ability to operate its primary purpose: a Sensor to make Observations, an Actuator to make Actuations, or a Sampler to make Samplings."
+    ],
+    "derived_consequences": [],
+    "grouped_disjointness": [],
+    "iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+    "label": "System Property",
+    "logical_axioms": [
+      "rdf:type owl:Class",
+      "rdfs:subClassOf (inverse(ssn-system:hasSystemProperty) owl:allValuesFrom ssn-system:SystemCapability)",
+      "rdfs:subClassOf (inverse(ssn-system:hasSystemProperty) owl:minCardinality \"1\"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)",
+      "rdfs:subClassOf ssn:Property"
+    ],
+    "nonlogical_domain_range_notes": [],
+    "property_chains": [],
+    "provenance": "source_native"
+  },
+  "target_semantics": []
+}

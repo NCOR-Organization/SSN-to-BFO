@@ -1,0 +1,17 @@
+F
+======================================================================
+FAIL: test_candidate_commit_must_match_prepared_inventory_exactly (tests.test_current_checkpoint_successor.CheckpointSuccessorTests.test_candidate_commit_must_match_prepared_inventory_exactly)
+----------------------------------------------------------------------
+ValueError: '/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/tmpikiywmq8/reports/current-checkpoint-successors/prepared/73d00c23-59e3-46b0-a7e0-79f5c7a67e72.json' is not in the subpath of '/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/tmpikiywmq8'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_current_checkpoint_successor.py", line 187, in test_candidate_commit_must_match_prepared_inventory_exactly
+    with self.assertRaisesRegex(ValueError, "prepared candidate inventory"):
+AssertionError: "prepared candidate inventory" does not match "'/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/tmpikiywmq8/reports/current-checkpoint-successors/prepared/73d00c23-59e3-46b0-a7e0-79f5c7a67e72.json' is not in the subpath of '/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/tmpikiywmq8'"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.210s
+
+FAILED (failures=1)

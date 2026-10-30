@@ -1,0 +1,21 @@
+{
+  "predecessors": {
+    "semantic": {
+      "path": "reports/current-ssn-sosa-semantic-validation.json",
+      "sha256": "9a72d4a9df6d6ebccb49fb93c9c42b8b18d43405b6ec0340d49abf1f5a2fc58a"
+    },
+    "validation": {
+      "path": "reports/current-publication-validation/commands.json",
+      "sha256": "656557d39e0a2e73888407924ca7bec6f56d4e0640cc0c5f5be920fb41e60ff1"
+    }
+  },
+  "schema_version": 1,
+  "semantic": {
+    "path": "reports/current-publication-validation/readiness-reconciliation-20261029/semantic.json",
+    "sha256": "51fa9ad7b8fda1602123e36600ca483814a1611f2169e0829f93de8ccc0bd926"
+  },
+  "validation": {
+    "path": "reports/current-publication-validation/v2-popen-continuation-20261030/commands.json",
+    "sha256": "20860a19e40ab0b6058bd091b07ba6fea6fe969d57450682004fc178dc9be32d"
+  }
+}

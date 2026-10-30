@@ -1,0 +1,34 @@
+{
+  "authorization": {
+    "bytes": 18128,
+    "path": "tests/fixtures/current-release-authority/release-contract-20261028/authorized-request.txt",
+    "sha256": "39b8a74a08e365f1bc01af08e63cb60fd641304c3aec55afa410a2648cd08c89"
+  },
+  "current_sha256": {
+    "config/release-manifest-schema-v2.json": "99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b",
+    "tests/test_release_manifest.py": "24c26220dd65a7683ca42089b82dec4814c02a75eb7ad52e386a29dc6ffc83c0",
+    "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+    "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+    "tools/rehearse_release.py": "3eb97663a6c8589e4841ca270682fd245afe657ab18e9f535b12a2e62f4c9b6a",
+    "tools/release_archive.py": "00d5954bff06ae3d541ed0edeb579f04966c1bdf3d81f722415e4b45cd7f9c00",
+    "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba"
+  },
+  "historical_predecessor": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+  "historical_sha256": {
+    "config/release-manifest-schema-v2.json": "b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c",
+    "tests/test_release_manifest.py": "6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51",
+    "tools/build_release.py": "3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76",
+    "tools/check_release.py": "3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a",
+    "tools/rehearse_release.py": "737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d",
+    "tools/release_archive.py": "8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974",
+    "tools/release_manifest.py": "89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5"
+  },
+  "profile": "approved-release-implementation-test-fixture-v1",
+  "provenance": {
+    "bytes": 155652,
+    "path": "tests/fixtures/current-release-authority/release-contract-20261028/prior-final-state.json",
+    "sha256": "9db80e1503a73c686a666989d56f1188cd25432fbc870ebaa199db7e575a5125"
+  },
+  "schema_version": 1,
+  "scope": "Test-only regression evidence; not an accepted checkpoint, semantic decision, or readiness certificate."
+}

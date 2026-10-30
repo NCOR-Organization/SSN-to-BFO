@@ -74,15 +74,17 @@ class RobotPropertyChainGenerationPilotTests(unittest.TestCase):
                 self.assertEqual(summary["governed_row_count"], 105)
                 self.assertEqual(
                     summary["attempted_property_chain_rows"],
-                    3,
+                    2,
                 )
-                self.assertEqual(summary["expected_axiom_count"], 3)
-                self.assertEqual(summary["actual_axiom_count"], 3)
+                self.assertEqual(summary["authenticated_active_mapping_count"], 100)
+                self.assertEqual(summary["excluded_blank_rows"], 5)
+                self.assertEqual(summary["expected_axiom_count"], 2)
+                self.assertEqual(summary["actual_axiom_count"], 2)
                 self.assertEqual(summary["robot_return_code"], 0)
                 self.assertEqual(summary["missing_axiom_ids"], [])
                 self.assertEqual(summary["extra_axiom_ids"], [])
                 self.assertEqual(summary["mismatched_axiom_ids"], [])
-                self.assertEqual(summary["declared_property_count"], 11)
+                self.assertEqual(summary["declared_property_count"], 8)
 
             first_artifacts = pilot.artifact_paths(first_root)
             second_artifacts = pilot.artifact_paths(second_root)

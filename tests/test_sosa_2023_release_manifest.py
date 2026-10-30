@@ -5,15 +5,19 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
+import tempfile
 import sys
 import unittest
 from dataclasses import replace
 from pathlib import Path
+from unittest.mock import patch
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import sosa_2023_release_manifest as manifest  # noqa: E402
+import current_retained_evidence as retained  # noqa: E402
 
 
 HASH = "a" * 64
@@ -31,26 +35,12 @@ FORMAL_HASHES = {
         "faba756dc6480c2088cc6ad3e514524736130f90365f1ab7e40c3d909877ca69",
 }
 
-CURRENT_AUTHORITY_HASHES = {
-    "tools/release_manifest.py":
-        "89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5",
-    "config/release-manifest-schema-v2.json":
-        "b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c",
-    "tests/test_release_manifest.py":
-        "6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51",
-    "tools/build_release.py":
-        "3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76",
-    "tools/check_release.py":
-        "3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a",
-    "tools/release_archive.py":
-        "8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974",
-    "tools/rehearse_release.py":
-        "737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d",
-}
-
-
-def sha256(value: bytes) -> str:
-    return hashlib.sha256(value).hexdigest()
+from tests.release_authority_fixture import (  # noqa: E402
+    CURRENT_AUTHORITY_HASHES, HISTORICAL_AUTHORITY_COMMIT,
+    CURRENT_AUTHORITY_FIXTURE, CURRENT_AUTHORITY_FIXTURE_SHA256,
+    approved_current_release_authority, current_release_authority,
+    historical_release_authority, sha256,
+)
 
 
 def file_record(
@@ -801,15 +791,12 @@ class Sosa2023ReleaseManifestTests(unittest.TestCase):
             )
 
     def test_current_release_authorities_remain_byte_locked(self) -> None:
-        for relative, expected in CURRENT_AUTHORITY_HASHES.items():
+        historical_release_authority(REPO_ROOT)
+        current = approved_current_release_authority(REPO_ROOT)
+        for relative in CURRENT_AUTHORITY_HASHES:
             with self.subTest(relative=relative):
-                observed = sha256(
-                    (REPO_ROOT / relative).read_bytes()
-                )
-                self.assertEqual(
-                    observed,
-                    expected,
-                )
+                selected = retained.resolve(REPO_ROOT, relative, current[relative], allow_retained=False)
+                self.assertEqual(sha256(selected.read_bytes()), current[relative])
 
     def test_module_has_no_external_json_schema_dependency(self) -> None:
         source = (
@@ -827,6 +814,135 @@ class Sosa2023ReleaseManifestTests(unittest.TestCase):
             f"from {package_name}",
             source,
         )
+
+
+class CurrentReleaseAuthorityFixtureTests(unittest.TestCase):
+    """Reject tampered current evidence without weakening the historical lock."""
+
+    def setUp(self) -> None:
+        temporary = tempfile.TemporaryDirectory(prefix="release-authority-fixture-")
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        # Read trusted Git objects only. No fixture operation writes Git state.
+        (self.root / ".git").symlink_to(REPO_ROOT / ".git", target_is_directory=True)
+        self.record = json.loads((REPO_ROOT / CURRENT_AUTHORITY_FIXTURE).read_bytes())
+        paths = {*CURRENT_AUTHORITY_HASHES, CURRENT_AUTHORITY_FIXTURE,
+                 *(self.record[key]["path"] for key in ("authorization", "provenance"))}
+        for relative in paths:
+            destination = self.root / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(REPO_ROOT / relative, destination)
+
+    def write_record(self) -> None:
+        (self.root / CURRENT_AUTHORITY_FIXTURE).write_bytes(retained._canonical(self.record))
+
+    def test_historical_and_current_authorities_validate_independently(self) -> None:
+        historical = historical_release_authority(self.root)
+        current = current_release_authority(self.root)
+        self.assertEqual(set(current), set(historical))
+        self.assertEqual(len(current), 7)
+        self.assertTrue(all(current[p] != historical[p] for p in current))
+        # Live changes cannot rewrite or invalidate the independent historical
+        # object check; they must still fail the maintained-current check.
+        (self.root / "tools/release_manifest.py").write_bytes(b"unapproved descendant")
+        self.assertEqual(historical_release_authority(self.root), historical)
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_each_unauthorized_current_file_is_rejected(self) -> None:
+        for relative in CURRENT_AUTHORITY_HASHES:
+            with self.subTest(relative=relative):
+                path = self.root / relative
+                original = path.read_bytes()
+                try:
+                    path.write_bytes(original + b"\n# unauthorized change\n")
+                    with self.assertRaises(ValueError):
+                        current_release_authority(self.root)
+                finally:
+                    path.write_bytes(original)
+
+    def test_correct_filename_with_other_file_bytes_is_rejected(self) -> None:
+        (self.root / "tools/build_release.py").write_bytes((self.root / "tools/check_release.py").read_bytes())
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_task_entry_hash_cannot_self_authorize_changed_bytes(self) -> None:
+        relative = "tools/release_manifest.py"
+        replacement = b"self-authorized replacement"
+        (self.root / relative).write_bytes(replacement)
+        prior_path = self.root / self.record["provenance"]["path"]
+        prior = json.loads(prior_path.read_bytes())
+        prior["repository_hashes"][relative] = sha256(replacement)
+        prior_path.write_bytes(retained._canonical(prior))
+        self.record["current_sha256"][relative] = sha256(replacement)
+        self.record["provenance"].update(sha256=sha256(prior_path.read_bytes()), bytes=prior_path.stat().st_size)
+        self.write_record()
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_wrong_predecessor_is_rejected(self) -> None:
+        self.record["historical_predecessor"] = "0" * 40
+        self.write_record()
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_missing_current_authority_or_required_evidence_is_rejected(self) -> None:
+        # Model C requires reviewed current implementation evidence, not a
+        # fictitious prepared/committed successor record.
+        for relative in (CURRENT_AUTHORITY_FIXTURE, self.record["authorization"]["path"],
+                         self.record["provenance"]["path"]):
+            with self.subTest(relative=relative):
+                path = self.root / relative
+                data = path.read_bytes()
+                try:
+                    path.unlink()
+                    with self.assertRaises(ValueError):
+                        current_release_authority(self.root)
+                finally:
+                    path.write_bytes(data)
+
+    def test_cross_track_schema_substitution_is_rejected(self) -> None:
+        (self.root / "config/release-manifest-schema-v2.json").write_bytes(
+            (REPO_ROOT / "config/sosa-2023-release-manifest-schema-v1.json").read_bytes())
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_historical_blob_tampering_is_rejected(self) -> None:
+        with patch.object(retained, "_git_source", return_value=("0" * 40, b"wrong historical bytes")):
+            with self.assertRaisesRegex(ValueError, "historical release-authority hash mismatch"):
+                historical_release_authority(self.root)
+
+    def test_historical_and_current_fixture_tampering_is_rejected(self) -> None:
+        relative = "tools/release_manifest.py"
+        for field in ("historical_sha256", "current_sha256"):
+            with self.subTest(field=field):
+                original = self.record[field][relative]
+                try:
+                    self.record[field][relative] = "0" * 64
+                    self.write_record()
+                    with self.assertRaises(ValueError):
+                        current_release_authority(self.root)
+                finally:
+                    self.record[field][relative] = original
+                    self.write_record()
+
+    def test_authorizing_request_tampering_is_rejected(self) -> None:
+        (self.root / self.record["authorization"]["path"]).write_bytes(b"replacement authorization")
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_symlink_cannot_supply_even_correct_current_bytes(self) -> None:
+        path = self.root / "tools/release_manifest.py"
+        path.unlink()
+        path.symlink_to(REPO_ROOT / "tools/release_manifest.py")
+        with self.assertRaises(ValueError):
+            current_release_authority(self.root)
+
+    def test_historical_commit_is_fixed_independently_of_live_head(self) -> None:
+        with patch.object(retained, "_git_source", wraps=retained._git_source) as read:
+            historical_release_authority(self.root)
+        self.assertEqual(read.call_count, 7)
+        self.assertEqual({call.args[2] for call in read.call_args_list}, {HISTORICAL_AUTHORITY_COMMIT})
 
 
 if __name__ == "__main__":

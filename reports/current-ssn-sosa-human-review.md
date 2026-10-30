@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**77 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**74 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -51,7 +51,6 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 4 | `ssn-system:Frequency` | Does the smallest time between consecutive observations justify the current commitment to Function with an actual PlannedAct having a Frequency process part prescribed by a function specification, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:Latency` | Does elapsed time before an observation result is available justify the current commitment to Function with an actual PlannedAct, both Cause and Effect process parts, and a prescribed occupied TemporalRegion, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:MaintenanceSchedule` | Does maintenance needed to keep a system operating justify the current commitment to Disposition with an actual Change affecting a dependent continuant that participates in actual maintenance with a design-prescribed Frequency, or does it describe a property/capability without those actual individuals? |
-| 4 | `ssn-system:MeasurementRange` | Does the set of values the Sensor can return justify the current commitment to Function with an actual Observation caused by a specification-prescribed Stimulus, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:OperatingPowerRange` | Does power conditions for operation justify the current commitment to Function with an actual Process whose Power part is prescribed by an ArtifactDesign, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:OperatingProperty` | Does an identifiable characteristic of normal operation justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactDesign, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:OperatingRange` | Does conditions within which operation is expected justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactDesign, or does it describe a property/capability without those actual individuals? |
@@ -64,10 +63,8 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 4 | `ssn-system:SurvivalRange` | Does conditions under which a System can be exposed without damage justify the current commitment to Function with an actual realization and causal/design Affordance chain, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:SystemCapability` | Does capability of a system under conditions justify the current commitment to SDC-or-ProcessProfile and an actual PerformanceSpecification describing its condition, or does it describe a property/capability without those actual individuals? |
 | 4 | `ssn-system:SystemLifetime` | Does useful system life justify the current commitment to Function with an actual operational stasis caused by a Process realizing a design-prescribed Affordance, or does it describe a property/capability without those actual individuals? |
-| 4 | `ssn-system:SystemProperty` | Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals? |
 | 6 | `sosa:hosts` | Does every bearer-realization-participant path establish hosting, and does the current chain direction match the intended platform-support interpretation? |
 | 6 | `sosa:isHostedBy` | Does every participates_in-realizes-inheres_in path establish being hosted, and is it the intended inverse of the hosts-chain interpretation? |
-| 6 | `ssn:forProperty` | Does being described by any information entity about a Property suffice for the source forProperty relation, across sensors and capability/range descriptions? |
 | 7 | `sosa:observedProperty` | Does the observed Property satisfy CCO has_input’s necessary-process-input meaning in every Observation, rather than merely being what is measured? |
 | 7 | `sosa:phenomenonTime` | Must the time to which a result applies equal the temporal region occupied by the observation/actuation/sampling itself? |
 | 7 | `sampling:hasSampleRelationship` | Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation? |
@@ -207,7 +204,6 @@ Asserted premises:
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!45`: `sosa:isObservedBy` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:isObservedBy is a capability-level relation from a Property to a Sensor able to observe it. Reversing BFO/CCO process relations still produces a Process relatum rather than a Sensor, while capability and disposition relations do not relate the Property being sensed to the bearer of the capability. No reviewed BFO/CCO relation preserves the SOSA semantics and signature. Comparison basis: same lexical term.
 
@@ -452,7 +448,6 @@ Asserted premises:
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!68`: `sosa:observes` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:observes is a capability-level relation from a Sensor to a Property that the sensor is capable of sensing. BFO/CCO process relations require a Process subject, while CCO capability and disposition relations relate a bearer to an Agent Capability or Disposition rather than to the Property that capability concerns. No reviewed BFO/CCO relation preserves the SOSA semantics and signature. Comparison basis: same lexical term.
 
@@ -1012,7 +1007,6 @@ Asserted context (actual axiom subject and direction retained):
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Are a PlannedAct, an actual prescribed Procedure, and an output Sample jointly sufficient for Sampling rather than merely necessary?
 
@@ -1410,9 +1404,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native` / asserted: `ssn:Output rdfs:subClassOf (inverse(ssn:hasOutput) owl:allValuesFrom sosa:Procedure)`.
 - `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn:implements owl:allValuesFrom sosa:Procedure)`.
 
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet1!15`: `sosa:Procedure` — `active`, `rdfs:subClassOf` cco:ont00000965. Map sosa:Procedure to the stable CCO class IRI cco:ont00000965. In the explicitly selected CCO target snapshot at upstream commit 010c99847a856e2fb70eb1b1b1287d19556c9290, this class is labelled Prescriptive Information Content Entity; the repository-wide current CCO dependency labels the same stable IRI Directive Information Content Entity. Using the canonical ont00000965 token avoids label-dependent resolution. Retain only the subclass mapping and no additional cco:prescribes some bfo:Process restriction because a reusable SOSA Procedure does not require an actually prescribed Process. Comparison basis: same lexical term.
 
 **Human decision:** Does every reusable Procedure prescribe an actual Process, or does the source support only its information-content category?
@@ -1491,7 +1482,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -1528,7 +1518,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does the range of actuation values justify the current commitment to Function and an actual Actuation producing a specifically dependent continuant under an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?
 
@@ -1563,7 +1552,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does total useful battery life justify the current commitment to Function, an actual operational stasis containing Power, and a causal process realizing a design-prescribed Affordance, or does it describe a property/capability without those actual individuals?
 
@@ -1601,7 +1589,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native` / asserted: `ssn-system:SystemCapability rdfs:subClassOf (ssn-system:inCondition owl:allValuesFrom ssn-system:Condition)`.
 
 **Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -1638,7 +1625,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -1677,7 +1663,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -1714,7 +1699,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does the smallest time between consecutive observations justify the current commitment to Function with an actual PlannedAct having a Frequency process part prescribed by a function specification, or does it describe a property/capability without those actual individuals?
 
@@ -1749,7 +1733,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does elapsed time before an observation result is available justify the current commitment to Function with an actual PlannedAct, both Cause and Effect process parts, and a prescribed occupied TemporalRegion, or does it describe a property/capability without those actual individuals?
 
@@ -1784,7 +1767,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does maintenance needed to keep a system operating justify the current commitment to Disposition with an actual Change affecting a dependent continuant that participates in actual maintenance with a design-prescribed Frequency, or does it describe a property/capability without those actual individuals?
 
@@ -1795,41 +1777,6 @@ Source advisory signature: none recorded
 **Proposed recommendation:** Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional MaintenanceSchedule restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!19`; `imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MaintenanceSchedule`; `imports/cco.ttl`; `reports/system-property-process-profile-scope-review.md`; `reports/ssn-systems-domain-range-operationalization-evaluation.md`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
-
-## ssn-system:MeasurementRange
-
-State: **unreviewed**; priority 4; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!43` / `urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db`: `rdfs:subClassOf` bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification))))).
-
-**Source semantics:** The set of values that the Sensor can return as the Result of an Observation under the defined Conditions.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (inverse(ssn-system:hasSystemProperty) owl:allValuesFrom (inverse(ssn-system:hasSystemCapability) owl:allValuesFrom sosa:Sensor)); rdfs:subClassOf ssn-system:SystemProperty
-
-Source advisory signature: none recorded
-
-**Target semantics:** `bfo:BFO_0000034` (function; asserted_target_expression; glossary); `bfo:BFO_0000054` (has realization; asserted_target_expression; glossary); `cco:ont00000118` (Artifact Function Specification; asserted_target_expression; glossary); `cco:ont00001819` (caused by; asserted_target_expression; glossary); `cco:ont00001920` (prescribed by; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn-system:MeasurementRange satisfies bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification))))); the reverse classification is not asserted. Each 'some' requires at least one actual filler; this is not merely a capability or possible realization.
-
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
-- `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
-**Human decision:** Does the set of values the Sensor can return justify the current commitment to Function with an actual Observation caused by a specification-prescribed Stimulus, or does it describe a property/capability without those actual individuals?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review the inherited source superclass alignment before retaining the additional MeasurementRange restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
-
-**Proposed recommendation:** Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional MeasurementRange restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!43`; `imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MeasurementRange`; `imports/cco.ttl`; `reports/system-property-process-profile-scope-review.md`; `reports/ssn-systems-domain-range-operationalization-evaluation.md`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
 
@@ -1854,7 +1801,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does power conditions for operation justify the current commitment to Function with an actual Process whose Power part is prescribed by an ArtifactDesign, or does it describe a property/capability without those actual individuals?
 
@@ -1890,9 +1836,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native` / asserted: `ssn-system:MaintenanceSchedule rdfs:subClassOf ssn-system:OperatingProperty`.
 - `source_native` / asserted: `ssn-system:OperatingPowerRange rdfs:subClassOf ssn-system:OperatingProperty`.
 - `source_native` / asserted: `ssn-system:OperatingRange rdfs:subClassOf (ssn-system:hasOperatingProperty owl:allValuesFrom ssn-system:OperatingProperty)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does an identifiable characteristic of normal operation justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactDesign, or does it describe a property/capability without those actual individuals?
 
@@ -1932,9 +1875,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native` / asserted: `ssn-system:OperatingProperty rdfs:subClassOf (inverse(ssn-system:hasOperatingProperty) owl:allValuesFrom ssn-system:OperatingRange)`.
 - `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn-system:hasOperatingRange owl:allValuesFrom ssn-system:OperatingRange)`.
 
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
 **Human decision:** Does conditions within which operation is expected justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactDesign, or does it describe a property/capability without those actual individuals?
 
 **Alternatives:**
@@ -1970,7 +1910,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -2009,7 +1948,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -2048,7 +1986,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does time from stimulus change to settled result justify the current commitment to Function and an actual PlannedAct with Cause/Effect parts, using the same target pattern as Latency, or does it describe a property/capability without those actual individuals?
 
@@ -2085,7 +2022,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does distinguishing a Property from other influences justify the current commitment to Function with an actual PlannedAct and a participating Continuant prescribed by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?
 
@@ -2122,7 +2058,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -2164,7 +2099,6 @@ Asserted context (actual axiom subject and direction retained):
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does extent of useful life under specified conditions justify the current commitment to Function with an actual realization caused by another Process realizing a design-prescribed Affordance, or does it describe a property/capability without those actual individuals?
 
@@ -2207,7 +2141,6 @@ Asserted context (actual axiom subject and direction retained):
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does conditions under which a System can be exposed without damage justify the current commitment to Function with an actual realization and causal/design Affordance chain, or does it describe a property/capability without those actual individuals?
 
@@ -2246,7 +2179,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn-system:hasSystemCapability owl:allValuesFrom ssn-system:SystemCapability)`.
 
 **Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 - `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
 - `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
 
@@ -2283,7 +2215,6 @@ Source advisory signature: none recorded
 **Relevant property chains (ordered path → superproperty):**
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Human decision:** Does useful system life justify the current commitment to Function with an actual operational stasis caused by a Process realizing a design-prescribed Affordance, or does it describe a property/capability without those actual individuals?
 
@@ -2294,54 +2225,6 @@ Source advisory signature: none recorded
 **Proposed recommendation:** Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional SystemLifetime restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!30`; `imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemLifetime`; `imports/cco.ttl`; `reports/system-property-process-profile-scope-review.md`; `reports/ssn-systems-domain-range-operationalization-evaluation.md`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
-
-## ssn-system:SystemProperty
-
-State: **unreviewed**; priority 4; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!45` / `urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4`: `rdfs:subClassOf` (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification).
-
-**Source semantics:** An identifiable and observable characteristic that represents the System's ability to operate its primary purpose: a Sensor to make Observations, an Actuator to make Actuations, or a Sampler to make Samplings.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (inverse(ssn-system:hasSystemProperty) owl:allValuesFrom ssn-system:SystemCapability); rdfs:subClassOf (inverse(ssn-system:hasSystemProperty) owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf ssn:Property
-
-Source advisory signature: none recorded
-
-**Target semantics:** `bfo:BFO_0000020` (specifically dependent continuant; asserted_target_expression; glossary); `bfo:BFO_0000144` (Process Profile; asserted_target_expression; glossary); `cco:ont00000118` (Artifact Function Specification; asserted_target_expression; glossary); `cco:ont00001920` (prescribed by; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn-system:SystemProperty satisfies (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification); the reverse classification is not asserted. Each 'some' requires at least one actual filler; this is not merely a capability or possible realization.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `ssn-system:Accuracy rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:ActuationRange rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:DetectionLimit rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Drift rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Frequency rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Latency rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:MeasurementRange rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Precision rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Resolution rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:ResponseTime rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Selectivity rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:Sensitivity rdfs:subClassOf ssn-system:SystemProperty`.
-- `source_native` / asserted: `ssn-system:SystemCapability rdfs:subClassOf (ssn-system:hasSystemProperty owl:allValuesFrom ssn-system:SystemProperty)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
-**Human decision:** Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review the inherited source superclass alignment before retaining the additional SystemProperty restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
-
-**Proposed recommendation:** Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional SystemProperty restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!45`; `imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty`; `imports/cco.ttl`; `reports/system-property-process-profile-scope-review.md`; `reports/ssn-systems-domain-range-operationalization-evaluation.md`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
 
@@ -2427,49 +2310,6 @@ Additional route evidence: [{"mapping_row_id": "urn:uuid:3af8734c-ac86-46b0-8c0c
 **Proposed recommendation:** Retain the artifact during review. Retain the inverse incoming chain if hosting sufficiency is defended; otherwise review both chain heads together.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!19`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/isHostedBy`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/isHostedBy`; `imports/cco.ttl`; `reports/hosts-implementedby-complex-mapping-review.md`; `reports/isHostedBy-hosts-full-closure-analysis.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## ssn:forProperty
-
-State: **unreviewed**; priority 6; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!49` / `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`: `owl:propertyChainAxiom` cco:described_by o cco:is_about.
-
-**Source semantics:** A relation between some aspect of an entity and a Property.
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: none recorded
-
-**Target semantics:** `cco:ont00001808` (is about; asserted_target_expression; glossary); `cco:ont00001917` (described by; asserted_target_expression; glossary)
-
-**Logical consequences:** A path cco:described_by o cco:is_about from x to y entails ssn:forProperty(x,y). The axiom does not decompose an arbitrary ssn:forProperty edge into that path and does not itself give ssn:forProperty a target superproperty.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Actuator rdfs:subClassOf (ssn:forProperty owl:allValuesFrom sosa:ActuatableProperty)`.
-- `source_native` / asserted: `sosa:observes rdfs:subPropertyOf ssn:forProperty`.
-- `source_native` / asserted: `ssn-system:SystemCapability rdfs:subClassOf (ssn:forProperty owl:allValuesFrom ssn:Property)`.
-- `source_native` / asserted: `ssn:Deployment rdfs:subClassOf (ssn:forProperty owl:allValuesFrom ssn:Property)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-- `target_native`: `bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980`.
-- `target_native`: `cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!19`: `sosa:forProperty` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:forProperty relates a Procedure or System to a Property that it acts on or observes. CCO aboutness and descriptive relations concern Information Content Entities, capability and disposition relations relate bearers to realizable entities, and process participation or affect relations have incompatible signatures. The previously proposed cco:described_by o cco:is_about chain also does not entail the source acts-on-or-observes semantics. Comparison basis: local-name comparison only; distinct namespace/source version.
-
-**Human decision:** Does being described by any information entity about a Property suffice for the source forProperty relation, across sensors and capability/range descriptions?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain the incoming described_by o is_about chain only if sufficient; do not claim it maps arbitrary source forProperty or observes edges outward.
-
-**Proposed recommendation:** Retain the artifact during review. Retain the incoming described_by o is_about chain only if sufficient; do not claim it maps arbitrary source forProperty or observes edges outward.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!49`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/forProperty`; `imports/cco.ttl`; `reports/observes-upper-mapping-decision.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
@@ -2567,9 +2407,6 @@ Source advisory signature: <http://schema.org/domainIncludes> sosa:Sample; <http
 
 **Logical consequences:** Every sampling:hasSampleRelationship(x,y) entails cco:is_subject_of(x,y), including target domain/range and superproperty consequences.
 
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!5`: `sampling:hasSampleRelationship` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sampling:hasSampleRelationship links a SOSA Sample to a reified sampling:SampleRelationship resource that records a relationship in the SOSA Sampling model. The reviewed BFO/CCO relations express aboutness, affiliation, parthood, dependence, participation, or other substantive ontological relations rather than this model-specific link to a relationship-description resource. No reviewed target relation preserves the source relata and semantics. Comparison basis: same lexical term.
 
 **Human decision:** Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?
@@ -2602,9 +2439,6 @@ Source advisory signature: <http://schema.org/domainIncludes> sampling:SampleRel
 
 **Logical consequences:** Every sampling:natureOfRelationship(x,y) entails cco:is_about(x,y), including target domain/range and superproperty consequences.
 
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
-
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!6`: `sampling:natureOfRelationship` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sampling:natureOfRelationship links a reified SampleRelationship to an indication of its RelationshipNature. The source relation does not entail that the nature indicator is an Information Content Entity, measurement, description, or specifically dependent continuant of the relationship. CCO descriptive, measurement, aboutness, and BFO dependence relations therefore impose unsupported typing or stronger semantics. Comparison basis: same lexical term.
 
 **Human decision:** Does connecting a relationship to its nature express CCO aboutness between information content and its subject, or classify the relationship instead?
@@ -2636,9 +2470,6 @@ Source advisory signature: <http://schema.org/domainIncludes> sampling:SampleRel
 **Target semantics:** `cco:ont00001808` (is about; asserted_target_expression; glossary)
 
 **Logical consequences:** Every sampling:relatedSample(x,y) entails cco:is_about(x,y), including target domain/range and superproperty consequences.
-
-**Relevant property chains (ordered path → superproperty):**
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!7`: `sampling:relatedSample` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sampling:relatedSample links a reified SampleRelationship resource to the related SOSA Sample. This is a structural relation in the SOSA Sampling relationship model rather than an assertion that the SampleRelationship is an Information Content Entity about the Sample, a process involving it, or a realizable entity realized by it. The reviewed BFO/CCO candidates therefore have incompatible relata or semantic commitments. Comparison basis: same lexical term.
 
@@ -2679,7 +2510,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
 - `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
 - `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!35`: `sosa:implementedBy` — `active`, `owl:propertyChainAxiom` cco:prescribes o cco:has_agent. Replace the misdirected chain with cco:prescribes o cco:has_agent. The pinned CCO confirms that prescribes is inverse to prescribed_by and has_agent is inverse to agent_in. Comparison basis: local-name comparison only; distinct namespace/source version.
 
@@ -2724,7 +2554,6 @@ Asserted context (actual axiom subject and direction retained):
 - `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
 - `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
 - `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-- `mapping`: `cco:ont00001917 o cco:ont00001808 -> ssn:forProperty` (RowID `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`).
 
 **Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!36`: `sosa:implements` — `active`, `owl:propertyChainAxiom` cco:agent_in o cco:prescribed_by. Replace the category-incompatible chain with cco:agent_in o cco:prescribed_by. This follows the path from a system through an execution in which it is an agent to the procedure prescribing that execution. Comparison basis: local-name comparison only; distinct namespace/source version.
 
@@ -3982,17 +3811,6 @@ Asserted context (actual axiom subject and direction retained):
 - `target_native` / asserted: `cco:ont00001963 rdfs:subPropertyOf cco:ont00001904`.
 - `target_native` / asserted: `cco:ont00001964 rdfs:subPropertyOf cco:ont00001904`.
 - `target_native` / asserted: `cco:ont00001965 rdfs:subPropertyOf cco:ont00001904`.
-
-Target-native chains: bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980; cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884
-
-### cco:ont00001917 — described by
-
-x described_by y iff y is an instance of Information Content Entity, and x is an instance of Entity, such that y is about the characteristics by which y can be recognized or visualized.
-
-owl:inverseOf cco:ont00001982; rdf:type owl:ObjectProperty; rdfs:range cco:ont00000853; rdfs:subPropertyOf cco:ont00001801
-
-Asserted context (actual axiom subject and direction retained):
-- `target_native` / asserted: `cco:ont00001904 rdfs:subPropertyOf cco:ont00001917`.
 
 Target-native chains: bfo:BFO_0000178 o cco:ont00001982 -> cco:ont00001980; cco:ont00001917 o bfo:BFO_0000176 -> cco:ont00001884
 

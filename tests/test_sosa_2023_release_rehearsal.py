@@ -17,6 +17,9 @@ from pathlib import Path
 from unittest import mock
 
 
+from tests import release_authority_fixture as authority
+
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
@@ -306,17 +309,14 @@ class Sosa2023ReleaseRehearsalTests(unittest.TestCase):
                 "f8c21ceabd0043e882f1cb217e8debf91e5c24b431d9ca0db55070cfc8e488fb",
         }
 
+        roles = {
+            "tools/rehearse_release.py": "current_release_rehearsal",
+            "tests/test_release_rehearsal.py": "current_release_rehearsal_regressions",
+        }
         for relative, digest in expected.items():
             with self.subTest(path=relative):
-                self.assertEqual(
-                    hashlib.sha256(
-                        (
-                            REPO_ROOT
-                            / relative
-                        ).read_bytes()
-                    ).hexdigest(),
-                    digest,
-                )
+                identities = authority.authenticate_role(REPO_ROOT, roles[relative], relative)
+                self.assertEqual(identities["historical"], digest)
 
     def test_all_nonbinding_definitions_match_current_rehearsal(self) -> None:
         intentionally_different = {

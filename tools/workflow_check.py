@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -50,6 +51,7 @@ COMPILE_COMMAND = [
     "tests/test_release_context.py",
     "tests/test_release_rendering.py",
     "tests/test_release_manifest.py",
+    "tests/test_release_contract.py",
     "tests/test_build_release.py",
     "tests/test_release_archive.py",
     "tests/test_release_rehearsal.py",
@@ -221,6 +223,99 @@ def run_compile_check(state: WorkflowState) -> None:
         shutil.rmtree(cache_directory, ignore_errors=True)
 
 
+def _policy_text(text: str) -> str:
+    """Normalize presentation only; do not infer synonyms or reorder words."""
+    return " ".join(text.replace("`", "").replace("*", "").casefold().split())
+
+
+def _policy_section(document: str, heading: str) -> str:
+    lines = document.splitlines()
+    headings = [
+        (index, len(match[1]), _policy_text(match[2]))
+        for index, line in enumerate(lines)
+        if (match := re.fullmatch(r"(#{1,6})\s+(.+?)\s*", line))
+    ]
+    matches = [(index, level) for index, level, title in headings
+               if title == _policy_text(heading)]
+    if len(matches) != 1:
+        raise ValueError(f"expected one policy heading: {heading!r}")
+    start, level = matches[0]
+    end = next((index for index, depth, _ in headings
+                if index > start and depth <= level), len(lines))
+    return "\n".join(lines[start + 1:end])
+
+
+def publication_policy_issues(root: Path) -> list[str]:
+    """Check governed track separation and bounded, current policy sections.
+
+    The canonical scope loader authenticates the separate SOSA-2023 package
+    decision against source identity and product-role policy. Retired-path
+    checks below enforce the absence of current-track development catalogs.
+    Documentation checks use anchors and explicit assertions, not fuzzy prose
+    similarity. Historical lifecycle reports are not current policy authority.
+    """
+    from sosa_release_scope import load_release_scope
+
+    try:
+        scope = load_release_scope(root / "config/sosa-release-scope.toml")
+    except (OSError, ValueError, RuntimeError) as exc:
+        return [f"config/sosa-release-scope.toml: {exc}"]
+    alias = scope.development_alias.casefold()
+    issues: list[str] = []
+    catalog = root / "src" / scope.development_alias / "catalog-v001.xml"
+    if catalog.is_symlink() or not catalog.is_file():
+        issues.append(f"{catalog.relative_to(root)}: missing governed development catalog")
+    sections = {
+        "docs/VALIDATION-AND-RELEASES.md": "Dependency and catalog policy",
+        "reports/coms-automatic-validation-setup.md": "Placeholder And Catalog Migration",
+        "src/current-ssn-sosa/docs/README.md": "Current SSN/SOSA source notes",
+    }
+    negative_catalog = re.compile(
+        r"\b(?:(?:does not require (?:a|any)|requires no) development xml catalog"
+        r"|no development xml catalog is required)\b"
+    )
+    positive_catalog = re.compile(
+        r"\b(?:requires|needs|depends on) (?:(?:a|an|the) )?development xml catalog\b"
+        r"|(?<!no )\bdevelopment xml catalog is required\b"
+    )
+    for relative, heading in sections.items():
+        try:
+            section = _policy_section((root / relative).read_text(encoding="utf-8"), heading)
+        except (OSError, ValueError) as exc:
+            issues.append(f"{relative}: {exc}")
+            continue
+        paragraphs = [_policy_text(part) for part in re.split(r"\n\s*\n", section)
+                      if part.strip()]
+        current = [p for p in paragraphs if (
+            "current ssn/sosa" in p or (
+                relative == "src/current-ssn-sosa/docs/README.md"
+                and "validation resolves the maintained project modules" in p
+            )
+        )]
+        if not any(negative_catalog.search(p.split(alias)[0]) for p in current):
+            issues.append(f"{relative}: current track must explicitly require no development XML catalog")
+        if any(positive_catalog.search(p) for p in current):
+            issues.append(f"{relative}: contradictory current-track development catalog requirement")
+        separate = [p for p in paragraphs if alias in p]
+        track_statements = [sentence for p in separate
+                            for sentence in re.split(r"(?<=[.!?])\s+", p)
+                            if alias in sentence]
+        if not any(re.search(r"\bseparate(?:ly)?\b", p)
+                   and re.search(r"\b(?:maintained|governed)\b", p) for p in track_statements):
+            issues.append(f"{relative}: {alias} must be a separately maintained/governed track")
+        if any(re.search(r"\b(?:inactive|(?:not|no longer) (?:a )?(?:separately? )?(?:maintained|governed|separate))\b", p)
+               for p in separate):
+            issues.append(f"{relative}: obsolete or contradictory {alias} lifecycle policy")
+        if "sosa-2023" not in _policy_text(section):
+            issues.append(f"{relative}: missing separate SOSA-2023 source identity context")
+        formal = [p for p in paragraphs if "formal" in p and "catalog" in p]
+        if not any("package-relative" in p and "package" in p for p in formal):
+            issues.append(f"{relative}: formal package catalog must be separately described as package-relative")
+        if any(re.search(r"\b(?:not|no longer) (?:a )?package-relative\b", p) for p in formal):
+            issues.append(f"{relative}: contradictory formal package catalog policy")
+    return issues
+
+
 def check_release_tooling_integration() -> None:
     """Fail early when the release archive/rehearsal gates drift out of the workflow."""
 
@@ -259,7 +354,6 @@ def check_release_tooling_integration() -> None:
             "tools/rehearse_release.py",
             "check-release-archive",
             "check-release-rehearsal",
-            "No development XML catalog is required",
         ),
         "reports/coms-automatic-validation-setup.md": (
             "tools/release_archive.py",
@@ -267,9 +361,10 @@ def check_release_tooling_integration() -> None:
             "check-release-archive",
             "check-release-rehearsal",
             "Placeholder And Catalog Migration",
-            "No development XML catalog is required",
         ),
         "reports/publication-product-and-import-policy.md": (
+            # This retained lifecycle report describes the historical migration,
+            # not the current activation state of the separately governed track.
             "clean-checkout rehearsal",
             "USTAR",
             "Retired Current Scaffold",
@@ -277,8 +372,6 @@ def check_release_tooling_integration() -> None:
         ),
         "src/current-ssn-sosa/docs/README.md": (
             "COMS.xlsx",
-            "requires no development XML catalog",
-            "`sosa-next` scaffold remains intentionally inactive",
         ),
         "tests/test_build_release.py": (
             "notes_fixture_state",
@@ -292,6 +385,7 @@ def check_release_tooling_integration() -> None:
         for value in required_values:
             if value not in content:
                 issues.append(f"{relative}: missing {value!r}")
+    issues.extend(publication_policy_issues(REPO_ROOT))
     synthetic_notes = REPO_ROOT / "release-notes" / "SYNTHETIC-2099-01-02.md"
     if synthetic_notes.is_symlink() or not synthetic_notes.is_file():
         issues.append("release-notes/SYNTHETIC-2099-01-02.md: missing committed regular fixture")

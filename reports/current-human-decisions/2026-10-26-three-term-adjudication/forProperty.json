@@ -1,0 +1,75 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+    "sha256": "c6a9d6a272574d7505ab9333794947f985f4723f2600dfb12dd8f8bd8a3caebb"
+  },
+  "assessment_outcome": "no_direct_mapping",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json",
+    "record_sha256": "85b17751ea787c83db8f4114c70926813376d084e2c772012119a0ce966ab300",
+    "sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689"
+  },
+  "authority_scope": "New explicit human decision after fresh semantic adjudication. Agreement with historical July dispositions is corroborative only and is not authority for this transition.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "decision_basis": "semantic_rejection",
+  "decision_date": "2026-10-26",
+  "decision_id": "urn:uuid:d3b33466-7a93-4baf-ace4-e05bdb441079",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet2!49",
+    "imports/ssn.ttl#http://www.w3.org/ns/ssn/forProperty",
+    "imports/cco.ttl",
+    "reports/observes-upper-mapping-decision.md",
+    "mappings/SOSA-next-to-BFO-COMS.xlsx",
+    "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt"
+  ],
+  "explicit_no_direct_mapping_adopted": true,
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": false,
+    "direct_mapping_row_ids": [],
+    "explicit_blank": true,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": true,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+    "source_kind": "object_property",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "f9df1d714a0de06ca1cba4a61bb13684884d957ae978b2b3319f9ae7c509e2a3",
+  "formal_mapping_assertions": [],
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+  ],
+  "question_response": "Finalize no_direct_mapping. `ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+  "rationale": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
+  "review_packet_scope": "Reconstructed approved-candidate packet using the retained unresolved assessment question and the exact approved workbook state. This is not represented as a packet that existed before human adjudication.",
+  "review_packet_snapshot": {
+    "item_sha256": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
+    "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json",
+    "sha256": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87"
+  },
+  "review_question": "Does being described by any information entity about a Property suffice for the source forProperty relation, across sensors and capability/range descriptions?",
+  "review_state": "final",
+  "review_timestamp": "2026-10-26T06:46:36+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "schema_version": 1,
+  "separate_semantic_conclusion": "No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain ssn:forProperty as a source-native relation without a direct BFO/CCO mapping.",
+  "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+  "timestamp_scope": "Encoding timestamp for the explicit human adjudication dated 2026-10-26; not an inferred historical review timestamp."
+}

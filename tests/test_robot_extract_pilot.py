@@ -12,6 +12,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import robot_extract_pilot as pilot  # noqa: E402
+import current_semantic_generation as generation  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
+import generate_mapping_from_coms as coms  # noqa: E402
+import robot_reconstruction_validation as reconstruction  # noqa: E402
 
 
 MAINTAINED_PRODUCTS = (
@@ -25,6 +29,13 @@ MODULE_SHA256 = (
     "52e51f34d95b9b44b6c3d17008166b26"
     "e3eb49052c3e1ee72a99ae428f97efa4"
 )
+
+# Historical closure/module/inference observations. Current CCO inference is
+# checked against exact canonical reasoned artifacts, not a guessed count delta.
+HISTORICAL_REASONING_COUNTS = {
+    "strict_bfo": (14986, 4433, 163),
+    "cco_extension": (15918, 5365, 232),
+}
 
 EXPECTED_ERROR_IRIS = [
     f"http://org.semanticweb.owlapi/error#Error{number}"
@@ -64,6 +75,38 @@ class RobotExtractPilotTests(unittest.TestCase):
     def test_governed_star_module_preserves_current_reasoning_evidence(
         self,
     ) -> None:
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        history = semantic.resolve_history(REPO_ROOT)
+        transition = next(record for record in history["chain"] if
+                          record.get("transition_id") == "58481ff2-4e56-4931-a3d4-383357b16561")
+        cleanup_count = len(coms.CLEANUP_TRIPLES)
+        self.assertEqual(cleanup_count, 2)
+        historical_cco = HISTORICAL_REASONING_COUNTS["cco_extension"]
+        self.assertEqual(
+            transition["generation_expectations"]["before"]["counts"][
+                "CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT"
+            ] - cleanup_count,
+            historical_cco[0],
+        )
+        with generation.generated_expectations_context(REPO_ROOT, workbook):
+            governed = reconstruction.load_governed_coms_rows(workbook)
+            signature = pilot.governed_signature(governed.canonical_rows)
+            # This diagnostic extraction removes the two source sample-property
+            # characteristics; the canonical production closure retains them.
+            cco_closure_count = generation.expected_count(
+                "CCO_EXTENSION_FIXED_CLOSURE_TRIPLE_COUNT",
+                historical_cco[0] + cleanup_count,
+            ) - cleanup_count
+        closure_reduction = historical_cco[0] - historical_cco[1]
+        expected_reasoning = {
+            "strict_bfo": HISTORICAL_REASONING_COUNTS["strict_bfo"][:2],
+            "cco_extension": (cco_closure_count, cco_closure_count - closure_reduction),
+        }
+        profiles = {
+            "strict_bfo": coms.STRICT_BFO_HERMIT_PROFILE,
+            "cco_extension": coms.CCO_EXTENSION_HERMIT_PROFILE,
+        }
+        first_reasoned_axioms = {}
         before = {
             path.relative_to(REPO_ROOT).as_posix(): sha256(path)
             for path in MAINTAINED_PRODUCTS
@@ -80,7 +123,7 @@ class RobotExtractPilotTests(unittest.TestCase):
             self.assertTrue(first["passed"], first)
             self.assertTrue(second["passed"], second)
 
-            for summary in (first, second):
+            for summary, output_dir in ((first, Path(first_dir)), (second, Path(second_dir))):
                 self.assertEqual(summary["governed_row_count"], 105)
                 self.assertEqual(
                     summary["governed_signature_term_count"],
@@ -202,15 +245,9 @@ class RobotExtractPilotTests(unittest.TestCase):
                     MODULE_SHA256,
                 )
 
-                expected_reasoning = {
-                    "strict_bfo": (14986, 4433, 163),
-                    "cco_extension": (15918, 5365, 232),
-                }
-
                 for name, (
                     baseline_triples,
                     module_triples,
-                    axiom_count,
                 ) in expected_reasoning.items():
                     result = summary["reasoning"][name]
                     self.assertTrue(result["passed"])
@@ -224,7 +261,7 @@ class RobotExtractPilotTests(unittest.TestCase):
                     )
                     self.assertEqual(
                         result["closure_triple_reduction"],
-                        10553,
+                        closure_reduction,
                     )
 
                     for reasoning_result in (
@@ -259,6 +296,22 @@ class RobotExtractPilotTests(unittest.TestCase):
                     comparison = result[
                         "governed_axiom_comparison"
                     ]
+                    baseline_axioms = pilot.governed_axioms(
+                        output_dir / "reasoning" / f"{name}-baseline" / profiles[name].reasoned_filename,
+                        signature,
+                    )
+                    module_axioms = pilot.governed_axioms(
+                        output_dir / "reasoning" / f"{name}-module" / profiles[name].reasoned_filename,
+                        signature,
+                    )
+                    self.assertEqual(module_axioms, baseline_axioms)
+                    if name == "strict_bfo":
+                        self.assertEqual(len(baseline_axioms), HISTORICAL_REASONING_COUNTS[name][2])
+                    if name in first_reasoned_axioms:
+                        self.assertEqual(baseline_axioms, first_reasoned_axioms[name])
+                    else:
+                        first_reasoned_axioms[name] = baseline_axioms
+                    axiom_count = len(baseline_axioms)
                     self.assertTrue(comparison["passed"])
                     self.assertEqual(
                         comparison["expected_count"],

@@ -1,0 +1,1832 @@
+{
+  "classification_scope": "Read-only classification of all printed blockers; no validation/adjudication/readiness rerun. A includes mixed causality and does not mean semantic invalidity.",
+  "source_log": "/private/tmp/ssn-publication-policy-q7_xkjcm/current-publication-workflow.log",
+  "source_log_sha256": "fe84ef2550185b2e7aa1a3ea1e7de53457112aff247e70b0f1cf0c922a43a152",
+  "total_blockers": 149,
+  "counts": {
+    "A": 83,
+    "B": 66
+  },
+  "stop_condition": true,
+  "scoped_authentication_executed_by_this_audit": false,
+  "conclusion": "At least the exact Integrated and CCO product stale-binding blockers are caused by authorized transition output changes; an all-B classification and unconditional within-scope completion claim would be inaccurate.",
+  "groups": {
+    "human_review_queue": {
+      "classification": "B",
+      "explanation": "All 74 are unreviewed; none is one of the three exact adjudicated IRIs.",
+      "evidence": "reports/current-ssn-sosa-human-review.json /items[*]/source_iri",
+      "log_lines": [
+        2
+      ],
+      "blocker_numbers": [
+        1
+      ]
+    },
+    "rationale_feature_of_interest": {
+      "classification": "B",
+      "explanation": "Only human_review_required rationale is sosa:FeatureOfInterest, not one of the three decisions.",
+      "evidence": "reports/current-ssn-sosa-rationale-proposals.json /proposals; source_iri=http://www.w3.org/ns/sosa/FeatureOfInterest",
+      "log_lines": [
+        3
+      ],
+      "blocker_numbers": [
+        2
+      ]
+    },
+    "closure_profile_examples_expectations": {
+      "classification": "B",
+      "explanation": "Pre-existing retained semantic FAIL: missing SKOS, hierarchy/profile failures, unavailable exact example/conservativity results, and proposed expectations. Stored semantic report is unchanged from HEAD and dated 2026-10-10.",
+      "evidence": "reports/current-ssn-sosa-semantic-validation.json /blockers,/hierarchy_runs,/expectations; config/current-semantic-expectations.json",
+      "log_lines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "blocker_numbers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "legacy_execution_custody": {
+      "classification": "B",
+      "explanation": "Retained legacy semantic diagnostics predate required schema-2 invocation custody and do not bind invocation helper/tests. This is independent of the three decisions.",
+      "evidence": "tools/current_semantic_validation.py:47,900; reports/current-ssn-sosa-semantic-validation.json",
+      "log_lines": [
+        11,
+        13,
+        14,
+        149
+      ],
+      "blocker_numbers": [
+        10,
+        12,
+        13,
+        148
+      ]
+    },
+    "historical_head": {
+      "classification": "B",
+      "explanation": "Stored execution HEAD c3f9b055... predates current dc314460...; current HEAD already equals the pre-adjudication capture HEAD.",
+      "evidence": "reports/current-publication-validation/commands.json /head; semantic report /head; baseline-capture.json /head",
+      "log_lines": [
+        12,
+        20
+      ],
+      "blocker_numbers": [
+        11,
+        19
+      ]
+    },
+    "semantic_changed_bindings": {
+      "classification": "A",
+      "explanation": "Integrated product and workbook are now the authorized transition outputs. Workbook binding was already older than the immediate predecessor, so this is mixed causality, but transition contribution cannot be classified independent.",
+      "evidence": "semantic report /bound_files; baseline-capture.json /file_sha256; transition /old_workbook_sha256,/new_workbook_sha256",
+      "log_lines": [
+        15,
+        17
+      ],
+      "blocker_numbers": [
+        14,
+        16
+      ]
+    },
+    "semantic_preexisting_bindings": {
+      "classification": "B",
+      "explanation": "Expectation configuration and semantic-validator/test mismatches predate the three decisions; current files equal the pre-adjudication capture bytes.",
+      "evidence": "semantic report /bound_files; baseline-capture.json /file_sha256",
+      "log_lines": [
+        16,
+        18,
+        19
+      ],
+      "blocker_numbers": [
+        15,
+        17,
+        18
+      ]
+    },
+    "validation_input_membership": {
+      "classification": "A",
+      "explanation": "Mixed-causality binding-set drift: current input inventory includes the semantic history/custody and applicability evidence for the transition, in addition to older broader changes.",
+      "evidence": "tools/current_publication_readiness.py:37; tools/current_documentary_workbook.py:352; commands.json /input_sha256",
+      "log_lines": [
+        21
+      ],
+      "blocker_numbers": [
+        20
+      ]
+    },
+    "validation_transition_and_adapter_bindings": {
+      "classification": "A",
+      "explanation": "Inputs differ after the three-term baseline: authorized workbook/assessment/products/reports and supporting authentication, cardinality, fixture, release-contract or preservation adaptations. Some paths also contain independent repairs; A means materially related, not solely caused or semantically invalid.",
+      "evidence": "commands.json /input_sha256; baseline-capture.json /file_sha256; current Git diff; transition generation expectations",
+      "log_lines": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        56,
+        57,
+        58,
+        59,
+        63,
+        65,
+        66,
+        67,
+        68,
+        69,
+        71,
+        72,
+        73
+      ],
+      "blocker_numbers": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        58,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72
+      ]
+    },
+    "validation_independent_bindings": {
+      "classification": "B",
+      "explanation": "These hash mismatches either were already present and unchanged at the immediate pre-adjudication baseline, or concern independent SKOS query-execution/policy-literal defects.",
+      "evidence": "commands.json /input_sha256; baseline-capture.json /file_sha256; tools/robot_query_equivalence_pilot.py scope; tools/workflow_check.py policy repair",
+      "log_lines": [
+        38,
+        39,
+        55,
+        60,
+        61,
+        62,
+        64,
+        70,
+        74
+      ],
+      "blocker_numbers": [
+        37,
+        38,
+        54,
+        59,
+        60,
+        61,
+        63,
+        69,
+        73
+      ]
+    },
+    "command_head_bindings": {
+      "classification": "B",
+      "explanation": "All 12 historical commands independently retain the old HEAD in head/expected_head/final_head; this was stale before the three decisions.",
+      "evidence": "commands.json /commands[*]",
+      "log_lines": [
+        75,
+        76,
+        77,
+        81,
+        82,
+        83,
+        87,
+        88,
+        89,
+        93,
+        94,
+        95,
+        99,
+        100,
+        101,
+        105,
+        106,
+        107,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        123,
+        124,
+        125,
+        129,
+        130,
+        131,
+        135,
+        136,
+        137,
+        141,
+        142,
+        143
+      ],
+      "blocker_numbers": [
+        74,
+        75,
+        76,
+        80,
+        81,
+        82,
+        86,
+        87,
+        88,
+        92,
+        93,
+        94,
+        98,
+        99,
+        100,
+        104,
+        105,
+        106,
+        110,
+        111,
+        112,
+        116,
+        117,
+        118,
+        122,
+        123,
+        124,
+        128,
+        129,
+        130,
+        134,
+        135,
+        136,
+        140,
+        141,
+        142
+      ]
+    },
+    "command_input_bindings": {
+      "classification": "A",
+      "explanation": "All 12 commands retain 187-entry pre/post/expected maps including the old Integrated hash c31997... and old CCO hash2908f896.... Mixed older and transition-caused input drift.",
+      "evidence": "commands.json /commands[*]/expected_input_sha256,/input_sha256,/input_sha256_after",
+      "log_lines": [
+        78,
+        79,
+        80,
+        84,
+        85,
+        86,
+        90,
+        91,
+        92,
+        96,
+        97,
+        98,
+        102,
+        103,
+        104,
+        108,
+        109,
+        110,
+        114,
+        115,
+        116,
+        120,
+        121,
+        122,
+        126,
+        127,
+        128,
+        132,
+        133,
+        134,
+        138,
+        139,
+        140,
+        144,
+        145,
+        146
+      ],
+      "blocker_numbers": [
+        77,
+        78,
+        79,
+        83,
+        84,
+        85,
+        89,
+        90,
+        91,
+        95,
+        96,
+        97,
+        101,
+        102,
+        103,
+        107,
+        108,
+        109,
+        113,
+        114,
+        115,
+        119,
+        120,
+        121,
+        125,
+        126,
+        127,
+        131,
+        132,
+        133,
+        137,
+        138,
+        139,
+        143,
+        144,
+        145
+      ]
+    },
+    "missing_whole_repository_runs": {
+      "classification": "B",
+      "explanation": "Historical ledger explicitly records whole unittest discovery and make check as not rerun; external partial/family runs do not populate that ledger.",
+      "evidence": "commands.json /not_run; tools/current_publication_readiness.py REQUIRED_COMMANDS",
+      "log_lines": [
+        147,
+        148
+      ],
+      "blocker_numbers": [
+        146,
+        147
+      ]
+    },
+    "declared_environment": {
+      "classification": "B",
+      "explanation": "Historical ledger records declared Temurin 22 versus observed Oracle Java 22.0.2 and declared_environment_match=false.",
+      "evidence": "commands.json /declared_environment_match,/environment_note",
+      "log_lines": [
+        150
+      ],
+      "blocker_numbers": [
+        149
+      ]
+    }
+  },
+  "rows": [
+    {
+      "blocker_number": 1,
+      "log_line": 2,
+      "text": "Complete the 74-term human review queue, retaining explicit decisions and rationale evidence; 0 terms are deferred and 74 unreviewed.",
+      "classification": "B",
+      "group": "human_review_queue"
+    },
+    {
+      "blocker_number": 2,
+      "log_line": 3,
+      "text": "Resolve 1 judgment-sensitive rationale proposals before treating them as adequate publication rationales.",
+      "classification": "B",
+      "group": "rationale_feature_of_interest"
+    },
+    {
+      "blocker_number": 3,
+      "log_line": 4,
+      "text": "No local artifact resolves imported ontology: http://www.w3.org/2004/02/skos/core. Exact transitive import closure is unavailable; no network fetch was attempted.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 4,
+      "log_line": 5,
+      "text": "Source hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 5,
+      "log_line": 6,
+      "text": "Aligned hierarchy: technical_failure; Unresolved imported ontology; available-local-graph output is diagnostic only. See individual profile/reasoner outputs.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 6,
+      "log_line": 7,
+      "text": "Exact-closure example success is not established for every source example and the separate fixture.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 7,
+      "log_line": 8,
+      "text": "Source and target approximate deductive-difference comparisons do not both have a valid PASS result.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 8,
+      "log_line": 9,
+      "text": "Human approval of selected positive and negative semantic expectations is outstanding.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 9,
+      "log_line": 10,
+      "text": "Resolve the exact OWL 2 DL declaration/profile gaps: source skos:Concept; aligned dcterms:type and adms:status; and the per-example vocabulary violations recorded individually. Any closure/overlay change must be reviewed, pinned, and reevaluated without silently changing mapping semantics.",
+      "classification": "B",
+      "group": "closure_profile_examples_expectations"
+    },
+    {
+      "blocker_number": 10,
+      "log_line": 11,
+      "text": "Current semantic evidence requires execution_evidence_schema=2 and invocation tickets, envelopes and captures; no legacy fallback",
+      "classification": "B",
+      "group": "legacy_execution_custody"
+    },
+    {
+      "blocker_number": 11,
+      "log_line": 12,
+      "text": "Stored semantic evidence HEAD differs from current HEAD",
+      "classification": "B",
+      "group": "historical_head"
+    },
+    {
+      "blocker_number": 12,
+      "log_line": 13,
+      "text": "Required semantic evidence binding missing: tests/test_current_semantic_invocation.py",
+      "classification": "B",
+      "group": "legacy_execution_custody"
+    },
+    {
+      "blocker_number": 13,
+      "log_line": 14,
+      "text": "Required semantic evidence binding missing: tools/current_semantic_invocation.py",
+      "classification": "B",
+      "group": "legacy_execution_custody"
+    },
+    {
+      "blocker_number": 14,
+      "log_line": 15,
+      "text": "Stored semantic evidence hash differs: SSN2BFO.ttl",
+      "classification": "A",
+      "group": "semantic_changed_bindings"
+    },
+    {
+      "blocker_number": 15,
+      "log_line": 16,
+      "text": "Stored semantic evidence hash differs: config/current-semantic-expectations.json",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings"
+    },
+    {
+      "blocker_number": 16,
+      "log_line": 17,
+      "text": "Stored semantic evidence hash differs: mappings/SSN2BFO-COMS.xlsx",
+      "classification": "A",
+      "group": "semantic_changed_bindings"
+    },
+    {
+      "blocker_number": 17,
+      "log_line": 18,
+      "text": "Stored semantic evidence hash differs: tests/test_current_semantic_validation.py",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings"
+    },
+    {
+      "blocker_number": 18,
+      "log_line": 19,
+      "text": "Stored semantic evidence hash differs: tools/current_semantic_validation.py",
+      "classification": "B",
+      "group": "semantic_preexisting_bindings"
+    },
+    {
+      "blocker_number": 19,
+      "log_line": 20,
+      "text": "Validation execution HEAD is stale",
+      "classification": "B",
+      "group": "historical_head"
+    },
+    {
+      "blocker_number": 20,
+      "log_line": 21,
+      "text": "Validation input bindings are missing, extra, or incomplete for the current candidate",
+      "classification": "A",
+      "group": "validation_input_membership"
+    },
+    {
+      "blocker_number": 21,
+      "log_line": 22,
+      "text": "Validation execution input changed: SSN2BFO.ttl",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "SSN2BFO.ttl",
+      "ledger_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "pre_adjudication_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "current_sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 22,
+      "log_line": 23,
+      "text": "Validation execution input changed: config/release-manifest-schema-v2.json",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "config/release-manifest-schema-v2.json",
+      "ledger_sha256": "b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c",
+      "pre_adjudication_sha256": "b0162fb89fe2872f47b13cae9ad1a15aa2b225c6a69b4152a9c894183822191c",
+      "current_sha256": "99d39e4d174c28b58b4666b3abe6a46d8e9823f6232d2a3bad3dccdcef961e5b",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 23,
+      "log_line": 24,
+      "text": "Validation execution input changed: mappings/SSN2BFO-COMS.xlsx",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "mappings/SSN2BFO-COMS.xlsx",
+      "ledger_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "pre_adjudication_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "current_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 24,
+      "log_line": 25,
+      "text": "Validation execution input changed: mappings/current-ssn-sosa-assessment.json",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "mappings/current-ssn-sosa-assessment.json",
+      "ledger_sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "pre_adjudication_sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "current_sha256": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 25,
+      "log_line": 26,
+      "text": "Validation execution input changed: releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "ledger_sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "pre_adjudication_sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "current_sha256": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 26,
+      "log_line": 27,
+      "text": "Validation execution input changed: reports/coms-generation-validation.md",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "reports/coms-generation-validation.md",
+      "ledger_sha256": "fef66acfc7cf970c540f212971e790ab92f612461441fe020f680fb7ecc61bd0",
+      "pre_adjudication_sha256": "19177b630a7608bae029e566f1fa462828e157905b9073477e0542bb658f464c",
+      "current_sha256": "1bf217c6c094139ff93a5308ffe7a005f1978afc6825da2d1b0746f00f0676d6",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 27,
+      "log_line": 28,
+      "text": "Validation execution input changed: reports/coms-product-dispositions.json",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "reports/coms-product-dispositions.json",
+      "ledger_sha256": "d1bcb2fb56b5edf3b007e101cba2c05735d98d096f77cf6fc793fcf10e94df44",
+      "pre_adjudication_sha256": "6439915b6f54ac4c9e4d5c052939048dc7247fb8276501d31294182635db18aa",
+      "current_sha256": "568cb535a9d9a656b71d4df85376d75188b4ca70a32acd03e5f2ebb09f3242c5",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 28,
+      "log_line": 29,
+      "text": "Validation execution input changed: reports/coms-source-term-coverage.md",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "reports/coms-source-term-coverage.md",
+      "ledger_sha256": "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c",
+      "pre_adjudication_sha256": "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c",
+      "current_sha256": "b70c13ecfc0c395039c13f1fff7406a254e50e886783225be3d5321b797e1d6f",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 29,
+      "log_line": 30,
+      "text": "Validation execution input changed: reports/coms-vs-pre-coms-legacy-diff.md",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "reports/coms-vs-pre-coms-legacy-diff.md",
+      "ledger_sha256": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "pre_adjudication_sha256": "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860",
+      "current_sha256": "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 30,
+      "log_line": 31,
+      "text": "Validation execution input changed: tests/test_bfo_projection.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_bfo_projection.py",
+      "ledger_sha256": "c168fb4572de43bf8950bb9a3816469790fb91de44820ab9274dc78168562b76",
+      "pre_adjudication_sha256": "c168fb4572de43bf8950bb9a3816469790fb91de44820ab9274dc78168562b76",
+      "current_sha256": "4a9d8e1fe85ae281f2930b46ac4ef70dc669b68d6cf5345b689409b5ddfc3689",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 31,
+      "log_line": 32,
+      "text": "Validation execution input changed: tests/test_build_release.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_build_release.py",
+      "ledger_sha256": "e38ea3879212b20d5826cfa035c0974640480a207e317709e692621597a10d68",
+      "pre_adjudication_sha256": "e38ea3879212b20d5826cfa035c0974640480a207e317709e692621597a10d68",
+      "current_sha256": "efc8a2ce8089958b3629df4088d6c0a2fee4daebb3e9d9d553589ebd92a61181",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 32,
+      "log_line": 33,
+      "text": "Validation execution input changed: tests/test_cco_extension.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_cco_extension.py",
+      "ledger_sha256": "9e932810d9c2d861f0ff203b00fafdfe7e7e2a3474ec0733919653e387257165",
+      "pre_adjudication_sha256": "9e932810d9c2d861f0ff203b00fafdfe7e7e2a3474ec0733919653e387257165",
+      "current_sha256": "73660131e02fd57dd37808f93555a004165191c2b14769a8c0340c63eb2bb67d",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 33,
+      "log_line": 34,
+      "text": "Validation execution input changed: tests/test_coms_framework_integration.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_coms_framework_integration.py",
+      "ledger_sha256": "bfc0ff63505cf158a5ea1e857bb260c2ae3be7fc00d56991b2702debb761ecad",
+      "pre_adjudication_sha256": "b8c27ff9ce155f8ce7ee4a9f931a7d00ac0ca9bba2c2be24d3947414fb7dd6d8",
+      "current_sha256": "d0bef1ffa303fc105f68a59872e30d0eff140e8b33bd01085d26cbce678a1b52",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 34,
+      "log_line": 35,
+      "text": "Validation execution input changed: tests/test_current_assessment.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_current_assessment.py",
+      "ledger_sha256": "16216a824a0599dad554ac64f9f18c311be8f077e801bbe04e28ba082991af16",
+      "pre_adjudication_sha256": "0b4f27744274698ed090f0289176a634147c96d507a3893cc57f007f05b5b091",
+      "current_sha256": "f1d866ac0bfd1938dddcb3df816bbd509867b793dd8460571628599eb4bf9a42",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 35,
+      "log_line": 36,
+      "text": "Validation execution input changed: tests/test_current_identity_reporting.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_current_identity_reporting.py",
+      "ledger_sha256": "f76a3b2611fe1bc9ed97a08ee9f73759c760f2c1af962e0abfbcfbfbcde9496a",
+      "pre_adjudication_sha256": "f76a3b2611fe1bc9ed97a08ee9f73759c760f2c1af962e0abfbcfbfbcde9496a",
+      "current_sha256": "9e8c934a88d1e28f2c50f1c4f2e8ef0b0dbd0b79e6e7266348e4f63f7a73dc83",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 36,
+      "log_line": 37,
+      "text": "Validation execution input changed: tests/test_current_publication_preservation.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_current_publication_preservation.py",
+      "ledger_sha256": "d01ead3ef9410d44babc3da69f59142a3c00e793e16c28301457e72a267a3940",
+      "pre_adjudication_sha256": "4731a6b4ac1aec6cb955a850f321ed156a39dd79e1095949a211dc0a60ae5e84",
+      "current_sha256": "e50ba9517ef61399ae83e9ef06ca1fd9d0d0b84f323073afbbc7e1103ceed859",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 37,
+      "log_line": 38,
+      "text": "Validation execution input changed: tests/test_current_publication_readiness.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tests/test_current_publication_readiness.py",
+      "ledger_sha256": "7dd7f282e03d80e9d9e2dcda8c9f74f00cd9d66ce1b8cb5195e520cebf0ab58d",
+      "pre_adjudication_sha256": "73d6d4c59a7faf6c2c9c29f0276dd010580e938733458c1e8aafd60145eb2f65",
+      "current_sha256": "73d6d4c59a7faf6c2c9c29f0276dd010580e938733458c1e8aafd60145eb2f65",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 38,
+      "log_line": 39,
+      "text": "Validation execution input changed: tests/test_current_semantic_validation.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tests/test_current_semantic_validation.py",
+      "ledger_sha256": "d8443382fcf2c6c054b01b8bb8a7e363262f817777a1e387c4c999c67b4b9d41",
+      "pre_adjudication_sha256": "20dcd56dd4c3256b5be44177bffbcb8e4aaf7253bba558baeb0241894a3b1b1c",
+      "current_sha256": "20dcd56dd4c3256b5be44177bffbcb8e4aaf7253bba558baeb0241894a3b1b1c",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 39,
+      "log_line": 40,
+      "text": "Validation execution input changed: tests/test_current_source_identity.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_current_source_identity.py",
+      "ledger_sha256": "ed77bec355fdf43736a97c09bab451dd41a3c0a07d6522cf7f23c34f6433bb42",
+      "pre_adjudication_sha256": "922bc8dc06db4ab54d0afbbf42fda3b89c4ef9f6d296aa11ff774976dd8eee46",
+      "current_sha256": "2ae58e160983b514c2c726d37aacfed85d793abbdcdfa5b49c11f3f214751b6b",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 40,
+      "log_line": 41,
+      "text": "Validation execution input changed: tests/test_generate_mapping_from_coms.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_generate_mapping_from_coms.py",
+      "ledger_sha256": "5c358483a2ca7ec7a01a444b42c3dc0c0896863a27665da4f20cdbc034a2f7b8",
+      "pre_adjudication_sha256": "5c358483a2ca7ec7a01a444b42c3dc0c0896863a27665da4f20cdbc034a2f7b8",
+      "current_sha256": "3bee6a2d8458132a81ec475236c3c5c2a77973eb95dc9aa7611e4955d75162ab",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 41,
+      "log_line": 42,
+      "text": "Validation execution input changed: tests/test_modular_products.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_modular_products.py",
+      "ledger_sha256": "f7c511010a6dc31a0d5090e15f18af5a101ae092d5f73941e3242f40105417cf",
+      "pre_adjudication_sha256": "f7c511010a6dc31a0d5090e15f18af5a101ae092d5f73941e3242f40105417cf",
+      "current_sha256": "17f833debc25f1e0b5f52efe2f6fa480c0a7cb594a651ff8b1e00c65b33ea071",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 42,
+      "log_line": 43,
+      "text": "Validation execution input changed: tests/test_placeholder_catalog_migration.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_placeholder_catalog_migration.py",
+      "ledger_sha256": "d5f91d194f5c4174420867a67ead1d81fa26d1a46c8e3c1f894bfcfa519d425f",
+      "pre_adjudication_sha256": "d5f91d194f5c4174420867a67ead1d81fa26d1a46c8e3c1f894bfcfa519d425f",
+      "current_sha256": "d451e685b98b4712c7e5aeb2041cc250e26b1abf5c289e60b96c41f4d0378f66",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 43,
+      "log_line": 44,
+      "text": "Validation execution input changed: tests/test_product_dispositions.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_product_dispositions.py",
+      "ledger_sha256": "29d70ebd22c222f2f4c3c7f5531856cdba13eec5de0ab91761eeb734960d7299",
+      "pre_adjudication_sha256": "29d70ebd22c222f2f4c3c7f5531856cdba13eec5de0ab91761eeb734960d7299",
+      "current_sha256": "569a2b7a7c83db7e853352ce4baf0d7fde55a710b94fb30fa648117384a702ce",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 44,
+      "log_line": 45,
+      "text": "Validation execution input changed: tests/test_release_manifest.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_release_manifest.py",
+      "ledger_sha256": "6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51",
+      "pre_adjudication_sha256": "6f25af9a9760ed644bd2b4edf36fb3110f9368eba9337ad1f310fa281499ce51",
+      "current_sha256": "24c26220dd65a7683ca42089b82dec4814c02a75eb7ad52e386a29dc6ffc83c0",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 45,
+      "log_line": 46,
+      "text": "Validation execution input changed: tests/test_release_rehearsal.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_release_rehearsal.py",
+      "ledger_sha256": "f8c21ceabd0043e882f1cb217e8debf91e5c24b431d9ca0db55070cfc8e488fb",
+      "pre_adjudication_sha256": "f8c21ceabd0043e882f1cb217e8debf91e5c24b431d9ca0db55070cfc8e488fb",
+      "current_sha256": "ea06878ee3bb1e1daa6625a02375a80bb73eff44281ffd1539b7ab64ca3a2f58",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 46,
+      "log_line": 47,
+      "text": "Validation execution input changed: tests/test_release_rendering.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_release_rendering.py",
+      "ledger_sha256": "f700248802127fdcd6c451d5d905f213aa1f7911c9bfc48729df670bc311e2c5",
+      "pre_adjudication_sha256": "f700248802127fdcd6c451d5d905f213aa1f7911c9bfc48729df670bc311e2c5",
+      "current_sha256": "3de4ed883d0054bbb000064bf9c697d60dce80a3668b418c04ef3685748ca356",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 47,
+      "log_line": 48,
+      "text": "Validation execution input changed: tests/test_robot_extract_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_robot_extract_pilot.py",
+      "ledger_sha256": "1615f6dbc2b282d66d37be5bc2334aea30ddd594907d995444f87c17c26f9a7c",
+      "pre_adjudication_sha256": "1615f6dbc2b282d66d37be5bc2334aea30ddd594907d995444f87c17c26f9a7c",
+      "current_sha256": "c4b962f0aa3cd46509845ae5d13043b9af5f4132cee4a8743e594d13e132eea4",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 48,
+      "log_line": 49,
+      "text": "Validation execution input changed: tests/test_robot_property_chain_generation_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_robot_property_chain_generation_pilot.py",
+      "ledger_sha256": "0e78cd5bbcd12042466901ac6a58dc8a285d1713f8b3c69a03c21970ea448892",
+      "pre_adjudication_sha256": "0e78cd5bbcd12042466901ac6a58dc8a285d1713f8b3c69a03c21970ea448892",
+      "current_sha256": "0f1ee7646fd24cce17969268e078789c29f8c43570976b6e3ae4ba6bbbddccbe",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 49,
+      "log_line": 50,
+      "text": "Validation execution input changed: tests/test_robot_query_equivalence_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_robot_query_equivalence_pilot.py",
+      "ledger_sha256": "f60c1a37c74d8caca13526200db6ba7dacedb5bcca38f2a2b55da540e88e640d",
+      "pre_adjudication_sha256": "f60c1a37c74d8caca13526200db6ba7dacedb5bcca38f2a2b55da540e88e640d",
+      "current_sha256": "084346bd4759bb07b638c95f8561bc5d33e3f72667999eb80f9791cf1261cdad",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 50,
+      "log_line": 51,
+      "text": "Validation execution input changed: tests/test_robot_reconstruction_validation.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_robot_reconstruction_validation.py",
+      "ledger_sha256": "5fed12c1d33a688a1dcadd5914a9c029e4bd9a84b2f2614d18257f0b0d58fabc",
+      "pre_adjudication_sha256": "5fed12c1d33a688a1dcadd5914a9c029e4bd9a84b2f2614d18257f0b0d58fabc",
+      "current_sha256": "40ca53c532936aeff26e3b197b63cc77ccd4427fb126c7b32ab1acdc94df6613",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 51,
+      "log_line": 52,
+      "text": "Validation execution input changed: tests/test_robot_template_generation_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_robot_template_generation_pilot.py",
+      "ledger_sha256": "3d39530b855fe1bacf1001f55024bb998425112f25b6741a4f084a8a070c7bc9",
+      "pre_adjudication_sha256": "3d39530b855fe1bacf1001f55024bb998425112f25b6741a4f084a8a070c7bc9",
+      "current_sha256": "380aa78854018ae84871f1fac404907c534a37e4044f927d04b02045a26aa1c9",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 52,
+      "log_line": 53,
+      "text": "Validation execution input changed: tests/test_strict_bfo_mapping.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tests/test_strict_bfo_mapping.py",
+      "ledger_sha256": "a539e30a4bac3cbefef623a57961e8c7834e492bc62105902f7421ed40790ccf",
+      "pre_adjudication_sha256": "a539e30a4bac3cbefef623a57961e8c7834e492bc62105902f7421ed40790ccf",
+      "current_sha256": "4d57de3957f5386417736386561516b8d0d2682c830a2e39e9e4eae0638954fa",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 53,
+      "log_line": 54,
+      "text": "Validation execution input changed: tools/build_release.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/build_release.py",
+      "ledger_sha256": "3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76",
+      "pre_adjudication_sha256": "3969aa59159dc5caf1c3f69b2ccef5ca9c9bd28d317b97dcb332e5a04fa2eb76",
+      "current_sha256": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 54,
+      "log_line": 55,
+      "text": "Validation execution input changed: tools/check_coms_mapping.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/check_coms_mapping.py",
+      "ledger_sha256": "832660718e7c692760681b592bee87ff7b57147c434eb3d854bd83080c00bdf6",
+      "pre_adjudication_sha256": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "current_sha256": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 55,
+      "log_line": 56,
+      "text": "Validation execution input changed: tools/check_release.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/check_release.py",
+      "ledger_sha256": "3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a",
+      "pre_adjudication_sha256": "3b839dbdb31142eba720a25801eb4f2f28c46a7623e60dd868024d661dfe8d6a",
+      "current_sha256": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 56,
+      "log_line": 57,
+      "text": "Validation execution input changed: tools/current_assessment.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/current_assessment.py",
+      "ledger_sha256": "5f8d0effd4b8390cebba6b08298d174110f7fa55e02f739c7bdcaef38b904402",
+      "pre_adjudication_sha256": "233d2ba31f29e67a17f44bbb8a968785fd4eb0a76abfc5cbcc8d1c2360d775e1",
+      "current_sha256": "7280bf44ef0896a0045e3f0a3beaa0a3407ec75fe6bf3ffbe18e04dccbe0be0c",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 57,
+      "log_line": 58,
+      "text": "Validation execution input changed: tools/current_publication_preservation.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/current_publication_preservation.py",
+      "ledger_sha256": "d415a2414c9735d9f7e8af48a971a7e9cda8f07fbd96d5eaf9469dc3993dbccc",
+      "pre_adjudication_sha256": "f2651d9be54f566f1b6006d2b9737f0290112487739410e9e2b55d32f61bb9d6",
+      "current_sha256": "91cc59ee12f5a1e3706ed854c895e7a727d6842b72043a91f8d7677aefbbef60",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 58,
+      "log_line": 59,
+      "text": "Validation execution input changed: tools/current_publication_readiness.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/current_publication_readiness.py",
+      "ledger_sha256": "8d2f1446446bb7e55b5af76b136bd93bf8e8557ced15393829bbded651a6d9ae",
+      "pre_adjudication_sha256": "3f28e6e153cf6daa48e2c105a3b6587121939036967420bb36f4bbfb0b178673",
+      "current_sha256": "04925a46696eba894d0bff4e51694b80da633a766705eb2598168fcab70a5704",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 59,
+      "log_line": 60,
+      "text": "Validation execution input changed: tools/current_semantic_validation.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/current_semantic_validation.py",
+      "ledger_sha256": "94f6fab0a1c649d72c018c2b3b64447222a23c75cee107912f63cbf40d3af495",
+      "pre_adjudication_sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+      "current_sha256": "5aebf7efd0c44894e4a697ecb32a04ffddb9d7229d9455d07f172ad4152f7340",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 60,
+      "log_line": 61,
+      "text": "Validation execution input changed: tools/current_source_identity.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/current_source_identity.py",
+      "ledger_sha256": "fefc7e10c7594bc4e159323c16a2100b57ee436462b28ee3096b6fe03313a75a",
+      "pre_adjudication_sha256": "c8fa49ade5b9cebf62db097ff1af29949161f9d55989745af993167b3b8d63da",
+      "current_sha256": "c8fa49ade5b9cebf62db097ff1af29949161f9d55989745af993167b3b8d63da",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 61,
+      "log_line": 62,
+      "text": "Validation execution input changed: tools/generate_mapping_from_coms.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/generate_mapping_from_coms.py",
+      "ledger_sha256": "9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843",
+      "pre_adjudication_sha256": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "current_sha256": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 62,
+      "log_line": 63,
+      "text": "Validation execution input changed: tools/generate_sosa_next_products.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/generate_sosa_next_products.py",
+      "ledger_sha256": "da01529afd3ed999ca6dcdeb14011da01d1c48ad7e7db80aab4ddbbb5df46347",
+      "pre_adjudication_sha256": "da01529afd3ed999ca6dcdeb14011da01d1c48ad7e7db80aab4ddbbb5df46347",
+      "current_sha256": "55098959a7943ea4531375f38275706a899471d1db5a29b0d1dde784f61a0f4c",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 63,
+      "log_line": 64,
+      "text": "Validation execution input changed: tools/modular_products.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/modular_products.py",
+      "ledger_sha256": "8874e996c243dde4dcedaf3701629048b5430168318f8710e4b537649a9cb0fb",
+      "pre_adjudication_sha256": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "current_sha256": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
+      "unchanged_since_pre_adjudication": true
+    },
+    {
+      "blocker_number": 64,
+      "log_line": 65,
+      "text": "Validation execution input changed: tools/rehearse_release.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/rehearse_release.py",
+      "ledger_sha256": "737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d",
+      "pre_adjudication_sha256": "737f880da62c0b33de00877404469e98b0cc6634340bbd8bab0f128676d3263d",
+      "current_sha256": "3eb97663a6c8589e4841ca270682fd245afe657ab18e9f535b12a2e62f4c9b6a",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 65,
+      "log_line": 66,
+      "text": "Validation execution input changed: tools/release_archive.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/release_archive.py",
+      "ledger_sha256": "8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974",
+      "pre_adjudication_sha256": "8928d921ac7b850f5ff52449c12013fa2c394b6d1acaff83972134b81741c974",
+      "current_sha256": "00d5954bff06ae3d541ed0edeb579f04966c1bdf3d81f722415e4b45cd7f9c00",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 66,
+      "log_line": 67,
+      "text": "Validation execution input changed: tools/release_context.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/release_context.py",
+      "ledger_sha256": "77d5d6e598f3378dfde6cf1a8a2632cf11b464b3239263179dcf46d68e48fe54",
+      "pre_adjudication_sha256": "77d5d6e598f3378dfde6cf1a8a2632cf11b464b3239263179dcf46d68e48fe54",
+      "current_sha256": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 67,
+      "log_line": 68,
+      "text": "Validation execution input changed: tools/release_manifest.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/release_manifest.py",
+      "ledger_sha256": "89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5",
+      "pre_adjudication_sha256": "89105d96dac5fb4d79128b85a5becfa3faec6ac9586507286f0c97e18f0259c5",
+      "current_sha256": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 68,
+      "log_line": 69,
+      "text": "Validation execution input changed: tools/robot_property_chain_generation_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/robot_property_chain_generation_pilot.py",
+      "ledger_sha256": "6375fb1fe2f67975e94fb47bf6adfadf73af66abcbbceada17db220bd64e1403",
+      "pre_adjudication_sha256": "6375fb1fe2f67975e94fb47bf6adfadf73af66abcbbceada17db220bd64e1403",
+      "current_sha256": "262e9fd4214aa07a08f07f5041510ae0fa26ba637c7d6ec6225422f76bc28495",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 69,
+      "log_line": 70,
+      "text": "Validation execution input changed: tools/robot_query_equivalence_pilot.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/robot_query_equivalence_pilot.py",
+      "ledger_sha256": "67e821dbe74f29d8411e5045d9a016176ed3f6b713c8f0cb3f733e7f193bdca6",
+      "pre_adjudication_sha256": "67e821dbe74f29d8411e5045d9a016176ed3f6b713c8f0cb3f733e7f193bdca6",
+      "current_sha256": "c279ddbb1c6b0011c85b125b2d25675ab45dcf495b84d4887a8fa83290978900",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 70,
+      "log_line": 71,
+      "text": "Validation execution input changed: tools/robot_reconstruction_validation.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/robot_reconstruction_validation.py",
+      "ledger_sha256": "771d20cd88759e78abc028ef13f8e8fbb7aa165914112a56b0c4197ea4fb7055",
+      "pre_adjudication_sha256": "771d20cd88759e78abc028ef13f8e8fbb7aa165914112a56b0c4197ea4fb7055",
+      "current_sha256": "70d2e2ea77a9bce7ee64f980884c175cd363c89601f7e9d105667204e5957604",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 71,
+      "log_line": 72,
+      "text": "Validation execution input changed: tools/robot_template_generation_pilot.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/robot_template_generation_pilot.py",
+      "ledger_sha256": "757daec19f60eb70973b7215a4d9c0d6ce5b838c5ec3dd1188fb36ca233cf640",
+      "pre_adjudication_sha256": "757daec19f60eb70973b7215a4d9c0d6ce5b838c5ec3dd1188fb36ca233cf640",
+      "current_sha256": "7e223fac62f17beea7e6d53c5454298e0c3092e076e760fbcdda235b64097d7f",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 72,
+      "log_line": 73,
+      "text": "Validation execution input changed: tools/validate_robot_reconstruction.py",
+      "classification": "A",
+      "group": "validation_transition_and_adapter_bindings",
+      "path": "tools/validate_robot_reconstruction.py",
+      "ledger_sha256": "ad7016a02b9488c3554675f96f33d28d2f0ff0fb7bbacd30f0ae064f7c0625b7",
+      "pre_adjudication_sha256": "ad7016a02b9488c3554675f96f33d28d2f0ff0fb7bbacd30f0ae064f7c0625b7",
+      "current_sha256": "272f49e831c276a8764dd0af911b9271b780effedf09524c3f70c4929f71aae2",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 73,
+      "log_line": 74,
+      "text": "Validation execution input changed: tools/workflow_check.py",
+      "classification": "B",
+      "group": "validation_independent_bindings",
+      "path": "tools/workflow_check.py",
+      "ledger_sha256": "93a524849f6851a534cdc83c53a05816bd6be31878ac666d4727360b182922fb",
+      "pre_adjudication_sha256": "93a524849f6851a534cdc83c53a05816bd6be31878ac666d4727360b182922fb",
+      "current_sha256": "dd82016708431eae909c52b56bbd0647acfc28c57183979887ecee9677b76e0a",
+      "unchanged_since_pre_adjudication": false
+    },
+    {
+      "blocker_number": 74,
+      "log_line": 75,
+      "text": "Command affected_integration_tests: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 75,
+      "log_line": 76,
+      "text": "Command affected_integration_tests: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 76,
+      "log_line": 77,
+      "text": "Command affected_integration_tests: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 77,
+      "log_line": 78,
+      "text": "Command affected_integration_tests: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 78,
+      "log_line": 79,
+      "text": "Command affected_integration_tests: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 79,
+      "log_line": 80,
+      "text": "Command affected_integration_tests: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 80,
+      "log_line": 81,
+      "text": "Command assessment: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 81,
+      "log_line": 82,
+      "text": "Command assessment: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 82,
+      "log_line": 83,
+      "text": "Command assessment: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 83,
+      "log_line": 84,
+      "text": "Command assessment: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 84,
+      "log_line": 85,
+      "text": "Command assessment: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 85,
+      "log_line": 86,
+      "text": "Command assessment: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 86,
+      "log_line": 87,
+      "text": "Command current_focused_tests: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 87,
+      "log_line": 88,
+      "text": "Command current_focused_tests: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 88,
+      "log_line": 89,
+      "text": "Command current_focused_tests: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 89,
+      "log_line": 90,
+      "text": "Command current_focused_tests: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 90,
+      "log_line": 91,
+      "text": "Command current_focused_tests: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 91,
+      "log_line": 92,
+      "text": "Command current_focused_tests: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 92,
+      "log_line": 93,
+      "text": "Command generation_freshness: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 93,
+      "log_line": 94,
+      "text": "Command generation_freshness: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 94,
+      "log_line": 95,
+      "text": "Command generation_freshness: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 95,
+      "log_line": 96,
+      "text": "Command generation_freshness: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 96,
+      "log_line": 97,
+      "text": "Command generation_freshness: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 97,
+      "log_line": 98,
+      "text": "Command generation_freshness: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 98,
+      "log_line": 99,
+      "text": "Command preservation: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 99,
+      "log_line": 100,
+      "text": "Command preservation: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 100,
+      "log_line": 101,
+      "text": "Command preservation: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 101,
+      "log_line": 102,
+      "text": "Command preservation: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 102,
+      "log_line": 103,
+      "text": "Command preservation: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 103,
+      "log_line": 104,
+      "text": "Command preservation: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 104,
+      "log_line": 105,
+      "text": "Command semantic_stored_consistency: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 105,
+      "log_line": 106,
+      "text": "Command semantic_stored_consistency: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 106,
+      "log_line": 107,
+      "text": "Command semantic_stored_consistency: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 107,
+      "log_line": 108,
+      "text": "Command semantic_stored_consistency: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 108,
+      "log_line": 109,
+      "text": "Command semantic_stored_consistency: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 109,
+      "log_line": 110,
+      "text": "Command semantic_stored_consistency: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 110,
+      "log_line": 111,
+      "text": "Command sosa_2023_nonregression: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 111,
+      "log_line": 112,
+      "text": "Command sosa_2023_nonregression: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 112,
+      "log_line": 113,
+      "text": "Command sosa_2023_nonregression: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 113,
+      "log_line": 114,
+      "text": "Command sosa_2023_nonregression: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 114,
+      "log_line": 115,
+      "text": "Command sosa_2023_nonregression: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 115,
+      "log_line": 116,
+      "text": "Command sosa_2023_nonregression: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 116,
+      "log_line": 117,
+      "text": "Command sosa_products: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 117,
+      "log_line": 118,
+      "text": "Command sosa_products: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 118,
+      "log_line": 119,
+      "text": "Command sosa_products: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 119,
+      "log_line": 120,
+      "text": "Command sosa_products: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 120,
+      "log_line": 121,
+      "text": "Command sosa_products: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 121,
+      "log_line": 122,
+      "text": "Command sosa_products: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 122,
+      "log_line": 123,
+      "text": "Command sosa_source_version: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 123,
+      "log_line": 124,
+      "text": "Command sosa_source_version: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 124,
+      "log_line": 125,
+      "text": "Command sosa_source_version: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 125,
+      "log_line": 126,
+      "text": "Command sosa_source_version: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 126,
+      "log_line": 127,
+      "text": "Command sosa_source_version: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 127,
+      "log_line": 128,
+      "text": "Command sosa_source_version: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 128,
+      "log_line": 129,
+      "text": "Command source_identity: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 129,
+      "log_line": 130,
+      "text": "Command source_identity: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 130,
+      "log_line": 131,
+      "text": "Command source_identity: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 131,
+      "log_line": 132,
+      "text": "Command source_identity: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 132,
+      "log_line": 133,
+      "text": "Command source_identity: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 133,
+      "log_line": 134,
+      "text": "Command source_identity: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 134,
+      "log_line": 135,
+      "text": "Command static_checks: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 135,
+      "log_line": 136,
+      "text": "Command static_checks: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 136,
+      "log_line": 137,
+      "text": "Command static_checks: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 137,
+      "log_line": 138,
+      "text": "Command static_checks: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 138,
+      "log_line": 139,
+      "text": "Command static_checks: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 139,
+      "log_line": 140,
+      "text": "Command static_checks: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 140,
+      "log_line": 141,
+      "text": "Command whitespace: head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 141,
+      "log_line": 142,
+      "text": "Command whitespace: expected_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 142,
+      "log_line": 143,
+      "text": "Command whitespace: final_head missing or stale HEAD",
+      "classification": "B",
+      "group": "command_head_bindings"
+    },
+    {
+      "blocker_number": 143,
+      "log_line": 144,
+      "text": "Command whitespace: expected_input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 144,
+      "log_line": 145,
+      "text": "Command whitespace: input_sha256 bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 145,
+      "log_line": 146,
+      "text": "Command whitespace: input_sha256_after bindings missing or stale command inputs",
+      "classification": "A",
+      "group": "command_input_bindings"
+    },
+    {
+      "blocker_number": 146,
+      "log_line": 147,
+      "text": "Required validation not run: full_repository_gate",
+      "classification": "B",
+      "group": "missing_whole_repository_runs"
+    },
+    {
+      "blocker_number": 147,
+      "log_line": 148,
+      "text": "Required validation not run: unit_tests",
+      "classification": "B",
+      "group": "missing_whole_repository_runs"
+    },
+    {
+      "blocker_number": 148,
+      "log_line": 149,
+      "text": "Retained historical semantic diagnostics lack pre-execution tickets and helper result envelopes. Their old code/input bindings are now stale, so they cannot certify a new semantic execution; rerun only with the reviewed closure and resolved profile/import blockers.",
+      "classification": "B",
+      "group": "legacy_execution_custody"
+    },
+    {
+      "blocker_number": 149,
+      "log_line": 150,
+      "text": "Repeat the full gate in the declared Java distribution/environment; the local execution environment differs as recorded in commands.json.",
+      "classification": "B",
+      "group": "declared_environment"
+    }
+  ],
+  "product_and_assessment_binding_proof": [
+    {
+      "path": "SSN2BFO.ttl",
+      "ledger_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "semantic_report_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "pre_adjudication_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "HEAD_sha256": "c31997d7e7b8c5e0bffd3f23a4597ab4be80786978462fefe800c4c7a5dc0c11",
+      "current_sha256": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c"
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "ledger_sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "semantic_report_sha256": null,
+      "pre_adjudication_sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "HEAD_sha256": "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+      "current_sha256": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+    },
+    {
+      "path": "mappings/SSN2BFO-COMS.xlsx",
+      "ledger_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "semantic_report_sha256": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
+      "pre_adjudication_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "HEAD_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "current_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+    },
+    {
+      "path": "mappings/current-ssn-sosa-assessment.json",
+      "ledger_sha256": "0edb7337ef6854ce984c367939bf6e96d3ddc83d54ad7a3db70233134b8c5a3d",
+      "semantic_report_sha256": null,
+      "pre_adjudication_sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "HEAD_sha256": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
+      "current_sha256": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253"
+    }
+  ],
+  "pre_adjudication_capture": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/reports/current-human-decisions/2026-10-26-three-term-adjudication/baseline-capture.json",
+  "pre_adjudication_capture_head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+  "stored_semantic_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "stored_ledger_head": "c3f9b05593727bd13854bf1830cc09b4a653b41f",
+  "stored_reports_unchanged_from_HEAD": {
+    "reports/current-ssn-sosa-semantic-validation.json": true,
+    "reports/current-publication-validation/commands.json": true
+  },
+  "review_queue": {
+    "item_count": 74,
+    "three_term_intersection": [],
+    "note": "hasSystemProperty is a distinct unreviewed property, not the adjudicated SystemProperty class."
+  },
+  "unresolved_rationales": [
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/FeatureOfInterest",
+      "mapping_row_ids": [
+        "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86"
+      ],
+      "status": "human_review_required",
+      "issues": [
+        "Prose describes direct alignment as deferred/absent despite an active formal mapping row."
+      ]
+    }
+  ],
+  "three_assessment_records": [
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/forProperty",
+      "review_state": "final",
+      "assessment_outcome": "no_direct_mapping"
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+      "review_state": "final",
+      "assessment_outcome": "inheritance_sufficient"
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+      "review_state": "final",
+      "assessment_outcome": "inheritance_sufficient"
+    }
+  ],
+  "recorded_transition_delta": {
+    "removed": 3,
+    "added": 0,
+    "old_workbook_sha256": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+    "new_workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+    "fresh_authentication_performed": false
+  }
+}

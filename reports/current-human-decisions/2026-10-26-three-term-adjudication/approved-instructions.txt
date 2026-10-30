@@ -1,0 +1,178 @@
+Work in:
+
+`/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Implement the three semantic decisions below for the **current SSN/SOSA track only**.
+
+These are **new explicit human decisions made by Alec Sculley on 2026-10-26** after fresh semantic adjudication. They are NOT restorations of historical decisions, even where they happen to agree with earlier project states.
+
+Do not modify the SOSA/SSN 2023 track.
+
+## Decisions
+
+### 1. `ssn:forProperty`
+
+Current governed row:
+
+- workbook: `mappings/SSN2BFO-COMS.xlsx`
+- sheet/cell row: `Sheet2!49`
+- RowID: `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc`
+- current predicate: `owl:propertyChainAxiom`
+- current target: `cco:described_by o cco:is_about`
+
+New decision:
+
+- classification: `final`
+- disposition: `no_direct_mapping`
+- remove the active BFO/CCO mapping:
+  - clear predicate
+  - clear target
+- preserve the RowID
+- replace/update the reasoning with the substantive new rationale below.
+
+Rationale:
+
+`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.
+
+Do not remove or alter legitimate source-native hierarchy assertions such as `sosa:observes rdfs:subPropertyOf ssn:forProperty`.
+
+### 2. `ssn-system:SystemProperty`
+
+Current governed row:
+
+- `Sheet1!45`
+- RowID: `urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4`
+- current predicate: `rdfs:subClassOf`
+- current target:
+
+`(bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:prescribed_by some cco:ArtifactFunctionSpecification)`
+
+New decision:
+
+- classification: `final`
+- disposition: `inheritance_sufficient`
+- clear the direct predicate and target
+- preserve the RowID
+
+Rationale:
+
+`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.
+
+Do not replace the current expression with an explicit direct `(SDC or ProcessProfile)` assertion; that typing should remain inherited.
+
+### 3. `ssn-system:MeasurementRange`
+
+Current governed row:
+
+- `Sheet1!43`
+- RowID: `urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db`
+- current predicate: `rdfs:subClassOf`
+- current target:
+
+`bfo:Function and (bfo:has_realization some (sosa:Observation and (cco:caused_by some (ssn:Stimulus and (cco:prescribed_by some cco:ArtifactFunctionSpecification)))))`
+
+New decision:
+
+- classification: `final`
+- disposition: `inheritance_sufficient`
+- clear the direct predicate and target
+- preserve the RowID
+
+Rationale:
+
+`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.
+
+The source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.
+
+Do NOT broaden the governed mapping of `ssn:Property` to include `cco:InformationContentEntity`.
+
+## Governance / provenance requirements
+
+Record these as an **EXPLICIT_NEW_HUMAN_DECISION** semantic transition.
+
+Reviewer / decision maker:
+
+`Alec Sculley`
+
+Decision date:
+
+`2026-10-26`
+
+The transition must explicitly distinguish these decisions from the historical July dispositions. Historical decision evidence must remain immutable.
+
+Create appropriate current human-decision records following the repository's established schema and naming conventions. If there is already a canonical directory/pattern under `reports/current-human-decisions/`, use it rather than inventing a parallel mechanism.
+
+The decision records should make clear that:
+
+- `forProperty`: new decision independently reaches `no_direct_mapping`;
+- `SystemProperty`: new decision independently reaches `inheritance_sufficient`;
+- `MeasurementRange`: new decision independently reaches `inheritance_sufficient`;
+- agreement with earlier historical outcomes is corroborative only and is not the authority for this transition.
+
+## Required semantic delta
+
+The only intended mapping-content changes are:
+
+1. remove `ssn:forProperty owl:propertyChainAxiom (cco:described_by cco:is_about)`
+2. remove the direct `ssn-system:SystemProperty` class expression
+3. remove the direct `ssn-system:MeasurementRange` class expression
+
+No other source term mapping may change.
+
+Preserve all three existing RowIDs.
+
+Update documentary reasoning for these rows to reflect the new adjudications rather than the previous “documentary discrepancy / unresolved” language.
+
+Update current assessments so these terms are no longer unreviewed:
+
+- `ssn:forProperty` → final / no_direct_mapping
+- `ssn-system:SystemProperty` → final / inheritance_sufficient
+- `ssn-system:MeasurementRange` → final / inheritance_sufficient
+
+Regenerate `SSN2BFO.ttl` and any governed reports/artifacts through the repository's authoritative workflow. Do not hand-edit generated outputs unless the repository explicitly requires it.
+
+## Validation
+
+Before changing anything, capture:
+
+- branch and HEAD
+- git status
+- authoritative workbook SHA-256
+- semantic projection SHA
+- exact current contents of the three governed rows
+- current assessment classifications/counts
+
+After the changes:
+
+1. verify only the intended three semantic rows changed in A/B/C, plus their permitted D reasoning changes;
+2. verify all RowIDs remain unchanged;
+3. verify the three removed axioms are absent from generated TTL;
+4. verify no unrelated mapping axiom changed;
+5. run the semantic-workbook evolution guard using `EXPLICIT_NEW_HUMAN_DECISION`;
+6. run the repository's current-track mapping, publication, COMS, rendering, and semantic validation suites that are applicable;
+7. run the required OWL profile and reasoner gates against the integrated current closure;
+8. confirm the ontology remains reasoner-clean to the same governed standard as the current baseline;
+9. report assessment counts before and after;
+10. report exact workbook SHA and semantic-projection SHA before and after;
+11. run `git diff --check`;
+12. show final `git status --short --branch`.
+
+Do not commit, tag, push, or modify unrelated files.
+
+If any validation fails, stop and report the failure rather than weakening the semantic decisions or making additional mapping changes.
+
+End with a concise report containing:
+
+- exact three workbook deltas;
+- new assessment status for each term;
+- decision-record paths;
+- generated TTL deltas;
+- semantic-transition record/path and authorization category;
+- reasoner/profile results;
+- test-suite results;
+- before/after hashes;
+- final git status.
+
+Use this final marker:
+
+`THREE-TERM CURRENT ADJUDICATION IMPLEMENTED — NOT COMMITTED`

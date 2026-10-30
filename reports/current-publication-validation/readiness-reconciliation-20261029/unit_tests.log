@@ -1,0 +1,387 @@
+...............................................................................................................................................................................................................................................D4 documentary integration: D4 changed; full workbook SHA changed; semantic projection unchanged; documentary transition authenticated; MeasurementRange sufficiency evidence current; assessment custody authenticated.
+.........................................................................................................................................................................................................................................................All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+.Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.....Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.05 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing alignment core
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing CCO extension
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.02 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- missing strict BFO mapping
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+........Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-phyhdpii/.cache/coms-noncanonical-header/run-ch4544z4/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 69
+Blank mapping rows: 5
+Class mapping rows: 42
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 2
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 100
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 28
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 52
+CCO-extension logical triples: 875
+CCO-extension total triples: 884
+CCO-extension SHA-256: 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1065
+Candidate closure triple count: 15855
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 27
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 14
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.alignment_core.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-noncanonical-header/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /Users/alecsculley/Documents/GitHub/SSN-to-BFO/tools/generate_mapping_from_coms.py --input /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/hermit --report-workbook-path /Users/alecsculley/Documents/GitHub/SSN-to-BFO/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-3v8v7agr/.cache/coms-reordered-root-imports/run-ddqcldem/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 69
+Blank mapping rows: 5
+Class mapping rows: 42
+Object-property mapping rows: 25
+Domain rows: 16
+Range rows: 15
+Property-chain rows: 2
+Governed RowIDs: 105
+Unique RowIDs: 105
+Processed governed rows: 105
+Identity-audit rows: 105
+Canonical authoritative axioms: 100
+Disposition target-neutral axioms: 29
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 28
+Alignment-core governed axioms: 29
+Alignment-core logical triples: 53
+Alignment-core total triples: 61
+Alignment-core SHA-256: 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 52
+CCO-extension logical triples: 875
+CCO-extension total triples: 884
+CCO-extension SHA-256: 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1065
+Candidate closure triple count: 15855
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 27
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 14
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.integrated.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-reordered-root-imports/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+..COMS quality check: FAIL (stale COMS outputs: alignment-core hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: CCO-extension hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.COMS quality check: FAIL (stale COMS outputs: strict-BFO hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.alignment_core.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-strict_bfo_mapping\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'")
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (product-disposition validation failed: ERROR [MISSING_FIELD] document: missing required field 'canonicalization_version' | ERROR [MISSING_FIELD] document: missing required field 'disposition_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'generator_sha256' | ERROR [MISSING_FIELD] document: missing required field 'product_order' | ERROR [MISSING_FIELD] document: missing required field 'publication_metadata_sha256' | ERROR [MISSING_FIELD] document: missing required field 'row_identity_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'rows' | ERROR [MISSING_FIELD] document: missing required field 'summary' | ERROR [MISSING_FIELD] document: missing required field 'workbook_sha256' | ERROR [WRONG_TYPE] product_order: expected array of product strings | ERROR [WRONG_TYPE] rows: expected array | ERROR [WRONG_TYPE] summary: expected JSON object | ERROR [WRONG_TYPE] summary.authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.bfo_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.cco_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.class_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.explicitly_unmapped_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.governed_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.mixed_bfo_cco_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_chain_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_typing_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.relation_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.target_neutral_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_row_id_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.zero_axiom_row_count: expected nonnegative integer)
+Failure log: .cache/coms/last-failure.log
+.Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+.......[2/11] Compiling COMS generator
+[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+.[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 1047 tests in 7412.892s
+
+OK
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-z8eequs9/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 1
+Canonical authoritative axioms: 1
+Errors:
+- ERROR [TARGET_CATEGORY_MISMATCH] urn:uuid:00000000-0000-4000-8000-000000000001: synthetic disposition failure
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-72s7jrsk/generation-report.md
+Worksheets read: none
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 0
+Unique RowIDs: 0
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- Synthetic!1: governed worksheet is missing required header 'coms:RowID'
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-5gb_4sf7/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [IDENTITY_AUDIT_INCOMPLETE] processed row count 1 does not match identity-audit row count 0 | ERROR [PROCESSED_AUDIT_ROWID_MISMATCH] processed RowIDs missing from identity audits: urn:uuid:00000000-0000-4000-8000-000000000001 (Synthetic!2) | ERROR [IDENTITY_AUDIT_INCOMPLETE] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001] is absent from the identity audit
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-lvdr0nvh/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-5c8vsvrj/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-0wqql4yt/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+
+==> Python compile check
+$ /opt/miniconda3/bin/python -m py_compile tools/run_validation_suite.py tools/test_elk_instance_mapping_entailments.py tools/test_full_sosa_closure_hermit.py tools/test_object_property_typing_probes.py tools/test_instance_data.py tools/compare_mappings.py tools/coms_row_identity.py tools/coms_framework_integration.py tools/product_dispositions.py tools/modular_products.py tools/generate_mapping_from_coms.py tools/robot_template_generation_pilot.py tools/robot_property_chain_generation_pilot.py tools/robot_diff_pilot.py tools/robot_extract_pilot.py tools/robot_query_equivalence_pilot.py tools/robot_retained_example_validation_pilot.py tools/robot_verify_pilot.py tools/robot_reconstruction_validation.py tools/validate_robot_reconstruction.py tools/check_coms_mapping.py tools/sosa_source_version.py tools/check_sosa_source_version.py tools/product_role_policy.py tools/check_product_role_policy.py tools/sosa_release_scope.py tools/check_sosa_release_scope.py tools/check_sosa_next_mapping.py tools/generate_sosa_next_products.py tools/check_sosa_next_products.py tools/watch_coms_mapping.py tools/publication_metadata.py tools/check_publication_metadata.py tools/release_context.py tools/release_manifest.py tools/sosa_2023_release_manifest.py tools/sosa_2023_release_runtime.py tools/sosa_2023_build_release.py tools/sosa_2023_check_release.py tools/sosa_2023_release_archive.py tools/sosa_2023_rehearse_release.py tools/build_release.py tools/check_release.py tools/release_archive.py tools/rehearse_release.py tests/test_generate_mapping_from_coms.py tests/test_sosa_source_version.py tests/test_product_role_policy.py tests/test_sosa_release_scope.py tests/test_check_sosa_next_mapping.py tests/test_sosa_next_products.py tests/test_sosa_next_consumer_stack.py tests/test_sosa_2023_publication_metadata.py tests/test_sosa_2023_release_rendering.py tests/test_sosa_2023_release_manifest.py tests/test_sosa_2023_release_runtime.py tests/test_sosa_2023_build_release.py tests/test_sosa_2023_release_archive.py tests/test_sosa_2023_release_rehearsal.py tests/test_robot_template_generation_pilot.py tests/test_robot_property_chain_generation_pilot.py tests/test_robot_diff_pilot.py tests/test_robot_extract_pilot.py tests/test_robot_query_equivalence_pilot.py tests/test_robot_retained_example_validation_pilot.py tests/test_robot_verify_pilot.py tests/test_robot_reconstruction_validation.py tests/test_coms_row_identity.py tests/test_coms_framework_integration.py tests/test_product_dispositions.py tests/test_modular_products.py tests/test_strict_bfo_mapping.py tests/test_cco_extension.py tests/test_bfo_projection.py tests/test_publication_metadata.py tests/test_release_context.py tests/test_release_rendering.py tests/test_release_manifest.py tests/test_release_contract.py tests/test_build_release.py tests/test_release_archive.py tests/test_release_rehearsal.py tests/test_placeholder_catalog_migration.py
+Python compile check: PASS
+
+==> failing bytecode fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("failed-bytecode-report.json").write_text(json.dumps({
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+raise SystemExit(7)
+'
+failing bytecode fixture: FAIL (7)
+
+==> bytecode isolation fixture
+$ /opt/miniconda3/bin/python -c '
+import json
+import os
+import subprocess
+import sys
+
+inner = r"""
+import json
+import os
+import py_compile
+from pathlib import Path
+import validation_module
+
+compiled = py_compile.compile("validation_module.py", doraise=True)
+Path("bytecode-report.json").write_text(json.dumps({
+    "dont_write": os.environ["PYTHONDONTWRITEBYTECODE"],
+    "cache": os.environ["PYTHONPYCACHEPREFIX"],
+    "compiled": compiled,
+    "value": validation_module.VALUE,
+}, sort_keys=True), encoding="utf-8")
+"""
+subprocess.run(
+    [sys.executable, "-c", inner],
+    env={"PYTHONPATH": "."},
+    check=True,
+)
+'
+bytecode isolation fixture: PASS
+
+==> primary plus cleanup failure
+$ /opt/miniconda3/bin/python -c pass
+primary plus cleanup failure: FAIL (7); CLEANUP_FAILED external bytecode cache: owned path identity changed

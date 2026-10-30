@@ -21,11 +21,16 @@ from rdflib.collection import Collection
 
 import generate_mapping_from_coms as mapping
 import current_documentary_workbook as documentary
+import current_decision_applicability as applicability
+import current_custody_dependencies as custody
 
 ROOT = Path(__file__).resolve().parents[1]
 SCOPE = ROOT / "config/current-ssn-sosa-scope.json"
 ASSESSMENT = ROOT / "mappings/current-ssn-sosa-assessment.json"
 HISTORICAL_FINAL_BASELINE = ROOT / "config/current-ssn-sosa-historical-finals.json"
+REPORT_DIRECTORY = Path(custody.ASSESSMENT_OUTPUT_DIRECTORY)
+REPORT_NAMES = tuple(f"current-ssn-sosa-{name}.{suffix}" for name in
+                     ("coverage", "rationale-proposals", "human-review") for suffix in ("json", "md"))
 # Pin the complete, deliberately closed set of twelve reconstructed historical
 # finals. An edit to the JSON cannot silently grandfather another decision.
 HISTORICAL_FINAL_BASELINE_SHA256 = "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769"
@@ -54,6 +59,7 @@ REVIEW_TARGETS = {
     "ssn-system:hasSystemCapability": ["bfo:BFO_0000196", "bfo:BFO_0000117"],
 }
 RULE_PATH = "rules/ssn-hasproperty-conditional-mapping.rq"
+RULE_SHA256 = "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d"
 
 
 def sha(path: Path) -> str:
@@ -91,13 +97,12 @@ def historical_finals() -> dict[str, dict]:
 def project_evidence(ref: dict, label: str, iri: str) -> Path:
     if not isinstance(ref, dict) or not isinstance(ref.get("path"), str) or not ref.get("sha256"):
         raise ValueError(f"missing bound {label}: {iri}")
-    relative = Path(ref["path"])
-    path = ROOT / relative
-    if relative.is_absolute() or not path.resolve().is_relative_to(ROOT.resolve()) or not path.is_file():
-        raise ValueError(f"missing or non-project {label}: {iri}")
-    if sha(path) != ref["sha256"]:
-        raise ValueError(f"stale {label} hash: {iri}")
-    return path
+    try:
+        # Decision artifacts are immutable physical records, unlike historical
+        # supporting reports. Sharing authentication must not hide their drift.
+        return documentary._bound_file(ROOT, ref)
+    except (ValueError, OSError) as exc:
+        raise ValueError(f"stale or missing bound {label}: {iri}: {exc}") from exc
 
 
 def decision_mapping_assertions(rows) -> list[dict[str, str]]:
@@ -115,10 +120,10 @@ def decision_input_hashes() -> dict:
             "source_query_sha256": sha(SOURCE_QUERY)}
 
 
-def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows: list,
-                            own_rows: list, route: dict, comparisons: dict,
-                            seen_ids: set[str]) -> None:
-    """Require an explicit, evidence-bound human artifact for every new final."""
+def authenticate_human_decision(record: dict, graph: Graph, target: Graph, all_rows: list,
+                                own_rows: list, route: dict, comparisons: dict,
+                                seen_ids: set[str]) -> dict:
+    """Authenticate the exact historical evidence, independently of applicability."""
     iri = record["source_iri"]
     decision_path = project_evidence(record.get("human_decision_record"), "human decision record", iri)
     decision = json.loads(decision_path.read_text())
@@ -151,9 +156,6 @@ def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows:
     refs = decision.get("evidence_refs")
     if not isinstance(refs, list) or not refs or any(not isinstance(v, str) or not v.strip() for v in refs) or refs != record["evidence"]:
         raise ValueError(f"human decision evidence/assessment mismatch: {iri}")
-    if (decision.get("mapping_row_ids") != sorted(record["mapping_row_ids"])
-            or decision.get("formal_mapping_assertions") != decision_mapping_assertions(own_rows)):
-        raise ValueError(f"human decision mapping state mismatch: {iri}")
     historical_inputs = decision.get("input_hashes")
     current_inputs = decision_input_hashes()
     if (not isinstance(historical_inputs, dict)
@@ -161,14 +163,33 @@ def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows:
             or any(historical_inputs[k] != v for k, v in current_inputs.items()
                    if k != "workbook_sha256")):
         raise ValueError(f"stale human decision governed inputs: {iri}")
-    historical_workbook = None
+    historical_workbook = ROOT / "mappings/SSN2BFO-COMS.xlsx"
+    reviewed_rows, reviewed_own, reviewed_route = all_rows, own_rows, route
     if historical_inputs["workbook_sha256"] != current_inputs["workbook_sha256"]:
-        # A full-file transition requires actual archived bytes and an exact
-        # D-only manifest. Equal semantic projections alone never authorize it.
-        historical_workbook = documentary.validate_workbook_evolution(
-            ROOT, historical_inputs["workbook_sha256"])
-    if decision.get("formal_coverage_sha256") != canonical_sha(route):
+        import current_semantic_workbook as semantic
+        # Authenticity of the immutable original evidence does not depend on
+        # whether today's workbook transition is valid. Applicability below
+        # separately requires the complete chain to the current bytes.
+        baseline = documentary._baseline(ROOT)
+        if historical_inputs["workbook_sha256"] == baseline["historical_workbook"]["sha256"]:
+            historical_workbook = documentary._historical_snapshot(ROOT, baseline)
+        else:
+            history = semantic.resolve_history(ROOT, require_live=False)
+            if historical_inputs["workbook_sha256"] not in history["version_sha256"]:
+                raise ValueError(f"human decision workbook lacks historical custody: {iri}")
+            historical_workbook = semantic.snapshot(ROOT, historical_inputs["workbook_sha256"])
+        raw_rows, stats = mapping.read_workbook(historical_workbook)
+        reviewed_rows = mapping.validate_and_process_rows(raw_rows, mapping.Resolver(), stats)
+        reviewed_own = [row for row in reviewed_rows if str(row.subject) == iri]
+        reviewed_route = coverage({iri: record["source_kind"]}, graph, reviewed_rows)[0]
+    if (decision.get("mapping_row_ids") != sorted(row.row.stable_row_id for row in reviewed_own)
+            or decision.get("formal_mapping_assertions") != decision_mapping_assertions(reviewed_own)):
+        raise ValueError(f"human decision historical mapping state mismatch: {iri}")
+    if decision.get("formal_coverage_sha256") != canonical_sha(reviewed_route):
         raise ValueError(f"stale human decision formal coverage: {iri}")
+    if any(item.get("artifact") == RULE_PATH for item in reviewed_route.get("rule_routes", [])):
+        if sha(ROOT / RULE_PATH) != RULE_SHA256:
+            raise ValueError(f"MATERIAL_REQUIRES_REOPEN: governed rule semantics changed: {iri}")
 
     snapshot_path = project_evidence(decision.get("assessment_snapshot"), "pre-decision assessment snapshot", iri)
     snapshot = json.loads(snapshot_path.read_text())
@@ -187,15 +208,10 @@ def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows:
         raise ValueError(f"human decision changed unreviewed assessment facts: {iri}")
     packet_path = project_evidence(decision.get("review_packet_snapshot"), "review packet snapshot", iri)
     packet = json.loads(packet_path.read_text())
-    reviewed_rows, reviewed_own = all_rows, own_rows
-    if historical_workbook is not None:
-        raw_rows, stats = mapping.read_workbook(historical_workbook)
-        reviewed_rows = mapping.validate_and_process_rows(raw_rows, mapping.Resolver(), stats)
-        reviewed_own = [row for row in reviewed_rows if str(row.subject) == iri]
     # Reconstruct what was reviewed, including historical D prose. Do not
     # delete packet fields or pretend later approved prose was reviewed earlier.
     _, _, expected_packet = review_details(prior[0], graph, target, reviewed_own, reviewed_rows,
-                                           route, comparisons, {})
+                                           reviewed_route, next_comparison(reviewed_rows), {})
     if packet != expected_packet or packet.get("human_question") != question:
         raise ValueError(f"human decision review packet mismatch: {iri}")
     if decision["review_packet_snapshot"].get("item_sha256") != canonical_sha(packet):
@@ -205,20 +221,103 @@ def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows:
     if outcome == "formal_mapping_adopted":
         if (decision.get("decision_basis") != "formal_mapping_approval"
                 or decision.get("formal_mapping_approved") is not True
-                or not decision_mapping_assertions(own_rows)):
+                or not decision_mapping_assertions(reviewed_own)):
             raise ValueError(f"human decision does not approve current formal mapping: {iri}")
     elif outcome == "no_direct_mapping":
         if (decision.get("decision_basis") != "semantic_rejection"
                 or decision.get("explicit_no_direct_mapping_adopted") is not True
                 or not isinstance(decision.get("separate_semantic_conclusion"), str)
                 or not decision["separate_semantic_conclusion"].strip()
-                or decision_mapping_assertions(own_rows)):
+                or decision_mapping_assertions(reviewed_own)):
             raise ValueError(f"human decision lacks a separate semantic no-direct conclusion: {iri}")
     elif outcome == "inheritance_sufficient":
+        # The full workbook hash authenticates the original approval context.
+        # Current freshness is established by the complete governed evolution
+        # and decision applicability below, including documentary-only edges.
+        validate_inheritance_sufficiency(record, reviewed_route, root=ROOT,
+                                        workbook_path=historical_workbook)
         if (decision.get("decision_basis") != "inheritance_sufficiency"
                 or decision.get("no_additional_direct_mapping_required") is not True
                 or decision.get("inheritance_sufficiency_evidence") != record.get("inheritance_sufficiency_evidence")):
             raise ValueError(f"human decision lacks bound inheritance sufficiency: {iri}")
+    return {"decision": decision, "prior": prior[0], "workbook": historical_workbook,
+            "rows": reviewed_rows, "coverage": reviewed_route, "packet": packet}
+
+
+def validate_human_decision(record: dict, graph: Graph, target: Graph, all_rows: list,
+                            own_rows: list, route: dict, comparisons: dict,
+                            seen_ids: set[str]) -> None:
+    """Authenticate history, then establish applicability through every version."""
+    authenticated = authenticate_human_decision(record, graph, target, all_rows,
+                                                own_rows, route, comparisons, seen_ids)
+    iri = record["source_iri"]
+
+    def state(workbook):
+        raw, stats = mapping.read_workbook(workbook)
+        rows = mapping.validate_and_process_rows(raw, mapping.Resolver(), stats)
+        own = [row for row in rows if str(row.subject) == iri]
+        current_route = coverage({iri: record["source_kind"]}, graph, rows)[0]
+        _, _, packet = review_details(authenticated["prior"], graph, target, own, rows,
+                                      current_route, next_comparison(rows), {})
+        return {"source_exists": any(graph.triples((URIRef(iri), RDF.type, None))),
+                "packet": packet, "coverage": current_route}
+
+    applicability.validate_current_applicability(
+        ROOT, authenticated["decision"], authenticated["workbook"],
+        ROOT / "mappings/SSN2BFO-COMS.xlsx", state)
+
+
+def evolve_unreviewed_row_ids(root: Path, document: dict,
+                              current_path: Path | None = None, *,
+                              from_workbook_sha256: str | None = None) -> dict:
+    """Return a mechanical RowID-only proposal; never write an assessment.
+
+    Every membership change must be explained by the authenticated version
+    chain. Finalized and deferred records are deliberately ineligible; their
+    evidence/applicability must be handled through the decision workflow.
+    """
+    import copy
+    import current_semantic_workbook as semantic
+    root = Path(root)
+    history = semantic.resolve_history(root, current_path=current_path)
+    result = copy.deepcopy(document)
+    start = from_workbook_sha256 or history["baseline"]["historical_workbook"]["sha256"]
+    if start not in history["version_sha256"]:
+        raise ValueError("assessment RowID evolution start is outside governed history")
+
+    def memberships(path):
+        raw, stats = mapping.read_workbook(path)
+        rows = mapping.validate_and_process_rows(raw, mapping.Resolver(), stats)
+        by_iri = defaultdict(set)
+        for row in rows:
+            by_iri[str(row.subject)].add(row.row.stable_row_id)
+        return by_iri
+
+    initial = memberships(semantic.snapshot(root, start))
+    for record in result["records"]:
+        values = record["mapping_row_ids"]
+        if len(values) != len(set(values)) or set(values) != initial[record["source_iri"]]:
+            raise ValueError(f"assessment RowID evolution requires exact starting membership: {record['source_iri']}")
+    for transition in history["chain"][history["version_sha256"].index(start):]:
+        before = memberships(semantic.snapshot(root, transition["old_workbook_sha256"]))
+        after = memberships(semantic.snapshot(root, transition["new_workbook_sha256"]))
+        for record in result["records"]:
+            iri = record["source_iri"]
+            if before[iri] == after[iri]:
+                continue
+            if record["review_state"] != "unreviewed" or record["assessment_outcome"] != "unreviewed" or record.get("human_decision_record"):
+                raise ValueError(f"MATERIAL_REQUIRES_REOPEN: finalized/deferred RowID evolution is forbidden: {iri}")
+            membership = record["mapping_row_ids"]
+            if len(membership) != len(set(membership)):
+                raise ValueError(f"duplicate assessment RowID: {iri}")
+            if set(membership) != before[iri]:
+                raise ValueError(f"assessment RowID evolution requires the exact prior membership: {iri}")
+            record["mapping_row_ids"] = sorted(after[iri])
+    final = memberships(semantic.snapshot(root, history["tail_sha256"]))
+    for record in result["records"]:
+        if set(record["mapping_row_ids"]) != final[record["source_iri"]]:
+            raise ValueError(f"assessment RowID evolution did not reach current membership: {record['source_iri']}")
+    return result
 
 
 def source_graph() -> Graph:
@@ -280,6 +379,8 @@ def validate(scope: dict, records: list[dict], graph: Graph, rows) -> dict[str, 
     seen_decision_ids: set[str] = set()
     target_graph = None
     comparisons = None
+    legacy_history = None
+    legacy_coverage = {}
     for r in records:
         iri = r["source_iri"]
         if r["source_kind"] != terms[iri]:
@@ -297,7 +398,9 @@ def validate(scope: dict, records: list[dict], graph: Graph, rows) -> dict[str, 
         if r["assessment_outcome"] == "no_direct_mapping" and any(str(row.subject) == iri and row.predicate in mapping.MAPPING_PREDICATES for row in rows):
             raise ValueError(f"no-direct outcome conflicts with mapping: {iri}")
         if r["assessment_outcome"] == "inheritance_sufficient":
-            validate_inheritance_sufficiency(r, route_by_iri[iri])
+            route = route_by_iri[iri]
+            if not route["inherited_formal_mapping"] or not route["inherited_routes"]:
+                raise ValueError(f"inheritance_sufficient lacks an inherited formal route: {iri}")
         if not r["rationale"] or not r["evidence"]:
             raise ValueError(f"missing rationale/evidence: {iri}")
         if r["review_state"] == "final":
@@ -313,6 +416,27 @@ def validate(scope: dict, records: list[dict], graph: Graph, rows) -> dict[str, 
                 validate_human_decision(r, graph, target_graph, rows,
                                         [row for row in rows if str(row.subject) == iri],
                                         route_by_iri[iri], comparisons, seen_decision_ids)
+            else:
+                # The twelve closed historical exceptions have no reconstructed
+                # human packet to rewrite. Their grandfathered approval is not
+                # permission to evolve their own mappings or formal coverage.
+                import current_semantic_workbook as semantic
+                if legacy_history is None:
+                    legacy_history = semantic.resolve_history(ROOT)
+                for transition in legacy_history["chain"]:
+                    if transition["kind"] != "semantic":
+                        continue
+                    paths = [semantic.snapshot(ROOT, transition[key + "_workbook_sha256"])
+                             for key in ("old", "new")]
+                    if applicability.own_semantic_rows(paths[0], iri) != applicability.own_semantic_rows(paths[1], iri):
+                        raise ValueError(f"MATERIAL_REQUIRES_REOPEN: historical-final semantic rows changed: {iri}")
+                    for path in paths:
+                        if path not in legacy_coverage:
+                            raw, stats = mapping.read_workbook(path)
+                            historical_rows = mapping.validate_and_process_rows(raw, mapping.Resolver(), stats)
+                            legacy_coverage[path] = {v["source_iri"]: v for v in coverage(terms, graph, historical_rows)}
+                    if legacy_coverage[paths[0]][iri] != legacy_coverage[paths[1]][iri]:
+                        raise ValueError(f"MATERIAL_REQUIRES_REOPEN: historical-final formal coverage changed: {iri}")
         if r["review_state"] != "final":
             for key in ("question", "alternatives", "recommendation", "confidence"):
                 if not r["review"][key]:
@@ -320,27 +444,32 @@ def validate(scope: dict, records: list[dict], graph: Graph, rows) -> dict[str, 
     return terms
 
 
-def sufficiency_inputs() -> dict[str, str]:
-    """Current governed inputs supporting a project-local sufficiency decision."""
+def sufficiency_inputs(*, root: Path | None = None,
+                       workbook_path: Path | None = None) -> dict[str, str]:
+    """Actual governed inputs supporting a live or candidate sufficiency decision."""
+    root = Path(root) if root is not None else ROOT
     paths = set(SOURCE_PATHS) | {TARGET_PATH, "mappings/SSN2BFO-COMS.xlsx",
-                                str(SOURCE_QUERY.relative_to(ROOT))}
-    return {p: sha(ROOT / p) for p in sorted(paths)}
+                                "queries/source-classes-and-object-properties.rq"}
+    workbook_path = Path(workbook_path) if workbook_path is not None else root / "mappings/SSN2BFO-COMS.xlsx"
+    return {p: sha(workbook_path if p == "mappings/SSN2BFO-COMS.xlsx" else root / p)
+            for p in sorted(paths)}
 
 
-def validate_inheritance_sufficiency(record: dict, route: dict) -> None:
-    """Require independent decision evidence; a structural route is not approval."""
+def validate_inheritance_sufficiency(record: dict, route: dict, *,
+                                    root: Path | None = None,
+                                    workbook_path: Path | None = None) -> None:
+    """Authenticate exact approval-context inputs; evolution determines freshness."""
+    root = Path(root) if root is not None else ROOT
     iri = record["source_iri"]
     if route["source_iri"] != iri or not route["inherited_formal_mapping"] or not route["inherited_routes"]:
         raise ValueError(f"inheritance_sufficient lacks an inherited formal route: {iri}")
     ref = record.get("inheritance_sufficiency_evidence")
     if not isinstance(ref, dict) or not all(ref.get(k) for k in ("path", "sha256")):
         raise ValueError(f"inheritance_sufficient lacks bound sufficiency evidence: {iri}")
-    relative = Path(ref["path"])
-    path = ROOT / relative
-    if relative.is_absolute() or not path.resolve().is_relative_to(ROOT.resolve()) or not path.is_file():
-        raise ValueError(f"missing or non-project sufficiency evidence: {iri}")
-    if sha(path) != ref["sha256"]:
-        raise ValueError(f"stale sufficiency evidence hash: {iri}")
+    try:
+        path = documentary._bound_file(root, ref)
+    except (ValueError, OSError) as exc:
+        raise ValueError(f"stale sufficiency evidence hash: {iri}: {exc}") from exc
     evidence = json.loads(path.read_text())
     if not isinstance(evidence, dict) or evidence.get("source_iri") != iri:
         raise ValueError(f"sufficiency evidence refers to the wrong term: {iri}")
@@ -349,7 +478,7 @@ def validate_inheritance_sufficiency(record: dict, route: dict) -> None:
             or not isinstance(evidence.get("rationale"), str)
             or evidence["rationale"].strip().lower() in {"", "inherited", "inheritance", "inheritance sufficient"}):
         raise ValueError(f"sufficiency evidence lacks an explicit sufficiency rationale: {iri}")
-    if evidence.get("input_sha256") != sufficiency_inputs():
+    if evidence.get("input_sha256") != sufficiency_inputs(root=root, workbook_path=workbook_path):
         raise ValueError(f"stale sufficiency evidence inputs: {iri}")
     route_hash = hashlib.sha256(json_text(route["inherited_routes"]).encode()).hexdigest()
     if evidence.get("inherited_routes_sha256") != route_hash:
@@ -797,23 +926,10 @@ def build_reports(scope, document):
         by_subject[str(row.subject)].append(row)
     route_by_iri = {r["source_iri"]: r for r in routes}
     comparisons = next_comparison(rows)
-    evidence_paths = set(SOURCE_PATHS) | {TARGET_PATH, RULE_PATH, str(SOURCE_QUERY.relative_to(ROOT)),
-                         "mappings/SSN2BFO-COMS.xlsx", "mappings/SOSA-next-to-BFO-COMS.xlsx",
-                         "SSN2BFO.ttl", str(SCOPE.relative_to(ROOT)), str(ASSESSMENT.relative_to(ROOT)),
-                         "config/current-ssn-sosa-historical-finals.json",
-                         "tools/current_documentary_workbook.py"}
-    evidence_paths.update(documentary.evidence_paths(ROOT))
-    for record in records:
-        evidence_paths.update(e.split("#")[0].split(":")[0] for e in record["evidence"] if not e.startswith("urn:"))
-        if record.get("inheritance_sufficiency_evidence"):
-            evidence_paths.add(record["inheritance_sufficiency_evidence"]["path"])
-        if record.get("human_decision_record"):
-            evidence_paths.add(record["human_decision_record"]["path"])
-            decision = json.loads((ROOT / record["human_decision_record"]["path"]).read_text())
-            evidence_paths.add(decision["assessment_snapshot"]["path"])
-            evidence_paths.add(decision["review_packet_snapshot"]["path"])
+    evidence_paths = custody.assessment_paths(ROOT)
     binding = {"head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-               "input_sha256": {p: sha(ROOT / p) for p in sorted(evidence_paths) if (ROOT / p).is_file()},
+               "input_scope": custody.assessment_scope(ROOT),
+               "input_sha256": {p: sha(ROOT / p) for p in sorted(evidence_paths)},
                "assessment_tool_sha256": sha(Path(__file__))}
     repertoire = Counter({predicate: 0 for predicate in mapping.ALLOWED_PREDICATES})
     repertoire.update(r.predicate or "explicit_blank" for r in rows)
@@ -973,10 +1089,11 @@ def main():
                    "current-ssn-sosa-rationale-proposals.json": json_text(rat), "current-ssn-sosa-rationale-proposals.md": render_rationales(rat),
                    "current-ssn-sosa-human-review.json": json_text(review), "current-ssn-sosa-human-review.md": render_reviews(review, glossary)}
         if args.write:
+            (ROOT / REPORT_DIRECTORY).mkdir(parents=True, exist_ok=True)
             for name, value in outputs.items():
-                (ROOT / "reports" / name).write_text(value)
+                (ROOT / REPORT_DIRECTORY / name).write_text(value)
         else:
-            check_report_outputs(outputs, ROOT / "reports")
+            check_report_outputs(outputs, ROOT / REPORT_DIRECTORY)
         print(json_text({"status": "PASS", "summary": cov["summary"], "rationales": rat["summary"]}), end="")
         if args.require_final and review["item_count"]:
             print("CURRENT TRACK NOT YET PUBLICATION READY — HUMAN SEMANTIC REVIEW REQUIRED")

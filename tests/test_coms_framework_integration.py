@@ -10,7 +10,7 @@ import shutil
 import sys
 import unittest
 from collections import Counter
-from contextlib import ExitStack, redirect_stdout
+from contextlib import ExitStack, nullcontext, redirect_stdout
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import mock
@@ -55,11 +55,16 @@ import coms_row_identity as legacy_identity  # noqa: E402
 import generate_mapping_from_coms as legacy  # noqa: E402
 import product_dispositions as dispositions  # noqa: E402
 import current_documentary_workbook as documentary  # noqa: E402
+import current_semantic_generation as generation  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
 
 
 WORKBOOK_PATH = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
 WORKBOOK_SHA256 = "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6"
-GENERATOR_SHA256 = "9e46f057900a7b6901771e27178d7ac854f01a95dd910f9ebdb21503bcde7843"
+HISTORICAL_WORKBOOK_PATH = REPO_ROOT / documentary.VERSIONS / (WORKBOOK_SHA256 + ".xlsx")
+# Generator identity and historical product identities remain pinned; current
+# product identities separately record the approved three-term adjudication.
+GENERATOR_SHA256 = "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e"
 ROW_IDENTITY_MODULE_SHA256 = (
     "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425"
 )
@@ -81,21 +86,27 @@ ARTIFACT_SHA256 = {
         "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
     ),
 }
+CURRENT_ARTIFACT_SHA256 = {
+    **ARTIFACT_SHA256,
+    REPO_ROOT / "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+    REPO_ROOT / "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": (
+        "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+    ),
+}
 DOCUMENTARY_REPORT_PATHS = (
     REPO_ROOT / "reports/coms-product-dispositions.json",
     REPO_ROOT / "reports/coms-generation-validation.md",
 )
 EXPECTED_MAPPING_TYPES = {
-    "class_mapping": 44,
+    "class_mapping": 42,
     "object_property_mapping": 25,
-    "property_chain": 3,
+    "property_chain": 2,
     "domain": 16,
     "range": 15,
-    "explicit_blank": 2,
+    "explicit_blank": 5,
 }
 CURRENT_DISPOSITION_HASHES = dispositions.RequiredInputHashes(
-    # Documentary workbook evolution changes provenance bytes while the fixed
-    # logical product hashes above remain unchanged semantic expectations.
+    # Current provenance follows the authenticated semantic workbook version.
     workbook_sha256=hashlib.sha256(WORKBOOK_PATH.read_bytes()).hexdigest(),
     generator_sha256=GENERATOR_SHA256,
     row_identity_module_sha256=ROW_IDENTITY_MODULE_SHA256,
@@ -366,14 +377,14 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
         self.assertEqual(dict(mapping_types), EXPECTED_MAPPING_TYPES)
         self.assertEqual(
             sum(len(item.row_audit.authoritative_axioms) for item in audited_rows),
-            103,
+            100,
         )
         explicit_blank_rows = [
             item
             for item in audited_rows
             if item.governed_record.mapping_type == "explicit_blank"
         ]
-        self.assertEqual(len(explicit_blank_rows), 2)
+        self.assertEqual(len(explicit_blank_rows), 5)
         for item in explicit_blank_rows:
             key = audit_key(
                 item.source_row.row_id_text,
@@ -386,11 +397,11 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
             assert legacy_audit is not None
             self.assertEqual(legacy_audit.authoritative_axioms, ())
 
-        historical = documentary.validate_workbook_evolution(REPO_ROOT, WORKBOOK_SHA256)
+        historical = semantic.validate_workbook_evolution(REPO_ROOT, WORKBOOK_SHA256)
         self.assertEqual(sha256_file(historical), WORKBOOK_SHA256)
         self.assertEqual(sha256_file(WORKBOOK_PATH), workbook_hash_before)
         self.assertEqual(WORKBOOK_PATH.stat().st_mtime_ns, workbook_mtime_before)
-        self.assertEqual({path: artifact_hashes_before[path] for path in ARTIFACT_SHA256}, ARTIFACT_SHA256)
+        self.assertEqual({path: artifact_hashes_before[path] for path in CURRENT_ARTIFACT_SHA256}, CURRENT_ARTIFACT_SHA256)
         self.assertEqual(
             {path: sha256_file(path) for path in artifact_hashes_before},
             artifact_hashes_before,
@@ -934,11 +945,14 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             self.legacy_resolver.records,
         )
 
-    def test_both_explicit_blank_rows_project_without_targets(self) -> None:
+    def test_all_explicit_blank_rows_project_without_targets(self) -> None:
         blank_rows = [item for item in self.projected_rows if not item.predicate]
         self.assertEqual(
             {(item.row.sheet, item.row.row_number, item.row.stable_row_id) for item in blank_rows},
             {
+                ("Sheet1", 43, "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"),
+                ("Sheet1", 45, "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"),
+                ("Sheet2", 49, "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"),
                 (
                     "Sheet2",
                     16,
@@ -957,7 +971,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         }
         for item in blank_rows:
             self.assertEqual(item, legacy_by_row_id[item.row.stable_row_id])
-            self.assertEqual(item.subject_kind, "object_property")
+            self.assertEqual(item.subject_kind, "class" if item.row.sheet == "Sheet1" else "object_property")
             self.assertEqual(item.predicate, "")
             self.assertEqual(item.target, "")
             self.assertIsNone(item.expr)
@@ -1030,7 +1044,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         native_evidence, native_categories = classification_evidence(
             self.native_disposition_inputs
         )
-        self.assertEqual(len(native_evidence), 103)
+        self.assertEqual(len(native_evidence), 100)
         self.assertEqual(native_evidence, legacy_evidence)
         self.assertEqual(native_categories, legacy_categories)
         self.assertEqual(
@@ -1039,8 +1053,8 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                 {
                     "target_neutral": 29,
                     "bfo_bearing": 19,
-                    "cco_bearing": 25,
-                    "mixed_bfo_cco": 30,
+                    "cco_bearing": 24,
+                    "mixed_bfo_cco": 28,
                 }
             ),
         )
@@ -1056,6 +1070,18 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
             if not item.authoritative_axioms
         }
         expected_blanks = {
+            "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db": (
+                "Sheet1", 43, "ssn-system:MeasurementRange",
+                "8d40f1e08acf5bd3bd9796b3149b1bd8a5bc94ecf787d13040e4889953edd5e1",
+            ),
+            "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4": (
+                "Sheet1", 45, "ssn-system:SystemProperty",
+                "83d966fd425a54a63ae1491390ea23da548db9b99ec6a76c5612e9ee55c38d05",
+            ),
+            "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc": (
+                "Sheet2", 49, "ssn:forProperty",
+                "ebef42fb4518efc58c038765ae2b87fd45a65a62bbc388d4269ef6e14103771e",
+            ),
             "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f": (
                 "Sheet2",
                 16,
@@ -1141,7 +1167,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                     ),
                 )
                 comparisons += 1
-        self.assertEqual(comparisons, 103)
+        self.assertEqual(comparisons, 100)
 
     def test_native_disposition_document_matches_current_provenance_bytes(
         self,
@@ -1309,18 +1335,19 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             robot_path="synthetic-test-robot",
         )
 
-    def _assert_temp_product_hashes(self, root: Path) -> None:
+    def _assert_temp_product_hashes(self, root: Path, *, historical: bool = False) -> None:
+        artifacts = ARTIFACT_SHA256 if historical else CURRENT_ARTIFACT_SHA256
         expected = {
-            "integrated.ttl": ARTIFACT_SHA256[REPO_ROOT / "SSN2BFO.ttl"],
-            "alignment-core.ttl": ARTIFACT_SHA256[
+            "integrated.ttl": artifacts[REPO_ROOT / "SSN2BFO.ttl"],
+            "alignment-core.ttl": artifacts[
                 REPO_ROOT
                 / "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl"
             ],
-            "strict-bfo.ttl": ARTIFACT_SHA256[
+            "strict-bfo.ttl": artifacts[
                 REPO_ROOT
                 / "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl"
             ],
-            "cco-extension.ttl": ARTIFACT_SHA256[
+            "cco-extension.ttl": artifacts[
                 REPO_ROOT
                 / "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl"
             ],
@@ -1365,23 +1392,23 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             self.framework_resolver.records,
             self.legacy_resolver.records,
         )
-        self.assertEqual(len(self.framework_resolver.records), 60)
+        self.assertEqual(len(self.framework_resolver.records), 59)
         self.assertEqual(
             sum(
                 len(record.rows)
                 for record in self.framework_resolver.records.values()
             ),
-            265,
+            254,
         )
         self.assertEqual(self.legacy_resolver.source_resolution_calls, 105)
         self.assertEqual(self.framework_resolver.source_resolution_calls, 105)
-        self.assertEqual(self.legacy_resolver.entity_resolution_calls, 499)
-        self.assertEqual(self.framework_resolver.entity_resolution_calls, 499)
+        self.assertEqual(self.legacy_resolver.entity_resolution_calls, 486)
+        self.assertEqual(self.framework_resolver.entity_resolution_calls, 486)
         self.assertEqual(self.framework_stats.rows_by_sheet["Sheet1"], 44)
         self.assertEqual(self.framework_stats.rows_by_sheet["Sheet2"], 61)
-        self.assertEqual(self.framework_stats.mapped_rows, 72)
-        self.assertEqual(self.framework_stats.blank_mapping_rows, 2)
-        self.assertEqual(self.framework_stats.active_axiom_rows, 103)
+        self.assertEqual(self.framework_stats.mapped_rows, 69)
+        self.assertEqual(self.framework_stats.blank_mapping_rows, 5)
+        self.assertEqual(self.framework_stats.active_axiom_rows, 100)
 
     def test_wrapper_uses_no_legacy_generic_front_half_authorities(self) -> None:
         resolver = legacy.Resolver()
@@ -1417,7 +1444,9 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
         incompatible_policy.assert_called_once_with(processed)
 
     def test_canonical_primary_main_uses_coms_front_half_and_legacy_renderers(self) -> None:
-        with TemporaryDirectory() as directory:
+        # Authenticate candidate counts before installing front-half spies;
+        # history reconstruction legitimately uses the legacy parser itself.
+        with generation.generated_expectations_context(REPO_ROOT, WORKBOOK_PATH), TemporaryDirectory() as directory:
             root = Path(directory)
             resolver = CountingResolver()
             hermit = self._passing_hermit_result(root)
@@ -1459,6 +1488,8 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 "primary production invoked a forbidden semantic or COMS renderer authority"
             )
             with ExitStack() as stack:
+                stack.enter_context(mock.patch.object(
+                    legacy, "generated_expectations_context", return_value=nullcontext()))
                 resolver_type = stack.enter_context(
                     mock.patch.object(legacy, "Resolver", return_value=resolver)
                 )
@@ -1607,20 +1638,20 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             self.assertEqual(stats, self.legacy_stats)
             self.assertIs(captured["resolver"], resolver)
             self.assertEqual(resolver.records, self.legacy_resolver.records)
-            self.assertEqual(len(resolver.records), 60)
+            self.assertEqual(len(resolver.records), 59)
             self.assertEqual(
                 sum(len(record.rows) for record in resolver.records.values()),
-                265,
+                254,
             )
             self.assertEqual(resolver.source_resolution_calls, 105)
-            self.assertEqual(resolver.entity_resolution_calls, 499)
-            self.assertEqual(sum(not item.predicate for item in processed), 2)
+            self.assertEqual(resolver.entity_resolution_calls, 486)
+            self.assertEqual(sum(not item.predicate for item in processed), 5)
             self.assertEqual(
                 sum(
                     len(item.identity_audit.authoritative_axioms)
                     for item in processed
                 ),
-                103,
+                100,
             )
             native_inputs = captured["native_inputs"]
             self.assertIsInstance(native_inputs, list)
@@ -1635,7 +1666,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 for item in native_inputs
                 if item.mapping_type == "explicit_blank"
             ]
-            self.assertEqual(len(blank_inputs), 2)
+            self.assertEqual(len(blank_inputs), 5)
             self.assertTrue(
                 all(not item.authoritative_axioms for item in blank_inputs)
             )
@@ -1653,7 +1684,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 for item in disposition_document.rows
                 if item.mapping_type == "explicit_blank"
             ]
-            self.assertEqual(len(blank_records), 2)
+            self.assertEqual(len(blank_records), 5)
             for item in blank_records:
                 self.assertEqual(item.authoritative_axioms, ())
                 assert item.row_product_dispositions is not None
@@ -1670,8 +1701,15 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             root = Path(directory)
             copied_workbook = root / WORKBOOK_PATH.name
-            shutil.copy2(WORKBOOK_PATH, copied_workbook)
+            # Nonprimary files do not acquire the live semantic-transition
+            # authority. Keep this regression on the retained baseline bytes.
+            self.assertEqual(sha256_file(HISTORICAL_WORKBOOK_PATH), WORKBOOK_SHA256)
+            shutil.copy2(HISTORICAL_WORKBOOK_PATH, copied_workbook)
             self.assertNotEqual(copied_workbook.resolve(), WORKBOOK_PATH.resolve())
+            historical_rows, historical_stats = legacy.read_workbook(copied_workbook)
+            historical_resolver = CountingResolver()
+            historical_processed = legacy.validate_and_process_rows(
+                historical_rows, historical_resolver, historical_stats)
 
             resolver = CountingResolver()
             hermit = self._passing_hermit_result(root)
@@ -1783,10 +1821,10 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             shared_writer.assert_called_once()
             self.assertEqual(len(shared_writer.call_args.args[0]), 105)
             self.assertEqual(domain_policy.call_count, 31)
-            self.assertEqual(captured["processed"], self.legacy_processed)
-            self.assertEqual(captured["stats"], self.legacy_stats)
+            self.assertEqual(captured["processed"], historical_processed)
+            self.assertEqual(captured["stats"], historical_stats)
             self.assertIs(captured["resolver"], resolver)
-            self.assertEqual(resolver.records, self.legacy_resolver.records)
+            self.assertEqual(resolver.records, historical_resolver.records)
             self.assertEqual(len(resolver.records), 60)
             self.assertEqual(
                 sum(len(record.rows) for record in resolver.records.values()),
@@ -1794,7 +1832,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             )
             self.assertEqual(resolver.source_resolution_calls, 105)
             self.assertEqual(resolver.entity_resolution_calls, 499)
-            self._assert_temp_product_hashes(root)
+            self._assert_temp_product_hashes(root, historical=True)
 
     def test_rowid_preflight_fails_before_batch_or_resolution(self) -> None:
         with TemporaryDirectory() as directory:

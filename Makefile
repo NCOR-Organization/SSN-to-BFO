@@ -90,6 +90,7 @@ compile:
 		tests/test_release_context.py \
 		tests/test_release_rendering.py \
 		tests/test_release_manifest.py \
+		tests/test_release_contract.py \
 		tests/test_build_release.py \
 		tests/test_release_archive.py \
 		tests/test_release_rehearsal.py \
@@ -109,6 +110,7 @@ check-release-rendering:
 
 check-release-package:
 	PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_release_manifest.py'
+	PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_release_contract.py'
 	PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_build_release.py'
 	PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_release_context.py'
 	PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_release_rendering.py'

@@ -1385,20 +1385,25 @@
       "source_label": "detects"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "no_direct_mapping",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet2!49",
         "imports/ssn.ttl#http://www.w3.org/ns/ssn/forProperty",
         "imports/cco.ttl",
         "reports/observes-upper-mapping-decision.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json",
+        "sha256": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782"
+      },
       "mapping_row_ids": [
         "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does being described by any information entity about a Property suffice for the source forProperty relation, across sensors and capability/range descriptions?",
+      "rationale": "`ssn:forProperty` relates a Procedure or System to a Property that it acts on or observes. The proposed `cco:described_by o cco:is_about` chain establishes only that an entity is described by information that is about some entity; it does not entail that the described entity acts on or observes that Property. This is especially clear for the System branch of the source semantics: a physical System may be described by an information artifact that is about a Property without the System thereby observing or acting on that Property. No reviewed BFO/CCO relation uniformly captures the source relation across its Procedure and System uses. Retain `ssn:forProperty` as a source-native relation without a direct BFO/CCO mapping.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1408,7 +1413,7 @@
         "question": "Does being described by any information entity about a Property suffice for the source forProperty relation, across sensors and capability/range descriptions?",
         "recommendation": "Retain the artifact during review. Retain the incoming described_by o is_about chain only if sufficient; do not claim it maps arbitrary source forProperty or observes edges outward."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/ssn/forProperty",
       "source_kind": "object_property",
       "source_label": "for property"
@@ -1919,20 +1924,30 @@
       "source_label": "Maintenance Schedule"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "inheritance_sufficient",
       "cross_track_review": false,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!43",
         "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/MeasurementRange",
         "imports/cco.ttl",
         "reports/system-property-process-profile-scope-review.md",
-        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json",
+        "sha256": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d"
+      },
+      "inheritance_sufficiency_evidence": {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json",
+        "sha256": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069"
+      },
       "mapping_row_ids": [
         "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
-      "rationale": "Does the set of values the Sensor can return justify the current commitment to Function with an actual Observation caused by a specification-prescribed Stimulus, or does it describe a property/capability without those actual individuals?",
+      "rationale": "`ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.\n\nThe source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1942,7 +1957,7 @@
         "question": "Does the set of values the Sensor can return justify the current commitment to Function with an actual Observation caused by a specification-prescribed Stimulus, or does it describe a property/capability without those actual individuals?",
         "recommendation": "Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional MeasurementRange restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/ssn/systems/MeasurementRange",
       "source_kind": "class",
       "source_label": "Measurement Range"
@@ -2296,20 +2311,30 @@
       "source_label": "System Lifetime"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "inheritance_sufficient",
       "cross_track_review": false,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!45",
         "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/systems/SystemProperty",
         "imports/cco.ttl",
         "reports/system-property-process-profile-scope-review.md",
-        "reports/ssn-systems-domain-range-operationalization-evaluation.md"
+        "reports/ssn-systems-domain-range-operationalization-evaluation.md",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json",
+        "sha256": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5"
+      },
+      "inheritance_sufficiency_evidence": {
+        "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json",
+        "sha256": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3"
+      },
       "mapping_row_ids": [
         "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
-      "rationale": "Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?",
+      "rationale": "`ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -2319,7 +2344,7 @@
         "question": "Does an observable characteristic of system capability justify the current commitment to SDC-or-ProcessProfile and actual prescription by an ArtifactFunctionSpecification, or does it describe a property/capability without those actual individuals?",
         "recommendation": "Retain the artifact during review. Review the inherited source superclass alignment before retaining the additional SystemProperty restrictions; if it is sufficient, propose removing only the unsupported direct strengthening through an approved mapping change."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/ssn/systems/SystemProperty",
       "source_kind": "class",
       "source_label": "System Property"

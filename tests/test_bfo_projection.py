@@ -7,6 +7,7 @@ import dataclasses
 import hashlib
 import sys
 import unittest
+from collections import Counter
 from pathlib import Path
 
 
@@ -15,9 +16,18 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import generate_mapping_from_coms as coms  # noqa: E402
 import modular_products as modular  # noqa: E402
+import current_semantic_workbook as semantic  # noqa: E402
 from coms_row_identity import RowLocation  # noqa: E402
+from current_semantic_generation import (  # noqa: E402
+    expected_count,
+    generated_expectations_context,
+    selection_policy,
+)
 from product_dispositions import (  # noqa: E402
+    PRODUCT_ROLE_ORDER,
     ProductDisposition,
+    classify_target_category,
+    derive_product_dispositions,
     load_disposition_document,
 )
 from publication_metadata import load_metadata  # noqa: E402
@@ -26,6 +36,9 @@ from publication_metadata import load_metadata  # noqa: E402
 class BfoProjectionRoleTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.enterClassContext(generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ))
         rows, stats = coms.read_workbook(
             REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
         )
@@ -119,7 +132,7 @@ class BfoProjectionRoleTests(unittest.TestCase):
         )
         self.assertEqual(
             self.reconciliation.governed_axiom_count,
-            103,
+            expected_count("AUTHORITATIVE_AXIOM_COUNT", 103),
         )
         self.assertEqual(
             self.reconciliation.selected_axioms,
@@ -135,23 +148,22 @@ class BfoProjectionRoleTests(unittest.TestCase):
                 )
                 for value in self.reconciliation.disposition_totals
             ),
-            (
-                ("target_neutral", "provided_transitively", None, 29),
-                ("bfo_bearing", "provided_through_import", None, 19),
-                (
-                    "cco_bearing",
-                    "deferred",
-                    "NO_APPROVED_TRANSFORMATION_RULE",
-                    25,
-                ),
-                (
-                    "mixed_bfo_cco",
-                    "deferred",
-                    "NO_APPROVED_TRANSFORMATION_RULE",
-                    30,
-                ),
-            ),
+            selection_policy("bfo_projection", modular.PRODUCT_SELECTION["bfo_projection"])
+            .expected_disposition_totals,
         )
+        self.assertEqual(
+            {(value.target_category, value.status, value.reason_code)
+             for value in self.reconciliation.disposition_totals},
+            {("target_neutral", "provided_transitively", None),
+             ("bfo_bearing", "provided_through_import", None),
+             ("cco_bearing", "deferred", "NO_APPROVED_TRANSFORMATION_RULE"),
+             ("mixed_bfo_cco", "deferred", "NO_APPROVED_TRANSFORMATION_RULE")},
+        )
+        self.assertEqual(self.reconciliation.governed_axiom_count,
+                         sum(len(audit.authoritative_axioms) for audit in self.audits))
+        self.assertEqual(sum(not audit.authoritative_axioms for audit in self.audits),
+                         expected_count("ZERO_AXIOM_ROW_COUNT", 2))
+        self.assertEqual(len(self.processed), expected_count("GOVERNED_ROW_COUNT", 105))
 
     def test_reordered_processed_rows_and_audits_are_stable(
         self,
@@ -472,8 +484,15 @@ class BfoProjectionRoleTests(unittest.TestCase):
         )
         self.assertEqual(
             self.cco_result.sha256,
-            "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5",
+            "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28",
         )
+        for filename, result in (
+            ("ssn-sosa-alignment-core.ttl", self.core_result),
+            ("ssn-sosa-bfo-mapping.ttl", self.strict_result),
+            ("ssn-sosa-cco-extension.ttl", self.cco_result),
+        ):
+            self.assertEqual(result.serialized_bytes,
+                             (REPO_ROOT / "releases/current-ssn-sosa" / filename).read_bytes())
 
     def test_projection_role_policy_is_zero_axiom_and_not_published(
         self,
@@ -493,6 +512,101 @@ class BfoProjectionRoleTests(unittest.TestCase):
                 for product in self.metadata.products
             ),
         )
+
+
+class RawProjectionTransitionTests(unittest.TestCase):
+    def test_three_deferred_removals_preserve_zero_projection_and_raw_guard(self) -> None:
+        history = semantic.resolve_history(REPO_ROOT)
+        transition = [record for record in history["chain"] if record["kind"] == "semantic"][-1]
+        self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+
+        def workbook_inventory(path):
+            rows, stats = coms.read_workbook(path)
+            processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+            inventory, signatures, blanks = {}, {}, set()
+            for processed_row in processed:
+                row = coms.disposition_input_for_processed_row(processed_row)
+                if not row.authoritative_axioms:
+                    self.assertIsNone(row.predicate_lexical)
+                    self.assertIsNone(row.authoritative_target_lexical)
+                    blanks.add(row.row_id)
+                for axiom in row.authoritative_axioms:
+                    category = classify_target_category(axiom)
+                    disposition = dict(derive_product_dispositions(category, PRODUCT_ROLE_ORDER))["bfo_projection"]
+                    pair = (row.row_id, "sha256:" + axiom.identity.sha256)
+                    inventory[pair] = (axiom.identity.canonical_axiom, category,
+                                       disposition.status, disposition.reason_code)
+                    signatures[pair] = (row.canonical_row.subject_iri, row.mapping_type, category)
+            return processed, inventory, signatures, blanks
+
+        baseline, before, signatures, before_blanks = workbook_inventory(
+            semantic.snapshot(REPO_ROOT, transition["old_workbook_sha256"])
+        )
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        processed, after, _, after_blanks = workbook_inventory(workbook)
+        removed = before.keys() - after.keys()
+        cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
+        self.assertEqual(len(removed), 3)
+        self.assertEqual({row_id for row_id, _ in removed}, cleared)
+        self.assertEqual(after.keys() - before.keys(), set())
+        self.assertEqual(after, {pair: value for pair, value in before.items() if pair not in removed})
+        delta = transition["generation_expectations"]["logical_axiom_delta"]
+        self.assertEqual(sorted(before[pair][0] for pair in removed), delta["removed"])
+        self.assertEqual(delta["added"], [])
+        self.assertEqual({signatures[pair] for pair in removed}, {
+            ("http://www.w3.org/ns/ssn/forProperty", "property_chain", "cco_bearing"),
+            ("http://www.w3.org/ns/ssn/systems/SystemProperty", "class_mapping", "mixed_bfo_cco"),
+            ("http://www.w3.org/ns/ssn/systems/MeasurementRange", "class_mapping", "mixed_bfo_cco"),
+        })
+        self.assertEqual({before[pair][2:] for pair in removed},
+                         {("deferred", "NO_APPROVED_TRANSFORMATION_RULE")})
+        self.assertEqual((len(baseline), len(processed)), (105, 105))
+        self.assertEqual((len(before), len(after)), (103, 100))
+        self.assertEqual((len(before_blanks), len(after_blanks)), (2, 5))
+        self.assertEqual(after_blanks - before_blanks, cleared)
+        self.assertEqual(before_blanks - after_blanks, set())
+        self.assertEqual(Counter(value[1] for value in before.values()),
+                         {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 25, "mixed_bfo_cco": 30})
+        self.assertEqual(Counter(value[1] for value in after.values()),
+                         {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
+        self.assertEqual((sum(value[2] == "deferred" for value in before.values()),
+                          sum(value[2] == "deferred" for value in after.values())), (55, 52))
+        for status, count in (("provided_transitively", 29), ("provided_through_import", 19),
+                              ("emitted_unchanged", 0)):
+            old_members = {pair: value for pair, value in before.items() if value[2] == status}
+            new_members = {pair: value for pair, value in after.items() if value[2] == status}
+            self.assertEqual(old_members, new_members)
+            self.assertEqual(len(new_members), count)
+
+        canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in processed)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = load_disposition_document(REPO_ROOT / "reports/coms-product-dispositions.json")
+
+        def assert_raw_baseline_rejects() -> None:
+            policy = modular.PRODUCT_SELECTION["bfo_projection"]
+            self.assertEqual(policy.categories, ())
+            self.assertEqual(policy.expected_count, 0)
+            self.assertEqual({category: count for category, _, _, count in policy.expected_disposition_totals},
+                             {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 25, "mixed_bfo_cco": 30})
+            with self.assertRaises(modular.ModularProductError) as raised:
+                modular.reconcile_product_axioms("bfo_projection", canonical_rows, audits, disposition)
+            self.assertEqual({issue.code for issue in raised.exception.issues},
+                             {"PRODUCT_DISPOSITION_COUNT_MISMATCH"})
+
+        assert_raw_baseline_rejects()
+        with generated_expectations_context(REPO_ROOT, workbook):
+            result = modular.reconcile_product_axioms("bfo_projection", canonical_rows, audits, disposition)
+            self.assertEqual(result.governed_axiom_count, len(after))
+            self.assertEqual(result.selected_axioms, ())
+            self.assertEqual(
+                {(value.target_category, value.status, value.reason_code): value.count
+                 for value in result.disposition_totals},
+                Counter(value[1:] for value in after.values()),
+            )
+            # This role has no standalone generated bytes, closure, or profile.
+            metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
+            self.assertNotIn("bfo_projection", {product.key for product in metadata.products})
+        assert_raw_baseline_rejects()
 
 
 if __name__ == "__main__":

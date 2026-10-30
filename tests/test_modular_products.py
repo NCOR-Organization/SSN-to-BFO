@@ -19,6 +19,7 @@ sys.path.insert(0, str(REPO_ROOT / "tools"))
 
 import generate_mapping_from_coms as coms  # noqa: E402
 import modular_products as modular  # noqa: E402
+from current_semantic_generation import generated_expectations_context  # noqa: E402
 from coms_row_identity import ExpressionNode, RowLocation  # noqa: E402
 from product_dispositions import ProductDisposition, load_disposition_document  # noqa: E402
 from publication_metadata import (  # noqa: E402
@@ -101,6 +102,9 @@ EXPECTED_AXIOM_IDS = frozenset(
 class ModularProductTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.enterClassContext(generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ))
         rows, stats = coms.read_workbook(REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx")
         cls.processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
         cls.canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in cls.processed)
@@ -380,19 +384,21 @@ class ModularProductTests(unittest.TestCase):
             "from product_dispositions import load_disposition_document; "
             "from publication_metadata import load_metadata; "
             "from modular_products import select_product_axioms,build_alignment_core; "
+            "from current_semantic_generation import generated_expectations_context; "
             "r,s=g.read_workbook(Path('mappings/SSN2BFO-COMS.xlsx')); "
             "p=g.validate_and_process_rows(r,g.Resolver(),s); "
             "c=[g.canonical_input_for_processed_row(x) for x in p]; "
             "a=[x.identity_audit for x in p]; "
             "d=load_disposition_document('reports/coms-product-dispositions.json'); "
             "m=load_metadata('config/publication-metadata.toml'); "
-            "x=build_alignment_core(select_product_axioms('alignment_core',c,a,d),m); "
-            "print(hashlib.sha256(x.serialized_bytes).hexdigest())"
+            "\nwith generated_expectations_context(Path.cwd(), Path('mappings/SSN2BFO-COMS.xlsx')):\n"
+            "    x=build_alignment_core(select_product_axioms('alignment_core',c,a,d),m)\n"
+            "    print(hashlib.sha256(x.serialized_bytes).hexdigest())"
         )
         hashes = []
         for _ in range(2):
             proc = subprocess.run(
-                [sys.executable, "-c", code],
+                [sys.executable, "-B", "-c", code],
                 cwd=REPO_ROOT,
                 env={"PYTHONPATH": str(REPO_ROOT / "tools")},
                 text=True,
@@ -473,6 +479,39 @@ class ModularProductTests(unittest.TestCase):
             self.metadata,
         )
         self.assertEqual({value.code for value in issues}, {"TURTLE_PARSE"})
+
+
+class RawModularProductGuardTests(unittest.TestCase):
+    def test_current_partition_requires_authenticated_context_and_restores_baseline(self) -> None:
+        workbook = REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        rows, stats = coms.read_workbook(workbook)
+        processed = coms.validate_and_process_rows(rows, coms.Resolver(), stats)
+        canonical_rows = tuple(coms.canonical_input_for_processed_row(row) for row in processed)
+        audits = tuple(row.identity_audit for row in processed)
+        disposition = load_disposition_document(REPO_ROOT / "reports/coms-product-dispositions.json")
+
+        def assert_raw_baseline_rejects() -> None:
+            baseline = modular.PRODUCT_SELECTION["alignment_core"]
+            self.assertEqual(
+                {category: count for category, _, _, count in baseline.expected_disposition_totals},
+                {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 25, "mixed_bfo_cco": 30},
+            )
+            with self.assertRaises(modular.ModularProductError) as raised:
+                modular.select_product_axioms("alignment_core", canonical_rows, audits, disposition)
+            self.assertEqual({issue.code for issue in raised.exception.issues},
+                             {"PRODUCT_DISPOSITION_COUNT_MISMATCH"})
+
+        assert_raw_baseline_rejects()
+        with generated_expectations_context(REPO_ROOT, workbook):
+            result = modular.reconcile_product_axioms("alignment_core", canonical_rows, audits, disposition)
+            self.assertEqual(
+                {total.target_category: total.count for total in result.disposition_totals},
+                {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28},
+            )
+            self.assertEqual(result.governed_axiom_count, 100)
+            self.assertEqual({value.row_id for value in result.selected_axioms}, EXPECTED_ROW_IDS)
+            self.assertEqual({value.axiom_id for value in result.selected_axioms}, EXPECTED_AXIOM_IDS)
+        assert_raw_baseline_rejects()
 
 
 if __name__ == "__main__":

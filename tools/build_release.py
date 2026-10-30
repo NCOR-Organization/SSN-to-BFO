@@ -24,7 +24,8 @@ from rdflib import Graph, RDF, OWL, URIRef
 import generate_mapping_from_coms as coms
 import publication_metadata as publication
 from product_dispositions import load_disposition_document
-from release_context import FormalReleaseContext, parse_formal_release_context, validate_formal_release_context
+from release_context import (FormalReleaseContext, parse_formal_release_context, validate_formal_release_context,
+                             authenticated_release_expectations, active_release_expectations)
 from release_manifest import (
     FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS,
     INCLUDED_FILE_PATH_ORDER,
@@ -729,15 +730,25 @@ def run_independent_reasoning(
                     "reasoning did not use the controlled verified Java/ROBOT launcher",
                 )
             )
+        contract = active_release_expectations()
+        exact_counts = contract.fixed_closure_counts if contract is not None else FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS
         expected = next(
             count
-            for product_key, count in FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS
+            for product_key, count in exact_counts
             if product_key == key
         )
         if result.closure_triple_count != expected:
             issues.append(package_issue("HERMIT_CLOSURE_COUNT", key, f"expected {expected}, got {result.closure_triple_count}"))
         if not result.passed:
             issues.append(package_issue("HERMIT_FAILED", key, result.robot_output or "independent reasoning failed"))
+        if contract is not None:
+            product = contract.product(key)
+            if paths[key].read_bytes() != product.serialized_bytes:
+                issues.append(package_issue("FORMAL_PRODUCT_MISMATCH", key, "differs from authenticated preflight bytes"))
+            if (result.profile_checked is not True or result.profile_return_code != 0 or
+                    result.profile_triple_count != product.profile_triple_count or
+                    result.profile_declaration_completion_count != product.profile_declaration_completion_count):
+                issues.append(package_issue("OWL_PROFILE_EVIDENCE", key, "profile differs from authenticated exact closure/completions"))
         evidence.append(
             ReleaseManifestHermitResult(
                 product_key=key,
@@ -781,7 +792,10 @@ def collect_product_records(rendered, metadata, context) -> tuple[ReleaseManifes
                 logical_triple_count=result.logical_triple_count,
                 total_triple_count=result.total_triple_count,
                 direct_governed_axiom_count=result.governed_axiom_count,
-                governed_closure_axiom_count=GOVERNED_CLOSURE_COUNTS[key],
+                governed_closure_axiom_count=(
+                    active_release_expectations().product(key).governed_closure_axiom_count
+                    if active_release_expectations() is not None else GOVERNED_CLOSURE_COUNTS[key]
+                ),
                 reasoning_mode="independent",
             )
         )
@@ -1028,7 +1042,7 @@ def compare_complete_packages(
     return tuple(sorted(set(issues), key=lambda value: value.sort_key))
 
 
-def build_release_package(
+def _build_release_package(
     context: FormalReleaseContext,
     notes_source: Path,
     output_dir: Path,
@@ -1113,6 +1127,45 @@ def build_release_package(
         raise
     finally:
         shutil.rmtree(wrapper, ignore_errors=True)
+
+
+def build_release_package(
+    context: FormalReleaseContext,
+    notes_source: Path,
+    output_dir: Path,
+    repository_root: Path = REPO_ROOT,
+) -> ReleasePackageResult:
+    context = validate_formal_release_context(context)
+    repository_root = Path(repository_root).resolve()
+    # Preserve path/note failure boundaries before any semantic work or output.
+    _validate_paths(context, Path(notes_source), Path(output_dir), repository_root)
+    issues = validate_release_notes_bytes(
+        Path(notes_source).read_bytes(),
+        template_bytes=(repository_root / "release-notes/TEMPLATE.md").read_bytes(),
+    )
+    if issues:
+        raise ReleasePackageError(issues)
+    published_output: tuple[Path, int, int] | None = None
+    try:
+        with authenticated_release_expectations(repository_root, context):
+            result = _build_release_package(context, notes_source, output_dir, repository_root)
+            status = result.output_dir.lstat()
+            published_output = (result.output_dir, status.st_dev, status.st_ino)
+        return result
+    except Exception:
+        # Authentication can fail when its context exits, after the inner
+        # builder has published. Only remove that successfully built directory,
+        # never an existing output rejected above or a replacement at its path.
+        if published_output is not None:
+            path, device, inode = published_output
+            try:
+                status = path.lstat()
+            except FileNotFoundError:
+                pass
+            else:
+                if (status.st_dev, status.st_ino) == (device, inode) and not path.is_symlink():
+                    shutil.rmtree(path)
+        raise
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

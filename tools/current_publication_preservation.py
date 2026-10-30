@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from functools import lru_cache
+import copy
 import hashlib
 from io import BytesIO
 import json
@@ -13,8 +14,11 @@ import subprocess
 
 from openpyxl import load_workbook
 
-from current_source_identity import ROOT, SOURCES, TARGETS, PRODUCTS, WORKBOOK, fingerprint, git
-from current_documentary_workbook import validate_workbook_evolution
+from current_source_identity import (ROOT, SOURCES, TARGETS, PRODUCTS, WORKBOOK,
+                                     ACCEPTED_CHECKPOINT_HEAD, checkpoint_errors,
+                                     fingerprint, git, validated_product_evolution)
+from current_semantic_workbook import validate_workbook_evolution
+from current_documentary_workbook import semantic_projection_sha256
 
 BASELINE = ROOT / "reports/current-publication-baseline.json"
 # These are the independently accepted pre-repair repository identities. A
@@ -36,6 +40,16 @@ PROTECTED_PATH_PREFIXES = (
     "releases/current-ssn-sosa/", "mappings/SOSA-next", "config/sosa-",
     "queries/sosa-", "legacy/", "tools/coms_", "docs/COMS-",
 )
+CHECKPOINT_EVIDENCE_PREFIXES = (
+    "reports/current-human-decisions/", "reports/current-documentary-workbook/",
+)
+CHECKPOINT_EVIDENCE_FILES = {
+    "config/current-documentary-workbook-baseline.json",
+    "config/current-ssn-sosa-identity.json",
+    "config/current-ssn-sosa-historical-finals.json",
+    "mappings/current-ssn-sosa-assessment.json",
+}
+ASSESSMENT = "mappings/current-ssn-sosa-assessment.json"
 
 
 @lru_cache(maxsize=8)
@@ -66,8 +80,9 @@ def trusted_tree(root: Path, head: str) -> dict[str, dict]:
 
 
 def protected_groups(baseline: dict | None = None, root: Path = ROOT) -> dict[str, list[str]]:
-    """Select only paths that existed in the trusted tree; ignore mutable claims."""
+    """Keep the original tree and additive accepted-checkpoint evidence."""
     paths = trusted_tree(root, EXPECTED_BASELINE_HEAD)
+    checkpoint = trusted_tree(root, ACCEPTED_CHECKPOINT_HEAD)
     sosa_paths = [p for p in paths if p.startswith(("src/sosa-next/", "releases/sosa-next/", "mappings/SOSA-next", "config/sosa-", "queries/sosa-", "reports/sosa-"))]
     return {
         "current_mapping_semantics": [WORKBOOK, *PRODUCTS, *[p for p in paths if p.startswith("rules/")]],
@@ -76,12 +91,42 @@ def protected_groups(baseline: dict | None = None, root: Path = ROOT) -> dict[st
         "historical_authorities": [p for p in paths if p.startswith("legacy/") or
                                    (p.startswith("reports/") and p not in DOCUMENTARY_REPORTS and p not in sosa_paths)],
         "local_coms_architecture": [p for p in paths if p.startswith(("tools/coms_", "docs/COMS-"))],
+        "checkpoint_custody_evidence": [p for p in checkpoint if p not in paths and
+                                        (p.startswith(CHECKPOINT_EVIDENCE_PREFIXES) or
+                                         p in CHECKPOINT_EVIDENCE_FILES)],
     }
 
 
 def compare(paths: list[str], expected: dict, root: Path) -> list[str]:
     return [p for p in paths if (root / p).is_symlink() or not (root / p).is_file()
             or fingerprint(root / p) != expected[p]]
+
+
+def retained_historical_reports(root: Path, paths: list[str], expected: dict) -> dict:
+    """Preserve historical report bytes without treating them as live outputs.
+
+    Eligibility comes from canonical workflow output registries. Protected
+    decisions, sources, workbooks and products still use their own strict gates.
+    Current report freshness remains a separate, live-byte validation.
+    """
+    from check_coms_mapping import MAINTAINED_OUTPUTS, REPO_ROOT
+    from current_semantic_validation import REPORT_PATH
+    import current_retained_evidence as retained
+
+    regenerable = {p.relative_to(REPO_ROOT).as_posix() for p in MAINTAINED_OUTPUTS.values()
+                   if p.relative_to(REPO_ROOT).parts[0] == "reports"}
+    regenerable.update((REPORT_PATH.as_posix(), REPORT_PATH.with_suffix(".md").as_posix()))
+    result = {}
+    for path in sorted(set(paths) & regenerable):
+        historical = retained.resolve(root, path, expected[path]["sha256"])
+        if fingerprint(historical) != expected[path]:
+            raise ValueError(f"retained historical report differs from trusted Git bytes: {path}")
+        if historical != root / path:
+            result[path] = {"historical_snapshot_path": historical.relative_to(root).as_posix(),
+                            "sha256": expected[path]["sha256"],
+                            "live_sha256": fingerprint(root / path)["sha256"]
+                            if (root / path).is_file() else None}
+    return result
 
 
 def inventory_errors(recorded: dict, expected: dict, label: str) -> list[str]:
@@ -114,10 +159,105 @@ def workbook_counts(root: Path, head: str, path: str) -> dict:
     return result
 
 
+def validated_assessment_evolution(root: Path, historical: dict, candidate: dict) -> dict:
+    """Derive only RowID maintenance and newly authenticated human finals.
+
+    The accepted assessment remains the starting authority. A transition's
+    existence alone cannot authorize an assessment edit: each new final must
+    name the exact human artifact bound by that explicit-decision transition.
+    """
+    import current_assessment as assessment
+    import current_documentary_workbook as documentary
+    import current_semantic_workbook as semantic
+
+    derived = assessment.evolve_unreviewed_row_ids(root, historical)
+    if candidate == derived:
+        return {"new_human_decisions": []}
+    if (not isinstance(candidate, dict)
+            or {k: v for k, v in candidate.items() if k != "records"}
+            != {k: v for k, v in derived.items() if k != "records"}
+            or not isinstance(candidate.get("records"), list)
+            or len(candidate["records"]) != len(derived["records"])):
+        raise ValueError("assessment evolution changed inventory metadata or record membership")
+    history = semantic.resolve_history(root)
+    adopted = []
+    for before, current in zip(derived["records"], candidate["records"]):
+        if before == current:
+            continue
+        iri = before["source_iri"]
+        if (before["review_state"] not in {"unreviewed", "deferred"}
+                or before["assessment_outcome"] != before["review_state"]
+                or before.get("human_decision_record")):
+            raise ValueError(f"assessment evolution cannot alter an accepted final: {iri}")
+        if not isinstance(current, dict) or current.get("source_iri") != iri:
+            raise ValueError("assessment evolution changed record order or subject")
+        ref = current.get("human_decision_record")
+        decision = documentary._json(documentary._bound_file(root, ref))
+        matches = []
+        for transition in history["chain"]:
+            if transition["kind"] != "semantic":
+                continue
+            authorities = [authority for row_id, authority in transition["authorities"].items()
+                           if row_id in before["mapping_row_ids"]
+                           and authority.get("authorization_type") == "EXPLICIT_NEW_HUMAN_DECISION"
+                           and authority.get("human_decision") == ref]
+            if authorities:
+                matches.append(transition)
+        if len(matches) != 1:
+            raise ValueError(f"new final lacks one exact explicit-human transition authority: {iri}")
+        transition = matches[0]
+        if (decision.get("source_iri") != iri or decision.get("review_state") != "final"
+                or decision.get("assessment_outcome") not in assessment.FINAL_OUTCOMES
+                or decision.get("input_hashes", {}).get("workbook_sha256")
+                != transition["new_workbook_sha256"]):
+            raise ValueError(f"new final is not bound to the transition's selected workbook: {iri}")
+        snapshot = documentary._json(documentary._bound_file(root, decision.get("assessment_snapshot")))
+        prior = [r for r in snapshot.get("records", []) if r.get("source_iri") == iri]
+        if prior != [before]:
+            raise ValueError(f"new final pre-decision assessment differs from trusted assessment: {iri}")
+        expected = copy.deepcopy(before)
+        expected.update(review_state="final", assessment_outcome=decision["assessment_outcome"],
+                        rationale=decision.get("rationale"), evidence=decision.get("evidence_refs"),
+                        human_decision_record=ref)
+        if decision["assessment_outcome"] == "inheritance_sufficient":
+            expected["inheritance_sufficiency_evidence"] = decision.get("inheritance_sufficiency_evidence")
+        if current != expected:
+            raise ValueError(f"new final changed fields outside its exact human decision: {iri}")
+        adopted.append({"source_iri": iri, "human_decision_record": ref,
+                        "transition_id": transition["transition_id"]})
+
+    _authenticate_current_assessment(root, candidate)
+    return {"new_human_decisions": adopted}
+
+
+def _authenticate_current_assessment(root: Path, candidate: dict) -> None:
+    # The established validator authenticates the complete packet, source and
+    # target identities, sufficiency evidence, and current applicability. Its
+    # project paths predate the root-parameterized custody helpers; bind them
+    # narrowly for a disposable checkout and restore them even on rejection.
+    import current_assessment as assessment
+    names = ("ROOT", "SCOPE", "ASSESSMENT", "SOURCE_QUERY", "HISTORICAL_FINAL_BASELINE")
+    saved = {name: getattr(assessment, name) for name in names}
+    try:
+        for name, value in saved.items():
+            setattr(assessment, name, root if name == "ROOT" else root / value.relative_to(saved["ROOT"]))
+        scope = json.loads(assessment.SCOPE.read_text())
+        graph = assessment.source_graph()
+        rows, stats = assessment.mapping.read_workbook(root / WORKBOOK)
+        processed = assessment.mapping.validate_and_process_rows(rows, assessment.mapping.Resolver(root=root), stats)
+        assessment.validate(scope, candidate["records"], graph, processed)
+    finally:
+        for name, value in saved.items():
+            setattr(assessment, name, value)
+
+
 def preservation(root: Path = ROOT, baseline: dict | None = None) -> dict:
     baseline = json.loads((root / BASELINE.relative_to(ROOT)).read_text()) if baseline is None else baseline
-    expected = trusted_tree(root, EXPECTED_BASELINE_HEAD)
-    errors = inventory_errors(baseline.get("tracked_files", {}), expected, "baseline inventory")
+    original = trusted_tree(root, EXPECTED_BASELINE_HEAD)
+    expected = dict(original)
+    checkpoint = trusted_tree(root, ACCEPTED_CHECKPOINT_HEAD)
+    expected.update({p: checkpoint[p] for p in protected_groups(root=root)["checkpoint_custody_evidence"]})
+    errors = inventory_errors(baseline.get("tracked_files", {}), original, "baseline inventory")
     if baseline.get("head") != EXPECTED_BASELINE_HEAD:
         errors.append("mutable baseline HEAD differs from trusted baseline HEAD")
     # Include staged additions and ordinary untracked semantic files, while
@@ -128,14 +268,22 @@ def preservation(root: Path = ROOT, baseline: dict | None = None) -> dict:
     groups = {name: {"file_count": len(paths), "changed_paths": compare(paths, expected, root),
                      "expected_sha256": {p: expected[p]["sha256"] for p in paths}}
               for name, paths in protected_groups(root=root).items()}
+    retained_reports = {}
+    try:
+        retained_reports = retained_historical_reports(
+            root, groups["historical_authorities"]["changed_paths"], expected)
+        for path in retained_reports:
+            groups["historical_authorities"]["changed_paths"].remove(path)
+    except (ValueError, OSError) as exc:
+        errors.append(f"historical report custody: {exc}")
     workbook_evolution = {
         "status": "NOT_NEEDED", "workbook_path": WORKBOOK,
         "historical_sha256": expected[WORKBOOK]["sha256"],
         "current_sha256": fingerprint(root / WORKBOOK)["sha256"] if (root / WORKBOOK).is_file() else None,
     }
     if WORKBOOK in groups["current_mapping_semantics"]["changed_paths"]:
-        # The trust root remains the pinned Git blob. An explicit documentary
-        # transition explains changed workbook bytes without replacing it.
+        # The original Git blob remains the trust root. Documentary or semantic
+        # transitions explain later workbook bytes without redefining history.
         try:
             if (root / WORKBOOK).is_symlink():
                 raise ValueError("documentary workbook may not be a symlink")
@@ -143,10 +291,45 @@ def preservation(root: Path = ROOT, baseline: dict | None = None) -> dict:
             if fingerprint(historical) != expected[WORKBOOK]:
                 raise ValueError("retained historical workbook differs from trusted Git blob")
             groups["current_mapping_semantics"]["changed_paths"].remove(WORKBOOK)
-            workbook_evolution.update(status="VALIDATED", semantic_projection_preserved=True,
+            workbook_evolution.update(status="VALIDATED", semantic_projection_preserved=(
+                                          semantic_projection_sha256(historical) ==
+                                          semantic_projection_sha256(root / WORKBOOK)),
                                       historical_snapshot_path=str(historical.relative_to(root)))
         except (ValueError, OSError, TypeError) as exc:
             workbook_evolution.update(status="FAIL", error=str(exc))
+    product_evolution = {"status": "NOT_NEEDED"}
+    changed_products = [path for path in PRODUCTS
+                        if path in groups["current_mapping_semantics"]["changed_paths"]]
+    if changed_products or workbook_evolution.get("semantic_projection_preserved") is False:
+        try:
+            product_evolution = validated_product_evolution(root, {path: original[path] for path in PRODUCTS})
+            for path in changed_products:
+                groups["current_mapping_semantics"]["changed_paths"].remove(path)
+        except (ValueError, OSError, TypeError) as exc:
+            product_evolution = {"status": "FAIL", "error": str(exc)}
+            errors.append(f"semantic product evolution: {exc}")
+    assessment_evolution = {"status": "NOT_NEEDED"}
+    assessment_changed = ASSESSMENT in groups["checkpoint_custody_evidence"]["changed_paths"]
+    if assessment_changed or workbook_evolution.get("semantic_projection_preserved") is False:
+        try:
+            from current_assessment import json_text
+            historical_assessment = subprocess.check_output(
+                ["git", "-C", str(root), "show", f"{ACCEPTED_CHECKPOINT_HEAD}:{ASSESSMENT}"])
+            candidate = root / ASSESSMENT
+            if candidate.is_symlink() or not candidate.is_file():
+                raise ValueError("assessment must be a retained regular file")
+            document = json.loads(candidate.read_text())
+            if candidate.read_bytes() != json_text(document).encode("utf-8"):
+                raise ValueError("assessment differs from canonical inventory serialization")
+            advancement = validated_assessment_evolution(root, json.loads(historical_assessment), document)
+            if assessment_changed:
+                groups["checkpoint_custody_evidence"]["changed_paths"].remove(ASSESSMENT)
+            assessment_evolution = {"status": "VALIDATED", "historical_head": ACCEPTED_CHECKPOINT_HEAD,
+                                    "historical_sha256": expected[ASSESSMENT]["sha256"],
+                                    "current_sha256": fingerprint(candidate)["sha256"], **advancement}
+        except (ValueError, OSError, TypeError) as exc:
+            assessment_evolution = {"status": "FAIL", "error": str(exc)}
+            errors.append(f"assessment RowID evolution: {exc}")
     external = baseline.get("external_coms", {})
     if external.get("head") != EXTERNAL_COMS_HEAD or external.get("path") != str(EXTERNAL_COMS_ROOT):
         errors.append("external COMS mutable identity differs from trusted repository identity")
@@ -171,19 +354,22 @@ def preservation(root: Path = ROOT, baseline: dict | None = None) -> dict:
                            "reason": "Recorded external editable COMS checkout is not present on this host"}
     errors.extend(f"{name}: {path}" for name, group in groups.items() for path in group["changed_paths"])
     current_head = git(root, "rev-parse", "HEAD")
-    if current_head != EXPECTED_BASELINE_HEAD:
-        errors.append("HEAD differs from no-commit milestone baseline")
+    errors.extend(checkpoint_errors(root))
     counts = {p: workbook_counts(root, EXPECTED_BASELINE_HEAD, p)
               for p in expected if p.startswith("mappings/SOSA-next") and p.endswith(".xlsx")}
     for path, value in counts.items():
         if baseline.get("workbook_baselines", {}).get(path) != value:
             errors.append(f"{path}: recorded workbook baseline counts differ from trusted Git bytes")
-    return {"baseline_head": EXPECTED_BASELINE_HEAD, "head": current_head,
+    return {"baseline_head": EXPECTED_BASELINE_HEAD, "accepted_checkpoint_head": ACCEPTED_CHECKPOINT_HEAD,
+            "head": current_head,
             "branch": git(root, "branch", "--show-current"), "groups": groups,
             "external_coms": external_result, "errors": errors,
             "status": "FAIL" if errors else ("PASS" if external_result["status"] == "PASS" else "NOT_CHECKED"),
-            "proof_basis": "Protected paths and expected SHA-256 hashes are derived from the pinned Git tree; candidate bytes are compared to Git blobs. Mutable baseline inventory/hashes are independently checked and cannot replace the trust root. External COMS is checked against its own pinned Git tree.",
+            "proof_basis": "Original protected paths and hashes remain derived from the c3 baseline Git tree. Additive decision and documentary custody evidence is pinned to the accepted dc checkpoint. Governed workbook history may advance current products only when all four match deterministic validated generation; historical identities remain unchanged. Mutable baseline inventory/hashes cannot replace either trust root. External COMS is checked against its own pinned Git tree.",
             "documentary_workbook_evolution": workbook_evolution,
+            "semantic_product_evolution": product_evolution,
+            "assessment_row_id_evolution": assessment_evolution,
+            "retained_historical_evidence": retained_reports,
             "documentary_report_exclusions": sorted(DOCUMENTARY_REPORTS),
             "sosa_2023_workbook_baseline_counts": counts}
 

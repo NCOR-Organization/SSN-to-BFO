@@ -1,0 +1,207 @@
+# Commit the validated SSN/SOSA infrastructure checkpoint
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch: `publication/current-sosa-readiness`
+
+Expected starting HEAD:
+`dc314460fe3e875ba1c8ccfcb3c6840a7181e733`
+
+## Objective
+
+Commit the now-validated semantic-evolution and v2 publication-evidence infrastructure using the repository's documented checkpoint-successor lifecycle.
+
+**Infrastructure implementation and migration are complete. Do not initiate another infrastructure-development project.**
+
+## Validated state
+
+- `make check`: 1,090 tests passed; all 47 steps passed.
+- `make compile`: PASS.
+- Eight v2 validation roles: all PASS.
+- Portable RDF evidence: 27 objects and manifest authenticated.
+- Semantic FAIL: authentic and preserved.
+- Readiness: 0 Class A, 37 Class B.
+- Overall publication: NOT_READY, correctly.
+- All six authoritative semantic/product hashes unchanged.
+- Exactly three approved mapping removals, zero additions.
+- All 49 SOSA-2023 governed paths unchanged.
+- Historical receipts and STOP records preserved.
+
+The implementation is ready for a controlled checkpoint commit.
+
+## 1. Final read-only preflight
+
+Inspect the final staging inventory:
+
+`/private/tmp/ssn-v2-resume-audit-axat7kml/final-inventory/updated-change-inventory.json`
+
+If that path is unavailable, use the repository's current verified inventory and reconstruct the exact candidate/exclusion sets before proceeding.
+
+Expected:
+
+- 860 candidate paths.
+- 61 excluded paths.
+- No staged changes initially.
+- Expected branch and HEAD.
+
+The exclusions include:
+
+- 57-file unrelated restoration archive.
+- Four unbound construction/backup artifacts.
+
+Verify every candidate path exists or has its intended tracked modification status.
+
+Confirm no unexpected files appeared since the final validation.
+
+Inspect for accidental temporary files, credentials, private runtime data, or oversized artifacts not intended for durable version control.
+
+If the candidate set cannot be reconciled exactly, STOP.
+
+Do not silently add or remove candidates.
+
+## 2. Prepare the accepted checkpoint
+
+Follow the existing documented checkpoint preparation procedure.
+
+Verify that the proposed main commit contains exactly the content authenticated by the v2 validation and semantic-transition evidence.
+
+The prepared checkpoint must bind:
+
+- accepted historical predecessor;
+- exact prepared content inventory;
+- current semantic/product identities;
+- authenticated transition history;
+- current validation-evidence selection;
+- required validation results.
+
+Do not fabricate a future Git SHA.
+
+Do not change ontology semantics or validation results.
+
+If preparation discovers an actual inconsistency, STOP rather than modifying artifacts automatically.
+
+## 3. Stage only the approved candidates
+
+Stage the verified candidate list explicitly.
+
+Do not use:
+
+`git add -A`
+
+Do not use broad directory staging that can accidentally include exclusions.
+
+Verify the staged path set equals the authorized candidate set exactly.
+
+Run:
+
+- `git diff --cached --check`
+- `git diff --cached --stat`
+- `git status --short`
+- checkpoint-specific prepared-content verification
+
+Confirm all 61 excluded paths remain unstaged.
+
+If any unexpected staged content appears, STOP before committing. Do not discard or reset unrelated working-tree content.
+
+## 4. Create the main checkpoint commit
+
+If all staging and checkpoint checks pass, create the main commit.
+
+Suggested message:
+
+`feat: validate SSN/SOSA semantic evolution and v2 publication evidence`
+
+Include the validated, mutually dependent:
+
+- three-term semantic adjudication;
+- semantic-workbook evolution infrastructure;
+- transition-aware generation and release contracts;
+- custody and retained-evidence support;
+- ROBOT validation updates;
+- current publication-evidence selection;
+- v2 validation-input scopes;
+- current portable execution evidence;
+- associated tests and documentation;
+- durable validation reports.
+
+Record the actual resulting Git commit SHA.
+
+Do not tag or push.
+
+## 5. Bind the actual commit SHA
+
+Follow the existing authorized successor-binding mechanism.
+
+Create a binding that references the actual main checkpoint commit SHA and its authenticated prepared-content identity.
+
+Verify:
+
+- predecessor checkpoint matches;
+- actual Git SHA matches;
+- prepared inventory matches;
+- semantic/product identities match;
+- transition history matches;
+- validation evidence authenticates;
+- no circular self-reference is introduced.
+
+This binding must not claim that the overall publication is ready.
+
+Stage only the required successor-binding files.
+
+Create the binding-only child commit.
+
+Suggested message:
+
+`chore: bind authenticated SSN/SOSA successor checkpoint`
+
+Record both resulting commit SHAs.
+
+If the checkpoint lifecycle cannot validate the main commit and binding child as designed, STOP rather than inventing a new binding mechanism.
+
+## 6. Post-commit verification
+
+Run the repository's required post-checkpoint authentication and preservation checks.
+
+Verify:
+
+- checkpoint successor authentication;
+- current v2 evidence selection;
+- semantic transition and human decisions;
+- documentary and semantic history;
+- retained evidence;
+- all 49 governed SOSA-2023 paths;
+- unchanged authoritative semantic/product hashes;
+- clean authorized commit contents.
+
+Run the full canonical validation again only if required by the documented post-commit policy or if the commit changes a required execution input. Report any resulting distinction between historical execution receipts and post-commit applicability.
+
+Verify that publication remains NOT_READY for substantive Class B reasons.
+
+Do not attempt to resolve those semantic requirements in this task.
+
+## 7. Final report
+
+Provide:
+
+1. Exact main-checkpoint commit SHA.
+2. Exact successor-binding commit SHA.
+3. Number of committed files.
+4. Confirmation all 61 exclusions remained outside the commits.
+5. Checkpoint and successor authentication results.
+6. Post-commit validation results.
+7. Semantic/product preservation results.
+8. Current readiness status.
+9. Final Git status.
+10. Any remaining issue that materially affects reproducibility of the committed infrastructure.
+
+Do not push or create a release tag.
+
+If successful, end:
+
+`INFRASTRUCTURE CHECKPOINT COMMITTED — V2 EVIDENCE AUTHENTICATED — PUBLICATION NOT READY — SEMANTIC MAPPING REVIEW NEXT`
+
+If a substantive inconsistency prevents a safe commit, stop and report it without initiating a broad repair cycle.
+
+End:
+
+`CHECKPOINT COMMIT BLOCKED — VALIDATED WORK PRESERVED`

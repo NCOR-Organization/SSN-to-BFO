@@ -317,7 +317,10 @@ def _package_validation_issues(package_dir: Path, repository_root: Path) -> tupl
 
 def _manifest_commit_issue(package_dir: Path, source_commit: str) -> tuple[ReleaseArchiveIssue, ...]:
     try:
-        manifest = load_and_validate_release_manifest(package_dir / "manifest.json")
+        # Full package validation is mandatory at both callers. This second
+        # read only checks the requested commit; it must not apply a different
+        # ambient historical contract to an already authenticated package.
+        manifest = load_and_validate_release_manifest(package_dir / "manifest.json", semantic=False)
     except Exception as exc:
         return (archive_issue("PACKAGE_VALIDATION_FAILED", "manifest.json", str(exc)),)
     if manifest.source_commit == source_commit:

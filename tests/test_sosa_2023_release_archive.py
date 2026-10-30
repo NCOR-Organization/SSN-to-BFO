@@ -16,6 +16,9 @@ from pathlib import Path
 from unittest import mock
 
 
+from tests import release_authority_fixture as authority
+
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 
@@ -1022,9 +1025,12 @@ class Sosa2023ArchiveAuthorityContractTests(unittest.TestCase):
         }
 
         for relative, digest in expected.items():
-            with self.subTest(
-                path=relative
-            ):
+            with self.subTest(path=relative):
+                if relative == "tools/release_archive.py":
+                    identities = authority.authenticate_role(
+                        REPO_ROOT, "current_release_archiver", relative)
+                    self.assertEqual(identities["historical"], digest)
+                    continue
                 self.assertEqual(
                     hashlib.sha256(
                         (
