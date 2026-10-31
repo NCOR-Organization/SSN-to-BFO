@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
-  "generator_sha256": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+  "workbook_sha256": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
+  "generator_sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
   "publication_metadata_sha256": "bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9",
@@ -14,20 +14,20 @@
     "cco_extension"
   ],
   "summary": {
-    "governed_row_count": 105,
-    "unique_row_id_count": 105,
+    "governed_row_count": 107,
+    "unique_row_id_count": 107,
     "authoritative_axiom_count": 100,
     "unique_authoritative_axiom_count": 100,
-    "zero_axiom_row_count": 5,
-    "target_neutral_axiom_count": 29,
+    "zero_axiom_row_count": 7,
+    "target_neutral_axiom_count": 30,
     "bfo_bearing_axiom_count": 19,
-    "cco_bearing_axiom_count": 24,
+    "cco_bearing_axiom_count": 23,
     "mixed_bfo_cco_axiom_count": 28,
     "class_mapping_row_count": 42,
-    "relation_mapping_row_count": 25,
+    "relation_mapping_row_count": 24,
     "property_chain_row_count": 2,
-    "property_typing_row_count": 31,
-    "explicitly_unmapped_row_count": 5
+    "property_typing_row_count": 32,
+    "explicitly_unmapped_row_count": 7
   },
   "rows": [
     {
@@ -1313,7 +1313,7 @@
       "source_expression_sha256": "40553a3ab5b52532d5d74c4fe23ffb3c52321ac8799ab61c33abba7ba2d59bbd",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved.",
+      "reasoning": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:39946148848f627dc9bd67601c5d0d1184960c34054c876541a77fa9d42e3d6b",
@@ -1681,7 +1681,7 @@
       "source_expression_sha256": "1569e27d068c2096846026f7f259c735d3d2d494edb6de138cb0b14dd63af95e",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved.",
+      "reasoning": "Under the approved interpretation, a SampleRelationship is an information content entity representing a relationship between samples. sampling:relatedSample links this information content entity to the related Sample that it is about. The approved mapping retains sampling:relatedSample rdfs:subPropertyOf cco:is_about.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:72d1a5d3f112c4b7c8d7eb32b1196babbd912b1213beba3c5d2967fbf7221ba0",
@@ -2086,6 +2086,126 @@
       "row_product_dispositions": null
     },
     {
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+      "location": {
+        "worksheet": "Sheet2",
+        "row": 63
+      },
+      "subject": {
+        "lexical": "sosa:madeBySensor",
+        "iri": "http://www.w3.org/ns/sosa/madeBySensor"
+      },
+      "predicate": {
+        "lexical": "rdfs:subPropertyOf",
+        "iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+      },
+      "authoritative_target_lexical": "cco:has_agent",
+      "canonical_row_expression": {
+        "canonicalization": "coms-row-expression-v1",
+        "mapping_type": "object_property_mapping",
+        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "subject_iri": "http://www.w3.org/ns/sosa/madeBySensor",
+        "target": "<https://www.commoncoreontologies.org/ont00001833>"
+      },
+      "source_expression_sha256": "2b6b447a3ce282c7c7ffa2ac9b81c0383dc7b1ff8f076dea2a5b1e40de0d2755",
+      "mapping_type": "object_property_mapping",
+      "coverage_classification": "relation_mapping",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "authoritative_axioms": [
+        {
+          "axiom_id": "sha256:f2c99af7344e54e9b6e4965ef373caf96af3380804a1f244dc115a207116e1f5",
+          "canonical_expression": "SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeBySensor> <https://www.commoncoreontologies.org/ont00001833>)",
+          "referenced_iris": [
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+            "http://www.w3.org/ns/sosa/madeBySensor",
+            "https://www.commoncoreontologies.org/ont00001833"
+          ],
+          "target_category": "cco_bearing",
+          "product_dispositions": {
+            "integrated": {
+              "status": "emitted_unchanged"
+            },
+            "alignment_core": {
+              "status": "not_applicable",
+              "reason_code": "TARGET_SPECIFIC"
+            },
+            "strict_bfo_mapping": {
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+            },
+            "bfo_projection": {
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+            },
+            "cco_extension": {
+              "status": "emitted_unchanged"
+            }
+          }
+        }
+      ],
+      "row_product_dispositions": null
+    },
+    {
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+      "location": {
+        "worksheet": "Sheet2",
+        "row": 64
+      },
+      "subject": {
+        "lexical": "sosa:madeObservation",
+        "iri": "http://www.w3.org/ns/sosa/madeObservation"
+      },
+      "predicate": {
+        "lexical": "rdfs:subPropertyOf",
+        "iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+      },
+      "authoritative_target_lexical": "cco:agent_in",
+      "canonical_row_expression": {
+        "canonicalization": "coms-row-expression-v1",
+        "mapping_type": "object_property_mapping",
+        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "subject_iri": "http://www.w3.org/ns/sosa/madeObservation",
+        "target": "<https://www.commoncoreontologies.org/ont00001787>"
+      },
+      "source_expression_sha256": "7aa268422bf0cda796dfa79aa817b2b8c0d7597c0ce8126d126a3b7dcc9c54d0",
+      "mapping_type": "object_property_mapping",
+      "coverage_classification": "relation_mapping",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "authoritative_axioms": [
+        {
+          "axiom_id": "sha256:2673cd45805d4b9dd91980a0c371167462d91fd66de8cc6d709848672f563ca7",
+          "canonical_expression": "SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeObservation> <https://www.commoncoreontologies.org/ont00001787>)",
+          "referenced_iris": [
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+            "http://www.w3.org/ns/sosa/madeObservation",
+            "https://www.commoncoreontologies.org/ont00001787"
+          ],
+          "target_category": "cco_bearing",
+          "product_dispositions": {
+            "integrated": {
+              "status": "emitted_unchanged"
+            },
+            "alignment_core": {
+              "status": "not_applicable",
+              "reason_code": "TARGET_SPECIFIC"
+            },
+            "strict_bfo_mapping": {
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+            },
+            "bfo_projection": {
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+            },
+            "cco_extension": {
+              "status": "emitted_unchanged"
+            }
+          }
+        }
+      ],
+      "row_product_dispositions": null
+    },
+    {
       "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
       "location": {
         "worksheet": "Sheet2",
@@ -2110,7 +2230,7 @@
       "source_expression_sha256": "7e3f2b33b64788358236504d3e06e12bd7e0231949e52f31e801908d7e55f1db",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c8842712d9b51ad420a00450debb0f4fa62a2487b085a0ee6e722b1787bb676b",
@@ -2211,55 +2331,42 @@
         "lexical": "ssn:implementedBy",
         "iri": "http://www.w3.org/ns/ssn/implementedBy"
       },
-      "predicate": {
-        "lexical": "rdfs:subPropertyOf",
-        "iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
-      },
-      "authoritative_target_lexical": "cco:prescribes",
+      "predicate": null,
+      "authoritative_target_lexical": null,
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
-        "mapping_type": "object_property_mapping",
-        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "mapping_type": "explicit_blank",
+        "predicate_iri": null,
         "subject_iri": "http://www.w3.org/ns/ssn/implementedBy",
-        "target": "<https://www.commoncoreontologies.org/ont00001942>"
+        "target": null
       },
-      "source_expression_sha256": "ef681068fcc4afa870acf612bb26197c4711ac04eab19500f0e96a75a004d10b",
-      "mapping_type": "object_property_mapping",
-      "coverage_classification": "relation_mapping",
-      "reasoning": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
-      "authoritative_axioms": [
-        {
-          "axiom_id": "sha256:14fa695165c7036e41a38bca759038d8c35e8b0b6362c6940d3359cf0143fac1",
-          "canonical_expression": "SubObjectPropertyOf(<http://www.w3.org/ns/ssn/implementedBy> <https://www.commoncoreontologies.org/ont00001942>)",
-          "referenced_iris": [
-            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-            "http://www.w3.org/ns/ssn/implementedBy",
-            "https://www.commoncoreontologies.org/ont00001942"
-          ],
-          "target_category": "cco_bearing",
-          "product_dispositions": {
-            "integrated": {
-              "status": "emitted_unchanged"
-            },
-            "alignment_core": {
-              "status": "not_applicable",
-              "reason_code": "TARGET_SPECIFIC"
-            },
-            "strict_bfo_mapping": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
-            },
-            "bfo_projection": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
-            },
-            "cco_extension": {
-              "status": "emitted_unchanged"
-            }
-          }
+      "source_expression_sha256": "f2a4c1afe0521e8ff554210584bb769c6b4b4b122d1a0be9729327aa7f5e48e7",
+      "mapping_type": "explicit_blank",
+      "coverage_classification": "explicitly_unmapped",
+      "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+      "authoritative_axioms": [],
+      "row_product_dispositions": {
+        "integrated": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "alignment_core": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "strict_bfo_mapping": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "bfo_projection": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "cco_extension": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
         }
-      ],
-      "row_product_dispositions": null
+      }
     },
     {
       "row_id": "urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd",
@@ -2403,7 +2510,7 @@
       "source_expression_sha256": "30b0ba8398ec4a4a5215332bb3d11a737a3a6469cdb3a05fb9c373f570d5c1a4",
       "mapping_type": "object_property_mapping",
       "coverage_classification": "relation_mapping",
-      "reasoning": "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion.",
+      "reasoning": "Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:bfcbd5b2f93ee1e69874a2c6918895e693d5f41d44568d2dff24404d9bc519f1",
@@ -2506,49 +2613,46 @@
         "iri": "http://www.w3.org/ns/ssn/implements"
       },
       "predicate": {
-        "lexical": "rdfs:subPropertyOf",
-        "iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+        "lexical": "rdfs:domain",
+        "iri": "http://www.w3.org/2000/01/rdf-schema#domain"
       },
-      "authoritative_target_lexical": "cco:prescribed_by",
+      "authoritative_target_lexical": "ssn:System",
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
-        "mapping_type": "object_property_mapping",
-        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "mapping_type": "domain",
+        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#domain",
         "subject_iri": "http://www.w3.org/ns/ssn/implements",
-        "target": "<https://www.commoncoreontologies.org/ont00001920>"
+        "target": "<http://www.w3.org/ns/ssn/System>"
       },
-      "source_expression_sha256": "20dae62e65511464178b54e802ceac8a72064fe1ccf040205b2cbf4a70546373",
-      "mapping_type": "object_property_mapping",
-      "coverage_classification": "relation_mapping",
-      "reasoning": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+      "source_expression_sha256": "a7b6075f674bddbddeb0fe520321c1bfb3d4bbd206876731e1fc4f1b24fbf901",
+      "mapping_type": "domain",
+      "coverage_classification": "property_typing",
+      "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
       "authoritative_axioms": [
         {
-          "axiom_id": "sha256:392dd07207293b5643eb67b0770ba70c84452967e49f1986ccb747ebe8424d6d",
-          "canonical_expression": "SubObjectPropertyOf(<http://www.w3.org/ns/ssn/implements> <https://www.commoncoreontologies.org/ont00001920>)",
+          "axiom_id": "sha256:5f35449db78abfa47d9dc4ee7ef62063006ddda76fa5a293d651f99f9cb9efa9",
+          "canonical_expression": "ObjectPropertyDomain(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/ssn/System>)",
           "referenced_iris": [
-            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-            "http://www.w3.org/ns/ssn/implements",
-            "https://www.commoncoreontologies.org/ont00001920"
+            "http://www.w3.org/2000/01/rdf-schema#domain",
+            "http://www.w3.org/ns/ssn/System",
+            "http://www.w3.org/ns/ssn/implements"
           ],
-          "target_category": "cco_bearing",
+          "target_category": "target_neutral",
           "product_dispositions": {
             "integrated": {
               "status": "emitted_unchanged"
             },
             "alignment_core": {
-              "status": "not_applicable",
-              "reason_code": "TARGET_SPECIFIC"
+              "status": "emitted_unchanged"
             },
             "strict_bfo_mapping": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+              "status": "provided_through_import"
             },
             "bfo_projection": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
+              "status": "provided_transitively"
             },
             "cco_extension": {
-              "status": "emitted_unchanged"
+              "status": "provided_transitively"
             }
           }
         }
@@ -3418,7 +3522,7 @@
       "source_expression_sha256": "ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:157aece9de6259bc9ad10c9023b8e620c03f9f88bc688cceb058f1e68c7d39b2",
@@ -3915,7 +4019,7 @@
       "source_expression_sha256": "58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d695dd55dbcac9a40574027e8ef1396186bccd79631492fba6403bd67e16f44c",
@@ -5055,7 +5159,7 @@
       "source_expression_sha256": "a478be4c1764cbfca52c521cad2d4bb904985e678540a3be8c726c5fe285719c",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved.",
+      "reasoning": "sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself. The approved mapping retains sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:7a526678ca98bd78c27db8abd67cc309ea9841c11fa1b6845fe62ade62f3556c",
@@ -5899,7 +6003,7 @@
       "source_expression_sha256": "3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:dca940a9ecdfa31a693dffaa7b880ac797fb94b80580f7dc3b292f1220960009",
@@ -6301,55 +6405,42 @@
         "lexical": "sosa:observedProperty",
         "iri": "http://www.w3.org/ns/sosa/observedProperty"
       },
-      "predicate": {
-        "lexical": "rdfs:subPropertyOf",
-        "iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
-      },
-      "authoritative_target_lexical": "cco:has_input",
+      "predicate": null,
+      "authoritative_target_lexical": null,
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
-        "mapping_type": "object_property_mapping",
-        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "mapping_type": "explicit_blank",
+        "predicate_iri": null,
         "subject_iri": "http://www.w3.org/ns/sosa/observedProperty",
-        "target": "<https://www.commoncoreontologies.org/ont00001921>"
+        "target": null
       },
-      "source_expression_sha256": "b445637d9f4cfc26ab88b990deee554a701a683195b88bf4ccb2d481e55993da",
-      "mapping_type": "object_property_mapping",
-      "coverage_classification": "relation_mapping",
-      "reasoning": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
-      "authoritative_axioms": [
-        {
-          "axiom_id": "sha256:3319996395ff5c961d89ef64b955bd227c90bbd762a5184a40e39ef307ea54a8",
-          "canonical_expression": "SubObjectPropertyOf(<http://www.w3.org/ns/sosa/observedProperty> <https://www.commoncoreontologies.org/ont00001921>)",
-          "referenced_iris": [
-            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-            "http://www.w3.org/ns/sosa/observedProperty",
-            "https://www.commoncoreontologies.org/ont00001921"
-          ],
-          "target_category": "cco_bearing",
-          "product_dispositions": {
-            "integrated": {
-              "status": "emitted_unchanged"
-            },
-            "alignment_core": {
-              "status": "not_applicable",
-              "reason_code": "TARGET_SPECIFIC"
-            },
-            "strict_bfo_mapping": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
-            },
-            "bfo_projection": {
-              "status": "deferred",
-              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
-            },
-            "cco_extension": {
-              "status": "emitted_unchanged"
-            }
-          }
+      "source_expression_sha256": "e9f5dccc049c7dd522e5756d7fa07ce10bec5994fdff0f51d82ee5984a365853",
+      "mapping_type": "explicit_blank",
+      "coverage_classification": "explicitly_unmapped",
+      "reasoning": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+      "authoritative_axioms": [],
+      "row_product_dispositions": {
+        "integrated": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "alignment_core": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "strict_bfo_mapping": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "bfo_projection": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+        },
+        "cco_extension": {
+          "status": "deferred",
+          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
         }
-      ],
-      "row_product_dispositions": null
+      }
     }
   ]
 }

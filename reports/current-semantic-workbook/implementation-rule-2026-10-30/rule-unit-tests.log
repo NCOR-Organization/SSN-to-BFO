@@ -1,0 +1,12 @@
+test_existing_implementation_does_not_decompose_into_premises (test_ssn_implementation_rule.ImplementationRuleTests.test_existing_implementation_does_not_decompose_into_premises) ... ok
+test_fixture_produces_exactly_two_pairs_and_no_cross_join (test_ssn_implementation_rule.ImplementationRuleTests.test_fixture_produces_exactly_two_pairs_and_no_cross_join) ... ok
+test_historical_positive_component_and_inverse_direction (test_ssn_implementation_rule.ImplementationRuleTests.test_historical_positive_component_and_inverse_direction) ... ok
+test_missing_mismatched_and_reversed_premises_do_not_match (test_ssn_implementation_rule.ImplementationRuleTests.test_missing_mismatched_and_reversed_premises_do_not_match) ... ok
+test_no_direct_prescription_is_constructed (test_ssn_implementation_rule.ImplementationRuleTests.test_no_direct_prescription_is_constructed) ... ok
+test_no_implicit_subproperty_or_inverse_materialization (test_ssn_implementation_rule.ImplementationRuleTests.test_no_implicit_subproperty_or_inverse_materialization) ... ok
+test_repeated_execution_is_idempotent (test_ssn_implementation_rule.ImplementationRuleTests.test_repeated_execution_is_idempotent) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.069s
+
+OK

@@ -8,24 +8,24 @@ Freshness is determined from content hashes, not file timestamps.
 
 | Item | Value |
 |---|---|
-| workbook SHA-256 | `778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c` |
-| generator SHA-256 | `533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e` |
+| workbook SHA-256 | `f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59` |
+| generator SHA-256 | `8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3` |
 | row-identity module SHA-256 | `9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425` |
 | product-disposition module SHA-256 | `6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e` |
 | modular-products module SHA-256 | `6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c` |
 | publication metadata SHA-256 | `bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9` |
-| current assessment inventory SHA-256 | `a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253` |
-| generation timestamp (UTC) | `2026-10-26T06:50:30+00:00` |
+| current assessment inventory SHA-256 | `855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709` |
+| generation timestamp (UTC) | `2026-10-31T00:41:22+00:00` |
 | maintained ontology path | `SSN2BFO.ttl` |
-| generated ontology SHA-256 | `98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c` |
+| generated ontology SHA-256 | `0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810` |
 | maintained product-disposition path | `reports/coms-product-dispositions.json` |
-| product-disposition JSON SHA-256 | `568cb535a9d9a656b71d4df85376d75188b4ca70a32acd03e5f2ebb09f3242c5` |
+| product-disposition JSON SHA-256 | `bd5b71f30e18290a37413ae0c9b72242b11917d50106fa55e48e99d95a629502` |
 | maintained alignment-core path | `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl` |
-| alignment-core Turtle SHA-256 | `17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770` |
+| alignment-core Turtle SHA-256 | `d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef` |
 | maintained strict-BFO path | `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl` |
 | strict-BFO Turtle SHA-256 | `676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af` |
 | maintained CCO-extension path | `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl` |
-| CCO-extension Turtle SHA-256 | `5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28` |
+| CCO-extension Turtle SHA-256 | `019c1ec14ba31c48d415d1ec9f0207b16a79e2117e536cefa0ab82a1c383a3f5` |
 
 ## Workbook
 
@@ -36,24 +36,24 @@ Freshness is determined from content hashes, not file timestamps.
 | Worksheet | Rows scanned | Populated rows |
 |---|---:|---:|
 | `Sheet1` | 44 | 44 |
-| `Sheet2` | 61 | 61 |
+| `Sheet2` | 63 | 63 |
 
 ## Row Counts
 
 | Item | Count |
 |---|---:|
 | active axiom row count | 100 |
-| mapped row count | 69 |
-| blank mapping row count | 5 |
+| mapped row count | 68 |
+| blank mapping row count | 7 |
 | class mapping count | 42 |
-| object-property mapping count | 25 |
-| domain row count | 16 |
+| object-property mapping count | 24 |
+| domain row count | 17 |
 | range row count | 15 |
 | property-chain count | 2 |
-| governed RowID count | 105 |
-| unique RowID count | 105 |
-| processed governed row count | 105 |
-| identity-audit row count | 105 |
+| governed RowID count | 107 |
+| unique RowID count | 107 |
+| processed governed row count | 107 |
+| identity-audit row count | 107 |
 
 ## Prefixes Derived
 
@@ -113,11 +113,10 @@ Freshness is determined from content hashes, not file timestamps.
 | `cco:StasisOfArtifactOperationality` | class | label_style_key | Stasis of Artifact Operationality | `https://www.commoncoreontologies.org/ont00001213` | `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]` |
 | `cco:VeracityMeasurementInformationContentEntity` | class | label_style_key | Veracity Measurement Information Content Entity | `https://www.commoncoreontologies.org/ont00000592` | `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]` |
 | `cco:affects` | object_property | exact_label | affects | `https://www.commoncoreontologies.org/ont00001834` | `Sheet1!19 [urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63]`, `Sheet2!5 [urn:uuid:69e972da-23ad-4e50-822b-e41198c95795]` |
-| `cco:agent_in` | object_property | label_style_key | agent in | `https://www.commoncoreontologies.org/ont00001787` | `Sheet1!37 [urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0]`, `Sheet1!38 [urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd]`, `Sheet1!40 [urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c]`, `Sheet2!31 [urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca]` |
+| `cco:agent_in` | object_property | label_style_key | agent in | `https://www.commoncoreontologies.org/ont00001787` | `Sheet1!37 [urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0]`, `Sheet1!38 [urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd]`, `Sheet1!40 [urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c]`, `Sheet2!31 [urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca]`, `Sheet2!64 [urn:uuid:418db51e-342f-441d-8706-00a107266dcc]` |
 | `cco:caused_by` | object_property | label_style_key | caused by | `https://www.commoncoreontologies.org/ont00001819` | `Sheet1!28 [urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0]`, `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]`, `Sheet1!44 [urn:uuid:c15208c5-847f-4de3-a456-4037142ca542]` |
 | `cco:condition_described_by` | object_property | label_style_key | condition described by | `https://www.commoncoreontologies.org/ont00001884` | `Sheet1!14 [urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b]`, `Sheet1!29 [urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f]` |
-| `cco:has_agent` | object_property | label_style_key | has agent | `https://www.commoncoreontologies.org/ont00001833` | `Sheet2!30 [urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866]` |
-| `cco:has_input` | object_property | label_style_key | has input | `https://www.commoncoreontologies.org/ont00001921` | `Sheet2!36 [urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1]` |
+| `cco:has_agent` | object_property | label_style_key | has agent | `https://www.commoncoreontologies.org/ont00001833` | `Sheet2!30 [urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866]`, `Sheet2!63 [urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd]` |
 | `cco:has_output` | object_property | label_style_key | has output | `https://www.commoncoreontologies.org/ont00001986` | `Sheet1!12 [urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3]`, `Sheet1!41 [urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65]`, `Sheet2!14 [urn:uuid:2018c5db-cb41-4a54-aa97-df5df82f0286]`, `Sheet2!8 [urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a]` |
 | `cco:has_process_part` | object_property | label_style_key | has process part | `https://www.commoncoreontologies.org/ont00001777` | `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]`, `Sheet1!8 [urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa]` |
 | `cco:is_about` | object_property | label_style_key | is about | `https://www.commoncoreontologies.org/ont00001808` | `Sheet2!3 [urn:uuid:f293250d-b1e8-4467-8b7d-a94fb2b9b705]`, `Sheet2!4 [urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4]` |
@@ -127,8 +126,8 @@ Freshness is determined from content hashes, not file timestamps.
 | `cco:is_object_of` | object_property | label_style_key | is object of | `https://www.commoncoreontologies.org/ont00001936` | `Sheet1!11 [urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb]` |
 | `cco:is_output_of` | object_property | label_style_key | is output of | `https://www.commoncoreontologies.org/ont00001816` | `Sheet1!10 [urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f]`, `Sheet2!25 [urn:uuid:b4fc5247-7d44-4619-9d0b-8466f45218bf]` |
 | `cco:is_subject_of` | object_property | label_style_key | is subject of | `https://www.commoncoreontologies.org/ont00001801` | `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]`, `Sheet1!16 [urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69]`, `Sheet1!23 [urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f]`, `Sheet1!24 [urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87]`, `Sheet1!27 [urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f]`, `Sheet2!2 [urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec]` |
-| `cco:prescribed_by` | object_property | label_style_key | prescribed by | `https://www.commoncoreontologies.org/ont00001920` | `Sheet1!12 [urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3]`, `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]`, `Sheet1!16 [urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69]`, `Sheet1!17 [urn:uuid:124e6b06-906a-47be-a459-92babef3992e]`, `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!19 [urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63]`, `Sheet1!20 [urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26]`, `Sheet1!21 [urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1]`, `Sheet1!22 [urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239]`, `Sheet1!23 [urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f]`, `Sheet1!24 [urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]`, `Sheet1!26 [urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b]`, `Sheet1!27 [urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f]`, `Sheet1!28 [urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0]`, `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!41 [urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]`, `Sheet1!44 [urn:uuid:c15208c5-847f-4de3-a456-4037142ca542]`, `Sheet2!12 [urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9]`, `Sheet2!58 [urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab]` |
-| `cco:prescribes` | object_property | exact_label | prescribes | `https://www.commoncoreontologies.org/ont00001942` | `Sheet1!39 [urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607]`, `Sheet2!57 [urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e]` |
+| `cco:prescribed_by` | object_property | label_style_key | prescribed by | `https://www.commoncoreontologies.org/ont00001920` | `Sheet1!12 [urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3]`, `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]`, `Sheet1!16 [urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69]`, `Sheet1!17 [urn:uuid:124e6b06-906a-47be-a459-92babef3992e]`, `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!19 [urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63]`, `Sheet1!20 [urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26]`, `Sheet1!21 [urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1]`, `Sheet1!22 [urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239]`, `Sheet1!23 [urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f]`, `Sheet1!24 [urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]`, `Sheet1!26 [urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b]`, `Sheet1!27 [urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f]`, `Sheet1!28 [urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0]`, `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!41 [urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]`, `Sheet1!44 [urn:uuid:c15208c5-847f-4de3-a456-4037142ca542]`, `Sheet2!12 [urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9]` |
+| `cco:prescribes` | object_property | exact_label | prescribes | `https://www.commoncoreontologies.org/ont00001942` | `Sheet1!39 [urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607]` |
 | `cco:process_started_by` | object_property | label_style_key | process started by | `https://www.commoncoreontologies.org/ont00001962` | `Sheet2!62 [urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd]` |
 
 ## Malformed Or Unresolved Rows
@@ -144,10 +143,10 @@ Freshness is determined from content hashes, not file timestamps.
 ## COMS Row Identity Integrity
 
 - Canonical-expression version: `coms-row-expression-v1`
-- Governed RowID count: 105
-- Unique RowID count: 105
-- Processed governed row count: 105
-- Identity-audit row count: 105
+- Governed RowID count: 107
+- Unique RowID count: 107
+- Processed governed row count: 107
+- Identity-audit row count: 107
 - Canonical authoritative axiom count: 100
 - Unique authoritative axiom count: 100
 - Count reconciliation result: PASS
@@ -155,11 +154,11 @@ Freshness is determined from content hashes, not file timestamps.
 - Location reconciliation result: PASS
 - Identity-audit completeness result: PASS
 - Assertion-bearing rows requiring canonical axiom identity: 100
-- Explicit zero-axiom rows requiring canonical row identity: 5
+- Explicit zero-axiom rows requiring canonical row identity: 7
 - Zero-axiom assessment disposition completeness: PASS
-- Reviewed zero-axiom decisions: 5 / 5
+- Reviewed zero-axiom decisions: 5 / 7
 - Current assessment inventory: `mappings/current-ssn-sosa-assessment.json`
-- Current assessment inventory SHA-256: `a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253`
+- Current assessment inventory SHA-256: `855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709`
 - Duplicate RowID result: PASS
 - Duplicate authoritative-axiom result: PASS
 
@@ -172,12 +171,14 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4` | `http://www.w3.org/ns/ssn/systems/SystemProperty` | final | inheritance_sufficient | PASS |
 | `urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f` | `http://www.w3.org/ns/sosa/hasSample` | final | no_direct_mapping | PASS |
 | `urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab` | `http://www.w3.org/ns/sosa/isSampleOf` | final | no_direct_mapping | PASS |
+| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `http://www.w3.org/ns/sosa/observedProperty` | unreviewed | unreviewed | PASS |
 | `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc` | `http://www.w3.org/ns/ssn/forProperty` | final | no_direct_mapping | PASS |
+| `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e` | `http://www.w3.org/ns/ssn/implementedBy` | unreviewed | unreviewed | PASS |
 
 | RowID | Worksheet | Row | Mapping type | Source-expression SHA-256 | Canonical authoritative axiom | Reasoning |
 |---|---|---:|---|---|---|---|
 | `urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b` | `Sheet1` | 2 | `class_mapping` | `b00d4da20ac7bbeccd0bc92eaeccb1207d290accaa1401a96565e0c919fe0f13` | `SubClassOf(<http://www.w3.org/ns/sosa/sampling/RelationshipNature> <https://www.commoncoreontologies.org/ont00000958>)` | Provisional mapping for instance-data testing: RelationshipNature is treated as descriptive/information content identifying the nature of a reified sample relationship. The evidence hold remains open because the source declares a skos:Concept superclass but the imported SKOS ontology has no resolving local artifact; exact transitive closure evidence is unavailable. |
-| `urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e` | `Sheet1` | 3 | `class_mapping` | `a478be4c1764cbfca52c521cad2d4bb904985e678540a3be8c726c5fe285719c` | `SubClassOf(<http://www.w3.org/ns/sosa/sampling/SampleRelationship> <https://www.commoncoreontologies.org/ont00000958>)` | The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved. |
+| `urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e` | `Sheet1` | 3 | `class_mapping` | `a478be4c1764cbfca52c521cad2d4bb904985e678540a3be8c726c5fe285719c` | `SubClassOf(<http://www.w3.org/ns/sosa/sampling/SampleRelationship> <https://www.commoncoreontologies.org/ont00000958>)` | sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself. The approved mapping retains sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity. |
 | `urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342` | `Sheet1` | 4 | `class_mapping` | `fb1601493fb203b063d1b1e562ea5451a1ece8905d7f93e8ca4649dac9810d3a` | `SubClassOf(<http://www.w3.org/ns/sosa/ActuatableProperty> ObjectUnionOf(ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000197> <http://www.w3.org/ns/sosa/FeatureOfInterest>)) ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000132> <http://www.w3.org/ns/sosa/FeatureOfInterest>))))` | This class is modeled as either a specifically dependent continuant or a process profile to align with SSN/SOSA’s treatment of properties that may be continuant features or features of processes, both of which can be the target of intentional change. |
 | `urn:uuid:2a4f78b4-92cb-4095-9a6b-2ae03e00be4a` | `Sheet1` | 5 | `class_mapping` | `8db69af6d7175d894153961af20069ada1ff015b288dccbebef4ebb60849421d` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Actuation> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/actsOnProperty> <http://www.w3.org/ns/sosa/ActuatableProperty>)))` | Actuation is modeled as a planned process because it is intentionally carried out according to a procedure in order to change the state of the world, which aligns directly with the CCO notion of a PlannedAct. |
 | `urn:uuid:06782965-88c5-4345-ab99-ea027513ec86` | `Sheet1` | 6 | `class_mapping` | `c8da57437716d5da9ab48656f3c97b921c4501b95ba843edb14345f62ecd041d` | `SubClassOf(<http://www.w3.org/ns/sosa/FeatureOfInterest> ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000015> <http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000040> <http://purl.obolibrary.org/obo/BFO_0000144>))` | Direct alignment deferred because SOSA permits a FeatureOfInterest to be property-like. Restricting every FeatureOfInterest to a material entity or process makes the SSN survival-range pattern unsatisfiable. |
@@ -220,16 +221,16 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db` | `Sheet1` | 43 | `explicit_blank` | `8d40f1e08acf5bd3bd9796b3149b1bd8a5bc94ecf787d13040e4889953edd5e1` | _(none)_ | `ssn-system:MeasurementRange` is formally a subclass of `ssn-system:SystemProperty` and ultimately of `ssn:Property`, so it inherits the applicable governed BFO-level characterization through that hierarchy. Its natural-language definition describes “the set of values that the Sensor can return as the Result of an Observation under the defined Conditions,” which is ontologically awkward with its formal placement under `SystemProperty`. For this mapping, follow the formal source hierarchy and treat the “set of values” wording as imprecise shorthand for a system characteristic concerning the range of possible result values, rather than reinterpreting the class as an Information Content Entity.<br><br>The source does not justify identifying `MeasurementRange` itself as a `bfo:Function`, nor requiring it to have an Observation as a realization, an Observation caused by a Stimulus, or an Artifact Function Specification. The current Function/realization/causation expression conflates the system property describing the range with the function or processes through which measurement capability is exercised. No additional direct mapping is required beyond inherited treatment. |
 | `urn:uuid:c15208c5-847f-4de3-a456-4037142ca542` | `Sheet1` | 44 | `class_mapping` | `b5f25fb0bcf748c3be3006227cf4f1f3b71b1307094704afefdd37c7d371386f` | `SubClassOf(<http://www.w3.org/ns/ssn/systems/SurvivalRange> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000034> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000015> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001819> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000177> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <https://www.commoncoreontologies.org/ont00000319>)))))))))` | SurvivalRange was modeled as a function characterizing conditions a system can endure without losing operational integrity, manifested through affordance-realizing processes. Its historical technical deferral explicitly preserved that intended semantics. The expression was subsequently restored in COMS; historical reasoner findings retain their original profile limitations. |
 | `urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4` | `Sheet1` | 45 | `explicit_blank` | `83d966fd425a54a63ae1491390ea23da548db9b99ec6a76c5612e9ee55c38d05` | _(none)_ | `ssn-system:SystemProperty` is already a subclass of `ssn:Property` and therefore inherits the governed BFO-level treatment of `ssn:Property`. The source characterizes a SystemProperty as an identifiable and observable characteristic representing a System's ability to operate its primary purpose, but does not require every SystemProperty to be prescribed by an Artifact Function Specification. The restriction `cco:prescribed_by some cco:ArtifactFunctionSpecification` therefore introduces an unsupported existential and design-specification commitment. No additional direct class mapping is required beyond the inherited `ssn:Property` mapping. |
-| `urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec` | `Sheet2` | 2 | `object_property_mapping` | `30b0ba8398ec4a4a5215332bb3d11a737a3a6469cdb3a05fb9c373f570d5c1a4` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/sampling/hasSampleRelationship> <https://www.commoncoreontologies.org/ont00001801>)` | The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion. |
+| `urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec` | `Sheet2` | 2 | `object_property_mapping` | `30b0ba8398ec4a4a5215332bb3d11a737a3a6469cdb3a05fb9c373f570d5c1a4` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/sampling/hasSampleRelationship> <https://www.commoncoreontologies.org/ont00001801>)` | Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of. |
 | `urn:uuid:f293250d-b1e8-4467-8b7d-a94fb2b9b705` | `Sheet2` | 3 | `object_property_mapping` | `d6aed3db731e2dbec987a7eff38297d409d36240f10f920663c9eb82154ee4d2` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/sampling/natureOfRelationship> <https://www.commoncoreontologies.org/ont00001808>)` | The current is_about assertion remains subject to the existing evidence hold. Relationship-nature interpretation was provisional, and a pinned local SKOS closure is unavailable. This note does not finalize the mapping. |
-| `urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4` | `Sheet2` | 4 | `object_property_mapping` | `1569e27d068c2096846026f7f259c735d3d2d494edb6de138cb0b14dd63af95e` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/sampling/relatedSample> <https://www.commoncoreontologies.org/ont00001808>)` | The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved. |
+| `urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4` | `Sheet2` | 4 | `object_property_mapping` | `1569e27d068c2096846026f7f259c735d3d2d494edb6de138cb0b14dd63af95e` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/sampling/relatedSample> <https://www.commoncoreontologies.org/ont00001808>)` | Under the approved interpretation, a SampleRelationship is an information content entity representing a relationship between samples. sampling:relatedSample links this information content entity to the related Sample that it is about. The approved mapping retains sampling:relatedSample rdfs:subPropertyOf cco:is_about. |
 | `urn:uuid:69e972da-23ad-4e50-822b-e41198c95795` | `Sheet2` | 5 | `object_property_mapping` | `02573a746733f57a298ba130c29ce88c017e8fa1960bce7bdc1cc22d44867775` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/actsOnProperty> <https://www.commoncoreontologies.org/ont00001834>)` | The existing pair review retains the actuation-to-affected-property mapping and its inverse; the current inclusion records the effect relation without asserting property equivalence. |
 | `urn:uuid:b16f1d3a-3d10-4b75-9f12-2331e6c46d74` | `Sheet2` | 6 | `domain` | `44f8e256510d7aeee357d89e95dd987adb9c07fa43bc2b70e7fccb95348783e9` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/hasFeatureOfInterest> ObjectUnionOf(<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/ns/sosa/Sampling>))` | The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing. |
 | `urn:uuid:01b1aff2-a12b-430b-9775-b43241c3a7cf` | `Sheet2` | 7 | `range` | `6408065f23d5e5840f14b6e0929330e9b7be02c7100203216a37d2ad7c9f5c0c` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/ns/sosa/FeatureOfInterest>)` | The historical workbook deliberately retained hasFeatureOfInterest as a standalone relation and rejected cco:has_input because its endpoint restrictions do not preserve the general feature-of-interest interpretation. The input mapping was removed in dc117689 (2026-07-01); current rows retain only execution-to-feature typing. |
 | `urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a` | `Sheet2` | 8 | `object_property_mapping` | `47d35665f53fc5d1fb29148f7d1184f38162d47477c0929e2a90b53aba86bcf0` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/hasResult> <https://www.commoncoreontologies.org/ont00001986>)` | The existing pair review documents results as outputs of observations, actuations, or samplings and retains the process-to-output direction. The current direct mapping is unchanged; historical HermiT results are not promoted to current evidence. |
 | `urn:uuid:b5a532fc-5dea-4a47-9323-0a78a849c078` | `Sheet2` | 9 | `domain` | `2d4010ce8244b3060af20e418fc7866cd9b40b3beddd905cc90d12b9586b3015` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> <http://www.w3.org/ns/sosa/FeatureOfInterest>)` | The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing. |
 | `urn:uuid:e15cfee1-3c8e-4519-bce0-ec62729fd2fd` | `Sheet2` | 10 | `range` | `a5bc720f89ba6680e3bd74be03ecbf006f3b9a83477a0bd8d47b5ed07310ba20` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ObjectUnionOf(<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/ns/sosa/Sampling>))` | The historical workbook retained isFeatureOfInterestOf as the inverse of the standalone hasFeatureOfInterest relation. The rejected has_input interpretation does not justify an inverse BFO/CCO inclusion; current rows retain feature-to-execution typing. |
-| `urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710` | `Sheet2` | 11 | `object_property_mapping` | `40553a3ab5b52532d5d74c4fe23ffb3c52321ac8799ab61c33abba7ba2d59bbd` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/phenomenonTime> <http://purl.obolibrary.org/obo/BFO_0000199>)` | COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved. |
+| `urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710` | `Sheet2` | 11 | `object_property_mapping` | `40553a3ab5b52532d5d74c4fe23ffb3c52321ac8799ab61c33abba7ba2d59bbd` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/phenomenonTime> <http://purl.obolibrary.org/obo/BFO_0000199>)` | Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed. |
 | `urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9` | `Sheet2` | 12 | `object_property_mapping` | `9f73be21f435e6ac7a96c45014d248ffa694c90e0c1ae716885675ac74d2d918` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/usedProcedure> <https://www.commoncoreontologies.org/ont00001920>)` | The existing review treats use of a Procedure as being carried out according to its prescriptions and explicitly recommends the now-adopted cco:prescribed_by inclusion. |
 | `urn:uuid:79e12baa-9467-4494-bdf3-b6906f5a81a7` | `Sheet2` | 13 | `domain` | `a9b704a9c29dddd44336baec70b661c6f8c99801c1b767194966c92924195b3c` | `ObjectPropertyDomain(<http://www.w3.org/ns/ssn/systems/inCondition> ObjectUnionOf(<http://www.w3.org/ns/ssn/systems/OperatingRange> <http://www.w3.org/ns/ssn/systems/SurvivalRange> <http://www.w3.org/ns/ssn/systems/SystemCapability>))` | inCondition links a capability or range specification to its environmental context without asserting ontological dependence between them. The incorrect historical property chain was removed. The current row supplies the SystemCapability-or-OperatingRange-or-SurvivalRange domain and does not assert a direct BFO/CCO relation mapping. |
 | `urn:uuid:2018c5db-cb41-4a54-aa97-df5df82f0286` | `Sheet2` | 14 | `object_property_mapping` | `19f9b7df8bb9c81f7b2ec9d2244b3f9864e53c21d1e54ceeb59f8e7d2704f613` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/systems/qualityOfObservation> <https://www.commoncoreontologies.org/ont00001986>)` | If an observation x qualityOfObservation y, then y is an information output produced by x that assesses the quality of the observation’s result. |
@@ -250,11 +251,11 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:ac95c1e2-0d93-48de-be9d-4defbe6525f0` | `Sheet2` | 29 | `range` | `ddbf9961f6b455619cdba40745406218696f68eaac23ccd924c6db7e8465617f` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/ns/sosa/Actuator>)` | These rows retain Actuation-to-Actuator typing. The former has_agent inclusion was technically deferred with its inverse; the source range was separately restored. The existing evidence hold remains without a final semantic rejection. |
 | `urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866` | `Sheet2` | 30 | `object_property_mapping` | `256084a3fa83724cf983427926caff6ef9c9fa8f0276edb80309d42aa9949f81` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeBySampler> <https://www.commoncoreontologies.org/ont00001833>)` | The existing sampling-pair review retains the Sampling-to-Sampler has_agent mapping. This documents the active relation between an actual sampling and its sampler; it does not decide whether every sampler must actually sample. |
 | `urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca` | `Sheet2` | 31 | `object_property_mapping` | `0a70c5e59bc893392f0d1cfaf718fbceba3e1729e3a55dde8425297f9367757c` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeSampling> <https://www.commoncoreontologies.org/ont00001787>)` | The explicit inverse-side policy retains this inverse agent mapping, supported by source madeBySampler/madeSampling and target has_agent/agent_in inverse pairs. |
-| `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc` | `Sheet2` | 32 | `domain` | `7e3f2b33b64788358236504d3e06e12bd7e0231949e52f31e801908d7e55f1db` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/sosa/Observation>)` | Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. |
-| `urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39` | `Sheet2` | 33 | `range` | `58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/sosa/Sensor>)` | Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. |
-| `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e` | `Sheet2` | 34 | `domain` | `ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Sensor>)` | Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. |
-| `urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f` | `Sheet2` | 35 | `range` | `3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Observation>)` | Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. |
-| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `Sheet2` | 36 | `object_property_mapping` | `b445637d9f4cfc26ab88b990deee554a701a683195b88bf4ccb2d481e55993da` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/observedProperty> <https://www.commoncoreontologies.org/ont00001921>)` | The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement. |
+| `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc` | `Sheet2` | 32 | `domain` | `7e3f2b33b64788358236504d3e06e12bd7e0231949e52f31e801908d7e55f1db` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/sosa/Observation>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39` | `Sheet2` | 33 | `range` | `58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/sosa/Sensor>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e` | `Sheet2` | 34 | `domain` | `ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Sensor>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f` | `Sheet2` | 35 | `range` | `3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Observation>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `Sheet2` | 36 | `explicit_blank` | `e9f5dccc049c7dd522e5756d7fa07ce10bec5994fdff0f51d82ee5984a365853` | _(none)_ | Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved. |
 | `urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3` | `Sheet2` | 37 | `object_property_mapping` | `d0957c4a3b9e144232abb48c196d943ff1118b429eb4cc27532d4247d4c2c5b6` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/systems/hasOperatingProperty> <http://purl.obolibrary.org/obo/BFO_0000194>)` | The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence. |
 | `urn:uuid:265137eb-a279-4f9a-b1b9-e85d7ecb02a7` | `Sheet2` | 38 | `domain` | `be38dc3ef3f5e76e250d1cb245360749bd7336ed0785cdab09a20730ea6ef540` | `ObjectPropertyDomain(<http://www.w3.org/ns/ssn/systems/hasOperatingRange> <http://www.w3.org/ns/ssn/System>)` | The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. |
 | `urn:uuid:8b87dd5b-298e-4ae7-8724-3778c0a67234` | `Sheet2` | 39 | `range` | `ceafff8b76962f198ca1f184ff076c3536247fe1c33bd964f725ea59da6a7da8` | `ObjectPropertyRange(<http://www.w3.org/ns/ssn/systems/hasOperatingRange> <http://www.w3.org/ns/ssn/systems/OperatingRange>)` | The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. |
@@ -275,24 +276,26 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:766c2e20-d125-448b-bc37-642daebaf088` | `Sheet2` | 54 | `range` | `235080b117c44da576d0930f0a91040d87a728eefc5bc7c0b3bb68596a098c57` | `ObjectPropertyRange(<http://www.w3.org/ns/ssn/hasOutput> <http://www.w3.org/ns/ssn/Output>)` | The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation. |
 | `urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3` | `Sheet2` | 55 | `range` | `1b842013b19abf9df9c994d68128178132fda149bb001b02c29ebfd93a043804` | `ObjectPropertyRange(<http://www.w3.org/ns/ssn/hasProperty> ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000144>))` | The range records specifically dependent continuants and process profiles. The separate conditional rule produces bearer_of or has_occurrent_part from suitable endpoint typing, avoiding an unconditional dual BFO subproperty mapping. |
 | `urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d` | `Sheet2` | 56 | `object_property_mapping` | `71441321015321658bd32ac0185d96d0af0887865756974b4a1839835f39fabc` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/hasSubSystem> <http://purl.obolibrary.org/obo/BFO_0000178>)` | The existing review identifies subsystems as structural components and explicitly recommends the now-adopted continuant-parthood inclusion. It asserts only the necessary direction. |
-| `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e` | `Sheet2` | 57 | `object_property_mapping` | `ef681068fcc4afa870acf612bb26197c4711ac04eab19500f0e96a75a004d10b` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/implementedBy> <https://www.commoncoreontologies.org/ont00001942>)` | Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved. |
-| `urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab` | `Sheet2` | 58 | `object_property_mapping` | `20dae62e65511464178b54e802ceac8a72064fe1ccf040205b2cbf4a70546373` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/implements> <https://www.commoncoreontologies.org/ont00001920>)` | Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved. |
+| `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e` | `Sheet2` | 57 | `explicit_blank` | `f2a4c1afe0521e8ff554210584bb769c6b4b4b122d1a0be9729327aa7f5e48e7` | _(none)_ | Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure. |
+| `urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab` | `Sheet2` | 58 | `domain` | `a7b6075f674bddbddeb0fe520321c1bfb3d4bbd206876731e1fc4f1b24fbf901` | `ObjectPropertyDomain(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/ssn/System>)` | Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed. |
 | `urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804` | `Sheet2` | 59 | `object_property_mapping` | `8af39ca015db241800bcf10d34c6ef428870ad6cb2ec489011d20a7085ee5c38` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/inDeployment> <http://purl.obolibrary.org/obo/BFO_0000056>)` | The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedOnPlatform under has_participant. The current assertion exactly preserves that decision. |
 | `urn:uuid:ebf4115f-fe96-4959-89a4-98c3a6031cff` | `Sheet2` | 60 | `domain` | `9c5471a4e0cc97d3cade0a1c2a22af533fd573d9365bc7fee476b1ecf216ce75` | `ObjectPropertyDomain(<http://www.w3.org/ns/ssn/isProxyFor> <http://www.w3.org/ns/ssn/Stimulus>)` | These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor. |
 | `urn:uuid:b7873da3-fc78-4a2a-92e1-ef83efb6d600` | `Sheet2` | 61 | `range` | `7867920787556af6ea7cdcfd036b466545cf68a1724655dad17b1288b19f62d8` | `ObjectPropertyRange(<http://www.w3.org/ns/ssn/isProxyFor> <http://www.w3.org/ns/ssn/Property>)` | These rows retain source typing for the Stimulus-to-Property proxy relation. Historical documentation describes an information-mediated interpretation without adopting an unconditional direct BFO/CCO relation mapping for isProxyFor. |
 | `urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd` | `Sheet2` | 62 | `object_property_mapping` | `fe8a979e62b1dfe2f2f00c6a65df77262575c4c615fa293e1c5f5095ef61b44c` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/wasOriginatedBy> <https://www.commoncoreontologies.org/ont00001962>)` | The retained interpretation treats the originating Stimulus as an occurrent that causally initiates the Observation process. This row preserves the corresponding process_started_by inclusion. |
+| `urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd` | `Sheet2` | 63 | `object_property_mapping` | `2b6b447a3ce282c7c7ffa2ac9b81c0383dc7b1ff8f076dea2a5b1e40de0d2755` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeBySensor> <https://www.commoncoreontologies.org/ont00001833>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:418db51e-342f-441d-8706-00a107266dcc` | `Sheet2` | 64 | `object_property_mapping` | `7aa268422bf0cda796dfa79aa817b2b8c0d7597c0ce8126d126a3b7dcc9c54d0` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeObservation> <https://www.commoncoreontologies.org/ont00001787>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
 
 ## Product Dispositions
 
 - Path: `reports/coms-product-dispositions.json`
 - Schema version: `1`
 - Product order: `integrated`, `alignment_core`, `strict_bfo_mapping`, `bfo_projection`, `cco_extension`
-- Governed rows: 105
+- Governed rows: 107
 - Canonical authoritative axioms: 100
-- Zero-axiom rows: 5
-- Target-neutral axioms: 29
+- Zero-axiom rows: 7
+- Target-neutral axioms: 30
 - BFO-bearing axioms: 19
-- CCO-bearing axioms: 24
+- CCO-bearing axioms: 23
 - Mixed BFO/CCO axioms: 28
 - Disposition reconciliation and canonical serialization: PASS
 - No lossless transformation or weakened projection is approved by this artifact.
@@ -303,21 +306,21 @@ This is the maintained authoritative development artifact at the approved produc
 
 - Path: `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`
-- Governed authoritative axioms: 29
-- Domain axioms: 15
+- Governed authoritative axioms: 30
+- Domain axioms: 16
 - Range axioms: 14
-- Named target expressions: 26
+- Named target expressions: 27
 - Union target expressions: 3
-- Logical RDF triples: 53
+- Logical RDF triples: 54
 - Ontology declaration triples: 1
 - Import triples: 0
 - Descriptive metadata annotations: 7
-- Total RDF triples: 61
+- Total RDF triples: 62
 - BFO/CCO/RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Fixed local source closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`
-- Source-closure triple count: 1214
+- Source-closure triple count: 1215
 - Source-closure HermiT return code: 0
 - Source-closure reasoned output produced: yes
 - Source-closure named unsatisfiable classes: 0
@@ -343,20 +346,20 @@ This is the maintained authoritative development artifact at the approved produc
 - Descriptive metadata annotations: 7
 - Total RDF triples: 134
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`
-- Imported alignment-core governed axioms: 29
-- Project-module closure governed axioms: 48
+- Imported alignment-core governed axioms: 30
+- Project-module closure governed axioms: 49
 - Direct/alignment-core governed overlap: 0
 - CCO/RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 14988
+- Pinned closure triple count: 14989
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
 - HermiT result: PASS
 - The validation dependency `imports/cco.ttl` is not imported by the published strict graph and does not authorize CCO mappings or transformations.
-- The 52 CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.
+- The 51 CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.
 - Formal-release metadata and identity remain deferred.
 
 
@@ -366,21 +369,21 @@ This is the maintained authoritative development artifact at the approved produc
 
 - Path: `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/cco-extension`
-- Direct governed authoritative axioms: 52
-- CCO-bearing axioms: 24
+- Direct governed authoritative axioms: 51
+- CCO-bearing axioms: 23
 - Mixed BFO/CCO axioms: 28
 - Subclass axioms: 29
 - Equivalent-class axioms: 7
-- Direct subproperty axioms: 16
+- Direct subproperty axioms: 15
 - Property-chain axioms: 0
-- Logical RDF triples: 875
+- Logical RDF triples: 874
 - Ontology declaration triples: 1
 - Import triples: 1
 - Descriptive metadata annotations: 7
-- Total RDF triples: 884
+- Total RDF triples: 883
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`
 - Imported strict-BFO governed axioms: 19
-- Transitively imported alignment-core governed axioms: 29
+- Transitively imported alignment-core governed axioms: 30
 - Project-module closure governed axioms: 100
 - Pairwise governed overlap: 0
 - RO and unexpected logical-vocabulary audit: PASS
@@ -508,7 +511,6 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet2!33` | `sosa:madeBySensor` | `rdfs:range` | yes | sosa:Sensor | http://www.w3.org/ns/sosa/Sensor | `sosa:madeBySensor rdfs:range http://www.w3.org/ns/sosa/Sensor .` |
 | `Sheet2!34` | `sosa:madeObservation` | `rdfs:domain` | yes | sosa:Sensor | http://www.w3.org/ns/sosa/Sensor | `sosa:madeObservation rdfs:domain http://www.w3.org/ns/sosa/Sensor .` |
 | `Sheet2!35` | `sosa:madeObservation` | `rdfs:range` | yes | sosa:Observation | http://www.w3.org/ns/sosa/Observation | `sosa:madeObservation rdfs:range http://www.w3.org/ns/sosa/Observation .` |
-| `Sheet2!36` | `sosa:observedProperty` | `rdfs:subPropertyOf` | yes | cco:has_input | cco:ont00001921 | `sosa:observedProperty rdfs:subPropertyOf cco:ont00001921 .` |
 | `Sheet2!37` | `ssn-system:hasOperatingProperty` | `rdfs:subPropertyOf` | yes | bfo:specifically_depended_on_by | bfo:BFO_0000194 | `ssn-system:hasOperatingProperty rdfs:subPropertyOf bfo:BFO_0000194 .` |
 | `Sheet2!38` | `ssn-system:hasOperatingRange` | `rdfs:domain` | yes | ssn:System | http://www.w3.org/ns/ssn/System | `ssn-system:hasOperatingRange rdfs:domain http://www.w3.org/ns/ssn/System .` |
 | `Sheet2!39` | `ssn-system:hasOperatingRange` | `rdfs:range` | yes | ssn-system:OperatingRange | http://www.w3.org/ns/ssn/systems/OperatingRange | `ssn-system:hasOperatingRange rdfs:range http://www.w3.org/ns/ssn/systems/OperatingRange .` |
@@ -528,12 +530,13 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet2!54` | `ssn:hasOutput` | `rdfs:range` | yes | ssn:Output | http://www.w3.org/ns/ssn/Output | `ssn:hasOutput rdfs:range http://www.w3.org/ns/ssn/Output .` |
 | `Sheet2!55` | `ssn:hasProperty` | `rdfs:range` | yes | (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) | ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) | `ssn:hasProperty rdfs:range ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) .` |
 | `Sheet2!56` | `ssn:hasSubSystem` | `rdfs:subPropertyOf` | yes | bfo:has_continuant_part | bfo:BFO_0000178 | `ssn:hasSubSystem rdfs:subPropertyOf bfo:BFO_0000178 .` |
-| `Sheet2!57` | `ssn:implementedBy` | `rdfs:subPropertyOf` | yes | cco:prescribes | cco:ont00001942 | `ssn:implementedBy rdfs:subPropertyOf cco:ont00001942 .` |
-| `Sheet2!58` | `ssn:implements` | `rdfs:subPropertyOf` | yes | cco:prescribed_by | cco:ont00001920 | `ssn:implements rdfs:subPropertyOf cco:ont00001920 .` |
+| `Sheet2!58` | `ssn:implements` | `rdfs:domain` | yes | ssn:System | http://www.w3.org/ns/ssn/System | `ssn:implements rdfs:domain http://www.w3.org/ns/ssn/System .` |
 | `Sheet2!59` | `ssn:inDeployment` | `rdfs:subPropertyOf` | yes | bfo:participates_in | bfo:BFO_0000056 | `ssn:inDeployment rdfs:subPropertyOf bfo:BFO_0000056 .` |
 | `Sheet2!60` | `ssn:isProxyFor` | `rdfs:domain` | yes | ssn:Stimulus | http://www.w3.org/ns/ssn/Stimulus | `ssn:isProxyFor rdfs:domain http://www.w3.org/ns/ssn/Stimulus .` |
 | `Sheet2!61` | `ssn:isProxyFor` | `rdfs:range` | yes | ssn:Property | http://www.w3.org/ns/ssn/Property | `ssn:isProxyFor rdfs:range http://www.w3.org/ns/ssn/Property .` |
 | `Sheet2!62` | `ssn:wasOriginatedBy` | `rdfs:subPropertyOf` | yes | cco:process_started_by | cco:ont00001962 | `ssn:wasOriginatedBy rdfs:subPropertyOf cco:ont00001962 .` |
+| `Sheet2!63` | `sosa:madeBySensor` | `rdfs:subPropertyOf` | yes | cco:has_agent | cco:ont00001833 | `sosa:madeBySensor rdfs:subPropertyOf cco:ont00001833 .` |
+| `Sheet2!64` | `sosa:madeObservation` | `rdfs:subPropertyOf` | yes | cco:agent_in | cco:ont00001787 | `sosa:madeObservation rdfs:subPropertyOf cco:ont00001787 .` |
 
 ## Source-Term Coverage Summary
 
@@ -541,10 +544,11 @@ This section records mapping and domain/range property-typing rows after parsing
 |---|---:|
 | mapped classes | 42 |
 | unmapped classes | 2 |
-| mapped object properties | 27 |
-| unmapped object properties | 3 |
-| explicitly listed blank mappings | 5 |
-| listed only in domain/range property-typing rows | 17 |
+| mapped object properties | 26 |
+| object properties covered by external mapping rule | 2 |
+| unmapped object properties | 4 |
+| explicitly listed blank mappings | 7 |
+| listed only in domain/range property-typing rows | 16 |
 | source terms absent from spreadsheet | 0 |
 | spreadsheet subjects not found in source ontologies | 0 |
 
@@ -552,22 +556,22 @@ This section records mapping and domain/range property-typing rows after parsing
 
 | Item | Count |
 |---|---:|
-| mappings present in both | 55 |
-| mappings only in COMS | 14 |
-| mappings only in pre-COMS legacy ontology | 13 |
+| mappings present in both | 57 |
+| mappings only in COMS | 11 |
+| mappings only in pre-COMS legacy ontology | 11 |
 | class-expression differences | 2 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
-| domain axioms present in both | 9 |
+| domain axioms present in both | 10 |
 | domain axioms only in COMS | 7 |
-| domain axioms only in pre-COMS legacy ontology | 13 |
+| domain axioms only in pre-COMS legacy ontology | 12 |
 | domain target differences | 0 |
 | range axioms present in both | 0 |
 | range axioms only in COMS | 15 |
 | range axioms only in pre-COMS legacy ontology | 0 |
 | range target differences | 0 |
-| legacy domain/range axioms absent from COMS | 13 |
+| legacy domain/range axioms absent from COMS | 12 |
 
 ## Runtime
 
-- Runtime seconds: 14.77
+- Runtime seconds: 14.42

@@ -11,6 +11,7 @@ Coverage scope is all non-deprecated named OWL classes and object properties def
 
 The source term inventory is produced by `queries/source-classes-and-object-properties.rq`. Unmapped terms are selected from the generated coverage graph by `queries/unmapped-source-terms.rq`.
 A domain or range row covers a property for source-term coverage but does not count it as relation-mapped; only subproperty, equivalent-property, or property-chain rows do so.
+Separately executed external mapping rules are reported independently from OWL mappings and property typing. A blank OWL row may still have an external rule route.
 
 ## Summary
 
@@ -19,13 +20,14 @@ A domain or range row covers a property for source-term coverage but does not co
 | source terms returned by SPARQL | 91 |
 | mapped classes | 42 |
 | unmapped classes | 2 |
-| mapped object properties | 27 |
-| unmapped object properties | 3 |
-| explicitly listed blank mappings | 5 |
-| listed only in domain/range property-typing rows | 17 |
+| mapped object properties | 26 |
+| object properties covered by external mapping rule | 2 |
+| unmapped object properties | 4 |
+| explicitly listed blank mappings | 7 |
+| listed only in domain/range property-typing rows | 16 |
 | source terms absent from spreadsheet | 0 |
 | spreadsheet subjects not found in source ontologies | 0 |
-| unmapped rows returned by SPARQL coverage query | 5 |
+| unmapped rows returned by SPARQL coverage query | 6 |
 
 ## Mapped Classes
 
@@ -86,8 +88,9 @@ A domain or range row covers a property for source-term coverage but does not co
 - `sosa:isHostedBy`
 - `sosa:isResultOf`
 - `sosa:madeBySampler`
+- `sosa:madeBySensor`
+- `sosa:madeObservation`
 - `sosa:madeSampling`
-- `sosa:observedProperty`
 - `sosa:phenomenonTime`
 - `sampling:hasSampleRelationship`
 - `sampling:natureOfRelationship`
@@ -98,8 +101,6 @@ A domain or range row covers a property for source-term coverage but does not co
 - `ssn:detects`
 - `ssn:hasDeployment`
 - `ssn:hasSubSystem`
-- `ssn:implementedBy`
-- `ssn:implements`
 - `ssn:inDeployment`
 - `ssn-system:hasOperatingProperty`
 - `ssn-system:hasSurvivalProperty`
@@ -107,17 +108,27 @@ A domain or range row covers a property for source-term coverage but does not co
 - `ssn-system:qualityOfObservation`
 - `ssn:wasOriginatedBy`
 
+## External Mapping Rule Coverage
+
+Rule: `rules/ssn-implementation-mapping.rq`. Execution requires the two premises to be asserted or previously materialized; this is not an OWL-product entailment.
+
+- `ssn:implementedBy`
+- `ssn:implements`
+
 ## Unmapped Object Properties
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
+- `sosa:observedProperty`
 - `ssn:forProperty`
 
 ## Explicitly Listed Blank Mappings
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
+- `sosa:observedProperty`
 - `ssn:forProperty`
+- `ssn:implementedBy`
 - `ssn-system:MeasurementRange`
 - `ssn-system:SystemProperty`
 
@@ -128,12 +139,11 @@ A domain or range row covers a property for source-term coverage but does not co
 - `sosa:isObservedBy`
 - `sosa:madeActuation`
 - `sosa:madeByActuator`
-- `sosa:madeBySensor`
-- `sosa:madeObservation`
 - `sosa:observes`
 - `ssn:hasInput`
 - `ssn:hasOutput`
 - `ssn:hasProperty`
+- `ssn:implements`
 - `ssn:isPropertyOf`
 - `ssn:isProxyFor`
 - `ssn-system:hasOperatingRange`

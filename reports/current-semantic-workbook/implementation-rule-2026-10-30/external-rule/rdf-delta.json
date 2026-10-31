@@ -1,0 +1,21 @@
+{
+  "added": [
+    [
+      "http://www.w3.org/ns/ssn/implements",
+      "http://www.w3.org/2000/01/rdf-schema#domain",
+      "http://www.w3.org/ns/ssn/System"
+    ]
+  ],
+  "removed": [
+    [
+      "http://www.w3.org/ns/ssn/implements",
+      "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "https://www.commoncoreontologies.org/ont00001920"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/implementedBy",
+      "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "https://www.commoncoreontologies.org/ont00001942"
+    ]
+  ]
+}

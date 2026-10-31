@@ -770,6 +770,7 @@ def coverage(terms: dict, graph: Graph, rows) -> list[dict]:
         by_subject[str(row.subject)].append(row)
     result = []
     rule_head = str(mapping.SSN.hasProperty)
+    implementation_rule_heads = mapping.implementation_rule_terms(rows)
     for iri, kind in sorted(terms.items()):
         own = by_subject[iri]
         direct = [r.row.stable_row_id for r in own if r.predicate in DIRECT]
@@ -777,6 +778,11 @@ def coverage(terms: dict, graph: Graph, rows) -> list[dict]:
         chains = [r.row.stable_row_id for r in own if r.predicate == "owl:propertyChainAxiom"]
         inherited = []
         rule_routes = []
+        if kind == "object_property" and URIRef(iri) in implementation_rule_heads:
+            rule_routes.append({"artifact": mapping.IMPLEMENTATION_RULE_PATH,
+                                "artifact_sha256": mapping.IMPLEMENTATION_RULE_SHA256,
+                                "mode": "external_construct_rule",
+                                "conditions": "Explicit or previously materialized CCO prescribes followed by has_agent yields ssn:implementedBy and inverse ssn:implements assertions. Requires executing the query; not an OWL-product entailment or a direct prescription inclusion."})
         # A conditional query can consume forward explicit subproperty edges only.
         if kind == "object_property" and (iri == rule_head or (URIRef(iri), RDFS.subPropertyOf * "*", URIRef(rule_head)) in graph):
             rule_routes.append({"artifact": RULE_PATH, "mode": "conditional_external_query",

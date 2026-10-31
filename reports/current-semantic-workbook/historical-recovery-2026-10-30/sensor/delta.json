@@ -1,0 +1,14 @@
+{
+  "added_rdf_triples": [
+    "<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.commoncoreontologies.org/ont00001833>",
+    "<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.commoncoreontologies.org/ont00001787>"
+  ],
+  "applied": [
+    "sensor"
+  ],
+  "candidate": "sensor",
+  "mapping_triples": 1066,
+  "removed_rdf_triples": [
+    "<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.commoncoreontologies.org/ont00001921>"
+  ]
+}

@@ -797,22 +797,26 @@
         "imports/cco.ttl",
         "reports/sosa-sensor-version-alignment-resolution.md",
         "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!63",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "mapping_row_ids": [
+        "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
         "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
         "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
       ],
-      "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Is the absent Observation-to-Sensor has_agent inclusion deliberate in the current workbook, or an unresolved consequence of earlier Sensor target/version decisions?",
+      "notes": "Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.",
+      "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "review": {
         "alternatives": [
-          "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Retain current typing with an explicit no-direct or deferred outcome; consider has_agent only after current Sensor/Observation review."
+          "Preserve the historically authorized treatment recorded in the semantic transition."
         ],
-        "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
-        "question": "Is the absent Observation-to-Sensor has_agent inclusion deliberate in the current workbook, or an unresolved consequence of earlier Sensor target/version decisions?",
-        "recommendation": "Retain the artifact during review. Retain current typing with an explicit no-direct or deferred outcome; consider has_agent only after current Sensor/Observation review."
+        "confidence": "Historical implementation and current technical validation verified; assessment review state unchanged.",
+        "question": "Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.",
+        "recommendation": "Retain this recovered historical implementation; this task opens no new semantic adjudication."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
@@ -829,22 +833,26 @@
         "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeObservation",
         "imports/cco.ttl",
         "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!64",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "mapping_row_ids": [
+        "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
         "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
         "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
       ],
-      "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Why is only Sensor-to-Observation typing retained when the pinned track adopts agent_in, and should that current-track absence be final or deferred?",
+      "notes": "Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.",
+      "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "review": {
         "alternatives": [
-          "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Finalize no_direct_mapping if intended, or separately review agent_in against current Sensor/Observation existential commitments."
+          "Preserve the historically authorized treatment recorded in the semantic transition."
         ],
-        "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
-        "question": "Why is only Sensor-to-Observation typing retained when the pinned track adopts agent_in, and should that current-track absence be final or deferred?",
-        "recommendation": "Retain the artifact during review. Finalize no_direct_mapping if intended, or separately review agent_in against current Sensor/Observation existential commitments."
+        "confidence": "Historical implementation and current technical validation verified; assessment review state unchanged.",
+        "question": "Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.",
+        "recommendation": "Retain this recovered historical implementation; this task opens no new semantic adjudication."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
@@ -880,21 +888,23 @@
         "imports/cco.ttl",
         "reports/hermit-observedProperty-deferral-evaluation.md",
         "reports/hermit-observedProperty-reactivation-canary.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "mapping_row_ids": [
         "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
       ],
-      "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does the observed Property satisfy CCO has_input’s necessary-process-input meaning in every Observation, rather than merely being what is measured?",
+      "notes": "Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.",
+      "rationale": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
       "review": {
         "alternatives": [
-          "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Propose no-direct mapping or another reviewed relation if “observed” does not imply a necessary input; reconcile the current active row with historical deferral evidence."
+          "Preserve the historically authorized treatment recorded in the semantic transition."
         ],
-        "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
-        "question": "Does the observed Property satisfy CCO has_input’s necessary-process-input meaning in every Observation, rather than merely being what is measured?",
-        "recommendation": "Retain the artifact during review. Propose no-direct mapping or another reviewed relation if “observed” does not imply a necessary input; reconcile the current active row with historical deferral evidence."
+        "confidence": "Historical implementation and current technical validation verified; assessment review state unchanged.",
+        "question": "Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.",
+        "recommendation": "Retain this recovered historical implementation; this task opens no new semantic adjudication."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
@@ -943,21 +953,22 @@
         "imports/ssn.ttl#http://www.w3.org/ns/sosa/phenomenonTime",
         "imports/cco.ttl",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt"
       ],
       "mapping_row_ids": [
         "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Must the time to which a result applies equal the temporal region occupied by the observation/actuation/sampling itself?",
+      "rationale": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Remove the target superproperty in a proposed change and consider range-only TemporalRegion typing; keep them distinct for delayed/retrospective observations."
+          "Keep the earlier-interval scenario documented as a potential counterexample without declaring a demonstrated inconsistency or a settled refutation. No alternative mapping is authorized by this instruction."
         ],
         "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
         "question": "Must the time to which a result applies equal the temporal region occupied by the observation/actuation/sampling itself?",
-        "recommendation": "Retain the artifact during review. Remove the target superproperty in a proposed change and consider range-only TemporalRegion typing; keep them distinct for delayed/retrospective observations."
+        "recommendation": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/sosa/phenomenonTime",
@@ -993,19 +1004,24 @@
       "source_label": "Nature of relationship (between samples)"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": false,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!3",
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/SampleRelationship",
         "imports/cco.ttl",
-        "reports/sample-relationship-deferral.md"
+        "reports/sample-relationship-deferral.md",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json",
+        "sha256": "8349405b6c675244977d85aaf19b74594798a91015be68847f3ee275cfc88dcc"
+      },
       "mapping_row_ids": [
         "urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
-      "rationale": "Is the reified SampleRelationship necessarily information content about samples, rather than a relational quality or relation instance?",
+      "rationale": "sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself. The approved mapping retains sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1015,26 +1031,31 @@
         "question": "Is the reified SampleRelationship necessarily information content about samples, rather than a relational quality or relation instance?",
         "recommendation": "Retain the artifact during review. Retain the provisional ICE interpretation with a defended reading, or propose a different category separately."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
       "source_kind": "class",
       "source_label": "Sample relationship"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet2!2",
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
         "imports/cco.ttl",
         "reports/sample-relationship-deferral.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json",
+        "sha256": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91"
+      },
       "mapping_row_ids": [
         "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?",
+      "rationale": "Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1044,7 +1065,7 @@
         "question": "Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?",
         "recommendation": "Retain the artifact during review. Keep is_subject_of only after SampleRelationship-as-ICE is approved; otherwise revisit the relation with the class interpretation."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
       "source_kind": "object_property",
       "source_label": "has sample relationship"
@@ -1079,20 +1100,25 @@
       "source_label": "nature of (sample) relationship"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet2!4",
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/relatedSample",
         "imports/cco.ttl",
         "reports/sample-relationship-deferral.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json",
+        "sha256": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930"
+      },
       "mapping_row_ids": [
         "urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does each reified sample relationship count as information content about the related Sample?",
+      "rationale": "Under the approved interpretation, a SampleRelationship is an information content entity representing a relationship between samples. sampling:relatedSample links this information content entity to the related Sample that it is about. The approved mapping retains sampling:relatedSample rdfs:subPropertyOf cco:is_about.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1102,7 +1128,7 @@
         "question": "Does each reified sample relationship count as information content about the related Sample?",
         "recommendation": "Retain the artifact during review. Retain is_about contingent on the SampleRelationship information-content decision, or reconsider both together."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/sampling/relatedSample",
       "source_kind": "object_property",
       "source_label": "related sample"
@@ -1533,21 +1559,24 @@
         "imports/cco.ttl",
         "reports/hosts-implementedby-complex-mapping-review.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json",
+        "rules/ssn-implementation-mapping.rq",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json"
       ],
       "mapping_row_ids": [
         "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
       ],
-      "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does a Procedure prescribe a System directly in the sense required by CCO prescribes, or is its implementation by the System mediated through an execution?",
+      "notes": "Explicit implementation authorization, Alec Sculley, 2026-10-30. Preserve the historical process-mediated interpretation using a separate SPARQL CONSTRUCT rule because the OWL chain fails current DL global restrictions. This does not create a new scientific decision or finalize the assessment. External-rule mapping coverage is separate from direct OWL inclusion and the retained implements domain typing. Current and SOSA-2023 tracks remain separately governed.",
+      "rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
       "review": {
         "alternatives": [
-          "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Review a prescribes o has_agent chain headed by implementedBy, or no direct relation; retain existing axiom until approval."
+          "Retain the explicitly authorized external rule and historical typing representative."
         ],
-        "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
-        "question": "Does a Procedure prescribe a System directly in the sense required by CCO prescribes, or is its implementation by the System mediated through an execution?",
-        "recommendation": "Retain the artifact during review. Review a prescribes o has_agent chain headed by implementedBy, or no direct relation; retain existing axiom until approval."
+        "confidence": "Historical authority, explicit implementation authorization and focused technical validation verified; administrative review state unchanged.",
+        "question": "Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass.",
+        "recommendation": "Use the separately executed external rule; do not restore the impermissible OWL chain or the non-equivalent direct prescription inclusions."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
@@ -1563,21 +1592,24 @@
         "imports/cco.ttl",
         "reports/hosts-implementedby-complex-mapping-review.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json",
+        "rules/ssn-implementation-mapping.rq",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json"
       ],
       "mapping_row_ids": [
         "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
       ],
-      "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Can a material System be the subject of CCO prescribed_by under the current target signature, or should implementation be mediated through an actual prescribed execution?",
+      "notes": "Explicit implementation authorization, Alec Sculley, 2026-10-30. Preserve the historical process-mediated interpretation using a separate SPARQL CONSTRUCT rule because the OWL chain fails current DL global restrictions. This does not create a new scientific decision or finalize the assessment. External-rule mapping coverage is separate from direct OWL inclusion and the retained implements domain typing. Current and SOSA-2023 tracks remain separately governed.",
+      "rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
       "review": {
         "alternatives": [
-          "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
-          "Review the process-mediated agent_in o prescribed_by chain as a separate proposed change, or retain no-direct relation after reviewing direction/category constraints."
+          "Retain the explicitly authorized external rule and historical typing representative."
         ],
-        "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
-        "question": "Can a material System be the subject of CCO prescribed_by under the current target signature, or should implementation be mediated through an actual prescribed execution?",
-        "recommendation": "Retain the artifact during review. Review the process-mediated agent_in o prescribed_by chain as a separate proposed change, or retain no-direct relation after reviewing direction/category constraints."
+        "confidence": "Historical authority, explicit implementation authorization and focused technical validation verified; administrative review state unchanged.",
+        "question": "Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass.",
+        "recommendation": "Use the separately executed external rule; do not restore the impermissible OWL chain or the non-equivalent direct prescription inclusions."
       },
       "review_state": "unreviewed",
       "source_iri": "http://www.w3.org/ns/ssn/implements",

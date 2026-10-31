@@ -1,0 +1,84 @@
+{
+  "active_assertions": 101,
+  "all_assessment_states_outcomes_unchanged": true,
+  "all_other_starting_files_byte_identical": true,
+  "assessment_authentication": "PASS",
+  "assessment_outcomes": {
+    "formal_mapping_adopted": 13,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "unreviewed": 71
+  },
+  "assessment_records_changed": [
+    "http://www.w3.org/ns/sosa/madeBySensor",
+    "http://www.w3.org/ns/sosa/madeObservation",
+    "http://www.w3.org/ns/sosa/observedProperty"
+  ],
+  "changed_starting_files": [
+    "SSN2BFO.ttl",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-source-term-coverage.md",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md"
+  ],
+  "combined_validation": "NOT_RUN_IMPLEMENTATION_CANDIDATE_FAILED_REQUIRED_PROFILE",
+  "deliberate_blanks": 6,
+  "exact_root_and_cco_axiom_delta": "two sensor inclusions added, observedProperty inclusion removed; no other RDF changes",
+  "generation": "PASS",
+  "generation_freshness_determinism": "PASS",
+  "git_head_unchanged": true,
+  "git_index_file_bytes_unchanged": false,
+  "git_staged_content_unchanged": true,
+  "implementation_hierarchy_and_fixture_tests": "NOT_RUN_PROFILE_GATE_FAILED",
+  "implementation_pair_preserved": true,
+  "maintained_products_byte_identical_to_preinstall_render": true,
+  "original_row_ids_preserved": 105,
+  "parallel_track_files_verified": 87,
+  "products": {
+    "alignment_core": {
+      "changed": false,
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "sha256": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+      "triple_count": 61
+    },
+    "cco_extension": {
+      "changed": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "sha256": "fa4e907d7e819cf924e18f26ada984e01976d9d27e011a94c67d7e5b66da4102",
+      "triple_count": 885
+    },
+    "integrated": {
+      "changed": true,
+      "path": "SSN2BFO.ttl",
+      "sha256": "fd0b436c6919f0e10e97cfad31d9e219f407d51f169d955ff2f4997d1be4ea44",
+      "triple_count": 1066
+    },
+    "strict_bfo_mapping": {
+      "changed": false,
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "triple_count": 134
+    }
+  },
+  "review_states": {
+    "final": 20,
+    "unreviewed": 71
+  },
+  "starting_file_count": 1835,
+  "status": "PASS",
+  "unchanged_starting_file_count": 1821,
+  "workbook_rows": 107,
+  "workbook_sha256": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
+  "xlsx_package_members_changed": [
+    "xl/worksheets/sheet2.xml"
+  ]
+}

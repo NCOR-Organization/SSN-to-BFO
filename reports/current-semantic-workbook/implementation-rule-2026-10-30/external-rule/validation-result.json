@@ -1,0 +1,20 @@
+{
+  "graph_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-implementation-rule-c5xfz8ru/external-rule/validation/coms-candidate-full-closure.ttl",
+  "reasoned_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-implementation-rule-c5xfz8ru/external-rule/validation/coms-candidate-full-closure-reasoned.ttl",
+  "generated_triple_count": 1065,
+  "closure_triple_count": 15855,
+  "return_code": 0,
+  "reasoned_output_produced": true,
+  "owl_nothing_count": 0,
+  "unsat_classes": [],
+  "robot_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "robot_path": "/usr/local/bin/robot",
+  "profile_checked": true,
+  "profile_graph_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-implementation-rule-c5xfz8ru/external-rule/validation/coms-candidate-full-closure-owl2dl-profile.ttl",
+  "profile_triple_count": 15859,
+  "profile_declaration_completion_count": 4,
+  "profile_return_code": 0,
+  "profile_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "source_sample_declarations_retained": true,
+  "passed": true
+}

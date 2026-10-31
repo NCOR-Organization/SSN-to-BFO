@@ -1,0 +1,81 @@
+{
+  "active_assertions": 100,
+  "all_products_byte_identical": true,
+  "assessment_outcomes": {
+    "formal_mapping_adopted": 13,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "unreviewed": 71
+  },
+  "changed_assessment_terms": [
+    "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+    "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "http://www.w3.org/ns/sosa/sampling/relatedSample"
+  ],
+  "deliberate_blanks": 5,
+  "excluded_terms_entire_records_and_rows_preserved": true,
+  "focused_validation": {
+    "assessment_and_all_decision_authentication": "PASS",
+    "documentary_transition_and_current_applicability": "PASS",
+    "hermit": "PASS",
+    "limitation": "Available pinned local closure; separate SKOS and publication evidence holds unchanged.",
+    "local_closure_triples": 15855,
+    "named_unsatisfiable_classes": 0,
+    "owl2_dl_profile": "PASS",
+    "profile_declaration_completions": 4,
+    "property_directions": "PASS"
+  },
+  "generated_product_sha256": {
+    "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+  },
+  "generation_deterministic": true,
+  "governed_rows": 105,
+  "head_and_index_unchanged": true,
+  "logical_axiom_delta": {
+    "added": [],
+    "removed": []
+  },
+  "preexisting_files_changed": [
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md"
+  ],
+  "review_states": {
+    "final": 20,
+    "unreviewed": 71
+  },
+  "semantic_projection_sha256": "566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44",
+  "status": "PASS",
+  "unchanged_other_assessment_records": 88,
+  "unresolved": 71,
+  "validation_evidence": {
+    "assessment-check.log": {
+      "sha256": "7f4a5eec7784a5e334e73cd0edf096aef312af2d6d3a3ed677460eeefa75b248"
+    },
+    "direction-validation.json": {
+      "sha256": "eed3dbc2edfed799f75cd4ef7dec9f071963c0bc318b9437ab5f33eeec29550c"
+    },
+    "documentary-transition.json": {
+      "sha256": "6ecfeb51b802001f435f336dec808b7a4240b90e363e26a07279c7cfc355af0b"
+    },
+    "manifest.json": {
+      "sha256": "fc310515c3b725c5724108eaa5a068382ec880ea09aa4af73e4a9577550d43c5"
+    },
+    "owl-validation.json": {
+      "sha256": "fa3e4c6f68fc7012f8da7361a5068fa45d0cc49eb41b2f2605126df08979416c"
+    },
+    "transition-check.log": {
+      "sha256": "ee4244c5f3ebc0debba21f4784ffd8bf40026b1dccaa228414aae52ace6d001a"
+    }
+  },
+  "workbook_sha256_after": "2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c",
+  "workbook_sha256_before": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+}

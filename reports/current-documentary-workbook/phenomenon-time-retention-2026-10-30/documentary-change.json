@@ -1,0 +1,35 @@
+{
+  "assessment_fields_changed": [
+    "rationale",
+    "evidence",
+    "review.recommendation",
+    "review.alternatives[1]"
+  ],
+  "assessment_outcome": "unreviewed",
+  "documentary_transition": {
+    "path": "reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json",
+    "sha256": "4658ad16ed1a6334e692fff5288d79617de48c6d529c1efe53836d5ce5d1cc38"
+  },
+  "human_decision_record_created": false,
+  "instruction": {
+    "path": "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt",
+    "sha256": "fe6510bb87e0afa322cf851656ff2358066347226832035b1c3e1445fea8d228"
+  },
+  "logical_mapping_delta": {
+    "added": [],
+    "removed": []
+  },
+  "review_state": "unreviewed",
+  "status": "DOCUMENTED_RETENTION_INSTRUCTION_NOT_FINAL_ADJUDICATION",
+  "workbook_changes": [
+    {
+      "cell": "D11",
+      "new_value": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.",
+      "new_value_sha256": "6141f52aed141cb8628a556f7ac0b16829b9ad8b5b3b94656980637761ba595f",
+      "old_value": "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved.",
+      "old_value_sha256": "7c85afb0ccab31cc6b1519b0687113eb33e320346536120f8890a96bd54de3ab",
+      "row_id": "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710",
+      "sheet": "Sheet2"
+    }
+  ]
+}

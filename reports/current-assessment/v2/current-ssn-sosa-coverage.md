@@ -1,6 +1,6 @@
 # Current SSN/SOSA assessment and formal coverage
 
-Bound to HEAD `dc314460fe3e875ba1c8ccfcb3c6840a7181e733` and exact input hashes in the JSON companion.
+Bound to HEAD `fe06c78b7290fd586b05c42145a57f32d84a8674` and exact input hashes in the JSON companion.
 
 Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.
 
@@ -8,7 +8,7 @@ Structural evidence over named source subclass/subproperty, named equivalence, a
 
 Dynamic source terms: **91**; assessment records: **91**; equality: **PASS**.
 
-Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 17, 'unreviewed': 74}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 10, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 74}`.
+Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 20, 'unreviewed': 71}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 13, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 71}`.
 
 These assessments describe unchanged workbook mapping assertions; registered documentary reasoning updates do not change assessment semantics. Final records reconstruct supported existing decisions; unresolved records do not reject or remove active axioms.
 
@@ -16,14 +16,14 @@ These assessments describe unchanged workbook mapping assertions; registered doc
 
 | Category | Terms |
 |---|---:|
-| direct_formal_mapping | 67 |
+| direct_formal_mapping | 66 |
 | inherited_formal_mapping | 41 |
-| rule_or_chain_route | 9 |
-| typing_only_in_workbook | 17 |
-| explicit_blank | 5 |
-| no_established_formal_route | 16 |
+| rule_or_chain_route | 11 |
+| typing_only_in_workbook | 16 |
+| explicit_blank | 7 |
+| no_established_formal_route | 15 |
 
-Direct classes: 42; direct object properties: 25; chain heads: 2. The historical 28 relation-mapped properties comprise 25 direct subproperties and 3 chain heads. A chain head is an incoming entailment route, not a source-to-target edge inclusion.
+Direct classes: 42; direct object properties: 24; chain heads: 2. The historical 28 relation-mapped properties comprise 25 direct subproperties and 3 chain heads. A chain head is an incoming entailment route, not a source-to-target edge inclusion.
 
 Categories overlap: a directly mapped class can inherit additional constraints; a typing-only workbook property can be eligible for a separate conditional query. The query is not executed by the OWL product, and eligibility does not prove every assertion has suitable typing. Inherited coverage does not assert that inheritance is a sufficient final assessment outcome.
 
@@ -31,16 +31,16 @@ Categories overlap: a directly mapped class can inherit additional constraints; 
 
 | Predicate | Rows |
 |---|---:|
-| `explicit_blank` | 5 |
+| `explicit_blank` | 7 |
 | `owl:equivalentClass` | 10 |
 | `owl:equivalentProperty` | 0 |
 | `owl:propertyChainAxiom` | 2 |
-| `rdfs:domain` | 16 |
+| `rdfs:domain` | 17 |
 | `rdfs:range` | 15 |
 | `rdfs:subClassOf` | 32 |
-| `rdfs:subPropertyOf` | 25 |
+| `rdfs:subPropertyOf` | 24 |
 
-Expression occurrences: `{'intersection': 88, 'named': 192, 'some': 97, 'union': 15}`; rows containing each form: `{'intersection': 36, 'named': 73, 'some': 36, 'union': 14}`.
+Expression occurrences: `{'intersection': 88, 'named': 193, 'some': 97, 'union': 15}`; rows containing each form: `{'intersection': 36, 'named': 74, 'some': 36, 'union': 14}`.
 
 ## Per-term coverage
 
@@ -73,10 +73,10 @@ Expression occurrences: `{'intersection': 88, 'named': 192, 'some': 97, 'union':
 | `sosa:madeActuation` | — | — | — | yes | yes |
 | `sosa:madeByActuator` | — | — | — | yes | yes |
 | `sosa:madeBySampler` | yes | yes | — | — | — |
-| `sosa:madeBySensor` | — | — | — | yes | yes |
-| `sosa:madeObservation` | — | — | — | yes | yes |
+| `sosa:madeBySensor` | yes | yes | — | — | — |
+| `sosa:madeObservation` | yes | yes | — | — | — |
 | `sosa:madeSampling` | yes | yes | — | — | — |
-| `sosa:observedProperty` | yes | — | — | — | — |
+| `sosa:observedProperty` | — | — | — | — | yes |
 | `sosa:observes` | — | — | — | yes | yes |
 | `sosa:phenomenonTime` | yes | — | — | — | — |
 | `sampling:RelationshipNature` | yes | — | — | — | — |
@@ -100,8 +100,8 @@ Expression occurrences: `{'intersection': 88, 'named': 192, 'some': 97, 'union':
 | `ssn:hasOutput` | — | — | — | yes | yes |
 | `ssn:hasProperty` | — | — | yes | yes | — |
 | `ssn:hasSubSystem` | yes | — | — | — | — |
-| `ssn:implementedBy` | yes | yes | — | — | — |
-| `ssn:implements` | yes | yes | — | — | — |
+| `ssn:implementedBy` | — | — | yes | — | — |
+| `ssn:implements` | — | — | yes | yes | — |
 | `ssn:inDeployment` | yes | yes | — | — | — |
 | `ssn:isPropertyOf` | — | — | — | yes | yes |
 | `ssn:isProxyFor` | — | — | — | yes | yes |

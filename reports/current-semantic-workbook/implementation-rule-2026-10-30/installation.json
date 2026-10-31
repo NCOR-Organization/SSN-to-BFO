@@ -1,0 +1,8 @@
+{
+  "all_assessment_states_outcomes_preserved": true,
+  "authorization": "explicit implementation change preserving historically approved interpretation",
+  "new_scientific_decision": false,
+  "new_workbook_sha256": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
+  "old_workbook_sha256": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
+  "transition": "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json"
+}

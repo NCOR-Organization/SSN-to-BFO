@@ -1,7 +1,7 @@
 {
   "binding": {
-    "assessment_tool_sha256": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
-    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "assessment_tool_sha256": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
+    "head": "fe06c78b7290fd586b05c42145a57f32d84a8674",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -13,7 +13,7 @@
       "schema_version": 2
     },
     "input_sha256": {
-      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "SSN2BFO.ttl": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -26,8 +26,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
-      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "mappings/SSN2BFO-COMS.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
+      "mappings/current-ssn-sosa-assessment.json": "855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -41,9 +41,15 @@
       "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
       "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
       "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt": "fe6510bb87e0afa322cf851656ff2358066347226832035b1c3e1445fea8d228",
       "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
       "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
       "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json": "4658ad16ed1a6334e692fff5288d79617de48c6d529c1efe53836d5ce5d1cc38",
+      "reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json": "e81123e1c2918618ee75e55d725409b7885c4e2e5f6fbb6bfb9509636c43a4d3",
+      "reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx": "2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c",
+      "reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+      "reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
       "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
       "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
       "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
@@ -63,10 +69,35 @@
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship-review-packet.json": "bac3279eef5b87121ee0018b9f16962a41b2d52f001a75cc0d041a2cdea46ffc",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json": "8349405b6c675244977d85aaf19b74594798a91015be68847f3ee275cfc88dcc",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship-review-packet.json": "6295b10fbf72a15c910692a8615d8a644427ed53aa99d1b3e3ccfbc97523a33a",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample-review-packet.json": "56fdc7f62c1b46b5177fa7a2240b7b6c2ac7627d3b8601dba10bb58f42be5133",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930",
       "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json": "940296b9cf5fe3252ec8000722307cc92e75b979d969287e98141dc2c84cd9a9",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json": "b554e2c8f9ad9b28c96420e6effee37484377dd2e01462e12f0db6afdf8fb79a",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt": "477b62e02e9c1113781a332bc716ae76ae0788e17a910b82758f6794cd058bd3",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json": "72347671259be4268df95ab2d31eaa4303ff00f286bd4244da6b33714688c66c",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md": "6c3967312648baf3491fc680bc98e133aefbc445e94036ef5a1cf1e4cc42aeea",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b",
+      "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json": "d999ed7feb3a2f58e7e91340e5919ad5b40678b85e10deee4d53edafad2ea0fb",
       "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json": "e6ca14409fbd4df59ecbcbf3c36fb09cc762919225d8e0d288f755c723d9d2b9",
+      "reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
       "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
       "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
       "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
       "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
       "reports/hermit-observation-sensor-stimulus-evaluation.md": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
@@ -110,12 +141,13 @@
       "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
       "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
       "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "rules/ssn-implementation-mapping.rq": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd",
       "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
       "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
       "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
       "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
       "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
-      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_assessment.py": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
       "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
       "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
       "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
@@ -131,7 +163,7 @@
       "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
       "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
       "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
-      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/generate_mapping_from_coms.py": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
       "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
       "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
       "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
@@ -895,8 +927,8 @@
     },
     {
       "critical_features": [
-        "typing_only_artifact",
-        "material_cross_track_difference"
+        "material_cross_track_difference",
+        "relation_interpretation"
       ],
       "documentary_consistency_issues": [],
       "existing_evidence": [
@@ -907,17 +939,23 @@
         "imports/cco.ttl",
         "reports/sosa-sensor-version-alignment-resolution.md",
         "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!63",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
-        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
       ],
       "mapping_row_ids": [
+        "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
         "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
         "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "proposed_documentary_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
@@ -925,8 +963,8 @@
     },
     {
       "critical_features": [
-        "typing_only_artifact",
-        "material_cross_track_difference"
+        "material_cross_track_difference",
+        "relation_interpretation"
       ],
       "documentary_consistency_issues": [],
       "existing_evidence": [
@@ -936,17 +974,23 @@
         "imports/ssn.ttl#http://www.w3.org/ns/sosa/madeObservation",
         "imports/cco.ttl",
         "reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!64",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
-        "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
       ],
       "mapping_row_ids": [
+        "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
         "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
         "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion. Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+      "proposed_documentary_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
@@ -978,8 +1022,8 @@
     },
     {
       "critical_features": [
-        "material_cross_track_difference",
-        "relation_interpretation"
+        "explicit_blank",
+        "material_cross_track_difference"
       ],
       "documentary_consistency_issues": [],
       "existing_evidence": [
@@ -989,15 +1033,18 @@
         "imports/cco.ttl",
         "reports/hermit-observedProperty-deferral-evaluation.md",
         "reports/hermit-observedProperty-reactivation-canary.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
       ],
       "existing_workbook_rationales": [
-        "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement."
+        "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved."
       ],
       "mapping_row_ids": [
         "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
       ],
-      "proposed_documentary_rationale": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
+      "proposed_documentary_rationale": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
@@ -1045,15 +1092,16 @@
         "imports/ssn.ttl#http://www.w3.org/ns/sosa/phenomenonTime",
         "imports/cco.ttl",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt"
       ],
       "existing_workbook_rationales": [
-        "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved."
+        "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed."
       ],
       "mapping_row_ids": [
         "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710"
       ],
-      "proposed_documentary_rationale": "COMS introduced occupies_temporal_region in July 2026. Earlier documentation describes the time to which a result applies; justification identifying that time as a temporal region occupied by the execution remains unresolved.",
+      "proposed_documentary_rationale": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/sosa/phenomenonTime",
@@ -1091,17 +1139,18 @@
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!3",
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/SampleRelationship",
         "imports/cco.ttl",
-        "reports/sample-relationship-deferral.md"
+        "reports/sample-relationship-deferral.md",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
       "existing_workbook_rationales": [
-        "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved."
+        "sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself. The approved mapping retains sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity."
       ],
       "mapping_row_ids": [
         "urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e"
       ],
-      "proposed_documentary_rationale": "The historical implementation treats SampleRelationship as a reified descriptive/information-content structure about a relationship involving samples. It was explicitly provisional for instance-data testing. The current row retains the InformationContentEntity subclass assertion; whether that interpretation becomes authoritative remains unresolved.",
+      "proposed_documentary_rationale": "sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself. The approved mapping retains sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
       "status": "safe_to_adopt"
     },
@@ -1116,17 +1165,18 @@
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
         "imports/cco.ttl",
         "reports/sample-relationship-deferral.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
       "existing_workbook_rationales": [
-        "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion."
+        "Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of."
       ],
       "mapping_row_ids": [
         "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
       ],
-      "proposed_documentary_rationale": "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion.",
+      "proposed_documentary_rationale": "Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
       "status": "safe_to_adopt"
     },
@@ -1166,17 +1216,18 @@
         "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/relatedSample",
         "imports/cco.ttl",
         "reports/sample-relationship-deferral.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
       ],
       "existing_workbook_rationales": [
-        "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved."
+        "Under the approved interpretation, a SampleRelationship is an information content entity representing a relationship between samples. sampling:relatedSample links this information content entity to the related Sample that it is about. The approved mapping retains sampling:relatedSample rdfs:subPropertyOf cco:is_about."
       ],
       "mapping_row_ids": [
         "urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4"
       ],
-      "proposed_documentary_rationale": "The current is_about assertion follows a provisional interpretation of SampleRelationship as information content about relations involving samples. A final justification of this property inclusion remains unresolved.",
+      "proposed_documentary_rationale": "Under the approved interpretation, a SampleRelationship is an information content entity representing a relationship between samples. sampling:relatedSample links this information content entity to the related Sample that it is about. The approved mapping retains sampling:relatedSample rdfs:subPropertyOf cco:is_about.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/sosa/sampling/relatedSample",
       "status": "safe_to_adopt"
     },
@@ -1584,8 +1635,8 @@
     },
     {
       "critical_features": [
-        "material_cross_track_difference",
-        "relation_interpretation"
+        "explicit_blank",
+        "material_cross_track_difference"
       ],
       "documentary_consistency_issues": [],
       "existing_evidence": [
@@ -1594,15 +1645,19 @@
         "imports/cco.ttl",
         "reports/hosts-implementedby-complex-mapping-review.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json",
+        "rules/ssn-implementation-mapping.rq",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved."
+        "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure."
       ],
       "mapping_row_ids": [
         "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
+      "proposed_documentary_rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
@@ -1610,8 +1665,8 @@
     },
     {
       "critical_features": [
-        "material_cross_track_difference",
-        "relation_interpretation"
+        "typing_only_artifact",
+        "material_cross_track_difference"
       ],
       "documentary_consistency_issues": [],
       "existing_evidence": [
@@ -1620,15 +1675,19 @@
         "imports/cco.ttl",
         "reports/hosts-implementedby-complex-mapping-review.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json",
+        "rules/ssn-implementation-mapping.rq",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json"
       ],
       "existing_workbook_rationales": [
-        "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved."
+        "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed."
       ],
       "mapping_row_ids": [
         "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
       ],
-      "proposed_documentary_rationale": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+      "proposed_documentary_rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
       "semantic_decision_still_required": true,
       "source_iri": "http://www.w3.org/ns/ssn/implements",
@@ -2538,10 +2597,10 @@
     }
   ],
   "summary": {
-    "existing_workbook_rationale_rows": 105,
+    "existing_workbook_rationale_rows": 107,
     "existing_workbook_rationale_terms": 91,
     "human_review_required_proposals": 1,
     "safe_documentary_proposals": 90,
-    "semantic_review_terms": 74
+    "semantic_review_terms": 71
   }
 }

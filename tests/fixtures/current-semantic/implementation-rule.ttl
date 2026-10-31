@@ -1,0 +1,42 @@
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <https://example.org/property-chain-mapping-fixture/> .
+
+# Historical positive component, preserved from commit
+# 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb:
+# tests/fixtures/property-chain-mapping/property-chain-mappings.ttl.
+ex:procedure cco:ont00001942 ex:implemented-by-step .
+ex:implemented-by-step cco:ont00001833 ex:implementing-system .
+
+# A separate positive pair, with two execution paths to the same endpoints.
+# CONSTRUCT produces a graph, so the duplicate derivation adds no duplicate.
+ex:second-procedure cco:ont00001942 ex:second-execution,
+    ex:alternative-second-execution .
+ex:second-execution cco:ont00001833 ex:second-system .
+ex:alternative-second-execution cco:ont00001833 ex:second-system .
+
+# Missing one premise; neither component may produce an implementation pair.
+ex:missing-agent-procedure cco:ont00001942 ex:missing-agent-execution .
+ex:missing-prescription-execution cco:ont00001833 ex:missing-prescription-system .
+
+# Both predicates occur, but their intermediate executions differ.
+ex:mismatched-procedure cco:ont00001942 ex:left-execution .
+ex:right-execution cco:ont00001833 ex:mismatched-system .
+
+# Reversed premise directions must not be silently repaired by the query.
+ex:reversed-execution cco:ont00001942 ex:reversed-procedure .
+ex:reversed-system cco:ont00001833 ex:reversed-execution .
+
+# A narrower predicate requires prior materialization of the exact premise.
+ex:narrow-prescribes rdfs:subPropertyOf cco:ont00001942 .
+ex:narrow-procedure ex:narrow-prescribes ex:narrow-execution .
+ex:narrow-execution cco:ont00001833 ex:narrow-system .
+
+# Inverse premises also require prior materialization, even though CCO defines
+# prescribed_by inverseOf prescribes and agent_in inverseOf has_agent.
+ex:inverse-execution cco:ont00001920 ex:inverse-procedure .
+ex:inverse-system cco:ont00001787 ex:inverse-execution .
+
+# An implementation assertion is not a premise for reverse decomposition.
+ex:already-implemented-procedure ssn:implementedBy ex:already-implementing-system .

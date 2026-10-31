@@ -1,0 +1,35 @@
+{
+  "Sheet1!D3": [
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json",
+      "reference": "Explicit human formal-mapping approval and approved rationale",
+      "sha256": "8349405b6c675244977d85aaf19b74594798a91015be68847f3ee275cfc88dcc"
+    },
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt",
+      "sha256": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec"
+    }
+  ],
+  "Sheet2!D2": [
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json",
+      "reference": "Explicit human formal-mapping approval and approved rationale",
+      "sha256": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91"
+    },
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt",
+      "sha256": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec"
+    }
+  ],
+  "Sheet2!D4": [
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json",
+      "reference": "Explicit human formal-mapping approval and approved rationale",
+      "sha256": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930"
+    },
+    {
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt",
+      "sha256": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+In `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`, record the following explicit human instruction concerning `sosa:phenomenonTime`.
+
+**Decision:** Retain the existing mapping unchanged:
+
+`sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199`
+
+**Document the following potential counterexample:**
+
+An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion.
+
+Requirements:
+
+1. Preserve the mapping predicate, target, RowID, and generated ontology axioms exactly.
+2. Record the potential counterexample in the authoritative workbook's `coms:Reasoning` and corresponding assessment documentation, using the established documentary workflow.
+3. Identify this as a **potential counterexample**, not a demonstrated inconsistency or a settled refutation.
+4. Preserve the human instruction to retain the mapping.
+5. Do not mark the interpretation as definitively validated or change its assessment to `final` solely on this instruction.
+6. Do not modify any other mappings or reopen earlier decisions.
+7. Run only focused documentary, decision-preservation, and mapping-integrity checks.
+8. Do not undertake infrastructure repairs, full publication validation, staging, committing, tagging, or pushing.
+
+Report the exact documentary changes and verify that the logical mapping delta is zero.

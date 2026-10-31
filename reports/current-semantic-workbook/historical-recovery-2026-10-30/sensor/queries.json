@@ -1,0 +1,83 @@
+[
+  {
+    "expected_entailed": true,
+    "id": "madeBySensor-has_agent",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001833",
+    "subject": "http://www.w3.org/ns/sosa/madeBySensor"
+  },
+  {
+    "expected_entailed": true,
+    "id": "madeObservation-agent_in",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001787",
+    "subject": "http://www.w3.org/ns/sosa/madeObservation"
+  },
+  {
+    "expected_entailed": false,
+    "id": "observedProperty-not-has_input",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001921",
+    "subject": "http://www.w3.org/ns/sosa/observedProperty"
+  },
+  {
+    "expected_entailed": false,
+    "id": "has_agent-not-madeBySensor",
+    "kind": "object_property_subsumption",
+    "object": "http://www.w3.org/ns/sosa/madeBySensor",
+    "subject": "https://www.commoncoreontologies.org/ont00001833"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Observation-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Observation"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sensor-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Stimulus-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/ssn/Stimulus"
+  },
+  {
+    "expected_entailed": true,
+    "id": "forward-agent-edge",
+    "kind": "object_property_assertion",
+    "object": "urn:ssn-historical-recovery:sensor",
+    "predicate": "https://www.commoncoreontologies.org/ont00001833",
+    "subject": "urn:ssn-historical-recovery:observation"
+  },
+  {
+    "expected_entailed": true,
+    "id": "inverse-agent-edge",
+    "kind": "object_property_assertion",
+    "object": "urn:ssn-historical-recovery:observation",
+    "predicate": "https://www.commoncoreontologies.org/ont00001787",
+    "subject": "urn:ssn-historical-recovery:sensor"
+  },
+  {
+    "expected_entailed": true,
+    "id": "source-inverse-edge",
+    "kind": "object_property_assertion",
+    "object": "urn:ssn-historical-recovery:observation",
+    "predicate": "http://www.w3.org/ns/sosa/madeObservation",
+    "subject": "urn:ssn-historical-recovery:sensor"
+  },
+  {
+    "expected_entailed": false,
+    "id": "observedProperty-edge-not-has_input",
+    "kind": "object_property_assertion",
+    "object": "urn:ssn-historical-recovery:property",
+    "predicate": "https://www.commoncoreontologies.org/ont00001921",
+    "subject": "urn:ssn-historical-recovery:observation2"
+  }
+]

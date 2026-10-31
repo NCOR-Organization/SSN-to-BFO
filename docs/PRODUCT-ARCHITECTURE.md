@@ -24,9 +24,9 @@ Path:
 releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
 ```
 
-The alignment core contains the 29 target-neutral governed axioms:
+The alignment core contains the 30 target-neutral governed axioms:
 
-- 15 domain axioms
+- 16 domain axioms
 - 14 range axioms
 
 It imports no source, target, or project ontology. It does not replace the integrated mapping.
@@ -50,7 +50,7 @@ The strict BFO mapping directly asserts 19 unchanged BFO-bearing governed axioms
 Its project-module closure contains:
 
 - 19 direct strict-BFO axioms
-- 29 target-neutral alignment-core axioms
+- 30 target-neutral alignment-core axioms
 
 The published graph contains no CCO or RO logical terms. Validation reasons over the pinned local merged CCO/BFO dependency without making that dependency part of the published strict graph.
 
@@ -89,12 +89,12 @@ Path:
 releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
 ```
 
-The CCO extension directly asserts 55 governed axioms:
+The CCO extension directly asserts 51 governed axioms:
 
-- 25 CCO-bearing axioms
-- 30 mixed BFO/CCO axioms
+- 23 CCO-bearing axioms
+- 28 mixed BFO/CCO axioms
 
-It imports only the strict BFO mapping, whose alignment-core import completes the 103-axiom project-module closure without duplicating either imported layer.
+It imports only the strict BFO mapping, whose alignment-core import completes the 100-axiom project-module closure without duplicating either imported layer.
 
 The published extension contains no RO terms, transformed mappings, weakened projections, or copied dependency declarations.
 

@@ -89,8 +89,6 @@ _:a0aae335885ecdd46575658fe71c7cf073d4dcdda299250671a41f4ab3447536c_target_child
 _:a0aae335885ecdd46575658fe71c7cf073d4dcdda299250671a41f4ab3447536c_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:onProperty <https://www.commoncoreontologies.org/ont00001920> .
 _:a0aae335885ecdd46575658fe71c7cf073d4dcdda299250671a41f4ab3447536c_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000118> .
 
-<http://www.w3.org/ns/ssn/implementedBy> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001942> .
-
 <http://www.w3.org/ns/sosa/Actuator> rdfs:subClassOf _:a21d7cb7ddce4687296139d1e503435b53404810ecba690267188a7a6082659b0_target .
 _:a21d7cb7ddce4687296139d1e503435b53404810ecba690267188a7a6082659b0_target rdf:type owl:Class .
 _:a21d7cb7ddce4687296139d1e503435b53404810ecba690267188a7a6082659b0_target owl:intersectionOf _:a21d7cb7ddce4687296139d1e503435b53404810ecba690267188a7a6082659b0_target_list_0 .
@@ -153,6 +151,8 @@ _:a25eb572d7c35d5e480c606eddf558b7b5e986136f82f7da5657c857653b81705_target_child
 _:a25eb572d7c35d5e480c606eddf558b7b5e986136f82f7da5657c857653b81705_target_child_1_filler_child_1_filler_child_1_filler_child_1 rdf:type owl:Restriction .
 _:a25eb572d7c35d5e480c606eddf558b7b5e986136f82f7da5657c857653b81705_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:onProperty <https://www.commoncoreontologies.org/ont00001920> .
 _:a25eb572d7c35d5e480c606eddf558b7b5e986136f82f7da5657c857653b81705_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000118> .
+
+<http://www.w3.org/ns/sosa/madeObservation> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001787> .
 
 <http://www.w3.org/ns/ssn/systems/OperatingPowerRange> rdfs:subClassOf _:a2d3f18260f6d804a9e949bda85aca7dcfe2d170b01199991ee8797423dd99a61_target .
 _:a2d3f18260f6d804a9e949bda85aca7dcfe2d170b01199991ee8797423dd99a61_target rdf:type owl:Class .
@@ -220,8 +220,6 @@ _:a30d80749b62ad19d41ee9ffc6b0176426ab98d2d0b773aad7d4fdf16ee823ac0_target_child
 _:a30d80749b62ad19d41ee9ffc6b0176426ab98d2d0b773aad7d4fdf16ee823ac0_target_child_1_filler_child_1_filler_child_1_filler_child_1 rdf:type owl:Restriction .
 _:a30d80749b62ad19d41ee9ffc6b0176426ab98d2d0b773aad7d4fdf16ee823ac0_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:onProperty <https://www.commoncoreontologies.org/ont00001920> .
 _:a30d80749b62ad19d41ee9ffc6b0176426ab98d2d0b773aad7d4fdf16ee823ac0_target_child_1_filler_child_1_filler_child_1_filler_child_1 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000319> .
-
-<http://www.w3.org/ns/sosa/observedProperty> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001921> .
 
 <http://www.w3.org/ns/ssn/systems/Latency> rdfs:subClassOf _:a3457b3a3df2aa6fa0356c77e1cfd6ff95dbb450c7e9965c5bf1beb987488a3a1_target .
 _:a3457b3a3df2aa6fa0356c77e1cfd6ff95dbb450c7e9965c5bf1beb987488a3a1_target rdf:type owl:Class .
@@ -309,8 +307,6 @@ _:a3638f72bc407bf83119efc46ddbf7364798b8e5afa31a906bc1d736b62d980b1_target_child
 _:a3638f72bc407bf83119efc46ddbf7364798b8e5afa31a906bc1d736b62d980b1_target_child_1_filler_child_1_filler_child_1 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000118> .
 
 <http://www.w3.org/ns/ssn/Input> rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> .
-
-<http://www.w3.org/ns/ssn/implements> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001920> .
 
 <http://www.w3.org/ns/sosa/sampling/RelationshipNature> rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> .
 
@@ -908,6 +904,8 @@ _:af1380a66f7734f9b3e29c3e53388eabffa1e5fb296f1e0a192ada48d796a6c2b_target_child
 _:af1380a66f7734f9b3e29c3e53388eabffa1e5fb296f1e0a192ada48d796a6c2b_target_child_2 rdf:type owl:Restriction .
 _:af1380a66f7734f9b3e29c3e53388eabffa1e5fb296f1e0a192ada48d796a6c2b_target_child_2 owl:onProperty <https://www.commoncoreontologies.org/ont00001787> .
 _:af1380a66f7734f9b3e29c3e53388eabffa1e5fb296f1e0a192ada48d796a6c2b_target_child_2 owl:someValuesFrom <http://www.w3.org/ns/sosa/Observation> .
+
+<http://www.w3.org/ns/sosa/madeBySensor> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001833> .
 
 <http://www.w3.org/ns/ssn/systems/Sensitivity> rdfs:subClassOf _:af7079e239ac89c931c0bf767439ded105c7d1760b7b6e0346551ef3c46d3f759_target .
 _:af7079e239ac89c931c0bf767439ded105c7d1760b7b6e0346551ef3c46d3f759_target rdf:type owl:Class .

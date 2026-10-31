@@ -1,0 +1,23 @@
+Record and implement the explicit human adjudication of the three sampling-relationship mappings in `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`.
+
+**Approved interpretation:** `sampling:SampleRelationship` denotes an information content entity representing a relationship between samples, not the relationship itself.
+
+**Approved mappings — retain unchanged:**
+
+- `sampling:SampleRelationship rdfs:subClassOf cco:InformationContentEntity`
+- `sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of`
+- `sampling:relatedSample rdfs:subPropertyOf cco:is_about`
+
+Requirements:
+
+1. Record these as three new explicit human decisions with `final / formal_mapping_adopted`.
+2. Preserve the existing predicates, targets, RowIDs, and all unrelated mappings.
+3. Update only the corresponding assessment records and rationales needed to reflect the approved interpretation.
+4. Use the established decision and documentary/semantic transition workflows as applicable.
+5. Verify that the three existing mapping assertions remain unchanged and that the property directions correctly represent the approved interpretation.
+6. Run focused validation, including OWL consistency and assessment/decision authentication.
+7. Do not finalize or alter `sampling:RelationshipNature` or `sampling:natureOfRelationship`; their separate evidence holds remain unchanged.
+8. Do not reopen other semantic decisions, repair publication infrastructure, or rerun the entire release workflow.
+9. Do not stage, commit, tag, or push.
+
+Report updated assessment counts, exact changes, and validation results. Stop if recording these decisions requires an unapproved semantic change or substantial infrastructure work.

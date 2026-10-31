@@ -71,6 +71,8 @@ _:a2d8f0bb889aed23463bdc12f71eb087cf980f269d7283687d266c012c25c4f52_target_list_
 
 <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> .
 
+<http://www.w3.org/ns/ssn/implements> rdfs:domain <http://www.w3.org/ns/ssn/System> .
+
 <http://www.w3.org/ns/sosa/madeByActuator> rdfs:domain <http://www.w3.org/ns/sosa/Actuation> .
 
 <http://www.w3.org/ns/ssn/hasInput> rdfs:domain <http://www.w3.org/ns/sosa/Procedure> .

@@ -1,0 +1,94 @@
+{
+  "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reference": "Exact explicit human instruction: Finalize implementedBy / implements Mapping with OWL 2 DL Compliance; sections 2 and 3 authorize the external implementation and retained historical domain.",
+        "sha256": "477b62e02e9c1113781a332bc716ae76ae0788e17a910b82758f6794cd058bd3"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md",
+        "reference": "b464cea20bae6d6c542ec1db459cc76b6b978beb:reports/hosts-implementedby-complex-mapping-review.md; established process-mediated direction",
+        "sha256": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md",
+        "reference": "8512004a3b911ac5711fb0cc8dfe70cb086e3b9b:reports/object-property-domain-range-minimal-basis-implementation.md; implements domain System representative",
+        "sha256": "6c3967312648baf3491fc680bc98e133aefbc445e94036ef5a1cf1e4cc42aeea"
+      },
+      {
+        "path": "rules/ssn-implementation-mapping.rq",
+        "reference": "Exact authorized separately executed CONSTRUCT rule; both directions",
+        "sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json",
+        "reference": "Complete pinned closure profile and HermiT pass; no named unsatisfiable classes",
+        "sha256": "72347671259be4268df95ab2d31eaa4303ff00f286bd4244da6b33714688c66c"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json",
+        "reference": "Representative ABox including constructed facts: profile and HermiT pass; zero named unsatisfiable classes",
+        "sha256": "b554e2c8f9ad9b28c96420e6effee37484377dd2e01462e12f0db6afdf8fb79a"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json",
+        "reference": "15/15 HermiT entailment and non-entailment expectations pass",
+        "sha256": "940296b9cf5fe3252ec8000722307cc92e75b979d969287e98141dc2c84cd9a9"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log",
+        "reference": "Seven focused external rule behavior tests pass",
+        "sha256": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b"
+      }
+    ],
+    "rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure."
+  },
+  "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt",
+        "reference": "Exact explicit human instruction: Finalize implementedBy / implements Mapping with OWL 2 DL Compliance; sections 2 and 3 authorize the external implementation and retained historical domain.",
+        "sha256": "477b62e02e9c1113781a332bc716ae76ae0788e17a910b82758f6794cd058bd3"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md",
+        "reference": "b464cea20bae6d6c542ec1db459cc76b6b978beb:reports/hosts-implementedby-complex-mapping-review.md; established process-mediated direction",
+        "sha256": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md",
+        "reference": "8512004a3b911ac5711fb0cc8dfe70cb086e3b9b:reports/object-property-domain-range-minimal-basis-implementation.md; implements domain System representative",
+        "sha256": "6c3967312648baf3491fc680bc98e133aefbc445e94036ef5a1cf1e4cc42aeea"
+      },
+      {
+        "path": "rules/ssn-implementation-mapping.rq",
+        "reference": "Exact authorized separately executed CONSTRUCT rule; both directions",
+        "sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json",
+        "reference": "Complete pinned closure profile and HermiT pass; no named unsatisfiable classes",
+        "sha256": "72347671259be4268df95ab2d31eaa4303ff00f286bd4244da6b33714688c66c"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json",
+        "reference": "Representative ABox including constructed facts: profile and HermiT pass; zero named unsatisfiable classes",
+        "sha256": "b554e2c8f9ad9b28c96420e6effee37484377dd2e01462e12f0db6afdf8fb79a"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json",
+        "reference": "15/15 HermiT entailment and non-entailment expectations pass",
+        "sha256": "940296b9cf5fe3252ec8000722307cc92e75b979d969287e98141dc2c84cd9a9"
+      },
+      {
+        "path": "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log",
+        "reference": "Seven focused external rule behavior tests pass",
+        "sha256": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b"
+      }
+    ],
+    "rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed."
+  }
+}

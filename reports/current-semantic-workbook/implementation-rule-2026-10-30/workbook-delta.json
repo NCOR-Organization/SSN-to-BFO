@@ -1,0 +1,240 @@
+{
+  "added_rows": [],
+  "changed_rows": [
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B57",
+          "new_value": null,
+          "old_cell": "Sheet2!B57",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C57",
+          "new_value": null,
+          "old_cell": "Sheet2!C57",
+          "old_value": "cco:prescribes"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D57",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+          "old_cell": "Sheet2!D57",
+          "old_value": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved."
+        }
+      ],
+      "new": {
+        "predicate": null,
+        "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+        "row": 57,
+        "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+        "subject": "ssn:implementedBy",
+        "target": null,
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
+        "row": 57,
+        "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+        "subject": "ssn:implementedBy",
+        "target": "cco:prescribes",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B58",
+          "new_value": "rdfs:domain",
+          "old_cell": "Sheet2!B58",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C58",
+          "new_value": "ssn:System",
+          "old_cell": "Sheet2!C58",
+          "old_value": "cco:prescribed_by"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D58",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+          "old_cell": "Sheet2!D58",
+          "old_value": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+        "row": 58,
+        "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+        "subject": "ssn:implements",
+        "target": "ssn:System",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+        "row": 58,
+        "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+        "subject": "ssn:implements",
+        "target": "cco:prescribed_by",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+    }
+  ],
+  "cleared_mapping_rows": [
+    {
+      "predicate": null,
+      "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+      "row": 57,
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+      "subject": "ssn:implementedBy",
+      "target": null,
+      "worksheet": "Sheet2"
+    }
+  ],
+  "documentary_reasoning_changes": [
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D57",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+          "old_cell": "Sheet2!D57",
+          "old_value": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved."
+        }
+      ],
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D58",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+          "old_cell": "Sheet2!D58",
+          "old_value": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved."
+        }
+      ],
+      "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+    }
+  ],
+  "removed_mapping_assertions": [
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "reasoning": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
+      "row": 57,
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+      "subject": "ssn:implementedBy",
+      "target": "cco:prescribes",
+      "worksheet": "Sheet2"
+    },
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "reasoning": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+      "row": 58,
+      "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+      "subject": "ssn:implements",
+      "target": "cco:prescribed_by",
+      "worksheet": "Sheet2"
+    }
+  ],
+  "semantic_changes": [
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B57",
+          "new_value": null,
+          "old_cell": "Sheet2!B57",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C57",
+          "new_value": null,
+          "old_cell": "Sheet2!C57",
+          "old_value": "cco:prescribes"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D57",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+          "old_cell": "Sheet2!D57",
+          "old_value": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved."
+        }
+      ],
+      "new": {
+        "predicate": null,
+        "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+        "row": 57,
+        "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+        "subject": "ssn:implementedBy",
+        "target": null,
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Documentary discrepancy: current COMS asserts implementedBy subPropertyOf prescribes. The retained earlier mapping instead used prescribes followed by has_agent to entail implementedBy. Reconciliation of these different commitments remains unresolved.",
+        "row": 57,
+        "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
+        "subject": "ssn:implementedBy",
+        "target": "cco:prescribes",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B58",
+          "new_value": "rdfs:domain",
+          "old_cell": "Sheet2!B58",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C58",
+          "new_value": "ssn:System",
+          "old_cell": "Sheet2!C58",
+          "old_value": "cco:prescribed_by"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D58",
+          "new_value": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+          "old_cell": "Sheet2!D58",
+          "old_value": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+        "row": 58,
+        "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+        "subject": "ssn:implements",
+        "target": "ssn:System",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Documentary discrepancy: current COMS asserts implements subPropertyOf prescribed_by. The retained earlier interpretation was the inverse of a process-mediated implementedBy mapping. Reconciliation of the direct and mediated commitments remains unresolved.",
+        "row": 58,
+        "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
+        "subject": "ssn:implements",
+        "target": "cco:prescribed_by",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+    }
+  ]
+}

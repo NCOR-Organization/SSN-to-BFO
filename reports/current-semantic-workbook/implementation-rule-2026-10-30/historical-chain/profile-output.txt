@@ -1,0 +1,13 @@
+OWL 2 DL Profile Report: Ontology and imports closure NOT in profile. The following violations are present:
+Use of non-simple property in a restriction: ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing) [SubClassOf(<http://www.w3.org/ns/sosa/Sampler> ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing)) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of non-simple property in a restriction: ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing) [SubClassOf(<http://www.w3.org/ns/sosa/Actuator> ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing)) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of non-simple property in a restriction: ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing) [SubClassOf(<http://www.w3.org/ns/sosa/Sensor> ObjectMinCardinality(1 <http://www.w3.org/ns/ssn/implements> owl:Thing)) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of property in chain causes cycle: <http://www.w3.org/ns/ssn/implements> [SubObjectPropertyOf(ObjectPropertyChain(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/ssn/implements>) <http://www.w3.org/ns/sosa/usedProcedure>) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of property in chain causes cycle: <https://www.commoncoreontologies.org/ont00001942> [SubObjectPropertyOf(ObjectPropertyChain(<https://www.commoncoreontologies.org/ont00001942> <https://www.commoncoreontologies.org/ont00001833>) <http://www.w3.org/ns/ssn/implementedBy>) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of property in chain causes cycle: <http://www.w3.org/ns/ssn/implements> [SubObjectPropertyOf(ObjectPropertyChain(<http://www.w3.org/ns/sosa/madeByActuator> <http://www.w3.org/ns/ssn/implements>) <http://www.w3.org/ns/sosa/usedProcedure>) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+Use of property in chain causes cycle: <http://www.w3.org/ns/ssn/implements> [SubObjectPropertyOf(ObjectPropertyChain(<http://www.w3.org/ns/sosa/madeBySampler> <http://www.w3.org/ns/ssn/implements>) <http://www.w3.org/ns/sosa/usedProcedure>) in OntologyID(OntologyIRI(<http://www.sks.ai/SSN2BFO/>) VersionIRI(<null>))]
+
+PROFILE VIOLATION ERROR http://www.sks.ai/SSN2BFO/ violates profile DL
+For details see: http://robot.obolibrary.org/validate-profile#profile-violation-error
+Use the -vvv option to show the stack trace.
+Use the --help option to see usage information.

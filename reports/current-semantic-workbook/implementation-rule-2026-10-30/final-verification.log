@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "workbook_rows": 107,
+  "changed_starting_files": 18,
+  "products": {
+    "integrated": {
+      "path": "SSN2BFO.ttl",
+      "sha256": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
+      "triple_count": 1065,
+      "changed": true,
+      "removed": [
+        [
+          "http://www.w3.org/ns/ssn/implementedBy",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001942"
+        ],
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001920"
+        ]
+      ],
+      "added": [
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#domain",
+          "http://www.w3.org/ns/ssn/System"
+        ]
+      ]
+    },
+    "alignment_core": {
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "sha256": "d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef",
+      "triple_count": 62,
+      "changed": true,
+      "removed": [],
+      "added": [
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#domain",
+          "http://www.w3.org/ns/ssn/System"
+        ]
+      ]
+    },
+    "strict_bfo_mapping": {
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "triple_count": 134,
+      "changed": false,
+      "removed": [],
+      "added": []
+    },
+    "cco_extension": {
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "sha256": "019c1ec14ba31c48d415d1ec9f0207b16a79e2117e536cefa0ab82a1c383a3f5",
+      "triple_count": 883,
+      "changed": true,
+      "removed": [
+        [
+          "http://www.w3.org/ns/ssn/implementedBy",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001942"
+        ],
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001920"
+        ]
+      ],
+      "added": []
+    }
+  }
+}

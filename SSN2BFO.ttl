@@ -332,13 +332,15 @@ _:a47859e2cfd5df437d1f55c83560793ab22f035de9b829ccdedcc4d3118cc4f3e_chain_list_2
 
 <http://www.w3.org/ns/sosa/madeBySensor> rdfs:range <http://www.w3.org/ns/sosa/Sensor> .
 
+<http://www.w3.org/ns/sosa/madeBySensor> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001833> .
+
 <http://www.w3.org/ns/sosa/madeObservation> rdfs:domain <http://www.w3.org/ns/sosa/Sensor> .
 
 <http://www.w3.org/ns/sosa/madeObservation> rdfs:range <http://www.w3.org/ns/sosa/Observation> .
 
-<http://www.w3.org/ns/sosa/madeSampling> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001787> .
+<http://www.w3.org/ns/sosa/madeObservation> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001787> .
 
-<http://www.w3.org/ns/sosa/observedProperty> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001921> .
+<http://www.w3.org/ns/sosa/madeSampling> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001787> .
 
 <http://www.w3.org/ns/sosa/observes> rdfs:domain <http://www.w3.org/ns/sosa/Sensor> .
 
@@ -434,9 +436,7 @@ _:a6dfa77b04dfaea343d0a8767e6467c603eafddf10395ff40ac7416f52c7fd4d4_target_list_
 
 <http://www.w3.org/ns/ssn/hasSubSystem> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> .
 
-<http://www.w3.org/ns/ssn/implementedBy> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001942> .
-
-<http://www.w3.org/ns/ssn/implements> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001920> .
+<http://www.w3.org/ns/ssn/implements> rdfs:domain <http://www.w3.org/ns/ssn/System> .
 
 <http://www.w3.org/ns/ssn/inDeployment> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000056> .
 

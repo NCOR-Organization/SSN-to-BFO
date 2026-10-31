@@ -1,0 +1,7 @@
+{
+  "historical_restoration_only": true,
+  "implementation_pair_installed": false,
+  "new_workbook_sha256": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
+  "old_workbook_sha256": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+  "transition": "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json"
+}

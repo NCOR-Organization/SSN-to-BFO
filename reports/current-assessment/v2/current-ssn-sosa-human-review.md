@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**74 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**71 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -10,15 +10,16 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 
 | Priority | Source | Question |
 |---|---|---|
+| 1 | `sosa:observedProperty` | Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it. |
+| 1 | `ssn:implementedBy` | Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass. |
 | 2 | `sosa:hasFeatureOfInterest` | Does relating an execution to what its result concerns warrant any target relation, or is source domain/range typing the complete intended mapping outcome? |
 | 2 | `sosa:isFeatureOfInterestOf` | Can the inverse FeatureOfInterest-to-execution relation receive a sound target inclusion across material, process, and property-like features, or should it remain no-direct? |
 | 2 | `sosa:isObservedBy` | Should the inverse capability relation be final no-direct, following observes, rather than be treated as a relation mapping solely because its domain/range are present? |
 | 2 | `sosa:madeActuation` | Is current Actuator-to-Actuation typing the final outcome or a deferred agent relation? The pinned track adopts agent_in, while historical current-track tests documented conflicts. |
 | 2 | `sosa:madeByActuator` | Should the absent has_agent inclusion be classified as semantic rejection or implementation/profile deferral for this exact source/target closure? |
-| 2 | `sosa:madeBySensor` | Is the absent Observation-to-Sensor has_agent inclusion deliberate in the current workbook, or an unresolved consequence of earlier Sensor target/version decisions? |
-| 2 | `sosa:madeObservation` | Why is only Sensor-to-Observation typing retained when the pinned track adopts agent_in, and should that current-track absence be final or deferred? |
 | 2 | `sosa:observes` | Does capability-level observes need only its native forProperty hierarchy and typing, or is another target route intended? The chain headed by forProperty does not map arbitrary observes assertions outward. |
 | 2 | `ssn:hasProperty` | Is no uniform target superproperty the final decision, with the two typed branches supplied only by the external query? |
+| 2 | `ssn:implements` | Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass. |
 | 2 | `ssn:isPropertyOf` | Should the inverse of the mixed continuant/occurrent hasProperty relation remain no-direct, and is an inverse conditional query needed as separate future work? |
 | 2 | `ssn:isProxyFor` | Does the source relation from a Stimulus to a detectable Property justify a target relation, or only the present source typing? |
 | 2 | `ssn-system:hasOperatingRange` | Should a System-to-OperatingRange relation have a fixed bearer relation when OperatingRange also permits ProcessProfile, or only conditional query support? |
@@ -65,16 +66,12 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 4 | `ssn-system:SystemLifetime` | Does useful system life justify the current commitment to Function with an actual operational stasis caused by a Process realizing a design-prescribed Affordance, or does it describe a property/capability without those actual individuals? |
 | 6 | `sosa:hosts` | Does every bearer-realization-participant path establish hosting, and does the current chain direction match the intended platform-support interpretation? |
 | 6 | `sosa:isHostedBy` | Does every participates_in-realizes-inheres_in path establish being hosted, and is it the intended inverse of the hosts-chain interpretation? |
-| 7 | `sosa:observedProperty` | Does the observed Property satisfy CCO has_input’s necessary-process-input meaning in every Observation, rather than merely being what is measured? |
+| 7 | `sosa:madeBySensor` | Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it. |
+| 7 | `sosa:madeObservation` | Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it. |
 | 7 | `sosa:phenomenonTime` | Must the time to which a result applies equal the temporal region occupied by the observation/actuation/sampling itself? |
-| 7 | `sampling:hasSampleRelationship` | Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation? |
 | 7 | `sampling:natureOfRelationship` | Does connecting a relationship to its nature express CCO aboutness between information content and its subject, or classify the relationship instead? |
-| 7 | `sampling:relatedSample` | Does each reified sample relationship count as information content about the related Sample? |
-| 7 | `ssn:implementedBy` | Does a Procedure prescribe a System directly in the sense required by CCO prescribes, or is its implementation by the System mediated through an execution? |
-| 7 | `ssn:implements` | Can a material System be the subject of CCO prescribed_by under the current target signature, or should implementation be mediated through an actual prescribed execution? |
 | 7 | `ssn:wasOriginatedBy` | Does every originating Stimulus temporally start the Observation, as CCO process_started_by requires, or does source meaning establish only causation? |
 | 8 | `sampling:RelationshipNature` | Is the nature of a sample relationship an information-content entity, or does the source Concept class permit a broader conceptual/category interpretation? |
-| 8 | `sampling:SampleRelationship` | Is the reified SampleRelationship necessarily information content about samples, rather than a relational quality or relation instance? |
 | 8 | `ssn:Input` | Does every Input to a Procedure denote information content, or can the source class also denote a concrete input object/specification of such an object? |
 | 8 | `ssn:Output` | Does every Output of a Procedure denote information content rather than a concrete thing described as output? |
 | 8 | `ssn:deployedOnPlatform` | Does every Deployment-to-Platform relation require that the Platform participate in a process under the chosen PlannedAct reading? |
@@ -84,6 +81,83 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 8 | `ssn-system:hasSurvivalProperty` | Does SurvivalRange-to-Property use require the Property to specifically depend on that container, and is the BFO dependence direction/category valid for all its source cases? |
 | 8 | `ssn-system:hasSystemProperty` | Does SystemCapability-to-Property use require the Property to specifically depend on that container, and is the BFO dependence direction/category valid for all its source cases? |
 | 8 | `ssn-system:qualityOfObservation` | Is the quality associated with an Observation necessarily an output produced by that process, or a quality/description of it? |
+
+## sosa:observedProperty
+
+State: **unreviewed**; priority 1; evidence confidence: Historical implementation and current technical validation verified; assessment review state unchanged..
+
+**Repository facts — mapping:**
+
+- `Sheet2!36` / `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1`: `[blank]` (zero axioms).
+
+**Source semantics:** Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.
+
+Source structure: rdf:type owl:ObjectProperty
+
+Source advisory signature: <http://schema.org/domainIncludes> sosa:Observation; <http://schema.org/rangeIncludes> sosa:ObservableProperty
+
+**Target semantics:** No target relation or class expression is asserted by these rows. Native source types alone do not establish a BFO/CCO relation mapping.
+
+**Logical consequences:** sosa:observedProperty contributes zero mapping axioms; native source axioms remain present.
+
+Asserted context (actual axiom subject and direction retained):
+- `source_native` / asserted: `sosa:ObservableProperty rdfs:subClassOf (inverse(sosa:observedProperty) owl:allValuesFrom sosa:Observation)`.
+- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:allValuesFrom sosa:ObservableProperty)`.
+- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+
+**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!67`: `sosa:observedProperty` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:observedProperty relates an Observation or ObservationCollection to the Property observed. CCO has input requires an Independent Continuant input whose presence at the beginning is necessary for a Process to start, which is not entailed by observation and does not cover the ProcessProfile branch of sosa:Property. CCO aboutness relations instead require an Information Content Entity subject. No reviewed BFO/CCO relation provides the required uniform semantics. Comparison basis: same lexical term.
+
+**Human decision:** Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.
+
+**Alternatives:**
+- Preserve the historically authorized treatment recorded in the semantic transition.
+
+**Proposed recommendation:** Retain this recovered historical implementation; this task opens no new semantic adjudication.
+
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!36`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/cco.ttl`; `reports/hermit-observedProperty-deferral-evaluation.md`; `reports/hermit-observedProperty-reactivation-canary.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json`.
+
+**Notes:** Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.
+
+## ssn:implementedBy
+
+State: **unreviewed**; priority 1; evidence confidence: Historical authority, explicit implementation authorization and focused technical validation verified; administrative review state unchanged..
+
+**Repository facts — mapping:**
+
+- `Sheet2!57` / `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e`: `[blank]` (zero axioms).
+
+**Source semantics:** Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way.
+
+Source structure: owl:inverseOf ssn:implements; rdf:type owl:ObjectProperty
+
+Source advisory signature: none recorded
+
+**Target semantics:** No target relation or class expression is asserted by these rows. Native source types alone do not establish a BFO/CCO relation mapping.
+
+**Logical consequences:** ssn:implementedBy contributes zero mapping axioms; native source axioms remain present.
+
+Asserted context (actual axiom subject and direction retained):
+- `source_native` / asserted: `sosa:Procedure rdfs:subClassOf (ssn:implementedBy owl:allValuesFrom ssn:System)`.
+
+**Relevant property chains (ordered path → superproperty):**
+- `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
+- `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
+- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
+
+Additional route evidence: [{"artifact": "rules/ssn-implementation-mapping.rq", "artifact_sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd", "mode": "external_construct_rule", "conditions": "Explicit or previously materialized CCO prescribes followed by has_agent yields ssn:implementedBy and inverse ssn:implements assertions. Requires executing the query; not an OWL-product entailment or a direct prescription inclusion."}]
+
+**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!35`: `sosa:implementedBy` — `active`, `owl:propertyChainAxiom` cco:prescribes o cco:has_agent. Replace the misdirected chain with cco:prescribes o cco:has_agent. The pinned CCO confirms that prescribes is inverse to prescribed_by and has_agent is inverse to agent_in. Comparison basis: local-name comparison only; distinct namespace/source version.
+
+**Human decision:** Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass.
+
+**Alternatives:**
+- Retain the explicitly authorized external rule and historical typing representative.
+
+**Proposed recommendation:** Use the separately executed external rule; do not restore the impermissible OWL chain or the non-equivalent direct prescription inclusions.
+
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!57`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/implementedBy`; `imports/cco.ttl`; `reports/hosts-implementedby-complex-mapping-review.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json`; `rules/ssn-implementation-mapping.rq`; `reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt`; `reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json`.
+
+**Notes:** Explicit implementation authorization, Alec Sculley, 2026-10-30. Preserve the historical process-mediated interpretation using a separate SPARQL CONSTRUCT rule because the OWL chain fails current DL global restrictions. This does not create a new scientific decision or finalize the assessment. External-rule mapping coverage is separate from direct OWL inclusion and the retained implements domain typing. Current and SOSA-2023 tracks remain separately governed.
 
 ## sosa:hasFeatureOfInterest
 
@@ -317,104 +391,6 @@ Asserted premises:
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
-## sosa:madeBySensor
-
-State: **unreviewed**; priority 2; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!32` / `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc`: `rdfs:domain` sosa:Observation.
-
-- `Sheet2!33` / `urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39`: `rdfs:range` sosa:Sensor.
-
-**Source semantics:** Relation between an Observation and the Sensor which made the Observation.
-
-Source structure: owl:inverseOf sosa:madeObservation; rdf:type owl:ObjectProperty
-
-Source advisory signature: <http://schema.org/domainIncludes> sosa:Observation; <http://schema.org/rangeIncludes> sosa:Sensor
-
-**Target semantics:** `cco:ont00001833` (has agent; historical_or_review_candidate_only; glossary)
-
-**Logical consequences:** An asserted sosa:madeBySensor(x,y) types x as sosa:Observation; no BFO/CCO relation edge is entailed by this typing axiom alone. An asserted sosa:madeBySensor(x,y) types y as sosa:Sensor; no BFO/CCO relation edge is entailed by this typing axiom alone.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:allValuesFrom sosa:Sensor)`.
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
-
-**Derived evidence** (`generated_inference`, premises from mapping, source_native): `sosa:madeBySensor rdfs:range sosa:Sensor`. Every property subject belongs to the declared domain or one of its union branches; each branch restricts all values of this property to the stated class. Thus every object has that type. This derived consequence is separate from an explicit range assertion and makes no mapping decision.
-
-Asserted premises:
-- `mapping`: `sosa:madeBySensor rdfs:domain sosa:Observation` (RowID `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc`).
-- `source_native`: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:allValuesFrom sosa:Sensor)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-- `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
-- `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!60`: `sosa:madeBySensor` — `active`, `rdfs:subPropertyOf` cco:has_agent.  Comparison basis: same lexical term.
-
-**Human decision:** Is the absent Observation-to-Sensor has_agent inclusion deliberate in the current workbook, or an unresolved consequence of earlier Sensor target/version decisions?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain current typing with an explicit no-direct or deferred outcome; consider has_agent only after current Sensor/Observation review.
-
-**Proposed recommendation:** Retain the artifact during review. Retain current typing with an explicit no-direct or deferred outcome; consider has_agent only after current Sensor/Observation review.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!32`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!33`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/madeBySensor`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/madeBySensor`; `imports/cco.ttl`; `reports/sosa-sensor-version-alignment-resolution.md`; `reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## sosa:madeObservation
-
-State: **unreviewed**; priority 2; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!34` / `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e`: `rdfs:domain` sosa:Sensor.
-
-- `Sheet2!35` / `urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f`: `rdfs:range` sosa:Observation.
-
-**Source semantics:** Relation between a Sensor and an Observation made by the Sensor.
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: <http://schema.org/domainIncludes> sosa:Sensor; <http://schema.org/rangeIncludes> sosa:Observation
-
-**Target semantics:** `cco:ont00001787` (agent in; historical_or_review_candidate_only; glossary)
-
-**Logical consequences:** An asserted sosa:madeObservation(x,y) types x as sosa:Sensor; no BFO/CCO relation edge is entailed by this typing axiom alone. An asserted sosa:madeObservation(x,y) types y as sosa:Observation; no BFO/CCO relation edge is entailed by this typing axiom alone.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf (sosa:madeObservation owl:allValuesFrom sosa:Observation)`.
-- `source_native` / asserted: `sosa:madeBySensor owl:inverseOf sosa:madeObservation`.
-
-**Derived evidence** (`generated_inference`, premises from mapping, source_native): `sosa:madeObservation rdfs:range sosa:Observation`. Every property subject belongs to the declared domain or one of its union branches; each branch restricts all values of this property to the stated class. Thus every object has that type. This derived consequence is separate from an explicit range assertion and makes no mapping decision.
-
-Asserted premises:
-- `mapping`: `sosa:madeObservation rdfs:domain sosa:Sensor` (RowID `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e`).
-- `source_native`: `sosa:Sensor rdfs:subClassOf (sosa:madeObservation owl:allValuesFrom sosa:Observation)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-- `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
-- `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!63`: `sosa:madeObservation` — `active`, `rdfs:subPropertyOf` cco:agent_in. Explicit inverse-derived mapping. The pinned SOSA source declares sosa:madeObservation owl:inverseOf sosa:madeBySensor; the governed COMS mapping asserts sosa:madeBySensor rdfs:subPropertyOf cco:has_agent; and the pinned BFO/CCO target declares cco:has_agent owl:inverseOf cco:agent_in. Therefore sosa:madeObservation rdfs:subPropertyOf cco:agent_in is entailed. The direct COMS axiom is materialized explicitly under the project policy for inverse-derived mappings. Comparison basis: same lexical term.
-
-**Human decision:** Why is only Sensor-to-Observation typing retained when the pinned track adopts agent_in, and should that current-track absence be final or deferred?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Finalize no_direct_mapping if intended, or separately review agent_in against current Sensor/Observation existential commitments.
-
-**Proposed recommendation:** Retain the artifact during review. Finalize no_direct_mapping if intended, or separately review agent_in against current Sensor/Observation existential commitments.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!34`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!35`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/madeObservation`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/madeObservation`; `imports/cco.ttl`; `reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
 ## sosa:observes
 
 State: **unreviewed**; priority 2; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
@@ -510,6 +486,59 @@ Additional route evidence: [{"artifact": "rules/ssn-hasproperty-conditional-mapp
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!55`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/hasProperty`; `imports/cco.ttl`; `reports/ssn-hasproperty-rule-mapping-artifact.md`; `reports/ssn-hasproperty-modeling-options.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
+
+## ssn:implements
+
+State: **unreviewed**; priority 2; evidence confidence: Historical authority, explicit implementation authorization and focused technical validation verified; administrative review state unchanged..
+
+**Repository facts — mapping:**
+
+- `Sheet2!58` / `urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab`: `rdfs:domain` ssn:System.
+
+**Source semantics:** Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
+
+Source structure: rdf:type owl:ObjectProperty
+
+Source advisory signature: none recorded
+
+**Target semantics:** No target relation or class expression is asserted by these rows. Native source types alone do not establish a BFO/CCO relation mapping.
+
+**Logical consequences:** An asserted ssn:implements(x,y) types x as ssn:System; no BFO/CCO relation edge is entailed by this typing axiom alone.
+
+Asserted context (actual axiom subject and direction retained):
+- `source_native` / asserted: `sosa:Actuator rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+- `source_native` / asserted: `sosa:Sampler rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+- `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn:implements owl:allValuesFrom sosa:Procedure)`.
+- `source_native` / asserted: `ssn:implementedBy owl:inverseOf ssn:implements`.
+
+**Derived evidence** (`generated_inference`, premises from mapping, source_native): `ssn:implements rdfs:range sosa:Procedure`. Every property subject belongs to the declared domain or one of its union branches; each branch restricts all values of this property to the stated class. Thus every object has that type. This derived consequence is separate from an explicit range assertion and makes no mapping decision.
+
+Asserted premises:
+- `mapping`: `ssn:implements rdfs:domain ssn:System` (RowID `urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab`).
+- `source_native`: `ssn:System rdfs:subClassOf (ssn:implements owl:allValuesFrom sosa:Procedure)`.
+
+**Review clarification:** The current workbook has no explicit rdfs:range row for ssn:implements. The source also has no explicit rdfs:range assertion. The source universal restrictions together with the current mapping's domain row already entail a range constraint; this is an aligned consequence, not a source-only range assertion. An absent explicit row is therefore not evidence of unconstrained objects. Read the retained review question with this distinction; no mapping decision is made.
+
+**Relevant property chains (ordered path → superproperty):**
+- `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
+- `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
+- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
+
+Additional route evidence: [{"artifact": "rules/ssn-implementation-mapping.rq", "artifact_sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd", "mode": "external_construct_rule", "conditions": "Explicit or previously materialized CCO prescribes followed by has_agent yields ssn:implementedBy and inverse ssn:implements assertions. Requires executing the query; not an OWL-product entailment or a direct prescription inclusion."}]
+
+**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!36`: `sosa:implements` — `active`, `owl:propertyChainAxiom` cco:agent_in o cco:prescribed_by. Replace the category-incompatible chain with cco:agent_in o cco:prescribed_by. This follows the path from a system through an execution in which it is an agent to the procedure prescribing that execution. Comparison basis: local-name comparison only; distinct namespace/source version.
+
+**Human decision:** Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass.
+
+**Alternatives:**
+- Retain the explicitly authorized external rule and historical typing representative.
+
+**Proposed recommendation:** Use the separately executed external rule; do not restore the impermissible OWL chain or the non-equivalent direct prescription inclusions.
+
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!58`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/implements`; `imports/cco.ttl`; `reports/hosts-implementedby-complex-mapping-review.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json`; `rules/ssn-implementation-mapping.rq`; `reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt`; `reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json`.
+
+**Notes:** Explicit implementation authorization, Alec Sculley, 2026-10-30. Preserve the historical process-mediated interpretation using a separate SPARQL CONSTRUCT rule because the OWL chain fails current DL global restrictions. This does not create a new scientific decision or finalize the assessment. External-rule mapping coverage is separate from direct OWL inclusion and the retained implements domain typing. Current and SOSA-2023 tracks remain separately governed.
 
 ## ssn:isPropertyOf
 
@@ -2313,46 +2342,105 @@ Additional route evidence: [{"mapping_row_id": "urn:uuid:3af8734c-ac86-46b0-8c0c
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
-## sosa:observedProperty
+## sosa:madeBySensor
 
-State: **unreviewed**; priority 7; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
+State: **unreviewed**; priority 7; evidence confidence: Historical implementation and current technical validation verified; assessment review state unchanged..
 
 **Repository facts — mapping:**
 
-- `Sheet2!36` / `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1`: `rdfs:subPropertyOf` cco:has_input.
+- `Sheet2!32` / `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc`: `rdfs:domain` sosa:Observation.
 
-**Source semantics:** Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.
+- `Sheet2!33` / `urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39`: `rdfs:range` sosa:Sensor.
 
-Source structure: rdf:type owl:ObjectProperty
+- `Sheet2!63` / `urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd`: `rdfs:subPropertyOf` cco:has_agent.
 
-Source advisory signature: <http://schema.org/domainIncludes> sosa:Observation; <http://schema.org/rangeIncludes> sosa:ObservableProperty
+**Source semantics:** Relation between an Observation and the Sensor which made the Observation.
 
-**Target semantics:** `cco:ont00001921` (has input; asserted_target_expression; glossary)
+Source structure: owl:inverseOf sosa:madeObservation; rdf:type owl:ObjectProperty
 
-**Logical consequences:** Every sosa:observedProperty(x,y) entails cco:has_input(x,y), including target domain/range and superproperty consequences.
+Source advisory signature: <http://schema.org/domainIncludes> sosa:Observation; <http://schema.org/rangeIncludes> sosa:Sensor
+
+**Target semantics:** `cco:ont00001833` (has agent; historical_or_review_candidate_only; glossary)
+
+**Logical consequences:** An asserted sosa:madeBySensor(x,y) types x as sosa:Observation; no BFO/CCO relation edge is entailed by this typing axiom alone. An asserted sosa:madeBySensor(x,y) types y as sosa:Sensor; no BFO/CCO relation edge is entailed by this typing axiom alone. Every sosa:madeBySensor(x,y) entails cco:has_agent(x,y), including target domain/range and superproperty consequences.
 
 Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:ObservableProperty rdfs:subClassOf (inverse(sosa:observedProperty) owl:allValuesFrom sosa:Observation)`.
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:allValuesFrom sosa:ObservableProperty)`.
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:allValuesFrom sosa:Sensor)`.
+- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
+
+**Derived evidence** (`generated_inference`, premises from mapping, source_native): `sosa:madeBySensor rdfs:range sosa:Sensor`. Every property subject belongs to the declared domain or one of its union branches; each branch restricts all values of this property to the stated class. Thus every object has that type. This derived consequence is separate from an explicit range assertion and makes no mapping decision.
+
+Asserted premises:
+- `mapping`: `sosa:madeBySensor rdfs:domain sosa:Observation` (RowID `urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc`).
+- `source_native`: `sosa:Observation rdfs:subClassOf (sosa:madeBySensor owl:allValuesFrom sosa:Sensor)`.
 
 **Relevant property chains (ordered path → superproperty):**
+- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
 - `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
 - `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
 
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!67`: `sosa:observedProperty` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:observedProperty relates an Observation or ObservationCollection to the Property observed. CCO has input requires an Independent Continuant input whose presence at the beginning is necessary for a Process to start, which is not entailed by observation and does not cover the ProcessProfile branch of sosa:Property. CCO aboutness relations instead require an Information Content Entity subject. No reviewed BFO/CCO relation provides the required uniform semantics. Comparison basis: same lexical term.
+**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!60`: `sosa:madeBySensor` — `active`, `rdfs:subPropertyOf` cco:has_agent.  Comparison basis: same lexical term.
 
-**Human decision:** Does the observed Property satisfy CCO has_input’s necessary-process-input meaning in every Observation, rather than merely being what is measured?
+**Human decision:** Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.
 
 **Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Propose no-direct mapping or another reviewed relation if “observed” does not imply a necessary input; reconcile the current active row with historical deferral evidence.
+- Preserve the historically authorized treatment recorded in the semantic transition.
 
-**Proposed recommendation:** Retain the artifact during review. Propose no-direct mapping or another reviewed relation if “observed” does not imply a necessary input; reconcile the current active row with historical deferral evidence.
+**Proposed recommendation:** Retain this recovered historical implementation; this task opens no new semantic adjudication.
 
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!36`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/cco.ttl`; `reports/hermit-observedProperty-deferral-evaluation.md`; `reports/hermit-observedProperty-reactivation-canary.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!32`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!33`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/madeBySensor`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/madeBySensor`; `imports/cco.ttl`; `reports/sosa-sensor-version-alignment-resolution.md`; `reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!63`; `reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json`.
 
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
+**Notes:** Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.
+
+## sosa:madeObservation
+
+State: **unreviewed**; priority 7; evidence confidence: Historical implementation and current technical validation verified; assessment review state unchanged..
+
+**Repository facts — mapping:**
+
+- `Sheet2!34` / `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e`: `rdfs:domain` sosa:Sensor.
+
+- `Sheet2!35` / `urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f`: `rdfs:range` sosa:Observation.
+
+- `Sheet2!64` / `urn:uuid:418db51e-342f-441d-8706-00a107266dcc`: `rdfs:subPropertyOf` cco:agent_in.
+
+**Source semantics:** Relation between a Sensor and an Observation made by the Sensor.
+
+Source structure: rdf:type owl:ObjectProperty
+
+Source advisory signature: <http://schema.org/domainIncludes> sosa:Sensor; <http://schema.org/rangeIncludes> sosa:Observation
+
+**Target semantics:** `cco:ont00001787` (agent in; historical_or_review_candidate_only; glossary)
+
+**Logical consequences:** An asserted sosa:madeObservation(x,y) types x as sosa:Sensor; no BFO/CCO relation edge is entailed by this typing axiom alone. An asserted sosa:madeObservation(x,y) types y as sosa:Observation; no BFO/CCO relation edge is entailed by this typing axiom alone. Every sosa:madeObservation(x,y) entails cco:agent_in(x,y), including target domain/range and superproperty consequences.
+
+Asserted context (actual axiom subject and direction retained):
+- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf (sosa:madeObservation owl:allValuesFrom sosa:Observation)`.
+- `source_native` / asserted: `sosa:madeBySensor owl:inverseOf sosa:madeObservation`.
+
+**Derived evidence** (`generated_inference`, premises from mapping, source_native): `sosa:madeObservation rdfs:range sosa:Observation`. Every property subject belongs to the declared domain or one of its union branches; each branch restricts all values of this property to the stated class. Thus every object has that type. This derived consequence is separate from an explicit range assertion and makes no mapping decision.
+
+Asserted premises:
+- `mapping`: `sosa:madeObservation rdfs:domain sosa:Sensor` (RowID `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e`).
+- `source_native`: `sosa:Sensor rdfs:subClassOf (sosa:madeObservation owl:allValuesFrom sosa:Observation)`.
+
+**Relevant property chains (ordered path → superproperty):**
+- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
+- `mapping`: `bfo:BFO_0000056 o bfo:BFO_0000055 o bfo:BFO_0000197 -> sosa:isHostedBy` (RowID `urn:uuid:e866de80-683d-4138-a713-be9646d37148`).
+- `mapping`: `bfo:BFO_0000196 o bfo:BFO_0000054 o bfo:BFO_0000057 -> sosa:hosts` (RowID `urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e`).
+
+**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!63`: `sosa:madeObservation` — `active`, `rdfs:subPropertyOf` cco:agent_in. Explicit inverse-derived mapping. The pinned SOSA source declares sosa:madeObservation owl:inverseOf sosa:madeBySensor; the governed COMS mapping asserts sosa:madeBySensor rdfs:subPropertyOf cco:has_agent; and the pinned BFO/CCO target declares cco:has_agent owl:inverseOf cco:agent_in. Therefore sosa:madeObservation rdfs:subPropertyOf cco:agent_in is entailed. The direct COMS axiom is materialized explicitly under the project policy for inverse-derived mappings. Comparison basis: same lexical term.
+
+**Human decision:** Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.
+
+**Alternatives:**
+- Preserve the historically authorized treatment recorded in the semantic transition.
+
+**Proposed recommendation:** Retain this recovered historical implementation; this task opens no new semantic adjudication.
+
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!34`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!35`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/madeObservation`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/madeObservation`; `imports/cco.ttl`; `reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `mappings/SSN2BFO-COMS.xlsx#Sheet2!64`; `reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json`.
+
+**Notes:** Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.
 
 ## sosa:phenomenonTime
 
@@ -2381,43 +2469,11 @@ Asserted context (actual axiom subject and direction retained):
 
 **Alternatives:**
 - Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Remove the target superproperty in a proposed change and consider range-only TemporalRegion typing; keep them distinct for delayed/retrospective observations.
+- Keep the earlier-interval scenario documented as a potential counterexample without declaring a demonstrated inconsistency or a settled refutation. No alternative mapping is authorized by this instruction.
 
-**Proposed recommendation:** Retain the artifact during review. Remove the target superproperty in a proposed change and consider range-only TemporalRegion typing; keep them distinct for delayed/retrospective observations.
+**Proposed recommendation:** Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.
 
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!11`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/phenomenonTime`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/phenomenonTime`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## sampling:hasSampleRelationship
-
-State: **unreviewed**; priority 7; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!2` / `urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec`: `rdfs:subPropertyOf` cco:is_subject_of.
-
-**Source semantics:** Links a sample to a sample relationship (which links to a related sample)
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: <http://schema.org/domainIncludes> sosa:Sample; <http://schema.org/rangeIncludes> sampling:SampleRelationship
-
-**Target semantics:** `cco:ont00001801` (is subject of; asserted_target_expression; glossary)
-
-**Logical consequences:** Every sampling:hasSampleRelationship(x,y) entails cco:is_subject_of(x,y), including target domain/range and superproperty consequences.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!5`: `sampling:hasSampleRelationship` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sampling:hasSampleRelationship links a SOSA Sample to a reified sampling:SampleRelationship resource that records a relationship in the SOSA Sampling model. The reviewed BFO/CCO relations express aboutness, affiliation, parthood, dependence, participation, or other substantive ontological relations rather than this model-specific link to a relationship-description resource. No reviewed target relation preserves the source relata and semantics. Comparison basis: same lexical term.
-
-**Human decision:** Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Keep is_subject_of only after SampleRelationship-as-ICE is approved; otherwise revisit the relation with the class interpretation.
-
-**Proposed recommendation:** Retain the artifact during review. Keep is_subject_of only after SampleRelationship-as-ICE is approved; otherwise revisit the relation with the class interpretation.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!2`; `imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship`; `imports/cco.ttl`; `reports/sample-relationship-deferral.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
+**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!11`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/phenomenonTime`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/phenomenonTime`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
@@ -2450,122 +2506,6 @@ Source advisory signature: <http://schema.org/domainIncludes> sampling:SampleRel
 **Proposed recommendation:** Retain the artifact during review. Keep is_about only with an explicit account of what information content is about here; review classification/annotation alternatives separately.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!3`; `imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/natureOfRelationship`; `imports/cco.ttl`; `reports/sample-relationship-deferral.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## sampling:relatedSample
-
-State: **unreviewed**; priority 7; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!4` / `urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4`: `rdfs:subPropertyOf` cco:is_about.
-
-**Source semantics:** Links a sample relationship to the related sample
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: <http://schema.org/domainIncludes> sampling:SampleRelationship; <http://schema.org/rangeIncludes> sosa:Sample
-
-**Target semantics:** `cco:ont00001808` (is about; asserted_target_expression; glossary)
-
-**Logical consequences:** Every sampling:relatedSample(x,y) entails cco:is_about(x,y), including target domain/range and superproperty consequences.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!7`: `sampling:relatedSample` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sampling:relatedSample links a reified SampleRelationship resource to the related SOSA Sample. This is a structural relation in the SOSA Sampling relationship model rather than an assertion that the SampleRelationship is an Information Content Entity about the Sample, a process involving it, or a realizable entity realized by it. The reviewed BFO/CCO candidates therefore have incompatible relata or semantic commitments. Comparison basis: same lexical term.
-
-**Human decision:** Does each reified sample relationship count as information content about the related Sample?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain is_about contingent on the SampleRelationship information-content decision, or reconsider both together.
-
-**Proposed recommendation:** Retain the artifact during review. Retain is_about contingent on the SampleRelationship information-content decision, or reconsider both together.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!4`; `imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/relatedSample`; `imports/cco.ttl`; `reports/sample-relationship-deferral.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## ssn:implementedBy
-
-State: **unreviewed**; priority 7; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!57` / `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e`: `rdfs:subPropertyOf` cco:prescribes.
-
-**Source semantics:** Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way.
-
-Source structure: owl:inverseOf ssn:implements; rdf:type owl:ObjectProperty
-
-Source advisory signature: none recorded
-
-**Target semantics:** `cco:ont00001942` (prescribes; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn:implementedBy(x,y) entails cco:prescribes(x,y), including target domain/range and superproperty consequences.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Procedure rdfs:subClassOf (ssn:implementedBy owl:allValuesFrom ssn:System)`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
-- `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
-- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!35`: `sosa:implementedBy` — `active`, `owl:propertyChainAxiom` cco:prescribes o cco:has_agent. Replace the misdirected chain with cco:prescribes o cco:has_agent. The pinned CCO confirms that prescribes is inverse to prescribed_by and has_agent is inverse to agent_in. Comparison basis: local-name comparison only; distinct namespace/source version.
-
-**Human decision:** Does a Procedure prescribe a System directly in the sense required by CCO prescribes, or is its implementation by the System mediated through an execution?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review a prescribes o has_agent chain headed by implementedBy, or no direct relation; retain existing axiom until approval.
-
-**Proposed recommendation:** Retain the artifact during review. Review a prescribes o has_agent chain headed by implementedBy, or no direct relation; retain existing axiom until approval.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!57`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/implementedBy`; `imports/cco.ttl`; `reports/hosts-implementedby-complex-mapping-review.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## ssn:implements
-
-State: **unreviewed**; priority 7; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet2!58` / `urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab`: `rdfs:subPropertyOf` cco:prescribed_by.
-
-**Source semantics:** Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: none recorded
-
-**Target semantics:** `cco:ont00001920` (prescribed by; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn:implements(x,y) entails cco:prescribed_by(x,y), including target domain/range and superproperty consequences.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Actuator rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
-- `source_native` / asserted: `sosa:Sampler rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
-- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf (ssn:implements owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
-- `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn:implements owl:allValuesFrom sosa:Procedure)`.
-- `source_native` / asserted: `ssn:implementedBy owl:inverseOf ssn:implements`.
-
-**Relevant property chains (ordered path → superproperty):**
-- `source_native`: `sosa:madeByActuator o ssn:implements -> sosa:usedProcedure`.
-- `source_native`: `sosa:madeBySampler o ssn:implements -> sosa:usedProcedure`.
-- `source_native`: `sosa:madeBySensor o ssn:implements -> sosa:usedProcedure`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!36`: `sosa:implements` — `active`, `owl:propertyChainAxiom` cco:agent_in o cco:prescribed_by. Replace the category-incompatible chain with cco:agent_in o cco:prescribed_by. This follows the path from a system through an execution in which it is an agent to the procedure prescribing that execution. Comparison basis: local-name comparison only; distinct namespace/source version.
-
-**Human decision:** Can a material System be the subject of CCO prescribed_by under the current target signature, or should implementation be mediated through an actual prescribed execution?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review the process-mediated agent_in o prescribed_by chain as a separate proposed change, or retain no-direct relation after reviewing direction/category constraints.
-
-**Proposed recommendation:** Retain the artifact during review. Review the process-mediated agent_in o prescribed_by chain as a separate proposed change, or retain no-direct relation after reviewing direction/category constraints.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!58`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/implements`; `imports/cco.ttl`; `reports/hosts-implementedby-complex-mapping-review.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
@@ -2633,36 +2573,6 @@ Source advisory signature: none recorded
 **Proposed recommendation:** Retain the artifact during review. Keep the ICE subclass as a deliberate information-content interpretation only after closing the original provisional review.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!2`; `imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/RelationshipNature`; `imports/cco.ttl`; `reports/sample-relationship-deferral.md`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
-
-## sampling:SampleRelationship
-
-State: **unreviewed**; priority 8; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!3` / `urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e`: `rdfs:subClassOf` cco:InformationContentEntity.
-
-**Source semantics:** Members of this class represent a relationship between a sample and another
-
-Source structure: rdf:type owl:Class
-
-Source advisory signature: none recorded
-
-**Target semantics:** `cco:ont00000958` (Information Content Entity; asserted_target_expression; glossary)
-
-**Logical consequences:** Every sampling:SampleRelationship satisfies cco:InformationContentEntity; the reverse classification is not asserted.
-
-**Human decision:** Is the reified SampleRelationship necessarily information content about samples, rather than a relational quality or relation instance?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain the provisional ICE interpretation with a defended reading, or propose a different category separately.
-
-**Proposed recommendation:** Retain the artifact during review. Retain the provisional ICE interpretation with a defended reading, or propose a different category separately.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!3`; `imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/SampleRelationship`; `imports/cco.ttl`; `reports/sample-relationship-deferral.md`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
 
@@ -3825,15 +3735,6 @@ Asserted context (actual axiom subject and direction retained):
 - `target_native` / asserted: `cco:ont00001817 rdfs:subPropertyOf cco:ont00001920`.
 - `target_native` / asserted: `cco:ont00001976 rdfs:subPropertyOf cco:ont00001920`.
 - `target_native` / asserted: `cco:ont00001998 rdfs:subPropertyOf cco:ont00001920`.
-
-### cco:ont00001921 — has input
-
-y has_input x iff x is an instance of Continuant and y is an instance of Process, such that the presence of x at the beginning of y is a necessary condition for the start of y.
-
-rdf:type owl:ObjectProperty; rdfs:domain bfo:BFO_0000015; rdfs:range bfo:BFO_0000002; rdfs:subPropertyOf bfo:BFO_0000057
-
-Asserted context (actual axiom subject and direction retained):
-- `target_native` / asserted: `cco:ont00001841 owl:inverseOf cco:ont00001921`.
 
 ### cco:ont00001936 — is object of
 

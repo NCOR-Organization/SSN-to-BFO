@@ -1,0 +1,180 @@
+{
+  "active_owl_assertions": 100,
+  "all_assessment_states_outcomes_unchanged": true,
+  "all_other_starting_files_byte_identical": true,
+  "assessment_authentication": "PASS",
+  "assessment_outcomes": {
+    "formal_mapping_adopted": 13,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "unreviewed": 71
+  },
+  "assessment_records_changed": {
+    "http://www.w3.org/ns/ssn/implementedBy": [
+      "evidence",
+      "notes",
+      "rationale",
+      "review"
+    ],
+    "http://www.w3.org/ns/ssn/implements": [
+      "evidence",
+      "notes",
+      "rationale",
+      "review"
+    ]
+  },
+  "blank_owl_rows": 7,
+  "changed_starting_files": [
+    "SSN2BFO.ttl",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "queries/unmapped-source-terms.rq",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-source-term-coverage.md",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md",
+    "tools/current_assessment.py",
+    "tools/generate_mapping_from_coms.py"
+  ],
+  "changed_workbook_cells": [
+    "Sheet2!B57",
+    "Sheet2!C57",
+    "Sheet2!D57",
+    "Sheet2!B58",
+    "Sheet2!C58",
+    "Sheet2!D58"
+  ],
+  "exact_logical_delta": "Remove two direct CCO subproperty axioms; add implements domain System. No other OWL axiom changes.",
+  "external_rule_terms": [
+    "http://www.w3.org/ns/ssn/implementedBy",
+    "http://www.w3.org/ns/ssn/implements"
+  ],
+  "focused_tests": 20,
+  "generation": "PASS",
+  "generation_freshness_determinism": "PASS",
+  "git_head_unchanged": true,
+  "git_staged_content_unchanged": true,
+  "hermit_after_rule_expectations": 15,
+  "hermit_before_rule_expectations": 13,
+  "maintained_products_byte_identical_to_preinstall_render": true,
+  "original_row_ids_preserved": 107,
+  "parallel_track_files_verified": 87,
+  "products": {
+    "alignment_core": {
+      "added": [
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#domain",
+          "http://www.w3.org/ns/ssn/System"
+        ]
+      ],
+      "changed": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "removed": [],
+      "sha256": "d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef",
+      "triple_count": 62
+    },
+    "cco_extension": {
+      "added": [],
+      "changed": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "removed": [
+        [
+          "http://www.w3.org/ns/ssn/implementedBy",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001942"
+        ],
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001920"
+        ]
+      ],
+      "sha256": "019c1ec14ba31c48d415d1ec9f0207b16a79e2117e536cefa0ab82a1c383a3f5",
+      "triple_count": 883
+    },
+    "integrated": {
+      "added": [
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#domain",
+          "http://www.w3.org/ns/ssn/System"
+        ]
+      ],
+      "changed": true,
+      "path": "SSN2BFO.ttl",
+      "removed": [
+        [
+          "http://www.w3.org/ns/ssn/implementedBy",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001942"
+        ],
+        [
+          "http://www.w3.org/ns/ssn/implements",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "https://www.commoncoreontologies.org/ont00001920"
+        ]
+      ],
+      "sha256": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
+      "triple_count": 1065
+    },
+    "strict_bfo_mapping": {
+      "added": [],
+      "changed": false,
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "removed": [],
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "triple_count": 134
+    }
+  },
+  "review_states": {
+    "final": 20,
+    "unreviewed": 71
+  },
+  "source_import_files_verified": 6,
+  "starting_file_count": 1882,
+  "status": "PASS",
+  "unchanged_starting_file_count": 1864,
+  "validation": {
+    "alignment_core": {
+      "closure_triple_count": 1215,
+      "hermit_result": "PASS",
+      "hermit_return_code": 0,
+      "named_unsat_count": 0,
+      "profile_result": "PASS"
+    },
+    "cco_extension": {
+      "closure_triple_count": 15871,
+      "hermit_result": "PASS",
+      "hermit_return_code": 0,
+      "named_unsat_count": 0,
+      "profile_result": "PASS"
+    },
+    "integrated": {
+      "closure_triple_count": 15855,
+      "hermit_result": "PASS",
+      "named_unsat_count": 0,
+      "profile_result": "PASS"
+    },
+    "strict_bfo_mapping": {
+      "closure_triple_count": 14989,
+      "hermit_result": "PASS",
+      "hermit_return_code": 0,
+      "named_unsat_count": 0,
+      "profile_result": "PASS"
+    }
+  },
+  "workbook_rows": 107,
+  "workbook_sha256": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
+  "xlsx_package_members_changed": [
+    "xl/worksheets/sheet2.xml"
+  ]
+}

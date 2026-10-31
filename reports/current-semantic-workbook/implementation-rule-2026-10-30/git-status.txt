@@ -1,0 +1,47 @@
+ M SSN2BFO.ttl
+ M docs/PRODUCT-ARCHITECTURE.md
+ M mappings/SSN2BFO-COMS.xlsx
+ M mappings/current-ssn-sosa-assessment.json
+ M queries/unmapped-source-terms.rq
+ M releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+ M releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+ M reports/coms-generation-validation.md
+ M reports/coms-product-dispositions.json
+ M reports/coms-source-term-coverage.md
+ M reports/coms-vs-pre-coms-legacy-diff.md
+ M reports/current-assessment/v2/current-ssn-sosa-coverage.json
+ M reports/current-assessment/v2/current-ssn-sosa-coverage.md
+ M reports/current-assessment/v2/current-ssn-sosa-human-review.json
+ M reports/current-assessment/v2/current-ssn-sosa-human-review.md
+ M reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json
+ M reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md
+ M tools/current_assessment.py
+ M tools/generate_mapping_from_coms.py
+?? docs/SSN-IMPLEMENTATION-RULE.md
+?? reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/
+?? reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json
+?? reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json
+?? reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx
+?? reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx
+?? reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx
+?? reports/current-human-decisions/2026-10-30-property-adjudication/
+?? reports/current-human-decisions/2026-10-30-property-reversion/
+?? reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/
+?? reports/current-mapping-completion/
+?? reports/current-publication-validation/three-term-20261028/classify_remaining.py
+?? reports/current-publication-validation/three-term-20261028/independent_final_invariants.py
+?? reports/current-publication-validation/three-term-20261028/preexisting-sosa-output-preservation.json
+?? reports/current-publication-validation/three-term-20261028/prepare_reconciliation_report.py
+?? reports/current-semantic-workbook/five-historical-restorations/
+?? reports/current-semantic-workbook/historical-recovery-2026-10-30/
+?? reports/current-semantic-workbook/implementation-rule-2026-10-30/
+?? reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json
+?? reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json
+?? reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx
+?? reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx
+?? reports/current-semantic-workbook/versions/cd59b69e99621e7a721f7d5d0174494c39a810663dc665771fe30a96b39b1cb4.xlsx
+?? reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx
+?? rules/ssn-implementation-mapping.rq
+?? tests/fixtures/current-semantic/implementation-rule.ttl
+?? tests/test_implementation_rule_coverage.py
+?? tests/test_ssn_implementation_rule.py

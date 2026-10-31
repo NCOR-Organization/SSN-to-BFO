@@ -1,0 +1,150 @@
+# Finalize implementedBy / implements Mapping with OWL 2 DL Compliance
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+## Objective
+
+Implement the previously approved `ssn:implementedBy` / `ssn:implements` interpretation using an executable SPARQL CONSTRUCT rule instead of an OWL property chain.
+
+This alternative is explicitly authorized because the historical OWL property chain violates OWL 2 DL global restrictions in the current ontology.
+
+**Requirements:**
+
+1. Preserve the historical semantic interpretation and direction of inference.
+2. Keep every maintained OWL ontology product conformant to OWL 2 DL.
+3. Document exactly why the original property chain violates OWL 2 DL.
+4. Do not alter source ontologies or reconsider established semantic decisions.
+
+## 1. Document the original OWL 2 DL violations
+
+Reconstruct the exact historical candidate:
+
+`cco:prescribes o cco:has_agent ⊑ ssn:implementedBy`
+
+Use the existing profile diagnostics and the current imported ontology closure to produce a precise, reproducible explanation of all seven reported violations.
+
+For each violation, record:
+
+- The offending axiom and its full IRIs.
+- Its source file and relevant workbook row, where applicable.
+- The particular OWL 2 DL restriction violated.
+- The specific property dependencies that cause the violation.
+- The corresponding profile-checker diagnostic.
+
+Explicitly explain:
+
+**Property simplicity (three violations)**
+
+How the chain makes `ssn:implementedBy` and its inverse `ssn:implements` non-simple, and why the source minimum-cardinality restrictions involving `implements` on Actuator, Sampler and Sensor become impermissible.
+
+**Property regularity (four violations)**
+
+How the chain interacts with:
+
+- The existing `madeBy… o implements → usedProcedure` chains.
+- `usedProcedure ⊑ prescribed_by`.
+- Relevant inverse-property axioms.
+- The historical `prescribes o has_agent → implementedBy` chain.
+
+Identify the actual prohibited dependency cycles, not merely the fact that a cycle exists.
+
+Cite the applicable provisions of the W3C OWL 2 Structural Specification, Section 11.
+
+Preserve the actual validator output. Clearly distinguish these structural profile violations from logical inconsistency or unsatisfiable classes.
+
+## 2. Implement the external rule
+
+Create a maintained SPARQL CONSTRUCT mapping rule using the exact pinned SSN and CCO IRIs.
+
+Its intended behavior is:
+
+```sparql
+CONSTRUCT {
+  ?procedure ssn:implementedBy ?system .
+  ?system ssn:implements ?procedure .
+}
+WHERE {
+  ?procedure cco:prescribes ?execution .
+  ?execution cco:has_agent ?system .
+}
+```
+
+Replace the illustrative prefixes with the correct actual vocabulary IRIs.
+
+Both constructed directions are justified by the established source inverse relationship.
+
+Store the rule as a separate maintained mapping artifact, outside the OWL ontology products. Provide a reproducible way to execute and test it using existing repository facilities.
+
+The rule must not be embedded as an OWL property chain, SWRL axiom, or other construct that invalidates OWL 2 DL compliance.
+
+Document the input-graph entailment assumptions: whether `prescribes` and `has_agent` premises must be asserted or may be supplied by prior reasoning.
+
+## 3. Correct the authoritative workbook
+
+Remove the two current, non-equivalent direct OWL inclusions:
+
+```text
+ssn:implementedBy ⊑ cco:prescribes
+ssn:implements ⊑ cco:prescribed_by
+```
+
+Preserve their existing RowIDs and document their replacement by the external SPARQL mapping.
+
+Restore `ssn:implements rdfs:domain ssn:System` as the historical typing representative if confirmed by the existing decision evidence and validated under the current OWL 2 DL profile.
+
+Use the existing workbook governance conventions to reference the rule without generating invalid RDF/OWL mapping axioms or incorrectly classifying these terms as having no mapping.
+
+Record the explicit human authorization for this implementation change.
+
+Do not modify unrelated mapping rows.
+
+## 4. Validate the replacement
+
+Run the existing focused generation and validation gates.
+
+**OWL 2 DL requirements:**
+
+- All maintained OWL ontology products pass the OWL 2 DL profile checker.
+- The complete pinned local closure passes.
+- No property-simplicity or regularity violations remain.
+- HermiT reports zero named unsatisfiable classes.
+- The external rule does not appear as an OWL ontology axiom.
+
+**SPARQL mapping requirements:**
+
+- The historical positive implementation-chain examples succeed.
+- The inverse `implements` assertion is produced correctly.
+- Negative test cases without the necessary premises do not produce spurious mapping assertions.
+- Repeated execution is idempotent.
+- No direct prescription relationship is incorrectly asserted between the Procedure and System.
+- The generated assertions can be incorporated into a representative ABox without introducing OWL 2 DL profile violations or named-class incoherence.
+
+Preserve the restored sensor mappings, sampling-relationship decisions, retained phenomenonTime mapping, Property equivalence, and all other finalized treatments.
+
+## 5. Final report
+
+Report:
+
+1. Exact mapping changes and unchanged RowIDs.
+2. The maintained SPARQL rule path and execution instructions.
+3. All seven original OWL 2 DL violations, with individual axiom-level explanations.
+4. OWL 2 DL profile-checker results after replacement.
+5. HermiT results.
+6. Rule execution and entailment-test results.
+7. Final workbook and ontology-product counts.
+8. Evidence that unrelated decisions and SOSA-2023 products remain unchanged.
+9. Remaining blockers, if any.
+
+Do not begin unrelated infrastructure work, prepare a paper, or change source ontology restrictions.
+
+Do not stage, commit, tag or push.
+
+**If the replacement fails any required OWL 2 DL or logical validation, do not declare it complete. Report the exact failure without independently redesigning the ontology.**
+
+End with:
+
+`IMPLEMENTATION MAPPING COMPLETE — OWL 2 DL VALIDATED`
+
+or
+
+`IMPLEMENTATION MAPPING BLOCKED — EXACT VALIDATION FAILURE IDENTIFIED`

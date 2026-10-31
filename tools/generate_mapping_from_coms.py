@@ -125,6 +125,12 @@ SAMPLING = Namespace("http://www.w3.org/ns/sosa/sampling/")
 BFO = Namespace("http://purl.obolibrary.org/obo/")
 CCO = Namespace("https://www.commoncoreontologies.org/")
 COMS_COVERAGE = Namespace("http://www.sks.ai/SSN2BFO/coms/coverage#")
+IMPLEMENTATION_RULE_PATH = "rules/ssn-implementation-mapping.rq"
+IMPLEMENTATION_RULE_SHA256 = "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd"
+IMPLEMENTATION_RULE_ROWS = {
+    SSN.implementedBy: ("urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e", "", ""),
+    SSN.implements: ("urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab", "rdfs:domain", "ssn:System"),
+}
 
 PREFIXES = {
     "bfo": str(BFO),
@@ -423,6 +429,7 @@ class CoverageResult:
     spreadsheet_missing_subjects: set[str]
     query_source_count: int
     query_unmapped_count: int
+    external_rule_terms: set[URIRef] = field(default_factory=set)
 
     @property
     def mapped_classes(self) -> set[URIRef]:
@@ -448,6 +455,7 @@ class CoverageResult:
             if kind == "object_property"
             and term not in self.mapped_terms
             and term not in self.property_typing_terms
+            and term not in self.external_rule_terms
         }
 
     @property
@@ -2253,6 +2261,33 @@ def build_source_graph() -> Graph:
     return graph
 
 
+def implementation_rule_terms(processed_rows: Iterable[ProcessedRow], *, root: Path | None = None) -> set[URIRef]:
+    """Recognize only the explicitly authorized, coordinated external-rule rows.
+
+    The workbook marker is essential: historical snapshots must not acquire a
+    rule route merely because today's checkout contains the new query. This is
+    coverage metadata only; no rule or mapping axiom enters an OWL product.
+    """
+    own = {subject: [] for subject in IMPLEMENTATION_RULE_ROWS}
+    for row in processed_rows:
+        if row.subject in own:
+            own[row.subject].append(row)
+    marker = re.compile(r"(?<![\w./-])" + re.escape(IMPLEMENTATION_RULE_PATH) + r"(?![\w./-])")
+    for subject, (row_id, predicate, target) in IMPLEMENTATION_RULE_ROWS.items():
+        if len(own[subject]) != 1:
+            return set()
+        row = own[subject][0]
+        if (row.row.stable_row_id != row_id or row.predicate != predicate or row.target != target
+                or not marker.search(row.row.reasoning_text or "")):
+            return set()
+    path = (REPO_ROOT if root is None else Path(root)) / IMPLEMENTATION_RULE_PATH
+    if not path.is_file() or path.is_symlink():
+        raise GenerationError("authorized implementation mapping rule is missing or is a symlink")
+    if hashlib.sha256(path.read_bytes()).hexdigest() != IMPLEMENTATION_RULE_SHA256:
+        raise GenerationError("authorized implementation mapping rule hash mismatch")
+    return set(IMPLEMENTATION_RULE_ROWS)
+
+
 def build_coverage(
     processed_rows: list[ProcessedRow],
     source_subject_errors: Iterable[str],
@@ -2273,6 +2308,7 @@ def build_coverage(
     }
     listed_terms = {row.subject for row in processed_rows}
     explicit_blank_terms = {row.subject for row in processed_rows if not row.predicate}
+    external_rule_terms = implementation_rule_terms(processed_rows)
     missing_subjects = set(source_subject_errors)
 
     coverage_graph = Graph()
@@ -2282,6 +2318,8 @@ def build_coverage(
         coverage_graph.add((term, COMS_COVERAGE.sourceKind, Literal(kind)))
         if term in mapped_terms:
             status = "mapped"
+        elif term in external_rule_terms:
+            status = "covered_by_external_rule"
         elif term in property_typing_terms:
             status = "covered_by_property_typing"
         elif term in explicit_blank_terms:
@@ -2300,6 +2338,7 @@ def build_coverage(
         spreadsheet_missing_subjects=missing_subjects,
         query_source_count=len(source_query_rows),
         query_unmapped_count=len(unmapped_rows),
+        external_rule_terms=external_rule_terms,
     )
     write_coverage_report(coverage_report_path, result)
     return result
@@ -2323,6 +2362,7 @@ def write_coverage_report(path: Path, coverage: CoverageResult) -> None:
         "The source term inventory is produced by `queries/source-classes-and-object-properties.rq`. "
         "Unmapped terms are selected from the generated coverage graph by `queries/unmapped-source-terms.rq`.",
         "A domain or range row covers a property for source-term coverage but does not count it as relation-mapped; only subproperty, equivalent-property, or property-chain rows do so.",
+        "Separately executed external mapping rules are reported independently from OWL mappings and property typing. A blank OWL row may still have an external rule route.",
         "",
         "## Summary",
         "",
@@ -2332,6 +2372,7 @@ def write_coverage_report(path: Path, coverage: CoverageResult) -> None:
         f"| mapped classes | {len(coverage.mapped_classes)} |",
         f"| unmapped classes | {len(coverage.unmapped_classes)} |",
         f"| mapped object properties | {len(coverage.mapped_object_properties)} |",
+        f"| object properties covered by external mapping rule | {len(coverage.external_rule_terms)} |",
         f"| unmapped object properties | {len(coverage.unmapped_object_properties)} |",
         f"| explicitly listed blank mappings | {len(coverage.explicit_blank_terms)} |",
         f"| listed only in domain/range property-typing rows | {len(coverage.property_typing_only_terms)} |",
@@ -2350,6 +2391,12 @@ def write_coverage_report(path: Path, coverage: CoverageResult) -> None:
         "## Mapped Object Properties",
         "",
         *format_term_list(coverage.mapped_object_properties),
+        "",
+        "## External Mapping Rule Coverage",
+        "",
+        f"Rule: `{IMPLEMENTATION_RULE_PATH}`. Execution requires the two premises to be asserted or previously materialized; this is not an OWL-product entailment.",
+        "",
+        *format_term_list(coverage.external_rule_terms),
         "",
         "## Unmapped Object Properties",
         "",
@@ -3278,6 +3325,7 @@ def write_generation_report(
                 "| mapped classes | n/a |",
                 "| unmapped classes | n/a |",
                 "| mapped object properties | n/a |",
+                "| object properties covered by external mapping rule | n/a |",
                 "| unmapped object properties | n/a |",
             ]
         )
@@ -3287,6 +3335,7 @@ def write_generation_report(
                 f"| mapped classes | {len(coverage.mapped_classes)} |",
                 f"| unmapped classes | {len(coverage.unmapped_classes)} |",
                 f"| mapped object properties | {len(coverage.mapped_object_properties)} |",
+                f"| object properties covered by external mapping rule | {len(coverage.external_rule_terms)} |",
                 f"| unmapped object properties | {len(coverage.unmapped_object_properties)} |",
                 f"| explicitly listed blank mappings | {len(coverage.explicit_blank_terms)} |",
                 f"| listed only in domain/range property-typing rows | {len(coverage.property_typing_only_terms)} |",
@@ -3544,6 +3593,7 @@ def write_summary_json(
             "mapped_classes": len(coverage.mapped_classes),
             "unmapped_classes": len(coverage.unmapped_classes),
             "mapped_object_properties": len(coverage.mapped_object_properties),
+            "external_rule_object_properties": len(coverage.external_rule_terms),
             "unmapped_object_properties": len(coverage.unmapped_object_properties),
             "explicitly_listed_blank_mappings": len(coverage.explicit_blank_terms),
             "listed_only_in_domain_range_rows": len(coverage.property_typing_only_terms),

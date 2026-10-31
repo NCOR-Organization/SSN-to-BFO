@@ -1,0 +1,46 @@
+{
+  "added": [
+    [
+      "N2baeb07ea5784e4899e6962b15b6883f",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/implements",
+      "http://www.w3.org/2000/01/rdf-schema#domain",
+      "http://www.w3.org/ns/ssn/System"
+    ],
+    [
+      "historicalImplementationChain",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "N2baeb07ea5784e4899e6962b15b6883f"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/implementedBy",
+      "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+      "historicalImplementationChain"
+    ],
+    [
+      "historicalImplementationChain",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "https://www.commoncoreontologies.org/ont00001942"
+    ],
+    [
+      "N2baeb07ea5784e4899e6962b15b6883f",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "https://www.commoncoreontologies.org/ont00001833"
+    ]
+  ],
+  "removed": [
+    [
+      "http://www.w3.org/ns/ssn/implements",
+      "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "https://www.commoncoreontologies.org/ont00001920"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/implementedBy",
+      "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "https://www.commoncoreontologies.org/ont00001942"
+    ]
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt",
+    "sha256": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec"
+  },
+  "approved_interpretation": "sampling:SampleRelationship denotes an information content entity representing a relationship between samples, not the relationship itself.",
+  "assessment_outcome": "formal_mapping_adopted",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json",
+    "record_sha256": "087069466a696ba37b9d2e2a33134576603ca0ee5d90df73951791325f1d6f82",
+    "sha256": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253"
+  },
+  "authority_scope": "New explicit human adjudication of this sampling relationship term. Existing predicate, target and RowID retained. No historical restoration is claimed. RelationshipNature and natureOfRelationship remain outside this approval.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "decision_basis": "formal_mapping_approval",
+  "decision_date": "2026-10-30",
+  "decision_id": "urn:uuid:221e4a61-dc95-4b46-a784-2b061db0bceb",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet2!2",
+    "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "imports/cco.ttl",
+    "reports/sample-relationship-deferral.md",
+    "mappings/SOSA-next-to-BFO-COMS.xlsx",
+    "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt"
+  ],
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": true,
+    "direct_mapping_row_ids": [
+      "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+    ],
+    "explicit_blank": false,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "source_kind": "object_property",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "063808b0cc2bef5f48ac21ba2c1916b4e7c4d05330cc3e55e0868007aeb6539e",
+  "formal_mapping_approved": true,
+  "formal_mapping_assertions": [
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "row_id": "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec",
+      "target": "cco:is_subject_of"
+    }
+  ],
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+  ],
+  "question_response": "Yes. Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of.",
+  "rationale": "Under the approved interpretation, sampling:hasSampleRelationship links a Sample to a SampleRelationship information content entity representing its relationship to another sample. The Sample is the subject of that information content. The approved mapping retains sampling:hasSampleRelationship rdfs:subPropertyOf cco:is_subject_of.",
+  "review_packet_scope": "Exact pre-adjudication unresolved packet against the unchanged existing mapping assertions, before the approved documentary rationale update.",
+  "review_packet_snapshot": {
+    "item_sha256": "6295b10fbf72a15c910692a8615d8a644427ed53aa99d1b3e3ccfbc97523a33a",
+    "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship-review-packet.json",
+    "sha256": "6295b10fbf72a15c910692a8615d8a644427ed53aa99d1b3e3ccfbc97523a33a"
+  },
+  "review_question": "Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?",
+  "review_state": "final",
+  "review_timestamp": "2026-10-30T17:57:12.617511+00:00",
+  "reviewer_identity": "Alec Sculley",
+  "reviewer_identity_evidence": {
+    "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/reviewer-identity-context.txt",
+    "sha256": "127bbde6e33121bfab36e517415a314ab1248304d68b3a3941b3c7b240e80775"
+  },
+  "schema_version": 1,
+  "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+  "timestamp_scope": "Encoding timestamp for the explicit human adjudication in this conversation; not an inferred historical review timestamp."
+}

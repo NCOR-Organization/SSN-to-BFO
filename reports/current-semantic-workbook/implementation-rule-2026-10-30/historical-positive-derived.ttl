@@ -1,0 +1,6 @@
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+<https://example.org/property-chain-mapping-fixture/implementing-system> ssn:implements <https://example.org/property-chain-mapping-fixture/procedure> .
+
+<https://example.org/property-chain-mapping-fixture/procedure> ssn:implementedBy <https://example.org/property-chain-mapping-fixture/implementing-system> .
+

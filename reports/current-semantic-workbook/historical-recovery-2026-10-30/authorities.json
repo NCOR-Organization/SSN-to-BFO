@@ -1,0 +1,219 @@
+{
+  "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:418db51e-342f-441d-8706-00a107266dcc": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f": {
+    "authorization_type": "RESTORE_PREVIOUSLY_APPROVED_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication."
+  },
+  "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1": {
+    "authorization_type": "RESTORE_PREVIOUS_TECHNICAL_DEFERRAL",
+    "evidence": [
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt",
+        "reference": "User authorization: Recover Previously Validated SSN/SOSA Mapping Implementations, sections 1, 2 and 5",
+        "sha256": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md",
+        "reference": "b21d1fa82f41327aee07a03c412aca29faebd526:reports/hermit-observedProperty-deferral-evaluation.md; exact observedProperty deferral with retained agent pair",
+        "sha256": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md",
+        "reference": "854174b2a1a23e1ebfe1f152fe967b16d3139c4d:reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md; Recommendation and Validation",
+        "sha256": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
+        "reference": "Fresh current complete local OWL 2 DL and HermiT pass",
+        "sha256": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e"
+      },
+      {
+        "path": "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "reference": "Fresh 11/11 intended entailment and non-entailment probes pass",
+        "sha256": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7"
+      }
+    ],
+    "rationale": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved."
+  }
+}

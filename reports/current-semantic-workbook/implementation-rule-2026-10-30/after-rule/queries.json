@@ -1,0 +1,111 @@
+[
+  {
+    "id": "implementation-forward",
+    "kind": "object_property_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/procedure",
+    "object": "https://example.org/property-chain-mapping-fixture/implementing-system",
+    "expected_entailed": true,
+    "predicate": "http://www.w3.org/ns/ssn/implementedBy"
+  },
+  {
+    "id": "implementation-inverse",
+    "kind": "object_property_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/implementing-system",
+    "object": "https://example.org/property-chain-mapping-fixture/procedure",
+    "expected_entailed": true,
+    "predicate": "http://www.w3.org/ns/ssn/implements"
+  },
+  {
+    "id": "no-procedure-system-prescription",
+    "kind": "object_property_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/procedure",
+    "object": "https://example.org/property-chain-mapping-fixture/implementing-system",
+    "expected_entailed": false,
+    "predicate": "https://www.commoncoreontologies.org/ont00001942"
+  },
+  {
+    "id": "no-system-procedure-prescribed_by",
+    "kind": "object_property_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/implementing-system",
+    "object": "https://example.org/property-chain-mapping-fixture/procedure",
+    "expected_entailed": false,
+    "predicate": "https://www.commoncoreontologies.org/ont00001920"
+  },
+  {
+    "id": "removed-implementedBy-inclusion",
+    "kind": "object_property_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/implementedBy",
+    "object": "https://www.commoncoreontologies.org/ont00001942",
+    "expected_entailed": false
+  },
+  {
+    "id": "removed-implements-inclusion",
+    "kind": "object_property_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/implements",
+    "object": "https://www.commoncoreontologies.org/ont00001920",
+    "expected_entailed": false
+  },
+  {
+    "id": "sensor-agent-preserved",
+    "kind": "object_property_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/madeBySensor",
+    "object": "https://www.commoncoreontologies.org/ont00001833",
+    "expected_entailed": true
+  },
+  {
+    "id": "inverse-sensor-agent-preserved",
+    "kind": "object_property_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/madeObservation",
+    "object": "https://www.commoncoreontologies.org/ont00001787",
+    "expected_entailed": true
+  },
+  {
+    "id": "Observation-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/Observation",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "Sensor-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/Sensor",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "Stimulus-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Stimulus",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "System-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/System",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "Procedure-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/Procedure",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "restored-domain-System",
+    "kind": "class_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/implementing-system",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "expected_entailed": true
+  },
+  {
+    "id": "source-all-values-Procedure",
+    "kind": "class_assertion",
+    "subject": "https://example.org/property-chain-mapping-fixture/procedure",
+    "object": "http://www.w3.org/ns/sosa/Procedure",
+    "expected_entailed": true
+  }
+]

@@ -6,22 +6,22 @@ This informational report compares mapping-bearing axioms and, separately, domai
 
 | Item | Count |
 |---|---:|
-| mappings present in both | 55 |
-| mappings only in COMS | 14 |
-| mappings only in pre-COMS legacy ontology | 13 |
+| mappings present in both | 57 |
+| mappings only in COMS | 11 |
+| mappings only in pre-COMS legacy ontology | 11 |
 | class-expression differences | 2 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
-| domain axioms present in both | 9 |
+| domain axioms present in both | 10 |
 | domain axioms only in COMS | 7 |
-| domain axioms only in pre-COMS legacy ontology | 13 |
+| domain axioms only in pre-COMS legacy ontology | 12 |
 | domain target differences | 0 |
 | range axioms present in both | 0 |
 | range axioms only in COMS | 15 |
 | range axioms only in pre-COMS legacy ontology | 0 |
 | range target differences | 0 |
-| legacy domain/range axioms absent from COMS | 13 |
-| spreadsheet rows intentionally producing no mapping | 5 |
+| legacy domain/range axioms absent from COMS | 12 |
+| spreadsheet rows intentionally producing no mapping | 7 |
 
 ## Mappings Present In Both
 
@@ -68,6 +68,8 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `object_property` `sosa:isActedOnBy` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001886`
 - `object_property` `sosa:isResultOf` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001816`
 - `object_property` `sosa:madeBySampler` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001833`
+- `object_property` `sosa:madeBySensor` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001833`
+- `object_property` `sosa:madeObservation` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001787`
 - `object_property` `sosa:madeSampling` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001787`
 - `object_property` `sosa:usedProcedure` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001920`
 - `object_property` `ssn:deployedOnPlatform` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000057`
@@ -87,13 +89,10 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `class` `ssn-system:BatteryLifetime` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000117 https://www.commoncoreontologies.org/ont00000503) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) https://www.commoncoreontologies.org/ont00001213)) http://purl.obolibrary.org/obo/BFO_0000034)`
 - `class` `ssn-system:Sensitivity` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) https://www.commoncoreontologies.org/ont00001022)) https://www.commoncoreontologies.org/ont00000853)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
 - `class` `ssn-system:SurvivalRange` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
-- `object_property` `sosa:observedProperty` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001921`
 - `object_property` `sosa:phenomenonTime` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000199`
 - `object_property` `sampling:hasSampleRelationship` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001801`
 - `object_property` `sampling:natureOfRelationship` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001808`
 - `object_property` `sampling:relatedSample` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001808`
-- `object_property` `ssn:implementedBy` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001942`
-- `object_property` `ssn:implements` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001920`
 - `object_property` `ssn-system:hasOperatingProperty` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000194`
 - `object_property` `ssn-system:hasSurvivalProperty` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000194`
 - `object_property` `ssn-system:hasSystemProperty` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000194`
@@ -104,8 +103,6 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/natureOfRelationship http://www.w3.org/ns/sosa/sampling/RelationshipNature)`
 - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/relatedSample http://www.w3.org/ns/sosa/Sample)`
 - `class` `ssn-system:Sensitivity` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 https://www.commoncoreontologies.org/ont00000853) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 https://www.commoncoreontologies.org/ont00001022) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
-- `object_property` `sosa:madeBySensor` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001833`
-- `object_property` `sosa:madeObservation` `rdfs:subPropertyOf` `https://www.commoncoreontologies.org/ont00001787`
 - `object_property` `sosa:observes` `rdfs:subPropertyOf` `http://www.w3.org/ns/ssn/forProperty`
 - `object_property` `ssn-system:hasOperatingRange` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000196`
 - `object_property` `ssn-system:hasSurvivalRange` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000196`
@@ -134,6 +131,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `sosa:madeObservation` `rdfs:domain` `http://www.w3.org/ns/sosa/Sensor`
 - `ssn:hasInput` `rdfs:domain` `http://www.w3.org/ns/sosa/Procedure`
 - `ssn:hasOutput` `rdfs:domain` `http://www.w3.org/ns/sosa/Procedure`
+- `ssn:implements` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
 - `ssn:isProxyFor` `rdfs:domain` `http://www.w3.org/ns/ssn/Stimulus`
 - `ssn-system:hasOperatingRange` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
 - `ssn-system:hasSurvivalRange` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
@@ -158,7 +156,6 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `ssn:detects` `rdfs:domain` `http://www.w3.org/ns/sosa/Sensor`
 - `ssn:hasDeployment` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
 - `ssn:hasSubSystem` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
-- `ssn:implements` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
 - `ssn:inDeployment` `rdfs:domain` `http://www.w3.org/ns/sosa/Platform`
 - `ssn-system:hasOperatingProperty` `rdfs:domain` `http://www.w3.org/ns/ssn/systems/OperatingRange`
 - `ssn-system:hasSurvivalProperty` `rdfs:domain` `http://www.w3.org/ns/ssn/systems/SurvivalRange`
@@ -205,7 +202,9 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `ssn-system:SystemProperty` at `Sheet1!45`
 - `sosa:hasSample` at `Sheet2!16`
 - `sosa:isSampleOf` at `Sheet2!17`
+- `sosa:observedProperty` at `Sheet2!36`
 - `ssn:forProperty` at `Sheet2!49`
+- `ssn:implementedBy` at `Sheet2!57`
 
 ## Terms Requiring Human Review
 

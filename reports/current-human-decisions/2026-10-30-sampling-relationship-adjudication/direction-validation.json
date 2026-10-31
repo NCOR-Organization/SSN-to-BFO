@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": {
+    "hasSampleRelationship_source_direction": true,
+    "relatedSample_source_direction": true,
+    "is_subject_of_range_information_content": true,
+    "is_about_domain_information_content": true,
+    "is_about_range_entity": true,
+    "target_relations_are_inverses": true,
+    "no_added_inverse_axiom_between_sampling_properties": true
+  },
+  "approved_directions": [
+    "Sample is_subject_of SampleRelationship information content",
+    "SampleRelationship information content is_about related Sample"
+  ],
+  "source_signature_status": "schema annotations; not formal source domain/range axioms",
+  "target_inverse_scope": "Target inverses do not assert that their sampling subproperties are inverse relations."
+}

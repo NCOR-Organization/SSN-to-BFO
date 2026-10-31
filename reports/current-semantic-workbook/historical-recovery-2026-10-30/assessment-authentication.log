@@ -1,0 +1,66 @@
+{
+  "rationales": {
+    "existing_workbook_rationale_rows": 107,
+    "existing_workbook_rationale_terms": 91,
+    "human_review_required_proposals": 1,
+    "safe_documentary_proposals": 90,
+    "semantic_review_terms": 71
+  },
+  "status": "PASS",
+  "summary": {
+    "assertion_bearing_rows": 101,
+    "assessment_outcomes": {
+      "deferred": 0,
+      "formal_mapping_adopted": 13,
+      "inheritance_sufficient": 2,
+      "no_direct_mapping": 5,
+      "unreviewed": 71
+    },
+    "assessment_record_count": 91,
+    "chain_heads": 2,
+    "coverage_counts": {
+      "direct_formal_mapping": 68,
+      "explicit_blank": 6,
+      "inherited_formal_mapping": 43,
+      "no_established_formal_route": 15,
+      "rule_or_chain_route": 9,
+      "typing_only_in_workbook": 15
+    },
+    "direct_classes": 42,
+    "direct_object_properties": 26,
+    "expression_occurrences": {
+      "intersection": 88,
+      "named": 192,
+      "some": 97,
+      "union": 15
+    },
+    "mapping_repertoire_rows": {
+      "explicit_blank": 6,
+      "owl:equivalentClass": 10,
+      "owl:equivalentProperty": 0,
+      "owl:propertyChainAxiom": 2,
+      "rdfs:domain": 16,
+      "rdfs:range": 15,
+      "rdfs:subClassOf": 32,
+      "rdfs:subPropertyOf": 26
+    },
+    "review_states": {
+      "deferred": 0,
+      "final": 20,
+      "unreviewed": 71
+    },
+    "rows_with_expression_form": {
+      "intersection": 36,
+      "named": 73,
+      "some": 36,
+      "union": 14
+    },
+    "source_assessment_equality": true,
+    "source_counts_by_kind": {
+      "class": 44,
+      "object_property": 47
+    },
+    "source_term_count": 91,
+    "workbook_rows": 107
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "added_rows": [
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "row": 63,
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+      "subject": "sosa:madeBySensor",
+      "target": "cco:has_agent",
+      "worksheet": "Sheet2"
+    },
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "row": 64,
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+      "subject": "sosa:madeObservation",
+      "target": "cco:agent_in",
+      "worksheet": "Sheet2"
+    }
+  ],
+  "changed_rows": [
+    {
+      "changed_cells": [
+        {
+          "column": "A",
+          "new_cell": "Sheet2!A63",
+          "new_value": "sosa:madeBySensor",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B63",
+          "new_value": "rdfs:subPropertyOf",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C63",
+          "new_value": "cco:has_agent",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D63",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "E",
+          "new_cell": "Sheet2!E63",
+          "new_value": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 63,
+        "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+        "subject": "sosa:madeBySensor",
+        "target": "cco:has_agent",
+        "worksheet": "Sheet2"
+      },
+      "old": null,
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "A",
+          "new_cell": "Sheet2!A64",
+          "new_value": "sosa:madeObservation",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B64",
+          "new_value": "rdfs:subPropertyOf",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C64",
+          "new_value": "cco:agent_in",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D64",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "E",
+          "new_cell": "Sheet2!E64",
+          "new_value": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 64,
+        "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+        "subject": "sosa:madeObservation",
+        "target": "cco:agent_in",
+        "worksheet": "Sheet2"
+      },
+      "old": null,
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D32",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D32",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 32,
+        "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
+        "subject": "sosa:madeBySensor",
+        "target": "sosa:Observation",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "row": 32,
+        "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
+        "subject": "sosa:madeBySensor",
+        "target": "sosa:Observation",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D34",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D34",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 34,
+        "row_id": "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
+        "subject": "sosa:madeObservation",
+        "target": "sosa:Sensor",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:domain",
+        "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "row": 34,
+        "row_id": "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
+        "subject": "sosa:madeObservation",
+        "target": "sosa:Sensor",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D33",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D33",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:range",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 33,
+        "row_id": "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39",
+        "subject": "sosa:madeBySensor",
+        "target": "sosa:Sensor",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:range",
+        "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "row": 33,
+        "row_id": "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39",
+        "subject": "sosa:madeBySensor",
+        "target": "sosa:Sensor",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D35",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D35",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:range",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 35,
+        "row_id": "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f",
+        "subject": "sosa:madeObservation",
+        "target": "sosa:Observation",
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:range",
+        "reasoning": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion.",
+        "row": 35,
+        "row_id": "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f",
+        "subject": "sosa:madeObservation",
+        "target": "sosa:Observation",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B36",
+          "new_value": null,
+          "old_cell": "Sheet2!B36",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C36",
+          "new_value": null,
+          "old_cell": "Sheet2!C36",
+          "old_value": "cco:has_input"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D36",
+          "new_value": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+          "old_cell": "Sheet2!D36",
+          "old_value": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement."
+        }
+      ],
+      "new": {
+        "predicate": null,
+        "reasoning": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+        "row": 36,
+        "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+        "subject": "sosa:observedProperty",
+        "target": null,
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
+        "row": 36,
+        "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+        "subject": "sosa:observedProperty",
+        "target": "cco:has_input",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+    }
+  ],
+  "cleared_mapping_rows": [
+    {
+      "predicate": null,
+      "reasoning": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+      "row": 36,
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+      "subject": "sosa:observedProperty",
+      "target": null,
+      "worksheet": "Sheet2"
+    }
+  ],
+  "documentary_reasoning_changes": [
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D63",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D64",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D32",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D32",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D34",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D34",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "row_id": "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D33",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D33",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeBySensor subPropertyOf cco:has_agent. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "row_id": "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D35",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": "Sheet2!D35",
+          "old_value": "Documentary discrepancy: current COMS provides typing only, while the retained decision kept madeObservation subPropertyOf cco:agent_in. Reconciliation remains unresolved; this note neither restores nor rejects the historical inclusion."
+        }
+      ],
+      "row_id": "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
+    },
+    {
+      "changes": [
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D36",
+          "new_value": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+          "old_cell": "Sheet2!D36",
+          "old_value": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement."
+        }
+      ],
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+    }
+  ],
+  "removed_mapping_assertions": [
+    {
+      "predicate": "rdfs:subPropertyOf",
+      "reasoning": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
+      "row": 36,
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+      "subject": "sosa:observedProperty",
+      "target": "cco:has_input",
+      "worksheet": "Sheet2"
+    }
+  ],
+  "semantic_changes": [
+    {
+      "changed_cells": [
+        {
+          "column": "A",
+          "new_cell": "Sheet2!A63",
+          "new_value": "sosa:madeBySensor",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B63",
+          "new_value": "rdfs:subPropertyOf",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C63",
+          "new_value": "cco:has_agent",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D63",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "E",
+          "new_cell": "Sheet2!E63",
+          "new_value": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 63,
+        "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+        "subject": "sosa:madeBySensor",
+        "target": "cco:has_agent",
+        "worksheet": "Sheet2"
+      },
+      "old": null,
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "A",
+          "new_cell": "Sheet2!A64",
+          "new_value": "sosa:madeObservation",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B64",
+          "new_value": "rdfs:subPropertyOf",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C64",
+          "new_value": "cco:agent_in",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D64",
+          "new_value": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "old_cell": null,
+          "old_value": null
+        },
+        {
+          "column": "E",
+          "new_cell": "Sheet2!E64",
+          "new_value": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+          "old_cell": null,
+          "old_value": null
+        }
+      ],
+      "new": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+        "row": 64,
+        "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+        "subject": "sosa:madeObservation",
+        "target": "cco:agent_in",
+        "worksheet": "Sheet2"
+      },
+      "old": null,
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc"
+    },
+    {
+      "changed_cells": [
+        {
+          "column": "B",
+          "new_cell": "Sheet2!B36",
+          "new_value": null,
+          "old_cell": "Sheet2!B36",
+          "old_value": "rdfs:subPropertyOf"
+        },
+        {
+          "column": "C",
+          "new_cell": "Sheet2!C36",
+          "new_value": null,
+          "old_cell": "Sheet2!C36",
+          "old_value": "cco:has_input"
+        },
+        {
+          "column": "D",
+          "new_cell": "Sheet2!D36",
+          "new_value": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+          "old_cell": "Sheet2!D36",
+          "old_value": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement."
+        }
+      ],
+      "new": {
+        "predicate": null,
+        "reasoning": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+        "row": 36,
+        "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+        "subject": "sosa:observedProperty",
+        "target": null,
+        "worksheet": "Sheet2"
+      },
+      "old": {
+        "predicate": "rdfs:subPropertyOf",
+        "reasoning": "The retained intended semantics treat the observed property as an input to the Observation. Earlier OWL removal was a technical deferral that preserved those semantics. Current exact-closure validation remains a separate requirement.",
+        "row": 36,
+        "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+        "subject": "sosa:observedProperty",
+        "target": "cco:has_input",
+        "worksheet": "Sheet2"
+      },
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+    }
+  ]
+}

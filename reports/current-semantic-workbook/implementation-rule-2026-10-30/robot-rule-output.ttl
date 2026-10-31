@@ -1,0 +1,14 @@
+@prefix cco:   <https://www.commoncoreontologies.org/> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+
+<https://example.org/property-chain-mapping-fixture/procedure>
+        ssn:implementedBy  <https://example.org/property-chain-mapping-fixture/implementing-system> .
+
+<https://example.org/property-chain-mapping-fixture/second-procedure>
+        ssn:implementedBy  <https://example.org/property-chain-mapping-fixture/second-system> .
+
+<https://example.org/property-chain-mapping-fixture/implementing-system>
+        ssn:implements  <https://example.org/property-chain-mapping-fixture/procedure> .
+
+<https://example.org/property-chain-mapping-fixture/second-system>
+        ssn:implements  <https://example.org/property-chain-mapping-fixture/second-procedure> .

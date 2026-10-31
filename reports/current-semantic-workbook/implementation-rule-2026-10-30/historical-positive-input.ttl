@@ -1,0 +1,6 @@
+@prefix ns1: <https://www.commoncoreontologies.org/> .
+
+<https://example.org/property-chain-mapping-fixture/procedure> ns1:ont00001942 <https://example.org/property-chain-mapping-fixture/implemented-by-step> .
+
+<https://example.org/property-chain-mapping-fixture/implemented-by-step> ns1:ont00001833 <https://example.org/property-chain-mapping-fixture/implementing-system> .
+

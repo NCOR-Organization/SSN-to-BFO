@@ -1,0 +1,61 @@
+{
+  "all_90_other_assessment_records_unchanged": true,
+  "all_existing_human_decision_files_unchanged": true,
+  "all_four_generated_products_byte_identical": true,
+  "assessment_outcome": "unreviewed",
+  "assessment_outcomes": {
+    "formal_mapping_adopted": 13,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "unreviewed": 71
+  },
+  "assessment_state": "unreviewed",
+  "changed_workbook_cell": "Sheet2!D11",
+  "exact_new_reasoning": "Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.",
+  "focused_validation": {
+    "assessment_documentation_and_existing_decision_authentication": "PASS",
+    "documentary_transition": "PASS",
+    "mapping_integrity": "PASS"
+  },
+  "generated_product_sha256": {
+    "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+  },
+  "head_and_index_unchanged": true,
+  "human_decision_record_created": false,
+  "in_memory_generation_matches_maintained_products": true,
+  "logical_mapping_delta": {
+    "added": [],
+    "removed": []
+  },
+  "mapping_row_id": "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710",
+  "preexisting_files_changed": [
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md"
+  ],
+  "preserved_workbook_assertion": "sosa:phenomenonTime rdfs:subPropertyOf bfo:occupies_temporal_region",
+  "resolved_target_iri": "http://purl.obolibrary.org/obo/BFO_0000199",
+  "review_states": {
+    "final": 20,
+    "unreviewed": 71
+  },
+  "semantic_projection_sha256": "566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44",
+  "source_iri": "http://www.w3.org/ns/sosa/phenomenonTime",
+  "status": "PASS",
+  "unresolved": 71,
+  "validation_evidence": {
+    "assessment-check.log": "7f4a5eec7784a5e334e73cd0edf096aef312af2d6d3a3ed677460eeefa75b248",
+    "documentary-change.json": "501481525dd1f3ec05ab4e11421e51156c5b26dba4d74f296730afba3e9cdad7",
+    "transition-check.log": "d13de5c79ef649cc7f2981031c30386a5ef2254d2fb0505742e5e3bd09c9b07c"
+  },
+  "validation_scope": "Documentary custody, finalized decision preservation/authentication, assessment documentation and mapping integrity only; no reasoner or publication validation run.",
+  "workbook_sha256_after": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+  "workbook_sha256_before": "2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c"
+}

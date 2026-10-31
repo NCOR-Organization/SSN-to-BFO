@@ -1,7 +1,7 @@
 {
   "binding": {
-    "assessment_tool_sha256": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
-    "head": "dc314460fe3e875ba1c8ccfcb3c6840a7181e733",
+    "assessment_tool_sha256": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
+    "head": "fe06c78b7290fd586b05c42145a57f32d84a8674",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -13,7 +13,7 @@
       "schema_version": 2
     },
     "input_sha256": {
-      "SSN2BFO.ttl": "98cdfd366963175bc71a84431634f632e5cd5b93815c1b511369b4976d8a898c",
+      "SSN2BFO.ttl": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -26,8 +26,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
-      "mappings/current-ssn-sosa-assessment.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "mappings/SSN2BFO-COMS.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
+      "mappings/current-ssn-sosa-assessment.json": "855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -41,9 +41,15 @@
       "reports/current-decision-applicability/prepared/isSampleOf-forProperty.json": "f6d98b784719251cd7a7f0ea8da14c5e7dfe7cad900b95152a0f8e64e9fb4213",
       "reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json": "73067f233a4161bd21cc0dc9e1b0b6b3f01d1bd58ab3d7f2544aaa120f6d6412",
       "reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json": "9af5f5554da7955d46a8287f9affc7e4cf4d49147945dad9c385f10c695d859a",
+      "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt": "fe6510bb87e0afa322cf851656ff2358066347226832035b1c3e1445fea8d228",
       "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
       "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
       "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
+      "reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json": "4658ad16ed1a6334e692fff5288d79617de48c6d529c1efe53836d5ce5d1cc38",
+      "reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json": "e81123e1c2918618ee75e55d725409b7885c4e2e5f6fbb6bfb9509636c43a4d3",
+      "reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx": "2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c",
+      "reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+      "reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
       "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
       "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
       "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
@@ -63,10 +69,35 @@
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json": "f3680339a8661aead8c6a4bc359857fd948fadc4de2f096b33144ae97f9c0689",
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json": "5151303a49fdc7416bd354e5c4b8efa4176fc34a10fbe2a9efa30728aa14eb87",
       "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship-review-packet.json": "bac3279eef5b87121ee0018b9f16962a41b2d52f001a75cc0d041a2cdea46ffc",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json": "8349405b6c675244977d85aaf19b74594798a91015be68847f3ee275cfc88dcc",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt": "df0f50ee69b58c7fd964f2cf778177c819f1418b8930e07325c2306610a484ec",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship-review-packet.json": "6295b10fbf72a15c910692a8615d8a644427ed53aa99d1b3e3ccfbc97523a33a",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample-review-packet.json": "56fdc7f62c1b46b5177fa7a2240b7b6c2ac7627d3b8601dba10bb58f42be5133",
+      "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930",
       "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md": "eb8f53b6fc49226ad7ba90002881cf797b40b95b602ea807357883593e9f44e5",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json": "397426c7beb9f4e371359d3df2d082e0fbde1e07336d4b15bd736ff7fb8868a7",
+      "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json": "232d714911a130068cb280726428c4d95a2ce731db7fbe9e7321f5b2af16f25e",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json": "940296b9cf5fe3252ec8000722307cc92e75b979d969287e98141dc2c84cd9a9",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json": "b554e2c8f9ad9b28c96420e6effee37484377dd2e01462e12f0db6afdf8fb79a",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt": "477b62e02e9c1113781a332bc716ae76ae0788e17a910b82758f6794cd058bd3",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json": "72347671259be4268df95ab2d31eaa4303ff00f286bd4244da6b33714688c66c",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md": "5c973729c815bb5336cfcb5474bb063fdc69a567a76144b8702f0f90deec0e23",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md": "6c3967312648baf3491fc680bc98e133aefbc445e94036ef5a1cf1e4cc42aeea",
+      "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b",
+      "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json": "d999ed7feb3a2f58e7e91340e5919ad5b40678b85e10deee4d53edafad2ea0fb",
       "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json": "e6ca14409fbd4df59ecbcbf3c36fb09cc762919225d8e0d288f755c723d9d2b9",
+      "reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
       "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
       "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
       "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
       "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
       "reports/hermit-observation-sensor-stimulus-evaluation.md": "6ad11c3034e831853676f98f62e2d05302759ec4bfbafcf3718dab2ff953fd19",
@@ -110,12 +141,13 @@
       "reports/system-property-process-profile-scope-review.md": "e450d1f613d874a8911ff176cc2bb894830dec4ad85524e58bd73acf96831e72",
       "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
       "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
+      "rules/ssn-implementation-mapping.rq": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd",
       "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
       "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
       "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
       "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
       "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
-      "tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+      "tools/current_assessment.py": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
       "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
       "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
       "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
@@ -131,7 +163,7 @@
       "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
       "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
       "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
-      "tools/generate_mapping_from_coms.py": "533fafaff2c826fb6c25517fc08475b417964ecc5680d0153369291aae5b656e",
+      "tools/generate_mapping_from_coms.py": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
       "tools/modular_products.py": "6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c",
       "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
       "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
@@ -146,47 +178,47 @@
     "assertion_bearing_rows": 100,
     "assessment_outcomes": {
       "deferred": 0,
-      "formal_mapping_adopted": 10,
+      "formal_mapping_adopted": 13,
       "inheritance_sufficient": 2,
       "no_direct_mapping": 5,
-      "unreviewed": 74
+      "unreviewed": 71
     },
     "assessment_record_count": 91,
     "chain_heads": 2,
     "coverage_counts": {
-      "direct_formal_mapping": 67,
-      "explicit_blank": 5,
+      "direct_formal_mapping": 66,
+      "explicit_blank": 7,
       "inherited_formal_mapping": 41,
-      "no_established_formal_route": 16,
-      "rule_or_chain_route": 9,
-      "typing_only_in_workbook": 17
+      "no_established_formal_route": 15,
+      "rule_or_chain_route": 11,
+      "typing_only_in_workbook": 16
     },
     "direct_classes": 42,
-    "direct_object_properties": 25,
+    "direct_object_properties": 24,
     "expression_occurrences": {
       "intersection": 88,
-      "named": 192,
+      "named": 193,
       "some": 97,
       "union": 15
     },
     "mapping_repertoire_rows": {
-      "explicit_blank": 5,
+      "explicit_blank": 7,
       "owl:equivalentClass": 10,
       "owl:equivalentProperty": 0,
       "owl:propertyChainAxiom": 2,
-      "rdfs:domain": 16,
+      "rdfs:domain": 17,
       "rdfs:range": 15,
       "rdfs:subClassOf": 32,
-      "rdfs:subPropertyOf": 25
+      "rdfs:subPropertyOf": 24
     },
     "review_states": {
       "deferred": 0,
-      "final": 17,
-      "unreviewed": 74
+      "final": 20,
+      "unreviewed": 71
     },
     "rows_with_expression_form": {
       "intersection": 36,
-      "named": 73,
+      "named": 74,
       "some": 36,
       "union": 14
     },
@@ -196,7 +228,7 @@
       "object_property": 47
     },
     "source_term_count": 91,
-    "workbook_rows": 105
+    "workbook_rows": 107
   },
   "terms": [
     {
@@ -798,17 +830,29 @@
     },
     {
       "chain_mapping_row_ids": [],
-      "direct_formal_mapping": false,
-      "direct_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd"
+      ],
       "explicit_blank": false,
-      "inherited_formal_mapping": false,
-      "inherited_routes": [],
-      "no_established_formal_route": true,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc",
+          "source_path": [
+            "sosa:madeBySensor owl:inverseOf sosa:madeObservation"
+          ],
+          "target": "inverse(cco:agent_in)",
+          "via_source": "http://www.w3.org/ns/sosa/madeObservation"
+        }
+      ],
+      "no_established_formal_route": false,
       "rule_or_chain_route": false,
       "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
       "source_kind": "object_property",
-      "typing_only_in_workbook": true,
+      "typing_only_in_workbook": false,
       "typing_row_ids": [
         "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc",
         "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
@@ -816,17 +860,29 @@
     },
     {
       "chain_mapping_row_ids": [],
-      "direct_formal_mapping": false,
-      "direct_mapping_row_ids": [],
+      "direct_formal_mapping": true,
+      "direct_mapping_row_ids": [
+        "urn:uuid:418db51e-342f-441d-8706-00a107266dcc"
+      ],
       "explicit_blank": false,
-      "inherited_formal_mapping": false,
-      "inherited_routes": [],
-      "no_established_formal_route": true,
+      "inherited_formal_mapping": true,
+      "inherited_routes": [
+        {
+          "inverse_target_expression": true,
+          "mapping_row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd",
+          "source_path": [
+            "sosa:madeObservation owl:inverseOf sosa:madeBySensor"
+          ],
+          "target": "inverse(cco:has_agent)",
+          "via_source": "http://www.w3.org/ns/sosa/madeBySensor"
+        }
+      ],
+      "no_established_formal_route": false,
       "rule_or_chain_route": false,
       "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
       "source_kind": "object_property",
-      "typing_only_in_workbook": true,
+      "typing_only_in_workbook": false,
       "typing_row_ids": [
         "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e",
         "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
@@ -861,14 +917,12 @@
     },
     {
       "chain_mapping_row_ids": [],
-      "direct_formal_mapping": true,
-      "direct_mapping_row_ids": [
-        "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
-      ],
-      "explicit_blank": false,
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
       "inherited_formal_mapping": false,
       "inherited_routes": [],
-      "no_established_formal_route": false,
+      "no_established_formal_route": true,
       "rule_or_chain_route": false,
       "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
@@ -1306,26 +1360,21 @@
     },
     {
       "chain_mapping_row_ids": [],
-      "direct_formal_mapping": true,
-      "direct_mapping_row_ids": [
-        "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
-      ],
-      "explicit_blank": false,
-      "inherited_formal_mapping": true,
-      "inherited_routes": [
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
+      "explicit_blank": true,
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
         {
-          "inverse_target_expression": true,
-          "mapping_row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab",
-          "source_path": [
-            "ssn:implementedBy owl:inverseOf ssn:implements"
-          ],
-          "target": "inverse(cco:prescribed_by)",
-          "via_source": "http://www.w3.org/ns/ssn/implements"
+          "artifact": "rules/ssn-implementation-mapping.rq",
+          "artifact_sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd",
+          "conditions": "Explicit or previously materialized CCO prescribes followed by has_agent yields ssn:implementedBy and inverse ssn:implements assertions. Requires executing the query; not an OWL-product entailment or a direct prescription inclusion.",
+          "mode": "external_construct_rule"
         }
       ],
-      "no_established_formal_route": false,
-      "rule_or_chain_route": false,
-      "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
       "source_kind": "object_property",
       "typing_only_in_workbook": false,
@@ -1333,30 +1382,27 @@
     },
     {
       "chain_mapping_row_ids": [],
-      "direct_formal_mapping": true,
-      "direct_mapping_row_ids": [
-        "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
-      ],
+      "direct_formal_mapping": false,
+      "direct_mapping_row_ids": [],
       "explicit_blank": false,
-      "inherited_formal_mapping": true,
-      "inherited_routes": [
+      "inherited_formal_mapping": false,
+      "inherited_routes": [],
+      "no_established_formal_route": false,
+      "rule_or_chain_route": true,
+      "rule_routes": [
         {
-          "inverse_target_expression": true,
-          "mapping_row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e",
-          "source_path": [
-            "ssn:implements owl:inverseOf ssn:implementedBy"
-          ],
-          "target": "inverse(cco:prescribes)",
-          "via_source": "http://www.w3.org/ns/ssn/implementedBy"
+          "artifact": "rules/ssn-implementation-mapping.rq",
+          "artifact_sha256": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd",
+          "conditions": "Explicit or previously materialized CCO prescribes followed by has_agent yields ssn:implementedBy and inverse ssn:implements assertions. Requires executing the query; not an OWL-product entailment or a direct prescription inclusion.",
+          "mode": "external_construct_rule"
         }
       ],
-      "no_established_formal_route": false,
-      "rule_or_chain_route": false,
-      "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/ssn/implements",
       "source_kind": "object_property",
-      "typing_only_in_workbook": false,
-      "typing_row_ids": []
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+      ]
     },
     {
       "chain_mapping_row_ids": [],

@@ -1,0 +1,28 @@
+# External implementation mapping for the current SSN/SOSA track.
+#
+# The premises must be present in the input graph: either asserted directly or
+# supplied by a prior reasoning/materialization step. This query performs no
+# implicit OWL, inverse-property, or subproperty reasoning. It consumes the
+# exact pinned CCO predicates below.
+#
+# The second constructed direction follows the source-native inverse:
+# ssn:implementedBy owl:inverseOf ssn:implements (imports/ssn.ttl).
+# This is a one-way materialization rule. It does not decompose an existing
+# implements/implementedBy assertion into a prescription or an execution.
+#
+# Keep this artifact outside the OWL ontology products. In particular, do not
+# encode its premises as an owl:propertyChainAxiom or a SWRL rule. Validate
+# materialized assertions together with their intended local ontology/ABox.
+
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX cco: <https://www.commoncoreontologies.org/>
+
+CONSTRUCT {
+  ?procedure ssn:implementedBy ?system .
+  ?system ssn:implements ?procedure .
+}
+WHERE {
+  # cco:ont00001942 = prescribes; cco:ont00001833 = has agent.
+  ?procedure cco:ont00001942 ?execution .
+  ?execution cco:ont00001833 ?system .
+}

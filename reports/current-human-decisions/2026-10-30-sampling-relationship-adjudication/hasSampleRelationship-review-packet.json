@@ -1,0 +1,157 @@
+{
+  "available_alternatives": [
+    "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
+    "Keep is_subject_of only after SampleRelationship-as-ICE is approved; otherwise revisit the relation with the class interpretation."
+  ],
+  "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
+  "coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": true,
+    "direct_mapping_row_ids": [
+      "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+    ],
+    "explicit_blank": false,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "source_kind": "object_property",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "critical_features": [
+    "material_cross_track_difference",
+    "relation_interpretation"
+  ],
+  "current_mapping_state": [
+    {
+      "assertion_status": "asserted",
+      "existing_rationale": "The current is_subject_of assertion uses the provisional information-content interpretation of sample relationships. Retained documentation does not establish a final justification for this property inclusion.",
+      "expression_forms": {},
+      "location": "Sheet2!2",
+      "predicate": "rdfs:subPropertyOf",
+      "provenance": "mapping",
+      "row_id": "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec",
+      "target": "cco:is_subject_of"
+    }
+  ],
+  "derived_consequences": [],
+  "evidence": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet2!2",
+    "imports/sosa-sampling.ttl#http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "imports/cco.ttl",
+    "reports/sample-relationship-deferral.md",
+    "mappings/SOSA-next-to-BFO-COMS.xlsx"
+  ],
+  "formal_consequences": [
+    "Every sampling:hasSampleRelationship(x,y) entails cco:is_subject_of(x,y), including target domain/range and superproperty consequences."
+  ],
+  "human_question": "Does linking a Sample to its reified relationship make that Sample the subject of information content under the provisional class interpretation?",
+  "mapping_property_chains": [],
+  "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
+  "pinned_track_comparison": {
+    "location": "Sheet2!5",
+    "match_kind": "same lexical term",
+    "predicate": "",
+    "rationale": "No direct BFO/CCO object-property mapping is adopted. sampling:hasSampleRelationship links a SOSA Sample to a reified sampling:SampleRelationship resource that records a relationship in the SOSA Sampling model. The reviewed BFO/CCO relations express aboutness, affiliation, parthood, dependence, participation, or other substantive ontological relations rather than this model-specific link to a relationship-description resource. No reviewed target relation preserves the source relata and semantics.",
+    "row_id": "urn:uuid:edc8b7a0-fcd0-4dc7-a286-55218f6dc2c2",
+    "source_term": "sampling:hasSampleRelationship",
+    "status": "no_direct_mapping",
+    "target": ""
+  },
+  "priority": 7,
+  "recommendation": "Retain the artifact during review. Keep is_subject_of only after SampleRelationship-as-ICE is approved; otherwise revisit the relation with the class interpretation.",
+  "review_clarifications": [],
+  "review_state": "unreviewed",
+  "source_iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+  "source_semantics": {
+    "assertion_status": "asserted_except_derived_consequences",
+    "contextual_axioms": [],
+    "definitions": [
+      "Links a sample to a sample relationship (which links to a related sample)"
+    ],
+    "derived_consequences": [],
+    "grouped_disjointness": [],
+    "iri": "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "label": "has sample relationship",
+    "logical_axioms": [
+      "rdf:type owl:ObjectProperty"
+    ],
+    "nonlogical_domain_range_notes": [
+      "<http://schema.org/domainIncludes> sosa:Sample",
+      "<http://schema.org/rangeIncludes> sampling:SampleRelationship"
+    ],
+    "property_chains": [],
+    "provenance": "source_native"
+  },
+  "target_semantics": [
+    {
+      "assertion_status": "asserted_except_derived_consequences",
+      "contextual_axioms": [
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001873 rdfs:subPropertyOf cco:ont00001801",
+          "object": "cco:ont00001801",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001873"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001879 rdfs:subPropertyOf cco:ont00001801",
+          "object": "cco:ont00001801",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001879"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001884 rdfs:subPropertyOf cco:ont00001801",
+          "object": "cco:ont00001801",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001884"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001917 rdfs:subPropertyOf cco:ont00001801",
+          "object": "cco:ont00001801",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001917"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001920 rdfs:subPropertyOf cco:ont00001801",
+          "object": "cco:ont00001801",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001920"
+        }
+      ],
+      "definitions": [
+        "A primitive relationship between an instance of an Entity and an instance of an Information Content Entity."
+      ],
+      "derived_consequences": [],
+      "grouped_disjointness": [],
+      "iri": "https://www.commoncoreontologies.org/ont00001801",
+      "label": "is subject of",
+      "logical_axioms": [
+        "owl:inverseOf cco:ont00001808",
+        "rdf:type owl:ObjectProperty",
+        "rdfs:range cco:ont00000958"
+      ],
+      "nonlogical_domain_range_notes": [],
+      "property_chains": [],
+      "provenance": "target_native",
+      "role": "asserted_target_expression"
+    }
+  ]
+}
