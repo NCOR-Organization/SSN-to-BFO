@@ -45,8 +45,13 @@ from build_release import (
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_DIRECTORIES = (
     "current-ssn-sosa",
+    "docs",
     "evidence",
+    "rules",
     "sources",
+    "tests",
+    "tests/fixtures",
+    "tests/fixtures/current-semantic",
 )
 
 

@@ -49,11 +49,19 @@ ARCHIVE_MEMBER_TEMPLATES = (
     "SSN2BFO-{release_id}/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
     "SSN2BFO-{release_id}/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
     "SSN2BFO-{release_id}/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "SSN2BFO-{release_id}/docs/",
+    "SSN2BFO-{release_id}/docs/SSN-IMPLEMENTATION-RULE.md",
     "SSN2BFO-{release_id}/evidence/",
     "SSN2BFO-{release_id}/evidence/coms-product-dispositions.json",
+    "SSN2BFO-{release_id}/rules/",
+    "SSN2BFO-{release_id}/rules/ssn-implementation-mapping.rq",
     "SSN2BFO-{release_id}/sources/",
     "SSN2BFO-{release_id}/sources/SSN2BFO-COMS.xlsx",
     "SSN2BFO-{release_id}/sources/publication-metadata.toml",
+    "SSN2BFO-{release_id}/tests/",
+    "SSN2BFO-{release_id}/tests/fixtures/",
+    "SSN2BFO-{release_id}/tests/fixtures/current-semantic/",
+    "SSN2BFO-{release_id}/tests/fixtures/current-semantic/implementation-rule.ttl",
 )
 
 

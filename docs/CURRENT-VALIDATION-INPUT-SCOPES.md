@@ -207,6 +207,17 @@ reports. Historical report references retain their recorded hashes and are
 resolved through the existing custody mechanism. Merely deleting retained
 evidence from the binding is not an acceptable implementation.
 
+Generated assessment reports use binding profile
+`current-ssn-sosa-assessment-content-v1`. Their `content_sha256` is the SHA-256 of
+the canonical JSON object containing that profile, the input-scope declaration,
+the complete authenticated input-hash map, and the assessment-tool hash. The
+binding excludes the current Git HEAD: committing a report, or an unrelated
+subsequent commit, cannot make identical assessment inputs stale. Existing
+historical report and decision bytes are preserved. This does not relax human
+decision authentication or the separate HEAD bindings in execution receipts.
+Any changed governed input, decision custody, tool or scope still changes the
+expected report; missing or invalid authority still fails before generation.
+
 The later default assessment check regenerates expected content in memory and
 requires exact canonical output equality. Its execution scope includes the six
 already rendered files. Missing successor reports fail closed until migration

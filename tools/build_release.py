@@ -28,7 +28,8 @@ from release_context import (FormalReleaseContext, parse_formal_release_context,
                              authenticated_release_expectations, active_release_expectations)
 from release_manifest import (
     FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS,
-    INCLUDED_FILE_PATH_ORDER,
+    CURRENT_INCLUDED_FILE_PATH_ORDER,
+    EXTERNAL_RULE_FILES,
     PRODUCT_ORDER,
     ReleaseManifest,
     ReleaseManifestDependency,
@@ -56,16 +57,18 @@ PACKAGE_FILE_PATHS = (
     "current-ssn-sosa/ssn-sosa-alignment-core.ttl",
     "current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
     "current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "docs/SSN-IMPLEMENTATION-RULE.md",
     "evidence/coms-product-dispositions.json",
     "manifest.json",
+    "rules/ssn-implementation-mapping.rq",
     "sources/SSN2BFO-COMS.xlsx",
     "sources/publication-metadata.toml",
+    "tests/fixtures/current-semantic/implementation-rule.ttl",
 )
 CHECKSUM_PATHS = tuple(path for path in PACKAGE_FILE_PATHS if path != "SHA256SUMS")
-INCLUDED_FILE_PATHS = tuple(
-    path for path in PACKAGE_FILE_PATHS if path not in {"manifest.json", "SHA256SUMS"}
-)
-if INCLUDED_FILE_PATHS != INCLUDED_FILE_PATH_ORDER:
+INCLUDED_FILE_PATHS = CURRENT_INCLUDED_FILE_PATH_ORDER
+if (len(INCLUDED_FILE_PATHS) != len(set(INCLUDED_FILE_PATHS)) or
+        set(INCLUDED_FILE_PATHS) != set(PACKAGE_FILE_PATHS) - {"manifest.json", "SHA256SUMS"}):
     raise RuntimeError("package and manifest included-file authorities differ")
 PRODUCT_PACKAGE_PATHS = {
     "integrated": "SSN2BFO.ttl",
@@ -815,6 +818,7 @@ def collect_inputs(
         ("release_notes", notes_relative, "RELEASE-NOTES.md"),
         ("license", "LICENSE", "LICENSE"),
         *(("module_" + Path(path).stem, path, None) for path in BYTE_AFFECTING_MODULES),
+        *((key, path, path) for key, path, _ in EXTERNAL_RULE_FILES),
     )
     results: list[ReleaseManifestInput] = []
     for key, source, destination in records:
@@ -846,6 +850,7 @@ def collect_included_files(package_dir: Path) -> tuple[ReleaseManifestIncludedFi
         "evidence/coms-product-dispositions.json": "governed product-disposition evidence",
         "sources/SSN2BFO-COMS.xlsx": "governed COMS workbook",
         "sources/publication-metadata.toml": "governed publication metadata",
+        **{path: role for _, path, role in EXTERNAL_RULE_FILES},
     }
     return tuple(
         ReleaseManifestIncludedFile(
@@ -871,6 +876,7 @@ def _copy_package_inputs(repository_root: Path, notes_bytes: bytes, package_dir:
         "evidence/coms-product-dispositions.json": (
             repository_root / "reports/coms-product-dispositions.json"
         ).read_bytes(),
+        **{path: (repository_root / path).read_bytes() for _, path, _ in EXTERNAL_RULE_FILES},
     }
     for relative, content in copies.items():
         destination = package_dir / relative
@@ -1007,7 +1013,7 @@ def compare_complete_packages(
     first: Path,
     second: Path,
 ) -> tuple[ReleasePackageIssue, ...]:
-    """Compare the normalized complete 12-file inventories of two package candidates."""
+    """Compare the normalized complete inventories of two package candidates."""
 
     issues: list[ReleasePackageIssue] = []
     observed: list[tuple[str, ...]] = []

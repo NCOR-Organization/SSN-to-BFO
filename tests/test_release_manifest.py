@@ -8,6 +8,8 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -166,6 +168,62 @@ class ReleaseManifestTests(unittest.TestCase):
     def assert_python_rejects(self, document) -> None:
         self.assertTrue(manifest.validate_release_manifest_document(document))
 
+    def current_inventory_document(self) -> dict:
+        document = json.loads(self.serialized)
+        for key, path, role in manifest.EXTERNAL_RULE_FILES:
+            document["inputs"].append({"key": key, "source_path": path,
+                                       "package_path": path, "sha256": HASH, "byte_size": 1})
+            document["included_files"].append({"path": path, "role": role,
+                                               "sha256": HASH, "byte_size": 1})
+        return document
+
+    def test_complete_current_and_historical_inventories_remain_structurally_readable(self) -> None:
+        self.assertEqual(manifest.validate_release_manifest_document(self.document, semantic=False), ())
+        current = self.current_inventory_document()
+        self.assertEqual(manifest.validate_release_manifest_document(current, semantic=False), ())
+        serialized = manifest.canonical_manifest_bytes(current)
+        parsed = manifest.load_and_validate_release_manifest(serialized, semantic=False)
+        self.assertEqual(manifest.canonical_manifest_bytes(parsed), serialized)
+        current["inputs"].reverse()
+        current["included_files"].reverse()
+        self.assertEqual(manifest.canonical_manifest_bytes(current), serialized)
+        for field in ("inputs", "included_files"):
+            with self.subTest(field=field):
+                partial = self.current_inventory_document()
+                partial[field].pop()
+                self.assertTrue(manifest.validate_release_manifest_document(partial, semantic=False))
+                mixed = self.current_inventory_document()
+                mixed[field] = self.document[field]
+                self.assertTrue(manifest.validate_release_manifest_document(mixed, semantic=False))
+
+    def test_authenticated_current_manifest_cannot_omit_the_external_rule_inventory(self) -> None:
+        current = self.current_inventory_document()
+        products = {value.key: value for value in self.manifest.products}
+        active = SimpleNamespace(
+            context=manifest.parse_formal_release_context(
+                self.manifest.release_identifier, self.manifest.release_date,
+                self.manifest.git_tag, self.manifest.source_commit),
+            product=lambda key: products[key],
+            fixed_closure_counts=manifest.FORMAL_FIXED_CLOSURE_TRIPLE_COUNTS,
+            input_sha256=tuple((path, HASH) for _, path, _ in manifest.EXTERNAL_RULE_FILES),
+        )
+        with mock.patch.object(manifest, "active_release_expectations", return_value=active):
+            self.assertEqual(manifest.validate_release_manifest_document(current), ())
+            codes = {value.code for value in manifest.validate_release_manifest_document(self.document)}
+            self.assertIn("INPUT_ORDER", codes)
+            self.assertIn("INCLUDED_FILE_COUNT", codes)
+            current["inputs"][-1]["sha256"] = "0" * 64
+            self.assertIn("INPUT_EVIDENCE_MISMATCH", {
+                value.code for value in manifest.validate_release_manifest_document(current)})
+
+    def test_schema_allows_only_complete_paired_inventory_cardinalities(self) -> None:
+        self.assertEqual(self.schema["oneOf"], [
+            {"properties": {"inputs": {"minItems": 13, "maxItems": 13},
+                            "included_files": {"minItems": 10, "maxItems": 10}}},
+            {"properties": {"inputs": {"minItems": 16, "maxItems": 16},
+                            "included_files": {"minItems": 13, "maxItems": 13}}},
+        ])
+
     def test_models_are_frozen_and_schema_version_is_two(self) -> None:
         self.assertEqual(self.manifest.schema_version, 2)
         with self.assertRaises(dataclasses.FrozenInstanceError):
@@ -319,15 +377,15 @@ class ReleaseManifestTests(unittest.TestCase):
 
     def test_fixed_array_cardinalities_and_positional_authorities_match(self) -> None:
         arrays = (
-            ("inputs", manifest.INPUT_KEY_ORDER, "key"),
-            ("products", manifest.PRODUCT_ORDER, "key"),
-            ("dependencies", manifest.DEPENDENCY_KEY_ORDER, "key"),
-            ("included_files", manifest.INCLUDED_FILE_PATH_ORDER, "path"),
+            ("inputs", manifest.CURRENT_INPUT_KEY_ORDER, len(manifest.INPUT_KEY_ORDER), "key"),
+            ("products", manifest.PRODUCT_ORDER, len(manifest.PRODUCT_ORDER), "key"),
+            ("dependencies", manifest.DEPENDENCY_KEY_ORDER, len(manifest.DEPENDENCY_KEY_ORDER), "key"),
+            ("included_files", manifest.CURRENT_INCLUDED_FILE_PATH_ORDER, len(manifest.INCLUDED_FILE_PATH_ORDER), "path"),
         )
-        for field, expected, identity in arrays:
+        for field, expected, minimum, identity in arrays:
             with self.subTest(field=field):
                 schema = self.schema["properties"][field]
-                self.assertEqual(schema["minItems"], len(expected))
+                self.assertEqual(schema["minItems"], minimum)
                 self.assertEqual(schema["maxItems"], len(expected))
                 self.assertFalse(schema["items"])
                 self.assertEqual(len(schema["prefixItems"]), len(expected))
@@ -665,7 +723,7 @@ class ReleaseManifestTests(unittest.TestCase):
                 value["allOf"][1]["properties"]["path"]["const"]
                 for value in included_schema["prefixItems"]
             ),
-            manifest.INCLUDED_FILE_PATH_ORDER,
+            manifest.CURRENT_INCLUDED_FILE_PATH_ORDER,
         )
         paths = {value.path for value in self.manifest.included_files}
         self.assertEqual(len(paths), 10)

@@ -1,6 +1,6 @@
 # Current SSN/SOSA assessment and formal coverage
 
-Bound to HEAD `fe06c78b7290fd586b05c42145a57f32d84a8674` and exact input hashes in the JSON companion.
+Bound to authenticated content SHA-256 `3d35920ded43be7411b88f135a9c1fd36cd03a9fcb34a0ab294b804480bf35df` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.
 
 Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.
 

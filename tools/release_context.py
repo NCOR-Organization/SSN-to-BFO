@@ -233,7 +233,10 @@ def _release_input_signature(root: Path) -> tuple[tuple[str, str], ...]:
     paths = {identity.WORKBOOK, str(identity.RECORD), *identity.PRODUCTS,
              *identity.SOURCES, *identity.TARGETS, *identity.CONFIGURATION,
              "reports/coms-product-dispositions.json",
-             "mappings/current-ssn-sosa-assessment.json"}
+             "mappings/current-ssn-sosa-assessment.json",
+             "rules/ssn-implementation-mapping.rq", "docs/SSN-IMPLEMENTATION-RULE.md",
+             "tests/fixtures/current-semantic/implementation-rule.ttl",
+             identity.RELEASE_REPAIR_AUTHORIZATION}
     for directory in ("reports/current-documentary-workbook", "reports/current-semantic-workbook",
                       "reports/current-human-decisions", "reports/current-decision-applicability",
                       "reports/retained-evidence"):
@@ -277,10 +280,23 @@ def authenticated_release_expectations(root: Path, context: FormalReleaseContext
             _ACTIVE_RELEASE.reset(token)
         return
     signature = _release_input_signature(root)
+    source_head = identity.git(root, "rev-parse", "HEAD")
+
+    def assert_checkpoint():
+        # File fingerprints alone do not bind HEAD, executable modes or the
+        # absence of forged receipts introduced during a nested build.
+        if identity.git(root, "rev-parse", "HEAD") != source_head:
+            raise ValueError("release source HEAD changed during authenticated operation")
+        errors = identity.checkpoint_errors(root)
+        if errors:
+            raise ValueError("release checkpoint authentication failed: " + " | ".join(errors))
+
     active = active_release_expectations()
     if (active is not None and active.repository_root == root and
             active.context == context and active.input_sha256 == signature):
+        assert_checkpoint()
         yield active
+        assert_checkpoint()
         if _release_input_signature(root) != signature:
             raise ValueError("release inputs changed after authenticated build/validation")
         return
@@ -334,11 +350,13 @@ def authenticated_release_expectations(root: Path, context: FormalReleaseContext
             ))
         if _release_input_signature(root) != signature:
             raise ValueError("release inputs changed during preflight authentication")
+        assert_checkpoint()
         expected = ReleaseExpectations(context, root, signature, tuple(products))
         token = _ACTIVE_RELEASE.set(expected)
         try:
             yield expected
         finally:
             _ACTIVE_RELEASE.reset(token)
+        assert_checkpoint()
         if _release_input_signature(root) != signature:
             raise ValueError("release inputs changed after authenticated build/validation")

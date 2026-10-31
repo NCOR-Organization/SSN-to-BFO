@@ -15,6 +15,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 from rdflib import Graph, OWL, RDF, URIRef
@@ -553,7 +554,7 @@ class ReleasePackageTests(unittest.TestCase):
         self.assertFalse(any(path.name.startswith(build.TEMP_PREFIX) for path in parent.iterdir()))
         self.assertFalse(build.development_snapshot_issues(REPO_ROOT, before))
 
-    def test_validator_independently_reconstructs_and_compares_all_twelve_files(self) -> None:
+    def test_validator_independently_reconstructs_and_compares_all_package_files(self) -> None:
         parent, package = self.copy_package()
         original_copy = build._copy_package_inputs
 
@@ -906,6 +907,78 @@ class ReleasePackageTests(unittest.TestCase):
             self.assertIn("Manifest SHA-256", completed.stdout)
             observed.append(hashes(output))
         self.assertTrue(all(value == self.baseline_hashes for value in observed))
+
+
+class ExternalRuleDistributionTests(unittest.TestCase):
+    """Exercise the copied executable artifacts and their exact inventory guards."""
+
+    def setUp(self) -> None:
+        temporary = tempfile.TemporaryDirectory(prefix="release-external-rule-")
+        self.addCleanup(temporary.cleanup)
+        self.package = Path(temporary.name) / SYNTHETIC_CONTEXT.release_identifier
+        self.package.mkdir()
+        build._copy_package_inputs(REPO_ROOT, NOTES_PATH.read_bytes(), self.package)
+        for relative in build.PACKAGE_FILE_PATHS:
+            path = self.package / relative
+            if not path.exists():
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"fixture\n")
+        self.inputs = build.collect_inputs(REPO_ROOT, NOTES_PATH.relative_to(REPO_ROOT).as_posix())
+
+    def test_three_external_rule_artifacts_are_copied_and_evidenced_exactly(self) -> None:
+        self.assertEqual(check._layout_issues(self.package), ())
+        by_key = {value.key: value for value in self.inputs}
+        included = {value.path: value for value in build.collect_included_files(self.package)}
+        self.assertEqual(len(build.PACKAGE_FILE_PATHS), 15)
+        for key, relative, role in release_manifest.EXTERNAL_RULE_FILES:
+            with self.subTest(path=relative):
+                data = (self.package / relative).read_bytes()
+                self.assertEqual(data, (REPO_ROOT / relative).read_bytes())
+                self.assertEqual(by_key[key].package_path, relative)
+                self.assertEqual(by_key[key].source_path, relative)
+                self.assertEqual(by_key[key].sha256, hashlib.sha256(data).hexdigest())
+                self.assertEqual(included[relative].role, role)
+                self.assertEqual(included[relative].sha256, by_key[key].sha256)
+                self.assertIn(relative, build.CHECKSUM_PATHS)
+        self.assertEqual(check._copied_input_issues(
+            self.package, REPO_ROOT, SimpleNamespace(inputs=self.inputs)), ())
+        self.assertNotIn("rules/ssn-hasproperty-conditional-mapping.rq", build.PACKAGE_FILE_PATHS)
+
+    def test_packaged_documented_example_executes_using_only_packaged_files(self) -> None:
+        fixture = "tests/fixtures/current-semantic/implementation-rule.ttl"
+        rule = "rules/ssn-implementation-mapping.rq"
+        documentation = (self.package / "docs/SSN-IMPLEMENTATION-RULE.md").read_text()
+        self.assertIn(f"--input {fixture} --query {rule}", documentation)
+        graph = Graph().parse(self.package / fixture, format="turtle")
+        derived = graph.query((self.package / rule).read_text()).graph
+        self.assertEqual(len(derived), 4)
+        self.assertEqual({str(predicate) for _, predicate, _ in derived}, {
+            "http://www.w3.org/ns/ssn/implementedBy", "http://www.w3.org/ns/ssn/implements"})
+        self.assertFalse(list(derived.triples((None, OWL.propertyChainAxiom, None))))
+
+    def test_missing_rule_artifact_fails_layout(self) -> None:
+        for _, relative, _ in release_manifest.EXTERNAL_RULE_FILES:
+            with self.subTest(path=relative):
+                path = self.package / relative
+                data = path.read_bytes()
+                path.unlink()
+                self.assertIn("PACKAGE_FILE_SET", {value.code for value in check._layout_issues(self.package)})
+                path.write_bytes(data)
+
+    def test_mutated_rule_artifact_fails_copied_input_authentication(self) -> None:
+        for _, relative, _ in release_manifest.EXTERNAL_RULE_FILES:
+            with self.subTest(path=relative):
+                path = self.package / relative
+                data = path.read_bytes()
+                path.write_bytes(data + b"\nchanged\n")
+                self.assertIn("COPIED_INPUT_MISMATCH", {value.code for value in check._copied_input_issues(
+                    self.package, REPO_ROOT, SimpleNamespace(inputs=self.inputs))})
+                rebound = tuple(dataclasses.replace(value,
+                    sha256=hashlib.sha256(path.read_bytes()).hexdigest(), byte_size=path.stat().st_size)
+                    if value.package_path == relative else value for value in self.inputs)
+                self.assertIn("INPUT_EVIDENCE_MISMATCH", {value.code for value in check._copied_input_issues(
+                    self.package, REPO_ROOT, SimpleNamespace(inputs=rebound))})
+                path.write_bytes(data)
 
 
 if __name__ == "__main__":

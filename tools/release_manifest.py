@@ -70,6 +70,16 @@ INCLUDED_FILE_PATH_ORDER = (
     "sources/SSN2BFO-COMS.xlsx",
     "sources/publication-metadata.toml",
 )
+# Preserve the historical schema-2 inventory for retained manifest evidence.
+# Authenticated current packages also distribute the external rule and the
+# unchanged documentation/fixture needed for its documented execution example.
+EXTERNAL_RULE_FILES = (
+    ("implementation_rule", "rules/ssn-implementation-mapping.rq", "external executable implementation mapping rule"),
+    ("implementation_rule_documentation", "docs/SSN-IMPLEMENTATION-RULE.md", "external implementation rule execution documentation"),
+    ("implementation_rule_fixture", "tests/fixtures/current-semantic/implementation-rule.ttl", "documented implementation rule example input"),
+)
+CURRENT_INPUT_KEY_ORDER = INPUT_KEY_ORDER + tuple(key for key, _, _ in EXTERNAL_RULE_FILES)
+CURRENT_INCLUDED_FILE_PATH_ORDER = INCLUDED_FILE_PATH_ORDER + tuple(path for _, path, _ in EXTERNAL_RULE_FILES)
 TOP_LEVEL_FIELDS = (
     "schema_version",
     "release_identifier",
@@ -332,7 +342,7 @@ def manifest_document(manifest: ReleaseManifest) -> dict[str, object]:
             _ordered(asdict(value), INPUT_FIELDS)
             for value in sorted(
                 manifest.inputs,
-                key=lambda item: INPUT_KEY_ORDER.index(item.key),
+                key=lambda item: CURRENT_INPUT_KEY_ORDER.index(item.key),
             )
         ],
         "product_order": list(manifest.product_order),
@@ -354,7 +364,8 @@ def manifest_document(manifest: ReleaseManifest) -> dict[str, object]:
         "validation": _ordered(validation, VALIDATION_FIELDS),
         "included_files": [
             _ordered(asdict(value), INCLUDED_FILE_FIELDS)
-            for value in sorted(manifest.included_files, key=lambda item: item.path)
+            for value in sorted(manifest.included_files,
+                                key=lambda item: CURRENT_INCLUDED_FILE_PATH_ORDER.index(item.path))
         ],
     }
     return _ordered(document, TOP_LEVEL_FIELDS)
@@ -374,9 +385,9 @@ def _canonicalize_document(document: dict[str, object]) -> dict[str, object]:
         _ordered(value, INPUT_FIELDS)
         for value in sorted(
             document.get("inputs", []),
-            key=lambda item: INPUT_KEY_ORDER.index(item.get("key"))
-            if isinstance(item, dict) and item.get("key") in INPUT_KEY_ORDER
-            else len(INPUT_KEY_ORDER),
+            key=lambda item: CURRENT_INPUT_KEY_ORDER.index(item.get("key"))
+            if isinstance(item, dict) and item.get("key") in CURRENT_INPUT_KEY_ORDER
+            else len(CURRENT_INPUT_KEY_ORDER),
         )
         if isinstance(value, dict)
     ] if isinstance(document.get("inputs"), list) else document.get("inputs")
@@ -423,7 +434,9 @@ def _canonicalize_document(document: dict[str, object]) -> dict[str, object]:
         _ordered(value, INCLUDED_FILE_FIELDS)
         for value in sorted(
             document.get("included_files", []),
-            key=lambda item: item.get("path", "") if isinstance(item, dict) else "",
+            key=lambda item: CURRENT_INCLUDED_FILE_PATH_ORDER.index(item.get("path"))
+            if isinstance(item, dict) and item.get("path") in CURRENT_INCLUDED_FILE_PATH_ORDER
+            else len(CURRENT_INCLUDED_FILE_PATH_ORDER),
         )
         if isinstance(value, dict)
     ] if isinstance(document.get("included_files"), list) else document.get("included_files")
@@ -525,6 +538,17 @@ def validate_release_manifest_document(document: object, *, semantic: bool = Tru
     top = _check_fields(document, TOP_LEVEL_FIELDS, "manifest", issues)
     if top is None:
         return tuple(sorted(set(issues), key=lambda value: value.sort_key))
+    active = active_release_expectations() if semantic else None
+    # Structural reads may inspect either complete historical or current
+    # representation. They cannot authorize the smaller historical inventory
+    # for an authenticated maintained-current release.
+    input_records = top.get("inputs")
+    current_inventory = active is not None or (
+        isinstance(input_records, list) and
+        len(input_records) == len(CURRENT_INPUT_KEY_ORDER)
+    )
+    expected_input_keys = CURRENT_INPUT_KEY_ORDER if current_inventory else INPUT_KEY_ORDER
+    expected_included_paths = CURRENT_INCLUDED_FILE_PATH_ORDER if current_inventory else INCLUDED_FILE_PATH_ORDER
     if top.get("schema_version") != SCHEMA_VERSION:
         issues.append(_issue("SCHEMA_VERSION", "schema_version", f"expected {SCHEMA_VERSION}"))
     try:
@@ -561,8 +585,8 @@ def validate_release_manifest_document(document: object, *, semantic: bool = Tru
             _integer(record.get("byte_size"), f"{path}.byte_size", issues)
         if len(keys) != len(set(keys)):
             issues.append(_issue("DUPLICATE_INPUT_KEY", "inputs", "input keys must be unique"))
-        if keys != list(INPUT_KEY_ORDER):
-            issues.append(_issue("INPUT_ORDER", "inputs", f"expected {list(INPUT_KEY_ORDER)!r}"))
+        if keys != list(expected_input_keys):
+            issues.append(_issue("INPUT_ORDER", "inputs", f"expected {list(expected_input_keys)!r}"))
 
     products = top.get("products")
     if not isinstance(products, list):
@@ -714,28 +738,27 @@ def validate_release_manifest_document(document: object, *, semantic: bool = Tru
             _string(record.get("role"), f"{path}.role", issues)
             _hash(record.get("sha256"), f"{path}.sha256", issues)
             _integer(record.get("byte_size"), f"{path}.byte_size", issues)
-        if paths != list(INCLUDED_FILE_PATH_ORDER):
+        if paths != list(expected_included_paths):
             issues.append(
                 _issue(
                     "INCLUDED_FILE_ORDER",
                     "included_files",
-                    f"expected {list(INCLUDED_FILE_PATH_ORDER)!r}",
+                    f"expected {list(expected_included_paths)!r}",
                 )
             )
         if len(paths) != len(set(paths)):
             issues.append(_issue("DUPLICATE_INCLUDED_FILE", "included_files", "paths must be unique"))
-        if len(paths) != len(INCLUDED_FILE_PATH_ORDER):
+        if len(paths) != len(expected_included_paths):
             issues.append(
                 _issue(
                     "INCLUDED_FILE_COUNT",
                     "included_files",
-                    f"expected {len(INCLUDED_FILE_PATH_ORDER)}, got {len(paths)}",
+                    f"expected {len(expected_included_paths)}, got {len(paths)}",
                 )
             )
         prohibited = {"manifest.json", "SHA256SUMS"} & set(paths)
         if prohibited:
             issues.append(_issue("MANIFEST_SELF_REFERENCE", "included_files", f"prohibited paths: {sorted(prohibited)!r}"))
-    active = active_release_expectations() if semantic else None
     if active is not None:
         for field in CONTEXT_FIELDS:
             if top.get(field) != getattr(active.context, field):

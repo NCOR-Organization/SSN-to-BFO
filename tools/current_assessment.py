@@ -12,7 +12,6 @@ import hashlib
 import json
 from pathlib import Path
 import re
-import subprocess
 from datetime import datetime
 from uuid import UUID
 
@@ -31,6 +30,7 @@ HISTORICAL_FINAL_BASELINE = ROOT / "config/current-ssn-sosa-historical-finals.js
 REPORT_DIRECTORY = Path(custody.ASSESSMENT_OUTPUT_DIRECTORY)
 REPORT_NAMES = tuple(f"current-ssn-sosa-{name}.{suffix}" for name in
                      ("coverage", "rationale-proposals", "human-review") for suffix in ("json", "md"))
+REPORT_BINDING_PROFILE = "current-ssn-sosa-assessment-content-v1"
 # Pin the complete, deliberately closed set of twelve reconstructed historical
 # finals. An edit to the JSON cannot silently grandfather another decision.
 HISTORICAL_FINAL_BASELINE_SHA256 = "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769"
@@ -920,6 +920,22 @@ def review_details(record: dict, graph: Graph, target: Graph, own: list, all_row
     return flags, existing, packet
 
 
+def report_binding(root: Path | None = None) -> dict:
+    """Bind reproducible reports to authenticated content, not their own commit.
+
+    The custody inventory still authenticates the complete decision/workbook
+    history and excludes generated reports. Execution receipts retain their
+    separate HEAD binding; committing these reports cannot change their inputs.
+    """
+    root = ROOT if root is None else root
+    evidence_paths = custody.assessment_paths(root)
+    content = {"profile": REPORT_BINDING_PROFILE,
+               "input_scope": custody.assessment_scope(root),
+               "input_sha256": {p: sha(root / p) for p in sorted(evidence_paths)},
+               "assessment_tool_sha256": sha(Path(__file__))}
+    return {**content, "content_sha256": canonical_sha(content)}
+
+
 def build_reports(scope, document):
     graph = source_graph()
     target = Graph().parse(ROOT / TARGET_PATH, format="turtle")
@@ -932,11 +948,7 @@ def build_reports(scope, document):
         by_subject[str(row.subject)].append(row)
     route_by_iri = {r["source_iri"]: r for r in routes}
     comparisons = next_comparison(rows)
-    evidence_paths = custody.assessment_paths(ROOT)
-    binding = {"head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-               "input_scope": custody.assessment_scope(ROOT),
-               "input_sha256": {p: sha(ROOT / p) for p in sorted(evidence_paths)},
-               "assessment_tool_sha256": sha(Path(__file__))}
+    binding = report_binding()
     repertoire = Counter({predicate: 0 for predicate in mapping.ALLOWED_PREDICATES})
     repertoire.update(r.predicate or "explicit_blank" for r in rows)
     forms = Counter()
@@ -999,7 +1011,7 @@ def md_text(text):
 
 def render_coverage(cov):
     s = cov["summary"]
-    lines = ["# Current SSN/SOSA assessment and formal coverage", "", f"Bound to HEAD `{cov['binding']['head']}` and exact input hashes in the JSON companion.", "", cov["method"], "", "## Inventory and assessment", "", f"Dynamic source terms: **{s['source_term_count']}**; assessment records: **{s['assessment_record_count']}**; equality: **PASS**.", "", f"Kinds: `{s['source_counts_by_kind']}`. Review states: `{s['review_states']}`. Outcomes: `{s['assessment_outcomes']}`.", "", "These assessments describe unchanged workbook mapping assertions; registered documentary reasoning updates do not change assessment semantics. Final records reconstruct supported existing decisions; unresolved records do not reject or remove active axioms.", "", "## Formal coverage", "", "| Category | Terms |", "|---|---:|"]
+    lines = ["# Current SSN/SOSA assessment and formal coverage", "", f"Bound to authenticated content SHA-256 `{cov['binding']['content_sha256']}` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.", "", cov["method"], "", "## Inventory and assessment", "", f"Dynamic source terms: **{s['source_term_count']}**; assessment records: **{s['assessment_record_count']}**; equality: **PASS**.", "", f"Kinds: `{s['source_counts_by_kind']}`. Review states: `{s['review_states']}`. Outcomes: `{s['assessment_outcomes']}`.", "", "These assessments describe unchanged workbook mapping assertions; registered documentary reasoning updates do not change assessment semantics. Final records reconstruct supported existing decisions; unresolved records do not reject or remove active axioms.", "", "## Formal coverage", "", "| Category | Terms |", "|---|---:|"]
     lines += [f"| {k} | {v} |" for k,v in s["coverage_counts"].items()]
     lines += ["", f"Direct classes: {s['direct_classes']}; direct object properties: {s['direct_object_properties']}; chain heads: {s['chain_heads']}. The historical 28 relation-mapped properties comprise 25 direct subproperties and 3 chain heads. A chain head is an incoming entailment route, not a source-to-target edge inclusion.", "", "Categories overlap: a directly mapped class can inherit additional constraints; a typing-only workbook property can be eligible for a separate conditional query. The query is not executed by the OWL product, and eligibility does not prove every assertion has suitable typing. Inherited coverage does not assert that inheritance is a sufficient final assessment outcome.", "", "## Mapping repertoire (rows)", "", "| Predicate | Rows |", "|---|---:|"]
     lines += [f"| `{k}` | {v} |" for k,v in s["mapping_repertoire_rows"].items()]

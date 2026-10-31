@@ -1,0 +1,128 @@
+# Repair the Three Remaining Technical Release Blockers
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Baseline: `1cc0aa1edcb58564c32a2cd442750570a9567ef5`
+
+## Objective
+
+Implement only the three confirmed technical corrections necessary to make the completed SSN/SOSA-to-BFO/CCO mapping artifacts releasable.
+
+The mapping implementation is finished. This task concerns release authentication, assessment-report freshness, and distribution completeness.
+
+We are targeting a **qualified downloadable artifact release**, not a declaration that every mapping has received final scientific approval or that all external ontology imports have been resolved.
+
+## 1. Repair release authentication
+
+The clean-checkout preflight currently fails because of:
+
+- Missing authenticated checkpoint-successor binding.
+- Configuration drift involving `queries/unmapped-source-terms.rq`.
+- `branch_at_freeze` mismatch in detached HEAD.
+
+Make the smallest corrections needed for the approved committed baseline to authenticate successfully.
+
+Requirements:
+
+- Preserve existing authenticated checkpoint identities and historical evidence.
+- Preserve verification of authorized query content.
+- Recognize the legitimate successor commit and current authorized query configuration.
+- Support detached checkouts when the authenticated source commit and lineage match.
+- Continue rejecting unauthorized source changes, query modifications, invalid successor bindings and incorrect source identities.
+
+Do not disable the authentication gate, broadly whitelist changes, or rewrite historical receipts to conceal a mismatch.
+
+Add focused positive and negative tests demonstrating that authorized changes pass and unauthorized changes still fail.
+
+## 2. Repair current-assessment freshness validation
+
+The four generated reports under `reports/current-assessment/v2/` currently reference a predecessor commit.
+
+Their regeneration process embeds HEAD, creating a self-reference problem when the reports are themselves committed.
+
+Correct this with the smallest deterministic, auditable binding approach consistent with the existing evidence and governance model.
+
+Requirements:
+
+- Preserve the actual 91 assessment records and their statuses.
+- Preserve all authenticated human decisions.
+- Do not solve the problem by repeatedly regenerating and recommitting changing HEAD hashes.
+- Ensure that clean checkouts can validate committed reports.
+- Continue detecting substantive assessment drift and unauthorized changes.
+- Add a regression test demonstrating that the self-reference problem does not recur after subsequent commits.
+
+Avoid broad evidence migration or redesign of the assessment architecture.
+
+## 3. Correct release-package contents
+
+Extend the existing release inventory to include:
+
+- `rules/ssn-implementation-mapping.rq`
+- `docs/SSN-IMPLEMENTATION-RULE.md`
+- Any fixture required by the documented executable example.
+
+Update the existing manifest, checksums, package checks and archive checks as necessary.
+
+Ensure that the rule is distributed as an external executable mapping artifact, not an OWL axiom.
+
+Determine whether the older conditional `hasProperty` rule is promised by the existing distribution contract. Include it with appropriate qualifications only if required by that contract; otherwise document its separate distribution scope.
+
+Do not create a new packaging framework.
+
+## 4. Validation
+
+Use an isolated clean checkout to verify the changes.
+
+Run the existing applicable authentication, assessment, generation, package and publication-metadata checks.
+
+Confirm:
+
+- Release authentication passes for the legitimate source and rejects deliberately invalid cases.
+- Assessment freshness validation passes without circular commit dependencies.
+- The package contains the correct maintained artifacts, rule and documentation.
+- Package checksums and manifest inventory agree.
+- The four OWL mapping products remain unchanged.
+- OWL 2 DL and HermiT validation continue passing.
+- Existing mapping-rule tests continue passing.
+- The historical archive and excluded untracked files are untouched.
+
+Do not require a complete dated release rehearsal yet if release notes, final source commit or tag context are not established. Clearly distinguish passing technical checks from final release readiness.
+
+## 5. Strict scope
+
+Do not:
+
+- Change mapping assertions or semantic decisions.
+- Finalize the 71 administratively unreviewed assessments.
+- Resolve the provisional RelationshipNature mappings.
+- Modify source ontologies or SOSA-2023 artifacts.
+- Undertake SKOS import-closure work.
+- Rewrite historical authentication evidence.
+- Conduct broad infrastructure refactoring.
+- Prepare a paper.
+- Stage, commit, tag or push.
+
+Preserve all 174 excluded untracked files.
+
+If a safe correction requires materially expanding the scope or weakening an authentication invariant, stop and report the exact blocker.
+
+## Deliverable
+
+Report:
+
+1. Exact files changed.
+2. Each original failure and its correction.
+3. How authentication remains tamper-resistant.
+4. How assessment freshness avoids self-reference.
+5. Final package inventory.
+6. Positive and negative test results.
+7. Reproduction instructions from a clean checkout.
+8. Any blockers remaining before the actual release.
+
+End with:
+
+`TECHNICAL RELEASE BLOCKERS RESOLVED — READY FOR RELEASE PREPARATION`
+
+or
+
+`TECHNICAL RELEASE BLOCKERS REMAIN — EXACT FAILURE IDENTIFIED`

@@ -39,20 +39,22 @@ TRANSITION_RELATIVE = (
     "reports/current-semantic-workbook/transitions/"
     "58481ff2-4e56-4931-a3d4-383357b16561.json"
 )
-# These formal identities were established independently before the release
-# contract repair, for this explicit synthetic release context.
+# These formal identities are independently rendered from the approved
+# 1cc0aa1 mapping baseline for this explicit synthetic release context.
+# Historical fixture identities remain independently checked below.
 CURRENT_FORMAL_HASHES = {
     **HISTORICAL_FORMAL_HASHES,
-    "integrated": "9d307178cf479087765608bba5dc6ef1983125631f32839fd0dc77764b6142f2",
-    "cco_extension": "2a9dc45056d5186c5cf8c7924b8e7ed96f590f9a255dda2d8af727f96dd2d235",
+    "integrated": "5ecef08680e9e101c15d78341cd5e06fa5c7124a822bb3bd2d5fc4404645fff2",
+    "alignment_core": "aa8ca62b609d214688b0e3475e69d8961747cf34d64ea9aa970a99505f18908a",
+    "cco_extension": "88bfcdbf356dae9d125df6cfb8e665105af939f74ad0916db0dedc61b07a32b1",
 }
 CURRENT_COUNTS = {
     # Logical triples, total triples, direct axioms, project-closure axioms,
     # fixed reasoning closure, profile graph, declaration completions.
     "integrated": (1053, 1068, 100, 100, 15858, 15862, 4),
-    "alignment_core": (53, 64, 29, 29, 1217, 1221, 4),
-    "strict_bfo_mapping": (125, 137, 19, 48, 14994, 14998, 4),
-    "cco_extension": (875, 887, 52, 100, 15880, 15884, 4),
+    "alignment_core": (54, 65, 30, 30, 1218, 1222, 4),
+    "strict_bfo_mapping": (125, 137, 19, 49, 14995, 14999, 4),
+    "cco_extension": (874, 886, 51, 100, 15880, 15884, 4),
 }
 
 
@@ -368,12 +370,12 @@ class ReleaseContractTests(unittest.TestCase):
                             manifest.canonical_manifest_bytes(document)
                         )
 
-    def test_core_and_strict_members_preserve_historical_bytes(self) -> None:
+    def test_strict_member_and_historical_fixture_preserve_their_bytes(self) -> None:
         self.assertEqual(
             {key: sha256(value) for key, value in self.historical_products.items()},
             HISTORICAL_FORMAL_HASHES,
         )
-        for key in ("alignment_core", "strict_bfo_mapping"):
+        for key in ("strict_bfo_mapping",):
             with self.subTest(product=key):
                 self.assertEqual(
                     (self.package / build.PRODUCT_PACKAGE_PATHS[key]).read_bytes(),

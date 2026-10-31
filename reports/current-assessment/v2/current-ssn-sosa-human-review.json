@@ -1,7 +1,7 @@
 {
   "binding": {
-    "assessment_tool_sha256": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
-    "head": "fe06c78b7290fd586b05c42145a57f32d84a8674",
+    "assessment_tool_sha256": "1df3d8c6851eeef76881f1ca0a90ab52e9f41d4b56fca3770de5bedb43ffe5d6",
+    "content_sha256": "3d35920ded43be7411b88f135a9c1fd36cd03a9fcb34a0ab294b804480bf35df",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -142,12 +142,12 @@
       "reports/updated-spreadsheet-ttl-only-assertions-review.md": "5fcbdd8248dbaf3d1a1eed3f2271334924f9347bca4c62118b5e802634662150",
       "rules/ssn-hasproperty-conditional-mapping.rq": "b98376fc73f6c246e5f2567226ca1ba81536e4fbc2670905acfb2a43c991ff6d",
       "rules/ssn-implementation-mapping.rq": "c1d3ea7afd47369782f81e38f0ad21272bf419a5d89defc176c7e82e09f3f2dd",
-      "tools/build_release.py": "d314bcccdcb83888e9e07e305a0b65f4156d78b97048d095f42cfeb4e262c2e5",
+      "tools/build_release.py": "a90c04c800e017822415b144392fade049521b3c646b1117ff8c14068186ebef",
       "tools/check_coms_mapping.py": "1f9345b46f7810b8d9d0a28a03d2a9ed31f24c69fc4067201c766fbf72faf726",
-      "tools/check_release.py": "c6faf1e827c13de51cfae5cb2573216b6e14fdbab13be8030f019f9d35d41a41",
+      "tools/check_release.py": "0e47a8910918597c0b827b5e9e5cdd4ed6a2643f5a953e7abc637b068a1a1aae",
       "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
       "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
-      "tools/current_assessment.py": "e4ed46d3bc897161759f22a19eee03a035fb7fcbcf8958536aeebcf702f2759f",
+      "tools/current_assessment.py": "1df3d8c6851eeef76881f1ca0a90ab52e9f41d4b56fca3770de5bedb43ffe5d6",
       "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
       "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
       "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
@@ -160,7 +160,7 @@
       "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
       "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
       "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
-      "tools/current_source_identity.py": "5e84a87523cd2a7fb59326e10d45ea12d30de027edf0dd22a4ead64c3c9d76fe",
+      "tools/current_source_identity.py": "0dc6f9e59d7cfb5e23d8a308ff053111222eae79aa5a4d471e916410720b93e0",
       "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
       "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
       "tools/generate_mapping_from_coms.py": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
@@ -168,10 +168,11 @@
       "tools/product_dispositions.py": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
       "tools/product_role_policy.py": "08ad8fc86da9c787f2b9f41311520a5673082c5cb19dd150acd6a31f2091ce6e",
       "tools/publication_metadata.py": "b2e871b7d8d1c874b6c2daf1ac2904ede1e08092beb6207d4ccdb064e283aa09",
-      "tools/release_context.py": "8a3edfd06cbcc5e5ffac50902fdb374264be0a2dbfb409ca6071768c3c0cfea6",
-      "tools/release_manifest.py": "004fba098425cbb19ac6f51931a19bbf1c90f2f0a3aabdce5fb7837a1d2b2cba",
+      "tools/release_context.py": "b559d883e91ab33e12adc2508b286dd8a78cc4f1fe319f764feb43eb7c5d350e",
+      "tools/release_manifest.py": "4a611ba74d13c3ae39232a008ff1f965f2c550cee21c41189301db892f6ef249",
       "tools/sosa_source_version.py": "b618adf69288ca23a7a9b7eacabb646f2dae60e90b82f263b32916116f22b98a"
-    }
+    },
+    "profile": "current-ssn-sosa-assessment-content-v1"
   },
   "item_count": 71,
   "items": [

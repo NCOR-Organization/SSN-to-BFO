@@ -43,7 +43,7 @@
     "inputs": {
       "type": "array",
       "minItems": 13,
-      "maxItems": 13,
+      "maxItems": 16,
       "prefixItems": [
         {
           "allOf": [
@@ -226,6 +226,48 @@
               }
             }
           ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/input"
+            },
+            {
+              "properties": {
+                "key": {
+                  "const": "implementation_rule"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/input"
+            },
+            {
+              "properties": {
+                "key": {
+                  "const": "implementation_rule_documentation"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/input"
+            },
+            {
+              "properties": {
+                "key": {
+                  "const": "implementation_rule_fixture"
+                }
+              }
+            }
+          ]
         }
       ],
       "items": false
@@ -404,7 +446,7 @@
     "included_files": {
       "type": "array",
       "minItems": 10,
-      "maxItems": 10,
+      "maxItems": 13,
       "prefixItems": [
         {
           "allOf": [
@@ -541,6 +583,48 @@
               "properties": {
                 "path": {
                   "const": "sources/publication-metadata.toml"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/includedFile"
+            },
+            {
+              "properties": {
+                "path": {
+                  "const": "rules/ssn-implementation-mapping.rq"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/includedFile"
+            },
+            {
+              "properties": {
+                "path": {
+                  "const": "docs/SSN-IMPLEMENTATION-RULE.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/includedFile"
+            },
+            {
+              "properties": {
+                "path": {
+                  "const": "tests/fixtures/current-semantic/implementation-rule.ttl"
                 }
               }
             }
@@ -980,5 +1064,31 @@
         }
       }
     }
-  }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "inputs": {
+          "minItems": 13,
+          "maxItems": 13
+        },
+        "included_files": {
+          "minItems": 10,
+          "maxItems": 10
+        }
+      }
+    },
+    {
+      "properties": {
+        "inputs": {
+          "minItems": 16,
+          "maxItems": 16
+        },
+        "included_files": {
+          "minItems": 13,
+          "maxItems": 13
+        }
+      }
+    }
+  ]
 }

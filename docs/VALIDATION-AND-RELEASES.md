@@ -338,7 +338,7 @@ current-track release machinery remains separate and unchanged.
 
 `tools/check_release.py validate --package-dir PATH` validates an existing package read-only.
 
-A formal package contains exactly 12 regular files:
+A current formal package contains exactly 15 regular files:
 
 ```text
 <release-id>/
@@ -350,19 +350,45 @@ A formal package contains exactly 12 regular files:
   current-ssn-sosa/ssn-sosa-alignment-core.ttl
   current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
   current-ssn-sosa/ssn-sosa-cco-extension.ttl
+  docs/SSN-IMPLEMENTATION-RULE.md
   evidence/coms-product-dispositions.json
   manifest.json
+  rules/ssn-implementation-mapping.rq
   sources/SSN2BFO-COMS.xlsx
   sources/publication-metadata.toml
+  tests/fixtures/current-semantic/implementation-rule.ttl
 ```
 
-The manifest records the formal release context, governed inputs, byte-affecting modules, product counts and hashes, validation dependencies, stable toolchain evidence, and independent validation outcomes.
+The manifest records the formal release context, governed inputs, byte-affecting modules, product counts and hashes, validation dependencies, stable toolchain evidence, and independent validation outcomes. Its included-file evidence covers 13 members, excluding `manifest.json` and `SHA256SUMS`; the checksum file covers the other 14 members and excludes itself.
+
+The implementation CONSTRUCT rule is an external executable mapping artifact,
+not an OWL axiom. Its query, execution documentation, and example fixture are
+copied byte-for-byte, individually recorded in the manifest and checksums, and
+included in the archive. Run the documented `robot query` command from the
+package root after installing ROBOT; it needs no additional repository files.
+The documentation's repository test commands and historical evidence links refer
+to the source checkout, not additional package members.
+
+The older `rules/ssn-hasproperty-conditional-mapping.rq` remains a separately
+distributed repository artifact documented by
+`reports/ssn-hasproperty-rule-mapping-artifact.md`. The prior 12-file formal
+distribution contract never included or promised that conditional query. It is
+not added to this qualified artifact release; its documented typing and
+materialization assumptions and its assessment status remain unchanged.
+
+Historical schema-2 manifest inventories remain readable as historical evidence.
+Authenticated current packages require all 15 files; a historical smaller
+inventory cannot satisfy their validation. Historical release archives and their
+source commits are not rewritten.
 
 External ontologies are not redistributed. The package is offline-complete for project-module imports only.
 
 ## Deterministic archive
 
 `tools/release_archive.py` constructs and validates a raw, uncompressed POSIX USTAR archive.
+
+The current archive contains 24 members: 15 regular files and nine directory
+entries, including its top-level directory.
 
 The archive uses:
 
@@ -470,9 +496,40 @@ by the product and its project imports, not workbook rows or RDF triples. The
 legacy integrated/CCO value 105 is retained only for historical serialization;
 it was already stale against the checkpoint's 103 active mappings. Current
 release records derive the counts from the selected active mappings (currently
-100 integrated, 29 core, 48 strict, and 100 CCO closure).
+100 integrated, 30 core, 49 strict, and 100 CCO closure).
 
 Archive and rehearsal operations continue to require full package validation.
 Their subsequent manifest reads use structural/canonical validation only to
 inspect identity, because the isolated package checker has already verified the
 exact semantic contract. Structural reads cannot authorize an archive or release.
+
+### Qualified artifact checkpoint
+
+The explicit technical-repair authorization in
+`reports/current-release-authorization/technical-repairs-20261030.txt` accepts
+completed mapping commit `1cc0aa1edcb58564c32a2cd442750570a9567ef5` for a qualified
+downloadable artifact release. `current_source_identity.py` pins this commit,
+its predecessor and the authorization bytes independently of the older
+publication-checkpoint receipts. Those historical identities remain unchanged.
+
+Only the enumerated technical-repair files and dated release notes may differ
+in a descendant. Every other committed and live baseline file retains its exact
+bytes and executable mode, including the authorized coverage query, assessment
+records, ontologies, rules, example fixture and historical receipts. Additional
+or altered checkpoint receipts fail validation. This is not an approval of
+arbitrary descendants or future semantic changes. The original query fingerprint
+remains historical evidence; only its exact Git-pinned approved successor is
+accepted. `branch_at_freeze` is verified against the original committed identity
+record instead of the current branch name, so detached clones can authenticate.
+
+Assessment packet freshness separately uses a deterministic digest of governed
+input bytes, input-scope policy and tool identity, not the SHA of the commit
+containing the packets. Thus committing unchanged packets does not invalidate
+them. Human-decision authentication and exact report-content checks still run.
+
+These mechanisms do not claim all-final scientific review, resolve SKOS, or
+grant release approval. Prepare dated notes and a final source commit, then run
+the existing clean-checkout package/archive rehearsal. Install both
+`requirements/validation.txt` and `requirements/coms-integration.txt` in the
+declared Python environment before invoking the release checks; do not depend on
+an editable sibling checkout of COMS.

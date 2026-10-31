@@ -113,7 +113,7 @@ import socket
 from pathlib import Path
 from build_release import PACKAGE_FILE_PATHS
 
-EXPECTED_DIRECTORIES = ("current-ssn-sosa", "evidence", "sources")
+EXPECTED_DIRECTORIES = ("current-ssn-sosa", "docs", "evidence", "rules", "sources", "tests", "tests/fixtures", "tests/fixtures/current-semantic")
 
 class Issue:
     def __init__(self, code, field, message):
@@ -1362,7 +1362,7 @@ print(json.dumps({
         with mock.patch.object(rehearsal, "_build_candidate", side_effect=record_candidate):
             result = self.rehearse()
         self.assertEqual(result.source_commit, self.commit)
-        self.assertEqual((result.package_file_count, result.archive_member_count), (12, 16))
+        self.assertEqual((result.package_file_count, result.archive_member_count), (15, 24))
         self.assertIsNone(result.output_dir)
         self.assertEqual(rehearsal.snapshot_repository(self.repository, environment), before)
         self.assertEqual(len(candidate_roots), 2)

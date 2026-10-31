@@ -112,7 +112,12 @@ class CurrentIdentityTests(unittest.TestCase):
             for relative in paths:
                 destination = root / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(identity.ROOT / relative, destination)
+                if relative == identity.AUTHORIZED_QUERY:
+                    destination.write_bytes(subprocess.check_output([
+                        "git", "-C", str(identity.ROOT), "show",
+                        f"{identity.IDENTITY_BASELINE_HEAD}:{relative}"]))
+                else:
+                    shutil.copyfile(identity.ROOT / relative, destination)
             # D-only workbook edits retain the original product bytes; live
             # products may now belong to a later semantic transition.
             for relative in identity.PRODUCTS:
@@ -131,7 +136,10 @@ class CurrentIdentityTests(unittest.TestCase):
             book["Sheet1"]["D4"] = "Documentary fixture, with no semantic cell change."
             book.save(root / identity.WORKBOOK)
             book.close()
-            yield root, historical
+            # This fixture models the original documentary checkpoint, not
+            # the separately pinned completed-artifact release baseline.
+            with patch.object(identity, "checkpoint_errors", return_value=[]):
+                yield root, historical
 
     def test_documentary_chain_preserves_historical_workbook_identity(self):
         with self.documentary_candidate() as (root, historical):

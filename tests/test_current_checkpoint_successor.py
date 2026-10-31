@@ -358,26 +358,16 @@ class CheckpointSuccessorTests(unittest.TestCase):
 
 
 class CurrentCheckpointIntegrationTests(unittest.TestCase):
-    def test_real_state_uses_retained_authorities_without_modifying_governed_files(self):
+    def test_qualified_release_preserves_historical_protocol_and_governed_files(self):
         root = identity.ROOT
         protected = (identity.WORKBOOK, "mappings/current-ssn-sosa-assessment.json", *identity.PRODUCTS)
         before = {path: identity.fingerprint(root / path) for path in protected}
-        transition_path = "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json"
-        transition = json.loads((root / transition_path).read_text())
-        state, paths = successor._authenticated_authorities(root)
-        self.assertEqual(state["workbook_sha256"], transition["new_workbook_sha256"])
-        self.assertEqual(state["semantic_projection_sha256"], transition["new_semantic_projection_sha256"])
-        self.assertEqual(state["assessment_sha256"], before[protected[1]]["sha256"])
-        self.assertEqual(state["products"], {path: before[path] for path in identity.PRODUCTS})
-        self.assertEqual(state["history_tail_sha256"], transition["new_workbook_sha256"])
-        self.assertIn({"kind": "semantic", "path": transition_path,
-                       "sha256": identity.fingerprint(root / transition_path)["sha256"]}, state["history"])
-        self.assertIn(documentary.BASELINE, paths)
-        self.assertIn(transition_path, paths)
-        for ref in state["history"]:
-            self.assertEqual(ref["sha256"], identity.fingerprint(root / ref["path"])["sha256"])
-        self.assertNotIn("selected_evidence", state)
-        self.assertNotIn(readiness.CURRENT_EVIDENCE.as_posix(), paths)
+        # The completed October baseline has separately authorized query bytes.
+        # Its acceptance must not silently broaden the older receipt protocol.
+        self.assertTrue(identity.qualified_release_checkpoint(root))
+        self.assertEqual(identity.checkpoint_errors(root), [])
+        with self.assertRaisesRegex(ValueError, "non-evolvable governed input: queries/unmapped-source-terms.rq"):
+            successor._authenticated_authorities(root)
         self.assertEqual(before, {path: identity.fingerprint(root / path) for path in protected})
 
 
