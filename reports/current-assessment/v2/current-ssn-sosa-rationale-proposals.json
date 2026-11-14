@@ -1,7 +1,7 @@
 {
   "binding": {
     "assessment_tool_sha256": "1df3d8c6851eeef76881f1ca0a90ab52e9f41d4b56fca3770de5bedb43ffe5d6",
-    "content_sha256": "3d35920ded43be7411b88f135a9c1fd36cd03a9fcb34a0ab294b804480bf35df",
+    "content_sha256": "fe5566eb8ad96d0581cdb92c03abd53e79af59573a86f92bd1388fd2059f7ba7",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -13,7 +13,7 @@
       "schema_version": 2
     },
     "input_sha256": {
-      "SSN2BFO.ttl": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
+      "SSN2BFO.ttl": "31891c62505276432b95870363d23afa076066cd71f80767e4fc83339ad2f844",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -26,8 +26,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
-      "mappings/current-ssn-sosa-assessment.json": "855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709",
+      "mappings/SSN2BFO-COMS.xlsx": "0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a",
+      "mappings/current-ssn-sosa-assessment.json": "ad27d6ead4a1f55182cf53dc1ccfdf09c8a3f1732dc36747722534342bacb84f",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -77,6 +77,11 @@
       "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91",
       "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample-review-packet.json": "56fdc7f62c1b46b5177fa7a2240b7b6c2ac7627d3b8601dba10bb58f42be5133",
       "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930",
+      "reports/current-human-decisions/2026-11-01-observation-adjudication/Observation-review-packet.json": "85453658f80cb670517f0193eb4b75a29a595327cdc44dfc07ff53f8a9a8c4d9",
+      "reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json": "1eb03f1bcbb43ea3d93bd5d9954e8b2ab45091ea7cd2df9a4d042dab7c9facc8",
+      "reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt": "53848669dd8005ad1a7232fc5ecb0e63fd2415213f8da37d7cdb6b8b6b086dc0",
+      "reports/current-human-decisions/2026-11-01-observation-adjudication/assessment-before.json": "855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709",
+      "reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json": "4da62f4f9687c14cf118e0bc003e59213ea1265b0f27a65a48eac194a9516c64",
       "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
@@ -92,7 +97,9 @@
       "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b",
       "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json": "d999ed7feb3a2f58e7e91340e5919ad5b40678b85e10deee4d53edafad2ea0fb",
       "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json": "4efadf29f7cebefd8a62b0d5ae42e5ed2e74b64b810f83fd85b73f3011e7b55b",
       "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json": "e6ca14409fbd4df59ecbcbf3c36fb09cc762919225d8e0d288f755c723d9d2b9",
+      "reports/current-semantic-workbook/versions/0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a.xlsx": "0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a",
       "reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
       "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
       "reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
@@ -320,8 +327,6 @@
     },
     {
       "critical_features": [
-        "existential_restriction",
-        "complex_expression",
         "material_cross_track_difference",
         "target_category_commitment"
       ],
@@ -333,17 +338,19 @@
         "imports/cco.ttl",
         "reports/hermit-observation-sensor-stimulus-evaluation.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json"
       ],
       "existing_workbook_rationales": [
-        "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts."
+        "SOSA defines Observation as an act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. The general cco:PlannedAct classification is retained. CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard. CCO ActOfObservation requires acquiring information from a source through one or more senses. These are natural-language target definitions; the SOSA source definition does not justify universally requiring a process part satisfying both CCO classifications. The original existential intersection requires at least one process part belonging to both ActOfMeasuring and ActOfObservation. It is not equivalent to requiring potentially distinct process parts of the two types. The approved revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation. This is a deliberate semantic weakening, not a correction to OWL syntax."
       ],
       "mapping_row_ids": [
         "urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa"
       ],
-      "proposed_documentary_rationale": "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts.",
+      "proposed_documentary_rationale": "SOSA defines Observation as an act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. The general cco:PlannedAct classification is retained. CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard. CCO ActOfObservation requires acquiring information from a source through one or more senses. These are natural-language target definitions; the SOSA source definition does not justify universally requiring a process part satisfying both CCO classifications. The original existential intersection requires at least one process part belonging to both ActOfMeasuring and ActOfObservation. It is not equivalent to requiring potentially distinct process parts of the two types. The approved revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation. This is a deliberate semantic weakening, not a correction to OWL syntax.",
       "scope": "Documentary reconstruction only; safe_to_adopt does not approve a target, predicate, or outstanding semantic decision.",
-      "semantic_decision_still_required": true,
+      "semantic_decision_still_required": false,
       "source_iri": "http://www.w3.org/ns/sosa/Observation",
       "status": "safe_to_adopt"
     },
@@ -2602,6 +2609,6 @@
     "existing_workbook_rationale_terms": 91,
     "human_review_required_proposals": 1,
     "safe_documentary_proposals": 90,
-    "semantic_review_terms": 71
+    "semantic_review_terms": 70
   }
 }

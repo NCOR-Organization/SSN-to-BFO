@@ -1,0 +1,19 @@
+{
+  "delta": [
+    {
+      "cell": "C8",
+      "before": "cco:PlannedAct and (cco:has_process_part some (cco:ActOfMeasuring and cco:ActOfObservation))",
+      "after": "cco:PlannedAct"
+    },
+    {
+      "cell": "D8",
+      "before": "sosa:Observation is modeled as a cco:PlannedAct with internal structure because it involves intentional acts of observation and measurement carried out according to a procedure. The cco:has_process_part restriction captures the necessary internal structure without overcommitting to an equivalentTo axiom, since observations may have additional process parts.",
+      "after": "SOSA defines Observation as an act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. The general cco:PlannedAct classification is retained. CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard. CCO ActOfObservation requires acquiring information from a source through one or more senses. These are natural-language target definitions; the SOSA source definition does not justify universally requiring a process part satisfying both CCO classifications. The original existential intersection requires at least one process part belonging to both ActOfMeasuring and ActOfObservation. It is not equivalent to requiring potentially distinct process parts of the two types. The approved revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation. This is a deliberate semantic weakening, not a correction to OWL syntax."
+    }
+  ],
+  "only_C8_D8_changed_in_inspected_range": true,
+  "formulas_preserved": true,
+  "row_and_cell_attributes_preserved": true,
+  "layout_and_styles_preserved": true,
+  "read_only_hash_verification_passed": true
+}

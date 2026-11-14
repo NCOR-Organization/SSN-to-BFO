@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**71 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**70 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -40,7 +40,6 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 4 | `sosa:Actuator` | Can an unused Actuator exist without an actual Actuation, despite the current realization and agent_in existential commitments? |
 | 4 | `sosa:FeatureOfInterest` | Is the four-category union a deliberate necessary upper bound for every FeatureOfInterest, including abstract or informational features, and does the wording “direct alignment deferred” accurately describe an active axiom? |
 | 4 | `sosa:ObservableProperty` | Does every observable property require an actual bearer/process FeatureOfInterest through exactly these two relations, rather than just being a quality that can be observed? |
-| 4 | `sosa:Observation` | Does every Observation contain one actual process part that is both CCO ActOfMeasuring and sense-based ActOfObservation, including automated estimation and calculation? |
 | 4 | `sosa:Procedure` | Does every reusable Procedure prescribe an actual Process, or does the source support only its information-content category? |
 | 4 | `sosa:Sensor` | Does the current Sensor interpretation require actual Observation and agency, or should an unused capable sensor qualify without actual realization? |
 | 4 | `ssn-system:Accuracy` | Does accuracy in comparison with a reference justify the current commitment to Function, an actual Process, descriptive content, and a VeracityMeasurementInformationContentEntity, or does it describe a property/capability without those actual individuals? |
@@ -1367,43 +1366,6 @@ Asserted context (actual axiom subject and direction retained):
 **Proposed recommendation:** Retain the artifact during review. Use only the necessary upper union or inherited ssn:Property alignment if justified; retain actual bearer/part existentials only with source-specific evidence.
 
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!7`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/ObservableProperty`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/ObservableProperty`; `imports/cco.ttl`; `reports/hermit-observation-sensor-stimulus-evaluation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## sosa:Observation
-
-State: **unreviewed**; priority 4; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!8` / `urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa`: `rdfs:subClassOf` cco:PlannedAct and (cco:has_process_part some (cco:ActOfMeasuring and cco:ActOfObservation)).
-
-**Source semantics:** Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (sosa:hasFeatureOfInterest owl:allValuesFrom sosa:FeatureOfInterest); rdfs:subClassOf (sosa:hasFeatureOfInterest owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:hasResult owl:allValuesFrom sosa:Result); rdfs:subClassOf (sosa:hasResult owl:minCardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:madeBySensor owl:allValuesFrom sosa:Sensor); rdfs:subClassOf (sosa:madeBySensor owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:observedProperty owl:allValuesFrom sosa:ObservableProperty); rdfs:subClassOf (sosa:observedProperty owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:phenomenonTime owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:resultTime owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>); rdfs:subClassOf (sosa:usedProcedure owl:allValuesFrom sosa:Procedure); rdfs:subClassOf (ssn:wasOriginatedBy owl:allValuesFrom ssn:Stimulus); rdfs:subClassOf (ssn:wasOriginatedBy owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)
-
-Source advisory signature: none recorded
-
-**Target semantics:** `cco:ont00000037` (Act of Observation; asserted_target_expression; glossary); `cco:ont00000228` (Planned Act; asserted_target_expression; glossary); `cco:ont00000345` (Act of Measuring; asserted_target_expression; glossary); `cco:ont00001777` (has process part; asserted_target_expression; glossary)
-
-**Logical consequences:** Every sosa:Observation satisfies cco:PlannedAct and (cco:has_process_part some (cco:ActOfMeasuring and cco:ActOfObservation)); the reverse classification is not asserted. Each 'some' requires at least one actual filler; this is not merely a capability or possible realization.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:ObservableProperty rdfs:subClassOf (inverse(sosa:observedProperty) owl:allValuesFrom sosa:Observation)`.
-- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf (sosa:madeObservation owl:allValuesFrom sosa:Observation)`.
-- `source_native` / asserted: `ssn:Stimulus rdfs:subClassOf (inverse(ssn:wasOriginatedBy) owl:allValuesFrom sosa:Observation)`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet1!11`: `sosa:Observation` — `no_direct_mapping`, `` . Remove the direct Observation mapping row. Observation is already a native subclass of Execution and therefore inherits the governed Execution-to-PlannedAct mapping. The additional process-part restriction is unsupported: CCO ActOfObservation requires sense-based acquisition, while SOSA includes automated observations, and SOSA's broader estimation and calculation scope does not require every Observation to contain a distinct CCO ActOfMeasuring process part. Comparison basis: same lexical term.
-
-**Human decision:** Does every Observation contain one actual process part that is both CCO ActOfMeasuring and sense-based ActOfObservation, including automated estimation and calculation?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review a PlannedAct-only subclass without the internal measuring/observation part; N-track inheritance through Execution cannot simply be copied into the current source.
-
-**Proposed recommendation:** Retain the artifact during review. Review a PlannedAct-only subclass without the internal measuring/observation part; N-track inheritance through Execution cannot simply be copied into the current source.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!8`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/Observation`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/Observation`; `imports/cco.ttl`; `reports/hermit-observation-sensor-stimulus-evaluation.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
@@ -3361,15 +3323,6 @@ Asserted context (actual axiom subject and direction retained):
 - `target_native` / asserted: `cco:ont00000876 rdfs:subClassOf cco:ont00000004`.
 - `target_native` / asserted: `cco:ont00001048 rdfs:subClassOf cco:ont00000004`.
 
-### cco:ont00000037 — Act of Observation
-
-A Planned Act of acquiring information from a source via the use of one or more senses.
-
-rdf:type owl:Class; rdfs:subClassOf cco:ont00000228
-
-Asserted context (actual axiom subject and direction retained):
-- `target_native` / asserted: `cco:ont00000889 rdfs:subClassOf cco:ont00000037`.
-
 ### cco:ont00000118 — Artifact Function Specification
 
 A Directive Information Content Entity that prescribes some Artifact Function and which is part of some Artifact Model.
@@ -3426,17 +3379,6 @@ rdf:type owl:Class; rdfs:subClassOf (cco:ont00001942 owl:someValuesFrom cco:ont0
 
 Asserted context (actual axiom subject and direction retained):
 - `target_native` / asserted: `cco:ont00001045 rdfs:subClassOf cco:ont00000319`.
-
-### cco:ont00000345 — Act of Measuring
-
-A Planned Act that involves determining the extent, dimensions, quanity, or quality of an Entity relative to some standard.
-
-rdf:type owl:Class; rdfs:subClassOf cco:ont00000228
-
-Asserted context (actual axiom subject and direction retained):
-- `target_native` / asserted: `cco:ont00000078 rdfs:subClassOf cco:ont00000345`.
-- `target_native` / asserted: `cco:ont00000636 rdfs:subClassOf cco:ont00000345`.
-- `target_native` / asserted: `cco:ont00001330 rdfs:subClassOf (cco:ont00001777 owl:someValuesFrom cco:ont00000345)`.
 
 ### cco:ont00000503 — Power
 

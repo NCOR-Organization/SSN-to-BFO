@@ -215,9 +215,9 @@ class CurrentAssessmentTests(unittest.TestCase):
         historical = [r for r in finals if r["source_iri"] in baseline]
         self.assertEqual(set(baseline), {r["source_iri"] for r in historical})
         self.assertEqual(len(historical), 12)
-        self.assertEqual(len(finals), 20)
+        self.assertEqual(len(finals), 21)
         self.assertEqual({r["source_iri"] for r in finals} - set(baseline),
-                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf")} |
+                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf", "Observation")} |
                          {"http://www.w3.org/ns/ssn/forProperty",
                           "http://www.w3.org/ns/ssn/systems/SystemProperty",
                           "http://www.w3.org/ns/ssn/systems/MeasurementRange"} |
@@ -797,7 +797,7 @@ class CurrentAssessmentTests(unittest.TestCase):
         unresolved = {r["source_iri"] for r in self.document["records"] if r["review_state"] != "final"}
         self.assertEqual({r["source_iri"] for r in queue["items"]}, unresolved)
         self.assertEqual(len(queue["items"]), len(unresolved))
-        self.assertEqual(len(unresolved), 71)
+        self.assertEqual(len(unresolved), 70)
         self.assertEqual(queue["items"][0]["priority"], 1)
         for item in queue["items"]:
             self.assertTrue(item["source_semantics"]["definitions"])
@@ -817,9 +817,9 @@ class CurrentAssessmentTests(unittest.TestCase):
         self.assertEqual(cov["summary"]["coverage_counts"]["typing_only_in_workbook"], 16)
         self.assertEqual(cov["summary"]["coverage_counts"]["rule_or_chain_route"], 11)
         self.assertEqual(cov["summary"]["coverage_counts"]["no_established_formal_route"], 15)
-        self.assertEqual(cov["summary"]["review_states"], {"final": 20, "deferred": 0, "unreviewed": 71})
-        self.assertEqual(cov["summary"]["assessment_outcomes"], {"formal_mapping_adopted": 13,
-                         "no_direct_mapping": 5, "inheritance_sufficient": 2, "deferred": 0, "unreviewed": 71})
+        self.assertEqual(cov["summary"]["review_states"], {"final": 21, "deferred": 0, "unreviewed": 70})
+        self.assertEqual(cov["summary"]["assessment_outcomes"], {"formal_mapping_adopted": 14,
+                         "no_direct_mapping": 5, "inheritance_sufficient": 2, "deferred": 0, "unreviewed": 70})
         self.assertEqual(cov["summary"]["coverage_counts"]["inherited_formal_mapping"], 41)
         self.assertEqual(cov["summary"]["coverage_counts"]["explicit_blank"], 7)
         self.assertEqual(cov["summary"]["assertion_bearing_rows"], 100)

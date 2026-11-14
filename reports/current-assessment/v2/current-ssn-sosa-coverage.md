@@ -1,6 +1,6 @@
 # Current SSN/SOSA assessment and formal coverage
 
-Bound to authenticated content SHA-256 `3d35920ded43be7411b88f135a9c1fd36cd03a9fcb34a0ab294b804480bf35df` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.
+Bound to authenticated content SHA-256 `fe5566eb8ad96d0581cdb92c03abd53e79af59573a86f92bd1388fd2059f7ba7` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.
 
 Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.
 
@@ -8,7 +8,7 @@ Structural evidence over named source subclass/subproperty, named equivalence, a
 
 Dynamic source terms: **91**; assessment records: **91**; equality: **PASS**.
 
-Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 20, 'unreviewed': 71}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 13, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 71}`.
+Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 21, 'unreviewed': 70}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 14, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 70}`.
 
 These assessments describe unchanged workbook mapping assertions; registered documentary reasoning updates do not change assessment semantics. Final records reconstruct supported existing decisions; unresolved records do not reject or remove active axioms.
 
@@ -40,7 +40,7 @@ Categories overlap: a directly mapped class can inherit additional constraints; 
 | `rdfs:subClassOf` | 32 |
 | `rdfs:subPropertyOf` | 24 |
 
-Expression occurrences: `{'intersection': 88, 'named': 193, 'some': 97, 'union': 15}`; rows containing each form: `{'intersection': 36, 'named': 74, 'some': 36, 'union': 14}`.
+Expression occurrences: `{'intersection': 86, 'named': 191, 'some': 96, 'union': 15}`; rows containing each form: `{'intersection': 35, 'named': 74, 'some': 35, 'union': 14}`.
 
 ## Per-term coverage
 

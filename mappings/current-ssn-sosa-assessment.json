@@ -153,7 +153,7 @@
       "source_label": "Observable Property"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!8",
@@ -162,13 +162,19 @@
         "imports/cco.ttl",
         "reports/hermit-observation-sensor-stimulus-evaluation.md",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json",
+        "sha256": "1eb03f1bcbb43ea3d93bd5d9954e8b2ab45091ea7cd2df9a4d042dab7c9facc8"
+      },
       "mapping_row_ids": [
         "urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does every Observation contain one actual process part that is both CCO ActOfMeasuring and sense-based ActOfObservation, including automated estimation and calculation?",
+      "rationale": "SOSA defines Observation as an act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. The general cco:PlannedAct classification is retained. CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard. CCO ActOfObservation requires acquiring information from a source through one or more senses. These are natural-language target definitions; the SOSA source definition does not justify universally requiring a process part satisfying both CCO classifications. The original existential intersection requires at least one process part belonging to both ActOfMeasuring and ActOfObservation. It is not equivalent to requiring potentially distinct process parts of the two types. The approved revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation. This is a deliberate semantic weakening, not a correction to OWL syntax.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -178,7 +184,7 @@
         "question": "Does every Observation contain one actual process part that is both CCO ActOfMeasuring and sense-based ActOfObservation, including automated estimation and calculation?",
         "recommendation": "Retain the artifact during review. Review a PlannedAct-only subclass without the internal measuring/observation part; N-track inheritance through Execution cannot simply be copied into the current source."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/Observation",
       "source_kind": "class",
       "source_label": "Observation"

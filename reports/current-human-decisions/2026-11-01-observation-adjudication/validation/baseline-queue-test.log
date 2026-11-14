@@ -1,0 +1,14 @@
+test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval) ... FAIL
+
+======================================================================
+FAIL: test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-release-repair-commit-jhqngf6h/checkout/tests/test_current_assessment.py", line 806, in test_queue_complete_and_rationales_separate_documentation_from_approval
+    self.assertGreaterEqual(len(item["available_alternatives"]), 2)
+AssertionError: 1 not greater than or equal to 2
+
+----------------------------------------------------------------------
+Ran 1 test in 56.759s
+
+FAILED (failures=1)

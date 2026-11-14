@@ -1,0 +1,16 @@
+test_current_inventory_is_exact_and_independent_of_row_count (tests.test_current_assessment.CurrentAssessmentTests.test_current_inventory_is_exact_and_independent_of_row_count) ... ok
+test_historical_final_baseline_is_exact_and_fixed (tests.test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed) ... ok
+test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval) ... FAIL
+
+======================================================================
+FAIL: test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/tests/test_current_assessment.py", line 806, in test_queue_complete_and_rationales_separate_documentation_from_approval
+    self.assertGreaterEqual(len(item["available_alternatives"]), 2)
+AssertionError: 1 not greater than or equal to 2
+
+----------------------------------------------------------------------
+Ran 3 tests in 121.844s
+
+FAILED (failures=1)

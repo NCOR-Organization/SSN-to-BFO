@@ -1,0 +1,116 @@
+{
+  "product_checks": [
+    {
+      "path": "SSN2BFO.ttl",
+      "old_sha256": "0905533ef416b72366c588820173a2be56d299679f08387cad6650f410f1b810",
+      "new_sha256": "31891c62505276432b95870363d23afa076066cd71f80767e4fc83339ad2f844",
+      "added_axioms": [
+        [
+          "class",
+          "http://www.w3.org/ns/sosa/Observation",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "https://www.commoncoreontologies.org/ont00000228"
+        ]
+      ],
+      "removed_axioms": [
+        [
+          "class",
+          "http://www.w3.org/ns/sosa/Observation",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)"
+        ]
+      ],
+      "before_triples": 1065,
+      "after_triples": 1050,
+      "deleted_expression_blank_nodes": 7,
+      "exact_expected_graph_isomorphic": true,
+      "domain_range_unchanged": true
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "old_sha256": "d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef",
+      "new_sha256": "d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef",
+      "added_axioms": [],
+      "removed_axioms": [],
+      "before_triples": 62,
+      "after_triples": 62,
+      "deleted_expression_blank_nodes": 0,
+      "exact_expected_graph_isomorphic": true,
+      "domain_range_unchanged": true
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "old_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "new_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "added_axioms": [],
+      "removed_axioms": [],
+      "before_triples": 134,
+      "after_triples": 134,
+      "deleted_expression_blank_nodes": 0,
+      "exact_expected_graph_isomorphic": true,
+      "domain_range_unchanged": true
+    },
+    {
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "old_sha256": "019c1ec14ba31c48d415d1ec9f0207b16a79e2117e536cefa0ab82a1c383a3f5",
+      "new_sha256": "aae3d5a2b45f1a19fcfab2ba90ee7945b2c662329610c865793263096dfa875e",
+      "added_axioms": [
+        [
+          "class",
+          "http://www.w3.org/ns/sosa/Observation",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "https://www.commoncoreontologies.org/ont00000228"
+        ]
+      ],
+      "removed_axioms": [
+        [
+          "class",
+          "http://www.w3.org/ns/sosa/Observation",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)"
+        ]
+      ],
+      "before_triples": 883,
+      "after_triples": 868,
+      "deleted_expression_blank_nodes": 7,
+      "exact_expected_graph_isomorphic": true,
+      "domain_range_unchanged": true
+    }
+  ],
+  "status": "PASS",
+  "baseline_file_count": 1965,
+  "changed_existing_files": [
+    "SSN2BFO.ttl",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md",
+    "tests/test_current_assessment.py"
+  ],
+  "untouched_existing_files": 1951,
+  "sosa_2023_named_paths_verified": 51,
+  "original_untracked_files_verified": 175,
+  "changed_assessment_records": [
+    "http://www.w3.org/ns/sosa/Observation"
+  ],
+  "review_states": {
+    "unreviewed": 70,
+    "final": 21
+  },
+  "assessment_outcomes": {
+    "unreviewed": 70,
+    "formal_mapping_adopted": 14,
+    "no_direct_mapping": 5,
+    "inheritance_sufficient": 2
+  },
+  "head_unchanged": true,
+  "index_empty": true
+}

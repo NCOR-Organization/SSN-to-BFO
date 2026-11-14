@@ -1,0 +1,49 @@
+# Revise Current SOSA Observation Mapping
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+## Explicit human decision
+
+I approve simplifying the current SSN/SOSA mapping of `sosa:Observation`.
+
+**Original mapping:**
+```yaml
+sosa:Observation rdfs:subClassOf
+  cco:PlannedAct and
+  (cco:has_process_part some
+    (cco:ActOfMeasuring and cco:ActOfObservation))
+```
+
+**Approved replacement:**
+```yaml
+sosa:Observation rdfs:subClassOf cco:PlannedAct
+```
+
+## Required implementation
+
+1. Locate the existing `sosa:Observation` row in `mappings/SSN2BFO-COMS.xlsx`.
+2. Replace its target expression with `cco:PlannedAct`, preserving its predicate and RowID.
+3. Update the authoritative `coms:Reasoning` cell to explain:
+   - SOSA defines Observation as an act of carrying out an Observation Procedure to estimate or calculate a property value of a FeatureOfInterest.
+   - The general PlannedAct classification is retained.
+   - CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard.
+   - CCO ActOfObservation requires acquiring information from a source through one or more senses.
+   - The source definition does not justify universally requiring a process part satisfying both CCO classifications.
+   - The original existential intersection requires at least one process part belonging to both classes; it is not equivalent to requiring potentially distinct process parts of the two types.
+   - The revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation.
+4. Record an explicit human-approved semantic decision through the repository's existing decision-governance process. Mark the mapping `final / formal_mapping_adopted`, if consistent with the existing assessment conventions.
+5. Preserve the exact previous expression and a before/after comparison in the decision history. Explain that this is a deliberate semantic weakening, not a correction to OWL syntax.
+6. Regenerate the maintained current SSN/SOSA ontology products and affected assessment reports using the established workflows.
+7. Verify:
+   - The new mapping is generated correctly.
+   - The old process-part restriction is no longer asserted by this mapping.
+   - OWL 2 DL profile validation passes.
+   - HermiT reports zero named unsatisfiable classes.
+   - Deterministic generation and assessment authentication pass.
+   - No unrelated mapping assertions change.
+8. Verify that the SOSA-2023 workbook, products, and decisions remain byte-identical. This decision applies only to the current SSN/SOSA track.
+9. Report the exact changed files, RowID, logical axiom delta, assessment counts, decision provenance, and validation results.
+
+Do not perform unrelated semantic reviews or infrastructure changes.
+
+Do not stage, commit, tag, or push.
