@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**70 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**69 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -10,7 +10,6 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 
 | Priority | Source | Question |
 |---|---|---|
-| 1 | `sosa:observedProperty` | Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it. |
 | 1 | `ssn:implementedBy` | Is the authorized external implementation faithful to the historical process-mediated inference and current OWL 2 DL requirements? Focused execution and logical checks pass. |
 | 2 | `sosa:hasFeatureOfInterest` | Does relating an execution to what its result concerns warrant any target relation, or is source domain/range typing the complete intended mapping outcome? |
 | 2 | `sosa:isFeatureOfInterestOf` | Can the inverse FeatureOfInterest-to-execution relation receive a sound target inclusion across material, process, and property-like features, or should it remain no-direct? |
@@ -80,42 +79,6 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 8 | `ssn-system:hasSurvivalProperty` | Does SurvivalRange-to-Property use require the Property to specifically depend on that container, and is the BFO dependence direction/category valid for all its source cases? |
 | 8 | `ssn-system:hasSystemProperty` | Does SystemCapability-to-Property use require the Property to specifically depend on that container, and is the BFO dependence direction/category valid for all its source cases? |
 | 8 | `ssn-system:qualityOfObservation` | Is the quality associated with an Observation necessarily an output produced by that process, or a quality/description of it? |
-
-## sosa:observedProperty
-
-State: **unreviewed**; priority 1; evidence confidence: Historical implementation and current technical validation verified; assessment review state unchanged..
-
-**Repository facts — mapping:**
-
-- `Sheet2!36` / `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1`: `[blank]` (zero axioms).
-
-**Source semantics:** Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.
-
-Source structure: rdf:type owl:ObjectProperty
-
-Source advisory signature: <http://schema.org/domainIncludes> sosa:Observation; <http://schema.org/rangeIncludes> sosa:ObservableProperty
-
-**Target semantics:** No target relation or class expression is asserted by these rows. Native source types alone do not establish a BFO/CCO relation mapping.
-
-**Logical consequences:** sosa:observedProperty contributes zero mapping axioms; native source axioms remain present.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:ObservableProperty rdfs:subClassOf (inverse(sosa:observedProperty) owl:allValuesFrom sosa:Observation)`.
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:allValuesFrom sosa:ObservableProperty)`.
-- `source_native` / asserted: `sosa:Observation rdfs:subClassOf (sosa:observedProperty owl:cardinality "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>)`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet2!67`: `sosa:observedProperty` — `no_direct_mapping`, `` . No direct BFO/CCO object-property mapping is adopted. sosa:observedProperty relates an Observation or ObservationCollection to the Property observed. CCO has input requires an Independent Continuant input whose presence at the beginning is necessary for a Process to start, which is not entailed by observation and does not cover the ProcessProfile branch of sosa:Property. CCO aboutness relations instead require an Information Content Entity subject. No reviewed BFO/CCO relation provides the required uniform semantics. Comparison basis: same lexical term.
-
-**Human decision:** Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.
-
-**Alternatives:**
-- Preserve the historically authorized treatment recorded in the semantic transition.
-
-**Proposed recommendation:** Retain this recovered historical implementation; this task opens no new semantic adjudication.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet2!36`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/observedProperty`; `imports/cco.ttl`; `reports/hermit-observedProperty-deferral-evaluation.md`; `reports/hermit-observedProperty-reactivation-canary.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`; `reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json`; `reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json`.
-
-**Notes:** Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.
 
 ## ssn:implementedBy
 

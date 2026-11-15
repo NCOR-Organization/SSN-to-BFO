@@ -885,7 +885,7 @@
       "source_label": "made sampling"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet2!36",
@@ -897,13 +897,21 @@
         "mappings/SOSA-next-to-BFO-COMS.xlsx",
         "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json",
         "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json",
-        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json"
+        "reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json",
+        "mappings/SSN2BFO-COMS.xlsx#Sheet2!65",
+        "reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json",
+        "sha256": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290"
+      },
       "mapping_row_ids": [
+        "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc",
         "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
       ],
       "notes": "Historical implementation recovery authorized on 2026-10-30 and validated against the complete available pinned local ontology. This records historical decision provenance; no new scientific decision or assessment finalization is created. Source-native axioms and separately governed SOSA-2023 products are unchanged.",
-      "rationale": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
+      "rationale": "sosa:observedProperty relates an Observation to the ObservableProperty it observes. No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics. ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing sosa:ObservableProperty class mapping accommodates both. The source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation. These are global OWL typing commitments, not SHACL validation constraints. This explicit human-approved typing treatment supersedes the earlier technical deferral as the current treatment; the historical deferral and its former input interpretation remain preserved as evidence. The previously removed sosa:observedProperty rdfs:subPropertyOf cco:has_input is not restored, and no BFO, CCO, or RO superproperty is introduced.",
       "review": {
         "alternatives": [
           "Preserve the historically authorized treatment recorded in the semantic transition."
@@ -912,7 +920,7 @@
         "question": "Does the current implementation preserve the historically authorized treatment? The focused recovery checks confirm it.",
         "recommendation": "Retain this recovered historical implementation; this task opens no new semantic adjudication."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
       "source_kind": "object_property",
       "source_label": "observed property"

@@ -1,0 +1,61 @@
+# Finalize sosa Mapping
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Branch: `publication/current-sosa-readiness`
+
+Baseline: `f16fe2130bb4f50d9c1e4bd41452e25cb5d05963`
+
+## Explicit human decision
+
+Adopt the following formal OWL typing axioms in the current SSN/SOSA mapping:
+```yaml
+sosa:observedProperty rdfs:domain sosa:Observation
+sosa:observedProperty rdfs:range sosa:ObservableProperty
+```
+
+Do not restore the previously removed:
+```yaml
+sosa:observedProperty rdfs:subPropertyOf cco:has_input
+```
+
+Do not introduce another BFO, CCO, or RO superproperty.
+
+## Rationale
+
+`sosa:observedProperty` relates an Observation to the ObservableProperty it observes.
+
+No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics.
+
+ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing `sosa:ObservableProperty` class mapping accommodates both.
+
+The new source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation.
+
+These are global OWL typing commitments, not SHACL validation constraints.
+
+## Implementation
+
+1. Inspect the current `sosa:observedProperty` workbook entry, its RowID, assessment, and historical deferral.
+2. Add the two approved assertions using the established COMS workbook conventions. Preserve existing RowIDs and use new RowIDs only where necessary.
+3. Record the explicit human decision and update its assessment to `final / formal_mapping_adopted`, following existing governance requirements.
+4. Update the authoritative reasoning to distinguish the new typing treatment from the previously rejected `cco:has_input` mapping.
+5. Regenerate the affected current-track ontology products and assessment reports.
+6. Verify that:
+   - Both new axioms are present.
+   - No `cco:has_input` inclusion has been restored.
+   - OWL 2 DL profile validation passes.
+   - HermiT reports zero named unsatisfiable classes.
+   - Domain and range entailment tests pass.
+   - The established `sosa:Observation` and `sosa:ObservableProperty` mappings remain unchanged.
+   - No unrelated mappings change.
+   - SOSA-2023 artifacts remain unchanged.
+   - Deterministic generation and decision authentication pass.
+7. Preserve the previous technical-deferral evidence and document how the new source-class treatment resolves the mapping question.
+
+Do not change pinned source ontologies, repair unrelated infrastructure, or begin additional semantic reviews.
+
+If the new axioms cause a logical or profile failure, stop and report the exact interaction rather than modifying other mappings.
+
+Do not stage, commit, tag, or push.
+
+Report the logical delta, RowIDs, updated counts, decision provenance, and validation results.

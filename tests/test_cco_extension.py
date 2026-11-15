@@ -670,11 +670,11 @@ class RawCcoTransitionTests(unittest.TestCase):
             before_blanks = {row_id for row_id, row in baseline_rows.items() if not row.authoritative_axioms}
             after_blanks = {audit.row_id for audit in audits if not audit.authoritative_axioms}
             self.assertEqual(len(before_blanks), 2)
-            self.assertEqual(len(after_blanks), 5)
+            self.assertEqual(len(after_blanks), 6)
             self.assertEqual(after_blanks - before_blanks, cleared)
             self.assertEqual(before_blanks - after_blanks, set())
-            self.assertEqual(len(processed), 105)
-            self.assertEqual(sum(len(audit.authoritative_axioms) for audit in audits), 100)
+            self.assertEqual(len(processed), 108)
+            self.assertEqual(sum(len(audit.authoritative_axioms) for audit in audits), 102)
             result = modular.build_cco_extension(selected, metadata)
             self.assertEqual(result.sha256, CURRENT_CCO_SHA256)
             self.assertEqual(result.serialized_bytes,

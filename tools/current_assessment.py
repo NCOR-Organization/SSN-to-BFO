@@ -111,6 +111,29 @@ def decision_mapping_assertions(rows) -> list[dict[str, str]]:
                   key=lambda r: (r["row_id"], r["predicate"], r["target"]))
 
 
+def decision_typing_assertions(rows) -> list[dict[str, str]]:
+    """Keep approved OWL typing separate from target-relation mappings."""
+    return sorted(({"row_id": row.row.stable_row_id, "predicate": row.predicate,
+                    "target": row.target} for row in rows if row.predicate in mapping.DOMAIN_RANGE_PREDICATES),
+                  key=lambda r: (r["row_id"], r["predicate"], r["target"]))
+
+
+def validate_formal_typing_approval(decision: dict, formal: list, typing: list,
+                                    iri: str) -> None:
+    """Validate the explicit typing-only approval after binding its evidence.
+
+    This does not change direct-mapping coverage or reinterpret older decisions.
+    Both callers still authenticate the complete decision and workbook inputs.
+    """
+    if (decision.get("decision_basis") != "formal_typing_approval"
+            or decision.get("formal_typing_approved") is not True
+            or decision.get("review_state") != "final"
+            or decision.get("assessment_outcome") != "formal_mapping_adopted"
+            or formal or decision.get("formal_mapping_assertions") != []
+            or not typing or decision.get("formal_typing_assertions") != typing):
+        raise ValueError(f"human decision does not approve exact typing-only assertions: {iri}")
+
+
 def decision_input_hashes() -> dict:
     source = {p: sha(ROOT / p) for p in SOURCE_PATHS}
     return {"source_identity_sha256": canonical_sha(source), "source_files_sha256": source,
@@ -219,7 +242,11 @@ def authenticate_human_decision(record: dict, graph: Graph, target: Graph, all_r
 
     outcome = record["assessment_outcome"]
     if outcome == "formal_mapping_adopted":
-        if (decision.get("decision_basis") != "formal_mapping_approval"
+        if decision.get("decision_basis") == "formal_typing_approval":
+            validate_formal_typing_approval(
+                decision, decision_mapping_assertions(reviewed_own),
+                decision_typing_assertions(reviewed_own), iri)
+        elif (decision.get("decision_basis") != "formal_mapping_approval"
                 or decision.get("formal_mapping_approved") is not True
                 or not decision_mapping_assertions(reviewed_own)):
             raise ValueError(f"human decision does not approve current formal mapping: {iri}")
@@ -394,7 +421,17 @@ def validate(scope: dict, records: list[dict], graph: Graph, rows) -> dict[str, 
         if set(r["mapping_row_ids"]) != by_subject[iri] or len(r["mapping_row_ids"]) != len(set(r["mapping_row_ids"])):
             raise ValueError(f"mapping RowID mismatch: {iri}")
         if r["assessment_outcome"] == "formal_mapping_adopted" and not any(str(row.subject) == iri and row.predicate in mapping.MAPPING_PREDICATES for row in rows):
-            raise ValueError(f"formal outcome lacks a mapping: {iri}")
+            # A domain/range-only artifact is not automatically an adopted
+            # outcome. Require its separate explicit, byte-bound approval;
+            # complete historical authentication still runs below.
+            own_rows = [row for row in rows if str(row.subject) == iri]
+            typing = decision_typing_assertions(own_rows)
+            if not typing:
+                raise ValueError(f"formal outcome lacks a mapping: {iri}")
+            decision_path = project_evidence(r.get("human_decision_record"), "human decision record", iri)
+            decision = json.loads(decision_path.read_text())
+            validate_formal_typing_approval(
+                decision, decision_mapping_assertions(own_rows), typing, iri)
         if r["assessment_outcome"] == "no_direct_mapping" and any(str(row.subject) == iri and row.predicate in mapping.MAPPING_PREDICATES for row in rows):
             raise ValueError(f"no-direct outcome conflicts with mapping: {iri}")
         if r["assessment_outcome"] == "inheritance_sufficient":

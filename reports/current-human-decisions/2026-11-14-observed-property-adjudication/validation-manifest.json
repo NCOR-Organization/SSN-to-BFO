@@ -1,0 +1,133 @@
+{
+  "baseline_commit": "f16fe2130bb4f50d9c1e4bd41452e25cb5d05963",
+  "branch": "publication/current-sosa-readiness",
+  "command_environment": {
+    "COMS_PYTHONPATH": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-mapping-commit-2iv0ndjw/coms-dependency/src",
+    "java": "Java 22",
+    "note": "Existing local dependencies used; no publication workflow or environment installation performed.",
+    "python": "/opt/miniconda3/bin/python",
+    "robot": "ROBOT 1.9.7"
+  },
+  "final_checks": [
+    {
+      "check": "final-transition",
+      "returncode": 0,
+      "seconds": 11.08
+    },
+    {
+      "check": "final-generation",
+      "returncode": 0,
+      "seconds": 37.09
+    },
+    {
+      "check": "final-assessment",
+      "returncode": 0,
+      "seconds": 72.57
+    }
+  ],
+  "focused_entailments": {
+    "passed": 13,
+    "total": 13
+  },
+  "focused_regression_tests": {
+    "failed": 1,
+    "failure": "unchanged baseline queue alternatives assertion at tests/test_current_assessment.py:806",
+    "passed": 8
+  },
+  "git_status": {
+    "head_unchanged": true,
+    "modified_tracked": 19,
+    "new_task_files_including_manifest": 35,
+    "preexisting_untracked_unchanged": 175,
+    "staged_files": 0
+  },
+  "hermit": "PASS all four current products; zero named unsatisfiable classes",
+  "modified_tracked_files": {
+    "SSN2BFO.ttl": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+    "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md": "32cb94c077677d9e0c69ba9ba0fe14c226b9cadbd265d34b945d479c0e4ec53a",
+    "docs/MAPPING-GOVERNANCE.md": "415bad3c56e69c698cb84fabd94ff8588984d02f04b3fa461399e9ea26e91d10",
+    "mappings/SSN2BFO-COMS.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
+    "mappings/current-ssn-sosa-assessment.json": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+    "reports/coms-generation-validation.md": "aa59282f438e0d66c3d6f6e68f1b50bc26ccdbde9b4a1ae67ea2262f61c0fe1c",
+    "reports/coms-product-dispositions.json": "92d22e649b3cfdee83a18d5958a53cb837163384ad2552904c5cea9efe6f1642",
+    "reports/coms-source-term-coverage.md": "96346a183e4f8357d1b7b2b5af378a7fa37be7a14355e0090d3ad27db23e8663",
+    "reports/coms-vs-pre-coms-legacy-diff.md": "ff6dca44e75705f6672d86bdd530edbf623fdbbf927522bc99a083bed3a9fb02",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "30e5d413b6cd3eff507ee0e47c9a2529a29858e5cd7a0d2e7c496c6118212eba",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "b8c8d09939d601cf444c197e2f06e337174203b58231472e481478a3fa5165af",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "8a8df2e6dbf433ad3b36ff3ed0aa39694434c82092899c000b4514d5226ea47f",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "1237c82dc230d7c47423b6acd30d4e7f5f5dbd15c3012bc9f4a865699ef618f1",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "b4f2d4a45bb6f1d42e2c48548b97bd162768d1d9398764965672850bbb4237e0",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "51da288cb168a2cc838ee5d70249878cd0cff9d171d8cb09daf26614a63f3ea8",
+    "tests/test_current_assessment.py": "858038e63cee21cd83ced6cefb3c8affc3ff44dab88fbb8da4583d6a240d5626",
+    "tools/current_assessment.py": "9e16fe3fb80a03ef327e9dabdf51ca835dfb9ddc10029043c9e69fb8ebfa176e",
+    "tools/current_semantic_workbook.py": "916ea35f526c503a824fa7ed40acac97247c3180edc5e8140b496b4e2446ec66"
+  },
+  "new_files": {
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt": "3a3f617c3fabbdcca6a6b93d24c85f51570c58ad4056b6c977fb889f0cd46ef7",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-before.json": "ad27d6ead4a1f55182cf53dc1ccfdf09c8a3f1732dc36747722534342bacb84f",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-rowids-before.json": "bbbc012537adeb0cea79a8c7cbf10acb76b462f509c3bdc7efb95a7f931ad0e3",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json": "bf2e3711f9c9f7abb0e94de916cd3b3643342220ceb26d393b9985abd56d3156",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/completion-report.md": "1366677f9d71e49c80b4f5fbeab43a036f4c4035b85c18d63b0fb8c85a1a9bb0",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-before-review-packet.json": "9506ae986331b487cba0083789d1ccf1c61d978c4751b39d38532ac756ef16af",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json": "4c2e704a1b59bbecd4fcda20a0898582df77fd508cf52ec39d75b2b9594ae3a4",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/transition-authorities.json": "0918c1ace339582f9a34881cad20b4fc31c4035b483cfa83bb768ff33406fa38",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/alignment_core-validation-result.json": "9aa314b3c7ae83e505f4a74d1846eac2e456d8a0597fce79984b94b0cb886569",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/candidate-generation-snapshots.json": "33ee8d1ed45be1575f8ee974ea4674ec41c6a150d48b1ef706bd3e13ac3f3745",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/candidate-product-deltas.json": "47116f8da47c6b4634e6449afa4d96824c81f115c3aa9d17e6d1d99548ede80d",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/candidate-summary.json": "f88e3c314564e584e13588b6b329315e6eb8758278366b9847f73743270dd052",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/candidate-validation-2.log": "67f2406b5bb8704b99c46d3a446e448b14615a082c9390d45eeed4632a9a83dc",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/cco_extension-validation-result.json": "13e3984a6287baf7df8a23aad66f596bf8c2294394e3c78f0a6ce9da1081f776",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/encoding.log": "9176f208234e020ad7589b599b4f35a5c36abd98922c422ec141aab11e4a3e2e",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/entailment-queries.json": "d711deb36d26821dc80b6e39c3d3e7c63ccb05af0e6e45b173cf381ef7c595ab",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/entailment-result.json": "da342e6717c3c1443b2183a99694bd9da1684ad681a9f4eb89107c38e776dc8b",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/final-assessment.log": "8cf9f47ea41632b6410d75bb5064b99e35b34ecf30057d6411bcb5abe3024c4d",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/final-generation.log": "fe83522c7b40a44413d74f652f59eaa435fe653696df672f41a51e5b7c605500",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/final-transition.log": "fa04c3a0b43f102b5c12192791d03703c3e96b16dc37521d20260dce560b7dc8",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/final-validation-results.json": "43171138db8225f3a50c761b714f9f2fd332bbe1bb811112ae72faed3948a04d",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/focused-tests.log": "bcc2d4c0f3809a183824bc1b8615f245050ffaf61ffa16977d63174cc485f7e5",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/independent-final-audit.json": "05512cf11a913e6f1003efcc6053c5734cc803914f87569e8fddbe0c3071593f",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/integrated-validation-result.json": "e274f25059dc42d211a8fd055f42f954be826c86e9e5ef14bebda9a5cf802677",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/isolated-assessment.log": "8cf9f47ea41632b6410d75bb5064b99e35b34ecf30057d6411bcb5abe3024c4d",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/isolated-generation.log": "c1bfb6cab33c603c66ca3bd9243288165c7403637fdfc844abe58ea53caffb0f",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/isolated-transition.log": "fa04c3a0b43f102b5c12192791d03703c3e96b16dc37521d20260dce560b7dc8",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/preexisting-queue-failure.json": "00ff3d61199f1476172468f09ea949471c54003bad77d9de7ac5149c8d4593d4",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/strict_bfo_mapping-validation-result.json": "d76a9809d35fba714ad91b7f58bf7071ac9f175b30835f03745d79b9fa84f8eb",
+    "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation/validate_observedproperty_candidate.py": "81911fc9b0877406dcd7e38cc927c3f758d13eedd9ea756789fe95e99f1320e9",
+    "reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json": "e293bfe2c70379bed3466ecf9db5c4b1504c3d4cb5ae060a5d1aaa8089002118",
+    "reports/current-semantic-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
+    "tests/test_current_formal_typing.py": "7e4d9914de9aab96427e32061dfca29af0a7c7e1d967929495c98cd25f23de2e"
+  },
+  "owl2_dl": "PASS all four current products",
+  "preservation": {
+    "SOSA_2023_named_paths": 89,
+    "historical_deferral_files": 45,
+    "historical_human_decision_files": 126,
+    "pinned_sources": 6,
+    "preexisting_RowIDs": 107,
+    "unrelated_assessments": 90,
+    "unrelated_rows": 106
+  },
+  "reviewed_term": "http://www.w3.org/ns/sosa/observedProperty",
+  "self_hash_omitted": true,
+  "self_manifest_path": "reports/current-human-decisions/2026-11-14-observed-property-adjudication/validation-manifest.json",
+  "status": "approved implementation validated; unrelated baseline queue regression remains",
+  "updated_counts": {
+    "blank_rows": 6,
+    "deferred": 0,
+    "final": 22,
+    "formal_mapping_adopted": 15,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "owl_assertions": 102,
+    "terms": 91,
+    "unresolved": 69,
+    "unreviewed": 69,
+    "workbook_rows": 108
+  },
+  "whitespace_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  }
+}

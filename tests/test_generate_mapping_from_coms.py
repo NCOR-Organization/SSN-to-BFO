@@ -1622,7 +1622,7 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
         baseline, baseline_stats, before = inputs(baseline_path)
         processed, stats, after = inputs(workbook)
         self.assertEqual((len(baseline), len(before), baseline_stats.blank_mapping_rows), (105, 103, 2))
-        self.assertEqual((len(processed), len(after), stats.blank_mapping_rows), (105, 100, 5))
+        self.assertEqual((len(processed), len(after), stats.blank_mapping_rows), (108, 102, 6))
         removed = before.keys() - after.keys()
         cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
         self.assertEqual(len(removed), 3)
@@ -1660,9 +1660,9 @@ class ComsAuthorityMigrationTests(unittest.TestCase):
         with generation.generated_expectations_context(REPO_ROOT, workbook):
             generation.validate_row_counts(stats, audits)
             reconciled = modular.reconcile_product_axioms("alignment_core", canonical_rows, audits, disposition)
-            self.assertEqual(reconciled.governed_axiom_count, 100)
+            self.assertEqual(reconciled.governed_axiom_count, 102)
             self.assertEqual({item.target_category: item.count for item in reconciled.disposition_totals},
-                             {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
+                             {"target_neutral": 32, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
             selected = modular.select_product_axioms("cco_extension", canonical_rows, audits, disposition)
             self.assertEqual(len(selected), 52)
             result = modular.build_cco_extension(selected, metadata)
@@ -2607,8 +2607,8 @@ print(hashlib.sha256(output.read_bytes()).hexdigest())
             governed_axioms = len(set(graph.triples((None, RDFS.domain, None)))) + len(
                 set(graph.triples((None, RDFS.range, None)))
             )
-            self.assertEqual(governed_axioms, 29)
-            self.assertEqual(len(graph), 61)
+            self.assertEqual(governed_axioms, 32)
+            self.assertEqual(len(graph), 64)
             validation_complete = True
             events.append("validated")
             return {}
@@ -2661,9 +2661,9 @@ print(hashlib.sha256(output.read_bytes()).hexdigest())
         self.assertEqual(
             len(set(final_graph.triples((None, RDFS.domain, None))))
             + len(set(final_graph.triples((None, RDFS.range, None)))),
-            29,
+            32,
         )
-        self.assertEqual(len(final_graph), 61)
+        self.assertEqual(len(final_graph), 64)
         self.assertTrue(all(path.is_file() for path in outputs.values()))
         self.assertEqual(len(transaction_dirs), 1)
         self.assertFalse(transaction_dirs[0].exists())

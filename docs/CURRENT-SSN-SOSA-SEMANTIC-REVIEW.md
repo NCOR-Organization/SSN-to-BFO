@@ -18,6 +18,16 @@ Every other `final` assessment requires a project-specific `human_decision_recor
 
 The validator compares the decision with the final assessment, live workbook rows, current non-workbook input hashes, formal coverage and pre-decision record. The historical full-workbook hash remains immutable. A different live workbook requires an authenticated documentary or project-local semantic transition. Historical authentication retains the original inputs; current applicability separately examines each intervening version, as specified in [Semantic workbook evolution](CURRENT-SEMANTIC-WORKBOOK-EVOLUTION.md). The validator reconstructs the **complete per-term review packet** from the same extractor used by report generation, using the exact historical workbook when workbook evolution has occurred, and requires exact equality with the saved snapshot, including target facts, chains, derived consequences and pinned-track comparison. It rejects a missing, stale, cross-term or cross-outcome artifact before generating a shortened queue or a newly safe rationale. A final `formal_mapping_adopted` decision must have a real current formal assertion and explicitly approve it. A final `no_direct_mapping` decision must have no direct mapping assertion, explicitly adopt that outcome, and contain a separate semantic non-adoption conclusion; a profile/tool limitation or inheritance sufficiency alone is not such a conclusion. A final `inheritance_sufficient` decision must also satisfy the existing inherited-route and bound sufficiency-evidence checks. This guard applies only to the current SSN/SOSA assessment, not to generalized COMS architecture.
 
+For an explicitly approved typing-only treatment, a `final / formal_mapping_adopted`
+decision uses `decision_basis: formal_typing_approval`, `formal_typing_approved: true`,
+an empty `formal_mapping_assertions` list, and an exact `formal_typing_assertions`
+list of domain/range predicates, targets and RowIDs. Competing direct mappings,
+missing typing assertions or mismatched approvals fail authentication. All ordinary
+reviewer, input, packet, snapshot, history and applicability checks still apply.
+This records adoption of global OWL typing commitments; it does not introduce
+SHACL constraints or change the separate `typing_only_in_workbook` coverage
+classification. Existing decisions and their original assertion lists remain unchanged.
+
 ## Documentary workbook evolution
 
 `tools/current_documentary_workbook.py` governs only

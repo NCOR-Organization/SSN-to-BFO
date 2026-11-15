@@ -175,10 +175,16 @@ def _authority(root: Path, authorities: dict, delta: dict, new_path: Path) -> No
             formal = sorted(({"row_id": r["row_id"], "predicate": r["predicate"], "target": r["target"]}
                              for r in rows if r["predicate"] in mapping.MAPPING_PREDICATES),
                             key=lambda r: (r["row_id"], r["predicate"], r["target"]))
+            typing = sorted(({"row_id": r["row_id"], "predicate": r["predicate"], "target": r["target"]}
+                             for r in rows if r["predicate"] in mapping.DOMAIN_RANGE_PREDICATES),
+                            key=lambda r: (r["row_id"], r["predicate"], r["target"]))
             if (decision.get("mapping_row_ids") != sorted(r["row_id"] for r in rows)
                     or decision.get("formal_mapping_assertions") != formal):
                 raise ValueError("new human decision mapping approval differs from candidate")
-            if formal:
+            if decision.get("decision_basis") == "formal_typing_approval":
+                import current_assessment as assessment
+                assessment.validate_formal_typing_approval(decision, formal, typing, subject)
+            elif formal:
                 if (decision.get("decision_basis") != "formal_mapping_approval"
                         or decision.get("formal_mapping_approved") is not True
                         or decision.get("assessment_outcome") != "formal_mapping_adopted"):

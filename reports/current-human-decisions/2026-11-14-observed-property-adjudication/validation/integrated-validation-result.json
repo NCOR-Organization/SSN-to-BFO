@@ -1,0 +1,20 @@
+{
+  "closure_triple_count": 15842,
+  "generated_triple_count": 1052,
+  "graph_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/candidate-validation-2/integrated-validation/coms-candidate-full-closure.ttl",
+  "owl_nothing_count": 0,
+  "passed": true,
+  "profile_checked": true,
+  "profile_declaration_completion_count": 4,
+  "profile_graph_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/candidate-validation-2/integrated-validation/coms-candidate-full-closure-owl2dl-profile.ttl",
+  "profile_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "profile_return_code": 0,
+  "profile_triple_count": 15846,
+  "reasoned_output_produced": true,
+  "reasoned_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/candidate-validation-2/integrated-validation/coms-candidate-full-closure-reasoned.ttl",
+  "return_code": 0,
+  "robot_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "robot_path": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/bin/robot",
+  "source_sample_declarations_retained": true,
+  "unsat_classes": []
+}

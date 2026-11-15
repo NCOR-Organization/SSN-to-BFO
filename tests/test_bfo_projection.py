@@ -560,18 +560,18 @@ class RawProjectionTransitionTests(unittest.TestCase):
         })
         self.assertEqual({before[pair][2:] for pair in removed},
                          {("deferred", "NO_APPROVED_TRANSFORMATION_RULE")})
-        self.assertEqual((len(baseline), len(processed)), (105, 105))
-        self.assertEqual((len(before), len(after)), (103, 100))
-        self.assertEqual((len(before_blanks), len(after_blanks)), (2, 5))
+        self.assertEqual((len(baseline), len(processed)), (105, 108))
+        self.assertEqual((len(before), len(after)), (103, 102))
+        self.assertEqual((len(before_blanks), len(after_blanks)), (2, 6))
         self.assertEqual(after_blanks - before_blanks, cleared)
         self.assertEqual(before_blanks - after_blanks, set())
         self.assertEqual(Counter(value[1] for value in before.values()),
                          {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 25, "mixed_bfo_cco": 30})
         self.assertEqual(Counter(value[1] for value in after.values()),
-                         {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
+                         {"target_neutral": 32, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28})
         self.assertEqual((sum(value[2] == "deferred" for value in before.values()),
                           sum(value[2] == "deferred" for value in after.values())), (55, 52))
-        for status, count in (("provided_transitively", 29), ("provided_through_import", 19),
+        for status, count in (("provided_transitively", 32), ("provided_through_import", 19),
                               ("emitted_unchanged", 0)):
             old_members = {pair: value for pair, value in before.items() if value[2] == status}
             new_members = {pair: value for pair, value in after.items() if value[2] == status}

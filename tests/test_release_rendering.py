@@ -863,7 +863,7 @@ class FormalReleaseRenderingTests(unittest.TestCase):
         from current_semantic_generation import generated_expectations_context
         with generated_expectations_context(REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"):
             _, audits, _, publication, products = build_formal_products(pinned=False)
-        self.assertEqual(sum(len(a.authoritative_axioms) for a in audits), 100)
+        self.assertEqual(sum(len(a.authoritative_axioms) for a in audits), 102)
         imports = {"integrated": coms.ROOT_ORDERED_IMPORTS, "alignment_core": (),
                    "strict_bfo_mapping": (modular.ALIGNMENT_CORE_IMPORT_IRI,),
                    "cco_extension": (modular.STRICT_BFO_IMPORT_IRI,)}

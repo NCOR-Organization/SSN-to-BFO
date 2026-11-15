@@ -22,12 +22,12 @@ Separately executed external mapping rules are reported independently from OWL m
 | unmapped classes | 2 |
 | mapped object properties | 26 |
 | object properties covered by external mapping rule | 2 |
-| unmapped object properties | 4 |
-| explicitly listed blank mappings | 7 |
-| listed only in domain/range property-typing rows | 16 |
+| unmapped object properties | 3 |
+| explicitly listed blank mappings | 6 |
+| listed only in domain/range property-typing rows | 17 |
 | source terms absent from spreadsheet | 0 |
 | spreadsheet subjects not found in source ontologies | 0 |
-| unmapped rows returned by SPARQL coverage query | 6 |
+| unmapped rows returned by SPARQL coverage query | 5 |
 
 ## Mapped Classes
 
@@ -119,14 +119,12 @@ Rule: `rules/ssn-implementation-mapping.rq`. Execution requires the two premises
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
-- `sosa:observedProperty`
 - `ssn:forProperty`
 
 ## Explicitly Listed Blank Mappings
 
 - `sosa:hasSample`
 - `sosa:isSampleOf`
-- `sosa:observedProperty`
 - `ssn:forProperty`
 - `ssn:implementedBy`
 - `ssn-system:MeasurementRange`
@@ -139,6 +137,7 @@ Rule: `rules/ssn-implementation-mapping.rq`. Execution requires the two premises
 - `sosa:isObservedBy`
 - `sosa:madeActuation`
 - `sosa:madeByActuator`
+- `sosa:observedProperty`
 - `sosa:observes`
 - `ssn:hasInput`
 - `ssn:hasOutput`

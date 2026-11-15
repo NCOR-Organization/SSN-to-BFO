@@ -71,13 +71,13 @@ class RobotPropertyChainGenerationPilotTests(unittest.TestCase):
             self.assertTrue(second["passed"], second)
 
             for summary in (first, second):
-                self.assertEqual(summary["governed_row_count"], 105)
+                self.assertEqual(summary["governed_row_count"], 108)
                 self.assertEqual(
                     summary["attempted_property_chain_rows"],
                     2,
                 )
-                self.assertEqual(summary["authenticated_active_mapping_count"], 100)
-                self.assertEqual(summary["excluded_blank_rows"], 5)
+                self.assertEqual(summary["authenticated_active_mapping_count"], 102)
+                self.assertEqual(summary["excluded_blank_rows"], 6)
                 self.assertEqual(summary["expected_axiom_count"], 2)
                 self.assertEqual(summary["actual_axiom_count"], 2)
                 self.assertEqual(summary["robot_return_code"], 0)

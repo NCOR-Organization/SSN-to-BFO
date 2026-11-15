@@ -1,0 +1,105 @@
+{
+  "all_prior_RowIDs_preserved": true,
+  "assessment_outcomes": {
+    "formal_mapping_adopted": 15,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "unreviewed": 69
+  },
+  "assessment_records": 91,
+  "changed_assessment_records": [
+    "http://www.w3.org/ns/sosa/observedProperty"
+  ],
+  "changed_existing_files": [
+    "SSN2BFO.ttl",
+    "docs/CURRENT-SSN-SOSA-SEMANTIC-REVIEW.md",
+    "docs/MAPPING-GOVERNANCE.md",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-source-term-coverage.md",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md",
+    "tests/test_current_assessment.py",
+    "tools/current_assessment.py",
+    "tools/current_semantic_workbook.py"
+  ],
+  "decision_id": "urn:uuid:d875c53c-a2c8-49a9-8f3b-3a68c8adb0b5",
+  "decision_path": "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json",
+  "decision_sha256": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290",
+  "existing_file_changes_confined_to_validated_inventory": true,
+  "existing_file_count": 1987,
+  "head_unchanged": true,
+  "index_empty": true,
+  "initial_deferral_evidence_preserved": true,
+  "missing_existing_files": [],
+  "new_RowID": "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc",
+  "old_RowID": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+  "product_checks": [
+    {
+      "added_typing_axioms": 2,
+      "after_triples": 1052,
+      "before_triples": 1050,
+      "exact_graph_delta": true,
+      "path": "SSN2BFO.ttl",
+      "sha256": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd"
+    },
+    {
+      "added_typing_axioms": 2,
+      "after_triples": 64,
+      "before_triples": 62,
+      "exact_graph_delta": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5"
+    },
+    {
+      "added_typing_axioms": 0,
+      "after_triples": 134,
+      "before_triples": 134,
+      "exact_graph_delta": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af"
+    },
+    {
+      "added_typing_axioms": 0,
+      "after_triples": 868,
+      "before_triples": 868,
+      "exact_graph_delta": true,
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "sha256": "aae3d5a2b45f1a19fcfab2ba90ee7945b2c662329610c865793263096dfa875e"
+    }
+  ],
+  "protected_unchanged_counts": {
+    "historical_deferral_evidence": 45,
+    "historical_human_decisions": 126,
+    "pinned_sources": 6,
+    "sosa_2023_named_paths": 89
+  },
+  "review_states": {
+    "final": 22,
+    "unreviewed": 69
+  },
+  "reviewer_identity": "Alec Sculley",
+  "row_counts": {
+    "assertion_bearing_rows": 102,
+    "blank_rows": 6,
+    "workbook_rows": 108
+  },
+  "status": "PASS",
+  "unchanged_other_assessment_records": 90,
+  "unchanged_preexisting_untracked_files": 175,
+  "unrelated_workbook_rows_unchanged": 106,
+  "workbook_existing_cells_changed": [
+    "Sheet2!B36",
+    "Sheet2!C36",
+    "Sheet2!D36"
+  ],
+  "workbook_new_row": "Sheet2!65"
+}

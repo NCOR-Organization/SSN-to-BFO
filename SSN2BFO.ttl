@@ -327,6 +327,10 @@ _:a47859e2cfd5df437d1f55c83560793ab22f035de9b829ccdedcc4d3118cc4f3e_chain_list_2
 
 <http://www.w3.org/ns/sosa/madeSampling> rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001787> .
 
+<http://www.w3.org/ns/sosa/observedProperty> rdfs:domain <http://www.w3.org/ns/sosa/Observation> .
+
+<http://www.w3.org/ns/sosa/observedProperty> rdfs:range <http://www.w3.org/ns/sosa/ObservableProperty> .
+
 <http://www.w3.org/ns/sosa/observes> rdfs:domain <http://www.w3.org/ns/sosa/Sensor> .
 
 <http://www.w3.org/ns/sosa/observes> rdfs:range <http://www.w3.org/ns/sosa/ObservableProperty> .

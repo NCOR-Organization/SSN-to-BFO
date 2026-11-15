@@ -124,7 +124,7 @@ class RobotExtractPilotTests(unittest.TestCase):
             self.assertTrue(second["passed"], second)
 
             for summary, output_dir in ((first, Path(first_dir)), (second, Path(second_dir))):
-                self.assertEqual(summary["governed_row_count"], 105)
+                self.assertEqual(summary["governed_row_count"], 108)
                 self.assertEqual(
                     summary["governed_signature_term_count"],
                     150,

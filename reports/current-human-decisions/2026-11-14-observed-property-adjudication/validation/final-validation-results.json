@@ -1,0 +1,17 @@
+[
+  {
+    "check": "final-transition",
+    "returncode": 0,
+    "seconds": 11.08
+  },
+  {
+    "check": "final-generation",
+    "returncode": 0,
+    "seconds": 37.09
+  },
+  {
+    "check": "final-assessment",
+    "returncode": 0,
+    "seconds": 72.57
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "test": "test_queue_complete_and_rationales_separate_documentation_from_approval",
+  "assertion": "self.assertGreaterEqual(len(item[\"available_alternatives\"]), 2)",
+  "failure": "AssertionError: 1 not greater than or equal to 2",
+  "baseline_commit": "f16fe2130bb4f50d9c1e4bd41452e25cb5d05963",
+  "remaining_baseline_cases": [
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/implementedBy",
+      "available_alternatives": [
+        "Retain the explicitly authorized external rule and historical typing representative."
+      ]
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/ssn/implements",
+      "available_alternatives": [
+        "Retain the explicitly authorized external rule and historical typing representative."
+      ]
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/madeBySensor",
+      "available_alternatives": [
+        "Preserve the historically authorized treatment recorded in the semantic transition."
+      ]
+    },
+    {
+      "source_iri": "http://www.w3.org/ns/sosa/madeObservation",
+      "available_alternatives": [
+        "Preserve the historically authorized treatment recorded in the semantic transition."
+      ]
+    }
+  ],
+  "resolved_queue_term": "http://www.w3.org/ns/sosa/observedProperty",
+  "test_assertion_unchanged": true
+}

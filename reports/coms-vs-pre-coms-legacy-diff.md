@@ -12,16 +12,16 @@ This informational report compares mapping-bearing axioms and, separately, domai
 | class-expression differences | 3 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
-| domain axioms present in both | 10 |
+| domain axioms present in both | 11 |
 | domain axioms only in COMS | 7 |
-| domain axioms only in pre-COMS legacy ontology | 12 |
+| domain axioms only in pre-COMS legacy ontology | 11 |
 | domain target differences | 0 |
 | range axioms present in both | 0 |
-| range axioms only in COMS | 15 |
+| range axioms only in COMS | 16 |
 | range axioms only in pre-COMS legacy ontology | 0 |
 | range target differences | 0 |
-| legacy domain/range axioms absent from COMS | 12 |
-| spreadsheet rows intentionally producing no mapping | 7 |
+| legacy domain/range axioms absent from COMS | 11 |
+| spreadsheet rows intentionally producing no mapping | 6 |
 
 ## Mappings Present In Both
 
@@ -131,6 +131,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `sosa:isObservedBy` `rdfs:domain` `http://www.w3.org/ns/sosa/ObservableProperty`
 - `sosa:madeByActuator` `rdfs:domain` `http://www.w3.org/ns/sosa/Actuation`
 - `sosa:madeObservation` `rdfs:domain` `http://www.w3.org/ns/sosa/Sensor`
+- `sosa:observedProperty` `rdfs:domain` `http://www.w3.org/ns/sosa/Observation`
 - `ssn:hasInput` `rdfs:domain` `http://www.w3.org/ns/sosa/Procedure`
 - `ssn:hasOutput` `rdfs:domain` `http://www.w3.org/ns/sosa/Procedure`
 - `ssn:implements` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
@@ -154,7 +155,6 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `sosa:isActedOnBy` `rdfs:domain` `http://www.w3.org/ns/sosa/ActuatableProperty`
 - `sosa:isSampleOf` `rdfs:domain` `http://www.w3.org/ns/sosa/Sample`
 - `sosa:madeSampling` `rdfs:domain` `http://www.w3.org/ns/sosa/Sampler`
-- `sosa:observedProperty` `rdfs:domain` `http://www.w3.org/ns/sosa/Observation`
 - `ssn:detects` `rdfs:domain` `http://www.w3.org/ns/sosa/Sensor`
 - `ssn:hasDeployment` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
 - `ssn:hasSubSystem` `rdfs:domain` `http://www.w3.org/ns/ssn/System`
@@ -181,6 +181,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `sosa:madeByActuator` `rdfs:range` `http://www.w3.org/ns/sosa/Actuator`
 - `sosa:madeBySensor` `rdfs:range` `http://www.w3.org/ns/sosa/Sensor`
 - `sosa:madeObservation` `rdfs:range` `http://www.w3.org/ns/sosa/Observation`
+- `sosa:observedProperty` `rdfs:range` `http://www.w3.org/ns/sosa/ObservableProperty`
 - `sosa:observes` `rdfs:range` `http://www.w3.org/ns/sosa/ObservableProperty`
 - `ssn:hasInput` `rdfs:range` `http://www.w3.org/ns/ssn/Input`
 - `ssn:hasOutput` `rdfs:range` `http://www.w3.org/ns/ssn/Output`
@@ -204,7 +205,6 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `ssn-system:SystemProperty` at `Sheet1!45`
 - `sosa:hasSample` at `Sheet2!16`
 - `sosa:isSampleOf` at `Sheet2!17`
-- `sosa:observedProperty` at `Sheet2!36`
 - `ssn:forProperty` at `Sheet2!49`
 - `ssn:implementedBy` at `Sheet2!57`
 

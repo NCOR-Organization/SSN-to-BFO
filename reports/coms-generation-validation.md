@@ -8,20 +8,20 @@ Freshness is determined from content hashes, not file timestamps.
 
 | Item | Value |
 |---|---|
-| workbook SHA-256 | `0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a` |
+| workbook SHA-256 | `64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b` |
 | generator SHA-256 | `8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3` |
 | row-identity module SHA-256 | `9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425` |
 | product-disposition module SHA-256 | `6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e` |
 | modular-products module SHA-256 | `6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c` |
 | publication metadata SHA-256 | `bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9` |
-| current assessment inventory SHA-256 | `ad27d6ead4a1f55182cf53dc1ccfdf09c8a3f1732dc36747722534342bacb84f` |
-| generation timestamp (UTC) | `2026-11-01T04:27:45+00:00` |
+| current assessment inventory SHA-256 | `7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb` |
+| generation timestamp (UTC) | `2026-11-15T19:01:01+00:00` |
 | maintained ontology path | `SSN2BFO.ttl` |
-| generated ontology SHA-256 | `31891c62505276432b95870363d23afa076066cd71f80767e4fc83339ad2f844` |
+| generated ontology SHA-256 | `d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd` |
 | maintained product-disposition path | `reports/coms-product-dispositions.json` |
-| product-disposition JSON SHA-256 | `afbdd580ab32195945d0935b01a3a6e389f25b310015f82b13d2f2af2df99502` |
+| product-disposition JSON SHA-256 | `92d22e649b3cfdee83a18d5958a53cb837163384ad2552904c5cea9efe6f1642` |
 | maintained alignment-core path | `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl` |
-| alignment-core Turtle SHA-256 | `d346e19bdb7c82b649411650b606eb41b72c397b892eeb274628f21d758b06ef` |
+| alignment-core Turtle SHA-256 | `cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5` |
 | maintained strict-BFO path | `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl` |
 | strict-BFO Turtle SHA-256 | `676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af` |
 | maintained CCO-extension path | `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl` |
@@ -36,24 +36,24 @@ Freshness is determined from content hashes, not file timestamps.
 | Worksheet | Rows scanned | Populated rows |
 |---|---:|---:|
 | `Sheet1` | 44 | 44 |
-| `Sheet2` | 63 | 63 |
+| `Sheet2` | 64 | 64 |
 
 ## Row Counts
 
 | Item | Count |
 |---|---:|
-| active axiom row count | 100 |
+| active axiom row count | 102 |
 | mapped row count | 68 |
-| blank mapping row count | 7 |
+| blank mapping row count | 6 |
 | class mapping count | 42 |
 | object-property mapping count | 24 |
-| domain row count | 17 |
-| range row count | 15 |
+| domain row count | 18 |
+| range row count | 16 |
 | property-chain count | 2 |
-| governed RowID count | 107 |
-| unique RowID count | 107 |
-| processed governed row count | 107 |
-| identity-audit row count | 107 |
+| governed RowID count | 108 |
+| unique RowID count | 108 |
+| processed governed row count | 108 |
+| identity-audit row count | 108 |
 
 ## Prefixes Derived
 
@@ -141,22 +141,22 @@ Freshness is determined from content hashes, not file timestamps.
 ## COMS Row Identity Integrity
 
 - Canonical-expression version: `coms-row-expression-v1`
-- Governed RowID count: 107
-- Unique RowID count: 107
-- Processed governed row count: 107
-- Identity-audit row count: 107
-- Canonical authoritative axiom count: 100
-- Unique authoritative axiom count: 100
+- Governed RowID count: 108
+- Unique RowID count: 108
+- Processed governed row count: 108
+- Identity-audit row count: 108
+- Canonical authoritative axiom count: 102
+- Unique authoritative axiom count: 102
 - Count reconciliation result: PASS
 - RowID-set reconciliation result: PASS
 - Location reconciliation result: PASS
 - Identity-audit completeness result: PASS
-- Assertion-bearing rows requiring canonical axiom identity: 100
-- Explicit zero-axiom rows requiring canonical row identity: 7
+- Assertion-bearing rows requiring canonical axiom identity: 102
+- Explicit zero-axiom rows requiring canonical row identity: 6
 - Zero-axiom assessment disposition completeness: PASS
-- Reviewed zero-axiom decisions: 5 / 7
+- Reviewed zero-axiom decisions: 5 / 6
 - Current assessment inventory: `mappings/current-ssn-sosa-assessment.json`
-- Current assessment inventory SHA-256: `ad27d6ead4a1f55182cf53dc1ccfdf09c8a3f1732dc36747722534342bacb84f`
+- Current assessment inventory SHA-256: `7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb`
 - Duplicate RowID result: PASS
 - Duplicate authoritative-axiom result: PASS
 
@@ -169,7 +169,6 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4` | `http://www.w3.org/ns/ssn/systems/SystemProperty` | final | inheritance_sufficient | PASS |
 | `urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f` | `http://www.w3.org/ns/sosa/hasSample` | final | no_direct_mapping | PASS |
 | `urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab` | `http://www.w3.org/ns/sosa/isSampleOf` | final | no_direct_mapping | PASS |
-| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `http://www.w3.org/ns/sosa/observedProperty` | unreviewed | unreviewed | PASS |
 | `urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc` | `http://www.w3.org/ns/ssn/forProperty` | final | no_direct_mapping | PASS |
 | `urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e` | `http://www.w3.org/ns/ssn/implementedBy` | unreviewed | unreviewed | PASS |
 
@@ -253,7 +252,7 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39` | `Sheet2` | 33 | `range` | `58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeBySensor> <http://www.w3.org/ns/sosa/Sensor>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
 | `urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e` | `Sheet2` | 34 | `domain` | `ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Sensor>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
 | `urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f` | `Sheet2` | 35 | `range` | `3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeObservation> <http://www.w3.org/ns/sosa/Observation>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
-| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `Sheet2` | 36 | `explicit_blank` | `e9f5dccc049c7dd522e5756d7fa07ce10bec5994fdff0f51d82ee5984a365853` | _(none)_ | Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved. |
+| `urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1` | `Sheet2` | 36 | `domain` | `80ebe52265f1d2e4fb14f9aff582ffede38f2307d4319510755432a593c6ceda` | `ObjectPropertyDomain(<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/ns/sosa/Observation>)` | sosa:observedProperty relates an Observation to the ObservableProperty it observes. No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics. ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing sosa:ObservableProperty class mapping accommodates both. The source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation. These are global OWL typing commitments, not SHACL validation constraints. This explicit human-approved typing treatment supersedes the earlier technical deferral as the current treatment; the historical deferral and its former input interpretation remain preserved as evidence. The previously removed sosa:observedProperty rdfs:subPropertyOf cco:has_input is not restored, and no BFO, CCO, or RO superproperty is introduced. |
 | `urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3` | `Sheet2` | 37 | `object_property_mapping` | `d0957c4a3b9e144232abb48c196d943ff1118b429eb4cc27532d4247d4c2c5b6` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/systems/hasOperatingProperty> <http://purl.obolibrary.org/obo/BFO_0000194>)` | The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence. |
 | `urn:uuid:265137eb-a279-4f9a-b1b9-e85d7ecb02a7` | `Sheet2` | 38 | `domain` | `be38dc3ef3f5e76e250d1cb245360749bd7336ed0785cdab09a20730ea6ef540` | `ObjectPropertyDomain(<http://www.w3.org/ns/ssn/systems/hasOperatingRange> <http://www.w3.org/ns/ssn/System>)` | The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. |
 | `urn:uuid:8b87dd5b-298e-4ae7-8724-3778c0a67234` | `Sheet2` | 39 | `range` | `ceafff8b76962f198ca1f184ff076c3536247fe1c33bd964f725ea59da6a7da8` | `ObjectPropertyRange(<http://www.w3.org/ns/ssn/systems/hasOperatingRange> <http://www.w3.org/ns/ssn/systems/OperatingRange>)` | The former direct bearer_of mapping was deliberately replaced by domain-and-range coverage: ssn:System subjects and ssn-system:OperatingRange objects. These typing assertions do not by themselves assert a BFO/CCO relation edge. |
@@ -282,16 +281,17 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd` | `Sheet2` | 62 | `object_property_mapping` | `fe8a979e62b1dfe2f2f00c6a65df77262575c4c615fa293e1c5f5095ef61b44c` | `SubObjectPropertyOf(<http://www.w3.org/ns/ssn/wasOriginatedBy> <https://www.commoncoreontologies.org/ont00001962>)` | The retained interpretation treats the originating Stimulus as an occurrent that causally initiates the Observation process. This row preserves the corresponding process_started_by inclusion. |
 | `urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd` | `Sheet2` | 63 | `object_property_mapping` | `2b6b447a3ce282c7c7ffa2ac9b81c0383dc7b1ff8f076dea2a5b1e40de0d2755` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeBySensor> <https://www.commoncoreontologies.org/ont00001833>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
 | `urn:uuid:418db51e-342f-441d-8706-00a107266dcc` | `Sheet2` | 64 | `object_property_mapping` | `7aa268422bf0cda796dfa79aa817b2b8c0d7597c0ce8126d126a3b7dcc9c54d0` | `SubObjectPropertyOf(<http://www.w3.org/ns/sosa/madeObservation> <https://www.commoncoreontologies.org/ont00001787>)` | Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication. |
+| `urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc` | `Sheet2` | 65 | `range` | `e56a136a398e67697b5826f5571e25a59072526b8211c59d4c4eca385cf8c93a` | `ObjectPropertyRange(<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/ns/sosa/ObservableProperty>)` | sosa:observedProperty relates an Observation to the ObservableProperty it observes. No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics. ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing sosa:ObservableProperty class mapping accommodates both. The source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation. These are global OWL typing commitments, not SHACL validation constraints. This explicit human-approved typing treatment supersedes the earlier technical deferral as the current treatment; the historical deferral and its former input interpretation remain preserved as evidence. The previously removed sosa:observedProperty rdfs:subPropertyOf cco:has_input is not restored, and no BFO, CCO, or RO superproperty is introduced. |
 
 ## Product Dispositions
 
 - Path: `reports/coms-product-dispositions.json`
 - Schema version: `1`
 - Product order: `integrated`, `alignment_core`, `strict_bfo_mapping`, `bfo_projection`, `cco_extension`
-- Governed rows: 107
-- Canonical authoritative axioms: 100
-- Zero-axiom rows: 7
-- Target-neutral axioms: 30
+- Governed rows: 108
+- Canonical authoritative axioms: 102
+- Zero-axiom rows: 6
+- Target-neutral axioms: 32
 - BFO-bearing axioms: 19
 - CCO-bearing axioms: 23
 - Mixed BFO/CCO axioms: 28
@@ -304,21 +304,21 @@ This is the maintained authoritative development artifact at the approved produc
 
 - Path: `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`
-- Governed authoritative axioms: 30
-- Domain axioms: 16
-- Range axioms: 14
-- Named target expressions: 27
+- Governed authoritative axioms: 32
+- Domain axioms: 17
+- Range axioms: 15
+- Named target expressions: 29
 - Union target expressions: 3
-- Logical RDF triples: 54
+- Logical RDF triples: 56
 - Ontology declaration triples: 1
 - Import triples: 0
 - Descriptive metadata annotations: 7
-- Total RDF triples: 62
+- Total RDF triples: 64
 - BFO/CCO/RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Fixed local source closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`
-- Source-closure triple count: 1215
+- Source-closure triple count: 1217
 - Source-closure HermiT return code: 0
 - Source-closure reasoned output produced: yes
 - Source-closure named unsatisfiable classes: 0
@@ -344,14 +344,14 @@ This is the maintained authoritative development artifact at the approved produc
 - Descriptive metadata annotations: 7
 - Total RDF triples: 134
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`
-- Imported alignment-core governed axioms: 30
-- Project-module closure governed axioms: 49
+- Imported alignment-core governed axioms: 32
+- Project-module closure governed axioms: 51
 - Direct/alignment-core governed overlap: 0
 - CCO/RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 14989
+- Pinned closure triple count: 14991
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
@@ -381,14 +381,14 @@ This is the maintained authoritative development artifact at the approved produc
 - Total RDF triples: 868
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`
 - Imported strict-BFO governed axioms: 19
-- Transitively imported alignment-core governed axioms: 30
-- Project-module closure governed axioms: 100
+- Transitively imported alignment-core governed axioms: 32
+- Project-module closure governed axioms: 102
 - Pairwise governed overlap: 0
 - RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 15856
+- Pinned closure triple count: 15858
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
@@ -403,8 +403,8 @@ This is the maintained authoritative development artifact at the approved produc
 - Ontology declaration triples: 1
 - Import triples: 4
 - Descriptive metadata annotations: 7
-- Governed/structural logical triples: 1038
-- Generated ontology triple count: 1050
+- Governed/structural logical triples: 1040
+- Generated ontology triple count: 1052
 - `SSN2BFO.ttl` is generated from `mappings/SSN2BFO-COMS.xlsx` and must not be edited directly.
 - `coms:Reasoning` remained spreadsheet-only and was not emitted into the ontology.
 
@@ -415,7 +415,7 @@ This is the maintained authoritative development artifact at the approved produc
 | ROBOT command | `robot` (resolved from `PATH`) |
 | candidate closure graph path | temporary validation artifact (`coms-candidate-full-closure.ttl`) |
 | reasoned output path | temporary validation artifact (`coms-candidate-full-closure-reasoned.ttl`) |
-| full candidate closure triple count | 15840 |
+| full candidate closure triple count | 15842 |
 | HermiT return code | 0 |
 | reasoned output produced | yes |
 | `owl:Nothing` count | 0 |
@@ -509,6 +509,7 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet2!33` | `sosa:madeBySensor` | `rdfs:range` | yes | sosa:Sensor | http://www.w3.org/ns/sosa/Sensor | `sosa:madeBySensor rdfs:range http://www.w3.org/ns/sosa/Sensor .` |
 | `Sheet2!34` | `sosa:madeObservation` | `rdfs:domain` | yes | sosa:Sensor | http://www.w3.org/ns/sosa/Sensor | `sosa:madeObservation rdfs:domain http://www.w3.org/ns/sosa/Sensor .` |
 | `Sheet2!35` | `sosa:madeObservation` | `rdfs:range` | yes | sosa:Observation | http://www.w3.org/ns/sosa/Observation | `sosa:madeObservation rdfs:range http://www.w3.org/ns/sosa/Observation .` |
+| `Sheet2!36` | `sosa:observedProperty` | `rdfs:domain` | yes | sosa:Observation | http://www.w3.org/ns/sosa/Observation | `sosa:observedProperty rdfs:domain http://www.w3.org/ns/sosa/Observation .` |
 | `Sheet2!37` | `ssn-system:hasOperatingProperty` | `rdfs:subPropertyOf` | yes | bfo:specifically_depended_on_by | bfo:BFO_0000194 | `ssn-system:hasOperatingProperty rdfs:subPropertyOf bfo:BFO_0000194 .` |
 | `Sheet2!38` | `ssn-system:hasOperatingRange` | `rdfs:domain` | yes | ssn:System | http://www.w3.org/ns/ssn/System | `ssn-system:hasOperatingRange rdfs:domain http://www.w3.org/ns/ssn/System .` |
 | `Sheet2!39` | `ssn-system:hasOperatingRange` | `rdfs:range` | yes | ssn-system:OperatingRange | http://www.w3.org/ns/ssn/systems/OperatingRange | `ssn-system:hasOperatingRange rdfs:range http://www.w3.org/ns/ssn/systems/OperatingRange .` |
@@ -535,6 +536,7 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet2!62` | `ssn:wasOriginatedBy` | `rdfs:subPropertyOf` | yes | cco:process_started_by | cco:ont00001962 | `ssn:wasOriginatedBy rdfs:subPropertyOf cco:ont00001962 .` |
 | `Sheet2!63` | `sosa:madeBySensor` | `rdfs:subPropertyOf` | yes | cco:has_agent | cco:ont00001833 | `sosa:madeBySensor rdfs:subPropertyOf cco:ont00001833 .` |
 | `Sheet2!64` | `sosa:madeObservation` | `rdfs:subPropertyOf` | yes | cco:agent_in | cco:ont00001787 | `sosa:madeObservation rdfs:subPropertyOf cco:ont00001787 .` |
+| `Sheet2!65` | `sosa:observedProperty` | `rdfs:range` | yes | sosa:ObservableProperty | http://www.w3.org/ns/sosa/ObservableProperty | `sosa:observedProperty rdfs:range http://www.w3.org/ns/sosa/ObservableProperty .` |
 
 ## Source-Term Coverage Summary
 
@@ -544,9 +546,9 @@ This section records mapping and domain/range property-typing rows after parsing
 | unmapped classes | 2 |
 | mapped object properties | 26 |
 | object properties covered by external mapping rule | 2 |
-| unmapped object properties | 4 |
-| explicitly listed blank mappings | 7 |
-| listed only in domain/range property-typing rows | 16 |
+| unmapped object properties | 3 |
+| explicitly listed blank mappings | 6 |
+| listed only in domain/range property-typing rows | 17 |
 | source terms absent from spreadsheet | 0 |
 | spreadsheet subjects not found in source ontologies | 0 |
 
@@ -560,16 +562,16 @@ This section records mapping and domain/range property-typing rows after parsing
 | class-expression differences | 3 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
-| domain axioms present in both | 10 |
+| domain axioms present in both | 11 |
 | domain axioms only in COMS | 7 |
-| domain axioms only in pre-COMS legacy ontology | 12 |
+| domain axioms only in pre-COMS legacy ontology | 11 |
 | domain target differences | 0 |
 | range axioms present in both | 0 |
-| range axioms only in COMS | 15 |
+| range axioms only in COMS | 16 |
 | range axioms only in pre-COMS legacy ontology | 0 |
 | range target differences | 0 |
-| legacy domain/range axioms absent from COMS | 12 |
+| legacy domain/range axioms absent from COMS | 11 |
 
 ## Runtime
 
-- Runtime seconds: 14.62
+- Runtime seconds: 14.76

@@ -1,0 +1,96 @@
+[
+  {
+    "expected_entailed": true,
+    "id": "domain-classifies-untyped-subject",
+    "kind": "class_assertion",
+    "object": "http://www.w3.org/ns/sosa/Observation",
+    "subject": "urn:observed-property-adjudication-probe:o"
+  },
+  {
+    "expected_entailed": true,
+    "id": "range-classifies-untyped-object",
+    "kind": "class_assertion",
+    "object": "http://www.w3.org/ns/sosa/ObservableProperty",
+    "subject": "urn:observed-property-adjudication-probe:p"
+  },
+  {
+    "expected_entailed": false,
+    "id": "no-has-input-superproperty",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001921",
+    "subject": "http://www.w3.org/ns/sosa/observedProperty"
+  },
+  {
+    "expected_entailed": false,
+    "id": "no-has-input-edge",
+    "kind": "object_property_assertion",
+    "object": "urn:observed-property-adjudication-probe:p",
+    "predicate": "https://www.commoncoreontologies.org/ont00001921",
+    "subject": "urn:observed-property-adjudication-probe:o"
+  },
+  {
+    "expected_entailed": false,
+    "id": "same-feature-property-not-established",
+    "kind": "object_property_assertion",
+    "object": "urn:observed-property-adjudication-probe:feature",
+    "predicate": "http://www.w3.org/ns/ssn/isPropertyOf",
+    "subject": "urn:observed-property-adjudication-probe:p2"
+  },
+  {
+    "expected_entailed": false,
+    "id": "same-feature-inverse-not-established",
+    "kind": "object_property_assertion",
+    "object": "urn:observed-property-adjudication-probe:p2",
+    "predicate": "http://www.w3.org/ns/ssn/hasProperty",
+    "subject": "urn:observed-property-adjudication-probe:feature"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Observation-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Observation"
+  },
+  {
+    "expected_entailed": false,
+    "id": "ObservableProperty-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/ObservableProperty"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sensor-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Stimulus-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/ssn/Stimulus"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Observation-PlannedAct-preserved",
+    "kind": "class_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00000228",
+    "subject": "http://www.w3.org/ns/sosa/Observation"
+  },
+  {
+    "expected_entailed": true,
+    "id": "sensor-agent-preserved",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001833",
+    "subject": "http://www.w3.org/ns/sosa/madeBySensor"
+  },
+  {
+    "expected_entailed": true,
+    "id": "inverse-sensor-agent-preserved",
+    "kind": "object_property_subsumption",
+    "object": "https://www.commoncoreontologies.org/ont00001787",
+    "subject": "http://www.w3.org/ns/sosa/madeObservation"
+  }
+]

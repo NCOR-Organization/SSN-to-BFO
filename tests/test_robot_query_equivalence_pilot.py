@@ -186,7 +186,7 @@ class RobotQueryEquivalencePilotTests(unittest.TestCase):
             governed = reconstruction.load_governed_coms_rows(WORKBOOK)
             expected_rows = coverage_rows(governed.processed_rows)
         expected_csv = csv_bytes(expected_rows)
-        self.assertEqual(len(expected_rows), 5)
+        self.assertEqual(len(expected_rows), 6)
         self.assertEqual(len(expected_csv), 399)
         rdflib_inputs = []
         robot_inputs = []
@@ -236,7 +236,7 @@ class RobotQueryEquivalencePilotTests(unittest.TestCase):
                 self.assertEqual(input_path.name, expected_filename)
 
             for summary, output_dir in ((first, Path(first_dir)), (second, Path(second_dir))):
-                self.assertEqual(summary["governed_row_count"], 105)
+                self.assertEqual(summary["governed_row_count"], 108)
                 self.assertEqual(summary["comparison_scope"], COMPARISON_SCOPE)
                 self.assertIs(summary["full_transitive_import_closure_locally_complete"], False)
                 self.assertEqual(

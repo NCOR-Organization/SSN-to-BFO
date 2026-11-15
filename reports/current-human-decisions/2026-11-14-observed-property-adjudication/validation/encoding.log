@@ -1,0 +1,11 @@
+{
+  "decision_id": "urn:uuid:d875c53c-a2c8-49a9-8f3b-3a68c8adb0b5",
+  "decision_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/encoding-checkout/reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json",
+  "decision_sha256": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290",
+  "transition_path": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/encoding-checkout/reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json",
+  "review_timestamp": "2026-11-15T13:59:56.822679-05:00",
+  "row_ids": [
+    "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc",
+    "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+  ]
+}

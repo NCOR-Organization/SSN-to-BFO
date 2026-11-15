@@ -1,6 +1,6 @@
 # Current SSN/SOSA assessment and formal coverage
 
-Bound to authenticated content SHA-256 `fe5566eb8ad96d0581cdb92c03abd53e79af59573a86f92bd1388fd2059f7ba7` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.
+Bound to authenticated content SHA-256 `54b28f1c9ec8b6d73e2fe6adb108eaa271d949e8abb3585dfc80258be2d93615` and exact input hashes in the JSON companion. This reproducible report is independent of the commit that stores it; execution receipts retain their own HEAD provenance.
 
 Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.
 
@@ -8,7 +8,7 @@ Structural evidence over named source subclass/subproperty, named equivalence, a
 
 Dynamic source terms: **91**; assessment records: **91**; equality: **PASS**.
 
-Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 21, 'unreviewed': 70}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 14, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 70}`.
+Kinds: `{'class': 44, 'object_property': 47}`. Review states: `{'deferred': 0, 'final': 22, 'unreviewed': 69}`. Outcomes: `{'deferred': 0, 'formal_mapping_adopted': 15, 'inheritance_sufficient': 2, 'no_direct_mapping': 5, 'unreviewed': 69}`.
 
 These assessments describe unchanged workbook mapping assertions; registered documentary reasoning updates do not change assessment semantics. Final records reconstruct supported existing decisions; unresolved records do not reject or remove active axioms.
 
@@ -19,8 +19,8 @@ These assessments describe unchanged workbook mapping assertions; registered doc
 | direct_formal_mapping | 66 |
 | inherited_formal_mapping | 41 |
 | rule_or_chain_route | 11 |
-| typing_only_in_workbook | 16 |
-| explicit_blank | 7 |
+| typing_only_in_workbook | 17 |
+| explicit_blank | 6 |
 | no_established_formal_route | 15 |
 
 Direct classes: 42; direct object properties: 24; chain heads: 2. The historical 28 relation-mapped properties comprise 25 direct subproperties and 3 chain heads. A chain head is an incoming entailment route, not a source-to-target edge inclusion.
@@ -31,16 +31,16 @@ Categories overlap: a directly mapped class can inherit additional constraints; 
 
 | Predicate | Rows |
 |---|---:|
-| `explicit_blank` | 7 |
+| `explicit_blank` | 6 |
 | `owl:equivalentClass` | 10 |
 | `owl:equivalentProperty` | 0 |
 | `owl:propertyChainAxiom` | 2 |
-| `rdfs:domain` | 17 |
-| `rdfs:range` | 15 |
+| `rdfs:domain` | 18 |
+| `rdfs:range` | 16 |
 | `rdfs:subClassOf` | 32 |
 | `rdfs:subPropertyOf` | 24 |
 
-Expression occurrences: `{'intersection': 86, 'named': 191, 'some': 96, 'union': 15}`; rows containing each form: `{'intersection': 35, 'named': 74, 'some': 35, 'union': 14}`.
+Expression occurrences: `{'intersection': 86, 'named': 193, 'some': 96, 'union': 15}`; rows containing each form: `{'intersection': 35, 'named': 76, 'some': 35, 'union': 14}`.
 
 ## Per-term coverage
 
@@ -76,7 +76,7 @@ Expression occurrences: `{'intersection': 86, 'named': 191, 'some': 96, 'union':
 | `sosa:madeBySensor` | yes | yes | — | — | — |
 | `sosa:madeObservation` | yes | yes | — | — | — |
 | `sosa:madeSampling` | yes | yes | — | — | — |
-| `sosa:observedProperty` | — | — | — | — | yes |
+| `sosa:observedProperty` | — | — | — | yes | yes |
 | `sosa:observes` | — | — | — | yes | yes |
 | `sosa:phenomenonTime` | yes | — | — | — | — |
 | `sampling:RelationshipNature` | yes | — | — | — | — |

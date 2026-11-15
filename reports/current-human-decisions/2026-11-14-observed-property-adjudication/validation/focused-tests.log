@@ -1,0 +1,22 @@
+test_approval_flag_and_exact_assertions_are_required_at_both_boundaries (tests.test_current_formal_typing.FormalTypingApprovalTests.test_approval_flag_and_exact_assertions_are_required_at_both_boundaries) ... ok
+test_exact_typing_approval_authenticates_and_preserves_coverage_distinction (tests.test_current_formal_typing.FormalTypingApprovalTests.test_exact_typing_approval_authenticates_and_preserves_coverage_distinction) ... ok
+test_formal_mapping_approval_keeps_previous_assertions_and_guards (tests.test_current_formal_typing.FormalTypingApprovalTests.test_formal_mapping_approval_keeps_previous_assertions_and_guards) ... ok
+test_no_bound_decision_cannot_finalize_typing (tests.test_current_formal_typing.FormalTypingApprovalTests.test_no_bound_decision_cannot_finalize_typing) ... ok
+test_typing_approval_cannot_cover_a_competing_superproperty (tests.test_current_formal_typing.FormalTypingApprovalTests.test_typing_approval_cannot_cover_a_competing_superproperty) ... ok
+test_typing_path_still_requires_exact_packet_and_decision_bytes (tests.test_current_formal_typing.FormalTypingApprovalTests.test_typing_path_still_requires_exact_packet_and_decision_bytes) ... ok
+test_current_inventory_is_exact_and_independent_of_row_count (tests.test_current_assessment.CurrentAssessmentTests.test_current_inventory_is_exact_and_independent_of_row_count) ... ok
+test_historical_final_baseline_is_exact_and_fixed (tests.test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed) ... ok
+test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval) ... FAIL
+
+======================================================================
+FAIL: test_queue_complete_and_rationales_separate_documentation_from_approval (tests.test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-observedproperty-20261114-yiuezxmj/encoding-checkout/tests/test_current_assessment.py", line 806, in test_queue_complete_and_rationales_separate_documentation_from_approval
+    self.assertGreaterEqual(len(item["available_alternatives"]), 2)
+AssertionError: 1 not greater than or equal to 2
+
+----------------------------------------------------------------------
+Ran 9 tests in 144.596s
+
+FAILED (failures=1)

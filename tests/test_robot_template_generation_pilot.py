@@ -96,13 +96,13 @@ class RobotTemplateGenerationPilotTests(unittest.TestCase):
             self.assertTrue(second["passed"], second)
 
             for summary in (first, second):
-                self.assertEqual(summary["governed_row_count"], 105)
-                self.assertEqual(summary["authenticated_active_mapping_count"], 100)
-                self.assertEqual(summary["excluded_blank_rows"], 5)
-                self.assertEqual(summary["attempted_non_chain_rows"], 98)
+                self.assertEqual(summary["governed_row_count"], 108)
+                self.assertEqual(summary["authenticated_active_mapping_count"], 102)
+                self.assertEqual(summary["excluded_blank_rows"], 6)
+                self.assertEqual(summary["attempted_non_chain_rows"], 100)
                 self.assertEqual(summary["excluded_property_chain_rows"], 2)
-                self.assertEqual(summary["expected_axiom_count"], 98)
-                self.assertEqual(summary["actual_axiom_count"], 98)
+                self.assertEqual(summary["expected_axiom_count"], 100)
+                self.assertEqual(summary["actual_axiom_count"], 100)
                 self.assertEqual(summary["robot_return_code"], 0)
                 self.assertEqual(summary["missing_axiom_ids"], [])
                 self.assertEqual(summary["extra_axiom_ids"], [])
@@ -133,7 +133,7 @@ class RobotTemplateGenerationPilotTests(unittest.TestCase):
         # restore it afterwards. The ordinary current path rejects rollback.
         with generation.generated_expectations_context(REPO_ROOT, WORKBOOK):
             historical = reconstruction.load_governed_coms_rows(archived, historical=True)
-            self.assertEqual(generation.expected_count("AUTHORITATIVE_AXIOM_COUNT", 103), 100)
+            self.assertEqual(generation.expected_count("AUTHORITATIVE_AXIOM_COUNT", 103), 102)
         self.assertEqual((historical.row_count, historical.active_count, historical.blank_count,
                           historical.property_chain_count, historical.non_chain_count),
                          (105, 103, 2, 3, 100))
@@ -152,7 +152,7 @@ class RobotTemplateGenerationPilotTests(unittest.TestCase):
         governed = reconstruction.load_governed_coms_rows(WORKBOOK)
         self.assertEqual((governed.row_count, governed.active_count, governed.blank_count,
                           governed.property_chain_count, governed.non_chain_count),
-                         (105, 100, 5, 2, 98))
+                         (108, 102, 6, 2, 100))
         chains = {row.subject_iri: (row.row_id, row.property_chain)
                   for row in governed.canonical_rows if row.mapping_type == "property_chain"}
         bfo = "http://purl.obolibrary.org/obo/BFO_"
@@ -175,7 +175,7 @@ class RobotTemplateGenerationPilotTests(unittest.TestCase):
         self.assertEqual(blanks, {})
         self.assertFalse(set(non_chain) & set(chain_axioms))
         self.assertEqual(non_chain | chain_axioms, all_axioms)
-        self.assertEqual(len(all_axioms), 100)
+        self.assertEqual(len(all_axioms), 102)
 
     def test_unauthorized_missing_active_mapping_fails_before_robot(self) -> None:
         with tempfile.TemporaryDirectory(prefix="robot-unauthorized-drift-") as directory:
@@ -236,7 +236,7 @@ class RobotTemplateGenerationPilotTests(unittest.TestCase):
                      patch.object(reconstruction, "canonical_axioms_from_turtle", return_value=actual):
                     summary = pilot.run_pilot(WORKBOOK, root)
                 self.assertFalse(summary["passed"], summary)
-                self.assertEqual(summary["expected_axiom_count"], 98)
+                self.assertEqual(summary["expected_axiom_count"], 100)
                 self.assertEqual(len(summary[category + "_axiom_ids"]), 1)
 
 

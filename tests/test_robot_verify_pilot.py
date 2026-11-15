@@ -47,7 +47,7 @@ class RobotVerifyPilotTests(unittest.TestCase):
             self.assertTrue(second["passed"], second)
 
             for summary in (first, second):
-                self.assertEqual(summary["governed_row_count"], 105)
+                self.assertEqual(summary["governed_row_count"], 108)
 
                 coverage = summary["coverage_graph"]
                 self.assertEqual(coverage["triple_count"], 182)

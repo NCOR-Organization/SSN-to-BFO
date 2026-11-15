@@ -147,7 +147,7 @@ class CurrentAssessmentTests(unittest.TestCase):
         self.assertEqual(len(terms), 91)
         self.assertEqual(list(terms.values()).count("class"), 44)
         self.assertEqual(list(terms.values()).count("object_property"), 47)
-        self.assertEqual(len(self.rows), 107)
+        self.assertEqual(len(self.rows), 108)
 
     def test_missing_extra_and_duplicate_records_fail(self):
         records = copy.deepcopy(self.document["records"])
@@ -215,9 +215,9 @@ class CurrentAssessmentTests(unittest.TestCase):
         historical = [r for r in finals if r["source_iri"] in baseline]
         self.assertEqual(set(baseline), {r["source_iri"] for r in historical})
         self.assertEqual(len(historical), 12)
-        self.assertEqual(len(finals), 21)
+        self.assertEqual(len(finals), 22)
         self.assertEqual({r["source_iri"] for r in finals} - set(baseline),
-                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf", "Observation")} |
+                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf", "Observation", "observedProperty")} |
                          {"http://www.w3.org/ns/ssn/forProperty",
                           "http://www.w3.org/ns/ssn/systems/SystemProperty",
                           "http://www.w3.org/ns/ssn/systems/MeasurementRange"} |
@@ -797,7 +797,7 @@ class CurrentAssessmentTests(unittest.TestCase):
         unresolved = {r["source_iri"] for r in self.document["records"] if r["review_state"] != "final"}
         self.assertEqual({r["source_iri"] for r in queue["items"]}, unresolved)
         self.assertEqual(len(queue["items"]), len(unresolved))
-        self.assertEqual(len(unresolved), 70)
+        self.assertEqual(len(unresolved), 69)
         self.assertEqual(queue["items"][0]["priority"], 1)
         for item in queue["items"]:
             self.assertTrue(item["source_semantics"]["definitions"])
@@ -814,15 +814,15 @@ class CurrentAssessmentTests(unittest.TestCase):
                 self.assertEqual(p["proposed_documentary_rationale"], record["rationale"])
                 self.assertTrue(p["existing_workbook_rationales"])
         self.assertEqual(cov["summary"]["coverage_counts"]["direct_formal_mapping"], 66)
-        self.assertEqual(cov["summary"]["coverage_counts"]["typing_only_in_workbook"], 16)
+        self.assertEqual(cov["summary"]["coverage_counts"]["typing_only_in_workbook"], 17)
         self.assertEqual(cov["summary"]["coverage_counts"]["rule_or_chain_route"], 11)
         self.assertEqual(cov["summary"]["coverage_counts"]["no_established_formal_route"], 15)
-        self.assertEqual(cov["summary"]["review_states"], {"final": 21, "deferred": 0, "unreviewed": 70})
-        self.assertEqual(cov["summary"]["assessment_outcomes"], {"formal_mapping_adopted": 14,
-                         "no_direct_mapping": 5, "inheritance_sufficient": 2, "deferred": 0, "unreviewed": 70})
+        self.assertEqual(cov["summary"]["review_states"], {"final": 22, "deferred": 0, "unreviewed": 69})
+        self.assertEqual(cov["summary"]["assessment_outcomes"], {"formal_mapping_adopted": 15,
+                         "no_direct_mapping": 5, "inheritance_sufficient": 2, "deferred": 0, "unreviewed": 69})
         self.assertEqual(cov["summary"]["coverage_counts"]["inherited_formal_mapping"], 41)
-        self.assertEqual(cov["summary"]["coverage_counts"]["explicit_blank"], 7)
-        self.assertEqual(cov["summary"]["assertion_bearing_rows"], 100)
+        self.assertEqual(cov["summary"]["coverage_counts"]["explicit_blank"], 6)
+        self.assertEqual(cov["summary"]["assertion_bearing_rows"], 102)
 
 
 if __name__ == "__main__":

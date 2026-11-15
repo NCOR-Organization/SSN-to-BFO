@@ -285,7 +285,7 @@ class ProductDispositionTests(unittest.TestCase):
         before = {row.row_id: row for row in baseline.rows}
         after = {row.row_id: row for row in current.rows}
         self.assertEqual(before.keys(), after.keys())
-        self.assertEqual(len(after), 105)
+        self.assertEqual(len(after), 108)
         cleared = {row["row_id"] for row in transition["delta"]["cleared_mapping_rows"]}
         mapped_to_blank = {key for key in before
                            if before[key].authoritative_axioms and not after[key].authoritative_axioms}
@@ -309,7 +309,7 @@ class ProductDispositionTests(unittest.TestCase):
         self.assertEqual(new_axioms - old_axioms, set())
         self.assertEqual(current.summary.authoritative_axiom_count,
                          transition["generation_expectations"]["after"]["counts"]["AUTHORITATIVE_AXIOM_COUNT"])
-        self.assertEqual((current.summary.authoritative_axiom_count, current.summary.zero_axiom_row_count), (100, 5))
+        self.assertEqual((current.summary.authoritative_axiom_count, current.summary.zero_axiom_row_count), (102, 6))
 
         outcomes = {
             "http://www.w3.org/ns/ssn/forProperty": "no_direct_mapping",

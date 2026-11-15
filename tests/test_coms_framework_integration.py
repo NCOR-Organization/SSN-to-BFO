@@ -101,9 +101,9 @@ EXPECTED_MAPPING_TYPES = {
     "class_mapping": 42,
     "object_property_mapping": 25,
     "property_chain": 2,
-    "domain": 16,
-    "range": 15,
-    "explicit_blank": 5,
+    "domain": 18,
+    "range": 16,
+    "explicit_blank": 6,
 }
 CURRENT_DISPOSITION_HASHES = dispositions.RequiredInputHashes(
     # Current provenance follows the authenticated semantic workbook version.
@@ -232,9 +232,9 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
             integration.PRIMARY_WORKBOOK_PROFILE,
             base_directory=REPO_ROOT,
         )
-        self.assertEqual(len(source_rows), 105)
+        self.assertEqual(len(source_rows), 108)
         validate_workbook_source_row_ids(source_rows)
-        self.assertEqual(len({row.row_id_text for row in source_rows}), 105)
+        self.assertEqual(len({row.row_id_text for row in source_rows}), 108)
 
         legacy_rows, legacy_stats = legacy.read_workbook(WORKBOOK_PATH)
         legacy_processed = legacy.validate_and_process_rows(
@@ -257,7 +257,7 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
             ),
         )
         row_context.assert_complete()
-        self.assertEqual(len(audited_rows), 105)
+        self.assertEqual(len(audited_rows), 108)
 
         source_keys = [
             audit_key(
@@ -365,10 +365,10 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
             if framework_axiom_hashes == legacy_axiom_hashes:
                 axiom_hash_matches += 1
 
-        self.assertEqual(canonical_row_matches, 105)
-        self.assertEqual(expression_hash_matches, 105)
-        self.assertEqual(authoritative_axiom_matches, 105)
-        self.assertEqual(axiom_hash_matches, 105)
+        self.assertEqual(canonical_row_matches, 108)
+        self.assertEqual(expression_hash_matches, 108)
+        self.assertEqual(authoritative_axiom_matches, 108)
+        self.assertEqual(axiom_hash_matches, 108)
 
         mapping_types = Counter(
             item.governed_record.mapping_type
@@ -377,14 +377,14 @@ class ComsFrameworkShadowIntegrationTests(unittest.TestCase):
         self.assertEqual(dict(mapping_types), EXPECTED_MAPPING_TYPES)
         self.assertEqual(
             sum(len(item.row_audit.authoritative_axioms) for item in audited_rows),
-            100,
+            102,
         )
         explicit_blank_rows = [
             item
             for item in audited_rows
             if item.governed_record.mapping_type == "explicit_blank"
         ]
-        self.assertEqual(len(explicit_blank_rows), 5)
+        self.assertEqual(len(explicit_blank_rows), 6)
         for item in explicit_blank_rows:
             key = audit_key(
                 item.source_row.row_id_text,
@@ -839,8 +839,8 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         )
 
     def test_primary_workbook_projection_is_structurally_identical(self) -> None:
-        self.assertEqual(len(self.projected_rows), 105)
-        self.assertEqual(len(self.legacy_processed), 105)
+        self.assertEqual(len(self.projected_rows), 108)
+        self.assertEqual(len(self.legacy_processed), 108)
 
         projected_order = [
             (item.row.stable_row_id, item.row.sheet, item.row.row_number)
@@ -984,8 +984,8 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
     def test_native_disposition_inputs_match_legacy_field_by_field_for_all_rows(
         self,
     ) -> None:
-        self.assertEqual(len(self.native_disposition_inputs), 105)
-        self.assertEqual(len(self.legacy_disposition_inputs), 105)
+        self.assertEqual(len(self.native_disposition_inputs), 108)
+        self.assertEqual(len(self.legacy_disposition_inputs), 108)
         self.assertEqual(
             [item.row_id for item in self.native_disposition_inputs],
             [item.row_id for item in self.legacy_disposition_inputs],
@@ -1044,14 +1044,14 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
         native_evidence, native_categories = classification_evidence(
             self.native_disposition_inputs
         )
-        self.assertEqual(len(native_evidence), 100)
+        self.assertEqual(len(native_evidence), 102)
         self.assertEqual(native_evidence, legacy_evidence)
         self.assertEqual(native_categories, legacy_categories)
         self.assertEqual(
             native_categories,
             Counter(
                 {
-                    "target_neutral": 29,
+                    "target_neutral": 32,
                     "bfo_bearing": 19,
                     "cco_bearing": 24,
                     "mixed_bfo_cco": 28,
@@ -1167,7 +1167,7 @@ class ComsCompatibilityProjectionTests(unittest.TestCase):
                     ),
                 )
                 comparisons += 1
-        self.assertEqual(comparisons, 100)
+        self.assertEqual(comparisons, 102)
 
     def test_native_disposition_document_matches_current_provenance_bytes(
         self,
@@ -1384,8 +1384,8 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             integration.PrimaryWorkbookComsResult,
         )
         self.assertIsInstance(self.framework_result.audited_rows, tuple)
-        self.assertEqual(len(self.framework_result.audited_rows), 105)
-        self.assertEqual(len(self.framework_processed), 105)
+        self.assertEqual(len(self.framework_result.audited_rows), 108)
+        self.assertEqual(len(self.framework_processed), 108)
         self.assertEqual(self.framework_processed, self.legacy_processed)
         self.assertEqual(self.framework_stats, self.legacy_stats)
         self.assertEqual(
@@ -1400,15 +1400,15 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             ),
             254,
         )
-        self.assertEqual(self.legacy_resolver.source_resolution_calls, 105)
-        self.assertEqual(self.framework_resolver.source_resolution_calls, 105)
+        self.assertEqual(self.legacy_resolver.source_resolution_calls, 108)
+        self.assertEqual(self.framework_resolver.source_resolution_calls, 108)
         self.assertEqual(self.legacy_resolver.entity_resolution_calls, 486)
         self.assertEqual(self.framework_resolver.entity_resolution_calls, 486)
         self.assertEqual(self.framework_stats.rows_by_sheet["Sheet1"], 44)
-        self.assertEqual(self.framework_stats.rows_by_sheet["Sheet2"], 61)
+        self.assertEqual(self.framework_stats.rows_by_sheet["Sheet2"], 64)
         self.assertEqual(self.framework_stats.mapped_rows, 69)
-        self.assertEqual(self.framework_stats.blank_mapping_rows, 5)
-        self.assertEqual(self.framework_stats.active_axiom_rows, 100)
+        self.assertEqual(self.framework_stats.blank_mapping_rows, 6)
+        self.assertEqual(self.framework_stats.active_axiom_rows, 102)
 
     def test_wrapper_uses_no_legacy_generic_front_half_authorities(self) -> None:
         resolver = legacy.Resolver()
@@ -1438,9 +1438,9 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 WORKBOOK_PATH,
                 resolver,
             )
-        self.assertEqual(len(processed), 105)
+        self.assertEqual(len(processed), 108)
         self.assertEqual(stats, self.legacy_stats)
-        self.assertEqual(domain_policy.call_count, 31)
+        self.assertEqual(domain_policy.call_count, 34)
         incompatible_policy.assert_called_once_with(processed)
 
     def test_canonical_primary_main_uses_coms_front_half_and_legacy_renderers(self) -> None:
@@ -1614,9 +1614,9 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
             resolver_type.assert_called_once_with()
             rich_processor.assert_called_once_with(WORKBOOK_PATH, resolver)
             compatibility_processor.assert_not_called()
-            self.assertEqual(domain_policy.call_count, 31)
+            self.assertEqual(domain_policy.call_count, 34)
             incompatible_policy.assert_called_once_with(captured["processed"])
-            self.assertEqual(native_disposition_adapter.call_count, 105)
+            self.assertEqual(native_disposition_adapter.call_count, 108)
             result = captured["result"]
             self.assertIsInstance(result, integration.PrimaryWorkbookComsResult)
             assert isinstance(result, integration.PrimaryWorkbookComsResult)
@@ -1643,20 +1643,20 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 sum(len(record.rows) for record in resolver.records.values()),
                 254,
             )
-            self.assertEqual(resolver.source_resolution_calls, 105)
+            self.assertEqual(resolver.source_resolution_calls, 108)
             self.assertEqual(resolver.entity_resolution_calls, 486)
-            self.assertEqual(sum(not item.predicate for item in processed), 5)
+            self.assertEqual(sum(not item.predicate for item in processed), 6)
             self.assertEqual(
                 sum(
                     len(item.identity_audit.authoritative_axioms)
                     for item in processed
                 ),
-                100,
+                102,
             )
             native_inputs = captured["native_inputs"]
             self.assertIsInstance(native_inputs, list)
             assert isinstance(native_inputs, list)
-            self.assertEqual(len(native_inputs), 105)
+            self.assertEqual(len(native_inputs), 108)
             self.assertEqual(
                 [item.row_id for item in native_inputs],
                 [item.source_row.row_id_text for item in result.audited_rows],
@@ -1666,7 +1666,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 for item in native_inputs
                 if item.mapping_type == "explicit_blank"
             ]
-            self.assertEqual(len(blank_inputs), 5)
+            self.assertEqual(len(blank_inputs), 6)
             self.assertTrue(
                 all(not item.authoritative_axioms for item in blank_inputs)
             )
@@ -1684,7 +1684,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 for item in disposition_document.rows
                 if item.mapping_type == "explicit_blank"
             ]
-            self.assertEqual(len(blank_records), 5)
+            self.assertEqual(len(blank_records), 6)
             for item in blank_records:
                 self.assertEqual(item.authoritative_axioms, ())
                 assert item.row_product_dispositions is not None
@@ -2381,7 +2381,7 @@ class ComsPrimaryWorkbookWrapperTests(unittest.TestCase):
                 WORKBOOK_PATH,
                 resolver,
             )
-        self.assertEqual(len(processed), 105)
+        self.assertEqual(len(processed), 108)
         self.assertEqual(stats, self.legacy_stats)
         self.assertEqual(
             {path: sha256_file(path) for path in locked_paths},

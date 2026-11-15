@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a",
+  "workbook_sha256": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
   "generator_sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
@@ -14,20 +14,20 @@
     "cco_extension"
   ],
   "summary": {
-    "governed_row_count": 107,
-    "unique_row_id_count": 107,
-    "authoritative_axiom_count": 100,
-    "unique_authoritative_axiom_count": 100,
-    "zero_axiom_row_count": 7,
-    "target_neutral_axiom_count": 30,
+    "governed_row_count": 108,
+    "unique_row_id_count": 108,
+    "authoritative_axiom_count": 102,
+    "unique_authoritative_axiom_count": 102,
+    "zero_axiom_row_count": 6,
+    "target_neutral_axiom_count": 32,
     "bfo_bearing_axiom_count": 19,
     "cco_bearing_axiom_count": 23,
     "mixed_bfo_cco_axiom_count": 28,
     "class_mapping_row_count": 42,
     "relation_mapping_row_count": 24,
     "property_chain_row_count": 2,
-    "property_typing_row_count": 32,
-    "explicitly_unmapped_row_count": 7
+    "property_typing_row_count": 34,
+    "explicitly_unmapped_row_count": 6
   },
   "rows": [
     {
@@ -3120,6 +3120,63 @@
             },
             "cco_extension": {
               "status": "provided_through_import"
+            }
+          }
+        }
+      ],
+      "row_product_dispositions": null
+    },
+    {
+      "row_id": "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc",
+      "location": {
+        "worksheet": "Sheet2",
+        "row": 65
+      },
+      "subject": {
+        "lexical": "sosa:observedProperty",
+        "iri": "http://www.w3.org/ns/sosa/observedProperty"
+      },
+      "predicate": {
+        "lexical": "rdfs:range",
+        "iri": "http://www.w3.org/2000/01/rdf-schema#range"
+      },
+      "authoritative_target_lexical": "sosa:ObservableProperty",
+      "canonical_row_expression": {
+        "canonicalization": "coms-row-expression-v1",
+        "mapping_type": "range",
+        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#range",
+        "subject_iri": "http://www.w3.org/ns/sosa/observedProperty",
+        "target": "<http://www.w3.org/ns/sosa/ObservableProperty>"
+      },
+      "source_expression_sha256": "e56a136a398e67697b5826f5571e25a59072526b8211c59d4c4eca385cf8c93a",
+      "mapping_type": "range",
+      "coverage_classification": "property_typing",
+      "reasoning": "sosa:observedProperty relates an Observation to the ObservableProperty it observes. No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics. ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing sosa:ObservableProperty class mapping accommodates both. The source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation. These are global OWL typing commitments, not SHACL validation constraints. This explicit human-approved typing treatment supersedes the earlier technical deferral as the current treatment; the historical deferral and its former input interpretation remain preserved as evidence. The previously removed sosa:observedProperty rdfs:subPropertyOf cco:has_input is not restored, and no BFO, CCO, or RO superproperty is introduced.",
+      "authoritative_axioms": [
+        {
+          "axiom_id": "sha256:a24ea149173d508b6a07d336f65ad575495a7e172df9f3ab28950a925d9b3b9e",
+          "canonical_expression": "ObjectPropertyRange(<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/ns/sosa/ObservableProperty>)",
+          "referenced_iris": [
+            "http://www.w3.org/2000/01/rdf-schema#range",
+            "http://www.w3.org/ns/sosa/ObservableProperty",
+            "http://www.w3.org/ns/sosa/observedProperty"
+          ],
+          "target_category": "target_neutral",
+          "product_dispositions": {
+            "integrated": {
+              "status": "emitted_unchanged"
+            },
+            "alignment_core": {
+              "status": "emitted_unchanged"
+            },
+            "strict_bfo_mapping": {
+              "status": "provided_through_import"
+            },
+            "bfo_projection": {
+              "status": "provided_transitively"
+            },
+            "cco_extension": {
+              "status": "provided_transitively"
             }
           }
         }
@@ -6402,42 +6459,52 @@
         "lexical": "sosa:observedProperty",
         "iri": "http://www.w3.org/ns/sosa/observedProperty"
       },
-      "predicate": null,
-      "authoritative_target_lexical": null,
+      "predicate": {
+        "lexical": "rdfs:domain",
+        "iri": "http://www.w3.org/2000/01/rdf-schema#domain"
+      },
+      "authoritative_target_lexical": "sosa:Observation",
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
-        "mapping_type": "explicit_blank",
-        "predicate_iri": null,
+        "mapping_type": "domain",
+        "predicate_iri": "http://www.w3.org/2000/01/rdf-schema#domain",
         "subject_iri": "http://www.w3.org/ns/sosa/observedProperty",
-        "target": null
+        "target": "<http://www.w3.org/ns/sosa/Observation>"
       },
-      "source_expression_sha256": "e9f5dccc049c7dd522e5756d7fa07ce10bec5994fdff0f51d82ee5984a365853",
-      "mapping_type": "explicit_blank",
-      "coverage_classification": "explicitly_unmapped",
-      "reasoning": "Restore the technical deferral committed in b21d1fa82f41327aee07a03c412aca29faebd526: no direct OWL subproperty inclusion in cco:has_input is emitted. The historical intended input interpretation is retained; this is a technical deferral, not a semantic rejection or a new scientific decision. The coordinated madeBySensor/has_agent and madeObservation/agent_in restoration passes current complete local OWL 2 DL, HermiT and focused entailment checks with source-native axioms preserved.",
-      "authoritative_axioms": [],
-      "row_product_dispositions": {
-        "integrated": {
-          "status": "deferred",
-          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
-        },
-        "alignment_core": {
-          "status": "deferred",
-          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
-        },
-        "strict_bfo_mapping": {
-          "status": "deferred",
-          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
-        },
-        "bfo_projection": {
-          "status": "deferred",
-          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
-        },
-        "cco_extension": {
-          "status": "deferred",
-          "reason_code": "EXPLICITLY_UNMAPPED_SOURCE_ROW"
+      "source_expression_sha256": "80ebe52265f1d2e4fb14f9aff582ffede38f2307d4319510755432a593c6ceda",
+      "mapping_type": "domain",
+      "coverage_classification": "property_typing",
+      "reasoning": "sosa:observedProperty relates an Observation to the ObservableProperty it observes. No satisfactory existing BFO/CCO/RO superproperty has been identified that captures this relationship without introducing unwanted participation or input semantics. ObservableProperties can be specifically dependent continuants or occurrent process profiles. The existing sosa:ObservableProperty class mapping accommodates both. The source-class domain and range axioms make classifications logically enforceable through OWL inference. They do not, by themselves, establish that the property belongs to the same FeatureOfInterest associated with the Observation. These are global OWL typing commitments, not SHACL validation constraints. This explicit human-approved typing treatment supersedes the earlier technical deferral as the current treatment; the historical deferral and its former input interpretation remain preserved as evidence. The previously removed sosa:observedProperty rdfs:subPropertyOf cco:has_input is not restored, and no BFO, CCO, or RO superproperty is introduced.",
+      "authoritative_axioms": [
+        {
+          "axiom_id": "sha256:8fcaeb69c1fef369e3a38456acfe1bdaf43b0aed3b91e3821f4bd75e08ef4790",
+          "canonical_expression": "ObjectPropertyDomain(<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/ns/sosa/Observation>)",
+          "referenced_iris": [
+            "http://www.w3.org/2000/01/rdf-schema#domain",
+            "http://www.w3.org/ns/sosa/Observation",
+            "http://www.w3.org/ns/sosa/observedProperty"
+          ],
+          "target_category": "target_neutral",
+          "product_dispositions": {
+            "integrated": {
+              "status": "emitted_unchanged"
+            },
+            "alignment_core": {
+              "status": "emitted_unchanged"
+            },
+            "strict_bfo_mapping": {
+              "status": "provided_through_import"
+            },
+            "bfo_projection": {
+              "status": "provided_transitively"
+            },
+            "cco_extension": {
+              "status": "provided_transitively"
+            }
+          }
         }
-      }
+      ],
+      "row_product_dispositions": null
     }
   ]
 }

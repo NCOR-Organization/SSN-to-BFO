@@ -149,8 +149,8 @@ class ModularProductTests(unittest.TestCase):
     def test_exact_selection_identity_lock_and_distribution(self) -> None:
         self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)
         self.assertEqual({value.axiom_id for value in self.selected}, EXPECTED_AXIOM_IDS)
-        self.assertEqual(sum(value.canonical_input.mapping_type == "domain" for value in self.selected), 15)
-        self.assertEqual(sum(value.canonical_input.mapping_type == "range" for value in self.selected), 14)
+        self.assertEqual(sum(value.canonical_input.mapping_type == "domain" for value in self.selected), 17)
+        self.assertEqual(sum(value.canonical_input.mapping_type == "range" for value in self.selected), 15)
         self.assertTrue(all(value.target_category == "target_neutral" for value in self.selected))
 
     def test_wrong_disposition_and_wrong_category_fail(self) -> None:
@@ -271,12 +271,12 @@ class ModularProductTests(unittest.TestCase):
         )
         self.assertEqual(set(graph.subjects(RDF.type, OWL.Ontology)), {ontology})
         self.assertEqual(list(graph.triples((None, OWL.imports, None))), [])
-        self.assertEqual(self.result.governed_axiom_count, 29)
-        self.assertEqual(self.result.logical_triple_count, 53)
+        self.assertEqual(self.result.governed_axiom_count, 32)
+        self.assertEqual(self.result.logical_triple_count, 56)
         self.assertEqual(self.result.ontology_declaration_triple_count, 1)
         self.assertEqual(self.result.import_triple_count, 0)
         self.assertEqual(self.result.metadata_annotation_count, 7)
-        self.assertEqual(len(graph), 61)
+        self.assertEqual(len(graph), 64)
         self.assertEqual(
             set(ontology_metadata_rdf_triples(self.metadata, "alignment_core")),
             set(graph.triples((ontology, None, None)))
@@ -291,9 +291,9 @@ class ModularProductTests(unittest.TestCase):
         logical = strip_emitted_ontology_header(
             graph, self.metadata, "alignment_core", ()
         )
-        self.assertEqual(len(logical), 53)
-        self.assertEqual(len(list(graph.triples((None, RDFS.domain, None)))), 15)
-        self.assertEqual(len(list(graph.triples((None, RDFS.range, None)))), 14)
+        self.assertEqual(len(logical), 56)
+        self.assertEqual(len(list(graph.triples((None, RDFS.domain, None)))), 17)
+        self.assertEqual(len(list(graph.triples((None, RDFS.range, None)))), 15)
 
     def test_three_union_expressions_have_distinct_three_member_lists(self) -> None:
         graph = Graph().parse(data=self.result.serialized_bytes.decode(), format="turtle")
@@ -506,9 +506,9 @@ class RawModularProductGuardTests(unittest.TestCase):
             result = modular.reconcile_product_axioms("alignment_core", canonical_rows, audits, disposition)
             self.assertEqual(
                 {total.target_category: total.count for total in result.disposition_totals},
-                {"target_neutral": 29, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28},
+                {"target_neutral": 32, "bfo_bearing": 19, "cco_bearing": 24, "mixed_bfo_cco": 28},
             )
-            self.assertEqual(result.governed_axiom_count, 100)
+            self.assertEqual(result.governed_axiom_count, 102)
             self.assertEqual({value.row_id for value in result.selected_axioms}, EXPECTED_ROW_IDS)
             self.assertEqual({value.axiom_id for value in result.selected_axioms}, EXPECTED_AXIOM_IDS)
         assert_raw_baseline_rejects()

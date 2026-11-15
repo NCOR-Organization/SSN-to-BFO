@@ -1,7 +1,7 @@
 {
   "binding": {
-    "assessment_tool_sha256": "1df3d8c6851eeef76881f1ca0a90ab52e9f41d4b56fca3770de5bedb43ffe5d6",
-    "content_sha256": "fe5566eb8ad96d0581cdb92c03abd53e79af59573a86f92bd1388fd2059f7ba7",
+    "assessment_tool_sha256": "9e16fe3fb80a03ef327e9dabdf51ca835dfb9ddc10029043c9e69fb8ebfa176e",
+    "content_sha256": "54b28f1c9ec8b6d73e2fe6adb108eaa271d949e8abb3585dfc80258be2d93615",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -13,7 +13,7 @@
       "schema_version": 2
     },
     "input_sha256": {
-      "SSN2BFO.ttl": "31891c62505276432b95870363d23afa076066cd71f80767e4fc83339ad2f844",
+      "SSN2BFO.ttl": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -26,8 +26,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a",
-      "mappings/current-ssn-sosa-assessment.json": "ad27d6ead4a1f55182cf53dc1ccfdf09c8a3f1732dc36747722534342bacb84f",
+      "mappings/SSN2BFO-COMS.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
+      "mappings/current-ssn-sosa-assessment.json": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -82,6 +82,11 @@
       "reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt": "53848669dd8005ad1a7232fc5ecb0e63fd2415213f8da37d7cdb6b8b6b086dc0",
       "reports/current-human-decisions/2026-11-01-observation-adjudication/assessment-before.json": "855146ccc0329c51d99a0cf79b6ec86e4a91a74d27b745159142f6b95e200709",
       "reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json": "4da62f4f9687c14cf118e0bc003e59213ea1265b0f27a65a48eac194a9516c64",
+      "reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt": "3a3f617c3fabbdcca6a6b93d24c85f51570c58ad4056b6c977fb889f0cd46ef7",
+      "reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-rowids-before.json": "bbbc012537adeb0cea79a8c7cbf10acb76b462f509c3bdc7efb95a7f931ad0e3",
+      "reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json": "bf2e3711f9c9f7abb0e94de916cd3b3643342220ceb26d393b9985abd56d3156",
+      "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json": "4c2e704a1b59bbecd4fcda20a0898582df77fd508cf52ec39d75b2b9594ae3a4",
+      "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290",
       "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
@@ -99,8 +104,10 @@
       "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
       "reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json": "4efadf29f7cebefd8a62b0d5ae42e5ed2e74b64b810f83fd85b73f3011e7b55b",
       "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json": "e6ca14409fbd4df59ecbcbf3c36fb09cc762919225d8e0d288f755c723d9d2b9",
+      "reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json": "e293bfe2c70379bed3466ecf9db5c4b1504c3d4cb5ae060a5d1aaa8089002118",
       "reports/current-semantic-workbook/versions/0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a.xlsx": "0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a",
       "reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+      "reports/current-semantic-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
       "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
       "reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
       "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
@@ -154,7 +161,7 @@
       "tools/check_release.py": "0e47a8910918597c0b827b5e9e5cdd4ed6a2643f5a953e7abc637b068a1a1aae",
       "tools/coms_framework_integration.py": "b96631483b08e01632a48409e72e625a8b184d0ea434f13089b2e812142a1209",
       "tools/coms_row_identity.py": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
-      "tools/current_assessment.py": "1df3d8c6851eeef76881f1ca0a90ab52e9f41d4b56fca3770de5bedb43ffe5d6",
+      "tools/current_assessment.py": "9e16fe3fb80a03ef327e9dabdf51ca835dfb9ddc10029043c9e69fb8ebfa176e",
       "tools/current_checkpoint_successor.py": "db6d5f15aab73d6912d774ed05afd50442624f46bd450b2b22770d6d9127a439",
       "tools/current_custody_dependencies.py": "a849dc21b3c71f4cbb9beba73718e5211600613a0ca42b03ab8bb964cafb1388",
       "tools/current_decision_applicability.py": "0eb3a188b010c77f401a95d52512d63af71291b177c7f5a8469c6ac40f1b4717",
@@ -166,7 +173,7 @@
       "tools/current_semantic_generation.py": "f13b3b7726543382b9d6e968c5a4c48a9eea1996da1b614e2b2edbceebeb4710",
       "tools/current_semantic_invocation.py": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
       "tools/current_semantic_validation.py": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
-      "tools/current_semantic_workbook.py": "118ea271774ff028e4c3c32f31833d8ef5f116b2d1f60a9d7a6ce56c37b9e399",
+      "tools/current_semantic_workbook.py": "916ea35f526c503a824fa7ed40acac97247c3180edc5e8140b496b4e2446ec66",
       "tools/current_source_identity.py": "0dc6f9e59d7cfb5e23d8a308ff053111222eae79aa5a4d471e916410720b93e0",
       "tools/current_validation_execution.py": "fa51103f56f35bd75f3c99af49e6b3b2db5353174fe150d2cdd26d53066aeb37",
       "tools/current_validation_scope.py": "f3c1d6ea122fd5f5b7c5ad10ee00db8ece0026447ce1f482a94b263ddc43cff9",
@@ -183,50 +190,50 @@
   },
   "method": "Structural evidence over named source subclass/subproperty, named equivalence, and inverse paths plus governed direct mappings; chain heads and separately executed conditional query routes. Overlaps retained. No established route means none in this bounded method, not a complete OWL non-entailment proof. Domain/range alone never supplies relation coverage.",
   "summary": {
-    "assertion_bearing_rows": 100,
+    "assertion_bearing_rows": 102,
     "assessment_outcomes": {
       "deferred": 0,
-      "formal_mapping_adopted": 14,
+      "formal_mapping_adopted": 15,
       "inheritance_sufficient": 2,
       "no_direct_mapping": 5,
-      "unreviewed": 70
+      "unreviewed": 69
     },
     "assessment_record_count": 91,
     "chain_heads": 2,
     "coverage_counts": {
       "direct_formal_mapping": 66,
-      "explicit_blank": 7,
+      "explicit_blank": 6,
       "inherited_formal_mapping": 41,
       "no_established_formal_route": 15,
       "rule_or_chain_route": 11,
-      "typing_only_in_workbook": 16
+      "typing_only_in_workbook": 17
     },
     "direct_classes": 42,
     "direct_object_properties": 24,
     "expression_occurrences": {
       "intersection": 86,
-      "named": 191,
+      "named": 193,
       "some": 96,
       "union": 15
     },
     "mapping_repertoire_rows": {
-      "explicit_blank": 7,
+      "explicit_blank": 6,
       "owl:equivalentClass": 10,
       "owl:equivalentProperty": 0,
       "owl:propertyChainAxiom": 2,
-      "rdfs:domain": 17,
-      "rdfs:range": 15,
+      "rdfs:domain": 18,
+      "rdfs:range": 16,
       "rdfs:subClassOf": 32,
       "rdfs:subPropertyOf": 24
     },
     "review_states": {
       "deferred": 0,
-      "final": 21,
-      "unreviewed": 70
+      "final": 22,
+      "unreviewed": 69
     },
     "rows_with_expression_form": {
       "intersection": 35,
-      "named": 74,
+      "named": 76,
       "some": 35,
       "union": 14
     },
@@ -236,7 +243,7 @@
       "object_property": 47
     },
     "source_term_count": 91,
-    "workbook_rows": 107
+    "workbook_rows": 108
   },
   "terms": [
     {
@@ -927,7 +934,7 @@
       "chain_mapping_row_ids": [],
       "direct_formal_mapping": false,
       "direct_mapping_row_ids": [],
-      "explicit_blank": true,
+      "explicit_blank": false,
       "inherited_formal_mapping": false,
       "inherited_routes": [],
       "no_established_formal_route": true,
@@ -935,8 +942,11 @@
       "rule_routes": [],
       "source_iri": "http://www.w3.org/ns/sosa/observedProperty",
       "source_kind": "object_property",
-      "typing_only_in_workbook": false,
-      "typing_row_ids": []
+      "typing_only_in_workbook": true,
+      "typing_row_ids": [
+        "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1",
+        "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc"
+      ]
     },
     {
       "chain_mapping_row_ids": [],
