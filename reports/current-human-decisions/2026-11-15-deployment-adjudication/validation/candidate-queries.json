@@ -1,0 +1,111 @@
+[
+  {
+    "id": "Deployment-PlannedAct",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "https://www.commoncoreontologies.org/ont00000228",
+    "expected_entailed": true
+  },
+  {
+    "id": "Deployment-has-System",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "predicate": "http://www.w3.org/ns/ssn/deployedSystem",
+    "expected_entailed": true
+  },
+  {
+    "id": "new-expression-forward",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "urn:deployment-adjudication-probe:NewTarget",
+    "expected_entailed": true
+  },
+  {
+    "id": "new-expression-reverse",
+    "kind": "class_subsumption",
+    "subject": "urn:deployment-adjudication-probe:NewTarget",
+    "object": "http://www.w3.org/ns/ssn/Deployment",
+    "expected_entailed": true
+  },
+  {
+    "id": "old-expression-still-sufficient",
+    "kind": "class_subsumption",
+    "subject": "urn:deployment-adjudication-probe:OldTarget",
+    "object": "http://www.w3.org/ns/ssn/Deployment",
+    "expected_entailed": true
+  },
+  {
+    "id": "old-expression-no-longer-necessary",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "urn:deployment-adjudication-probe:OldTarget",
+    "expected_entailed": false
+  },
+  {
+    "id": "material-platform-not-required",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "predicate": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+    "expected_entailed": false
+  },
+  {
+    "id": "source-platform-not-required",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "predicate": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+    "expected_entailed": false
+  },
+  {
+    "id": "any-platform-filler-not-required",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "http://www.w3.org/2002/07/owl#Thing",
+    "predicate": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+    "expected_entailed": false
+  },
+  {
+    "id": "platform-free-Deployment-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "urn:deployment-adjudication-probe:PlatformFreeDeployment",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "Deployment-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "System-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/System",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "Platform-satisfiable",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/Platform",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "expected_entailed": false
+  },
+  {
+    "id": "source-platform-universal-retained",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "urn:deployment-adjudication-probe:OnlyPlatformFillers",
+    "expected_entailed": true
+  },
+  {
+    "id": "source-system-universal-retained",
+    "kind": "class_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "object": "urn:deployment-adjudication-probe:OnlySystemFillers",
+    "expected_entailed": true
+  }
+]

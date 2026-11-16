@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+  "workbook_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
   "generator_sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
@@ -21,8 +21,8 @@
     "zero_axiom_row_count": 6,
     "target_neutral_axiom_count": 32,
     "bfo_bearing_axiom_count": 19,
-    "cco_bearing_axiom_count": 23,
-    "mixed_bfo_cco_axiom_count": 28,
+    "cco_bearing_axiom_count": 24,
+    "mixed_bfo_cco_axiom_count": 27,
     "class_mapping_row_count": 42,
     "relation_mapping_row_count": 24,
     "property_chain_row_count": 2,
@@ -648,32 +648,30 @@
         "lexical": "owl:equivalentClass",
         "iri": "http://www.w3.org/2002/07/owl#equivalentClass"
       },
-      "authoritative_target_lexical": "cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity)",
+      "authoritative_target_lexical": "cco:PlannedAct and (ssn:deployedSystem some ssn:System)",
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
         "mapping_type": "class_mapping",
         "predicate_iri": "http://www.w3.org/2002/07/owl#equivalentClass",
         "subject_iri": "http://www.w3.org/ns/ssn/Deployment",
-        "target": "ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedOnPlatform> <http://purl.obolibrary.org/obo/BFO_0000040>) ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>))"
+        "target": "ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>))"
       },
-      "source_expression_sha256": "f05c613dbda3a8cda59297e2e0ccac44bdfbfe2cd5890088971e09ef0e83f677",
+      "source_expression_sha256": "6fda9e44f9cac33751d0eed0afeb088c03ceb0dab73c4296f135030dc4080860",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment.",
+      "reasoning": "SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments.",
       "authoritative_axioms": [
         {
-          "axiom_id": "sha256:7b6dc290ded8df4f46f20ce28efdc86479348dd0c0746fd31c883e97724b0361",
-          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/ssn/Deployment> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedOnPlatform> <http://purl.obolibrary.org/obo/BFO_0000040>) ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>)))",
+          "axiom_id": "sha256:8076f4658d1451ac9c705ba5407232852808d870981ec6aae7499b4cdc707c17",
+          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/ssn/Deployment> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>)))",
           "referenced_iris": [
-            "http://purl.obolibrary.org/obo/BFO_0000040",
             "http://www.w3.org/2002/07/owl#equivalentClass",
             "http://www.w3.org/ns/ssn/Deployment",
             "http://www.w3.org/ns/ssn/System",
-            "http://www.w3.org/ns/ssn/deployedOnPlatform",
             "http://www.w3.org/ns/ssn/deployedSystem",
             "https://www.commoncoreontologies.org/ont00000228"
           ],
-          "target_category": "mixed_bfo_cco",
+          "target_category": "cco_bearing",
           "product_dispositions": {
             "integrated": {
               "status": "emitted_unchanged"

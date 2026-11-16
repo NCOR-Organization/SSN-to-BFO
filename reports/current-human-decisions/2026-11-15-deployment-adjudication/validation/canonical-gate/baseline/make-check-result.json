@@ -1,0 +1,17 @@
+{
+  "command": [
+    "make",
+    "check"
+  ],
+  "cwd": "/tmp/ssn-deployment-baseline-palz_45y/checkout",
+  "return_code": 2,
+  "elapsed_seconds": 2039.5328992912546,
+  "test_summary": [
+    "Ran 488 tests in 2037.755s"
+  ],
+  "outcome_summary": [
+    "FAILED (failures=24, errors=22, skipped=7)"
+  ],
+  "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/baseline/make-check.log",
+  "log_sha256": "3c38dc251fa0835a9c209148c8119f65bbfae93158594624334e55060e7e215e"
+}

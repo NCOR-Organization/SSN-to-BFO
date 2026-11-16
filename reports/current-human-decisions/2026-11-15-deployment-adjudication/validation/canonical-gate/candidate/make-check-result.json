@@ -1,0 +1,16 @@
+{
+  "command": [
+    "make",
+    "check"
+  ],
+  "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout",
+  "return_code": 2,
+  "elapsed_seconds": 2178.7913516247645,
+  "test_summary": [
+    "Ran 488 tests in 2176.951s"
+  ],
+  "outcome_summary": [
+    "FAILED (failures=25, errors=22, skipped=7)"
+  ],
+  "log_sha256": "17825f9e17af88b6db5037bacde1f465acccdf008f9b0a9fff89299663849a86"
+}

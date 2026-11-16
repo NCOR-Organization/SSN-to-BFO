@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**69 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**68 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -31,7 +31,6 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 3 | `sosa:Sample` | Must all current SOSA Samples be material and objects of Sampling, and are those conditions sufficient for samplehood, including statistical samples in source examples? |
 | 3 | `sosa:Sampler` | Should the earlier explicit necessary-and-sufficient Sampler decision remain final given unused samplers and the pinned track’s removal of actual Sampling existentials? |
 | 3 | `sosa:Sampling` | Are a PlannedAct, an actual prescribed Procedure, and an output Sample jointly sufficient for Sampling rather than merely necessary? |
-| 3 | `ssn:Deployment` | Are an actual System and material Platform necessary for every Deployment, and are those conditions sufficient to distinguish Deployment from other PlannedActs? |
 | 3 | `ssn:Property` | Is every BFO specifically dependent continuant and every ProcessProfile necessarily an SSN Property, as the equivalence asserts? |
 | 3 | `ssn:Stimulus` | Is every cause of an Observation a detectable change that qualifies as a source Stimulus, or only some causes? |
 | 3 | `ssn:System` | Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation? |
@@ -1010,42 +1009,6 @@ Asserted context (actual axiom subject and direction retained):
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!12`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/Sampling`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/Sampling`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
-
-## ssn:Deployment
-
-State: **unreviewed**; priority 3; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!31` / `urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb`: `owl:equivalentClass` cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity).
-
-**Source semantics:** Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (ssn:deployedOnPlatform owl:allValuesFrom sosa:Platform); rdfs:subClassOf (ssn:deployedSystem owl:allValuesFrom ssn:System); rdfs:subClassOf (ssn:forProperty owl:allValuesFrom ssn:Property)
-
-Source advisory signature: none recorded
-
-**Target semantics:** `bfo:BFO_0000040` (material entity; asserted_target_expression; glossary); `cco:ont00000228` (Planned Act; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn:Deployment satisfies cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity); every instance satisfying that full expression is also ssn:Deployment. Existential fillers denote actual individuals, including anonymous witnesses.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Platform rdfs:subClassOf (ssn:inDeployment owl:allValuesFrom ssn:Deployment)`.
-- `source_native` / asserted: `ssn:System rdfs:subClassOf (ssn:hasDeployment owl:allValuesFrom ssn:Deployment)`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet1!6`: `sosa:Deployment` — `active`, `rdfs:subClassOf` cco:PlannedAct and (sosa:deployedAsset some sosa:Asset). Replace the current equivalent-class mapping with sosa:Deployment rdfs:subClassOf cco:PlannedAct and (sosa:deployedAsset some sosa:Asset). The source defines a Deployment as an arrangement of one or more Assets and states that it may involve Platforms, Systems, or both. The current mandatory System and Platform restrictions are therefore too narrow. A one-way subclass is retained because the source supports these as necessary conditions but does not justify the reverse classification of every matching PlannedAct as a Deployment. Comparison basis: local-name comparison only; distinct namespace/source version.
-
-**Human decision:** Are an actual System and material Platform necessary for every Deployment, and are those conditions sufficient to distinguish Deployment from other PlannedActs?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Review a one-way subclass and separately justify each existential; the N-track Asset pattern belongs to its changed source and cannot be transplanted automatically.
-
-**Proposed recommendation:** Retain the artifact during review. Review a one-way subclass and separately justify each existential; the N-track Asset pattern belongs to its changed source and cannot be transplanted automatically.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!31`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/Deployment`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
 ## ssn:Property
 

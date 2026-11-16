@@ -1,0 +1,746 @@
+{
+  "id": "deployment-source-converse",
+  "closure": {
+    "inputs": [
+      {
+        "path": "imports/sosa.ttl",
+        "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+        "bytes": 34854
+      },
+      {
+        "path": "imports/sosa-sampling.ttl",
+        "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+        "bytes": 3604
+      },
+      {
+        "path": "imports/ssn.ttl",
+        "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+        "bytes": 38450
+      },
+      {
+        "path": "imports/ssn-systems.ttl",
+        "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+        "bytes": 41076
+      }
+    ],
+    "unresolved_imports": [],
+    "closure_policy": "Exactly four pinned current SSN/SOSA source ontologies; no workbook or mapping product and no BFO/CCO ontology. Imports expanded from fixed local source list then directives removed. Established metadata declarations added. One fresh conservative named existential definition for source-only converse query.",
+    "removed_logical_axioms": 0,
+    "removed_import_directives": [
+      [
+        "http://www.w3.org/ns/sosa/sampling/",
+        "http://www.w3.org/2002/07/owl#imports",
+        "http://www.w3.org/2004/02/skos/core"
+      ],
+      [
+        "http://www.w3.org/ns/sosa/sampling/",
+        "http://www.w3.org/2002/07/owl#imports",
+        "http://www.w3.org/ns/sosa/"
+      ],
+      [
+        "http://www.w3.org/ns/ssn/",
+        "http://www.w3.org/2002/07/owl#imports",
+        "http://www.w3.org/ns/sosa/"
+      ],
+      [
+        "http://www.w3.org/ns/ssn/systems/",
+        "http://www.w3.org/2002/07/owl#imports",
+        "http://www.w3.org/ns/ssn/"
+      ]
+    ],
+    "declaration_completion": [
+      [
+        "http://purl.org/dc/terms/type",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      ],
+      [
+        "http://purl.org/dc/terms/issued",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      ],
+      [
+        "http://www.w3.org/ns/adms#status",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      ],
+      [
+        "http://www.w3.org/2004/02/skos/core#Concept",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://www.w3.org/2002/07/owl#Class"
+      ]
+    ],
+    "triples": 1162
+  },
+  "input_document": {
+    "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.rdf",
+    "sha256": "b84d148ea11561382be5146d9d8181a36ee91f6ab1e96b7873b5c76e8f9f40e9",
+    "bytes": 140923
+  },
+  "query_document": {
+    "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.queries.json",
+    "sha256": "f0a027cfdb6f7691885c8328c0161a73f9248f6e9d039634016504e3d95b2d4d",
+    "bytes": 489
+  },
+  "attempt": {
+    "command": [
+      "/usr/bin/java",
+      "-Xmx4G",
+      "-cp",
+      "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java:/Users/alecsculley/Documents/GitHub/SSN-to-BFO/build/lib/robot-1.9.7/robot.jar",
+      "CurrentSemanticReasoner",
+      "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.rdf",
+      "consistency",
+      "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.queries.json"
+    ],
+    "returncode": 0,
+    "execution_status": "completed",
+    "elapsed_seconds": 0.532,
+    "stdout": {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/evidence/invocations/528eed8c-6df7-4b60-bc0c-1fcfda3e34d4.stdout.log",
+      "sha256": "1e85c611abf7bc81c95499ea900650687fabf30a4228d27cc3f4c237fc33faa7",
+      "bytes": 4626
+    },
+    "stderr": {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/evidence/invocations/528eed8c-6df7-4b60-bc0c-1fcfda3e34d4.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "selected_invocation_id": "528eed8c-6df7-4b60-bc0c-1fcfda3e34d4",
+    "invocation_nonce": "241e6e7cba825872b586b64844d16f03fb680fda1520d27816b7d7ce2452357a",
+    "invocation": {
+      "ticket": {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/evidence/invocations/528eed8c-6df7-4b60-bc0c-1fcfda3e34d4.ticket.json",
+        "sha256": "d4cad58859ee76858a0e8338af070661bcfdb279b46ad2fcf7281dcb8b013e4e",
+        "bytes": 4975
+      },
+      "capture": {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/evidence/invocations/528eed8c-6df7-4b60-bc0c-1fcfda3e34d4.capture.json",
+        "sha256": "6492fa15486fef475d3d030891451f630d27760867e098799e93f338650a9e26",
+        "bytes": 6724
+      },
+      "envelope": {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/evidence/invocations/528eed8c-6df7-4b60-bc0c-1fcfda3e34d4.envelope.json",
+        "sha256": "613966141de621a13d12d8dab4ea06c77dbbf5bfc80b6b932b64952e9da135b9",
+        "bytes": 2570
+      }
+    },
+    "execution_binding": {
+      "expected_head": "45b98f30854a623f752a3bbdd1c69df8f0779a82",
+      "head_before": "45b98f30854a623f752a3bbdd1c69df8f0779a82",
+      "head_after": "45b98f30854a623f752a3bbdd1c69df8f0779a82",
+      "expected_inputs": [
+        {
+          "path": "SSN2BFO.ttl",
+          "sha256": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+          "bytes": 167893
+        },
+        {
+          "path": "build/lib/robot-1.9.7/robot.jar",
+          "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d",
+          "bytes": 95221545
+        },
+        {
+          "path": "config/current-semantic-expectations.json",
+          "sha256": "04ad8905517a5a4f10215b2831649455fc644ec0ee3a9ab43d2e0ee8753a2dab",
+          "bytes": 21978
+        },
+        {
+          "path": "config/current-ssn-sosa-identity.json",
+          "sha256": "be88991ff122f6c4960fdbc60d1dfb1836c761654a37ff56403a56837f58a35c",
+          "bytes": 27539
+        },
+        {
+          "path": "config/validation-toolchain.env",
+          "sha256": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+          "bytes": 334
+        },
+        {
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+          "bytes": 1229197
+        },
+        {
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+          "bytes": 3604
+        },
+        {
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+          "bytes": 34854
+        },
+        {
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+          "bytes": 41076
+        },
+        {
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+          "bytes": 38450
+        },
+        {
+          "path": "mappings/SSN2BFO-COMS.xlsx",
+          "sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+          "bytes": 23362
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+          "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188",
+          "bytes": 9496
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+          "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43",
+          "bytes": 2439
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+          "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf",
+          "bytes": 3275
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+          "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133",
+          "bytes": 4159
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+          "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e",
+          "bytes": 15599
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+          "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6",
+          "bytes": 4932
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+          "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df",
+          "bytes": 2390
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+          "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270",
+          "bytes": 1920
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+          "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3",
+          "bytes": 2363
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+          "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4",
+          "bytes": 1146
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+          "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14",
+          "bytes": 987
+        },
+        {
+          "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+          "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa",
+          "bytes": 547
+        },
+        {
+          "path": "tests/test_current_portable_execution_evidence.py",
+          "sha256": "9964429a643e1847e824762faa179bd11710046fc562ae1dd2f8be469a5212d5",
+          "bytes": 18599
+        },
+        {
+          "path": "tests/test_current_semantic_invocation.py",
+          "sha256": "610128aeee69ec8163f44ab67d3381bd9eb9af81a03ae004f39f5994500e0323",
+          "bytes": 19482
+        },
+        {
+          "path": "tools/current_portable_execution_evidence.py",
+          "sha256": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+          "bytes": 25686
+        },
+        {
+          "path": "tools/current_retained_evidence.py",
+          "sha256": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+          "bytes": 13485
+        },
+        {
+          "path": "tools/current_semantic_invocation.py",
+          "sha256": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+          "bytes": 13254
+        },
+        {
+          "path": "tools/current_semantic_validation.py",
+          "sha256": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+          "bytes": 76521
+        },
+        {
+          "path": "tools/java/CurrentSemanticReasoner.java",
+          "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591",
+          "bytes": 8896
+        }
+      ],
+      "inputs_before": [
+        {
+          "path": "SSN2BFO.ttl",
+          "sha256": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+          "bytes": 167893
+        },
+        {
+          "path": "build/lib/robot-1.9.7/robot.jar",
+          "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d",
+          "bytes": 95221545
+        },
+        {
+          "path": "config/current-semantic-expectations.json",
+          "sha256": "04ad8905517a5a4f10215b2831649455fc644ec0ee3a9ab43d2e0ee8753a2dab",
+          "bytes": 21978
+        },
+        {
+          "path": "config/current-ssn-sosa-identity.json",
+          "sha256": "be88991ff122f6c4960fdbc60d1dfb1836c761654a37ff56403a56837f58a35c",
+          "bytes": 27539
+        },
+        {
+          "path": "config/validation-toolchain.env",
+          "sha256": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+          "bytes": 334
+        },
+        {
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+          "bytes": 1229197
+        },
+        {
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+          "bytes": 3604
+        },
+        {
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+          "bytes": 34854
+        },
+        {
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+          "bytes": 41076
+        },
+        {
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+          "bytes": 38450
+        },
+        {
+          "path": "mappings/SSN2BFO-COMS.xlsx",
+          "sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+          "bytes": 23362
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+          "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188",
+          "bytes": 9496
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+          "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43",
+          "bytes": 2439
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+          "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf",
+          "bytes": 3275
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+          "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133",
+          "bytes": 4159
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+          "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e",
+          "bytes": 15599
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+          "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6",
+          "bytes": 4932
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+          "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df",
+          "bytes": 2390
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+          "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270",
+          "bytes": 1920
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+          "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3",
+          "bytes": 2363
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+          "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4",
+          "bytes": 1146
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+          "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14",
+          "bytes": 987
+        },
+        {
+          "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+          "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa",
+          "bytes": 547
+        },
+        {
+          "path": "tests/test_current_portable_execution_evidence.py",
+          "sha256": "9964429a643e1847e824762faa179bd11710046fc562ae1dd2f8be469a5212d5",
+          "bytes": 18599
+        },
+        {
+          "path": "tests/test_current_semantic_invocation.py",
+          "sha256": "610128aeee69ec8163f44ab67d3381bd9eb9af81a03ae004f39f5994500e0323",
+          "bytes": 19482
+        },
+        {
+          "path": "tools/current_portable_execution_evidence.py",
+          "sha256": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+          "bytes": 25686
+        },
+        {
+          "path": "tools/current_retained_evidence.py",
+          "sha256": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+          "bytes": 13485
+        },
+        {
+          "path": "tools/current_semantic_invocation.py",
+          "sha256": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+          "bytes": 13254
+        },
+        {
+          "path": "tools/current_semantic_validation.py",
+          "sha256": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+          "bytes": 76521
+        },
+        {
+          "path": "tools/java/CurrentSemanticReasoner.java",
+          "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591",
+          "bytes": 8896
+        }
+      ],
+      "inputs_after": [
+        {
+          "path": "SSN2BFO.ttl",
+          "sha256": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+          "bytes": 167893
+        },
+        {
+          "path": "build/lib/robot-1.9.7/robot.jar",
+          "sha256": "91890c2e83d0f092dd08731376f154b36610544cfbe8685337a1bf7244ccaa2d",
+          "bytes": 95221545
+        },
+        {
+          "path": "config/current-semantic-expectations.json",
+          "sha256": "04ad8905517a5a4f10215b2831649455fc644ec0ee3a9ab43d2e0ee8753a2dab",
+          "bytes": 21978
+        },
+        {
+          "path": "config/current-ssn-sosa-identity.json",
+          "sha256": "be88991ff122f6c4960fdbc60d1dfb1836c761654a37ff56403a56837f58a35c",
+          "bytes": 27539
+        },
+        {
+          "path": "config/validation-toolchain.env",
+          "sha256": "5d207ef5f1429a01106c116fe519945476ee1c1654189c78c6089f04c17ce42f",
+          "bytes": 334
+        },
+        {
+          "path": "imports/cco.ttl",
+          "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+          "bytes": 1229197
+        },
+        {
+          "path": "imports/sosa-sampling.ttl",
+          "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+          "bytes": 3604
+        },
+        {
+          "path": "imports/sosa.ttl",
+          "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+          "bytes": 34854
+        },
+        {
+          "path": "imports/ssn-systems.ttl",
+          "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+          "bytes": 41076
+        },
+        {
+          "path": "imports/ssn.ttl",
+          "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+          "bytes": 38450
+        },
+        {
+          "path": "mappings/SSN2BFO-COMS.xlsx",
+          "sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+          "bytes": 23362
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl",
+          "sha256": "8640c4649a8b75f889ee5c89931bbff7bad56ad65837583dc394adcf193a4188",
+          "bytes": 9496
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl",
+          "sha256": "28ed701544838e52b982bcc1017f36b413a9e30cf565c154a42e7f4d3a5f1d43",
+          "bytes": 2439
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl",
+          "sha256": "29262bdb6d0897c620469b947dd527be6916af1766222572852d8915101c87cf",
+          "bytes": 3275
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl",
+          "sha256": "60ebe272bcfa2aecc2664fad8691a5cb1b38fed712102156727a3c58493d7133",
+          "bytes": 4159
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl",
+          "sha256": "a63efba029ee579d652a2a0c75b793d3b8b9e0c069ffcad8ee7ff9e96bb6f11e",
+          "bytes": 15599
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl",
+          "sha256": "1853392f1b038beab915601940421f66a50b046a3bdd19677691b2a9d48537f6",
+          "bytes": 4932
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl",
+          "sha256": "b5f4355a95f1b26aea861c25a3ca0c1fcc66d7e76ad3e209ea8677e52f1a07df",
+          "bytes": 2390
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl",
+          "sha256": "827c65c4d66dc588700864fbf6e2d9b7ecfdc9baec3c7b189d3b25b7ac950270",
+          "bytes": 1920
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl",
+          "sha256": "8c250efb462597d7e616de053b6fc1aac795d3810219d0d5a02fd369cf9651f3",
+          "bytes": 2363
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl",
+          "sha256": "bf65e5ac7c757de5a4990c2fce3a1b4cab4c46e52b74b61ba831de8c3b6e37a4",
+          "bytes": 1146
+        },
+        {
+          "path": "src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl",
+          "sha256": "a54a085e690c86e261a1c08dbfafdc967726c3aa209275d1199b2c18c9b73a14",
+          "bytes": 987
+        },
+        {
+          "path": "tests/fixtures/current-semantic/sample-relationship.ttl",
+          "sha256": "7bf8248f1b507ae3797a0bd1849dfaeeb9ae1400b79631e490beeea8018d1afa",
+          "bytes": 547
+        },
+        {
+          "path": "tests/test_current_portable_execution_evidence.py",
+          "sha256": "9964429a643e1847e824762faa179bd11710046fc562ae1dd2f8be469a5212d5",
+          "bytes": 18599
+        },
+        {
+          "path": "tests/test_current_semantic_invocation.py",
+          "sha256": "610128aeee69ec8163f44ab67d3381bd9eb9af81a03ae004f39f5994500e0323",
+          "bytes": 19482
+        },
+        {
+          "path": "tools/current_portable_execution_evidence.py",
+          "sha256": "ceef583afa7a7688ab0cdd28b0b525d8fb41b0bfe929b6e8de3d1607cd4ca779",
+          "bytes": 25686
+        },
+        {
+          "path": "tools/current_retained_evidence.py",
+          "sha256": "cb99de0671dc64726e8f16d4a225057000559269e232e94895c3827832c2f68c",
+          "bytes": 13485
+        },
+        {
+          "path": "tools/current_semantic_invocation.py",
+          "sha256": "55c021981635888fd1133d612a37b3f9c706af0b928d85a86eb4e6d0c5382453",
+          "bytes": 13254
+        },
+        {
+          "path": "tools/current_semantic_validation.py",
+          "sha256": "39105a08d8ab011f58a1e42f00ec7b4ac0f06047de3ec3a67a938d8002e6b930",
+          "bytes": 76521
+        },
+        {
+          "path": "tools/java/CurrentSemanticReasoner.java",
+          "sha256": "01e618975f3e65497a39e0deb676b78249e5a4bc39343ffa8e6da288bfb69591",
+          "bytes": 8896
+        }
+      ],
+      "documents_before": [
+        {
+          "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.rdf",
+          "sha256": "b84d148ea11561382be5146d9d8181a36ee91f6ab1e96b7873b5c76e8f9f40e9",
+          "bytes": 140923
+        },
+        {
+          "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.queries.json",
+          "sha256": "f0a027cfdb6f7691885c8328c0161a73f9248f6e9d039634016504e3d95b2d4d",
+          "bytes": 489
+        }
+      ],
+      "documents_after": [
+        {
+          "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.rdf",
+          "sha256": "b84d148ea11561382be5146d9d8181a36ee91f6ab1e96b7873b5c76e8f9f40e9",
+          "bytes": 140923
+        },
+        {
+          "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/source-converse-validation/java/deployment-source-converse.queries.json",
+          "sha256": "f0a027cfdb6f7691885c8328c0161a73f9248f6e9d039634016504e3d95b2d4d",
+          "bytes": 489
+        }
+      ],
+      "drift": false,
+      "tool": {
+        "path": "/usr/bin/java",
+        "sha256": "d641f84fbed5fcd611d603fe5aa364f152462d7d099e09eeaf36f046be4c3f32",
+        "bytes": 135664
+      }
+    }
+  },
+  "selected_invocation_id": "528eed8c-6df7-4b60-bc0c-1fcfda3e34d4",
+  "invocation_nonce": "241e6e7cba825872b586b64844d16f03fb680fda1520d27816b7d7ce2452357a",
+  "reasoner_result": {
+    "logical_axiom_count": 167,
+    "owl2_dl_profile": true,
+    "profile_violations": [],
+    "signature": {
+      "object_properties": [
+        "http://www.w3.org/ns/sosa/actsOnProperty",
+        "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+        "http://www.w3.org/ns/sosa/hasResult",
+        "http://www.w3.org/ns/sosa/hasSample",
+        "http://www.w3.org/ns/sosa/hosts",
+        "http://www.w3.org/ns/sosa/isActedOnBy",
+        "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+        "http://www.w3.org/ns/sosa/isHostedBy",
+        "http://www.w3.org/ns/sosa/isObservedBy",
+        "http://www.w3.org/ns/sosa/isResultOf",
+        "http://www.w3.org/ns/sosa/isSampleOf",
+        "http://www.w3.org/ns/sosa/madeActuation",
+        "http://www.w3.org/ns/sosa/madeByActuator",
+        "http://www.w3.org/ns/sosa/madeBySampler",
+        "http://www.w3.org/ns/sosa/madeBySensor",
+        "http://www.w3.org/ns/sosa/madeObservation",
+        "http://www.w3.org/ns/sosa/madeSampling",
+        "http://www.w3.org/ns/sosa/observedProperty",
+        "http://www.w3.org/ns/sosa/observes",
+        "http://www.w3.org/ns/sosa/phenomenonTime",
+        "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+        "http://www.w3.org/ns/sosa/sampling/natureOfRelationship",
+        "http://www.w3.org/ns/sosa/sampling/relatedSample",
+        "http://www.w3.org/ns/sosa/usedProcedure",
+        "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "http://www.w3.org/ns/ssn/deployedSystem",
+        "http://www.w3.org/ns/ssn/detects",
+        "http://www.w3.org/ns/ssn/forProperty",
+        "http://www.w3.org/ns/ssn/hasDeployment",
+        "http://www.w3.org/ns/ssn/hasInput",
+        "http://www.w3.org/ns/ssn/hasOutput",
+        "http://www.w3.org/ns/ssn/hasProperty",
+        "http://www.w3.org/ns/ssn/hasSubSystem",
+        "http://www.w3.org/ns/ssn/implementedBy",
+        "http://www.w3.org/ns/ssn/implements",
+        "http://www.w3.org/ns/ssn/inDeployment",
+        "http://www.w3.org/ns/ssn/isPropertyOf",
+        "http://www.w3.org/ns/ssn/isProxyFor",
+        "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "http://www.w3.org/ns/ssn/systems/inCondition",
+        "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "http://www.w3.org/ns/ssn/wasOriginatedBy"
+      ],
+      "classes": [
+        "http://purl.org/vocommons/voaf#Vocabulary",
+        "http://www.w3.org/2004/02/skos/core#Concept",
+        "http://www.w3.org/2006/time#TemporalEntity",
+        "http://www.w3.org/ns/sosa/ActuatableProperty",
+        "http://www.w3.org/ns/sosa/Actuation",
+        "http://www.w3.org/ns/sosa/Actuator",
+        "http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "http://www.w3.org/ns/sosa/ObservableProperty",
+        "http://www.w3.org/ns/sosa/Observation",
+        "http://www.w3.org/ns/sosa/Platform",
+        "http://www.w3.org/ns/sosa/Procedure",
+        "http://www.w3.org/ns/sosa/Result",
+        "http://www.w3.org/ns/sosa/Sample",
+        "http://www.w3.org/ns/sosa/Sampler",
+        "http://www.w3.org/ns/sosa/Sampling",
+        "http://www.w3.org/ns/sosa/Sensor",
+        "http://www.w3.org/ns/sosa/sampling/RelationshipNature",
+        "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+        "http://www.w3.org/ns/ssn/Deployment",
+        "http://www.w3.org/ns/ssn/Input",
+        "http://www.w3.org/ns/ssn/Output",
+        "http://www.w3.org/ns/ssn/Property",
+        "http://www.w3.org/ns/ssn/Stimulus",
+        "http://www.w3.org/ns/ssn/System",
+        "http://www.w3.org/ns/ssn/systems/Accuracy",
+        "http://www.w3.org/ns/ssn/systems/ActuationRange",
+        "http://www.w3.org/ns/ssn/systems/BatteryLifetime",
+        "http://www.w3.org/ns/ssn/systems/Condition",
+        "http://www.w3.org/ns/ssn/systems/DetectionLimit",
+        "http://www.w3.org/ns/ssn/systems/Drift",
+        "http://www.w3.org/ns/ssn/systems/Frequency",
+        "http://www.w3.org/ns/ssn/systems/Latency",
+        "http://www.w3.org/ns/ssn/systems/MaintenanceSchedule",
+        "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+        "http://www.w3.org/ns/ssn/systems/OperatingPowerRange",
+        "http://www.w3.org/ns/ssn/systems/OperatingProperty",
+        "http://www.w3.org/ns/ssn/systems/OperatingRange",
+        "http://www.w3.org/ns/ssn/systems/Precision",
+        "http://www.w3.org/ns/ssn/systems/Resolution",
+        "http://www.w3.org/ns/ssn/systems/ResponseTime",
+        "http://www.w3.org/ns/ssn/systems/Selectivity",
+        "http://www.w3.org/ns/ssn/systems/Sensitivity",
+        "http://www.w3.org/ns/ssn/systems/SurvivalProperty",
+        "http://www.w3.org/ns/ssn/systems/SurvivalRange",
+        "http://www.w3.org/ns/ssn/systems/SystemCapability",
+        "http://www.w3.org/ns/ssn/systems/SystemLifetime",
+        "http://www.w3.org/ns/ssn/systems/SystemProperty",
+        "http://xmlns.com/foaf/0.1/Agent",
+        "urn:deployment-source-converse-probe:DeploysSystem"
+      ]
+    },
+    "reasoner": "HermiT",
+    "reasoner_version": "1.4.1.432",
+    "consistent": true,
+    "status": "consistent",
+    "expectations": [
+      {
+        "entailed": true,
+        "id": "native-inverse-universal-entails-converse",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "source-does-not-require-a-system-witness",
+        "passed": true
+      }
+    ]
+  },
+  "status": "consistent"
+}

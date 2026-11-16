@@ -1,0 +1,72 @@
+{
+  "inputs": [
+    {
+      "path": "imports/sosa.ttl",
+      "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "bytes": 34854
+    },
+    {
+      "path": "imports/sosa-sampling.ttl",
+      "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "bytes": 3604
+    },
+    {
+      "path": "imports/ssn.ttl",
+      "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "bytes": 38450
+    },
+    {
+      "path": "imports/ssn-systems.ttl",
+      "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "bytes": 41076
+    }
+  ],
+  "unresolved_imports": [],
+  "closure_policy": "Exactly four pinned current SSN/SOSA source ontologies; no workbook or mapping product and no BFO/CCO ontology. Imports expanded from fixed local source list then directives removed. Established metadata declarations added. One fresh conservative named existential definition for source-only converse query.",
+  "removed_logical_axioms": 0,
+  "removed_import_directives": [
+    [
+      "http://www.w3.org/ns/sosa/sampling/",
+      "http://www.w3.org/2002/07/owl#imports",
+      "http://www.w3.org/2004/02/skos/core"
+    ],
+    [
+      "http://www.w3.org/ns/sosa/sampling/",
+      "http://www.w3.org/2002/07/owl#imports",
+      "http://www.w3.org/ns/sosa/"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/",
+      "http://www.w3.org/2002/07/owl#imports",
+      "http://www.w3.org/ns/sosa/"
+    ],
+    [
+      "http://www.w3.org/ns/ssn/systems/",
+      "http://www.w3.org/2002/07/owl#imports",
+      "http://www.w3.org/ns/ssn/"
+    ]
+  ],
+  "declaration_completion": [
+    [
+      "http://purl.org/dc/terms/type",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ],
+    [
+      "http://purl.org/dc/terms/issued",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ],
+    [
+      "http://www.w3.org/ns/adms#status",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ],
+    [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  ],
+  "triples": 1162
+}

@@ -6,10 +6,10 @@ This informational report compares mapping-bearing axioms and, separately, domai
 
 | Item | Count |
 |---|---:|
-| mappings present in both | 56 |
-| mappings only in COMS | 12 |
-| mappings only in pre-COMS legacy ontology | 12 |
-| class-expression differences | 3 |
+| mappings present in both | 55 |
+| mappings only in COMS | 13 |
+| mappings only in pre-COMS legacy ontology | 13 |
+| class-expression differences | 4 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
 | domain axioms present in both | 11 |
@@ -38,7 +38,6 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `class` `sosa:Sensor` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000040)`
 - `class` `sampling:RelationshipNature` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000958`
 - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000958`
-- `class` `ssn:Deployment` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)`
 - `class` `ssn:Input` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000958`
 - `class` `ssn:Output` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000958`
 - `class` `ssn:Property` `owl:equivalentClass` `ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144)`
@@ -86,6 +85,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 
 - `class` `sosa:FeatureOfInterest` `rdfs:subClassOf` `ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000015 http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000040 http://purl.obolibrary.org/obo/BFO_0000144)`
 - `class` `sosa:Observation` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000228`
+- `class` `ssn:Deployment` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)`
 - `class` `ssn-system:BatteryLifetime` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000117 https://www.commoncoreontologies.org/ont00000503) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) https://www.commoncoreontologies.org/ont00001213)) http://purl.obolibrary.org/obo/BFO_0000034)`
 - `class` `ssn-system:Sensitivity` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) https://www.commoncoreontologies.org/ont00001022)) https://www.commoncoreontologies.org/ont00000853)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
 - `class` `ssn-system:SurvivalRange` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
@@ -103,6 +103,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 - `class` `sosa:Observation` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)`
 - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/natureOfRelationship http://www.w3.org/ns/sosa/sampling/RelationshipNature)`
 - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/relatedSample http://www.w3.org/ns/sosa/Sample)`
+- `class` `ssn:Deployment` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)`
 - `class` `ssn-system:Sensitivity` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 https://www.commoncoreontologies.org/ont00000853) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 https://www.commoncoreontologies.org/ont00001022) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`
 - `object_property` `sosa:observes` `rdfs:subPropertyOf` `http://www.w3.org/ns/ssn/forProperty`
 - `object_property` `ssn-system:hasOperatingRange` `rdfs:subPropertyOf` `http://purl.obolibrary.org/obo/BFO_0000196`
@@ -116,6 +117,7 @@ This informational report compares mapping-bearing axioms and, separately, domai
 
 - `sosa:Observation` `rdfs:subClassOf`: COMS=['https://www.commoncoreontologies.org/ont00000228']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)']
 - `sampling:SampleRelationship` `rdfs:subClassOf`: COMS=['https://www.commoncoreontologies.org/ont00000958']; legacy=['ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/natureOfRelationship http://www.w3.org/ns/sosa/sampling/RelationshipNature)', 'ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/relatedSample http://www.w3.org/ns/sosa/Sample)', 'https://www.commoncoreontologies.org/ont00000958']
+- `ssn:Deployment` `owl:equivalentClass`: COMS=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)']
 - `ssn-system:Sensitivity` `rdfs:subClassOf`: COMS=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) https://www.commoncoreontologies.org/ont00001022)) https://www.commoncoreontologies.org/ont00000853)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 https://www.commoncoreontologies.org/ont00000853) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 https://www.commoncoreontologies.org/ont00001022) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)']
 
 ## Object-Property Mapping Differences

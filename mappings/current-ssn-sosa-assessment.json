@@ -1167,20 +1167,26 @@
       "source_label": "used procedure"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!31",
         "imports/ssn.ttl#http://www.w3.org/ns/ssn/Deployment",
         "imports/cco.ttl",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json",
+        "sha256": "26a6386e65ac336615093c1cf18ccf031a6669ab04795bb5421029c2b550393d"
+      },
       "mapping_row_ids": [
         "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Are an actual System and material Platform necessary for every Deployment, and are those conditions sufficient to distinguish Deployment from other PlannedActs?",
+      "rationale": "SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1190,7 +1196,7 @@
         "question": "Are an actual System and material Platform necessary for every Deployment, and are those conditions sufficient to distinguish Deployment from other PlannedActs?",
         "recommendation": "Retain the artifact during review. Review a one-way subclass and separately justify each existential; the N-track Asset pattern belongs to its changed source and cannot be transplanted automatically."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/ssn/Deployment",
       "source_kind": "class",
       "source_label": "Deployment"

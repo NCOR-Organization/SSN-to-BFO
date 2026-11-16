@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "paths": [
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md"
+  ],
+  "reason": "Regenerated after ontology update; every bound input hash now matches main checkout.",
+  "hashes": {
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "4d42960b719599f6ac181d271a86af2fa8f55a1141e9ffc27ea102051c8c005f",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "b267d2edacbc2bbfc29d966972642bfc7d8243c5fbbebf801ee6ddaf3bf0bc5d",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "103d1cf1ffa067096110eb1ba858725775a4df492a8bf83e42656967a90d9d43",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "3d230bdbac7a5546e0fc061572a983815f86e198d3a2e98e547011bbb3b1134c",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "60cd9f3f3225222e6013b2e013b64d97adba0488811286346db9c71f98178985",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "d5e4f2580c114d4f4a8c886caf9a44ffbc7dc4c5c878033364a730d9f7de1813"
+  }
+}

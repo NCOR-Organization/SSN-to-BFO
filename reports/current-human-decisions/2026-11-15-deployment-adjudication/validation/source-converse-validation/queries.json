@@ -1,0 +1,17 @@
+[
+  {
+    "id": "native-inverse-universal-entails-converse",
+    "kind": "class_subsumption",
+    "subject": "urn:deployment-source-converse-probe:DeploysSystem",
+    "object": "http://www.w3.org/ns/ssn/Deployment",
+    "expected_entailed": true
+  },
+  {
+    "id": "source-does-not-require-a-system-witness",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/ssn/Deployment",
+    "predicate": "http://www.w3.org/ns/ssn/deployedSystem",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "expected_entailed": false
+  }
+]

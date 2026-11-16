@@ -215,14 +215,18 @@ class CurrentAssessmentTests(unittest.TestCase):
         historical = [r for r in finals if r["source_iri"] in baseline]
         self.assertEqual(set(baseline), {r["source_iri"] for r in historical})
         self.assertEqual(len(historical), 12)
-        self.assertEqual(len(finals), 22)
-        self.assertEqual({r["source_iri"] for r in finals} - set(baseline),
-                         {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf", "Observation", "observedProperty")} |
-                         {"http://www.w3.org/ns/ssn/forProperty",
-                          "http://www.w3.org/ns/ssn/systems/SystemProperty",
-                          "http://www.w3.org/ns/ssn/systems/MeasurementRange"} |
-                         {"http://www.w3.org/ns/sosa/sampling/" + name for name in
-                          ("SampleRelationship", "hasSampleRelationship", "relatedSample")})
+        # The historical cohort stays fixed; later explicit approvals extend the live inventory.
+        expected_later_finals = (
+            {str(audit.mapping.SOSA[name]) for name in ("hasSample", "isSampleOf", "Observation", "observedProperty")} |
+            {"http://www.w3.org/ns/ssn/forProperty",
+             "http://www.w3.org/ns/ssn/Deployment",
+             "http://www.w3.org/ns/ssn/systems/SystemProperty",
+             "http://www.w3.org/ns/ssn/systems/MeasurementRange"} |
+            {"http://www.w3.org/ns/sosa/sampling/" + name for name in
+             ("SampleRelationship", "hasSampleRelationship", "relatedSample")}
+        )
+        self.assertEqual(len(finals), len(baseline) + len(expected_later_finals))
+        self.assertEqual({r["source_iri"] for r in finals} - set(baseline), expected_later_finals)
         for record in historical:
             self.assertEqual(baseline[record["source_iri"]]["assessment_record_sha256"],
                              audit.canonical_sha(record))

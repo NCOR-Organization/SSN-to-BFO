@@ -1,0 +1,645 @@
+test_canonical_json_and_hash_are_deterministic (test_coms_row_identity.CanonicalExpressionTests.test_canonical_json_and_hash_are_deterministic) ... ok
+test_existential_nesting_preserves_roles (test_coms_row_identity.CanonicalExpressionTests.test_existential_nesting_preserves_roles) ... ok
+test_intersection_flattens_deduplicates_and_sorts (test_coms_row_identity.CanonicalExpressionTests.test_intersection_flattens_deduplicates_and_sorts) ... ok
+test_mapping_axiom_forms (test_coms_row_identity.CanonicalExpressionTests.test_mapping_axiom_forms) ... ok
+test_named_expression (test_coms_row_identity.CanonicalExpressionTests.test_named_expression) ... ok
+test_property_chain_order_is_preserved_and_changes_hash (test_coms_row_identity.CanonicalExpressionTests.test_property_chain_order_is_preserved_and_changes_hash) ... ok
+test_union_flattens_deduplicates_and_sorts (test_coms_row_identity.CanonicalExpressionTests.test_union_flattens_deduplicates_and_sorts) ... ok
+test_unsupported_expression_fails_structurally (test_coms_row_identity.CanonicalExpressionTests.test_unsupported_expression_fails_structurally) ... ok
+test_logical_content_change_changes_expression_hash (test_coms_row_identity.CanonicalIdentityBehaviorTests.test_logical_content_change_changes_expression_hash) ... ok
+test_prefix_aliases_resolving_to_same_iri_have_same_hash (test_coms_row_identity.CanonicalIdentityBehaviorTests.test_prefix_aliases_resolving_to_same_iri_have_same_hash) ... ok
+test_reasoning_only_change_preserves_expression_hash (test_coms_row_identity.CanonicalIdentityBehaviorTests.test_reasoning_only_change_preserves_expression_hash) ... ok
+test_row_movement_preserves_row_id_and_expression_hash (test_coms_row_identity.CanonicalIdentityBehaviorTests.test_row_movement_preserves_row_id_and_expression_hash) ... ok
+test_whitespace_and_harmless_parentheses_have_same_hash (test_coms_row_identity.CanonicalIdentityBehaviorTests.test_whitespace_and_harmless_parentheses_have_same_hash) ... ok
+test_duplicate_canonical_axioms_report_both_rows (test_coms_row_identity.IntegrityTests.test_duplicate_canonical_axioms_report_both_rows) ... ok
+test_duplicate_row_ids_are_reported (test_coms_row_identity.IntegrityTests.test_duplicate_row_ids_are_reported) ... ok
+test_issue_ordering_is_deterministic (test_coms_row_identity.IntegrityTests.test_issue_ordering_is_deterministic) ... ok
+test_zero_one_and_multiple_axiom_tuples_are_supported (test_coms_row_identity.IntegrityTests.test_zero_one_and_multiple_axiom_tuples_are_supported) ... ok
+test_missing_and_whitespace_only_are_rejected (test_coms_row_identity.RowIdGrammarTests.test_missing_and_whitespace_only_are_rejected) ... ok
+test_noncanonical_row_ids_are_rejected (test_coms_row_identity.RowIdGrammarTests.test_noncanonical_row_ids_are_rejected) ... ok
+test_valid_canonical_uuid4_urn (test_coms_row_identity.RowIdGrammarTests.test_valid_canonical_uuid4_urn) ... ok
+test_atomic_replacement_rolls_back_root_on_post_update_failure (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_atomic_replacement_rolls_back_root_on_post_update_failure) ... All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+ok
+test_check_only_preserves_all_nine_outputs_and_workbook (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_check_only_preserves_all_nine_outputs_and_workbook) ... Check-only mode: maintained outputs are fresh; no tracked files were rewritten
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_checker_rejects_noncanonical_headers_for_all_four_candidates (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_checker_rejects_noncanonical_headers_for_all_four_candidates) ... ok
+test_checker_rejects_reordered_integrated_root_imports (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_checker_rejects_reordered_integrated_root_imports) ... ok
+test_checker_uses_generator_root_import_order_with_matching_turtle_terms (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_checker_uses_generator_root_import_order_with_matching_turtle_terms) ... ok
+test_current_generation_context_preserves_raw_baseline_and_exact_delta (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta) ... FAIL
+test_first_successful_metadata_migration_replaces_all_four_ttls_together (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_metadata_migration_replaces_all_four_ttls_together) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.05 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_first_successful_update_creates_initially_absent_alignment_core (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_alignment_core) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- missing alignment core
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_first_successful_update_creates_initially_absent_cco_extension (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_cco_extension) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- missing CCO extension
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.02 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_first_successful_update_creates_initially_absent_strict_bfo_mapping (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- missing strict BFO mapping
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.01 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_freshness_uses_the_root_ontology_hash (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_freshness_uses_the_root_ontology_hash) ... ok
+test_integrated_root_bytes_are_explicit_and_repeatable_without_rdflib_serialization (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_integrated_root_bytes_are_explicit_and_repeatable_without_rdflib_serialization) ... ok
+test_integrated_root_is_fresh_process_stable_across_hash_seeds_and_paths (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_integrated_root_is_fresh_process_stable_across_hash_seeds_and_paths) ... ok
+test_legacy_ontology_is_the_comparison_baseline (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_legacy_ontology_is_the_comparison_baseline) ... ok
+test_maintained_root_has_exact_metadata_and_logical_partition (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_maintained_root_has_exact_metadata_and_logical_partition) ... ok
+test_no_active_dependency_on_retired_generated_path (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_no_active_dependency_on_retired_generated_path) ... ok
+test_publication_metadata_source_hash_participates_in_freshness (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_publication_metadata_source_hash_participates_in_freshness) ... ok
+test_reordered_header_blocks_all_nine_outputs_via_production_validation (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_reordered_header_blocks_all_nine_outputs_via_production_validation) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/generate_mapping_from_coms.py --input /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/hermit --report-workbook-path /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-k3j5g1wq/.cache/coms-noncanonical-header/run-4psrj02y/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 68
+Blank mapping rows: 6
+Class mapping rows: 42
+Object-property mapping rows: 24
+Domain rows: 18
+Range rows: 16
+Property-chain rows: 2
+Governed RowIDs: 108
+Unique RowIDs: 108
+Processed governed rows: 108
+Identity-audit rows: 108
+Canonical authoritative axioms: 102
+Disposition target-neutral axioms: 32
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 27
+Alignment-core governed axioms: 32
+Alignment-core logical triples: 56
+Alignment-core total triples: 64
+Alignment-core SHA-256: cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 51
+CCO-extension logical triples: 854
+CCO-extension total triples: 863
+CCO-extension SHA-256: 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1047
+Candidate closure triple count: 15837
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 26
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 13
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.alignment_core.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-noncanonical-header/last-failure.log
+ok
+test_reordered_integrated_root_imports_block_all_nine_outputs (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_reordered_integrated_root_imports_block_all_nine_outputs) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- metadata migration
+[3/11] Running generator and spreadsheet-row validation in a temporary transaction
+COMS generator
+$ /opt/miniconda3/bin/python /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/generate_mapping_from_coms.py --input /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/mappings/SSN2BFO-COMS.xlsx --output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/candidate/SSN2BFO.ttl --report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-generation-validation.md --disposition-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-product-dispositions.json --alignment-core-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --strict-bfo-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --cco-extension-output /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --coverage-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-source-term-coverage.md --diff-report /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-vs-pre-coms-legacy-diff.md --tmp-dir /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/hermit --report-workbook-path /private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/mappings/SSN2BFO-COMS.xlsx --report-output-path SSN2BFO.ttl --report-disposition-path reports/coms-product-dispositions.json --report-alignment-core-path releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl --report-strict-bfo-path releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl --report-cco-extension-path releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl --summary-json /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/summary.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-generation-validation.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/candidate/SSN2BFO.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-source-term-coverage.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-vs-pre-coms-legacy-diff.md
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/reports/coms-product-dispositions.json
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-authority-test-ry727hfm/.cache/coms-reordered-root-imports/run-3alxf56o/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl
+Worksheets read: Sheet1, Sheet2
+Mapped rows: 68
+Blank mapping rows: 6
+Class mapping rows: 42
+Object-property mapping rows: 24
+Domain rows: 18
+Range rows: 16
+Property-chain rows: 2
+Governed RowIDs: 108
+Unique RowIDs: 108
+Processed governed rows: 108
+Identity-audit rows: 108
+Canonical authoritative axioms: 102
+Disposition target-neutral axioms: 32
+Disposition BFO-bearing axioms: 19
+Disposition CCO-bearing axioms: 24
+Disposition mixed BFO/CCO axioms: 27
+Alignment-core governed axioms: 32
+Alignment-core logical triples: 56
+Alignment-core total triples: 64
+Alignment-core SHA-256: cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5
+Alignment-core source-closure HermiT: PASS
+Strict-BFO governed axioms: 19
+Strict-BFO logical triples: 125
+Strict-BFO total triples: 134
+Strict-BFO SHA-256: 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af
+Strict-BFO pinned merged CCO/BFO closure HermiT: PASS
+CCO-extension governed axioms: 51
+CCO-extension logical triples: 854
+CCO-extension total triples: 863
+CCO-extension SHA-256: 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428
+CCO-extension pinned merged CCO/BFO closure HermiT: PASS
+Generated triple count: 1047
+Candidate closure triple count: 15837
+HermiT return code: 0
+owl:Nothing count: 0
+Named unsat count: 0
+HermiT summary: PASS
+Mapped classes: 42
+Unmapped classes: 2
+Mapped object properties: 26
+Unmapped object properties: 3
+Mappings present in both: 55
+COMS-only mappings: 13
+Pre-COMS legacy-only mappings: 13
+Summary: PASS
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [NONCANONICAL_ONTOLOGY_HEADER] products.integrated.serialized_ontology_header: generated preamble and ontology header differ from canonical byte rendering)
+Failure log: .cache/coms-reordered-root-imports/last-failure.log
+ok
+test_rollback_removes_new_alignment_core_when_it_was_initially_absent (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_rollback_removes_new_alignment_core_when_it_was_initially_absent) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+ok
+test_rollback_removes_new_cco_extension_when_it_was_initially_absent (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_rollback_removes_new_cco_extension_when_it_was_initially_absent) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+ok
+test_rollback_removes_new_disposition_when_it_was_initially_absent (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_rollback_removes_new_disposition_when_it_was_initially_absent) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+ok
+test_rollback_removes_new_strict_bfo_when_it_was_initially_absent (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_rollback_removes_new_strict_bfo_when_it_was_initially_absent) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+Post-update validation failed; restoring last known-good outputs
+COMS quality check: FAIL (post-update failure)
+Failure log: .cache/coms/last-failure.log
+ok
+test_root_ontology_is_the_maintained_output (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_root_ontology_is_the_maintained_output) ... ok
+test_stale_alignment_core_hash_fails_check_only_without_rewriting_outputs (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_stale_alignment_core_hash_fails_check_only_without_rewriting_outputs) ... COMS quality check: FAIL (stale COMS outputs: alignment-core hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+ok
+test_stale_cco_extension_hash_fails_check_only_without_rewriting_outputs (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_stale_cco_extension_hash_fails_check_only_without_rewriting_outputs) ... COMS quality check: FAIL (stale COMS outputs: CCO-extension hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+ok
+test_stale_strict_bfo_hash_fails_check_only_without_rewriting_outputs (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_stale_strict_bfo_hash_fails_check_only_without_rewriting_outputs) ... COMS quality check: FAIL (stale COMS outputs: strict-BFO hash differs from the generated report)
+Failure log: .cache/coms/last-failure.log
+ok
+test_temporary_validation_precedes_atomic_root_replacement (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_temporary_validation_precedes_atomic_root_replacement) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+All temporary checks passed; atomically replacing maintained COMS outputs
+COMS quality check: PASS (0.00 seconds)
+Last-success metadata: .cache/coms/last-success.json
+ok
+test_written_malformed_alignment_core_fails_before_replacement (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_written_malformed_alignment_core_fails_before_replacement) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.alignment_core.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-strict_bfo_mapping\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+ok
+test_written_malformed_cco_extension_fails_before_replacement (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_written_malformed_cco_extension_fails_before_replacement) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'")
+Failure log: .cache/coms/last-failure.log
+ok
+test_written_malformed_disposition_fails_before_replacement (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_written_malformed_disposition_fails_before_replacement) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (product-disposition validation failed: ERROR [MISSING_FIELD] document: missing required field 'canonicalization_version' | ERROR [MISSING_FIELD] document: missing required field 'disposition_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'generator_sha256' | ERROR [MISSING_FIELD] document: missing required field 'product_order' | ERROR [MISSING_FIELD] document: missing required field 'publication_metadata_sha256' | ERROR [MISSING_FIELD] document: missing required field 'row_identity_module_sha256' | ERROR [MISSING_FIELD] document: missing required field 'rows' | ERROR [MISSING_FIELD] document: missing required field 'summary' | ERROR [MISSING_FIELD] document: missing required field 'workbook_sha256' | ERROR [WRONG_TYPE] product_order: expected array of product strings | ERROR [WRONG_TYPE] rows: expected array | ERROR [WRONG_TYPE] summary: expected JSON object | ERROR [WRONG_TYPE] summary.authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.bfo_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.cco_bearing_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.class_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.explicitly_unmapped_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.governed_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.mixed_bfo_cco_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_chain_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.property_typing_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.relation_mapping_row_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.target_neutral_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_authoritative_axiom_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.unique_row_id_count: expected nonnegative integer | ERROR [WRONG_TYPE] summary.zero_axiom_row_count: expected nonnegative integer)
+Failure log: .cache/coms/last-failure.log
+ok
+test_written_malformed_strict_bfo_fails_before_replacement (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_written_malformed_strict_bfo_fails_before_replacement) ... Maintained outputs are stale and will be refreshed after temporary validation:
+- stale
+[4/11] Confirming row validation completed without malformed or unresolved mappings
+COMS quality check: FAIL (serialized ontology header validation failed: ERROR [TURTLE_PARSE] products.integrated.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-candidate\n'" | ERROR [TURTLE_PARSE] products.strict_bfo_mapping.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 3 of <>:
+Bad syntax (EOF after '[') at ^ in:
+"b'@prefix owl: <http://www.w3.org/2002/07/owl#> .\n'^b'[\n'" | ERROR [TURTLE_PARSE] products.cco_extension.serialized_ontology: cannot strictly parse UTF-8 Turtle: BadSyntax: at line 1 of <>:
+Bad syntax (expected directive or statement) at ^ in:
+"b''^b'temporary-cco_extension\n'")
+Failure log: .cache/coms/last-failure.log
+ok
+test_compilation_cleanup_refuses_replacement_directory (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_cleanup_refuses_replacement_directory) ... ok
+test_compilation_cleanup_refuses_replacement_symlink (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_cleanup_refuses_replacement_symlink) ... ok
+test_compilation_cleanup_rejects_matching_superficial_path_metadata (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_cleanup_rejects_matching_superficial_path_metadata) ... ok
+test_compilation_cleanup_removes_valid_owned_root_and_closes_descriptors (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_cleanup_removes_valid_owned_root_and_closes_descriptors) ... ok
+test_compilation_descriptors_are_not_inherited_by_children (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_descriptors_are_not_inherited_by_children) ... ok
+test_compilation_marker_mutations_fail_closed (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compilation_marker_mutations_fail_closed) ... ok
+test_compile_and_cleanup_failures_remain_observable_and_restore_process_state (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compile_and_cleanup_failures_remain_observable_and_restore_process_state) ... [2/11] Compiling COMS generator
+[2/11] Compiling COMS generator
+ok
+test_compile_failure_cleans_external_root_and_preserves_preexisting_bytecode (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compile_failure_cleans_external_root_and_preserves_preexisting_bytecode) ... [2/11] Compiling COMS generator
+ok
+test_compile_generator_uses_only_explicit_external_cfiles_and_restores_process_state (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_compile_generator_uses_only_explicit_external_cfiles_and_restores_process_state) ... [2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+[2/11] Compiling COMS generator
+Generator SHA-256: f40984649caa6bf7bc818863f0e210b68e3b00f16dfc99997f1bd226c34b9c34
+ok
+test_direct_check_only_preserves_repository_bytecode_and_outputs (test_generate_mapping_from_coms.ComsCheckerBytecodeIsolationTests.test_direct_check_only_preserves_repository_bytecode_and_outputs) ... ok
+test_class_subject_is_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_class_subject_is_rejected) ... ok
+test_complex_class_expression_range (test_generate_mapping_from_coms.ComsDomainRangeTests.test_complex_class_expression_range) ... ok
+test_disposition_failure_prevents_ontology_generation (test_generate_mapping_from_coms.ComsDomainRangeTests.test_disposition_failure_prevents_ontology_generation) ... ok
+test_disposition_generation_succeeds_without_mutating_workbook (test_generate_mapping_from_coms.ComsDomainRangeTests.test_disposition_generation_succeeds_without_mutating_workbook) ... ok
+test_domain_only_property_is_covered_but_not_mapped (test_generate_mapping_from_coms.ComsDomainRangeTests.test_domain_only_property_is_covered_but_not_mapped) ... ok
+test_duplicate_canonical_authoritative_axiom_is_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_duplicate_canonical_authoritative_axiom_is_rejected) ... ok
+test_duplicate_domain_rows_are_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_duplicate_domain_rows_are_rejected) ... ok
+test_duplicate_range_rows_are_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_duplicate_range_rows_are_rejected) ... ok
+test_duplicate_row_id_is_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_duplicate_row_id_is_rejected) ... ok
+test_equal_count_governed_processed_row_id_substitution_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_equal_count_governed_processed_row_id_substitution_is_fatal) ... ok
+test_equal_count_processed_audit_row_id_substitution_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_equal_count_processed_audit_row_id_substitution_is_fatal) ... ok
+test_explicit_blank_row_has_complete_zero_axiom_identity_audit (test_generate_mapping_from_coms.ComsDomainRangeTests.test_explicit_blank_row_has_complete_zero_axiom_identity_audit) ... ok
+test_generated_file_notice_is_nonsemantic_turtle_comment (test_generate_mapping_from_coms.ComsDomainRangeTests.test_generated_file_notice_is_nonsemantic_turtle_comment) ... ok
+test_generation_does_not_mutate_workbook (test_generate_mapping_from_coms.ComsDomainRangeTests.test_generation_does_not_mutate_workbook) ... ok
+test_genuinely_uncovered_property_remains_unmapped (test_generate_mapping_from_coms.ComsDomainRangeTests.test_genuinely_uncovered_property_remains_unmapped) ... ok
+test_governed_processed_location_mismatch_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_governed_processed_location_mismatch_is_fatal) ... ok
+test_governed_worksheet_without_row_id_header_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_governed_worksheet_without_row_id_header_is_fatal) ... ok
+test_identity_audit_completeness_mismatch_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_identity_audit_completeness_mismatch_is_fatal) ... ok
+test_incompatible_duplicate_mapping_still_fails (test_generate_mapping_from_coms.ComsDomainRangeTests.test_incompatible_duplicate_mapping_still_fails) ... ok
+test_malformed_row_id_is_rejected_with_location_and_value (test_generate_mapping_from_coms.ComsDomainRangeTests.test_malformed_row_id_is_rejected_with_location_and_value) ... ok
+test_malformed_target (test_generate_mapping_from_coms.ComsDomainRangeTests.test_malformed_target) ... ok
+test_missing_row_id_is_rejected (test_generate_mapping_from_coms.ComsDomainRangeTests.test_missing_row_id_is_rejected) ... ok
+test_named_class_domain (test_generate_mapping_from_coms.ComsDomainRangeTests.test_named_class_domain) ... ok
+test_named_class_range (test_generate_mapping_from_coms.ComsDomainRangeTests.test_named_class_range) ... ok
+test_object_property_target_is_rejected_as_non_class (test_generate_mapping_from_coms.ComsDomainRangeTests.test_object_property_target_is_rejected_as_non_class) ... ok
+test_predicate_and_target_without_subject_are_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_predicate_and_target_without_subject_are_fatal) ... ok
+test_processed_audit_location_mismatch_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_processed_audit_location_mismatch_is_fatal) ... ok
+test_range_only_property_is_covered_but_not_mapped (test_generate_mapping_from_coms.ComsDomainRangeTests.test_range_only_property_is_covered_but_not_mapped) ... ok
+test_relation_mapped_property_is_mapped_and_covered (test_generate_mapping_from_coms.ComsDomainRangeTests.test_relation_mapped_property_is_mapped_and_covered) ... ok
+test_row_id_and_reasoning_only_governed_row_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_row_id_and_reasoning_only_governed_row_is_fatal) ... ok
+test_row_id_does_not_change_generated_ontology (test_generate_mapping_from_coms.ComsDomainRangeTests.test_row_id_does_not_change_generated_ontology) ... ok
+test_row_id_mismatch_diagnostics_are_sorted (test_generate_mapping_from_coms.ComsDomainRangeTests.test_row_id_mismatch_diagnostics_are_sorted) ... ok
+test_row_id_only_governed_row_is_fatal (test_generate_mapping_from_coms.ComsDomainRangeTests.test_row_id_only_governed_row_is_fatal) ... ok
+test_subproperty_domain_and_range_can_coexist (test_generate_mapping_from_coms.ComsDomainRangeTests.test_subproperty_domain_and_range_can_coexist) ... ok
+test_successful_processing_has_complete_identity_counts (test_generate_mapping_from_coms.ComsDomainRangeTests.test_successful_processing_has_complete_identity_counts) ... ok
+test_union_domain_generates_one_union_expression (test_generate_mapping_from_coms.ComsDomainRangeTests.test_union_domain_generates_one_union_expression) ... ok
+test_unresolved_subject (test_generate_mapping_from_coms.ComsDomainRangeTests.test_unresolved_subject) ... ok
+test_generation_report_includes_alignment_core_results (test_generate_mapping_from_coms.ComsGenerationReportTests.test_generation_report_includes_alignment_core_results) ... ok
+test_generation_report_includes_cco_extension_results (test_generate_mapping_from_coms.ComsGenerationReportTests.test_generation_report_includes_cco_extension_results) ... ok
+test_generation_report_includes_row_identity_audit (test_generate_mapping_from_coms.ComsGenerationReportTests.test_generation_report_includes_row_identity_audit) ... ok
+test_generation_report_includes_strict_bfo_results (test_generate_mapping_from_coms.ComsGenerationReportTests.test_generation_report_includes_strict_bfo_results) ... ok
+test_robot_report_value_is_stable_across_paths_and_accurate_when_missing (test_generate_mapping_from_coms.ComsGenerationReportTests.test_robot_report_value_is_stable_across_paths_and_accurate_when_missing) ... ok
+test_axiom_reconciliation_category_and_references (test_product_dispositions.ProductDispositionTests.test_axiom_reconciliation_category_and_references) ... ok
+test_coverage_classification (test_product_dispositions.ProductDispositionTests.test_coverage_classification) ... ok
+test_current_disposition_delta_matches_authenticated_transition (test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition) ... FAIL
+test_current_workbook_totals_and_product_order (test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order) ... FAIL
+test_disposition_build_does_not_read_modular_ttl_mapping_authorities (test_product_dispositions.ProductDispositionTests.test_disposition_build_does_not_read_modular_ttl_mapping_authorities) ... ok
+test_domain_and_range_are_property_typing (test_product_dispositions.ProductDispositionTests.test_domain_and_range_are_property_typing) ... ok
+test_exact_disposition_matrix (test_product_dispositions.ProductDispositionTests.test_exact_disposition_matrix) ... ok
+test_file_validation_rejects_noncanonical_collection_order (test_product_dispositions.ProductDispositionTests.test_file_validation_rejects_noncanonical_collection_order) ... ok
+test_identity_and_row_reconciliation_failures (test_product_dispositions.ProductDispositionTests.test_identity_and_row_reconciliation_failures) ... ok
+test_incomplete_zero_axiom_row_rejected (test_product_dispositions.ProductDispositionTests.test_incomplete_zero_axiom_row_rejected) ... ok
+test_mapping_type_must_match_canonical_expression (test_product_dispositions.ProductDispositionTests.test_mapping_type_must_match_canonical_expression) ... ok
+test_matching_mapping_types_derive_coverage (test_product_dispositions.ProductDispositionTests.test_matching_mapping_types_derive_coverage) ... ok
+test_product_status_and_reason_validation (test_product_dispositions.ProductDispositionTests.test_product_status_and_reason_validation) ... ok
+test_property_chain_member_traversal_and_coverage (test_product_dispositions.ProductDispositionTests.test_property_chain_member_traversal_and_coverage) ... ok
+test_reasoning_changes_bytes_not_expression_hash (test_product_dispositions.ProductDispositionTests.test_reasoning_changes_bytes_not_expression_hash) ... ok
+test_role_order_is_independent_of_materialized_products (test_product_dispositions.ProductDispositionTests.test_role_order_is_independent_of_materialized_products) ... ok
+test_round_trip_and_noncanonical_serialization (test_product_dispositions.ProductDispositionTests.test_round_trip_and_noncanonical_serialization) ... ok
+test_serialization_is_deterministic_and_input_order_independent (test_product_dispositions.ProductDispositionTests.test_serialization_is_deterministic_and_input_order_independent) ... ok
+test_summary_product_order_and_stale_hashes (test_product_dispositions.ProductDispositionTests.test_summary_product_order_and_stale_hashes) ... ok
+test_target_categories_and_nested_traversal (test_product_dispositions.ProductDispositionTests.test_target_categories_and_nested_traversal) ... ok
+test_unexpected_subject_predicate_and_target_fail (test_product_dispositions.ProductDispositionTests.test_unexpected_subject_predicate_and_target_fail) ... ok
+test_worksheet_names_are_nfc_normalized (test_product_dispositions.ProductDispositionTests.test_worksheet_names_are_nfc_normalized) ... ok
+test_zero_one_and_multiple_axiom_schema_support (test_product_dispositions.ProductDispositionTests.test_zero_one_and_multiple_axiom_schema_support) ... ok
+test_copied_named_source_declaration_is_rejected (test_modular_products.ModularProductTests.test_copied_named_source_declaration_is_rejected) ... ok
+test_deterministic_serialization_ignores_selected_input_order (test_modular_products.ModularProductTests.test_deterministic_serialization_ignores_selected_input_order) ... ok
+test_duplicate_selected_axiom_and_wrong_product_count_fail (test_modular_products.ModularProductTests.test_duplicate_selected_axiom_and_wrong_product_count_fail) ... ok
+test_exact_selection_identity_lock_and_distribution (test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution) ... FAIL
+test_fixed_local_source_closure_is_offline_and_import_free (test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free) ... FAIL
+test_fresh_process_generation_is_byte_deterministic (test_modular_products.ModularProductTests.test_fresh_process_generation_is_byte_deterministic) ... ok
+test_graph_identity_import_counts_and_strict_parse (test_modular_products.ModularProductTests.test_graph_identity_import_counts_and_strict_parse) ... ok
+test_import_declaration_and_annotation_pseudo_mapping_are_rejected (test_modular_products.ModularProductTests.test_import_declaration_and_annotation_pseudo_mapping_are_rejected) ... ok
+test_integrated_root_semantic_reconciliation (test_modular_products.ModularProductTests.test_integrated_root_semantic_reconciliation) ... ok
+test_location_hash_and_canonical_expression_mismatches_fail (test_modular_products.ModularProductTests.test_location_hash_and_canonical_expression_mismatches_fail) ... ok
+test_malformed_turtle_is_rejected (test_modular_products.ModularProductTests.test_malformed_turtle_is_rejected) ... ok
+test_missing_extra_and_equal_count_axiom_substitution_fail (test_modular_products.ModularProductTests.test_missing_extra_and_equal_count_axiom_substitution_fail) ... ok
+test_missing_extra_and_equal_count_rowid_substitution_fail (test_modular_products.ModularProductTests.test_missing_extra_and_equal_count_rowid_substitution_fail) ... ok
+test_reordered_canonical_header_is_rejected_by_product_validator (test_modular_products.ModularProductTests.test_reordered_canonical_header_is_rejected_by_product_validator) ... ok
+test_three_union_expressions_have_distinct_three_member_lists (test_modular_products.ModularProductTests.test_three_union_expressions_have_distinct_three_member_lists) ... ok
+test_vocabulary_leakage_is_rejected (test_modular_products.ModularProductTests.test_vocabulary_leakage_is_rejected) ... ok
+test_wrong_disposition_and_wrong_category_fail (test_modular_products.ModularProductTests.test_wrong_disposition_and_wrong_category_fail) ... ok
+test_wrong_or_multiple_ontology_declarations_are_rejected (test_modular_products.ModularProductTests.test_wrong_or_multiple_ontology_declarations_are_rejected) ... ok
+test_current_partition_requires_authenticated_context_and_restores_baseline (test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline) ... FAIL
+test_current_context_preserves_baseline_strict_axioms_and_bytes (test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes) ... ok
+test_axiom_identity_location_hash_and_expression_mismatches_fail (test_strict_bfo_mapping.StrictBfoMappingTests.test_axiom_identity_location_hash_and_expression_mismatches_fail) ... ok
+test_deterministic_serialization_and_alignment_core_preservation (test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation) ... FAIL
+test_direct_graph_identity_import_counts_and_structures (test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures) ... ok
+test_duplicate_axiom_and_wrong_count_fail_build (test_strict_bfo_mapping.StrictBfoMappingTests.test_duplicate_axiom_and_wrong_count_fail_build) ... ok
+test_exact_selection_identity_lock_and_distribution (test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution) ... ok
+test_fixed_pinned_merged_cco_bfo_closure (test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure) ... FAIL
+test_fresh_process_generation_is_byte_deterministic (test_strict_bfo_mapping.StrictBfoMappingTests.test_fresh_process_generation_is_byte_deterministic) ... ok
+test_import_vocabulary_and_copied_declarations_are_rejected (test_strict_bfo_mapping.StrictBfoMappingTests.test_import_vocabulary_and_copied_declarations_are_rejected) ... ok
+test_missing_extra_duplicate_and_substituted_row_ids_fail (test_strict_bfo_mapping.StrictBfoMappingTests.test_missing_extra_duplicate_and_substituted_row_ids_fail) ... ok
+test_nonselected_product_policy_is_reconciled (test_strict_bfo_mapping.StrictBfoMappingTests.test_nonselected_product_policy_is_reconciled) ... ok
+test_pinned_closure_hermit_is_clean (test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean) ... FAIL
+test_processed_row_and_audit_order_do_not_affect_strict_bfo_output (test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output) ... ok
+test_reordered_canonical_header_is_rejected_by_product_validator (test_strict_bfo_mapping.StrictBfoMappingTests.test_reordered_canonical_header_is_rejected_by_product_validator) ... ok
+test_root_and_project_module_reconciliation (test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation) ... FAIL
+test_three_authorized_blanks_remove_only_non_strict_axioms (test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms) ... FAIL
+test_wrong_disposition_category_and_prohibited_direct_selection_fail (test_strict_bfo_mapping.StrictBfoMappingTests.test_wrong_disposition_category_and_prohibited_direct_selection_fail) ... ok
+setUpClass (test_cco_extension.CcoExtensionTests) ... ERROR
+test_authenticated_three_axiom_delta_preserves_raw_baseline_guard (test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard) ... FAIL
+test_historical_fixture_is_independent_of_a_simulated_head_advance (test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance) ... FAIL
+
+======================================================================
+ERROR: setUpClass (test_cco_extension.CcoExtensionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_cco_extension.py", line 155, in setUpClass
+    cls.transition, _, cls.baseline_inventory = authenticated_baseline()
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_cco_extension.py", line 143, in authenticated_baseline
+    raise AssertionError("unexpected maintained-current semantic transition")
+AssertionError: unexpected maintained-current semantic transition
+
+======================================================================
+FAIL: test_current_generation_context_preserves_raw_baseline_and_exact_delta (test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_generate_mapping_from_coms.py", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta
+    self.assertEqual(len(removed), 3)
+AssertionError: 8 != 3
+
+======================================================================
+FAIL: test_current_disposition_delta_matches_authenticated_transition (test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_product_dispositions.py", line 282, in test_current_disposition_delta_matches_authenticated_transition
+    transition = self.current_transition()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_product_dispositions.py", line 228, in current_transition
+    self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'
+- bd69b546-6ef2-4704-8f05-325ec9bc1862
++ 58481ff2-4e56-4931-a3d4-383357b16561
+
+
+======================================================================
+FAIL: test_current_workbook_totals_and_product_order (test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_product_dispositions.py", line 232, in test_current_workbook_totals_and_product_order
+    expected = self.current_transition()["generation_expectations"]["after"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_product_dispositions.py", line 228, in current_transition
+    self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'
+- bd69b546-6ef2-4704-8f05-325ec9bc1862
++ 58481ff2-4e56-4931-a3d4-383357b16561
+
+
+======================================================================
+FAIL: test_exact_selection_identity_lock_and_distribution (test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_modular_products.py", line 150, in test_exact_selection_identity_lock_and_distribution
+    self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)
+AssertionError: {'urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf5[1522 chars]9d1'} != frozenset({'urn:uuid:0f9d6fa9-00b9-4602-b[1386 chars]84'})
+
+======================================================================
+FAIL: test_fixed_local_source_closure_is_offline_and_import_free (test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_modular_products.py", line 457, in test_fixed_local_source_closure_is_offline_and_import_free
+    self.assertEqual(len(closure), 1214)
+AssertionError: 1217 != 1214
+
+======================================================================
+FAIL: test_current_partition_requires_authenticated_context_and_restores_baseline (test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_modular_products.py", line 504, in test_current_partition_requires_authenticated_context_and_restores_baseline
+    assert_raw_baseline_rejects()
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_modular_products.py", line 501, in assert_raw_baseline_rejects
+    self.assertEqual({issue.code for issue in raised.exception.issues},
+AssertionError: Items in the first set but not the second:
+'PRODUCT_AXIOM_COUNT_MISMATCH'
+'PRODUCT_CATEGORY_COUNT_MISMATCH'
+
+======================================================================
+FAIL: test_deterministic_serialization_and_alignment_core_preservation (test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_strict_bfo_mapping.py", line 476, in test_deterministic_serialization_and_alignment_core_preservation
+    self.assertEqual(
+AssertionError: 'cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5' != '17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770'
+- cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5
++ 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+
+
+======================================================================
+FAIL: test_fixed_pinned_merged_cco_bfo_closure (test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_strict_bfo_mapping.py", line 600, in test_fixed_pinned_merged_cco_bfo_closure
+    self.assertEqual(len(closure), 14988)
+AssertionError: 14991 != 14988
+
+======================================================================
+FAIL: test_pinned_closure_hermit_is_clean (test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_strict_bfo_mapping.py", line 633, in test_pinned_closure_hermit_is_clean
+    self.assertEqual(result.closure_triple_count, 14988)
+AssertionError: 14991 != 14988
+
+======================================================================
+FAIL: test_root_and_project_module_reconciliation (test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_strict_bfo_mapping.py", line 579, in test_root_and_project_module_reconciliation
+    self.assertEqual(len(strict_ids | core_ids), 48)
+AssertionError: 51 != 48
+
+======================================================================
+FAIL: test_three_authorized_blanks_remove_only_non_strict_axioms (test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_strict_bfo_mapping.py", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms
+    self.assertEqual(transition["transition_id"], "58481ff2-4e56-4931-a3d4-383357b16561")
+AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'
+- bd69b546-6ef2-4704-8f05-325ec9bc1862
++ 58481ff2-4e56-4931-a3d4-383357b16561
+
+
+======================================================================
+FAIL: test_authenticated_three_axiom_delta_preserves_raw_baseline_guard (test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_cco_extension.py", line 613, in test_authenticated_three_axiom_delta_preserves_raw_baseline_guard
+    transition, baseline, baseline_inventory = authenticated_baseline()
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_cco_extension.py", line 143, in authenticated_baseline
+    raise AssertionError("unexpected maintained-current semantic transition")
+AssertionError: unexpected maintained-current semantic transition
+
+======================================================================
+FAIL: test_historical_fixture_is_independent_of_a_simulated_head_advance (test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_cco_extension.py", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance
+    self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)
+AssertionError: '87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'
+- 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428
++ 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28
+
+
+----------------------------------------------------------------------
+Ran 165 tests in 346.470s
+
+FAILED (failures=13, errors=1)
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-yxe4j5kr/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 1
+Canonical authoritative axioms: 1
+Errors:
+- ERROR [TARGET_CATEGORY_MISMATCH] urn:uuid:00000000-0000-4000-8000-000000000001: synthetic disposition failure
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-1f2_eb5_/generation-report.md
+Worksheets read: none
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 0
+Unique RowIDs: 0
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- Synthetic!1: governed worksheet is missing required header 'coms:RowID'
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-k7ndeonz/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 1
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 1
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [IDENTITY_AUDIT_INCOMPLETE] processed row count 1 does not match identity-audit row count 0 | ERROR [PROCESSED_AUDIT_ROWID_MISMATCH] processed RowIDs missing from identity audits: urn:uuid:00000000-0000-4000-8000-000000000001 (Synthetic!2) | ERROR [IDENTITY_AUDIT_INCOMPLETE] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001] is absent from the identity audit
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-9rs9wmcq/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-29y4uskn/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+Wrote /var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/coms-domain-range-test-_xoez3ah/generation-report.md
+Worksheets read: Synthetic
+Mapped rows: 0
+Blank mapping rows: 0
+Class mapping rows: 0
+Object-property mapping rows: 0
+Domain rows: 0
+Range rows: 0
+Property-chain rows: 0
+Governed RowIDs: 1
+Unique RowIDs: 1
+Processed governed rows: 0
+Identity-audit rows: 0
+Canonical authoritative axioms: 0
+Errors:
+- ERROR [MISSING_SOURCE_SUBJECT] Synthetic!2 [urn:uuid:00000000-0000-4000-8000-000000000001]: sssom:subject_id is required for every governed row
+{
+  "root": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout",
+  "tests_run": 165,
+  "passed": false,
+  "elapsed_seconds": 346.68222504202276
+}

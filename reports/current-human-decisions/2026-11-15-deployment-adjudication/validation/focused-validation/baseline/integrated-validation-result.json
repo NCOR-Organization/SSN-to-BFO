@@ -1,0 +1,20 @@
+{
+  "closure_triple_count": 15842,
+  "generated_triple_count": 1052,
+  "graph_path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/focused-validation/baseline/integrated-validation/coms-candidate-full-closure.ttl",
+  "owl_nothing_count": 0,
+  "passed": true,
+  "profile_checked": true,
+  "profile_declaration_completion_count": 4,
+  "profile_graph_path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/focused-validation/baseline/integrated-validation/coms-candidate-full-closure-owl2dl-profile.ttl",
+  "profile_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "profile_return_code": 0,
+  "profile_triple_count": 15846,
+  "reasoned_output_produced": true,
+  "reasoned_path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/deployment-adjudication-2026-11-15/focused-validation/baseline/integrated-validation/coms-candidate-full-closure-reasoned.ttl",
+  "return_code": 0,
+  "robot_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "robot_path": "/usr/local/bin/robot",
+  "source_sample_declarations_retained": true,
+  "unsat_classes": []
+}

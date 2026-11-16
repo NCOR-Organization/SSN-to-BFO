@@ -1,0 +1,657 @@
+PYTHONDONTWRITEBYTECODE=1 python tools/run_validation_suite.py
+SSN2BFO.ttl parse OK
+............E.F.................F.................................EF...E...............................F..................F........FF..EEE.................................F....F...F.FF........................................................................F.F..F...FEF..F.E....FE..........................EF........FE.E.........................................................sssssss...........................E.EEEF.EE..EEFEEF......F......................................................
+======================================================================
+ERROR: test_formal_mapping_finality_bypass_matrix (test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_assessment.py", line 269, in test_formal_mapping_finality_bypass_matrix
+    semantic.resolve_history(root)
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 282, in resolve_history
+    record = validator(root, path)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 256, in validate_transition
+    _validate_document(root, document, old, new)
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 245, in _validate_document
+    if document["governed_input_sha256"] != governed_input_hashes(root):
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 48, in governed_input_hashes
+    values = {p: documentary.digest(documentary._path(root, p).read_bytes())
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 75, in _path
+    raise ValueError(f"missing retained evidence: {relative}")
+ValueError: missing retained evidence: queries/source-classes-and-object-properties.rq
+
+======================================================================
+ERROR: test_qualified_release_preserves_historical_protocol_and_governed_files (test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_checkpoint_successor.py", line 367, in test_qualified_release_preserves_historical_protocol_and_governed_files
+    self.assertTrue(identity.qualified_release_checkpoint(root))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_source_identity.py", line 128, in qualified_release_checkpoint
+    raise ValueError("unauthorized committed release successor change in lineage: " + commit)
+ValueError: unauthorized committed release successor change in lineage: 45b98f30854a623f752a3bbdd1c69df8f0779a82
+
+======================================================================
+ERROR: test_no_semantic_transition_retains_baseline_behavior (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_cross_track_preservation.py", line 101, in test_no_semantic_transition_retains_baseline_behavior
+    for item in semantic.resolve_history(self.root)["chain"]))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_e_authenticated_semantic_transition_without_required_applicability_fails (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 205, in test_e_authenticated_semantic_transition_without_required_applicability_fails
+    fixture, _, before = self.historical_semantic_fixture()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 169, in historical_semantic_fixture
+    for relative in documentary.evidence_paths(fixture.root)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 365, in evidence_paths
+    baseline, chain, files = _history(root)
+                             ^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 300, in _history
+    raise ValueError("disconnected documentary update chain")
+ValueError: disconnected documentary update chain
+
+======================================================================
+ERROR: test_f_authenticated_material_determination_requires_reopening (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 212, in test_f_authenticated_material_determination_requires_reopening
+    fixture, transition, before = self.historical_semantic_fixture()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 169, in historical_semantic_fixture
+    for relative in documentary.evidence_paths(fixture.root)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 365, in evidence_paths
+    baseline, chain, files = _history(root)
+                             ^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 300, in _history
+    raise ValueError("disconnected documentary update chain")
+ValueError: disconnected documentary update chain
+
+======================================================================
+ERROR: test_g_authenticated_non_material_determinations_preserve_decisions (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 236, in test_g_authenticated_non_material_determinations_preserve_decisions
+    fixture, transition, before = self.historical_semantic_fixture()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 169, in historical_semantic_fixture
+    for relative in documentary.evidence_paths(fixture.root)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 365, in evidence_paths
+    baseline, chain, files = _history(root)
+                             ^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 300, in _history
+    raise ValueError("disconnected documentary update chain")
+ValueError: disconnected documentary update chain
+
+======================================================================
+ERROR: test_real_five_term_transition_preserves_history_and_sample_decisions (test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_applicability.py", line 208, in test_real_five_term_transition_preserves_history_and_sample_decisions
+    for p in documentary.evidence_paths(self.root)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 365, in evidence_paths
+    baseline, chain, files = _history(root)
+                             ^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 300, in _history
+    raise ValueError("disconnected documentary update chain")
+ValueError: disconnected documentary update chain
+
+======================================================================
+ERROR: test_baseline_exact_bytes_and_counts_are_unchanged (test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_generation.py", line 63, in test_baseline_exact_bytes_and_counts_are_unchanged
+    with generation.generated_expectations_context(self.root, self.old):
+  File "/opt/miniconda3/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_generation.py", line 279, in generated_expectations_context
+    history = resolve_history(root, current_path=workbook_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_validated_transition_enables_exact_counts_and_rendering (test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_generation.py", line 121, in test_validated_transition_enables_exact_counts_and_rendering
+    record = semantic.create_transition(self.root, self.old, self.new, authorities,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_three_current_new_decisions_preserve_the_checkpoint (test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_preservation.py", line 382, in test_three_current_new_decisions_preserve_the_checkpoint
+    result = preservation.validated_assessment_evolution(identity.ROOT, historical, candidate)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_publication_preservation.py", line 195, in validated_assessment_evolution
+    decision = documentary._json(documentary._bound_file(root, ref))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_documentary_workbook.py", line 87, in _bound_file
+    raise ValueError("invalid evidence reference")
+ValueError: invalid evidence reference
+
+======================================================================
+ERROR: test_real_semantic_transition_advances_products_without_replacing_old_authorities (test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_preservation.py", line 210, in test_real_semantic_transition_advances_products_without_replacing_old_authorities
+    transition = semantic.create_transition(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_validated_exact_product_generation_preserves_historical_fingerprints (test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_preservation.py", line 143, in test_validated_exact_product_generation_preserves_historical_fingerprints
+    history = semantic.resolve_history(self.root)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_added_and_removed_rows_keep_exact_stable_identity (test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 181, in test_added_and_removed_rows_keep_exact_stable_identity
+    path = self.record(added)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_branching_and_missing_transitions_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 274, in test_branching_and_missing_transitions_fail
+    path = self.record(first)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_creation_keeps_live_and_historical_bytes_unchanged (test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 133, in test_creation_keeps_live_and_historical_bytes_unchanged
+    record = self.record(candidate)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_cycle_attempt_and_stale_old_version_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 308, in test_cycle_attempt_and_stale_old_version_fail
+    self.record(first)
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_exact_manifest_rejects_omitted_cells_and_forged_states (test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 161, in test_exact_manifest_rejects_omitted_cells_and_forged_states
+    path = self.record(candidate)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_explicit_inheritance_approvals_bind_exact_candidate_routes (test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 214, in test_explicit_inheritance_approvals_bind_exact_candidate_routes
+    record = semantic.create_transition(self.root, self.live, candidate, authorities,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_later_transition_binds_exact_predecessor_record_bytes (test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 291, in test_later_transition_binds_exact_predecessor_record_bytes
+    path = self.record(first)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_multiple_semantic_and_documentary_transitions (test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 263, in test_multiple_semantic_and_documentary_transitions
+    self.record(first)
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_snapshot_tampering_fails_even_with_unchanged_live (test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 330, in test_snapshot_tampering_fails_even_with_unchanged_live
+    path = self.record(candidate)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+ERROR: test_source_target_rule_and_evidence_tampering_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 317, in test_source_target_rule_and_evidence_tampering_fail
+    record = self.record(candidate)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 69, in record
+    return semantic.create_transition(self.root, old, candidate, self.authorities(old, candidate),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 354, in create_transition
+    history = resolve_history(root, require_live=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tools/current_semantic_workbook.py", line 313, in resolve_history
+    raise ValueError("missing or disconnected workbook transition chain")
+ValueError: missing or disconnected workbook transition chain
+
+======================================================================
+FAIL: test_historical_final_baseline_is_exact_and_fixed (test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_assessment.py", line 218, in test_historical_final_baseline_is_exact_and_fixed
+    self.assertEqual(len(finals), 22)
+AssertionError: 23 != 22
+
+======================================================================
+FAIL: test_queue_complete_and_rationales_separate_documentation_from_approval (test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_assessment.py", line 800, in test_queue_complete_and_rationales_separate_documentation_from_approval
+    self.assertEqual(len(unresolved), 69)
+AssertionError: 68 != 69
+
+======================================================================
+FAIL: test_authorized_current_history_passes_before_and_after_generation (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_cross_track_preservation.py", line 112, in test_authorized_current_history_passes_before_and_after_generation
+    self.assertEqual(before[key], products.EXPECTED_CURRENT_SOSA_SHA256[key])
+AssertionError: 'cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5' != '17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770'
+- cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5
++ 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770
+
+
+======================================================================
+FAIL: test_maintained_live_workbook_resolves_to_immutable_decision_snapshot (test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_documentary_workbook.py", line 96, in test_maintained_live_workbook_resolves_to_immutable_decision_snapshot
+    self.assertEqual(guard.semantic_projection_sha256(ROOT / guard.WORKBOOK),
+AssertionError: 'd5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4' != '566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44'
+- d5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4
++ 566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44
+
+
+======================================================================
+FAIL: test_live_assessment_summary_matches_actual_records (test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_documentation_policy.py", line 55, in test_live_assessment_summary_matches_actual_records
+    self.assertEqual(tuple(map(int, summary[0])), expected)
+AssertionError: Tuples differ: (17, 0, 74, 74, 10, 5, 2) != (23, 0, 68, 68, 16, 5, 2)
+
+First differing element 0:
+17
+23
+
+- (17, 0, 74, 74, 10, 5, 2)
++ (23, 0, 68, 68, 16, 5, 2)
+
+======================================================================
+FAIL: test_a_exact_original_workbook_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 120, in test_a_exact_original_workbook_preserves_sufficiency
+    self.assertEqual(evidence["input_sha256"][documentary.WORKBOOK], audit.sha(self.live))
+AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd'
+- 778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c
++ e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd
+
+
+======================================================================
+FAIL: test_b_authenticated_d_only_transition_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_evidence_freshness.py", line 128, in test_b_authenticated_d_only_transition_preserves_sufficiency
+    self.assertEqual(evidence["input_sha256"][documentary.WORKBOOK], audit.sha(old))
+AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd'
+- 778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c
++ e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd
+
+
+======================================================================
+FAIL: test_candidate_publication_evidence_is_not_historical_protected_content (test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_publication_preservation.py", line 127, in test_candidate_publication_evidence_is_not_historical_protected_content
+    self.assertEqual(before["status"], "PASS", before["errors"])
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : ['extra protected path absent from trusted Git tree: rules/ssn-implementation-mapping.rq', 'assessment RowID evolution: invalid evidence reference', 'external COMS mutable identity differs from trusted repository identity', 'checkpoint_custody_evidence: mappings/current-ssn-sosa-assessment.json', 'qualified artifact release authentication failed: qualified release repair authorization missing or changed']
+
+======================================================================
+FAIL: test_external_coms_mutable_hash_cannot_redefine_expected_bytes (test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_publication_preservation.py", line 152, in test_external_coms_mutable_hash_cannot_redefine_expected_bytes
+    self.assertTrue(any("external COMS inventory" in error for error in result["errors"]))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_real_documentary_chain_and_forged_manifest_integration (test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_publication_preservation.py", line 231, in test_real_documentary_chain_and_forged_manifest_integration
+    self.assertEqual(result["status"], "PASS", result["errors"])
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : ['extra protected path absent from trusted Git tree: rules/ssn-implementation-mapping.rq', 'assessment RowID evolution: invalid evidence reference', 'external COMS mutable identity differs from trusted repository identity', 'checkpoint_custody_evidence: mappings/current-ssn-sosa-assessment.json', 'qualified artifact release authentication failed: qualified release repair authorization missing or changed']
+
+======================================================================
+FAIL: test_unchanged_protected_bytes_pass (test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_publication_preservation.py", line 76, in test_unchanged_protected_bytes_pass
+    self.assertEqual(result["status"], "PASS", result["errors"])
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : ['extra protected path absent from trusted Git tree: rules/ssn-implementation-mapping.rq', 'external COMS mutable identity differs from trusted repository identity', 'qualified artifact release authentication failed: qualified release repair authorization missing or changed']
+
+======================================================================
+FAIL: test_valid_documentary_chain_preserves_pinned_baseline (test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_publication_preservation.py", line 168, in test_valid_documentary_chain_preserves_pinned_baseline
+    self.assertEqual(result["status"], "PASS", result["errors"])
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : ['extra protected path absent from trusted Git tree: rules/ssn-implementation-mapping.rq', 'external COMS mutable identity differs from trusted repository identity', 'qualified artifact release authentication failed: qualified release repair authorization missing or changed']
+
+======================================================================
+FAIL: test_four_documentary_bindings_retain_exact_history_and_live_report (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_retained_evidence_integration.py", line 196, in test_four_documentary_bindings_retain_exact_history_and_live_report
+    self.assertEqual(digest(current_report), DIFF_CURRENT_SHA256)
+AssertionError: '99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52' != 'e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d'
+- 99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52
++ e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d
+
+
+======================================================================
+FAIL: test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_retained_evidence_integration.py", line 247, in test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies
+    self.assertIn(decision[key]["path"], inputs)
+AssertionError: 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json' not found in {'reports/straightforward-op-mapping-candidates-review.md', 'reports/current-decision-applicability/prepared/hasSample-forProperty.json', 'reports/hermit-observedProperty-deferral-evaluation.md', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json', 'tools/current_validation_scope.py', 'tests/test_strict_bfo_mapping.py', 'reports/current-documentary-workbook/reasoning-completion/audit-source.md', 'tests/test_current_semantic_workbook.py', 'reports/retained-evidence/execution/sha256/ca25d41c25100d1c888ce5669c15f77591108d97b814013a0aa721c403c6cf71', 'reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json', 'tools/sosa_2023_build_release.py', 'tests/test_robot_template_generation_pilot.py', 'tools/current_source_identity.py', 'reports/isActedOnBy-actsOnProperty-full-closure-analysis.md', 'tools/current_publication_preservation.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json', 'tests/test_current_identity_reporting.py', 'config/sosa-source-version.toml', 'config/publication-metadata.toml', 'tools/current_semantic_generation.py', 'queries/source-classes-and-object-properties.rq', 'src/sosa-next/sparql/report/unmapped-terms.rq', 'reports/madeByActuator-range-after-agent-deferral.md', 'reports/sample-representation-property-chains-review.md', 'tests/test_product_dispositions.py', 'tools/check_sosa_release_scope.py', 'config/sosa-2023-publication-metadata.toml', 'src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl', 'reports/sampler-equivalentclass-decision.md', 'tests/test_current_semantic_validation.py', 'tools/current_semantic_invocation.py', 'src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl', 'tests/test_modular_products.py', 'reports/retained-evidence/manifests/2adf99bf936ef2f39d6ed96c48a92a5e74111d83b8cb3d9521e2c679ec1c59ed/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c.json', 'tests/test_sosa_2023_release_rendering.py', 'tests/release_authority_fixture.py', 'reports/current-semantic-workbook/versions/0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a.xlsx', 'releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl', 'reports/current-semantic-workbook/versions/e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd.xlsx', 'src/sosa-next/imports/sosa.ttl', 'reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json', 'reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt', 'config/current-ssn-sosa-identity.json', 'tests/test_current_portable_execution_evidence.py', 'queries/verify/unmapped-source-terms.rq', 'src/sosa-next/imports/sosa-actuation.ttl', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt', 'tests/test_sosa_2023_publication_metadata.py', 'reports/retained-evidence/execution/sha256/43f882cf78f7d1938c118162551da43efae5a8acd96d4f58427b7b778a3c637f', 'reports/retained-evidence/execution/sha256/44d1136dd11bd96aecdc357fe8d4f46d6ab468575dc05faa73bf8e51fc4cf849', 'queries/unmapped-source-terms.rq', 'imports/cco.ttl', 'tools/watch_coms_mapping.py', 'tests/test_build_release.py', 'tests/test_robot_retained_example_validation_pilot.py', 'reports/current-documentary-workbook/updates/28022a81-0a85-485d-be5e-a75cc61e0ab5.json', 'reports/retained-evidence/execution/sha256/2139f7f0207eb9f7102152e44b16dda6bcdd778c693e4e345bab6a4302327a0d', 'reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json', 'tools/current_custody_dependencies.py', 'reports/retained-evidence/sha256/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c/coms-source-term-coverage.md', 'tests/test_current_assessment_freshness.py', 'reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json', 'tools/robot_reconstruction_validation.py', 'reports/retained-evidence/execution/sha256/21d708db0fd127886911a3ee81a8e78ddc580a9f25f5d3a2b269099b586342a1', 'tests/test_bfo_projection.py', 'tests/test_sosa_next_products.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json', 'reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json', 'reports/retained-evidence/execution/sha256/cf007539e2b648b58434f518e9b28f24d276c0b5643b080002ea0a43f36e5606', 'tests/test_sosa_2023_release_archive.py', 'reports/retained-evidence/execution/sha256/e3ee0c2074b9511a4beb19b775fa204b8158b52062d46cc341a73e27124e1900', 'src/current-ssn-sosa/sparql/export/sssom-cco-mappings.rq', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json', 'reports/retained-evidence/execution/sha256/d1aaad22a22d3a889e98ba8e96b54c3d3759529067719584f7f6bcb87b6b7c4d', 'reports/retained-evidence/execution/sha256/1ed07b0d4c18ceec5df9d499c9bbe26a7aef8a44ab9fd72e2cac8f0c9f099357', 'reports/hermit-survival-range-deferral-evaluation.md', 'reports/retained-evidence/execution/sha256/3ee39b49926f821c861f475b869dabb7a65119437e1c4a077f64e6c89c17c88b', 'reports/sosa-sensor-version-alignment-deferral.md', 'tests/test_sosa_2023_release_rehearsal.py', 'tests/test_publication_metadata.py', 'src/sosa-next/imports/sosa-source-declaration-overlay.ttl', 'reports/retained-evidence/execution/sha256/c3c657272a8917d2a755ae8a469014bfb02e214257b2fa9597cd795189d97ecc', 'reports/madeSampling-madeBySampler-full-closure-analysis.md', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json', 'reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json', 'reports/retained-evidence/execution/sha256/a3c56e7d27734d627b0f75800db3aacdf3c9c4fc9f7d8ad4680b20028f5f89f7', 'releases/sosa-next/sosa-cco-extension.ttl', 'tests/fixtures/current-semantic/implementation-rule.ttl', 'src/sosa-next/imports/sosa-system.ttl', 'tests/test_current_release_authentication.py', 'reports/coms-source-term-coverage.md', 'tools/sosa_2023_rehearse_release.py', 'tests/fixtures/current-release-authority/release-contract-20261028/authorized-request.txt', 'reports/coms-vs-pre-coms-legacy-diff.md', 'reports/observes-upper-mapping-decision.md', 'reports/coms-product-dispositions.json', 'tools/modular_products.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json', 'tools/coms_row_identity.py', 'tests/test_current_formal_typing.py', 'tests/test_coms_framework_integration.py', 'tests/test_release_manifest.py', 'config/current-semantic-expectations.json', 'config/product-role-policy.toml', 'tests/test_current_publication_preservation.py', 'tools/robot_template_generation_pilot.py', 'tests/test_current_semantic_generation.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt', 'tools/current_portable_execution_evidence.py', 'tools/release_manifest.py', 'tests/test_sosa_2023_mapping_status.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json', 'imports/ssn.ttl', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json', 'config/sosa-2023-ro-source-version.toml', 'reports/actuation-range-simplification-implementation.md', 'tools/release_archive.py', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json', 'reports/retained-evidence/execution/sha256/9d4e2659b54b90138d14a43bdffd6a8cc76f731e757c0f0034141ed36f55e49b', 'tests/test_current_source_identity.py', 'tests/test_robot_verify_pilot.py', 'config/current-documentary-workbook-baseline.json', 'src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl', 'reports/retained-evidence/execution/sha256/cac9dd16631e8789684e8715edc5412a0284c1fb6c520bba3d606c25853a31fd', 'tools/rehearse_release.py', 'tools/workflow_check.py', 'requirements/validation.txt', 'reports/retained-evidence/execution/manifests/66262154210cb9e41136bd28622d915eac4df7d498ed87d2a5d08eeb2a99b38a.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json', 'tools/product_role_policy.py', 'tests/test_sosa_release_scope.py', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md', 'config/sosa-2023-release-manifest-schema-v1.json', 'releases/sosa-next/sosa-ro-mapping.ttl', 'tools/release_context.py', 'reports/retained-evidence/execution/sha256/3105f57fc3af2d1ee8db3077d4caa76fd840c126d13145445cf6c806652c7223', 'tests/test_current_semantic_applicability.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-rowids-before.json', 'reports/retained-evidence/execution/sha256/65fa6f8a898bd1015cab8a66d3971a0678bb183725a528fbd56e4474dc8dd30b', 'reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json', 'src/current-ssn-sosa/sparql/no-template-leakage.rq', 'tests/test_current_assessment.py', 'reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx', 'tools/robot_diff_pilot.py', 'reports/input-output-cco-mapping-rationale-cleanup.md', 'reports/coms-generation-validation.md', 'src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl', 'tests/test_sosa_2023_ro_reasoning.py', 'tools/java/CurrentSemanticReasoner.java', 'tools/sosa_2023_release_runtime.py', 'reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json', 'tests/fixtures/restriction-mapping/sample-relationship-restrictions.ttl', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md', 'tests/test_current_evidence_freshness.py', 'tests/test_current_cross_track_preservation.py', 'reports/retained-evidence/execution/sha256/d3a912bf42cfc0e0dce9b96666180b016e3504fde06ba089f3dc2c801b65329d', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json', 'reports/retained-evidence/execution/sha256/e736fc62376e5683b5ee23dca3c7740fbbb7e3a214004aad3f03d248e29b8302', 'tests/test_product_role_policy.py', 'reports/rerun-prior-clean-decisions-full-sosa.md', 'tests/fixtures/current-release-authority/release-contract-20261028/authority.json', 'src/sosa-next/sparql/artifact-metadata.rq', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/rationale-changes.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt', 'tools/check_sosa_next_mapping.py', 'tools/test_instance_data.py', 'tools/generate_mapping_from_coms.py', 'reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx', 'reports/inverse-side-direct-mapping-policy-review.md', 'tools/robot_extract_pilot.py', 'tools/current_publication_readiness.py', 'reports/retained-evidence/execution/sha256/cd901faab68ded7a2684a13a2dd0272b7135af5c5bd0eca933ed43f681bb93f4', 'reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt', 'reports/retained-evidence/execution/sha256/80a8b4dbca590045249c8ff7f7402dd7915a461ef1834f0414437d41327fb9cb', 'tools/validate_robot_reconstruction.py', 'tools/generate_sosa_next_products.py', 'tests/test_current_checkpoint_successor.py', 'reports/retained-evidence/execution/sha256/60219a32fae197fa7d14928f945340a8488d4d59be071ab0617543cdc74eb766', 'tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl', 'reports/retained-evidence/execution/sha256/174c9c851787bc53912792789d5adbcd50a6a6ce978da1e9c3f7a532b7a8e1ed', 'reports/sosa-sensor-version-alignment-resolution.md', 'reports/current-human-decisions/2026-10-25-sample-pair/manifest.json', 'tests/test_check_sosa_next_mapping.py', 'tools/check_sosa_2023_ro_source_version.py', 'config/current-ssn-sosa-historical-finals.json', 'mappings/SOSA-next-to-RO-COMS.xlsx', 'src/sosa-next/imports/sosa-sampling.ttl', 'tests/test_current_validation_selection.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json', 'reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json', 'mappings/current-ssn-sosa-assessment.json', 'tests/test_sosa_2023_release_runtime.py', 'src/sosa-next/catalog-v001.xml', 'reports/current-ssn-sosa-semantic-validation.md', 'reports/updated-spreadsheet-ttl-only-assertions-review.md', 'reports/retained-evidence/execution/sha256/948c8b4bbf907204830d28bf5d8cfc3c77365baf45495dfd8ea930d9d133d153', 'reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx', 'tools/check_release.py', 'tests/test_sosa_2023_ro_source_version.py', 'tools/robot_verify_pilot.py', 'reports/retained-evidence/execution/sha256/b40d24fb777025e32bde8a8c80bde087bcb2b01332691a27df07b040ed5b97ea', 'tests/test_current_documentation_policy.py', 'tools/current_assessment.py', 'tests/test_release_context.py', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl', 'src/sosa-next/imports/sosa-common.ttl', 'reports/retained-evidence/execution/sha256/7c76c962548c807631da94c73841d05fa291639d6134199862c0b35844bdc4ae', 'tools/current_semantic_workbook.py', 'tools/build_release.py', 'tests/test_release_archive.py', 'tools/sosa_2023_mapping_status.py', 'tests/test_sosa_next_consumer_stack.py', 'rules/ssn-implementation-mapping.rq', 'rules/ssn-hasproperty-conditional-mapping.rq', 'reports/retained-evidence/execution/sha256/b65fa589cbc4f4e5b29b17e52891a85abd0ab70c7ebe8f10e13883bc93d15bcb', 'reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json', 'tests/test_placeholder_catalog_migration.py', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json', 'src/sosa-next/sparql/export/sssom-cco-mappings.rq', 'reports/mapping-consistency-resolution-plan.md', 'tools/check_publication_metadata.py', 'config/sosa-2023-ro-product.toml', 'imports/sosa-sampling.ttl', 'src/sosa-next/sparql/export/sssom-bfo-mappings.rq', 'src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl', 'tests/test_current_publication_readiness.py', 'tests/test_release_rendering.py', 'src/sosa-next/sparql/export/sssom-mappings.rq', 'tools/sosa_2023_release_archive.py', 'reports/actuation-agent-property-mapping-deferral.md', 'config/sosa-release-scope.toml', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json', 'reports/mapping-consistency-target-mismatch-review.md', 'reports/retained-evidence/execution/sha256/ea9ee673bf2475ddffe51a0e09aa15a9cedc4d0d312c8da0436e1df8c4fd353d', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation-review-packet.json', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md', 'reports/sample-relationship-deferral.md', 'reports/retained-evidence/execution/sha256/047e23401212193ae2df1042785775615fef4c06edf7828bb862f18534d0c402', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json', 'reports/retained-evidence/execution/sha256/7f2838f4bedc448d6cabb77be8a1a0664d5399691ff4c0167c21c4c62279a684', 'tests/test_sosa_2023_ro_explicit_paths.py', 'releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json', 'tests/test_robot_diff_pilot.py', 'tests/fixtures/current-release-authority/release-contract-20261028/prior-final-state.json', 'tests/fixtures/ssn-systems-mapping/ssn-systems-property-mappings.ttl', 'reports/current-human-decisions/2026-11-01-observation-adjudication/assessment-before.json', 'config/release-manifest-schema-v1.json', 'tests/test_coms_row_identity.py', 'imports/sosa.ttl', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json', 'tests/test_robot_reconstruction_validation.py', 'reports/retained-evidence/execution/sha256/9abbe2794260971e2cfa6628a253e6c669237230a0725e553c5cabb08b912de5', 'tools/coms_framework_integration.py', 'tools/test_full_sosa_closure_hermit.py', 'tools/test_object_property_typing_probes.py', 'tests/test_current_validation_execution.py', 'tests/test_current_documentary_decisions.py', 'reports/retained-evidence/execution/sha256/037849a94ede24e56ea053dcc2bcf1d5ccb5487c6fda56101396979812541489', 'reports/retained-evidence/execution/sha256/a1f5929a11e93d5991f2a953cc8ba6b5951b0737ccf572979b532fa3758bb796', 'tools/check_sosa_2023_ro_mapping.py', 'tests/fixtures/property-chain-mapping/property-chain-mappings.ttl', 'reports/retained-evidence/execution/sha256/cdbc9ecdc368a66e7a5d0bd603b54ec4a462264ab3b762495fa41200fbfc2849', 'reports/retained-evidence/execution/sha256/fbfbe6717c2a0980f644ec67b75b2ecbf2b28773c50bec4aaf75685a8f8e90ef', 'mappings/SOSA-next-to-BFO-COMS.xlsx', 'reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx', 'reports/retained-evidence/execution/sha256/cc55270713eeb37aeb51eb5069ae8e842270bbd17b5ff69757a78107faca4fc5', 'tools/product_dispositions.py', 'tests/test_generate_mapping_from_coms.py', 'reports/retained-evidence/execution/sha256/fd21e937dea606252c7f767143ffcc59181ad56e742b5b2e1a86f117e1975dc6', 'releases/sosa-next/sosa-bfo-mapping.ttl', 'tools/robot_retained_example_validation_pilot.py', 'src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md', 'reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx', 'src/sosa-next/imports/sample-relations.ttl', 'tests/test_current_custody_dependencies.py', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl', 'tools/current_decision_applicability.py', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log', 'reports/retained-evidence/execution/sha256/2858052d1947638c1bbeb094c90e5a3ec976421f82198680714451838dd49ed3', 'reports/coms-frequency-correction-validation.md', 'tools/run_validation_suite.py', 'reports/current-semantic-workbook/transitions/bd69b546-6ef2-4704-8f05-325ec9bc1862.json', 'reports/current-documentary-workbook/reasoning-completion/catalog.json', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty.json', 'tools/current_documentary_workbook.py', 'reports/retained-evidence/execution/sha256/19f19ddbc2b8722cece39e450e7ae271556613ae7b52ac290c2c4a00a079124d', 'src/current-ssn-sosa/sparql/report/unmapped-terms.rq', 'tools/current_semantic_validation.py', 'tests/test_ssn_implementation_rule.py', 'src/sosa-next/imports/ro-full.owl', 'tools/generate_sosa_2023_ro_mapping.py', 'tests/test_robot_extract_pilot.py', 'tools/check_coms_mapping.py', 'tools/sosa_source_version.py', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/authorized-request.txt', 'reports/retained-evidence/execution/sha256/9f0c1f106ea9d28357816e30518934a3f411b94fba0991918eb528c0d044f9d6', 'tools/test_elk_instance_mapping_entailments.py', 'tests/test_current_retained_evidence_integration.py', 'tests/test_current_documentary_workbook.py', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt', 'reports/isHostedBy-hosts-full-closure-analysis.md', 'tools/sosa_2023_release_manifest.py', 'src/sosa-next/imports/sosa-observation.ttl', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt', 'tests/test_sosa_2023_ro_mapping.py', 'reports/all-mapping-changes-and-rationales.md', 'reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json', 'reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json', 'reports/retained-evidence/execution/manifests/d1e052e447bf0ecd6d5d46de62c6f4011d8ffb6d22bf36490d8ffd6dfb41f212.json', 'tests/test_release_contract.py', 'tests/fixtures/ssn-core-mapping/ssn-core-property-class-mappings.ttl', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/authorized-instruction.txt', 'reports/retained-evidence/execution/sha256/77c707afa28244e0ecc1a36527c653ee63342afc8ace2695947ba755315603c6', 'tests/test_current_validation_scope.py', 'tools/current_checkpoint_successor.py', 'tests/test_implementation_rule_coverage.py', 'config/release-manifest-schema-v2.json', 'reports/retained-evidence/execution/sha256/20a809b075d5f32bffb1e275ac1bc9b104c6f49d62b63411045ec51f4c9c260f', 'requirements/coms-integration.txt', 'src/current-ssn-sosa/sparql/export/sssom-mappings.rq', 'src/sosa-next/imports/sosa-deprecated.ttl', 'config/current-ssn-sosa-scope.json', 'reports/retained-evidence/execution/sha256/19f3bb625fb8b2ae7f565ac8a78693ce60af184edcbbe0746ac26708ad1b92fa', 'tools/sosa_release_scope.py', 'reports/ssn-systems-dependence-reactivation-results.md', 'reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt', 'src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl', 'reports/retained-evidence/execution/sha256/ec672771aee5800f0c48eb1a96607051c8834e7d218134373691f6c4f0f8b9c0', 'tools/current_validation_execution.py', 'reports/retained-evidence/execution/sha256/8b5c6d68575f6a2b111a84e39cb3117d2072460ee3584b94ac5135c55c2f7b3f', 'reports/retained-evidence/execution/sha256/57142e6604aa42612f6c8e98cc0eb689a49b1bcb24411d305d66e1439b944170', 'tools/check_product_role_policy.py', 'reports/reasoner-unsafe-system-mapping-deferral.md', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json', 'releases/sosa-next/sosa-integrated.ttl', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json', 'reports/retained-evidence/execution/sha256/7b54ed32a0e5247bd270554bab802667c4acac79c93e270e33759710243dc71f', 'tests/fixtures/current-semantic/sample-relationship.ttl', 'imports/ssn-systems.ttl', 'tests/test_current_evidence_dependency_contract.py', 'reports/retained-evidence/execution/sha256/c6636ef11c16f9f96c7de44b202233396260a922059bafdf052873b29a4c200c', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json', 'reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json', 'tools/current_retained_evidence.py', 'reports/system-property-direct-mapping-deferral.md', 'tests/test_robot_query_equivalence_pilot.py', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/prior-final-state.json', 'reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md', 'src/current-ssn-sosa/sparql/export/sssom-bfo-mappings.rq', 'src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl', 'reports/current-documentary-workbook/versions/825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d.xlsx', 'legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx', 'reports/system-property-process-profile-scope-review.md', 'reports/retained-evidence/execution/sha256/f10379610807d6859df943f169fe830828c0560a261089b069f217ba1e804a7f', 'tests/test_current_semantic_retry.py', 'config/validation-toolchain.env', 'src/sosa-next/sparql/no-template-leakage.rq', 'reports/retained-evidence/execution/sha256/a582cc448cc3f2330467df7c32093f2872fc244b8ec755c2e4831970b3735857', 'tests/test_sosa_source_version.py', 'tests/test_current_semantic_preservation.py', 'src/sosa-next/sosa-mappings-edit.ttl', 'releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl', 'reports/retained-evidence/execution/sha256/71ba5dadf181e1790e632b20ba64dbc047b13bb822b79224746c95975ab6758c', 'reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json', 'reports/retained-evidence/execution/sha256/9e84edae281c89c935d4a8169ca01f83dae533aa6ffa187d5d988755bdb63bbb', 'tools/publication_metadata.py', 'reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json', 'reports/retained-evidence/execution/sha256/ac7485409516c2d7323993948fd68d4432644ae7f405994623a4a974674ee95b', 'SSN2BFO.ttl', 'tools/check_sosa_next_products.py', 'reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx', 'tests/test_sosa_2023_release_manifest.py', 'mappings/SSN2BFO-COMS.xlsx', 'tests/test_current_semantic_schema.py', 'tools/check_sosa_source_version.py', 'tests/test_release_rehearsal.py', 'reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json', 'reports/isResultOf-hasResult-full-closure-analysis.md', 'reports/ssn-hasproperty-rule-mapping-artifact.md', 'tests/test_current_retained_evidence.py', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json', 'tests/test_robot_property_chain_generation_pilot.py', 'Makefile', 'tests/test_cco_extension.py', 'src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl', 'tools/sosa_2023_check_release.py', 'tools/robot_query_equivalence_pilot.py', 'tools/robot_property_chain_generation_pilot.py', 'tests/test_sosa_2023_build_release.py', 'tests/test_current_semantic_invocation.py', 'reports/retained-evidence/execution/sha256/c54ad6388a48dcba9d6528e0d1cc372c2a0f75036b6814d6a9f10a2e499e461b', 'src/sosa-next/imports/cco.ttl', 'reports/current-documentary-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx', 'reports/retained-evidence/execution/sha256/796fbca331b52d7e2856364b2496a02c1b327e7960045a78439e2697ed9c1ec1', 'tools/compare_mappings.py'}
+
+======================================================================
+FAIL: test_historical_authentication_is_independent_of_unrecorded_current_change (test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_applicability.py", line 202, in test_historical_authentication_is_independent_of_unrecorded_current_change
+    with self.assertRaisesRegex(ValueError, "complete documentary update chain"):
+AssertionError: "complete documentary update chain" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_prepared_determinations_are_not_active_and_cannot_be_tampered (test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_applicability.py", line 183, in test_prepared_determinations_are_not_active_and_cannot_be_tampered
+    with self.assertRaisesRegex(ValueError, "validated semantic transition"):
+AssertionError: "validated semantic transition" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_rowid_evolution_rejects_unrelated_bad_starting_membership (test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_applicability.py", line 275, in test_rowid_evolution_rejects_unrelated_bad_starting_membership
+    with self.assertRaisesRegex(ValueError, "exact starting membership"):
+AssertionError: "exact starting membership" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes (test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_applicability.py", line 260, in test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes
+    with self.assertRaisesRegex(ValueError, "complete documentary update chain"):
+AssertionError: "complete documentary update chain" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_unrecorded_semantic_workbook_cannot_obtain_count_overrides (test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_generation.py", line 102, in test_unrecorded_semantic_workbook_cannot_obtain_count_overrides
+    with self.assertRaisesRegex(ValueError, "complete documentary update chain"):
+AssertionError: "complete documentary update chain" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_accepted_checkpoint_keeps_original_baseline_and_identity (test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_preservation.py", line 62, in test_accepted_checkpoint_keeps_original_baseline_and_identity
+    self.assertEqual(identity.check_record(self.document, self.root), [])
+AssertionError: Lists differ: ['qualified artifact release authenticatio[267 chars]uct'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'qualified artifact release authentication failed: qualified release repair authorization missing or changed'
+
++ []
+- ['qualified artifact release authentication failed: qualified release repair '
+-  'authorization missing or changed',
+-  'mappings/SSN2BFO-COMS.xlsx: byte identity drift; missing or disconnected '
+-  'workbook transition chain',
+-  'queries/unmapped-source-terms.rq: byte identity drift; not an evolvable '
+-  'governed workbook/product']
+
+======================================================================
+FAIL: test_product_drift_requires_semantic_transition (test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_preservation.py", line 125, in test_product_drift_requires_semantic_transition
+    self.assertIn("no governed semantic transition", result["semantic_product_evolution"]["error"])
+AssertionError: 'no governed semantic transition' not found in 'missing or disconnected workbook transition chain'
+
+======================================================================
+FAIL: test_documentary_only_edit_cannot_be_semantic (test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 155, in test_documentary_only_edit_cannot_be_semantic
+    with self.assertRaisesRegex(ValueError, "requires a semantic change"):
+AssertionError: "requires a semantic change" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_removal_authority_cannot_add_mapping (test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping)
+----------------------------------------------------------------------
+ValueError: missing or disconnected workbook transition chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 258, in test_removal_authority_cannot_add_mapping
+    with self.assertRaisesRegex(ValueError, "cannot introduce"):
+AssertionError: "cannot introduce" does not match "missing or disconnected workbook transition chain"
+
+======================================================================
+FAIL: test_unauthorized_semantic_edit_and_documentary_impersonation_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail)
+----------------------------------------------------------------------
+ValueError: disconnected documentary update chain
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_semantic_workbook.py", line 147, in test_unauthorized_semantic_edit_and_documentary_impersonation_fail
+    with self.assertRaisesRegex(ValueError, "projection"):
+AssertionError: "projection" does not match "disconnected documentary update chain"
+
+======================================================================
+FAIL: test_governed_bytes_and_headers (test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-deployment-candidate-15181jnr/checkout/tests/test_current_source_identity.py", line 25, in test_governed_bytes_and_headers
+    self.assertEqual(identity.check_record(self.document), [])
+AssertionError: Lists differ: ['qualified artifact release authenticatio[208 chars]uct'] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+'qualified artifact release authentication failed: unauthorized committed release successor change in lineage: 45b98f30854a623f752a3bbdd1c69df8f0779a82'
+
++ []
+- ['qualified artifact release authentication failed: unauthorized committed '
+-  'release successor change in lineage: '
+-  '45b98f30854a623f752a3bbdd1c69df8f0779a82',
+-  'queries/unmapped-source-terms.rq: byte identity drift; not an evolvable '
+-  'governed workbook/product']
+
+----------------------------------------------------------------------
+Ran 488 tests in 2176.951s
+
+FAILED (failures=25, errors=22, skipped=7)
+
+==> Turtle parse check
+$ /opt/miniconda3/bin/python -c 'from rdflib import Graph; Graph().parse('"'"'SSN2BFO.ttl'"'"', format='"'"'turtle'"'"'); print('"'"'SSN2BFO.ttl parse OK'"'"')'
+Turtle parse check: PASS
+
+==> Current publication assessment regression tests
+$ /opt/miniconda3/bin/python -m unittest discover -s tests -p 'test_current*.py'
+Current publication assessment regression tests: FAIL (1)
+
+==> Validation suite summary
+Report output mode: temporary
+instance smoke report: /tmp/ssn-to-bfo-validation-suite/instance-data-smoke-test.md
+ELK entailment report: /tmp/ssn-to-bfo-validation-suite/elk-instance-mapping-entailments.md
+full SOSA closure HermiT report: /tmp/ssn-to-bfo-validation-suite/full-sosa-closure-hermit-check.md
+- Turtle parse check: PASS
+- Current publication assessment regression tests: FAIL
+
+Validation suite: FAIL (1 failed step)
+make: *** [validate] Error 1

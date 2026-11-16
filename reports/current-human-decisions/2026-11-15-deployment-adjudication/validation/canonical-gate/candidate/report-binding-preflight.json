@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "bindings": {
+    "coverage": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
+    "rationale-proposals": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
+    "human-review": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470"
+  }
+}

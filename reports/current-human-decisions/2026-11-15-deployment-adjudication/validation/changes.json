@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "sheet": "Sheet1",
+      "cell": "C31",
+      "before": "cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity)",
+      "after": "cco:PlannedAct and (ssn:deployedSystem some ssn:System)"
+    },
+    {
+      "sheet": "Sheet1",
+      "cell": "D31",
+      "before": "ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment.",
+      "after": "SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments."
+    }
+  ]
+}

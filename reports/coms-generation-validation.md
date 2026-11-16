@@ -8,24 +8,24 @@ Freshness is determined from content hashes, not file timestamps.
 
 | Item | Value |
 |---|---|
-| workbook SHA-256 | `825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d` |
+| workbook SHA-256 | `e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd` |
 | generator SHA-256 | `8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3` |
 | row-identity module SHA-256 | `9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425` |
 | product-disposition module SHA-256 | `6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e` |
 | modular-products module SHA-256 | `6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c` |
 | publication metadata SHA-256 | `bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9` |
-| current assessment inventory SHA-256 | `7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb` |
-| generation timestamp (UTC) | `2026-11-16T00:38:55+00:00` |
+| current assessment inventory SHA-256 | `3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a` |
+| generation timestamp (UTC) | `2026-11-16T03:29:44+00:00` |
 | maintained ontology path | `SSN2BFO.ttl` |
-| generated ontology SHA-256 | `d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd` |
+| generated ontology SHA-256 | `c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e` |
 | maintained product-disposition path | `reports/coms-product-dispositions.json` |
-| product-disposition JSON SHA-256 | `d399102f0937eb973b2abe54d4b0609f37a7a3ad657e0893c0e0bf767a060fb8` |
+| product-disposition JSON SHA-256 | `c1da46285479f59d5e691cc4e9a432057eb74e5dbae17d896e36b71c5294aac3` |
 | maintained alignment-core path | `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl` |
 | alignment-core Turtle SHA-256 | `cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5` |
 | maintained strict-BFO path | `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl` |
 | strict-BFO Turtle SHA-256 | `676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af` |
 | maintained CCO-extension path | `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl` |
-| CCO-extension Turtle SHA-256 | `aae3d5a2b45f1a19fcfab2ba90ee7945b2c662329610c865793263096dfa875e` |
+| CCO-extension Turtle SHA-256 | `87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428` |
 
 ## Workbook
 
@@ -74,7 +74,7 @@ Freshness is determined from content hashes, not file timestamps.
 | `bfo:Continuant` | class | label_style_key | continuant | `http://purl.obolibrary.org/obo/BFO_0000002` | `Sheet1!26 [urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b]` |
 | `bfo:Disposition` | class | label_style_key | disposition | `http://purl.obolibrary.org/obo/BFO_0000016` | `Sheet1!19 [urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63]` |
 | `bfo:Function` | class | label_style_key | function | `http://purl.obolibrary.org/obo/BFO_0000034` | `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]`, `Sheet1!16 [urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69]`, `Sheet1!17 [urn:uuid:124e6b06-906a-47be-a459-92babef3992e]`, `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!20 [urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26]`, `Sheet1!23 [urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f]`, `Sheet1!24 [urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]`, `Sheet1!26 [urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b]`, `Sheet1!27 [urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f]`, `Sheet1!28 [urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0]`, `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!41 [urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]`, `Sheet1!44 [urn:uuid:c15208c5-847f-4de3-a456-4037142ca542]` |
-| `bfo:MaterialEntity` | class | label_style_key | material entity | `http://purl.obolibrary.org/obo/BFO_0000040` | `Sheet1!10 [urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f]`, `Sheet1!11 [urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb]`, `Sheet1!31 [urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb]`, `Sheet1!36 [urn:uuid:66010702-8134-4e08-a972-f0767ec8dead]`, `Sheet1!37 [urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0]`, `Sheet1!38 [urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd]`, `Sheet1!40 [urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c]`, `Sheet1!6 [urn:uuid:06782965-88c5-4345-ab99-ea027513ec86]`, `Sheet1!9 [urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb]` |
+| `bfo:MaterialEntity` | class | label_style_key | material entity | `http://purl.obolibrary.org/obo/BFO_0000040` | `Sheet1!10 [urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f]`, `Sheet1!11 [urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb]`, `Sheet1!36 [urn:uuid:66010702-8134-4e08-a972-f0767ec8dead]`, `Sheet1!37 [urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0]`, `Sheet1!38 [urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd]`, `Sheet1!40 [urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c]`, `Sheet1!6 [urn:uuid:06782965-88c5-4345-ab99-ea027513ec86]`, `Sheet1!9 [urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb]` |
 | `bfo:Process` | class | label_style_key | process | `http://purl.obolibrary.org/obo/BFO_0000015` | `Sheet1!13 [urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b]`, `Sheet1!15 [urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8]`, `Sheet1!16 [urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69]`, `Sheet1!20 [urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26]`, `Sheet1!23 [urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f]`, `Sheet1!24 [urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87]`, `Sheet1!27 [urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f]`, `Sheet1!28 [urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0]`, `Sheet1!30 [urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7]`, `Sheet1!39 [urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]`, `Sheet1!44 [urn:uuid:c15208c5-847f-4de3-a456-4037142ca542]`, `Sheet1!6 [urn:uuid:06782965-88c5-4345-ab99-ea027513ec86]` |
 | `bfo:ProcessProfile` | class | label_style_key | Process Profile | `http://purl.obolibrary.org/obo/BFO_0000144` | `Sheet1!14 [urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b]`, `Sheet1!21 [urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1]`, `Sheet1!22 [urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239]`, `Sheet1!29 [urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f]`, `Sheet1!34 [urn:uuid:b1421726-3675-4b2a-9824-150e108157e4]`, `Sheet1!4 [urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342]`, `Sheet1!6 [urn:uuid:06782965-88c5-4345-ab99-ea027513ec86]`, `Sheet1!7 [urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2]`, `Sheet2!15 [urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476]`, `Sheet2!55 [urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3]` |
 | `bfo:RealizableEntity` | class | label_style_key | realizable entity | `http://purl.obolibrary.org/obo/BFO_0000017` | `Sheet1!37 [urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0]`, `Sheet1!38 [urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd]`, `Sheet1!40 [urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c]` |
@@ -156,7 +156,7 @@ Freshness is determined from content hashes, not file timestamps.
 - Zero-axiom assessment disposition completeness: PASS
 - Reviewed zero-axiom decisions: 5 / 6
 - Current assessment inventory: `mappings/current-ssn-sosa-assessment.json`
-- Current assessment inventory SHA-256: `7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb`
+- Current assessment inventory SHA-256: `3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a`
 - Duplicate RowID result: PASS
 - Duplicate authoritative-axiom result: PASS
 
@@ -203,7 +203,7 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0` | `Sheet1` | 28 | `class_mapping` | `ea72f4dbda8f016f87ab205d4be69a51e6866ea076fb45c211661b2b68e73a15` | `SubClassOf(<http://www.w3.org/ns/ssn/systems/SurvivalProperty> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000034> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000015> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001819> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000177> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <https://www.commoncoreontologies.org/ont00000319>)))))))))` | SurvivalProperty is modeled as a function because it concerns the system’s capacity to remain viable over time under conditions. The affordance-based realization reflects that survival characteristics emerge from design-enabled processes. |
 | `urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f` | `Sheet1` | 29 | `class_mapping` | `5db7fb7b07d43ae858f318823c2f64e43407419625e58ece12f9dfb3f83224f5` | `SubClassOf(<http://www.w3.org/ns/ssn/systems/SystemCapability> ObjectIntersectionOf(ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001884> <https://www.commoncoreontologies.org/ont00000127>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000144>)))` | SystemCapability is modeled as a specifically dependent continuant or process profile because capabilities are dependent characteristics of a system that describe what it can do, not processes themselves. The use of PerformanceSpecification captures that capabilities are defined relative to stated performance criteria and conditions. |
 | `urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7` | `Sheet1` | 30 | `class_mapping` | `88f002b065588248bb46ba34b62a6c9e6ecd3a5e85320d36d4501a3b3a0c4b47` | `SubClassOf(<http://www.w3.org/ns/ssn/systems/SystemLifetime> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000034> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00001213> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001819> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000177> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <https://www.commoncoreontologies.org/ont00000319>)))))))))` | SystemLifetime is modeled as a function because it characterizes the extent of operational viability rather than a static attribute. Its realization in stasis of operationality reflects that lifetime is manifested as sustained functioning over time. |
-| `urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb` | `Sheet1` | 31 | `class_mapping` | `f05c613dbda3a8cda59297e2e0ccac44bdfbfe2cd5890088971e09ef0e83f677` | `EquivalentClasses(<http://www.w3.org/ns/ssn/Deployment> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedOnPlatform> <http://purl.obolibrary.org/obo/BFO_0000040>) ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>)))` | ssn:Deployment is modeled as a cco:PlannedAct because it involves intentional positioning or installation of systems for a purpose, rather than constituting a structural relation such as parthood. The equivalentTo axiom captures that deploying at least one system on at least one material entity is both necessary and sufficient for being a deployment. |
+| `urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb` | `Sheet1` | 31 | `class_mapping` | `6fda9e44f9cac33751d0eed0afeb088c03ceb0dab73c4296f135030dc4080860` | `EquivalentClasses(<http://www.w3.org/ns/ssn/Deployment> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/deployedSystem> <http://www.w3.org/ns/ssn/System>)))` | SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments. |
 | `urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23` | `Sheet1` | 32 | `class_mapping` | `3db4c188033abac7841a40ef88585754cd5d50b3acca2a7876b36e71c8635b23` | `SubClassOf(<http://www.w3.org/ns/ssn/Input> <https://www.commoncoreontologies.org/ont00000958>)` | Input is mapped to InformationContentEntity because SSN inputs are informational resources made available to procedures, not material participants or process parts. |
 | `urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4` | `Sheet1` | 33 | `class_mapping` | `538cb51989eced139509e2d3c2a8c6e4c2d290eb829ff316c7deb609c83924da` | `SubClassOf(<http://www.w3.org/ns/ssn/Output> <https://www.commoncoreontologies.org/ont00000958>)` | Output is modeled as an information content entity because SSN outputs are informational artifacts produced by executing procedures, regardless of whether they later influence material processes. |
 | `urn:uuid:b1421726-3675-4b2a-9824-150e108157e4` | `Sheet1` | 34 | `class_mapping` | `8a3ad12c4c9f7269f431573e4b69efb66aff9d6b3e276799a27271efc7b98269` | `EquivalentClasses(<http://www.w3.org/ns/ssn/Property> ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000144>))` | ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction. |
@@ -293,8 +293,8 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 - Zero-axiom rows: 6
 - Target-neutral axioms: 32
 - BFO-bearing axioms: 19
-- CCO-bearing axioms: 23
-- Mixed BFO/CCO axioms: 28
+- CCO-bearing axioms: 24
+- Mixed BFO/CCO axioms: 27
 - Disposition reconciliation and canonical serialization: PASS
 - No lossless transformation or weakened projection is approved by this artifact.
 
@@ -368,17 +368,17 @@ This is the maintained authoritative development artifact at the approved produc
 - Path: `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/cco-extension`
 - Direct governed authoritative axioms: 51
-- CCO-bearing axioms: 23
-- Mixed BFO/CCO axioms: 28
+- CCO-bearing axioms: 24
+- Mixed BFO/CCO axioms: 27
 - Subclass axioms: 29
 - Equivalent-class axioms: 7
 - Direct subproperty axioms: 15
 - Property-chain axioms: 0
-- Logical RDF triples: 859
+- Logical RDF triples: 854
 - Ontology declaration triples: 1
 - Import triples: 1
 - Descriptive metadata annotations: 7
-- Total RDF triples: 868
+- Total RDF triples: 863
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`
 - Imported strict-BFO governed axioms: 19
 - Transitively imported alignment-core governed axioms: 32
@@ -388,7 +388,7 @@ This is the maintained authoritative development artifact at the approved produc
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 15858
+- Pinned closure triple count: 15853
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
@@ -403,8 +403,8 @@ This is the maintained authoritative development artifact at the approved produc
 - Ontology declaration triples: 1
 - Import triples: 4
 - Descriptive metadata annotations: 7
-- Governed/structural logical triples: 1040
-- Generated ontology triple count: 1052
+- Governed/structural logical triples: 1035
+- Generated ontology triple count: 1047
 - `SSN2BFO.ttl` is generated from `mappings/SSN2BFO-COMS.xlsx` and must not be edited directly.
 - `coms:Reasoning` remained spreadsheet-only and was not emitted into the ontology.
 
@@ -415,7 +415,7 @@ This is the maintained authoritative development artifact at the approved produc
 | ROBOT command | `robot` (resolved from `PATH`) |
 | candidate closure graph path | temporary validation artifact (`coms-candidate-full-closure.ttl`) |
 | reasoned output path | temporary validation artifact (`coms-candidate-full-closure-reasoned.ttl`) |
-| full candidate closure triple count | 15842 |
+| full candidate closure triple count | 15837 |
 | HermiT return code | 0 |
 | reasoned output produced | yes |
 | `owl:Nothing` count | 0 |
@@ -464,7 +464,7 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet1!28` | `ssn-system:SurvivalProperty` | `rdfs:subClassOf` | no | bfo:Function and bfo:has_realization some (bfo:Process and cco:caused_by some (bfo:Process and bfo:realizes some (cco:Affordance and cco:prescribed_by some cco:ArtifactDesign))) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034) | `ssn-system:SurvivalProperty rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034) .` |
 | `Sheet1!29` | `ssn-system:SystemCapability` | `rdfs:subClassOf` | no | (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) and (cco:condition_described_by some cco:PerformanceSpecification) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001884 https://www.commoncoreontologies.org/ont00000127) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144)) | `ssn-system:SystemCapability rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001884 https://www.commoncoreontologies.org/ont00000127) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144)) .` |
 | `Sheet1!30` | `ssn-system:SystemLifetime` | `rdfs:subClassOf` | no | bfo:Function and bfo:has_realization some (cco:StasisOfArtifactOperationality and (cco:caused_by some (bfo:Process and bfo:realizes some (cco:Affordance and cco:prescribed_by some cco:ArtifactDesign)))) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) https://www.commoncoreontologies.org/ont00001213)) http://purl.obolibrary.org/obo/BFO_0000034) | `ssn-system:SystemLifetime rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) https://www.commoncoreontologies.org/ont00001213)) http://purl.obolibrary.org/obo/BFO_0000034) .` |
-| `Sheet1!31` | `ssn:Deployment` | `owl:equivalentClass` | no | cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228) | `ssn:Deployment owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228) .` |
+| `Sheet1!31` | `ssn:Deployment` | `owl:equivalentClass` | no | cco:PlannedAct and (ssn:deployedSystem some ssn:System) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228) | `ssn:Deployment owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228) .` |
 | `Sheet1!32` | `ssn:Input` | `rdfs:subClassOf` | no | cco:InformationContentEntity | https://www.commoncoreontologies.org/ont00000958 | `ssn:Input rdfs:subClassOf https://www.commoncoreontologies.org/ont00000958 .` |
 | `Sheet1!33` | `ssn:Output` | `rdfs:subClassOf` | no | cco:InformationContentEntity | https://www.commoncoreontologies.org/ont00000958 | `ssn:Output rdfs:subClassOf https://www.commoncoreontologies.org/ont00000958 .` |
 | `Sheet1!34` | `ssn:Property` | `owl:equivalentClass` | no | (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) | ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) | `ssn:Property owl:equivalentClass ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) .` |
@@ -556,10 +556,10 @@ This section records mapping and domain/range property-typing rows after parsing
 
 | Item | Count |
 |---|---:|
-| mappings present in both | 56 |
-| mappings only in COMS | 12 |
-| mappings only in pre-COMS legacy ontology | 12 |
-| class-expression differences | 3 |
+| mappings present in both | 55 |
+| mappings only in COMS | 13 |
+| mappings only in pre-COMS legacy ontology | 13 |
+| class-expression differences | 4 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
 | domain axioms present in both | 11 |
@@ -574,4 +574,4 @@ This section records mapping and domain/range property-typing rows after parsing
 
 ## Runtime
 
-- Runtime seconds: 14.53
+- Runtime seconds: 14.81

@@ -1,0 +1,666 @@
+{
+  "status": "PASS",
+  "repository": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+  "baseline_head": "45b98f30854a623f752a3bbdd1c69df8f0779a82",
+  "head_unchanged": true,
+  "branch_unchanged": "publication/current-sosa-readiness",
+  "index_entries_unchanged": true,
+  "index_entries_sha256": "6fbde9249f118b30c03eae1b8e6da7034276fd690097504782c08b82909571d0",
+  "staged_files": [],
+  "tracked_files_checked": 1855,
+  "expected_tracked_change_count": 13,
+  "tracked_changes": [
+    "SSN2BFO.ttl",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md"
+  ],
+  "unrelated_tracked_files_byte_identical": 1842,
+  "excluded_preexisting_untracked_files_checked": 175,
+  "excluded_preexisting_untracked_files_changed": [],
+  "workbook_before_sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+  "workbook_after_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+  "workbook_changed_archive_members": [
+    "xl/worksheets/sheet1.xml"
+  ],
+  "workbook_changed_cells": [
+    "C31",
+    "D31"
+  ],
+  "all_108_RowIDs_unchanged_and_unique": true,
+  "RowIDs": [
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E2",
+      "row_id": "urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E3",
+      "row_id": "urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E4",
+      "row_id": "urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E5",
+      "row_id": "urn:uuid:2a4f78b4-92cb-4095-9a6b-2ae03e00be4a"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E6",
+      "row_id": "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E7",
+      "row_id": "urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E8",
+      "row_id": "urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E9",
+      "row_id": "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E10",
+      "row_id": "urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E11",
+      "row_id": "urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E12",
+      "row_id": "urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E13",
+      "row_id": "urn:uuid:8897fadf-b70f-4d81-a08c-a072f873f82b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E14",
+      "row_id": "urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E15",
+      "row_id": "urn:uuid:86e97aa4-dc26-4d62-bef6-52cf36869bc8"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E16",
+      "row_id": "urn:uuid:823bbbdf-b4f1-4e45-8b0a-5597306e6b69"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E17",
+      "row_id": "urn:uuid:124e6b06-906a-47be-a459-92babef3992e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E18",
+      "row_id": "urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E19",
+      "row_id": "urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E20",
+      "row_id": "urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E21",
+      "row_id": "urn:uuid:206e2eaa-765b-491b-ad9c-73f144f048a1"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E22",
+      "row_id": "urn:uuid:dbdcee3f-bbdf-4a35-b92e-a14dd26e6239"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E23",
+      "row_id": "urn:uuid:2befdb79-d016-45f8-8c35-69ee93fa731f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E24",
+      "row_id": "urn:uuid:3ac135c9-bfd7-49cf-9c51-4d6e9ed56d87"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E25",
+      "row_id": "urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E26",
+      "row_id": "urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E27",
+      "row_id": "urn:uuid:624eaef2-892a-4b9d-8ed6-08c79571710f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E28",
+      "row_id": "urn:uuid:304f62a7-9160-4857-9c39-04a7215b1bb0"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E29",
+      "row_id": "urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E30",
+      "row_id": "urn:uuid:ad8cba71-f987-4e6a-b9c0-7660d5cbc8a7"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E31",
+      "row_id": "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E32",
+      "row_id": "urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E33",
+      "row_id": "urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E34",
+      "row_id": "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E35",
+      "row_id": "urn:uuid:23915904-0174-4f2f-b6cf-6a8671b92d7e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E36",
+      "row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E37",
+      "row_id": "urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E38",
+      "row_id": "urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E39",
+      "row_id": "urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E40",
+      "row_id": "urn:uuid:98b1044d-6bfe-41d2-89aa-cdc87e524e4c"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E41",
+      "row_id": "urn:uuid:7caa02f4-26a1-4e81-b709-5c2116636f65"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E42",
+      "row_id": "urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E43",
+      "row_id": "urn:uuid:d180e765-d4d1-4578-a33a-6e96308e01db"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E44",
+      "row_id": "urn:uuid:c15208c5-847f-4de3-a456-4037142ca542"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet1.xml",
+      "cell": "E45",
+      "row_id": "urn:uuid:9ea02b02-c86b-4a0b-a56b-47c1dea0bfa4"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E2",
+      "row_id": "urn:uuid:5ec3234d-bd10-4f5b-89f9-f2abb75764ec"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E3",
+      "row_id": "urn:uuid:f293250d-b1e8-4467-8b7d-a94fb2b9b705"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E4",
+      "row_id": "urn:uuid:3734c3b6-e62e-4ae5-be42-8fef0b10d2f4"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E5",
+      "row_id": "urn:uuid:69e972da-23ad-4e50-822b-e41198c95795"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E6",
+      "row_id": "urn:uuid:b16f1d3a-3d10-4b75-9f12-2331e6c46d74"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E7",
+      "row_id": "urn:uuid:01b1aff2-a12b-430b-9775-b43241c3a7cf"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E8",
+      "row_id": "urn:uuid:cbbba7df-22ee-4393-b4fd-46019697192a"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E9",
+      "row_id": "urn:uuid:b5a532fc-5dea-4a47-9323-0a78a849c078"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E10",
+      "row_id": "urn:uuid:e15cfee1-3c8e-4519-bce0-ec62729fd2fd"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E11",
+      "row_id": "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E12",
+      "row_id": "urn:uuid:377fa547-ff5c-4ffa-af6f-40d291ab2ab9"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E13",
+      "row_id": "urn:uuid:79e12baa-9467-4494-bdf3-b6906f5a81a7"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E14",
+      "row_id": "urn:uuid:2018c5db-cb41-4a54-aa97-df5df82f0286"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E15",
+      "row_id": "urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E16",
+      "row_id": "urn:uuid:2ae25d88-9551-45e7-a2b9-7735575e4d8f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E17",
+      "row_id": "urn:uuid:637399a9-a264-49f7-bab8-33f2128646ab"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E18",
+      "row_id": "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E19",
+      "row_id": "urn:uuid:e866de80-683d-4138-a713-be9646d37148"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E20",
+      "row_id": "urn:uuid:8c9662e8-a69c-4ce1-9d17-381ec3cdc162"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E21",
+      "row_id": "urn:uuid:d5712b64-a526-4112-ba23-520ec8dc5066"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E22",
+      "row_id": "urn:uuid:37fac05e-0d70-420d-a0c0-78bc1d87cd63"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E23",
+      "row_id": "urn:uuid:61fc3404-f33a-4c4c-a25c-412d9972016c"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E24",
+      "row_id": "urn:uuid:5ce06556-de99-44be-922d-a3d092a00dbb"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E25",
+      "row_id": "urn:uuid:b4fc5247-7d44-4619-9d0b-8466f45218bf"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E26",
+      "row_id": "urn:uuid:01085646-1b07-4c69-a39a-0c5c8ab53d33"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E27",
+      "row_id": "urn:uuid:0f9d6fa9-00b9-4602-b31d-9e205f53e67d"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E28",
+      "row_id": "urn:uuid:675bb221-ad63-4033-9f22-5190d0b6d545"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E29",
+      "row_id": "urn:uuid:ac95c1e2-0d93-48de-be9d-4defbe6525f0"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E30",
+      "row_id": "urn:uuid:a63a89a9-d9e6-4e7d-ba06-96ff17833866"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E31",
+      "row_id": "urn:uuid:9c14f13e-16c8-4afd-bcee-8b4bb9d3f0ca"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E32",
+      "row_id": "urn:uuid:434602eb-cfc3-4bca-9fb3-92154e87c6bc"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E33",
+      "row_id": "urn:uuid:99f8aba6-abaa-49de-a126-da1573f24c39"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E34",
+      "row_id": "urn:uuid:839fa73d-6601-4b17-9331-062846ba0f3e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E35",
+      "row_id": "urn:uuid:e2d7f509-a5ee-477a-9660-f608b518ea3f"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E36",
+      "row_id": "urn:uuid:f7b8b133-2846-4627-9f8d-1ba39c13b9d1"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E37",
+      "row_id": "urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E38",
+      "row_id": "urn:uuid:265137eb-a279-4f9a-b1b9-e85d7ecb02a7"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E39",
+      "row_id": "urn:uuid:8b87dd5b-298e-4ae7-8724-3778c0a67234"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E40",
+      "row_id": "urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E41",
+      "row_id": "urn:uuid:82ce9316-b7a7-4655-9c98-e16c314a0244"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E42",
+      "row_id": "urn:uuid:bd5a2014-f338-49b8-b7ef-27f5b933d93b"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E43",
+      "row_id": "urn:uuid:5f25dce9-54a0-442e-a9de-f18cd21aab1d"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E44",
+      "row_id": "urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d545f81"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E45",
+      "row_id": "urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E46",
+      "row_id": "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E47",
+      "row_id": "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E48",
+      "row_id": "urn:uuid:6335c13d-fb23-49fd-9662-fd682c79f172"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E49",
+      "row_id": "urn:uuid:287f1392-ca8f-4dc2-9d42-b60b3962adfc"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E50",
+      "row_id": "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E51",
+      "row_id": "urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf549b607"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E52",
+      "row_id": "urn:uuid:ab19659f-7e70-4f35-87f1-46b59ae80884"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E53",
+      "row_id": "urn:uuid:27ab2a4a-15a3-4585-885a-bbac1fe0a5bb"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E54",
+      "row_id": "urn:uuid:766c2e20-d125-448b-bc37-642daebaf088"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E55",
+      "row_id": "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E56",
+      "row_id": "urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E57",
+      "row_id": "urn:uuid:4afaf231-5478-4a50-9a12-0cbf59d78d7e"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E58",
+      "row_id": "urn:uuid:6142726b-21b1-4dba-b5ec-a7d6dca4afab"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E59",
+      "row_id": "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E60",
+      "row_id": "urn:uuid:ebf4115f-fe96-4959-89a4-98c3a6031cff"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E61",
+      "row_id": "urn:uuid:b7873da3-fc78-4a2a-92e1-ef83efb6d600"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E62",
+      "row_id": "urn:uuid:51c8556f-9b82-4113-a9d7-c733e70cf8cd"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E63",
+      "row_id": "urn:uuid:409597ab-258b-47fd-9f51-c50d22b405bd"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E64",
+      "row_id": "urn:uuid:418db51e-342f-441d-8706-00a107266dcc"
+    },
+    {
+      "sheet_member": "xl/worksheets/sheet2.xml",
+      "cell": "E65",
+      "row_id": "urn:uuid:763e4066-4999-491d-8f7e-7dc0a86eeebc"
+    }
+  ],
+  "assessment_records_checked": 91,
+  "assessment_records_changed": [
+    "http://www.w3.org/ns/ssn/Deployment"
+  ],
+  "other_90_assessment_records_identical": true,
+  "all_assessment_RowID_bindings_preserved": true,
+  "assessment_top_level_fields_unchanged": true,
+  "Deployment_assessment_changed_fields": [
+    "assessment_outcome",
+    "evidence",
+    "human_decision_record",
+    "rationale",
+    "review_state"
+  ],
+  "assessment_counts": {
+    "review_state": {
+      "unreviewed": 68,
+      "final": 23
+    },
+    "assessment_outcome": {
+      "unreviewed": 68,
+      "formal_mapping_adopted": 16,
+      "no_direct_mapping": 5,
+      "inheritance_sufficient": 2
+    }
+  },
+  "protected_files": {
+    "pinned_sources_and_target": {
+      "files_checked": 6,
+      "changed": []
+    },
+    "current_source_archives": {
+      "files_checked": 21,
+      "changed": []
+    },
+    "separate_sosa_tracks": {
+      "files_checked": 53,
+      "changed": []
+    },
+    "prior_human_decisions": {
+      "files_checked": 94,
+      "changed": []
+    },
+    "prior_semantic_history": {
+      "files_checked": 88,
+      "changed": []
+    },
+    "prior_documentary_history": {
+      "files_checked": 69,
+      "changed": []
+    }
+  },
+  "products": [
+    {
+      "product": "integrated",
+      "path": "SSN2BFO.ttl",
+      "sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "matches_focused_validated_candidate": true,
+      "same_as_baseline": false
+    },
+    {
+      "product": "alignment_core",
+      "path": "releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl",
+      "sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "matches_focused_validated_candidate": true,
+      "same_as_baseline": true
+    },
+    {
+      "product": "strict_bfo_mapping",
+      "path": "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+      "sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "matches_focused_validated_candidate": true,
+      "same_as_baseline": true
+    },
+    {
+      "product": "cco_extension",
+      "path": "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl",
+      "sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "matches_focused_validated_candidate": true,
+      "same_as_baseline": false
+    }
+  ],
+  "new_task_file_count": "Not frozen: retained full-gate evidence and completion reporting still in progress; this audit deliberately does not assert a final untracked task-file count.",
+  "write_scope": "Only this external audit JSON was written; no repository files or Git index were changed."
+}

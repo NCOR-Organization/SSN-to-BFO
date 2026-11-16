@@ -1,7 +1,7 @@
 {
   "binding": {
     "assessment_tool_sha256": "9e16fe3fb80a03ef327e9dabdf51ca835dfb9ddc10029043c9e69fb8ebfa176e",
-    "content_sha256": "73c28856a7b2a0e3a9ca649f6a06ba730e44a97121e09ce15c7be258d18fb059",
+    "content_sha256": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -13,7 +13,7 @@
       "schema_version": 2
     },
     "input_sha256": {
-      "SSN2BFO.ttl": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+      "SSN2BFO.ttl": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
       "config/current-documentary-workbook-baseline.json": "3eab7aa7ce498efae7b1d31a33852134206d3ee7c63c804e023ae38d1de063e8",
       "config/current-ssn-sosa-historical-finals.json": "6198ca1aa91b594f55d15a1e82673c06e3f4a21730fe393da04516ae87482769",
       "config/current-ssn-sosa-scope.json": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
@@ -26,8 +26,8 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
-      "mappings/current-ssn-sosa-assessment.json": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb",
+      "mappings/SSN2BFO-COMS.xlsx": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+      "mappings/current-ssn-sosa-assessment.json": "3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
       "reports/actuation-range-mapping-correction-evaluation.md": "898ea9e582f4729c12d8864dbed179dbc848c25eb87c00a71205f5878bac07fb",
@@ -92,6 +92,11 @@
       "reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json": "bf2e3711f9c9f7abb0e94de916cd3b3643342220ceb26d393b9985abd56d3156",
       "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json": "4c2e704a1b59bbecd4fcda20a0898582df77fd508cf52ec39d75b2b9594ae3a4",
       "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290",
+      "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json": "54ef6b8286397f325a2c260e7347a33cda62950b4258de545ee7f92930c90d52",
+      "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json": "26a6386e65ac336615093c1cf18ccf031a6669ab04795bb5421029c2b550393d",
+      "reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt": "845abd5f9ad369955ce37f687c6f195de41c24224702949140ff77b17749e1e4",
+      "reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb",
+      "reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json": "7072b2136961ed69d4f93c9854510a85b40e105506596c9c2be966c93466fc35",
       "reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt": "1fd946ac0c7e582beb35629284edaa5d29f3389c24e6cfe42b72e2994b6338c0",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt": "368d4c83b3f6757d98db31eedef139622793a28dc448de95326816b97553eaab",
       "reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md": "5398c1ae282f9ba9c5eff4e051005b6fb7d60e57c5f1137a64dbe5c4bd9472ea",
@@ -107,6 +112,7 @@
       "reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log": "ff3db5cabb6d7d0ed6ed6e11d218f67e74efa5ec3592aa868bd870560cf4074b",
       "reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json": "d999ed7feb3a2f58e7e91340e5919ad5b40678b85e10deee4d53edafad2ea0fb",
       "reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json": "ef15f62ec3e647f9658f1eb5106110058935a0bbee3ea412bc60d49552eeca40",
+      "reports/current-semantic-workbook/transitions/bd69b546-6ef2-4704-8f05-325ec9bc1862.json": "76b2eb952c2ad9a1a15630b92a74c6c6319a94f44255653c4ff696749ceaf6d7",
       "reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json": "4efadf29f7cebefd8a62b0d5ae42e5ed2e74b64b810f83fd85b73f3011e7b55b",
       "reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json": "e6ca14409fbd4df59ecbcbf3c36fb09cc762919225d8e0d288f755c723d9d2b9",
       "reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json": "e293bfe2c70379bed3466ecf9db5c4b1504c3d4cb5ae060a5d1aaa8089002118",
@@ -114,8 +120,10 @@
       "reports/current-semantic-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
       "reports/current-semantic-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
       "reports/current-semantic-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-semantic-workbook/versions/825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d.xlsx": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
       "reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
       "reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+      "reports/current-semantic-workbook/versions/e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd.xlsx": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
       "reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx": "f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59",
       "reports/current-ssn-sosa-semantic-validation.md": "c2573fd75cc043c44db7048aa5a365cbcbee412e7a0b1d2c6511e8b6118f2610",
       "reports/hasproperty-observes-mapping-review.md": "12787f0db5160a94d71c74abd17a86ab4da51515e5661faa9a421454e1c4707d",
@@ -198,10 +206,10 @@
     "assertion_bearing_rows": 102,
     "assessment_outcomes": {
       "deferred": 0,
-      "formal_mapping_adopted": 15,
+      "formal_mapping_adopted": 16,
       "inheritance_sufficient": 2,
       "no_direct_mapping": 5,
-      "unreviewed": 69
+      "unreviewed": 68
     },
     "assessment_record_count": 91,
     "chain_heads": 2,
@@ -217,8 +225,8 @@
     "direct_object_properties": 24,
     "expression_occurrences": {
       "intersection": 86,
-      "named": 193,
-      "some": 96,
+      "named": 192,
+      "some": 95,
       "union": 15
     },
     "mapping_repertoire_rows": {
@@ -233,8 +241,8 @@
     },
     "review_states": {
       "deferred": 0,
-      "final": 22,
-      "unreviewed": 69
+      "final": 23,
+      "unreviewed": 68
     },
     "rows_with_expression_form": {
       "intersection": 35,

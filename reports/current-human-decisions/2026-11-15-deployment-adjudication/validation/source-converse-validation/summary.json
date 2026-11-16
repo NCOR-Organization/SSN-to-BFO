@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "source_only": true,
+  "mapping_axioms_loaded": 0,
+  "target_ontologies_loaded": 0,
+  "owl2_dl_profile": true,
+  "consistent": true,
+  "expectations": [
+    {
+      "entailed": true,
+      "id": "native-inverse-universal-entails-converse",
+      "passed": true
+    },
+    {
+      "entailed": false,
+      "id": "source-does-not-require-a-system-witness",
+      "passed": true
+    }
+  ],
+  "proof": "If x deployedSystem y and y is System, inverseOf gives y hasDeployment x; System subclass (hasDeployment only Deployment) implies x is Deployment. No mapping equivalence is used.",
+  "strict_weakening_relative_to_full_closure": "Baseline entails the new equivalence: old forward implication implies PlannedAct and some deployedSystem.System, while the source-only converse entails the reverse. Candidate does not entail the old equivalence because candidate permits a platform-free Deployment, as confirmed in focused-validation. Therefore this is a strict logical weakening relative to the retained source/mapping closure.",
+  "no_source_or_repository_changes": true
+}

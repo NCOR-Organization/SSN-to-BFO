@@ -1,0 +1,237 @@
+{
+  "baseline_workbook_sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
+  "candidate_workbook_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+  "counts": {
+    "AUTHORITATIVE_AXIOM_COUNT": 102,
+    "GOVERNED_ROW_COUNT": 108,
+    "ZERO_AXIOM_ROW_COUNT": 6
+  },
+  "deterministic_generation": true,
+  "focused_entailments": {
+    "baseline": [
+      {
+        "entailed": true,
+        "id": "Deployment-PlannedAct",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Deployment-has-System",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-forward",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-reverse",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-still-sufficient",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-no-longer-necessary",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "material-platform-not-required",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-platform-not-required",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "any-platform-filler-not-required",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "platform-free-Deployment-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Deployment-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-platform-universal-retained",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-system-universal-retained",
+        "passed": true
+      }
+    ],
+    "candidate": [
+      {
+        "entailed": true,
+        "id": "Deployment-PlannedAct",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Deployment-has-System",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-forward",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-reverse",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-still-sufficient",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "old-expression-no-longer-necessary",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "material-platform-not-required",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "source-platform-not-required",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "any-platform-filler-not-required",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "platform-free-Deployment-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Deployment-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-platform-universal-retained",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-system-universal-retained",
+        "passed": true
+      }
+    ]
+  },
+  "interpretation": "Platform witness is necessary in baseline; candidate permits a satisfiable Deployment with no deployedOnPlatform fillers. Native universal restrictions and inverse relationships are retained.",
+  "logical_delta": {
+    "added": "EquivalentClasses(ssn:Deployment ObjectIntersectionOf(cco:PlannedAct ObjectSomeValuesFrom(ssn:deployedSystem ssn:System)))",
+    "removed": "EquivalentClasses(ssn:Deployment ObjectIntersectionOf(cco:PlannedAct ObjectSomeValuesFrom(ssn:deployedSystem ssn:System) ObjectSomeValuesFrom(ssn:deployedOnPlatform bfo:MaterialEntity)))"
+  },
+  "product_deltas": [
+    {
+      "baseline_sha256": "d98206745a1d4383c0f79125f1681af83b25e2f7b314c8f42cd8255d8185eabd",
+      "baseline_triples": 1052,
+      "byte_identical": false,
+      "candidate_sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "candidate_triples": 1047,
+      "only_approved_axiom_replacement": true,
+      "product": "integrated"
+    },
+    {
+      "baseline_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "baseline_triples": 64,
+      "byte_identical": true,
+      "candidate_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "candidate_triples": 64,
+      "only_approved_axiom_replacement": true,
+      "product": "alignment_core"
+    },
+    {
+      "baseline_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "baseline_triples": 134,
+      "byte_identical": true,
+      "candidate_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "candidate_triples": 134,
+      "only_approved_axiom_replacement": true,
+      "product": "strict_bfo_mapping"
+    },
+    {
+      "baseline_sha256": "aae3d5a2b45f1a19fcfab2ba90ee7945b2c662329610c865793263096dfa875e",
+      "baseline_triples": 868,
+      "byte_identical": false,
+      "candidate_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "candidate_triples": 863,
+      "only_approved_axiom_replacement": true,
+      "product": "cco_extension"
+    }
+  ],
+  "product_validation": {
+    "baseline/integrated": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/alignment_core": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/cco_extension": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/integrated": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/strict_bfo_mapping": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    }
+  },
+  "status": "PASS"
+}

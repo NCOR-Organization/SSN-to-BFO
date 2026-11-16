@@ -1,0 +1,37 @@
+Implement the approved `ssn:Deployment` mapping revision in the current SSN/SOSA-to-BFO/CCO repository.
+
+Baseline commit: `45b98f30854a623f752a3bbdd1c69df8f0779a82`
+
+Authoritative workbook: `mappings/SSN2BFO-COMS.xlsx`
+
+RowID: `urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb`
+
+**Approved semantic decision:** An SSN Deployment need not occur on a Platform. The source definition explicitly makes Platform involvement optional.
+
+Replace the current equivalence:
+
+`ssn:Deployment ≡ cco:PlannedAct ⊓ ∃ssn:deployedSystem.ssn:System ⊓ ∃ssn:deployedOnPlatform.bfo:MaterialEntity`
+
+with:
+
+`ssn:Deployment ≡ cco:PlannedAct ⊓ ∃ssn:deployedSystem.ssn:System`
+
+Keep `owl:equivalentClass`.
+
+Update the row's `coms:Reasoning` to explain the purposeful PlannedAct interpretation, the necessary deployed-System witness, the source-supported converse, and why Platform involvement is optional.
+
+Requirements:
+
+1. Record this as an explicit approved human semantic decision, linked to the stable RowID.
+2. Preserve the original assertion, rationale, and prior decision history in existing governance artifacts.
+3. Use the established authoritative-workbook update and deterministic generation workflows.
+4. Regenerate affected ontology products and verify that the logical delta is confined to this approved change and its entailment consequences.
+5. Preserve all other mapping assertions, assessment statuses, and RowIDs.
+6. Run applicable OWL 2 DL, reasoner, documentary, generation, and mapping-integrity checks.
+7. Compare any full-gate failures against the known baseline; do not silently waive or repair unrelated failures.
+8. Do not modify SOSA-2023 or unrelated mappings.
+9. Preserve all excluded local files.
+
+Report the exact changes, semantic delta, reasoning outcomes, validation results, and preservation evidence.
+
+Do not stage, commit, or push. Stop for review.

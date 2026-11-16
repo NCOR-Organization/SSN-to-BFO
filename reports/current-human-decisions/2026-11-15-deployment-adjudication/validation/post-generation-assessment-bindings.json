@@ -1,0 +1,32 @@
+{
+  "bindings": {
+    "coverage": {
+      "SSN2BFO.ttl": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "content_sha256": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
+      "input_count": 185,
+      "workbook": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd"
+    },
+    "human-review": {
+      "SSN2BFO.ttl": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "content_sha256": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
+      "input_count": 185,
+      "workbook": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd"
+    },
+    "rationale-proposals": {
+      "SSN2BFO.ttl": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "content_sha256": "44caa8f212357ed64a7de077dc282a45c84458fcd63d98f838279a7d1df79470",
+      "input_count": 185,
+      "workbook": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd"
+    }
+  },
+  "input_mismatches": [],
+  "report_files": {
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "4d42960b719599f6ac181d271a86af2fa8f55a1141e9ffc27ea102051c8c005f",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "b267d2edacbc2bbfc29d966972642bfc7d8243c5fbbebf801ee6ddaf3bf0bc5d",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "60cd9f3f3225222e6013b2e013b64d97adba0488811286346db9c71f98178985",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "d5e4f2580c114d4f4a8c886caf9a44ffbc7dc4c5c878033364a730d9f7de1813",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "103d1cf1ffa067096110eb1ba858725775a4df492a8bf83e42656967a90d9d43",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "3d230bdbac7a5546e0fc061572a983815f86e198d3a2e98e547011bbb3b1134c"
+  },
+  "status": "PASS"
+}

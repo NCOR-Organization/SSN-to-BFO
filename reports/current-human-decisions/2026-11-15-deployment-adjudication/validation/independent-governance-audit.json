@@ -1,0 +1,70 @@
+{
+  "status": "PASS_WITH_DOCUMENTARY_CAVEAT",
+  "phase": "isolated candidate governance; generation still in progress",
+  "source_iri": "http://www.w3.org/ns/ssn/Deployment",
+  "row_id": "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb",
+  "only_changed_workbook_cells": [
+    "C31",
+    "D31"
+  ],
+  "changed_zip_members": [
+    "xl/worksheets/sheet1.xml"
+  ],
+  "only_changed_assessment_record": [
+    "http://www.w3.org/ns/ssn/Deployment"
+  ],
+  "assessment_counts": {
+    "unreviewed:unreviewed": 68,
+    "final:formal_mapping_adopted": 16,
+    "final:no_direct_mapping": 5,
+    "final:inheritance_sufficient": 2
+  },
+  "decision_id": "urn:uuid:b85b63f3-4ab3-4d31-8773-3f376111310b",
+  "transition_id": "bd69b546-6ef2-4704-8f05-325ec9bc1862",
+  "human_decision_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "hash_bound_evidence_verified": [
+    {
+      "field": "approved_instructions",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt",
+      "sha256": "845abd5f9ad369955ce37f687c6f195de41c24224702949140ff77b17749e1e4"
+    },
+    {
+      "field": "assessment_snapshot",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json",
+      "sha256": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb"
+    },
+    {
+      "field": "before_after_comparison",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json",
+      "sha256": "7072b2136961ed69d4f93c9854510a85b40e105506596c9c2be966c93466fc35"
+    },
+    {
+      "field": "previous_review_packet",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-before-review-packet.json",
+      "sha256": "55eba0fc09bde79dd887b53756f1429db2e3a5d72b402d399e53481cd8f17de5"
+    },
+    {
+      "field": "review_packet_snapshot",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json",
+      "sha256": "54ef6b8286397f325a2c260e7347a33cda62950b4258de545ee7f92930c90d52"
+    }
+  ],
+  "preserved_original_assertion_rationale_assessment": true,
+  "index_entries_unchanged": true,
+  "tracked_changes_at_inspection": [
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md"
+  ],
+  "protected_existing_tracked_files_checked": 286,
+  "protected_existing_tracked_changes": [],
+  "source_supported_converse_independent_of_mapping": true,
+  "rationale_review": "Each substantive statement aligns with approved target: PlannedAct is explicitly an alignment interpretation; existence of a System is distinguished from source universal-only constraints; converse has independent source-only HermiT evidence; absence of a platform requirement does not forbid platform-based deployments. No additional mapping condition introduced.",
+  "documentary_caveat": "Deployment retains baseline notes/review fields saying \"No semantic change is adopted\" and \"unresolved for the ontological decision\". New final status, approved rationale, decision record and preserved original packet unambiguously distinguish current decision from historical review; the inherited wording is stale if presented as current status. Cross-track evidence references are inherited historical context, not relied on by the new semantic rationale.",
+  "excluded_files_scope": "175 excluded files are intentionally absent from isolated clone; main-repository preservation must be checked after application."
+}

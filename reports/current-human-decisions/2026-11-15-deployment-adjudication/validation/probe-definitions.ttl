@@ -1,0 +1,35 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+<urn:deployment-adjudication-probe:NewTarget> a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00000228> _:Nd373ad8448ce4909913dc3cd0a5aa98f ) ] .
+
+<urn:deployment-adjudication-probe:OldTarget> a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00000228> _:Nd373ad8448ce4909913dc3cd0a5aa98f [ a owl:Restriction ;
+                        owl:onProperty ssn:deployedOnPlatform ;
+                        owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040> ] ) ] .
+
+<urn:deployment-adjudication-probe:OnlyPlatformFillers> a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Platform ;
+            owl:onProperty ssn:deployedOnPlatform ] .
+
+<urn:deployment-adjudication-probe:OnlySystemFillers> a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:allValuesFrom ssn:System ;
+            owl:onProperty ssn:deployedSystem ] .
+
+<urn:deployment-adjudication-probe:PlatformFreeDeployment> a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ssn:Deployment [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty ssn:deployedOnPlatform ;
+                                owl:someValuesFrom owl:Thing ] ] ) ] .
+
+_:Nd373ad8448ce4909913dc3cd0a5aa98f a owl:Restriction ;
+    owl:onProperty ssn:deployedSystem ;
+    owl:someValuesFrom ssn:System .

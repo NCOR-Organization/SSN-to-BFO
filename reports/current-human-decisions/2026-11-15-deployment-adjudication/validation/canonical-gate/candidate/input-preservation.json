@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "input_file_count": 1890,
+  "gate_input_manifest_sha256": "e885edab93a52c9db1a02f31cb0cbfc2bece98d95e4415004fd301ae8a62eba7",
+  "mismatches": {
+    "candidate_after_gate": [],
+    "main_current": []
+  }
+}

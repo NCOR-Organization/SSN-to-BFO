@@ -1,0 +1,100 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt",
+    "sha256": "845abd5f9ad369955ce37f687c6f195de41c24224702949140ff77b17749e1e4"
+  },
+  "assessment_outcome": "formal_mapping_adopted",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json",
+    "record_sha256": "daa15d07652743a4ef8560675a00e384779afaefce148f329944d1c981852225",
+    "sha256": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb"
+  },
+  "authority_scope": "Explicit human approval of the current SSN/SOSA Deployment revision. Only this term is finalized; the separately governed SOSA-2023 track and all other mapping decisions are unchanged.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "before_after_comparison": {
+    "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json",
+    "sha256": "7072b2136961ed69d4f93c9854510a85b40e105506596c9c2be966c93466fc35"
+  },
+  "decision_basis": "formal_mapping_approval",
+  "decision_date": "2026-11-15",
+  "decision_id": "urn:uuid:b85b63f3-4ab3-4d31-8773-3f376111310b",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!31",
+    "imports/ssn.ttl#http://www.w3.org/ns/ssn/Deployment",
+    "imports/cco.ttl",
+    "reports/sosa-next-crosswalk-reconciliation.md",
+    "mappings/SOSA-next-to-BFO-COMS.xlsx",
+    "reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt",
+    "reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json"
+  ],
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": true,
+    "direct_mapping_row_ids": [
+      "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
+    ],
+    "explicit_blank": false,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/Deployment",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "a3bdfb7a67f38f4b819a850c22c776eff811e4438a1839388a068137f4192635",
+  "formal_mapping_approved": true,
+  "formal_mapping_assertions": [
+    {
+      "predicate": "owl:equivalentClass",
+      "row_id": "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb",
+      "target": "cco:PlannedAct and (ssn:deployedSystem some ssn:System)"
+    }
+  ],
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb"
+  ],
+  "previous_formal_mapping_assertions": [
+    {
+      "predicate": "owl:equivalentClass",
+      "row_id": "urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb",
+      "target": "cco:PlannedAct and (ssn:deployedSystem some ssn:System) and (ssn:deployedOnPlatform some bfo:MaterialEntity)"
+    }
+  ],
+  "previous_review_packet": {
+    "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-before-review-packet.json",
+    "sha256": "55eba0fc09bde79dd887b53756f1429db2e3a5d72b402d399e53481cd8f17de5"
+  },
+  "question_response": "SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments.",
+  "rationale": "SSN defines Deployment as deploying one or more Systems for a particular purpose and explicitly states that deployment may occur on a Platform. The alignment interprets purposeful positioning or installation of Systems as a CCO PlannedAct. The restriction ssn:deployedSystem some ssn:System requires at least one deployed System, reflecting the source definition's one-or-more commitment; the source universal restriction alone does not require such a witness. The converse is supported by the source axioms: ssn:hasDeployment is inverse to ssn:deployedSystem, and ssn:System restricts all hasDeployment values to ssn:Deployment. Thus an individual related by deployedSystem to a System is a Deployment, including an individual satisfying the proposed PlannedAct intersection. Platform involvement is optional, so a deployedOnPlatform existential is not a necessary condition. The retained source universal restriction still classifies any deployedOnPlatform value of a Deployment as a Platform. Removing the mandatory Platform witness does not prohibit Platform-based deployments.",
+  "review_packet_scope": "Approved-candidate packet reconstructed using the unchanged unresolved assessment question and exact approved workbook. The original expression and original packet are retained separately.",
+  "review_packet_snapshot": {
+    "item_sha256": "54ef6b8286397f325a2c260e7347a33cda62950b4258de545ee7f92930c90d52",
+    "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json",
+    "sha256": "54ef6b8286397f325a2c260e7347a33cda62950b4258de545ee7f92930c90d52"
+  },
+  "review_question": "Are an actual System and material Platform necessary for every Deployment, and are those conditions sufficient to distinguish Deployment from other PlannedActs?",
+  "review_state": "final",
+  "review_timestamp": "2026-11-15T22:24:29.306783-05:00",
+  "reviewer_identity": "Alec Sculley",
+  "reviewer_identity_provenance": "Exact reviewer identity Alec Sculley retained from the explicit human instruction in this conversation.",
+  "schema_version": 1,
+  "semantic_change_kind": "Remove the mandatory Platform existential from the equivalent-class expression; retain both equivalence directions and the deployed-System witness.",
+  "source_iri": "http://www.w3.org/ns/ssn/Deployment",
+  "timestamp_scope": "Actual encoding timestamp for the explicit human adjudication in this conversation."
+}
