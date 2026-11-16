@@ -1,0 +1,51 @@
+# Apply Approved COMS Semantic Rationales — Batch 1
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Scope: Current SSN/SOSA mappings only.
+
+Use the existing 10-row rationale proposal table and its RowIDs.
+
+## Approved changes
+
+**1. `implementedBy` / `implements` — two rows**
+
+Use the same semantic justification for both inverse properties.
+
+Explain that:
+
+- `implementedBy` relates a Procedure to its implementing System; `implements` expresses the inverse.
+- The SSN source restriction `Procedure ⊑ ∀implementedBy.System` supports classifying implementers as Systems.
+- The process-mediated interpretation treats a System's participation as agent in a process prescribed by a Procedure as sufficient for inferring the implementation relation.
+- This does not identify implementation with a direct CCO prescription relation between the Procedure and System.
+- The process-mediated condition is sufficient, not necessary; an implementation relation does not imply that a particular execution has occurred.
+
+Preserve the distinction between the retained OWL domain axiom and external-rule coverage. Keep implementation mechanics and OWL 2 DL diagnostics in their existing documentation.
+
+**2. `hasInput` / `hasOutput` — four rows**
+
+- Approve the two proposed domain rationales as written.
+- Revise the two range rationales to explain that their classifications are already entailed by the combination of the adopted global domain axioms and the source ontology's class-local universal restrictions.
+- Explain why the explicit range assertions are retained even though they are logically redundant in that context.
+- Preserve the semantic rejection of direct CCO `has_input` and `has_output` superproperty mappings.
+
+**3. `madeBySensor` / `madeObservation` — four rows**
+
+Approve the four proposed domain/range rationales as written.
+
+## Preservation requirements
+
+1. Replace only the ten approved `coms:Reasoning` cells.
+2. Preserve all mapping predicates, targets, RowIDs, and assessment statuses.
+3. Use the existing documentary transition workflow.
+4. Preserve prior rationale text and decision history in existing tracked records.
+5. Do not add new semantic decisions or reopen previous decisions.
+6. Do not modify SOSA-2023 artifacts.
+7. Verify that all generated ontology products remain logically and byte-for-byte unchanged.
+8. Run focused documentary, authentication, and mapping-integrity checks.
+9. Do not repair unrelated infrastructure or validation failures.
+10. Do not stage, commit, tag, or push.
+
+Report the exact before/after rationale text for all ten rows, preservation evidence, and validation outcomes.
+
+Stop if documentary updating requires an unapproved semantic change.

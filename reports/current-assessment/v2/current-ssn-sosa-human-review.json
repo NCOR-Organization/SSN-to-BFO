@@ -1,7 +1,7 @@
 {
   "binding": {
     "assessment_tool_sha256": "9e16fe3fb80a03ef327e9dabdf51ca835dfb9ddc10029043c9e69fb8ebfa176e",
-    "content_sha256": "54b28f1c9ec8b6d73e2fe6adb108eaa271d949e8abb3585dfc80258be2d93615",
+    "content_sha256": "73c28856a7b2a0e3a9ca649f6a06ba730e44a97121e09ce15c7be258d18fb059",
     "input_scope": {
       "custody": "authenticated_reachable_authorities",
       "outputs": "reports/current-assessment/v2",
@@ -26,7 +26,7 @@
       "legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx": "d16dd687b94ae94fc79566b3b84189d048f920ae936e082d63d40dfea9522bc4",
       "mappings/SOSA-next-to-BFO-COMS.xlsx": "f3d81bad4dc3aa3cb2396571a4947951c1d443693135ccdca6c2787d074bc685",
       "mappings/SOSA-next-to-RO-COMS.xlsx": "87855d69542209411c5cde638bca83c225df245c4d4bf4a66fa0716f33911355",
-      "mappings/SSN2BFO-COMS.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
+      "mappings/SSN2BFO-COMS.xlsx": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
       "mappings/current-ssn-sosa-assessment.json": "7d24058c14a0d86ff8362cc5d81b3a51e1434638ae252f53b2fbbfc173a132fb",
       "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
       "reports/actuation-agent-property-mapping-deferral.md": "d0779aebb49280a7878d560f651ebf742674ed27eba4700b30fa9488afdf0b22",
@@ -44,12 +44,17 @@
       "reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt": "fe6510bb87e0afa322cf851656ff2358066347226832035b1c3e1445fea8d228",
       "reports/current-documentary-workbook/reasoning-completion/audit-source.md": "aa91f079eea89a27acb64bb40c0cdc3d9c7938b8b019dc31ad4ba933bfd49264",
       "reports/current-documentary-workbook/reasoning-completion/catalog.json": "edc6972788cf387946a187ea24ae97141d5da8abaae5392ee0ec1d6677203b21",
+      "reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/authorized-instruction.txt": "c36c6f53ba08930b710085f79e5ffef7d2dfb47d1be632fd37cc9c50a4150d5d",
+      "reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/rationale-changes.json": "6b83e53dbd61f8f467d15188430fe0c7b73ab6edb2b6c62d5fecab65567e30a4",
+      "reports/current-documentary-workbook/updates/28022a81-0a85-485d-be5e-a75cc61e0ab5.json": "02c8e56347730efd29de5caebc25f8b9edee30cadcb9bd67277bcd2885cef2ea",
       "reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json": "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e1",
       "reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json": "4658ad16ed1a6334e692fff5288d79617de48c6d529c1efe53836d5ce5d1cc38",
       "reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json": "e81123e1c2918618ee75e55d725409b7885c4e2e5f6fbb6bfb9509636c43a4d3",
       "reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx": "2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c",
       "reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx": "37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e",
+      "reports/current-documentary-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
       "reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx": "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c",
+      "reports/current-documentary-workbook/versions/825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d.xlsx": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
       "reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
       "reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx": "e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6",
       "reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt": "1aeea1d5ba16e685c726f5cbfb8df439b14438d9208f5929dd53eb0dc6f69ea1",
@@ -224,7 +229,7 @@
       "current_mapping_state": [
         {
           "assertion_status": "explicit_blank",
-          "existing_rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+          "existing_rationale": "SSN implementedBy relates a Procedure to its implementing System; implements expresses the inverse relationship. The source restriction Procedure ⊑ ∀implementedBy.System supports classifying implementers as Systems. The retained implements domain axiom makes System typing global for the implementing endpoint. Under the process-mediated interpretation, a System's participation as agent in a process prescribed by a Procedure is sufficient for inferring both implementation directions. This condition is sufficient, not necessary: an implementation relation does not imply that a particular execution has occurred. Implementation is therefore not identified with a direct CCO prescription relation between the Procedure and System. The implementedBy OWL predicate and target remain deliberately blank, with process-mediated inference supplied by the external rule (rules/ssn-implementation-mapping.rq). The implements row retains its OWL domain axiom, separately from that external-rule coverage.",
           "expression_forms": {},
           "location": "Sheet2!57",
           "predicate": "",
@@ -2552,7 +2557,7 @@
       "current_mapping_state": [
         {
           "assertion_status": "asserted",
-          "existing_rationale": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+          "existing_rationale": "SSN implementedBy relates a Procedure to its implementing System; implements expresses the inverse relationship. The source restriction Procedure ⊑ ∀implementedBy.System supports classifying implementers as Systems. The retained implements domain axiom makes System typing global for the implementing endpoint. Under the process-mediated interpretation, a System's participation as agent in a process prescribed by a Procedure is sufficient for inferring both implementation directions. This condition is sufficient, not necessary: an implementation relation does not imply that a particular execution has occurred. Implementation is therefore not identified with a direct CCO prescription relation between the Procedure and System. The implementedBy OWL predicate and target remain deliberately blank, with process-mediated inference supplied by the external rule (rules/ssn-implementation-mapping.rq). The implements row retains its OWL domain axiom, separately from that external-rule coverage.",
           "expression_forms": {
             "named": 1
           },
@@ -34003,7 +34008,7 @@
       "current_mapping_state": [
         {
           "assertion_status": "asserted",
-          "existing_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "existing_rationale": "SOSA defines madeBySensor as the relation from an Observation to the Sensor that made it. The domain axiom applies this endpoint meaning to every use of the relation: every subject of this relation is inferred to be a sosa:Observation. This is an explicit OWL typing commitment based on the source definition and its schema:domainIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:has_agent inclusion is a separate mapping.",
           "expression_forms": {
             "named": 1
           },
@@ -34015,7 +34020,7 @@
         },
         {
           "assertion_status": "asserted",
-          "existing_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "existing_rationale": "SOSA defines madeBySensor as the relation from an Observation to the Sensor that made it. The range axiom applies this endpoint meaning to every use of the relation: every object of this relation is inferred to be a sosa:Sensor. This is an explicit OWL typing commitment based on the source definition and its schema:rangeIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:has_agent inclusion is a separate mapping.",
           "expression_forms": {
             "named": 1
           },
@@ -34258,7 +34263,7 @@
       "current_mapping_state": [
         {
           "assertion_status": "asserted",
-          "existing_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "existing_rationale": "SOSA defines madeObservation as the relation from a Sensor to an Observation made by that Sensor. The domain axiom applies this endpoint meaning to every use of the relation: every subject of this relation is inferred to be a sosa:Sensor. This is an explicit OWL typing commitment based on the source definition and its schema:domainIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:agent_in inclusion is a separate mapping.",
           "expression_forms": {
             "named": 1
           },
@@ -34270,7 +34275,7 @@
         },
         {
           "assertion_status": "asserted",
-          "existing_rationale": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+          "existing_rationale": "SOSA defines madeObservation as the relation from a Sensor to an Observation made by that Sensor. The range axiom applies this endpoint meaning to every use of the relation: every object of this relation is inferred to be a sosa:Observation. This is an explicit OWL typing commitment based on the source definition and its schema:rangeIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:agent_in inclusion is a separate mapping.",
           "expression_forms": {
             "named": 1
           },

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b",
+  "workbook_sha256": "825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d",
   "generator_sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
@@ -1022,7 +1022,7 @@
       "source_expression_sha256": "60b56bf1da2a86512e40747f2a2037968b757e2c9be7abf50ea4910098d03a67",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
+      "reasoning": "ssn:hasOutput links a Procedure to information reported from it. A Procedure specifies how an activity is carried out and is represented here as directive information content, making sosa:Procedure the intended subject class. This domain axiom applies that classification to every subject of the relation; it does not require every Procedure to have an output. cco:has_output instead relates a process to a continuant required at its completion. Treating the procedure-level relation as its subproperty would impose process typing on the Procedure, conflating the specification with its execution.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:f9e3e9bae942c365fd53f52ede02164deff53aa65f5d20a1efa91cd54df7724f",
@@ -2230,7 +2230,7 @@
       "source_expression_sha256": "7e3f2b33b64788358236504d3e06e12bd7e0231949e52f31e801908d7e55f1db",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "reasoning": "SOSA defines madeBySensor as the relation from an Observation to the Sensor that made it. The domain axiom applies this endpoint meaning to every use of the relation: every subject of this relation is inferred to be a sosa:Observation. This is an explicit OWL typing commitment based on the source definition and its schema:domainIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:has_agent inclusion is a separate mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:c8842712d9b51ad420a00450debb0f4fa62a2487b085a0ee6e722b1787bb676b",
@@ -2343,7 +2343,7 @@
       "source_expression_sha256": "f2a4c1afe0521e8ff554210584bb769c6b4b4b122d1a0be9729327aa7f5e48e7",
       "mapping_type": "explicit_blank",
       "coverage_classification": "explicitly_unmapped",
-      "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. The OWL predicate and target are deliberately blank because the inference is supplied by the external rule. This term has external-rule mapping coverage; it is not wholly unmapped. The exact historical OWL chain violates three simplicity and four regularity restrictions in the current complete pinned closure.",
+      "reasoning": "SSN implementedBy relates a Procedure to its implementing System; implements expresses the inverse relationship. The source restriction Procedure ⊑ ∀implementedBy.System supports classifying implementers as Systems. The retained implements domain axiom makes System typing global for the implementing endpoint. Under the process-mediated interpretation, a System's participation as agent in a process prescribed by a Procedure is sufficient for inferring both implementation directions. This condition is sufficient, not necessary: an implementation relation does not imply that a particular execution has occurred. Implementation is therefore not identified with a direct CCO prescription relation between the Procedure and System. The implementedBy OWL predicate and target remain deliberately blank, with process-mediated inference supplied by the external rule (rules/ssn-implementation-mapping.rq). The implements row retains its OWL domain axiom, separately from that external-rule coverage.",
       "authoritative_axioms": [],
       "row_product_dispositions": {
         "integrated": {
@@ -2627,7 +2627,7 @@
       "source_expression_sha256": "a7b6075f674bddbddeb0fe520321c1bfb3d4bbd206876731e1fc4f1b24fbf901",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "Historical process-mediated interpretation from b464cea20bae6d6c542ec1db459cc76b6b978beb, with positive example 091de44f6d61cc0d3f48e15e653d263a8dc8fbcb and typing representative 8512004a3b911ac5711fb0cc8dfe70cb086e3b9b. Alec Sculley explicitly authorized the external implementation on 2026-10-30: rules/ssn-implementation-mapping.rq constructs implementedBy and inverse implements from explicit or previously materialized CCO prescribes followed by has_agent premises. The rule is executed separately; it is not an OWL property-chain axiom or a direct Procedure-to-System prescription inclusion. This records an implementation authorization preserving the historical interpretation, not a new scientific adjudication. Retain ssn:implements rdfs:domain ssn:System as the historically documented typing representative. The source inverse relationship remains unchanged, and the external rule constructs the System-to-Procedure direction. The direct inclusion in CCO prescribed_by is removed.",
+      "reasoning": "SSN implementedBy relates a Procedure to its implementing System; implements expresses the inverse relationship. The source restriction Procedure ⊑ ∀implementedBy.System supports classifying implementers as Systems. The retained implements domain axiom makes System typing global for the implementing endpoint. Under the process-mediated interpretation, a System's participation as agent in a process prescribed by a Procedure is sufficient for inferring both implementation directions. This condition is sufficient, not necessary: an implementation relation does not imply that a particular execution has occurred. Implementation is therefore not identified with a direct CCO prescription relation between the Procedure and System. The implementedBy OWL predicate and target remain deliberately blank, with process-mediated inference supplied by the external rule (rules/ssn-implementation-mapping.rq). The implements row retains its OWL domain axiom, separately from that external-rule coverage.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:5f35449db78abfa47d9dc4ee7ef62063006ddda76fa5a293d651f99f9cb9efa9",
@@ -3208,7 +3208,7 @@
       "source_expression_sha256": "235080b117c44da576d0930f0a91040d87a728eefc5bc7c0b3bb68596a098c57",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "The recorded decision rejects cco:has_output for a Procedure-to-Output relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-output superproperty, not a pending implementation.",
+      "reasoning": "The range axiom types every object of ssn:hasOutput as ssn:Output, reflecting SSN's description of Output as information reported from a Procedure. This classification is already entailed by the adopted global hasOutput domain sosa:Procedure together with the source restriction that a Procedure's hasOutput values are Outputs. The explicit range assertion is logically redundant in that context and is retained to state the intended endpoint classification directly, without requiring readers to reconstruct it from the domain and class-local restriction. It introduces no CCO superproperty. In particular, cco:has_output concerns a process and a continuant required at its completion, whereas the subject of the SSN relation is a procedure specification. The range axiom does not by itself require the existence of an output.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:390c9b5de75302a30d93d73ac3f3706f09cf39aa164a11314f85cb40fb518a56",
@@ -3579,7 +3579,7 @@
       "source_expression_sha256": "ab4eee02dd847ca8572bfd7da5bfbec8a3a073fb5888231a33e8ee761f4e1c85",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "reasoning": "SOSA defines madeObservation as the relation from a Sensor to an Observation made by that Sensor. The domain axiom applies this endpoint meaning to every use of the relation: every subject of this relation is inferred to be a sosa:Sensor. This is an explicit OWL typing commitment based on the source definition and its schema:domainIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:agent_in inclusion is a separate mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:157aece9de6259bc9ad10c9023b8e620c03f9f88bc688cceb058f1e68c7d39b2",
@@ -4076,7 +4076,7 @@
       "source_expression_sha256": "58dbbeae401a187ac98660e8c310167621c763a06eb17106717ef5cd616f9a20",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Observation-to-Sensor relation is included in cco:has_agent. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "reasoning": "SOSA defines madeBySensor as the relation from an Observation to the Sensor that made it. The range axiom applies this endpoint meaning to every use of the relation: every object of this relation is inferred to be a sosa:Sensor. This is an explicit OWL typing commitment based on the source definition and its schema:rangeIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:has_agent inclusion is a separate mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:d695dd55dbcac9a40574027e8ef1396186bccd79631492fba6403bd67e16f44c",
@@ -4300,7 +4300,7 @@
       "source_expression_sha256": "ce6f9db8353fb35a53387ba317ddf90c19b3a5b97d7c3ee463070de61e251171",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
+      "reasoning": "The range axiom types every object of ssn:hasInput as ssn:Input, reflecting SSN's description of Input as information provided to a Procedure for its use. This classification is already entailed by the adopted global hasInput domain sosa:Procedure together with the source restriction that a Procedure's hasInput values are Inputs. The explicit range assertion is logically redundant in that context and is retained to state the intended endpoint classification directly, without requiring readers to reconstruct it from the domain and class-local restriction. It introduces no CCO superproperty. In particular, cco:has_input concerns a process and a continuant required at its start, whereas the subject of the SSN relation is a procedure specification. The range axiom does not by itself require the existence of an input.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:0db509d9fc575ddc50b0183e97de46b32b5ba4383954670e5ea59d60474aeb59",
@@ -4357,7 +4357,7 @@
       "source_expression_sha256": "478781e56bbb172a1c71b44efb3483918dc97746dae5d0060ff077cc87e5a025",
       "mapping_type": "domain",
       "coverage_classification": "property_typing",
-      "reasoning": "The recorded decision rejects cco:has_input for a Procedure-to-Input relation; the current workbook retains only its source domain/range. This is semantic rejection of that process-input superproperty, not a pending implementation.",
+      "reasoning": "ssn:hasInput links a Procedure to information provided for its use. A Procedure specifies how an activity is carried out and is represented here as directive information content, making sosa:Procedure the intended subject class. This domain axiom applies that classification to every subject of the relation; it does not require every Procedure to have an input. cco:has_input instead relates a process to a continuant needed at its start. Treating the procedure-level relation as its subproperty would impose process typing on the Procedure, conflating the specification with its execution.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:733a2295af690d2d2b86dfcd47dfd33214e84ed16606930d2b4246bfeab98d8b",
@@ -6057,7 +6057,7 @@
       "source_expression_sha256": "3d997d4556ac3e64fa0a6e59241e8a8ba623b0db767a9d934b46351ee4a1296a",
       "mapping_type": "range",
       "coverage_classification": "property_typing",
-      "reasoning": "Restore the historical sensor-agent solution from commits b21d1fa82f41327aee07a03c412aca29faebd526 and 854174b2a1a23e1ebfe1f152fe967b16d3139c4d. The Sensor-to-Observation relation is included in cco:agent_in. Retain the source inverse and existing domain/range typing. The coordinated restoration also defers the direct observedProperty-to-has_input inclusion. Current complete local OWL 2 DL, HermiT and focused entailment checks pass; this restores historical authority without a new semantic adjudication.",
+      "reasoning": "SOSA defines madeObservation as the relation from a Sensor to an Observation made by that Sensor. The range axiom applies this endpoint meaning to every use of the relation: every object of this relation is inferred to be a sosa:Observation. This is an explicit OWL typing commitment based on the source definition and its schema:rangeIncludes note, rather than an entailment of that annotation alone. Typing does not itself require any instance of the relation to exist; the cco:agent_in inclusion is a separate mapping.",
       "authoritative_axioms": [
         {
           "axiom_id": "sha256:dca940a9ecdfa31a693dffaa7b880ac797fb94b80580f7dc3b292f1220960009",
