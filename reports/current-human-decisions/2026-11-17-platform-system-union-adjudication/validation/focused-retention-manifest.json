@@ -1,0 +1,182 @@
+{
+  "excluded": "Only Python __pycache__ runtime files; no full ontology captures created or selected. No repository files written by this subagent.",
+  "file_count": 25,
+  "files": [
+    {
+      "bytes": 4914,
+      "purpose": "Scope, qualifications and clean-checkout replay instructions",
+      "sha256": "0608ab26210f6da52e7eaf5882d383ec3a69bfb665aa05cf9b1721b78280ab4b",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/README.md",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/README.md"
+    },
+    {
+      "bytes": 1081,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "9328a215d01a0d953aeb15788a0bf693c41a4b879237fde257332fcdca8d3cc3",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/alignment_core-validation-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/alignment_core-validation-result.json"
+    },
+    {
+      "bytes": 1123,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "8e8b44f30d891000f38a6714a61cd24d8a120df8df9b051c9d17d5e69d1ef3d9",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/cco_extension-validation-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/cco_extension-validation-result.json"
+    },
+    {
+      "bytes": 11088,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "a054f48c3c315fcbad45aebd9b52276800cc8940a76dc92abc768700373933d2",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/generation-counts.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/generation-counts.json"
+    },
+    {
+      "bytes": 4159,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "ed08a3f93f7475eabce60a2f5fc632781367aa45ab7a9696353e6a2c319ea5bf",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/impact-evidence-reuse.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/impact-evidence-reuse.json"
+    },
+    {
+      "bytes": 1067,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "5a7b2bf2399eca2f834171208ea40e62847ae295e669843f2d1d9c40ac0f9cf9",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/integrated-validation-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/integrated-validation-result.json"
+    },
+    {
+      "bytes": 5500,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "44838b3d85d7ce3c7acc798a4bd93353ad5ae9334a9d55b7c1558c826ea797ae",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/logical-delta.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/logical-delta.json"
+    },
+    {
+      "bytes": 129338,
+      "purpose": "Fresh 58 candidate expectations, four native expectations and distinct-individual ABox replay evidence",
+      "sha256": "12897858dd56e6872663bbed4054f33edb29fe63e8c54a83f1355e71939210b5",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/replay-results/distinct-platform-abox-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/distinct-platform-abox-result.json"
+    },
+    {
+      "bytes": 139524,
+      "purpose": "Fresh 58 candidate expectations, four native expectations and distinct-individual ABox replay evidence",
+      "sha256": "6b66b458b7f3a63c574f31f7c2c185c4ba9426a08dac42da11f03ff1981d6aa3",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/replay-results/final-union-queries-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/final-union-queries-result.json"
+    },
+    {
+      "bytes": 27449,
+      "purpose": "Fresh 58 candidate expectations, four native expectations and distinct-individual ABox replay evidence",
+      "sha256": "c3466b096426de0be69b5158708c0b7b26e65eb0ee89cbd4ee2b26743191e569",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/replay-results/native-converses-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/native-converses-result.json"
+    },
+    {
+      "bytes": 240,
+      "purpose": "Fresh 58 candidate expectations, four native expectations and distinct-individual ABox replay evidence",
+      "sha256": "f26a6fb3e79cba8e7ba005abc4450304e327797b45cf465ce4707c38b0bdf565",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/replay-results/summary.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/summary.json"
+    },
+    {
+      "bytes": 101,
+      "purpose": "Fresh 58 candidate expectations, four native expectations and distinct-individual ABox replay evidence",
+      "sha256": "041814a9f46c7a75df507fb752068192e5e53458d56d8a042ff33df836e8ee68",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/replay.log",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay.log"
+    },
+    {
+      "bytes": 10686,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "9b5e48620c58af30725d9e8af881749c13d24a3bb916579f2a70b6b491a86b06",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/assess_union_candidates.py",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/assess_union_candidates.py"
+    },
+    {
+      "bytes": 138420,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "9d0d4101b424f07132c4c5b924aeb49f1dd9585e28d4d39a9c01040477fa6c38",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/both_union-probe-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/both_union-probe-result.json"
+    },
+    {
+      "bytes": 129224,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "97add0fedff0ece62b4348ab53089ebeba5f60c580220771eaedb063eff7639e",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/distinct-platforms-both_union-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/distinct-platforms-both_union-result.json"
+    },
+    {
+      "bytes": 1298,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "28468d3b1bde3552884389439d3cd15456806b48a3b6a717e34dd5acc7cd6ad0",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/input-manifest.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/input-manifest.json"
+    },
+    {
+      "bytes": 5158,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "e7107573b17fbdceb9802b14002a3ef6e36fb8059f514d683137b41cd45c0f4a",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/replay_focused_queries.py",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/replay_focused_queries.py"
+    },
+    {
+      "bytes": 27365,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "53d817061980539be538e12a46dca814201ecf9046eeda632aa7b4b1964ac090",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/source-converse-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/source-converse-result.json"
+    },
+    {
+      "bytes": 12910,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "0747a090b46bc91c53e44cfacc894b0a4f9a39ce9e50f5d3af1483041f1b65eb",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/summary.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/summary.json"
+    },
+    {
+      "bytes": 130513,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "abc34385e5a535f86bd1e91d0754991e1b7def3627aed0be070aaa7c771e3ca0",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/supplemental-ice-roles-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/supplemental-ice-roles-result.json"
+    },
+    {
+      "bytes": 130882,
+      "purpose": "Byte-preserved selected historical diagnostic evidence and portable focused replay code",
+      "sha256": "582d2639afa3eaa5d0bdbf0504fed3860f1bf9b64fe56497642b95fd91c01899",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/reused-impact/supplemental-intersections-both_union-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/supplemental-intersections-both_union-result.json"
+    },
+    {
+      "bytes": 1129,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "d86fa23bc51f39639d99d62091ce9b05fd9f3c85d52dddc8b632106860b33e1f",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/strict_bfo_mapping-validation-result.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/strict_bfo_mapping-validation-result.json"
+    },
+    {
+      "bytes": 6295,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "352c664d9425808f7ae9c891ce973b922f11d4aef9c73dcd1962a7235d47d84f",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/summary.json",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/summary.json"
+    },
+    {
+      "bytes": 10253,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "fa6918be303a27686044a5fe1f67034dda8402c07cbcce07d77a862172778ef3",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/validate_union_candidate.py",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/validate_union_candidate.py"
+    },
+    {
+      "bytes": 328,
+      "purpose": "Fresh four-product, structural delta and generation evidence",
+      "sha256": "a048360a1a50febe74790071aaf3101de8dade0467f54855e511ff28eae71faf",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/focused/validation.log",
+      "target": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/validation.log"
+    }
+  ],
+  "total_bytes": 930045
+}

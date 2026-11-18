@@ -1,0 +1,357 @@
+{
+  "status": "MAPPING-INTEGRITY SUITES DID NOT PASS; ALL OBSERVED DIAGNOSTICS ACCOUNTED FOR",
+  "summaries": {
+    "baseline": {
+      "tests_run": 165,
+      "failures": 13,
+      "errors": 1,
+      "elapsed_seconds": 339.1762462910265,
+      "passed": false
+    },
+    "intermediate": {
+      "tests_run": 165,
+      "failures": 16,
+      "errors": 1,
+      "elapsed_seconds": 359.52644887473434,
+      "passed": false
+    },
+    "candidate": {
+      "tests_run": 165,
+      "failures": 18,
+      "errors": 1,
+      "elapsed_seconds": 365.3848268329166,
+      "passed": false
+    }
+  },
+  "classification_counts": {
+    "baseline": {
+      "Identical preexisting diagnostic": 5,
+      "Changed preexisting diagnostic attributable to approved mapping data": 8,
+      "Newly failing fixture attributable to approved mapping data": 5,
+      "Identical preexisting diagnostic; set display order only": 1
+    },
+    "intermediate": {
+      "Identical preexisting diagnostic": 5,
+      "Changed preexisting diagnostic attributable to approved mapping data": 11,
+      "Newly failing fixture attributable to approved mapping data": 2,
+      "Identical preexisting diagnostic; set display order only": 1
+    }
+  },
+  "newly_failing_cases": {
+    "baseline": [
+      "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output"
+    ],
+    "intermediate": [
+      "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures"
+    ]
+  },
+  "demonstrated_unexplained_regressions": [],
+  "test_files_byte_identical_to_both_prior_states": true,
+  "normalization_policy": "Exact checkout paths and macOS /private aliases only. No count/hash/semantic/transition content normalized.",
+  "canonical_gate_waived": false,
+  "blocked_methods": {
+    "class": "test_cco_extension.CcoExtensionTests",
+    "count": 11,
+    "methods": [
+      "test_exact_identity_inventory_digest_categories_and_distribution",
+      "test_nonselected_product_policy_is_reconciled",
+      "test_wrong_disposition_category_and_imported_direct_selection_fail",
+      "test_missing_extra_duplicate_substituted_and_mismatched_identities_fail",
+      "test_direct_graph_identity_import_counts_and_structures",
+      "test_import_vocabulary_and_copied_declarations_are_rejected",
+      "test_determinism_reordered_inputs_and_existing_product_preservation",
+      "test_reordered_canonical_header_is_rejected_by_product_validator",
+      "test_fresh_process_generation_is_byte_deterministic",
+      "test_root_project_closure_and_fixed_term_resolution",
+      "test_pinned_closure_hermit_is_clean"
+    ],
+    "note": "Identical setup error blocks11methods; this is one error record, not11additional failures."
+  },
+  "evidence": {
+    "partition_proof": "three-state-partition-proof.json",
+    "focused_logical_delta": {
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/logical-delta.json",
+      "sha256": "44838b3d85d7ce3c7acc798a4bd93353ad5ae9334a9d55b7c1558c826ea797ae"
+    },
+    "transition": {
+      "path": "reports/current-semantic-workbook/transitions/94598afb-94dd-4888-b7cc-402c6ba742a6.json",
+      "sha256": "f719255b19c11bf31f321367cea835cc38e35c1becfcacec5ebe85417b18d6df"
+    },
+    "raw_log_sha256": "935c32f36fb1347b21e83395ce5867e32bce720b6dd25b57437226f767eaa1b1",
+    "raw_results_sha256": "290612918940423e7f9b51b3a60f0f8be5983a9c1a05c1f9694279a7a56a9162"
+  },
+  "cases": [
+    {
+      "kind": "errors",
+      "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": true,
+      "same_as_intermediate": true,
+      "diff_vs_baseline": "",
+      "diff_vs_intermediate": "",
+      "explanation": "Complete traceback equality after exact checkout-root/alias substitution only.",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "kind": "failures",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": true,
+      "same_as_intermediate": true,
+      "diff_vs_baseline": "",
+      "diff_vs_intermediate": "",
+      "explanation": "Complete traceback equality after exact checkout-root/alias substitution only.",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "kind": "failures",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,7 +1,7 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_cco_extension.py\", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance\n     self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)\n-AssertionError: '87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n-- 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428\n+AssertionError: '1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n+- 1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49\n + 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28\n \n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,7 +1,7 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_cco_extension.py\", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance\n     self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)\n-AssertionError: '87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n-- 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428\n+AssertionError: '1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n+- 1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49\n + 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28\n \n",
+      "explanation": "Only actual CCO product hash changes; the same obsolete expected hash remains. Exactly Platform/System move into the CCO product, verified by focused graph delta.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n     self.assertEqual(len(removed), 3)\n-AssertionError: 8 != 3\n+AssertionError: 10 != 3\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n     self.assertEqual(len(removed), 3)\n-AssertionError: 9 != 3\n+AssertionError: 10 != 3\n",
+      "explanation": "The fixed historical-to-current removal count is8 at HEAD,9 after Platform,10 after adding the System replacement; unchanged test expects3. Both approved expression replacements are bounded by authenticated transition/graph evidence.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "baseline_failed": false,
+      "intermediate_failed": false,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_generate_mapping_from_coms.py\", line 2742, in test_first_successful_update_creates_initially_absent_strict_bfo_mapping\n+    self.assertEqual(checker.main([]), 0)\n+AssertionError: 1 != 0\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_generate_mapping_from_coms.py\", line 2742, in test_first_successful_update_creates_initially_absent_strict_bfo_mapping\n+    self.assertEqual(checker.main([]), 0)\n+AssertionError: 1 != 0\n",
+      "explanation": "The test mocks temporary validation with a hardcoded134 total triples at tests/test_generate_mapping_from_coms.py:2713. The approved pure-BFO partition now has114; the mock raises, so checker.main returns1 at line2742. Raw log explicitly reports114 !=134. This is a fixture assertion, not a production validator defect.",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Newly failing fixture attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n     self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\n-AssertionError: {'urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf5[1522 chars]066'} != frozenset({'urn:uuid:01b1aff2-a12b-430b-9[1386 chars]6c'})\n+AssertionError: {'urn:uuid:5f25dce9-54a0-442e-a9de-f18cd2[1522 chars]cff'} != frozenset({'urn:uuid:5f25dce9-54a0-442e-a[1386 chars]ff'})\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n     self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\n-AssertionError: {'urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d[1522 chars]5bb'} != frozenset({'urn:uuid:0f9d6fa9-00b9-4602-b[1386 chars]bc'})\n+AssertionError: {'urn:uuid:5f25dce9-54a0-442e-a9de-f18cd2[1522 chars]cff'} != frozenset({'urn:uuid:5f25dce9-54a0-442e-a[1386 chars]ff'})\n",
+      "explanation": "Complete actual and expected alignment-core RowID sets are independently equal across all three states; only Python abbreviated-set display order varies.",
+      "classification_vs_baseline": "Identical preexisting diagnostic; set display order only",
+      "classification_vs_intermediate": "Identical preexisting diagnostic; set display order only"
+    },
+    {
+      "kind": "failures",
+      "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": true,
+      "same_as_intermediate": true,
+      "diff_vs_baseline": "",
+      "diff_vs_intermediate": "",
+      "explanation": "Complete traceback equality after exact checkout-root/alias substitution only.",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "kind": "failures",
+      "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": true,
+      "same_as_intermediate": true,
+      "diff_vs_baseline": "",
+      "diff_vs_intermediate": "",
+      "explanation": "Complete traceback equality after exact checkout-root/alias substitution only.",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "kind": "failures",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -4,7 +4,7 @@\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -4,7 +4,7 @@\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "explanation": "Only latest authenticated transition ID changes to the approved union successor. The fixture still expects the older58481ff2 transition. Its later inventory assertions remain blocked.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -4,7 +4,7 @@\n                ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -4,7 +4,7 @@\n                ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "explanation": "Only latest authenticated transition ID changes to the approved union successor. The fixture still expects the older58481ff2 transition. Its later inventory assertions remain blocked.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "baseline_failed": false,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 660, in test_current_context_preserves_baseline_strict_axioms_and_bytes\n+    self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)\n+AssertionError: b'# G[2399 chars]/ssn/hasDeployment> rdfs:subPropertyOf <http:/[14104 chars] .\\n' != b'# G[2399 chars]/ssn/System> owl:equivalentClass _:a0db60d0e97[16897 chars] .\\n'\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 660, in test_current_context_preserves_baseline_strict_axioms_and_bytes\n     self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)\n-AssertionError: b'# G[5257 chars]/ns/ssn/systems/hasOperatingProperty> rdfs:sub[14039 chars] .\\n' != b'# G[5257 chars]/ns/sosa/Platform> owl:equivalentClass _:a480c[14039 chars] .\\n'\n+AssertionError: b'# G[2399 chars]/ssn/hasDeployment> rdfs:subPropertyOf <http:/[14104 chars] .\\n' != b'# G[2399 chars]/ssn/System> owl:equivalentClass _:a0db60d0e97[16897 chars] .\\n'\n",
+      "explanation": "The unchanged test compares current strict-BFO bytes with HEAD at line660. Current bytes necessarily differ because the two approved expressions move to the CCO extension. Focused logical-delta proof bounds the change; this was already failing after the intermediate Platform revision.",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": true,
+      "same_as_intermediate": true,
+      "diff_vs_baseline": "",
+      "diff_vs_intermediate": "",
+      "explanation": "Complete traceback equality after exact checkout-root/alias substitution only.",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures",
+      "baseline_failed": false,
+      "intermediate_failed": false,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 401, in test_direct_graph_identity_import_counts_and_structures\n+    self.assertEqual(self.strict_result.logical_triple_count, 125)\n+AssertionError: 105 != 125\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 401, in test_direct_graph_identity_import_counts_and_structures\n+    self.assertEqual(self.strict_result.logical_triple_count, 125)\n+AssertionError: 105 != 125\n",
+      "explanation": "The unchanged test requires125 strict logical triples at tests/test_strict_bfo_mapping.py:401; removal of exactly the Platform/System expressions from the pure-BFO product leaves105. The authenticated transition and actual graph agree.",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Newly failing fixture attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "baseline_failed": false,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 159, in test_exact_selection_identity_lock_and_distribution\n+    self.assertEqual({value.row_id for value in self.strict_selected}, EXPECTED_ROW_IDS)\n+AssertionError: {'urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b[787 chars]9c5'} != frozenset({'urn:uuid:3af8734c-ac86-46b0-8[896 chars]76'})\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n-  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 160, in test_exact_selection_identity_lock_and_distribution\n-    self.assertEqual({value.axiom_id for value in self.strict_selected}, EXPECTED_AXIOM_IDS)\n-AssertionError: {'sha256:0db60d0e9764151246aa7f88574dbc9f[1379 chars]cad'} != frozenset({'sha256:0db60d0e9764151246aa7f[1390 chars]ad'})\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 159, in test_exact_selection_identity_lock_and_distribution\n+    self.assertEqual({value.row_id for value in self.strict_selected}, EXPECTED_ROW_IDS)\n+AssertionError: {'urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b[787 chars]9c5'} != frozenset({'urn:uuid:3af8734c-ac86-46b0-8[896 chars]76'})\n",
+      "explanation": "The unchanged strict fixture expects19 RowIDs. The final product contains17, removing exactly Platform and System, with all17 remaining canonical inputs unchanged. The intermediate state first failed the axiom-ID assertion at line160; the final state fails the earlier RowID assertion at line159.",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 600, in test_fixed_pinned_merged_cco_bfo_closure\n     self.assertEqual(len(closure), 14988)\n-AssertionError: 14991 != 14988\n+AssertionError: 14971 != 14988\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 600, in test_fixed_pinned_merged_cco_bfo_closure\n     self.assertEqual(len(closure), 14988)\n-AssertionError: 14991 != 14988\n+AssertionError: 14971 != 14988\n",
+      "explanation": "Both old states already fail obsolete closure14988 versus14991. Removing the two strict expressions reduces actual closure by20 triples to14971, matching authenticated expected count. This method builds the fixed closure and fails its size assertion; it does not execute HermiT.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 633, in test_pinned_closure_hermit_is_clean\n     self.assertEqual(result.closure_triple_count, 14988)\n-AssertionError: 14991 != 14988\n+AssertionError: 14971 != 14988\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 633, in test_pinned_closure_hermit_is_clean\n     self.assertEqual(result.closure_triple_count, 14988)\n-AssertionError: 14991 != 14988\n+AssertionError: 14971 != 14988\n",
+      "explanation": "Both old states already fail obsolete closure14988 versus14991. Removing the two strict expressions reduces actual closure by20 triples to14971, matching authenticated expected count. This method executes HermiT and passes passed/return-code/reasoned-output assertions before this stale count; subsequent assertions are not reached.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "baseline_failed": false,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 515, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n+    self.assertEqual(len(reordered_selected), 19)\n+AssertionError: 17 != 19\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,7 +1,4 @@\n Traceback (most recent call last):\n-  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 527, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n-    self.assertEqual(\n-AssertionError: '2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0' != '676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af'\n-- 2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0\n-+ 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af\n-\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 515, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n+    self.assertEqual(len(reordered_selected), 19)\n+AssertionError: 17 != 19\n",
+      "explanation": "The unchanged strict fixture now fails at line515,17 rows versus19. The intermediate state reached a later stale product-hash assertion at line527. Later order/byte assertions are not reached in this final run; independent deterministic-generation evidence is separate.",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 579, in test_root_and_project_module_reconciliation\n     self.assertEqual(len(strict_ids | core_ids), 48)\n-AssertionError: 51 != 48\n+AssertionError: 49 != 48\n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 579, in test_root_and_project_module_reconciliation\n     self.assertEqual(len(strict_ids | core_ids), 48)\n-AssertionError: 51 != 48\n+AssertionError: 49 != 48\n",
+      "explanation": "The combined disjoint core/strict axiom count changes51\u219249 when exactly two mappings move to CCO; the unchanged fixture expects48. The production reconciliation and disjoint-ID checks precede and pass before this obsolete count.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "kind": "failures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "baseline_failed": true,
+      "intermediate_failed": true,
+      "candidate_failed": true,
+      "same_as_baseline": false,
+      "same_as_intermediate": false,
+      "diff_vs_baseline": "--- baseline\n+++ candidate\n@@ -1,7 +1,7 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "diff_vs_intermediate": "--- intermediate\n+++ candidate\n@@ -1,7 +1,7 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+AssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 94598afb-94dd-4888-b7cc-402c6ba742a6\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "explanation": "Only latest authenticated transition ID changes to the approved union successor. The fixture still expects the older58481ff2 transition. Its later inventory assertions remain blocked.",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    }
+  ],
+  "caveat": "No test fixture was repaired or waived. Newly failing approved-data fixtures are distinguished from baseline-identical failures; passing focused generation/reasoning does not make this suite pass."
+}

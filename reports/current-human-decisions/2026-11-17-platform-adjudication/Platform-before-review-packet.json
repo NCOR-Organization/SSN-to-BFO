@@ -1,0 +1,401 @@
+{
+  "available_alternatives": [
+    "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
+    "Retain necessary material/hosting conditions under subclass only, or justify equivalence and the System filler against current source definitions."
+  ],
+  "confidence": "high for extracted assertions and stated logical consequences; unresolved for the ontological decision",
+  "coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": true,
+    "direct_mapping_row_ids": [
+      "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+    ],
+    "explicit_blank": false,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/sosa/Platform",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "critical_features": [
+    "strong_equivalence",
+    "existential_restriction",
+    "complex_expression",
+    "material_cross_track_difference",
+    "target_category_commitment"
+  ],
+  "current_mapping_state": [
+    {
+      "assertion_status": "asserted",
+      "existing_rationale": "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.",
+      "expression_forms": {
+        "intersection": 1,
+        "named": 2,
+        "some": 1
+      },
+      "location": "Sheet1!9",
+      "predicate": "owl:equivalentClass",
+      "provenance": "mapping",
+      "row_id": "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb",
+      "target": "bfo:MaterialEntity and (sosa:hosts some ssn:System)"
+    }
+  ],
+  "derived_consequences": [],
+  "evidence": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!9",
+    "imports/sosa.ttl#http://www.w3.org/ns/sosa/Platform",
+    "imports/ssn.ttl#http://www.w3.org/ns/sosa/Platform",
+    "imports/cco.ttl",
+    "reports/sosa-next-crosswalk-reconciliation.md",
+    "mappings/SOSA-next-to-BFO-COMS.xlsx"
+  ],
+  "formal_consequences": [
+    "Every sosa:Platform satisfies bfo:MaterialEntity and (sosa:hosts some ssn:System); every instance satisfying that full expression is also sosa:Platform. Existential fillers denote actual individuals, including anonymous witnesses."
+  ],
+  "human_question": "Does the source justify both materiality and actual hosting of a System, and is every such host necessarily a Platform?",
+  "mapping_property_chains": [],
+  "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
+  "pinned_track_comparison": {
+    "location": "Sheet1!14",
+    "match_kind": "same lexical term",
+    "predicate": "owl:equivalentClass",
+    "rationale": "Replace the current equivalence with sosa:Platform owl:equivalentClass sosa:Asset and bfo:MaterialEntity and (sosa:hosts some sosa:Asset). The pinned definition characterizes a Platform as an Asset that hosts other Assets, particularly Systems and Platforms; the external System-or-Platform filler is therefore still too narrow. The MaterialEntity conjunct preserves the project's existing materiality commitment.",
+    "row_id": "urn:uuid:59e7a370-d6ed-4046-905c-854752bf74cc",
+    "source_term": "sosa:Platform",
+    "status": "active",
+    "target": "sosa:Asset and bfo:MaterialEntity and (sosa:hosts some sosa:Asset)"
+  },
+  "priority": 3,
+  "recommendation": "Retain the artifact during review. Retain necessary material/hosting conditions under subclass only, or justify equivalence and the System filler against current source definitions.",
+  "review_clarifications": [],
+  "review_state": "unreviewed",
+  "source_iri": "http://www.w3.org/ns/sosa/Platform",
+  "source_semantics": {
+    "assertion_status": "asserted_except_derived_consequences",
+    "contextual_axioms": [
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn:Deployment rdfs:subClassOf (ssn:deployedOnPlatform owl:allValuesFrom sosa:Platform)",
+        "object": "(ssn:deployedOnPlatform owl:allValuesFrom sosa:Platform)",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "expression_reference",
+        "subject": "http://www.w3.org/ns/ssn/Deployment"
+      },
+      {
+        "assertion_status": "asserted",
+        "axiom": "ssn:System rdfs:subClassOf (sosa:isHostedBy owl:allValuesFrom sosa:Platform)",
+        "object": "(sosa:isHostedBy owl:allValuesFrom sosa:Platform)",
+        "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "provenance": "source_native",
+        "relation_to_reviewed_term": "expression_reference",
+        "subject": "http://www.w3.org/ns/ssn/System"
+      }
+    ],
+    "definitions": [
+      "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."
+    ],
+    "derived_consequences": [],
+    "grouped_disjointness": [],
+    "iri": "http://www.w3.org/ns/sosa/Platform",
+    "label": "Platform",
+    "logical_axioms": [
+      "rdf:type owl:Class",
+      "rdfs:subClassOf (sosa:hosts owl:allValuesFrom ssn:System)",
+      "rdfs:subClassOf (ssn:inDeployment owl:allValuesFrom ssn:Deployment)"
+    ],
+    "nonlogical_domain_range_notes": [],
+    "property_chains": [],
+    "provenance": "source_native"
+  },
+  "target_semantics": [
+    {
+      "assertion_status": "asserted_except_derived_consequences",
+      "contextual_axioms": [
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000024 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000024"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000027 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000027"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000029 rdfs:subClassOf (bfo:BFO_0000176 owl:allValuesFrom (bfo:BFO_0000029 or bfo:BFO_0000040))",
+          "object": "(bfo:BFO_0000176 owl:allValuesFrom (bfo:BFO_0000029 or bfo:BFO_0000040))",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000029"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000030 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000030"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000066 rdfs:range (bfo:BFO_0000029 or bfo:BFO_0000040)",
+          "object": "(bfo:BFO_0000029 or bfo:BFO_0000040)",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000066"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000115 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000115"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000115 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000115"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000127 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000127"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000129 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000129"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000129 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000129"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000183 rdfs:domain (bfo:BFO_0000029 or bfo:BFO_0000040)",
+          "object": "(bfo:BFO_0000029 or bfo:BFO_0000040)",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000183"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000184 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000184"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000185 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000185"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "bfo:BFO_0000218 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "http://purl.obolibrary.org/obo/BFO_0000218"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000544 owl:equivalentClass (bfo:BFO_0000040 and (cco:ont00001936 owl:someValuesFrom cco:ont00000741))",
+          "object": "(bfo:BFO_0000040 and (cco:ont00001936 owl:someValuesFrom cco:ont00000741))",
+          "predicate": "http://www.w3.org/2002/07/owl#equivalentClass",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "https://www.commoncoreontologies.org/ont00000544"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000544 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000544"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000556 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000556"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000574 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000574"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000627 owl:equivalentClass (bfo:BFO_0000040 and (bfo:BFO_0000196 owl:someValuesFrom cco:ont00001141))",
+          "object": "(bfo:BFO_0000040 and (bfo:BFO_0000196 owl:someValuesFrom cco:ont00001141))",
+          "predicate": "http://www.w3.org/2002/07/owl#equivalentClass",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "https://www.commoncoreontologies.org/ont00000627"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000627 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000627"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000870 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000870"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00000995 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00000995"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001017 owl:equivalentClass (bfo:BFO_0000040 and (bfo:BFO_0000196 owl:someValuesFrom cco:ont00001379))",
+          "object": "(bfo:BFO_0000040 and (bfo:BFO_0000196 owl:someValuesFrom cco:ont00001379))",
+          "predicate": "http://www.w3.org/2002/07/owl#equivalentClass",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "expression_reference",
+          "subject": "https://www.commoncoreontologies.org/ont00001017"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001017 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001017"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001168 rdfs:subClassOf bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001168"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001830 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001830"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001852 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001852"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001895 rdfs:domain bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#domain",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001895"
+        },
+        {
+          "assertion_status": "asserted",
+          "axiom": "cco:ont00001949 rdfs:range bfo:BFO_0000040",
+          "object": "bfo:BFO_0000040",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#range",
+          "provenance": "target_native",
+          "relation_to_reviewed_term": "incoming",
+          "subject": "https://www.commoncoreontologies.org/ont00001949"
+        }
+      ],
+      "definitions": [
+        "(Elucidation) A material entity is an independent continuant has some portion of matter as continuant part"
+      ],
+      "derived_consequences": [],
+      "grouped_disjointness": [],
+      "iri": "http://purl.obolibrary.org/obo/BFO_0000040",
+      "label": "material entity",
+      "logical_axioms": [
+        "owl:disjointWith bfo:BFO_0000141",
+        "rdf:type owl:Class",
+        "rdfs:subClassOf (bfo:BFO_0000176 owl:allValuesFrom bfo:BFO_0000040)",
+        "rdfs:subClassOf (bfo:BFO_0000178 owl:allValuesFrom (bfo:BFO_0000029 or bfo:BFO_0000040 or bfo:BFO_0000140))",
+        "rdfs:subClassOf bfo:BFO_0000004"
+      ],
+      "nonlogical_domain_range_notes": [],
+      "property_chains": [],
+      "provenance": "target_native",
+      "role": "asserted_target_expression"
+    }
+  ]
+}

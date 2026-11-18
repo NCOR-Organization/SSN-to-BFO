@@ -1,0 +1,17 @@
+[
+  {
+    "id": "source-inverse-universal-proves-converse",
+    "kind": "class_subsumption",
+    "subject": "urn:platform-adjudication-probe:SourceHost",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "expected_entailed": true
+  },
+  {
+    "id": "source-does-not-require-hosted-System-witness",
+    "kind": "existential_subsumption",
+    "subject": "http://www.w3.org/ns/sosa/Platform",
+    "predicate": "http://www.w3.org/ns/sosa/hosts",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "expected_entailed": false
+  }
+]

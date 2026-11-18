@@ -190,7 +190,7 @@
       "source_label": "Observation"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": true,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!9",
@@ -198,13 +198,21 @@
         "imports/ssn.ttl#http://www.w3.org/ns/sosa/Platform",
         "imports/cco.ttl",
         "reports/sosa-next-crosswalk-reconciliation.md",
-        "mappings/SOSA-next-to-BFO-COMS.xlsx"
+        "mappings/SOSA-next-to-BFO-COMS.xlsx",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json",
+        "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json",
+        "sha256": "3f767f42f3c42b9bd6407b8eb9925b2e30ebca04863be6e447d134d512988560"
+      },
       "mapping_row_ids": [
         "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.",
-      "rationale": "Does the source justify both materiality and actual hosting of a System, and is every such host necessarily a Platform?",
+      "rationale": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A Platform must actually host at least one System; hosting capability alone does not satisfy the existential. The SOSA hosts relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between hosts and isHostedBy together with the System restriction that all isHostedBy values are Platforms: an entity hosting a System is a Platform. The equivalence therefore retains both the necessary hosting witness and the source-supported converse within the adopted exhaustive classification.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -214,7 +222,7 @@
         "question": "Does the source justify both materiality and actual hosting of a System, and is every such host necessarily a Platform?",
         "recommendation": "Retain the artifact during review. Retain necessary material/hosting conditions under subclass only, or justify equivalence and the System filler against current source definitions."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/sosa/Platform",
       "source_kind": "class",
       "source_label": "Platform"
@@ -1318,20 +1326,26 @@
       "source_label": "Stimulus"
     },
     {
-      "assessment_outcome": "unreviewed",
+      "assessment_outcome": "formal_mapping_adopted",
       "cross_track_review": false,
       "evidence": [
         "mappings/SSN2BFO-COMS.xlsx#Sheet1!36",
         "imports/ssn.ttl#http://www.w3.org/ns/ssn/System",
         "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/System",
         "imports/cco.ttl",
-        "reports/sosa-next-crosswalk-reconciliation.md"
+        "reports/sosa-next-crosswalk-reconciliation.md",
+        "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json"
       ],
+      "human_decision_record": {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json",
+        "sha256": "e71667a07a1f7e7db0479e29cd97e236aa966440a7692d1ac75486a73e9e8c54"
+      },
       "mapping_row_ids": [
         "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
       ],
       "notes": "Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.",
-      "rationale": "Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation?",
+      "rationale": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification.",
       "review": {
         "alternatives": [
           "Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.",
@@ -1341,7 +1355,7 @@
         "question": "Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation?",
         "recommendation": "Retain the artifact during review. Retain a one-way MaterialEntity bound and separately defend the Procedure existential; do not assume consistency establishes sufficiency."
       },
-      "review_state": "unreviewed",
+      "review_state": "final",
       "source_iri": "http://www.w3.org/ns/ssn/System",
       "source_kind": "class",
       "source_label": "System"

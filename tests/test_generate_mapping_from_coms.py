@@ -2670,6 +2670,10 @@ print(hashlib.sha256(output.read_bytes()).hexdigest())
         self.assertEqual(list(cache_dir.glob("run-*")), [])
 
     def test_first_successful_update_creates_initially_absent_strict_bfo_mapping(self) -> None:
+        with generation.generated_expectations_context(
+            REPO_ROOT, REPO_ROOT / "mappings/SSN2BFO-COMS.xlsx"
+        ):
+            expected_triples = generation.expected_count("STRICT_BFO_TOTAL_TRIPLE_COUNT", 134)
         outputs = self.maintained_outputs()
         existing = {
             name: path for name, path in outputs.items() if name != "strict_bfo_mapping"
@@ -2710,7 +2714,7 @@ print(hashlib.sha256(output.read_bytes()).hexdigest())
                 set(graph.triples((None, OWL.imports, None))),
                 {(ontology_iri, OWL.imports, alignment_iri)},
             )
-            self.assertEqual(len(graph), 134)
+            self.assertEqual(len(graph), expected_triples)
             validation_complete = True
             return {}
 

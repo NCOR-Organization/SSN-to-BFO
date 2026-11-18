@@ -25,7 +25,9 @@ UPDATE_SHA256 = "6dd57cd87fdd3dda457ead9cfd747ec94081c3967dd117ef5d2f6d907798f5e
 DIFF = "reports/coms-vs-pre-coms-legacy-diff.md"
 COVERAGE = "reports/coms-source-term-coverage.md"
 DIFF_HISTORICAL_SHA256 = "7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860"
-DIFF_CURRENT_SHA256 = "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d"
+PRE_RECOVERY_COMMIT = "fe06c78b7290fd586b05c42145a57f32d84a8674"
+DIFF_PRE_RECOVERY_SHA256 = "e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d"
+DIFF_CURRENT_SHA256 = "eed00cb5b90ffbe368cf92469fef970e98eac0f28372868408e4a57f1219801c"
 COVERAGE_HISTORICAL_SHA256 = "11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c"
 DECISION = "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json"
 
@@ -193,6 +195,9 @@ class RetainedRepositoryHistoryTests(unittest.TestCase):
         original_record = (ROOT / UPDATE).read_bytes()
         current_report = (ROOT / DIFF).read_bytes()
         self.assertEqual(digest(original_record), UPDATE_SHA256)
+        pre_recovery_report = subprocess.check_output(
+            ["git", "--no-optional-locks", "-C", str(ROOT), "show", f"{PRE_RECOVERY_COMMIT}:{DIFF}"])
+        self.assertEqual(digest(pre_recovery_report), DIFF_PRE_RECOVERY_SHA256)
         self.assertEqual(digest(current_report), DIFF_CURRENT_SHA256)
         update = json.loads(original_record)
         refs = [ref for change in update["changes"] for ref in change["evidence"]

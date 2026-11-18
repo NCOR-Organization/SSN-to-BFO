@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "sheet": "Sheet1",
+      "cell": "C9",
+      "before": "bfo:MaterialEntity and (sosa:hosts some ssn:System)",
+      "after": "bfo:Continuant and (sosa:hosts some ssn:System)"
+    },
+    {
+      "sheet": "Sheet1",
+      "cell": "D9",
+      "before": "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.",
+      "after": "SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Under the approved interpretation, a Platform is a BFO Continuant that actually hosts at least one SSN System. The hosting existential remains necessary; merely being capable of hosting does not suffice. Continuant allows material and appropriate nonmaterial hosts while excluding occurrents. The converse is supported by the source inverse relationship between hosts and isHostedBy and the System restriction that all isHostedBy values are Platforms: an individual hosting a System is therefore a Platform. The equivalence retains this converse and the actual-hosting requirement without classifying every Continuant as a Platform."
+    }
+  ]
+}

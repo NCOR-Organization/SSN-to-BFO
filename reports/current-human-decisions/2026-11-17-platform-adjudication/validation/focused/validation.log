@@ -1,0 +1,17 @@
+Exact one-equivalence replacement, stable inventory and deterministic generation: PASS
+baseline/integrated: PASS; unsatisfiable named classes=0
+candidate/integrated: PASS; unsatisfiable named classes=0
+candidate/alignment_core: PASS; unsatisfiable named classes=0
+candidate/strict_bfo_mapping: PASS; unsatisfiable named classes=0
+candidate/cco_extension: PASS; unsatisfiable named classes=0
+Traceback (most recent call last):
+  File "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validate_platform_candidate.py", line 104, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validate_platform_candidate.py", line 87, in main
+    payload=result.get('reasoner_result',{});check(result.get('status')=='consistent',phase+': probe graph inconsistency/profile failure');check(payload.get('owl2_dl_profile') is True,phase+': probe profile failure');check(len(payload.get('expectations',[]))==len(queries),phase+': incomplete probe results');check(all(x['passed'] for x in payload['expectations']),phase+': unexpected entailment')
+                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validate_platform_candidate.py", line 16, in check
+    if not v:raise AssertionError(message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: baseline: unexpected entailment

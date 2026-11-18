@@ -1,0 +1,841 @@
+{
+  "status": "CANONICAL MAKE CHECK DID NOT PASS; ALL DIAGNOSTICS ACCOUNTED FOR",
+  "baseline_commit": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "baseline_result": {
+    "command": [
+      "make",
+      "check"
+    ],
+    "cwd": "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+    "return_code": 2,
+    "elapsed_seconds": 2257.5853860829957,
+    "test_summary": [
+      "Ran 488 tests in 2255.779s"
+    ],
+    "outcome_summary": [
+      "FAILED (failures=24, errors=22, skipped=7)"
+    ],
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check.log",
+    "log_sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900"
+  },
+  "candidate_result": {
+    "command": [
+      "make",
+      "check"
+    ],
+    "cwd": "/tmp/ssn-platform-candidate-gate-09sxtdo7/checkout",
+    "return_code": 2,
+    "elapsed_seconds": 2404.6728943330236,
+    "test_summary": [
+      "Ran 488 tests in 2402.846s"
+    ],
+    "outcome_summary": [
+      "FAILED (failures=24, errors=22, skipped=7)"
+    ],
+    "log_sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267"
+  },
+  "baseline_failure_counts": {
+    "FAIL": 24,
+    "ERROR": 22
+  },
+  "candidate_failure_counts": {
+    "FAIL": 24,
+    "ERROR": 22
+  },
+  "new_failing_cases": [],
+  "resolved_failing_cases": [],
+  "matched_failure_case_count": 46,
+  "exact_normalized_traceback_matches": 39,
+  "normalization_policy": "Only exact checkout roots and their macOS private aliases are substituted. No hash/count/transition content is normalized away. All 7 substantive differences are individually proved against approved workbook/assessment/transition/generated-report inputs. Complete printed input sets are parsed and compared independently of display order.",
+  "baseline_input_state": {
+    "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+    "clone": "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+    "clone_commands": [
+      [
+        "git",
+        "clone",
+        "--shared",
+        "--no-checkout",
+        "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+        "/tmp/ssn-platform-baseline-uh0_cwav/checkout"
+      ],
+      [
+        "git",
+        "-C",
+        "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+        "checkout",
+        "--detach",
+        "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+      ]
+    ],
+    "clean_head_verified": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+    "status_before": "",
+    "source_user_untracked_files_copied": false,
+    "main_repository_modified": false,
+    "git_optional_locks": "0",
+    "python": "/opt/miniconda3/bin/python",
+    "scope": "Fresh detached offline local shared clone; not a registered worktree. Only committed baseline files are present.",
+    "status_after": "",
+    "head_after": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+  },
+  "candidate_input_manifest": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/input-manifest.json",
+  "candidate_input_manifest_sha256": "12ee251c403e34b6176a6e084be26bc2d6a46806df3938c9d264f3818d4d08b6",
+  "candidate_input_files_changed_during_gate": [],
+  "raw_logs": {
+    "baseline": {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check.log",
+      "sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900"
+    },
+    "candidate": {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check.log",
+      "sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267"
+    }
+  },
+  "executed_stages": {
+    "baseline": [
+      {
+        "name": "Turtle parse check",
+        "outcome": "PASS"
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "outcome": "FAIL (1)"
+      }
+    ],
+    "candidate": [
+      {
+        "name": "Turtle parse check",
+        "outcome": "PASS"
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "outcome": "FAIL (1)"
+      }
+    ]
+  },
+  "stages_not_reached": "Both stop in the current_* unittest suite if their executed_stages show only Turtle parse and current publication assessment regression tests. All later conditional validation stages, the Makefile compile prerequisite and the final check recipe are not reached. Printed default report destinations do not establish execution.",
+  "gate_caveat": "make check was freshly executed on both baseline and candidate and did not pass. No gate, hook, or release waiver is granted by this comparison. No validators, tests, historical evidence or mappings were repaired by the comparison.",
+  "cases": [
+    {
+      "kind": "ERROR",
+      "test": "test_added_and_removed_rows_keep_exact_stable_identity (test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 181,
+      "candidate_log_line": 181,
+      "baseline_raw_block_sha256": "a4ee58af9955bf8b9665ca7ef628c2791a52477959f50ee15bebf00bdd9ed774",
+      "candidate_raw_block_sha256": "86490138e2bf78c3649362ec9ed902f61f368594b1835a9c125334c1176bbaec",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_baseline_exact_bytes_and_counts_are_unchanged (test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 112,
+      "candidate_log_line": 112,
+      "baseline_raw_block_sha256": "62c66f22c827b66732373cfdc1b8f89d4891ebe25ced96d4794231ba0c75cee9",
+      "candidate_raw_block_sha256": "abce734b2fa8381d4dec5738cf1f7d200160fdd2954073a4c437d14f76ea83d9",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_branching_and_missing_transitions_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 198,
+      "candidate_log_line": 198,
+      "baseline_raw_block_sha256": "58c0ac5292edbcc887af047d6d7bf592db4d914228b02363950d5710ff14b33d",
+      "candidate_raw_block_sha256": "6c8c7d7362cd1383d3be57a1b2a5c2ebef5552dca8bf2fe7f1997223f9e642f8",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_creation_keeps_live_and_historical_bytes_unchanged (test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 215,
+      "candidate_log_line": 215,
+      "baseline_raw_block_sha256": "45da1fff9df9343df650acf6b44d763d50714c97084014e7b6cf5239bceadd02",
+      "candidate_raw_block_sha256": "7c5133fdc74626270d51724634d00944db47f14740f9ecd49a7df3d1601309e8",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_cycle_attempt_and_stale_old_version_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 232,
+      "candidate_log_line": 232,
+      "baseline_raw_block_sha256": "8926ab8976075b89fb21fc372fbb572fd3391cd646dede5bec06e66a516c0f95",
+      "candidate_raw_block_sha256": "dfc25637c2b73af3e128dffffde1fc23fe4bbc7686f57b7a27ac4431a69ff1ef",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_e_authenticated_semantic_transition_without_required_applicability_fails (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 47,
+      "candidate_log_line": 47,
+      "baseline_raw_block_sha256": "c6e6aca424d9187211fac8e4a54c0e58e04e88733a67bd5b664f75d27040a2fe",
+      "candidate_raw_block_sha256": "5c8a3e97bf37210ae35ee55ae3911e55ea6e1247695b87a643fce339dcbcde1b",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_exact_manifest_rejects_omitted_cells_and_forged_states (test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 248,
+      "candidate_log_line": 248,
+      "baseline_raw_block_sha256": "962bd9494fe2fd5cf2e2c5d8861f660153a2a617bba0df8f51af36f5ed447921",
+      "candidate_raw_block_sha256": "b2560b627cde23d1cde8080754b098c4db79af93918f1be62bcb1226482e6b2b",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_explicit_inheritance_approvals_bind_exact_candidate_routes (test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 265,
+      "candidate_log_line": 265,
+      "baseline_raw_block_sha256": "2ec1f98ac3f047062004f5f8efee607cf5ed3722427de80a19d5e144d2ec6df1",
+      "candidate_raw_block_sha256": "189d2b07695be20a589c98c86bbe077178ed1c82cbdc80fb198cf6e191164b31",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_f_authenticated_material_determination_requires_reopening (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 64,
+      "candidate_log_line": 64,
+      "baseline_raw_block_sha256": "64240a6eef464a2caafc12562bf94a6b7c758ce5818ec403dc419404bc783dc2",
+      "candidate_raw_block_sha256": "d46c88d655f89964f08062b5e0364a5732236b568866ad7c4326221192c94be0",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_formal_mapping_finality_bypass_matrix (test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 4,
+      "candidate_log_line": 4,
+      "baseline_raw_block_sha256": "00c45142de149062f96b1a9f63138f97a02d5bc6bc9dddbc8e03ec05e779bc0b",
+      "candidate_raw_block_sha256": "85ec4460bcd205b2e10688ad96bd1e6f647d1e0bad3e8eeab17dba4a4c3f01ea",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_g_authenticated_non_material_determinations_preserve_decisions (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 81,
+      "candidate_log_line": 81,
+      "baseline_raw_block_sha256": "f10eca6e9f8f1a8b95d65c992ef193d3e624e0a021f33bf1ffde9695cbcca0f3",
+      "candidate_raw_block_sha256": "ed71f307dd6972120e1621c9a4516ef70fd7ee6d8047555f7d3b249b0c5d1dc0",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_later_transition_binds_exact_predecessor_record_bytes (test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 279,
+      "candidate_log_line": 279,
+      "baseline_raw_block_sha256": "4c66f3dbba2aa7d6fc37b148715503e5c89cde0d07ac0e8982f3305de53127e6",
+      "candidate_raw_block_sha256": "34ad9d35c950cbbead92f67b0f7e8627e786875cc39d0093fad5de761c7051db",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_multiple_semantic_and_documentary_transitions (test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 296,
+      "candidate_log_line": 296,
+      "baseline_raw_block_sha256": "da2b26a3762df7eaed213cab31307053f1f70becfd9c7d1e531bf12a5921c16f",
+      "candidate_raw_block_sha256": "bc52340d6ad702a9d929a867101110850d36921584c15bcc551c51851376ef10",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_no_semantic_transition_retains_baseline_behavior (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 36,
+      "candidate_log_line": 36,
+      "baseline_raw_block_sha256": "e2f77fc1f93596541bb1a134dfbe3865052949a84ff7b1970337881cd3b0645b",
+      "candidate_raw_block_sha256": "35dbc556ee19a4e2140ddc37b3e93ff11775c334f99c8f22d2fad24ef5e3c8c3",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_qualified_release_preserves_historical_protocol_and_governed_files (test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 25,
+      "candidate_log_line": 25,
+      "baseline_raw_block_sha256": "b6925aac5a718fafbd248c24a09383f1271b12a8e5f5bc379dba2509baa82c68",
+      "candidate_raw_block_sha256": "5be69821f800ec873d1fda5da4ce2663b5dbcdd46d0ba8bbd10e6913d2e6ab82",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_real_five_term_transition_preserves_history_and_sample_decisions (test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 98,
+      "candidate_log_line": 98,
+      "baseline_raw_block_sha256": "f9390bde608e599ee0fd3390068932845b8eb93c769bc08c81041335632e50bc",
+      "candidate_raw_block_sha256": "b16961218e8097b85b283bc3067da03d9e8c9f459613a516315e4182cf9f0675",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_real_semantic_transition_advances_products_without_replacing_old_authorities (test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 156,
+      "candidate_log_line": 156,
+      "baseline_raw_block_sha256": "a3f652c341ab1f46481865fee59c13693de8b91648b8c49adfc85257500d8890",
+      "candidate_raw_block_sha256": "de28497256d78934ea6496a0192afdc7a3083aed4ae1d09af7b513bb7ab34219",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_snapshot_tampering_fails_even_with_unchanged_live (test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 312,
+      "candidate_log_line": 312,
+      "baseline_raw_block_sha256": "5b70ddd67cf12bddd2ff7c1be473b09c7407038621a285597b69dd98355ad60a",
+      "candidate_raw_block_sha256": "4e3f6d38cc606db0876e4ddddce99fe09d1a58864495d889f5c951f6325601b6",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_source_target_rule_and_evidence_tampering_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 329,
+      "candidate_log_line": 329,
+      "baseline_raw_block_sha256": "1c18c2231ddc0954bb483480b18fa3196be57757a0be579e51a4ea914abfb0c0",
+      "candidate_raw_block_sha256": "f2e5fa036dc6d3855b79a1ed5a758e1a71ee8252fc2eabb7d69708604e7ed0f6",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_three_current_new_decisions_preserve_the_checkpoint (test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 142,
+      "candidate_log_line": 142,
+      "baseline_raw_block_sha256": "73aa90584143be80316ff86fe32632992e218e09b998977b340edea09557321c",
+      "candidate_raw_block_sha256": "3e9e0a8cb9e6eb925aa72fc0b15089cab8d47531b329efe746f71a3a42e56b4a",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_validated_exact_product_generation_preserves_historical_fingerprints (test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 170,
+      "candidate_log_line": 170,
+      "baseline_raw_block_sha256": "4577551a09fb441b31fa9e52f909b948d159a03b8c4b9968315a9a4e6f960bb7",
+      "candidate_raw_block_sha256": "22000f3887ac8401c9ff4b1b8c653c7ffc5524e9f45006f0fc8ccb2f84fb9084",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "ERROR",
+      "test": "test_validated_transition_enables_exact_counts_and_rendering (test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 128,
+      "candidate_log_line": 128,
+      "baseline_raw_block_sha256": "91933b6df905149164009353cf3f176c63afd02e6a538cc58b8caac6c90f72bc",
+      "candidate_raw_block_sha256": "55299b8da114cbd36564e92c3e32534cf5aff6604a42f86bcff9e5795f5d47ac",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_a_exact_original_workbook_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 391,
+      "candidate_log_line": 391,
+      "baseline_raw_block_sha256": "546fdf3e2bdb7349322b0d0d460b3364d278057600e75b9b0a595179b30f44fa",
+      "candidate_raw_block_sha256": "ca604918319bff43a3d6e75fc5bd3827cc0d11071dd6a5d4cb61dc82efa32f1a",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,6 +1,6 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_evidence_freshness.py\", line 120, in test_a_exact_original_workbook_preserves_sufficiency\n     self.assertEqual(evidence[\"input_sha256\"][documentary.WORKBOOK], audit.sha(self.live))\n-AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd'\n+AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7'\n - 778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c\n-+ e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd\n++ b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs compare immutable inheritance-sufficiency evidence with the current workbook and stop at the same stale historical hash expectation. Only the actual workbook hash changes according to the approved Platform transition; later assertions are not reached.",
+      "approved_hash_change": {
+        "baseline": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+        "candidate": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7"
+      }
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_accepted_checkpoint_keeps_original_baseline_and_identity (test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 544,
+      "candidate_log_line": 544,
+      "baseline_raw_block_sha256": "bc99eef89bf813a0a04f51fba92af9e19745684b6675a973d13e202de13507f1",
+      "candidate_raw_block_sha256": "d05864fbab621c93dac56fcdd42e600f722fdb3ff5c5241f136667afdf770352",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_authorized_current_history_passes_before_and_after_generation (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 354,
+      "candidate_log_line": 354,
+      "baseline_raw_block_sha256": "29985174e09539f732c5a74abb6e3ccec8cad7275aaae87da823b07701b9ffbd",
+      "candidate_raw_block_sha256": "4a234148fbc806050bb69fe42a584112534dc4219259d29c1cdbabc2fe3b365a",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_b_authenticated_d_only_transition_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 402,
+      "candidate_log_line": 402,
+      "baseline_raw_block_sha256": "374b9ec91ce7c120af9a0acebbbec15d581e9cc16f5e42ad6755592da38387a6",
+      "candidate_raw_block_sha256": "74e491c8ee7d25b84b7ad707b779aebdf86cd524440de2e050eb368a82fb2adc",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,6 +1,6 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_evidence_freshness.py\", line 128, in test_b_authenticated_d_only_transition_preserves_sufficiency\n     self.assertEqual(evidence[\"input_sha256\"][documentary.WORKBOOK], audit.sha(old))\n-AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd'\n+AssertionError: '778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c' != 'b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7'\n - 778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c\n-+ e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd\n++ b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs compare immutable inheritance-sufficiency evidence with the current workbook and stop at the same stale historical hash expectation. Only the actual workbook hash changes according to the approved Platform transition; later assertions are not reached.",
+      "approved_hash_change": {
+        "baseline": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+        "candidate": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7"
+      }
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_candidate_publication_evidence_is_not_historical_protected_content (test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 413,
+      "candidate_log_line": 413,
+      "baseline_raw_block_sha256": "8901ea63ac0c0438e551b8a8ae8b71d5cda6a17cc34f4a6522366809c0fae6b0",
+      "candidate_raw_block_sha256": "41aed5c4eb498b507c8bd0aa5bee0a61d843ac37ba8600607a390ca0740a1ac0",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_documentary_only_edit_cannot_be_semantic (test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 572,
+      "candidate_log_line": 572,
+      "baseline_raw_block_sha256": "50918c2451e7ef357801424f68852a5bd6b47f52f40ca5108b30a9a1e7bba4c3",
+      "candidate_raw_block_sha256": "1d4e8ffaa4b9e27c6cd9a02e5b871d35b0fb39659a9f47049ddcc490c918542c",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_external_coms_mutable_hash_cannot_redefine_expected_bytes (test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 424,
+      "candidate_log_line": 424,
+      "baseline_raw_block_sha256": "2dceb7b9464b70d8ade982ee3e823e8c3929bf3a90ff73e5cff803eaa80587da",
+      "candidate_raw_block_sha256": "f26f6e4d5390cd654723c37dde5556469df7e9e5120fca750fba05b8879365cb",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_four_documentary_bindings_retain_exact_history_and_live_report (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 465,
+      "candidate_log_line": 465,
+      "baseline_raw_block_sha256": "b573db444e4a32124b7e05186f41e65f8fc84b0edcc959a3b0ef52813375dfd4",
+      "candidate_raw_block_sha256": "48fc4162bb07aece4d56389b9c8f604a10666274a6e6d8074aa31c7bfe19f1f1",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,6 +1,6 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_retained_evidence_integration.py\", line 196, in test_four_documentary_bindings_retain_exact_history_and_live_report\n     self.assertEqual(digest(current_report), DIFF_CURRENT_SHA256)\n-AssertionError: '99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52' != 'e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d'\n-- 99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52\n+AssertionError: 'a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609' != 'e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d'\n+- a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609\n + e3dd0e160c6cf2acf994f462dc9ccd631fc7e9a934e58307362e20d8a248c80d\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs fail the same obsolete generated legacy-comparison report hash. Exact report diff adds only the approved Platform expression difference and adjusts corresponding common/removed/added totals; no other mapping difference is introduced.",
+      "approved_hash_change": {
+        "baseline": "99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52",
+        "candidate": "a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609"
+      }
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_governed_bytes_and_headers (test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 608,
+      "candidate_log_line": 608,
+      "baseline_raw_block_sha256": "3d87e96070252ee4461f413e8f8d0c0f3b0aa45e856ab226cabdec8452912cce",
+      "candidate_raw_block_sha256": "fde356fcab6bdf91b19ceeafad479ae2d96a2c960d5b8aa2675c43395e58e0a2",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_historical_authentication_is_independent_of_unrecorded_current_change (test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 484,
+      "candidate_log_line": 484,
+      "baseline_raw_block_sha256": "dccc3e6baa5cc8060e87505fac10d5a13ecbd3b389fcf7fa7e76657807e43471",
+      "candidate_raw_block_sha256": "c0c59ab83decf3a04f787067dc6e034285eef957f9fc90a8d33055ba1ed2bd8d",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_live_assessment_summary_matches_actual_records (test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 376,
+      "candidate_log_line": 376,
+      "baseline_raw_block_sha256": "06090d058e51cb5da1f548c66a71d0bc79ad08727fc17b5ae0e48ac9f12e50e0",
+      "candidate_raw_block_sha256": "3c378a13b41369d063d70898feec05b25b28aace50152568864b1fb1b2733a09",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,11 +1,11 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_documentation_policy.py\", line 55, in test_live_assessment_summary_matches_actual_records\n     self.assertEqual(tuple(map(int, summary[0])), expected)\n-AssertionError: Tuples differ: (17, 0, 74, 74, 10, 5, 2) != (23, 0, 68, 68, 16, 5, 2)\n+AssertionError: Tuples differ: (17, 0, 74, 74, 10, 5, 2) != (24, 0, 67, 67, 17, 5, 2)\n \n First differing element 0:\n 17\n-23\n+24\n \n - (17, 0, 74, 74, 10, 5, 2)\n-+ (23, 0, 68, 68, 16, 5, 2)\n++ (24, 0, 67, 67, 17, 5, 2)\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The same unchanged policy prose reports 17 final / 74 unreviewed / 10 formal mappings. Expected live counts change from 23/68/16 to 24/67/17 through the sole authorized Platform finalization. No stale policy prose was repaired."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_maintained_live_workbook_resolves_to_immutable_decision_snapshot (test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 365,
+      "candidate_log_line": 365,
+      "baseline_raw_block_sha256": "f8ec331294a0924a040120423e42c74c42211846f0880b4316892ccfe08656f5",
+      "candidate_raw_block_sha256": "cada87103213fa47bd2a671ee8b9cf42ae90f6e51a573e62158299c37be16a70",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,6 +1,6 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_documentary_workbook.py\", line 96, in test_maintained_live_workbook_resolves_to_immutable_decision_snapshot\n     self.assertEqual(guard.semantic_projection_sha256(ROOT / guard.WORKBOOK),\n-AssertionError: 'd5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4' != '566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44'\n-- d5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4\n+AssertionError: 'c7a63311ce8b0257489ee2a888e5b8d8314406844c6543b26640936966b4ff3e' != '566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44'\n+- c7a63311ce8b0257489ee2a888e5b8d8314406844c6543b26640936966b4ff3e\n + 566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs fail the same hardcoded historical semantic-projection hash. Candidate projection changes only according to the authenticated Platform semantic transition; immutable history and applicability checks precede this failure.",
+      "approved_hash_change": {
+        "baseline": "d5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4",
+        "candidate": "c7a63311ce8b0257489ee2a888e5b8d8314406844c6543b26640936966b4ff3e"
+      }
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_prepared_determinations_are_not_active_and_cannot_be_tampered (test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 496,
+      "candidate_log_line": 496,
+      "baseline_raw_block_sha256": "d3d38674ac30cb9f08f72feb553b769b34cf250aac50a0e1329e7534f72bb828",
+      "candidate_raw_block_sha256": "dca39d6ad929f60d51b7f8752020fbb0a61107ba90d0f730daa98105410e79e0",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_product_drift_requires_semantic_transition (test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 564,
+      "candidate_log_line": 564,
+      "baseline_raw_block_sha256": "b0108e892be6ce75f5ff2bff29ddc92e584d796df36677b854a24df82effd13d",
+      "candidate_raw_block_sha256": "56bf28b78179ead6504860bb0173492579adc289738dc0d488cfb6ab4bb9718c",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_queue_complete_and_rationales_separate_documentation_from_approval (test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 346,
+      "candidate_log_line": 346,
+      "baseline_raw_block_sha256": "61205356a5299c9be053fbd9891bd9c2858e56a62016d4277013c3ce2a77658c",
+      "candidate_raw_block_sha256": "c18f263093ac02452bec336f885b645a45b1d07314487916cb7df48c3db89a30",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_assessment.py\", line 804, in test_queue_complete_and_rationales_separate_documentation_from_approval\n     self.assertEqual(len(unresolved), 69)\n-AssertionError: 68 != 69\n+AssertionError: 67 != 69\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The unchanged queue test expects 69 unresolved terms. The baseline already has 68; approved Platform finalization leaves 67. Both stop at this same stale count assertion; later alternative-count and final-summary assertions remain masked."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_real_documentary_chain_and_forged_manifest_integration (test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 432,
+      "candidate_log_line": 432,
+      "baseline_raw_block_sha256": "53d8bd963200a55c28d00fa0b6e86efcd3fc4e5500a0fbddb1eeb7138a5d34b3",
+      "candidate_raw_block_sha256": "76da0502708bd6442506548b39b5ae3893d1eefeebdd4723cf2955d7ac2bd871",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_removal_authority_cannot_add_mapping (test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 584,
+      "candidate_log_line": 584,
+      "baseline_raw_block_sha256": "18202649bf71c883f3826af6d114a6e1613160f3b67eeb7e1b5c13903c001410",
+      "candidate_raw_block_sha256": "f2f0e5cab99bfd1726fb1c7132780527e5d38f9804371f8cbbd9a9294ce016d5",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_rowid_evolution_rejects_unrelated_bad_starting_membership (test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 508,
+      "candidate_log_line": 508,
+      "baseline_raw_block_sha256": "d3298315ce42b3d5d44fa1bbe475ea3e87378bb0e3cdfa074c604bc531caff05",
+      "candidate_raw_block_sha256": "dced00a5ae67b20950f9e663e023ca19346106f1881cec01857a8e6b83347d39",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_unauthorized_semantic_edit_and_documentary_impersonation_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 596,
+      "candidate_log_line": 596,
+      "baseline_raw_block_sha256": "81c8b92bbff491823d0ba9cc30fe53815100cf51aede59160fc5939b2e113ef8",
+      "candidate_raw_block_sha256": "516a347f6bad3f0f72adbd6baa2479d58c6502457b61a9676415b18c22ce9e58",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_unchanged_protected_bytes_pass (test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 443,
+      "candidate_log_line": 443,
+      "baseline_raw_block_sha256": "f592e0944c4f6c435442001aa34ef0b6fc86f6464f3b5381919895f86a125ba5",
+      "candidate_raw_block_sha256": "f74e69c90069fb19e247629a409bd8f8a9acfc8e944d63f42754b244bfa62beb",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_unrecorded_semantic_workbook_cannot_obtain_count_overrides (test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 532,
+      "candidate_log_line": 532,
+      "baseline_raw_block_sha256": "27f7656eb58d0f71d4b08b0ef5028aeb8e925efc2eb7e3617addc4867e3be6e1",
+      "candidate_raw_block_sha256": "485d07bb4fe601e2dfbb6c461def455e75a2d60885a194428b6cf5c0d4d12190",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes (test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 520,
+      "candidate_log_line": 520,
+      "baseline_raw_block_sha256": "6cf685d7221c5522bfc4fe07f0b8a7db5147e3a2ea4df35d66b95db8de4e8b78",
+      "candidate_raw_block_sha256": "5b923be9ec6163252ba86b4dc060095199bc6726e2658bac7539c9ee9a85e3e2",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_valid_documentary_chain_preserves_pinned_baseline (test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 454,
+      "candidate_log_line": 454,
+      "baseline_raw_block_sha256": "2d5ea4437105774ad3bcfcc5f5825a567127669b11facf34b8bcfbe0cc482773",
+      "candidate_raw_block_sha256": "a0e128e92d62315f17ad18a09261ff6004181ac5624143259c25583b28708a66",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "kind": "FAIL",
+      "test": "test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies)",
+      "baseline_failed": true,
+      "candidate_failed": true,
+      "baseline_log_line": 476,
+      "candidate_log_line": 476,
+      "baseline_raw_block_sha256": "8ad7d96f725725d3dca2a78c4ac3c0428d93731486c2321e9fc441e397fc6b37",
+      "candidate_raw_block_sha256": "67d2cd373e10c4b65aa87a082feacfcfb1ffb28841fbc88f89b88f8bc5ef62a9",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_current_retained_evidence_integration.py\", line 247, in test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies\n     self.assertIn(decision[key][\"path\"], inputs)\n-AssertionError: 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json' not found in {'tools/check_sosa_2023_ro_source_version.py', 'tools/sosa_2023_check_release.py', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt', 'reports/sosa-sensor-version-alignment-deferral.md', 'tests/test_robot_extract_pilot.py', 'tools/sosa_release_scope.py', 'tests/fixtures/property-chain-mapping/property-chain-mappings.ttl', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json', 'reports/retained-evidence/execution/sha256/9f0c1f106ea9d28357816e30518934a3f411b94fba0991918eb528c0d044f9d6', 'tests/test_current_evidence_dependency_contract.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json', 'tests/test_sosa_2023_ro_mapping.py', 'tools/generate_sosa_next_products.py', 'reports/current-documentary-workbook/updates/28022a81-0a85-485d-be5e-a75cc61e0ab5.json', 'reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json', 'reports/retained-evidence/execution/sha256/a3c56e7d27734d627b0f75800db3aacdf3c9c4fc9f7d8ad4680b20028f5f89f7', 'src/current-ssn-sosa/sparql/export/sssom-cco-mappings.rq', 'tools/publication_metadata.py', 'config/release-manifest-schema-v1.json', 'reports/retained-evidence/execution/sha256/a1f5929a11e93d5991f2a953cc8ba6b5951b0737ccf572979b532fa3758bb796', 'rules/ssn-implementation-mapping.rq', 'tools/current_validation_scope.py', 'reports/current-semantic-workbook/transitions/bd69b546-6ef2-4704-8f05-325ec9bc1862.json', 'reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json', 'reports/current-semantic-workbook/versions/e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd.xlsx', 'SSN2BFO.ttl', 'config/publication-metadata.toml', 'tools/coms_framework_integration.py', 'tools/check_product_role_policy.py', 'reports/retained-evidence/execution/sha256/44d1136dd11bd96aecdc357fe8d4f46d6ab468575dc05faa73bf8e51fc4cf849', 'tests/test_sosa_2023_release_rehearsal.py', 'reports/retained-evidence/execution/sha256/43f882cf78f7d1938c118162551da43efae5a8acd96d4f58427b7b778a3c637f', 'tools/release_archive.py', 'tests/test_sosa_2023_release_archive.py', 'reports/retained-evidence/execution/sha256/d3a912bf42cfc0e0dce9b96666180b016e3504fde06ba089f3dc2c801b65329d', 'tools/current_semantic_invocation.py', 'src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl', 'tests/test_current_formal_typing.py', 'tests/test_current_evidence_freshness.py', 'src/sosa-next/sparql/export/sssom-mappings.rq', 'reports/retained-evidence/execution/sha256/57142e6604aa42612f6c8e98cc0eb689a49b1bcb24411d305d66e1439b944170', 'tools/check_sosa_2023_ro_mapping.py', 'reports/retained-evidence/execution/sha256/cf007539e2b648b58434f518e9b28f24d276c0b5643b080002ea0a43f36e5606', 'tools/current_assessment.py', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md', 'tools/sosa_2023_release_runtime.py', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json', 'tools/robot_property_chain_generation_pilot.py', 'tests/test_sosa_source_version.py', 'config/sosa-2023-ro-source-version.toml', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md', 'reports/coms-source-term-coverage.md', 'tests/test_current_documentation_policy.py', 'tools/check_sosa_next_mapping.py', 'tests/test_sosa_2023_publication_metadata.py', 'reports/retained-evidence/execution/sha256/174c9c851787bc53912792789d5adbcd50a6a6ce978da1e9c3f7a532b7a8e1ed', 'tests/fixtures/restriction-mapping/sample-relationship-restrictions.ttl', 'src/sosa-next/imports/sosa-observation.ttl', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json', 'tests/test_product_dispositions.py', 'reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md', 'reports/retained-evidence/execution/sha256/047e23401212193ae2df1042785775615fef4c06edf7828bb862f18534d0c402', 'reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json', 'reports/retained-evidence/execution/sha256/948c8b4bbf907204830d28bf5d8cfc3c77365baf45495dfd8ea930d9d133d153', 'config/sosa-2023-release-manifest-schema-v1.json', 'src/sosa-next/imports/sample-relations.ttl', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json', 'src/sosa-next/sparql/export/sssom-bfo-mappings.rq', 'tools/sosa_2023_rehearse_release.py', 'releases/sosa-next/sosa-cco-extension.ttl', 'imports/ssn.ttl', 'reports/retained-evidence/execution/sha256/9e84edae281c89c935d4a8169ca01f83dae533aa6ffa187d5d988755bdb63bbb', 'reports/actuation-range-simplification-implementation.md', 'reports/retained-evidence/execution/sha256/3ee39b49926f821c861f475b869dabb7a65119437e1c4a077f64e6c89c17c88b', 'tests/test_current_portable_execution_evidence.py', 'tests/test_sosa_release_scope.py', 'reports/reasoner-unsafe-system-mapping-deferral.md', 'reports/current-documentary-workbook/reasoning-completion/audit-source.md', 'src/sosa-next/sparql/report/unmapped-terms.rq', 'src/sosa-next/imports/sosa-sampling.ttl', 'tests/test_build_release.py', 'reports/current-decision-applicability/prepared/hasSample-forProperty.json', 'tests/release_authority_fixture.py', 'tools/generate_sosa_2023_ro_mapping.py', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation-review-packet.json', 'reports/isHostedBy-hosts-full-closure-analysis.md', 'reports/retained-evidence/execution/sha256/9abbe2794260971e2cfa6628a253e6c669237230a0725e553c5cabb08b912de5', 'tests/test_robot_property_chain_generation_pilot.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt', 'src/current-ssn-sosa/sparql/export/sssom-mappings.rq', 'tests/test_sosa_2023_ro_reasoning.py', 'tests/test_product_role_policy.py', 'tools/check_sosa_next_products.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt', 'config/sosa-source-version.toml', 'tests/test_robot_verify_pilot.py', 'tools/current_semantic_generation.py', 'tools/java/CurrentSemanticReasoner.java', 'tools/current_portable_execution_evidence.py', 'tools/workflow_check.py', 'tools/robot_extract_pilot.py', 'reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json', 'reports/coms-product-dispositions.json', 'reports/retained-evidence/execution/sha256/c6636ef11c16f9f96c7de44b202233396260a922059bafdf052873b29a4c200c', 'reports/retained-evidence/execution/sha256/ea9ee673bf2475ddffe51a0e09aa15a9cedc4d0d312c8da0436e1df8c4fd353d', 'reports/retained-evidence/execution/sha256/c54ad6388a48dcba9d6528e0d1cc372c2a0f75036b6814d6a9f10a2e499e461b', 'tests/test_current_semantic_invocation.py', 'tools/check_sosa_source_version.py', 'src/sosa-next/imports/sosa.ttl', 'config/current-documentary-workbook-baseline.json', 'reports/retained-evidence/execution/sha256/7f2838f4bedc448d6cabb77be8a1a0664d5399691ff4c0167c21c4c62279a684', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-rowids-before.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json', 'reports/retained-evidence/execution/sha256/cdbc9ecdc368a66e7a5d0bd603b54ec4a462264ab3b762495fa41200fbfc2849', 'reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt', 'src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl', 'reports/hermit-observedProperty-deferral-evaluation.md', 'reports/retained-evidence/execution/sha256/037849a94ede24e56ea053dcc2bcf1d5ccb5487c6fda56101396979812541489', 'tests/test_current_retained_evidence.py', 'tests/test_coms_framework_integration.py', 'src/sosa-next/catalog-v001.xml', 'reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json', 'mappings/SOSA-next-to-BFO-COMS.xlsx', 'tools/test_full_sosa_closure_hermit.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json', 'mappings/SSN2BFO-COMS.xlsx', 'queries/source-classes-and-object-properties.rq', 'reports/sample-relationship-deferral.md', 'tests/test_current_checkpoint_successor.py', 'reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json', 'tests/fixtures/current-semantic/implementation-rule.ttl', 'reports/retained-evidence/execution/sha256/65fa6f8a898bd1015cab8a66d3971a0678bb183725a528fbd56e4474dc8dd30b', 'reports/retained-evidence/execution/sha256/cd901faab68ded7a2684a13a2dd0272b7135af5c5bd0eca933ed43f681bb93f4', 'tests/test_current_semantic_generation.py', 'reports/retained-evidence/execution/sha256/fd21e937dea606252c7f767143ffcc59181ad56e742b5b2e1a86f117e1975dc6', 'reports/all-mapping-changes-and-rationales.md', 'tests/test_current_custody_dependencies.py', 'tests/test_release_rehearsal.py', 'tests/test_generate_mapping_from_coms.py', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json', 'reports/current-documentary-workbook/versions/825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d.xlsx', 'tests/test_sosa_2023_ro_source_version.py', 'tests/test_release_manifest.py', 'reports/retained-evidence/execution/sha256/7b54ed32a0e5247bd270554bab802667c4acac79c93e270e33759710243dc71f', 'reports/retained-evidence/execution/sha256/ca25d41c25100d1c888ce5669c15f77591108d97b814013a0aa721c403c6cf71', 'reports/sosa-sensor-version-alignment-resolution.md', 'reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx', 'tests/test_robot_retained_example_validation_pilot.py', 'reports/isActedOnBy-actsOnProperty-full-closure-analysis.md', 'tools/test_instance_data.py', 'tools/robot_template_generation_pilot.py', 'src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl', 'tests/fixtures/ssn-systems-mapping/ssn-systems-property-mappings.ttl', 'releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl', 'reports/retained-evidence/execution/sha256/9d4e2659b54b90138d14a43bdffd6a8cc76f731e757c0f0034141ed36f55e49b', 'tests/test_current_source_identity.py', 'reports/retained-evidence/execution/sha256/20a809b075d5f32bffb1e275ac1bc9b104c6f49d62b63411045ec51f4c9c260f', 'reports/retained-evidence/execution/sha256/796fbca331b52d7e2856364b2496a02c1b327e7960045a78439e2697ed9c1ec1', 'reports/system-property-process-profile-scope-review.md', 'tests/test_implementation_rule_coverage.py', 'tests/test_robot_query_equivalence_pilot.py', 'reports/inverse-side-direct-mapping-policy-review.md', 'tests/test_current_publication_readiness.py', 'reports/straightforward-op-mapping-candidates-review.md', 'reports/system-property-direct-mapping-deferral.md', 'reports/retained-evidence/execution/sha256/b65fa589cbc4f4e5b29b17e52891a85abd0ab70c7ebe8f10e13883bc93d15bcb', 'tests/test_current_publication_preservation.py', 'reports/updated-spreadsheet-ttl-only-assertions-review.md', 'reports/ssn-systems-dependence-reactivation-results.md', 'tools/sosa_2023_release_archive.py', 'src/sosa-next/sparql/artifact-metadata.rq', 'reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx', 'tools/robot_query_equivalence_pilot.py', 'reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json', 'src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl', 'mappings/current-ssn-sosa-assessment.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt', 'reports/retained-evidence/execution/sha256/1ed07b0d4c18ceec5df9d499c9bbe26a7aef8a44ab9fd72e2cac8f0c9f099357', 'reports/hermit-survival-range-deferral-evaluation.md', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json', 'tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md', 'src/sosa-next/imports/sosa-deprecated.ttl', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json', 'tests/test_sosa_2023_mapping_status.py', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/rationale-changes.json', 'reports/retained-evidence/execution/sha256/7c76c962548c807631da94c73841d05fa291639d6134199862c0b35844bdc4ae', 'reports/retained-evidence/execution/sha256/cc55270713eeb37aeb51eb5069ae8e842270bbd17b5ff69757a78107faca4fc5', 'src/sosa-next/imports/sosa-source-declaration-overlay.ttl', 'tests/test_current_assessment_freshness.py', 'reports/rerun-prior-clean-decisions-full-sosa.md', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json', 'tools/run_validation_suite.py', 'reports/retained-evidence/execution/sha256/19f3bb625fb8b2ae7f565ac8a78693ce60af184edcbbe0746ac26708ad1b92fa', 'reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx', 'reports/retained-evidence/sha256/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c/coms-source-term-coverage.md', 'tests/test_current_validation_scope.py', 'reports/retained-evidence/execution/sha256/e736fc62376e5683b5ee23dca3c7740fbbb7e3a214004aad3f03d248e29b8302', 'tests/test_ssn_implementation_rule.py', 'tools/build_release.py', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/authorized-request.txt', 'reports/retained-evidence/execution/sha256/e3ee0c2074b9511a4beb19b775fa204b8158b52062d46cc341a73e27124e1900', 'tests/test_current_semantic_retry.py', 'tools/watch_coms_mapping.py', 'tools/current_retained_evidence.py', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty.json', 'reports/observes-upper-mapping-decision.md', 'config/current-ssn-sosa-historical-finals.json', 'src/sosa-next/sparql/no-template-leakage.rq', 'src/sosa-next/sosa-mappings-edit.ttl', 'requirements/validation.txt', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json', 'tests/test_robot_reconstruction_validation.py', 'tools/sosa_source_version.py', 'src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl', 'src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl', 'reports/retained-evidence/execution/sha256/ac7485409516c2d7323993948fd68d4432644ae7f405994623a4a974674ee95b', 'reports/retained-evidence/execution/sha256/ec672771aee5800f0c48eb1a96607051c8834e7d218134373691f6c4f0f8b9c0', 'tests/test_current_retained_evidence_integration.py', 'reports/madeSampling-madeBySampler-full-closure-analysis.md', 'tests/test_sosa_next_consumer_stack.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json', 'reports/sampler-equivalentclass-decision.md', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json', 'imports/sosa-sampling.ttl', 'tools/test_object_property_typing_probes.py', 'reports/current-documentary-workbook/reasoning-completion/catalog.json', 'tools/robot_reconstruction_validation.py', 'tests/test_current_semantic_schema.py', 'tests/test_current_assessment.py', 'tools/robot_diff_pilot.py', 'reports/retained-evidence/execution/sha256/19f19ddbc2b8722cece39e450e7ae271556613ae7b52ac290c2c4a00a079124d', 'reports/coms-frequency-correction-validation.md', 'tests/test_robot_diff_pilot.py', 'tests/test_publication_metadata.py', 'tests/test_modular_products.py', 'mappings/SOSA-next-to-RO-COMS.xlsx', 'reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt', 'reports/current-semantic-workbook/versions/0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a.xlsx', 'reports/current-human-decisions/2026-10-25-sample-pair/manifest.json', 'tools/coms_row_identity.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json', 'src/sosa-next/imports/sosa-system.ttl', 'reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx', 'tools/generate_mapping_from_coms.py', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl', 'tools/check_coms_mapping.py', 'reports/retained-evidence/execution/sha256/d1aaad22a22d3a889e98ba8e96b54c3d3759529067719584f7f6bcb87b6b7c4d', 'Makefile', 'tests/test_strict_bfo_mapping.py', 'tools/sosa_2023_mapping_status.py', 'imports/sosa.ttl', 'tests/test_sosa_2023_release_rendering.py', 'tools/check_publication_metadata.py', 'rules/ssn-hasproperty-conditional-mapping.rq', 'tests/fixtures/current-semantic/sample-relationship.ttl', 'reports/current-ssn-sosa-semantic-validation.md', 'src/sosa-next/imports/sosa-common.ttl', 'src/sosa-next/imports/sosa-actuation.ttl', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json', 'tests/test_current_validation_execution.py', 'reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json', 'tools/compare_mappings.py', 'reports/retained-evidence/execution/sha256/2139f7f0207eb9f7102152e44b16dda6bcdd778c693e4e345bab6a4302327a0d', 'releases/sosa-next/sosa-integrated.ttl', 'reports/retained-evidence/manifests/2adf99bf936ef2f39d6ed96c48a92a5e74111d83b8cb3d9521e2c679ec1c59ed/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c.json', 'imports/ssn-systems.ttl', 'tests/test_placeholder_catalog_migration.py', 'tests/test_current_cross_track_preservation.py', 'tests/test_current_semantic_preservation.py', 'tools/product_role_policy.py', 'tests/test_current_semantic_workbook.py', 'reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json', 'reports/retained-evidence/execution/sha256/cac9dd16631e8789684e8715edc5412a0284c1fb6c520bba3d606c25853a31fd', 'releases/sosa-next/sosa-bfo-mapping.ttl', 'reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt', 'tools/robot_verify_pilot.py', 'tests/test_sosa_2023_build_release.py', 'queries/verify/unmapped-source-terms.rq', 'config/validation-toolchain.env', 'tests/test_current_identity_reporting.py', 'tools/rehearse_release.py', 'src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl', 'config/sosa-release-scope.toml', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json', 'src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl', 'reports/retained-evidence/execution/sha256/8b5c6d68575f6a2b111a84e39cb3117d2072460ee3584b94ac5135c55c2f7b3f', 'reports/coms-vs-pre-coms-legacy-diff.md', 'config/sosa-2023-ro-product.toml', 'tests/fixtures/current-release-authority/release-contract-20261028/prior-final-state.json', 'tests/test_check_sosa_next_mapping.py', 'tests/test_release_rendering.py', 'reports/coms-generation-validation.md', 'tools/current_custody_dependencies.py', 'src/current-ssn-sosa/sparql/export/sssom-bfo-mappings.rq', 'config/product-role-policy.toml', 'reports/input-output-cco-mapping-rationale-cleanup.md', 'config/current-ssn-sosa-scope.json', 'tests/test_current_release_authentication.py', 'tools/modular_products.py', 'releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl', 'src/current-ssn-sosa/sparql/report/unmapped-terms.rq', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json', 'tests/test_cco_extension.py', 'tools/robot_retained_example_validation_pilot.py', 'reports/madeByActuator-range-after-agent-deferral.md', 'tests/test_current_semantic_applicability.py', 'tools/test_elk_instance_mapping_entailments.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json', 'reports/mapping-consistency-target-mismatch-review.md', 'src/sosa-next/sparql/export/sssom-cco-mappings.rq', 'reports/current-human-decisions/2026-11-01-observation-adjudication/assessment-before.json', 'tools/check_sosa_release_scope.py', 'reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt', 'tests/test_release_archive.py', 'config/release-manifest-schema-v2.json', 'tests/test_sosa_2023_release_runtime.py', 'reports/retained-evidence/execution/sha256/21d708db0fd127886911a3ee81a8e78ddc580a9f25f5d3a2b269099b586342a1', 'reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx', 'src/sosa-next/imports/cco.ttl', 'reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json', 'reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx', 'tools/current_validation_execution.py', 'reports/retained-evidence/execution/sha256/80a8b4dbca590045249c8ff7f7402dd7915a461ef1834f0414437d41327fb9cb', 'tests/test_current_validation_selection.py', 'reports/retained-evidence/execution/sha256/60219a32fae197fa7d14928f945340a8488d4d59be071ab0617543cdc74eb766', 'src/sosa-next/imports/ro-full.owl', 'reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json', 'reports/current-documentary-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx', 'tests/test_release_contract.py', 'tests/test_sosa_2023_ro_explicit_paths.py', 'tests/test_coms_row_identity.py', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/authorized-instruction.txt', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt', 'src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl', 'reports/retained-evidence/execution/sha256/a582cc448cc3f2330467df7c32093f2872fc244b8ec755c2e4831970b3735857', 'tests/test_bfo_projection.py', 'tools/current_source_identity.py', 'reports/retained-evidence/execution/sha256/77c707afa28244e0ecc1a36527c653ee63342afc8ace2695947ba755315603c6', 'tools/current_semantic_workbook.py', 'reports/retained-evidence/execution/sha256/3105f57fc3af2d1ee8db3077d4caa76fd840c126d13145445cf6c806652c7223', 'reports/retained-evidence/execution/sha256/c3c657272a8917d2a755ae8a469014bfb02e214257b2fa9597cd795189d97ecc', 'releases/sosa-next/sosa-ro-mapping.ttl', 'legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md', 'tests/fixtures/current-release-authority/release-contract-20261028/authorized-request.txt', 'config/current-semantic-expectations.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json', 'releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl', 'reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json', 'tests/test_robot_template_generation_pilot.py', 'reports/retained-evidence/execution/sha256/f10379610807d6859df943f169fe830828c0560a261089b069f217ba1e804a7f', 'reports/retained-evidence/execution/manifests/66262154210cb9e41136bd28622d915eac4df7d498ed87d2a5d08eeb2a99b38a.json', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl', 'tests/test_current_semantic_validation.py', 'reports/actuation-agent-property-mapping-deferral.md', 'config/sosa-2023-publication-metadata.toml', 'tools/current_checkpoint_successor.py', 'reports/retained-evidence/execution/sha256/b40d24fb777025e32bde8a8c80bde087bcb2b01332691a27df07b040ed5b97ea', 'tools/release_context.py', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json', 'queries/unmapped-source-terms.rq', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt', 'reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json', 'tests/fixtures/current-release-authority/release-contract-20261028/authority.json', 'reports/retained-evidence/execution/sha256/2858052d1947638c1bbeb094c90e5a3ec976421f82198680714451838dd49ed3', 'tools/current_documentary_workbook.py', 'reports/ssn-hasproperty-rule-mapping-artifact.md', 'tools/validate_robot_reconstruction.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json', 'tools/release_manifest.py', 'tools/check_release.py', 'tools/sosa_2023_build_release.py', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/prior-final-state.json', 'reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx', 'config/current-ssn-sosa-identity.json', 'reports/retained-evidence/execution/manifests/d1e052e447bf0ecd6d5d46de62c6f4011d8ffb6d22bf36490d8ffd6dfb41f212.json', 'tests/test_sosa_2023_release_manifest.py', 'tests/test_current_documentary_workbook.py', 'tests/fixtures/ssn-core-mapping/ssn-core-property-class-mappings.ttl', 'imports/cco.ttl', 'reports/mapping-consistency-resolution-plan.md', 'tools/sosa_2023_release_manifest.py', 'reports/isResultOf-hasResult-full-closure-analysis.md', 'tools/current_semantic_validation.py', 'reports/sample-representation-property-chains-review.md', 'tools/current_decision_applicability.py', 'tools/product_dispositions.py', 'tests/test_sosa_next_products.py', 'reports/retained-evidence/execution/sha256/fbfbe6717c2a0980f644ec67b75b2ecbf2b28773c50bec4aaf75685a8f8e90ef', 'tools/current_publication_preservation.py', 'src/current-ssn-sosa/sparql/no-template-leakage.rq', 'reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md', 'tools/current_publication_readiness.py', 'tests/test_current_documentary_decisions.py', 'reports/retained-evidence/execution/sha256/71ba5dadf181e1790e632b20ba64dbc047b13bb822b79224746c95975ab6758c', 'requirements/coms-integration.txt', 'tests/test_release_context.py'}\n+AssertionError: 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json' not found in {'tests/test_product_dispositions.py', 'tools/current_documentary_workbook.py', 'tests/release_authority_fixture.py', 'src/sosa-next/sosa-mappings-edit.ttl', 'reports/retained-evidence/execution/sha256/cc55270713eeb37aeb51eb5069ae8e842270bbd17b5ff69757a78107faca4fc5', 'tools/sosa_2023_check_release.py', 'tools/check_sosa_next_products.py', 'tools/modular_products.py', 'tests/test_robot_property_chain_generation_pilot.py', 'reports/current-human-decisions/2026-10-25-sample-pair/assessment-before.json', 'reports/retained-evidence/sha256/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c/coms-source-term-coverage.md', 'tools/robot_diff_pilot.py', 'reports/ssn-systems-dependence-reactivation-results.md', 'src/current-ssn-sosa/examples/sosa-instance-data/sunspots.ttl', 'src/current-ssn-sosa/sparql/export/sssom-cco-mappings.rq', 'reports/current-ssn-sosa-semantic-validation.md', 'reports/reasoner-unsafe-system-mapping-deferral.md', 'config/sosa-source-version.toml', 'reports/retained-evidence/execution/sha256/2139f7f0207eb9f7102152e44b16dda6bcdd778c693e4e345bab6a4302327a0d', 'src/sosa-next/imports/sosa-observation.ttl', 'src/sosa-next/sparql/export/sssom-cco-mappings.rq', 'tests/test_release_rendering.py', 'tests/test_current_validation_selection.py', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json', 'tests/fixtures/property-chain-mapping/property-chain-mappings.ttl', 'reports/coms-vs-pre-coms-legacy-diff.md', 'tests/test_current_validation_scope.py', 'reports/retained-evidence/execution/sha256/cf007539e2b648b58434f518e9b28f24d276c0b5643b080002ea0a43f36e5606', 'imports/cco.ttl', 'tests/test_current_documentation_policy.py', 'reports/coms-product-dispositions.json', 'tests/test_sosa_2023_release_rendering.py', 'tools/release_archive.py', 'tests/test_sosa_source_version.py', 'tools/current_portable_execution_evidence.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-review-packet.json', 'tests/test_current_validation_execution.py', 'tests/test_coms_framework_integration.py', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/approved-instructions.txt', 'reports/retained-evidence/manifests/2adf99bf936ef2f39d6ed96c48a92a5e74111d83b8cb3d9521e2c679ec1c59ed/11330ccd4bed83934a6520a6cb6024c7f31bc5ebf5d405f5045e58b7d8deb36c.json', 'reports/current-documentary-workbook/versions/778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c.xlsx', 'reports/retained-evidence/execution/sha256/e736fc62376e5683b5ee23dca3c7740fbbb7e3a214004aad3f03d248e29b8302', 'reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-validation.md', 'tools/current_publication_preservation.py', 'src/sosa-next/imports/sosa.ttl', 'reports/retained-evidence/execution/sha256/b65fa589cbc4f4e5b29b17e52891a85abd0ab70c7ebe8f10e13883bc93d15bcb', 'tests/test_current_semantic_workbook.py', 'tools/sosa_source_version.py', 'tools/run_validation_suite.py', 'tools/current_assessment.py', 'tools/current_decision_applicability.py', 'tools/test_instance_data.py', 'tests/test_current_identity_reporting.py', 'src/sosa-next/imports/sosa-actuation.ttl', 'reports/retained-evidence/execution/sha256/80a8b4dbca590045249c8ff7f7402dd7915a461ef1834f0414437d41327fb9cb', 'reports/retained-evidence/execution/sha256/d1aaad22a22d3a889e98ba8e96b54c3d3759529067719584f7f6bcb87b6b7c4d', 'src/sosa-next/imports/sosa-common.ttl', 'tools/watch_coms_mapping.py', 'tests/test_current_retained_evidence.py', 'reports/retained-evidence/execution/sha256/cac9dd16631e8789684e8715edc5412a0284c1fb6c520bba3d606c25853a31fd', 'reports/retained-evidence/execution/sha256/cd901faab68ded7a2684a13a2dd0272b7135af5c5bd0eca933ed43f681bb93f4', 'src/sosa-next/imports/sosa-system.ttl', 'tests/fixtures/ssn-systems-mapping/ssn-systems-property-mappings.ttl', 'tools/workflow_check.py', 'tests/test_sosa_2023_publication_metadata.py', 'reports/coms-frequency-correction-validation.md', 'config/sosa-2023-release-manifest-schema-v1.json', 'tests/test_current_assessment.py', 'tests/test_cco_extension.py', 'config/release-manifest-schema-v2.json', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json', 'tools/robot_reconstruction_validation.py', 'src/current-ssn-sosa/sparql/export/sssom-bfo-mappings.rq', 'src/current-ssn-sosa/examples/sosa-instance-data/iphone_barometer-sosa.ttl', 'tests/test_current_semantic_applicability.py', 'reports/current-documentary-workbook/updates/e3799290-3b0c-49d5-b236-bdc0d0adda50.json', 'reports/retained-evidence/execution/sha256/c6636ef11c16f9f96c7de44b202233396260a922059bafdf052873b29a4c200c', 'tests/test_sosa_2023_release_archive.py', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/validation-result.json', 'reports/retained-evidence/execution/sha256/9e84edae281c89c935d4a8169ca01f83dae533aa6ffa187d5d988755bdb63bbb', 'reports/retained-evidence/execution/manifests/66262154210cb9e41136bd28622d915eac4df7d498ed87d2a5d08eeb2a99b38a.json', 'imports/ssn-systems.ttl', 'reports/sosa-sensor-version-alignment-deferral.md', 'tests/test_current_publication_readiness.py', 'tools/robot_property_chain_generation_pilot.py', 'tests/fixtures/current-semantic/sample-relationship.ttl', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/external-rule/validation-result.json', 'tools/coms_framework_integration.py', 'reports/current-semantic-workbook/transitions/035e5877-1b9d-444c-a970-239ce3bcb97c.json', 'tests/test_sosa_2023_ro_source_version.py', 'reports/current-semantic-workbook/versions/0ce3ec7d4b161619b23a2bb42793859726345a90e9946e68164588fa78e81f7a.xlsx', 'releases/sosa-next/sosa-cco-extension.ttl', 'tools/current_validation_scope.py', 'reports/current-documentary-workbook/versions/2ab0ca09637a83700103f8081b8417408816346e6fb56c33b4c1df3626dac92c.xlsx', 'tests/test_current_semantic_preservation.py', 'reports/retained-evidence/execution/sha256/9f0c1f106ea9d28357816e30518934a3f411b94fba0991918eb528c0d044f9d6', 'legacy/workbooks/Current_SOSA-SSN to BFO-CCO.xlsx', 'tools/robot_extract_pilot.py', 'reports/retained-evidence/execution/sha256/796fbca331b52d7e2856364b2496a02c1b327e7960045a78439e2697ed9c1ec1', 'src/sosa-next/catalog-v001.xml', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/authorized-instructions.txt', 'reports/sosa-sensor-version-alignment-resolution.md', 'reports/retained-evidence/execution/sha256/20a809b075d5f32bffb1e275ac1bc9b104c6f49d62b63411045ec51f4c9c260f', 'reports/retained-evidence/execution/sha256/fbfbe6717c2a0980f644ec67b75b2ecbf2b28773c50bec4aaf75685a8f8e90ef', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation-review-packet.json', 'mappings/SSN2BFO-COMS.xlsx', 'src/current-ssn-sosa/examples/sosa-instance-data/Beer-Full-IBS-TH2.ttl', 'tests/test_release_manifest.py', 'tests/test_sosa_2023_release_runtime.py', 'releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl', 'reports/current-human-decisions/2026-10-25-sample-pair/hasSample-review-packet.json', 'src/current-ssn-sosa/examples/sosa-instance-data/IDEAS.ttl', 'reports/current-decision-applicability/prepared/hasSample-forProperty-three-term-2026-10-26.json', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-chain-decision.md', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/historical-sensor-deferral.md', 'reports/retained-evidence/execution/sha256/65fa6f8a898bd1015cab8a66d3971a0678bb183725a528fbd56e4474dc8dd30b', 'reports/actuation-agent-property-mapping-deferral.md', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/assessment-before.json', 'src/sosa-next/imports/sample-relations.ttl', 'tests/test_release_archive.py', 'reports/retained-evidence/manifests/63059c063bd54907cc3575a4163a98792079d013041cf795c2e68dc4833be8ba/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860.json', 'config/sosa-2023-ro-product.toml', 'reports/retained-evidence/execution/sha256/43f882cf78f7d1938c118162551da43efae5a8acd96d4f58427b7b778a3c637f', 'tests/test_sosa_2023_ro_reasoning.py', 'tests/fixtures/current-semantic/implementation-rule.ttl', 'releases/sosa-next/sosa-integrated.ttl', 'tools/generate_sosa_2023_ro_mapping.py', 'config/current-documentary-workbook-baseline.json', 'tests/test_robot_retained_example_validation_pilot.py', 'tests/test_current_semantic_invocation.py', 'tools/generate_mapping_from_coms.py', 'tools/robot_retained_example_validation_pilot.py', 'reports/current-documentary-workbook/reasoning-completion/audit-source.md', 'src/current-ssn-sosa/sparql/report/unmapped-terms.rq', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/assessment-rowids-before.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/approved-instructions.txt', 'reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json', 'tools/sosa_release_scope.py', 'tools/check_release.py', 'tests/test_ssn_implementation_rule.py', 'reports/retained-evidence/execution/sha256/948c8b4bbf907204830d28bf5d8cfc3c77365baf45495dfd8ea930d9d133d153', 'src/current-ssn-sosa/sparql/no-template-leakage.rq', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json', 'tools/check_sosa_2023_ro_source_version.py', 'tools/current_retained_evidence.py', 'tests/test_current_source_identity.py', 'tests/test_release_contract.py', 'reports/retained-evidence/execution/sha256/44d1136dd11bd96aecdc357fe8d4f46d6ab468575dc05faa73bf8e51fc4cf849', 'reports/retained-evidence/execution/sha256/ec672771aee5800f0c48eb1a96607051c8834e7d218134373691f6c4f0f8b9c0', 'tests/test_current_assessment_freshness.py', 'src/sosa-next/sparql/export/sssom-bfo-mappings.rq', 'reports/retained-evidence/execution/sha256/a3c56e7d27734d627b0f75800db3aacdf3c9c4fc9f7d8ad4680b20028f5f89f7', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/rule-unit-tests.log', 'tests/test_current_portable_execution_evidence.py', 'tools/sosa_2023_build_release.py', 'tests/test_current_retained_evidence_integration.py', 'mappings/current-ssn-sosa-assessment.json', 'releases/sosa-next/sosa-ro-mapping.ttl', 'tests/test_robot_diff_pilot.py', 'reports/retained-evidence/execution/sha256/ea9ee673bf2475ddffe51a0e09aa15a9cedc4d0d312c8da0436e1df8c4fd353d', 'tools/current_publication_readiness.py', 'queries/source-classes-and-object-properties.rq', 'config/current-ssn-sosa-scope.json', 'tests/test_implementation_rule_coverage.py', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/authorized-instruction.txt', 'reports/isActedOnBy-actsOnProperty-full-closure-analysis.md', 'tests/fixtures/current-release-authority/release-contract-20261028/authority.json', 'reports/coms-generation-validation.md', 'tools/test_elk_instance_mapping_entailments.py', 'reports/retained-evidence/execution/sha256/c3c657272a8917d2a755ae8a469014bfb02e214257b2fa9597cd795189d97ecc', 'tools/current_custody_dependencies.py', 'tests/fixtures/current-release-authority/release-contract-20261028/authorized-request.txt', 'reports/actuation-range-simplification-implementation.md', 'tools/sosa_2023_release_archive.py', 'tests/test_robot_extract_pilot.py', 'reports/current-human-decisions/2026-11-01-observation-adjudication/before-after.json', 'reports/sample-representation-property-chains-review.md', 'tests/test_placeholder_catalog_migration.py', 'reports/retained-evidence/execution/sha256/047e23401212193ae2df1042785775615fef4c06edf7828bb862f18534d0c402', 'src/sosa-next/imports/cco.ttl', 'reports/current-documentary-workbook/versions/825dc90460ddc056c89b5b7af3030b4c615a0c5e00c5cfae89057029c10cfc2d.xlsx', 'reports/current-documentary-workbook/versions/64a0864d5c58f698fc441e00cb8f0dc27500a268eb6353a49e0b82ccba31c71b.xlsx', 'reports/current-documentary-workbook/phenomenon-time-retention-2026-10-30/authorized-instructions.txt', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json', 'tests/test_current_checkpoint_successor.py', 'reports/hermit-observedProperty-deferral-evaluation.md', 'config/product-role-policy.toml', 'src/sosa-next/sparql/report/unmapped-terms.rq', 'reports/retained-evidence/execution/sha256/a1f5929a11e93d5991f2a953cc8ba6b5951b0737ccf572979b532fa3758bb796', 'src/current-ssn-sosa/examples/sosa-instance-data/ip68.ttl', 'reports/retained-evidence/execution/sha256/a582cc448cc3f2330467df7c32093f2872fc244b8ec755c2e4831970b3735857', 'tests/test_sosa_2023_mapping_status.py', 'queries/verify/unmapped-source-terms.rq', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty-review-packet.json', 'src/sosa-next/sparql/export/sssom-mappings.rq', 'reports/current-semantic-workbook/versions/e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd.xlsx', 'tools/java/CurrentSemanticReasoner.java', 'tests/test_current_cross_track_preservation.py', 'SSN2BFO.ttl', 'tests/test_robot_template_generation_pilot.py', 'tools/release_context.py', 'config/publication-metadata.toml', 'reports/all-mapping-changes-and-rationales.md', 'tests/test_current_formal_typing.py', 'tools/build_release.py', 'tools/compare_mappings.py', 'tools/validate_robot_reconstruction.py', 'tests/test_product_role_policy.py', 'reports/current-semantic-workbook/versions/f5a34921289677a6c846f6f25d9645ea8d48220220704bfa44429adffc4f9c59.xlsx', 'src/current-ssn-sosa/sparql/export/sssom-mappings.rq', 'tests/fixtures/current-release-authority/release-contract-20261028/prior-final-state.json', 'imports/ssn.ttl', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22-deployment.ttl', 'reports/retained-evidence/execution/sha256/c54ad6388a48dcba9d6528e0d1cc372c2a0f75036b6814d6a9f10a2e499e461b', 'reports/retained-evidence/execution/manifests/d1e052e447bf0ecd6d5d46de62c6f4011d8ffb6d22bf36490d8ffd6dfb41f212.json', 'reports/retained-evidence/execution/sha256/7c76c962548c807631da94c73841d05fa291639d6134199862c0b35844bdc4ae', 'reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx', 'reports/retained-evidence/execution/sha256/ca25d41c25100d1c888ce5669c15f77591108d97b814013a0aa721c403c6cf71', 'reports/retained-evidence/execution/sha256/19f19ddbc2b8722cece39e450e7ae271556613ae7b52ac290c2c4a00a079124d', 'tests/test_current_semantic_generation.py', 'tests/test_generate_mapping_from_coms.py', 'tests/test_sosa_2023_build_release.py', 'Makefile', 'tests/test_current_semantic_validation.py', 'tools/robot_template_generation_pilot.py', 'tests/test_sosa_next_consumer_stack.py', 'config/sosa-release-scope.toml', 'reports/retained-evidence/execution/sha256/8b5c6d68575f6a2b111a84e39cb3117d2072460ee3584b94ac5135c55c2f7b3f', 'reports/retained-evidence/execution/sha256/ac7485409516c2d7323993948fd68d4432644ae7f405994623a4a974674ee95b', 'reports/sample-relationship-deferral.md', 'tests/test_publication_metadata.py', 'src/current-ssn-sosa/examples/sosa-instance-data/apartment-134.ttl', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/prior-final-state.json', 'reports/current-human-decisions/2026-10-25-sample-pair/approved-instructions.txt', 'tools/current_semantic_invocation.py', 'tools/sosa_2023_mapping_status.py', 'tools/check_product_role_policy.py', 'reports/isResultOf-hasResult-full-closure-analysis.md', 'src/current-ssn-sosa/examples/sosa-instance-data/seismograph.ttl', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty-three-term-2026-10-26.json', 'reports/current-semantic-workbook/transitions/bd69b546-6ef2-4704-8f05-325ec9bc1862.json', 'config/sosa-2023-ro-source-version.toml', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/before-after.json', 'tools/test_object_property_typing_probes.py', 'tools/current_validation_execution.py', 'reports/current-documentary-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx', 'src/sosa-next/imports/sosa-sampling.ttl', 'src/sosa-next/imports/ro-full.owl', 'tools/release_manifest.py', 'tests/test_current_release_authentication.py', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/entailment-result.json', 'reports/retained-evidence/execution/sha256/174c9c851787bc53912792789d5adbcd50a6a6ce978da1e9c3f7a532b7a8e1ed', 'tests/test_strict_bfo_mapping.py', 'tools/robot_query_equivalence_pilot.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json', 'reports/hermit-survival-range-deferral-evaluation.md', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-review-packet.json', 'tools/current_semantic_generation.py', 'tests/test_sosa_2023_ro_explicit_paths.py', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/before-after.json', 'tests/test_sosa_2023_release_manifest.py', 'reports/mapping-consistency-target-mismatch-review.md', 'tests/test_current_semantic_retry.py', 'reports/retained-evidence/execution/sha256/9d4e2659b54b90138d14a43bdffd6a8cc76f731e757c0f0034141ed36f55e49b', 'tools/check_sosa_next_mapping.py', 'tools/check_sosa_source_version.py', 'tools/sosa_2023_rehearse_release.py', 'src/sosa-next/sparql/no-template-leakage.rq', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json', 'tests/fixtures/current-release-authority/rehearsal-followup-20261029/authorized-request.txt', 'queries/unmapped-source-terms.rq', 'reports/retained-evidence/execution/sha256/7b54ed32a0e5247bd270554bab802667c4acac79c93e270e33759710243dc71f', 'reports/coms-source-term-coverage.md', 'reports/retained-evidence/execution/sha256/e3ee0c2074b9511a4beb19b775fa204b8158b52062d46cc341a73e27124e1900', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json', 'reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json', 'releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/historical-domain-decision.md', 'reports/current-semantic-workbook/transitions/58481ff2-4e56-4931-a3d4-383357b16561.json', 'tests/test_current_semantic_schema.py', 'tests/fixtures/ssn-core-mapping/ssn-core-property-class-mappings.ttl', 'reports/retained-evidence/execution/sha256/b40d24fb777025e32bde8a8c80bde087bcb2b01332691a27df07b040ed5b97ea', 'src/sosa-next/imports/sosa-deprecated.ttl', 'reports/current-semantic-workbook/versions/88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2.xlsx', 'reports/retained-evidence/execution/sha256/60219a32fae197fa7d14928f945340a8488d4d59be071ab0617543cdc74eb766', 'reports/retained-evidence/execution/sha256/7f2838f4bedc448d6cabb77be8a1a0664d5399691ff4c0167c21c4c62279a684', 'tools/check_sosa_release_scope.py', 'mappings/SOSA-next-to-RO-COMS.xlsx', 'reports/current-documentary-workbook/updates/92f8aa53-668e-48f9-bcaf-8844b1e0aa82.json', 'tests/fixtures/restriction-mapping/sample-relationship-restrictions.ttl', 'reports/current-semantic-workbook/implementation-rule-2026-10-30/after-rule/validation-result.json', 'reports/retained-evidence/execution/sha256/9abbe2794260971e2cfa6628a253e6c669237230a0725e553c5cabb08b912de5', 'tools/check_publication_metadata.py', 'src/current-ssn-sosa/examples/sosa-instance-data/spinning-cups.ttl', 'rules/ssn-implementation-mapping.rq', 'reports/inverse-side-direct-mapping-policy-review.md', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json', 'reports/retained-evidence/execution/sha256/037849a94ede24e56ea053dcc2bcf1d5ccb5487c6fda56101396979812541489', 'tests/test_current_evidence_freshness.py', 'reports/retained-evidence/execution/sha256/71ba5dadf181e1790e632b20ba64dbc047b13bb822b79224746c95975ab6758c', 'src/sosa-next/sparql/artifact-metadata.rq', 'reports/system-property-direct-mapping-deferral.md', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/approved-instructions.txt', 'reports/current-semantic-workbook/transitions/dce2fe18-42da-44f8-9e45-25861dfb92d8.json', 'rules/ssn-hasproperty-conditional-mapping.rq', 'reports/mapping-consistency-resolution-plan.md', 'tools/product_role_policy.py', 'reports/current-documentary-workbook/reasoning-completion/catalog.json', 'reports/rerun-prior-clean-decisions-full-sosa.md', 'releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl', 'tests/test_sosa_2023_ro_mapping.py', 'reports/system-property-process-profile-scope-review.md', 'tools/current_semantic_validation.py', 'reports/current-documentary-workbook/versions/37c69197c3baba77b2a9d7b034647279596de91ffdd5c1ba270a8e1cb065633e.xlsx', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/assessment-before.json', 'tools/rehearse_release.py', 'reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt', 'tests/test_current_documentary_decisions.py', 'releases/sosa-next/sosa-bfo-mapping.ttl', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json', 'tools/robot_verify_pilot.py', 'tests/test_robot_query_equivalence_pilot.py', 'tests/test_release_context.py', 'tools/sosa_2023_release_runtime.py', 'tests/test_sosa_release_scope.py', 'tests/test_check_sosa_next_mapping.py', 'reports/current-semantic-workbook/transitions/c7561942-ba35-4f19-84fc-1103091239df.json', 'reports/retained-evidence/sha256/7437af5ccb6b581a062ba6edcee530e6a068ccd676d10e821ac318c6727be860/coms-vs-pre-coms-legacy-diff.md', 'reports/current-semantic-workbook/transitions/d572d028-9788-4e8e-a87a-085f64f399e8.json', 'config/current-ssn-sosa-identity.json', 'tools/test_full_sosa_closure_hermit.py', 'reports/retained-evidence/execution/sha256/21d708db0fd127886911a3ee81a8e78ddc580a9f25f5d3a2b269099b586342a1', 'tests/test_release_rehearsal.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty-review-packet.json', 'tests/test_current_evidence_dependency_contract.py', 'tools/check_sosa_2023_ro_mapping.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json', 'tests/test_sosa_2023_release_rehearsal.py', 'tests/test_robot_verify_pilot.py', 'reports/current-human-decisions/2026-10-26-three-term-adjudication/approved-instructions.txt', 'imports/sosa.ttl', 'reports/retained-evidence/execution/sha256/2858052d1947638c1bbeb094c90e5a3ec976421f82198680714451838dd49ed3', 'tests/test_build_release.py', 'reports/isHostedBy-hosts-full-closure-analysis.md', 'reports/madeObservation-madeBySensor-agent-pair-full-closure-analysis.md', 'reports/current-human-decisions/2026-10-25-sample-pair/manifest.json', 'tools/current_semantic_workbook.py', 'tools/generate_sosa_next_products.py', 'mappings/SOSA-next-to-BFO-COMS.xlsx', 'requirements/validation.txt', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/authorized-instruction.txt', 'reports/retained-evidence/execution/sha256/3105f57fc3af2d1ee8db3077d4caa76fd840c126d13145445cf6c806652c7223', 'config/current-semantic-expectations.json', 'imports/sosa-sampling.ttl', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf-review-packet.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json', 'reports/current-decision-applicability/prepared/hasSample-forProperty.json', 'reports/current-decision-applicability/records/32d3d3f5-c0dc-4af9-b5f7-970edad31c75.json', 'reports/input-output-cco-mapping-rationale-cleanup.md', 'reports/retained-evidence/execution/sha256/57142e6604aa42612f6c8e98cc0eb689a49b1bcb24411d305d66e1439b944170', 'tests/test_sosa_next_products.py', 'reports/current-decision-applicability/records/e45e4775-b2cb-42c9-969a-0813154b5e91.json', 'tools/current_source_identity.py', 'reports/retained-evidence/execution/sha256/3ee39b49926f821c861f475b869dabb7a65119437e1c4a077f64e6c89c17c88b', 'reports/retained-evidence/execution/sha256/f10379610807d6859df943f169fe830828c0560a261089b069f217ba1e804a7f', 'reports/retained-evidence/execution/sha256/d3a912bf42cfc0e0dce9b96666180b016e3504fde06ba089f3dc2c801b65329d', 'tools/current_checkpoint_successor.py', 'reports/current-semantic-workbook/authorizations/2026-10-25-semantic-evolution-instructions.txt', 'src/sosa-next/imports/sosa-source-declaration-overlay.ttl', 'reports/retained-evidence/execution/sha256/1ed07b0d4c18ceec5df9d499c9bbe26a7aef8a44ab9fd72e2cac8f0c9f099357', 'reports/madeByActuator-range-after-agent-deferral.md', 'reports/current-documentary-workbook/updates/5f0e3bc5-b52e-4502-8fd5-f7f1c182913b.json', 'reports/current-human-decisions/2026-11-01-observation-adjudication/assessment-before.json', 'tests/test_robot_reconstruction_validation.py', 'reports/straightforward-op-mapping-candidates-review.md', 'config/sosa-2023-publication-metadata.toml', 'tests/test_modular_products.py', 'tools/sosa_2023_release_manifest.py', 'src/current-ssn-sosa/examples/sosa-instance-data/dht22.ttl', 'config/validation-toolchain.env', 'reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment-review-packet.json', 'config/current-ssn-sosa-historical-finals.json', 'tests/test_bfo_projection.py', 'reports/retained-evidence/execution/sha256/77c707afa28244e0ecc1a36527c653ee63342afc8ace2695947ba755315603c6', 'tools/product_dispositions.py', 'tests/test_current_documentary_workbook.py', 'reports/retained-evidence/execution/sha256/19f3bb625fb8b2ae7f565ac8a78693ce60af184edcbbe0746ac26708ad1b92fa', 'reports/current-documentary-workbook/updates/28022a81-0a85-485d-be5e-a75cc61e0ab5.json', 'reports/updated-spreadsheet-ttl-only-assertions-review.md', 'tools/coms_row_identity.py', 'reports/current-semantic-workbook/historical-recovery-2026-10-30/sensor/entailment-result.json', 'reports/current-decision-applicability/prepared/isSampleOf-forProperty.json', 'reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json', 'reports/current-documentary-workbook/semantic-rationales-batch-1-2026-11-15/rationale-changes.json', 'reports/retained-evidence/execution/sha256/fd21e937dea606252c7f767143ffcc59181ad56e742b5b2e1a86f117e1975dc6', 'reports/ssn-hasproperty-rule-mapping-artifact.md', 'reports/retained-evidence/execution/sha256/cdbc9ecdc368a66e7a5d0bd603b54ec4a462264ab3b762495fa41200fbfc2849', 'tools/check_coms_mapping.py', 'reports/current-documentary-workbook/versions/e32c6b5691bf4aa00b4ec564731e0364edc2567658bb21c46f83c1e3f0d9a4f6.xlsx', 'tools/publication_metadata.py', 'tests/fixtures/remaining-direct-mapping/remaining-direct-property-class-mappings.ttl', 'reports/observes-upper-mapping-decision.md', 'reports/madeSampling-madeBySampler-full-closure-analysis.md', 'tests/test_current_custody_dependencies.py', 'tests/test_coms_row_identity.py', 'requirements/coms-integration.txt', 'reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json', 'src/current-ssn-sosa/examples/sosa-instance-data/tree-height.ttl', 'reports/sampler-equivalentclass-decision.md', 'reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json', 'config/release-manifest-schema-v1.json', 'tests/test_current_publication_preservation.py', 'reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/approved-instructions.txt', 'reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json'}\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The same historical sampling assessment-before dependency is absent from both computed whole-suite input sets, although its file exists in both checkouts. Parsed complete sets add exactly 7 Platform decision/transition/snapshot inputs and remove none. Python set display order is immaterial; no missing-dependency repair is claimed.",
+      "approved_input_set_delta": {
+        "missing_member": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json",
+        "baseline_count": 408,
+        "candidate_count": 415,
+        "added": [
+          "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json",
+          "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+          "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt",
+          "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json",
+          "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json",
+          "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json",
+          "reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx"
+        ],
+        "removed": [],
+        "missing_member_exists_in_both_checkouts": true
+      }
+    }
+  ],
+  "classification_counts": {
+    "Identical preexisting failure": 39,
+    "Changed diagnostic attributable to approved data; preexisting failing case": 7
+  },
+  "newly_failing_cases": [],
+  "demonstrated_unexplained_regressions": [],
+  "approved_data_evidence": {
+    "transition": {
+      "path": "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json",
+      "sha256": "2acc6fb88bcc2534805fcb30631e9a7510382557d744ec123803189d77a40898"
+    },
+    "workbook": {
+      "baseline": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+      "candidate": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7"
+    },
+    "projection": {
+      "baseline": "d5fe65fb72d3a642020df3957bc59d870a2a7b62be1804c96c5977c2ef0f02e4",
+      "candidate": "c7a63311ce8b0257489ee2a888e5b8d8314406844c6543b26640936966b4ff3e"
+    },
+    "legacy_report": {
+      "path": "reports/coms-vs-pre-coms-legacy-diff.md",
+      "baseline": "99e1f95ce03e2195b357b90a59af869ead1c4d2059256ee57d57d2f31c506c52",
+      "candidate": "a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609",
+      "exact_diff": "--- baseline\n+++ candidate\n@@ -6,10 +6,10 @@\n \n | Item | Count |\n |---|---:|\n-| mappings present in both | 55 |\n-| mappings only in COMS | 13 |\n-| mappings only in pre-COMS legacy ontology | 13 |\n-| class-expression differences | 4 |\n+| mappings present in both | 54 |\n+| mappings only in COMS | 14 |\n+| mappings only in pre-COMS legacy ontology | 14 |\n+| class-expression differences | 5 |\n | object-property mapping differences | 0 |\n | property-chain differences | 0 |\n | domain axioms present in both | 11 |\n@@ -29,7 +29,6 @@\n - `class` `sosa:Actuation` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/actsOnProperty http://www.w3.org/ns/sosa/ActuatableProperty) https://www.commoncoreontologies.org/ont00000228)`\n - `class` `sosa:Actuator` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000040)`\n - `class` `sosa:ObservableProperty` `rdfs:subClassOf` `ObjectUnionOf(ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000132 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000144) ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000197 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000020))`\n-- `class` `sosa:Platform` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000040)`\n - `class` `sosa:Procedure` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001942 http://purl.obolibrary.org/obo/BFO_0000015) https://www.commoncoreontologies.org/ont00000965)`\n - `class` `sosa:Result` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001816 ObjectUnionOf(http://www.w3.org/ns/sosa/Actuation http://www.w3.org/ns/sosa/Observation http://www.w3.org/ns/sosa/Sampling)) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958))`\n - `class` `sosa:Sample` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001936 http://www.w3.org/ns/sosa/Sampling) http://purl.obolibrary.org/obo/BFO_0000040)`\n@@ -85,6 +84,7 @@\n \n - `class` `sosa:FeatureOfInterest` `rdfs:subClassOf` `ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000015 http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000040 http://purl.obolibrary.org/obo/BFO_0000144)`\n - `class` `sosa:Observation` `rdfs:subClassOf` `https://www.commoncoreontologies.org/ont00000228`\n+- `class` `sosa:Platform` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000002)`\n - `class` `ssn:Deployment` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)`\n - `class` `ssn-system:BatteryLifetime` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000117 https://www.commoncoreontologies.org/ont00000503) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001819 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000055 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000319) https://www.commoncoreontologies.org/ont00000177)) http://purl.obolibrary.org/obo/BFO_0000015)) https://www.commoncoreontologies.org/ont00001213)) http://purl.obolibrary.org/obo/BFO_0000034)`\n - `class` `ssn-system:Sensitivity` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) https://www.commoncoreontologies.org/ont00001022)) https://www.commoncoreontologies.org/ont00000853)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)`\n@@ -101,6 +101,7 @@\n \n - `class` `sosa:FeatureOfInterest` `owl:equivalentClass` `ObjectUnionOf(ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/isFeatureOfInterestOf ObjectUnionOf(http://www.w3.org/ns/sosa/Actuation http://www.w3.org/ns/sosa/Sampling https://www.commoncoreontologies.org/ont00000345)) http://purl.obolibrary.org/obo/BFO_0000015) ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001936 ObjectUnionOf(http://www.w3.org/ns/sosa/Actuation http://www.w3.org/ns/sosa/Sampling https://www.commoncoreontologies.org/ont00000345)) http://purl.obolibrary.org/obo/BFO_0000040))`\n - `class` `sosa:Observation` `rdfs:subClassOf` `ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)`\n+- `class` `sosa:Platform` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000040)`\n - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/natureOfRelationship http://www.w3.org/ns/sosa/sampling/RelationshipNature)`\n - `class` `sampling:SampleRelationship` `rdfs:subClassOf` `ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/relatedSample http://www.w3.org/ns/sosa/Sample)`\n - `class` `ssn:Deployment` `owl:equivalentClass` `ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)`\n@@ -116,6 +117,7 @@\n ## Class-Expression Differences\n \n - `sosa:Observation` `rdfs:subClassOf`: COMS=['https://www.commoncoreontologies.org/ont00000228']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001777 ObjectIntersectionOf(https://www.commoncoreontologies.org/ont00000037 https://www.commoncoreontologies.org/ont00000345)) https://www.commoncoreontologies.org/ont00000228)']\n+- `sosa:Platform` `owl:equivalentClass`: COMS=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000002)']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000040)']\n - `sampling:SampleRelationship` `rdfs:subClassOf`: COMS=['https://www.commoncoreontologies.org/ont00000958']; legacy=['ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/natureOfRelationship http://www.w3.org/ns/sosa/sampling/RelationshipNature)', 'ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/sampling/relatedSample http://www.w3.org/ns/sosa/Sample)', 'https://www.commoncoreontologies.org/ont00000958']\n - `ssn:Deployment` `owl:equivalentClass`: COMS=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedOnPlatform http://purl.obolibrary.org/obo/BFO_0000040) ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/deployedSystem http://www.w3.org/ns/ssn/System) https://www.commoncoreontologies.org/ont00000228)']\n - `ssn-system:Sensitivity` `rdfs:subClassOf`: COMS=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) https://www.commoncoreontologies.org/ont00001022)) https://www.commoncoreontologies.org/ont00000853)) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)']; legacy=['ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001801 https://www.commoncoreontologies.org/ont00000853) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001904 https://www.commoncoreontologies.org/ont00001022) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 https://www.commoncoreontologies.org/ont00000118) http://purl.obolibrary.org/obo/BFO_0000015)) http://purl.obolibrary.org/obo/BFO_0000034)']\n"
+    },
+    "whole_suite_input_delta": {
+      "missing_member": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/assessment-before.json",
+      "baseline_count": 408,
+      "candidate_count": 415,
+      "added": [
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json",
+        "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json",
+        "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json",
+        "reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx"
+      ],
+      "removed": [],
+      "missing_member_exists_in_both_checkouts": true
+    }
+  },
+  "baseline_reused": false,
+  "both_runs_fresh_at_expected_baseline": true,
+  "stage_boundary_evidence": "canonical-stage-boundary.json"
+}

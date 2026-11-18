@@ -1,0 +1,6 @@
+Exact two-equivalence deltas against HEAD and intermediate; modular relocation; deterministic generation: PASS
+integrated: PASS; named unsats=0
+alignment_core: PASS; named unsats=0
+strict_bfo_mapping: PASS; named unsats=0
+cco_extension: PASS; named unsats=0
+Exact impact graph/dependency match: focused evidence reuse verified.

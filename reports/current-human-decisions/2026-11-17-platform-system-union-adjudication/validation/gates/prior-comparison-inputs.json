@@ -1,0 +1,194 @@
+{
+  "baseline_commit": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "comparison_states": [
+    "committed material Platform/material System",
+    "validated intermediate Continuant Platform/material System",
+    "approved final MaterialEntity-or-ICE Platform/System candidate pending freeze"
+  ],
+  "baseline_and_intermediate_rerun": false,
+  "reuse_reason": "User-authorized bounded reuse of completed fresh runs at the exact committed and intermediate states, with raw log/result/input identities verified. Final-candidate execution and exact input changes are recorded separately.",
+  "inputs": [
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/clone-metadata.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/clone-metadata.json",
+      "sha256": "a9de87f3a4e5f4c5749ed3210e5843d1707aaaf627087b2239254b4cc0b9db68",
+      "bytes": 970
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/dependency-inventory.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/dependency-inventory.json",
+      "sha256": "fd47c6a638a369b6512bd51c2190eda6ee3136fe1ab2ed20b5c03466343f00e2",
+      "bytes": 2672
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check.log",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/make-check.log",
+      "sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900",
+      "bytes": 78696
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check-result.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/make-check-result.json",
+      "sha256": "9e40f1eefbcf9d5b416e25faec33f8d9cef47a137e36c58eeaf150141d013cd2",
+      "bytes": 558
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/failure-inventory.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/failure-inventory.json",
+      "sha256": "cfd97c145a39a8483e06c227efb21eee58ec5170cb37e8102eacbf8a23936e33",
+      "bytes": 117727
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate-clone.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate-clone.json",
+      "sha256": "47260ee99505cc466caae9047a025c62c4dc844844d1c3f3d645743fcab7d1ed",
+      "bytes": 5629
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/input-manifest.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/input-manifest.json",
+      "sha256": "12ee251c403e34b6176a6e084be26bc2d6a46806df3938c9d264f3818d4d08b6",
+      "bytes": 317794
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/input-preservation.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/input-preservation.json",
+      "sha256": "e51cdb971f18050b8db8e89e2b30b7f560942241d18dfb2462abadb61a0f505e",
+      "bytes": 41
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check.log",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/make-check.log",
+      "sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267",
+      "bytes": 79964
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check-result.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/make-check-result.json",
+      "sha256": "c94027e54377a0ce1e0c606ca32827edce8e3c3a0ac86a6ebadca41f532bb693",
+      "bytes": 390
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/failure-inventory.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/failure-inventory.json",
+      "sha256": "d6b58461e294f4f81a69b54c1b2285bbe7f51a2b3bd3f78a26eec35fb211c60f",
+      "bytes": 83681
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-integrity.log",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity.log",
+      "sha256": "ff548d445211f7179201d3c9265f7e0dda6d859d974a9d743aa588a41f320198",
+      "bytes": 63202
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-integrity/results.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity/results.json",
+      "sha256": "f3c6aabfccfd5a7a2d4ad4bd4cb1f77c44ff8c3d81d33d83e791f3332669511b",
+      "bytes": 10748
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-integrity.log",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity.log",
+      "sha256": "97116920f638dd00043c9813327e1d66e85b8b7dd6691ace25c2fafd5f9e85d4",
+      "bytes": 65642
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-integrity/results.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity/results.json",
+      "sha256": "83b63b5ac6f2e85930208cb35723b770304937c5694358426fffdf1f9be3647a",
+      "bytes": 12719
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-symptom-inputs.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-symptom-inputs.json",
+      "sha256": "c8ecb65278d29724d8fe860eef22a52d3d885ae548c8a3d3b559d2d1951de275",
+      "bytes": 8434
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-symptom-inputs.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-symptom-inputs.json",
+      "sha256": "a61516e03dc5fa3a607da26a1dbfbcce2b7fb77df728fb172077ed7baf22ee2a",
+      "bytes": 8435
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-strict-symptom.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-strict-symptom.json",
+      "sha256": "611e64496aba85c8c2ef43bf791f4229604321713d3f14756ba44d23df65efa9",
+      "bytes": 23664
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-strict-symptom.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-strict-symptom.json",
+      "sha256": "b26ad0d59c0ac58dfc41d81b4136e3a7ca6d8a4eb702b81893786563c02b5ec2",
+      "bytes": 24126
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/canonical-gate-comparison.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/canonical-gate-comparison.json",
+      "sha256": "02bc13d3f8083038d29a8ad4d7d15133706499b70631cc5c491fbed2c8804da8",
+      "bytes": 116314
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/mapping-integrity-comparison.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/mapping-integrity-comparison.json",
+      "sha256": "952e7a6571f14dcfed2727e59a5d4b06145e97a97bdbcbd5081c85b93e4e0c59",
+      "bytes": 38203
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/exception-inventory.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/exception-inventory.json",
+      "sha256": "1cd217fe33e64a299e08b4d1efa6ae04c392bac20ab691a3e4aa960df49249d5",
+      "bytes": 47848
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/canonical-stage-boundary.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/canonical-stage-boundary.json",
+      "sha256": "b7ad9bd7bf0465fa1039c25b46d3c154540ca542117ff02cf14c339c6d939d1d",
+      "bytes": 4663
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/whole-gate-scope-equivalence.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/whole-gate-scope-equivalence.json",
+      "sha256": "277606446718f8ea919d75e1930464f24177575a996a1c6c265063cdafabc971",
+      "bytes": 329904
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-documentary.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-documentary.json",
+      "sha256": "e4d9e2b7313cef1553d0f123d1e554aea0ab652cf92433e7478c982ee576c86b",
+      "bytes": 378
+    },
+    {
+      "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-documentary.json",
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-documentary.json",
+      "sha256": "da98ce4778b3a4e22755a8bb35298f025a0e3e10a2a82ba1045e193468f6383a",
+      "bytes": 390
+    }
+  ],
+  "runner_reuse": [
+    {
+      "name": "run-candidate-gate.py",
+      "sha256": "0ee0ee8034eec1f77c3ca965c9973095499f680b841b16eb2078f443eeb9191d",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run-candidate-gate.py"
+    },
+    {
+      "name": "run_mapping_integrity_tests.py",
+      "sha256": "96bacb1f55720575f8593a5d8a7f65d7d158fe15c0d2b698b1e2bb0ec802356f",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run_mapping_integrity_tests.py"
+    },
+    {
+      "name": "collect-symptom-inputs.py",
+      "sha256": "f2c89ddc7f0a1115ab853984f194d404513d35ff6ef624782b1e6d6b4f147200",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-symptom-inputs.py"
+    },
+    {
+      "name": "collect-strict-symptom.py",
+      "sha256": "08e5c18b9f5452d4b4aae9f9cfc45961fb7ac66cee4974575d34897f5208ec0b",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-strict-symptom.py"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "make",
+    "check"
+  ],
+  "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-gate-_3f2es2o/checkout",
+  "return_code": 2,
+  "elapsed_seconds": 2533.1214767908677,
+  "test_summary": [
+    "Ran 488 tests in 2531.403s"
+  ],
+  "outcome_summary": [
+    "FAILED (failures=25, errors=22, skipped=7)"
+  ],
+  "log_sha256": "7f4c9e7b14099d14f6704f04e53ea635fdde72f538fd5dfe8cc6bbe1cfe68688"
+}

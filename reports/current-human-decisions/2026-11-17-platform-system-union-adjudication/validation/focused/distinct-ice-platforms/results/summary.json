@@ -1,0 +1,20 @@
+{
+  "actual_consistency": "consistent",
+  "asserted_distinctness": true,
+  "both_individuals_explicitly_typed_platform_and_ice": true,
+  "driver_sha256": "d38e241d175a4b6f836ba2c2165908ba4cf282b6fbff35d9a3c0392eef3b3840",
+  "expected": "Two explicitly distinct ICE Platforms, outer hosts inner, are jointly consistent.",
+  "integrated_product_sha256": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401",
+  "no_other_tests_run": true,
+  "owl2_dl_profile": true,
+  "pinned_dependency_sha256": {
+    "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+    "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+    "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+    "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+  },
+  "probe_sha256": "373a47fd9e8923299c6a6498824208c438c8751fe834009daee5ffa063bdff98",
+  "repository_files_modified": false,
+  "status": "PASS"
+}

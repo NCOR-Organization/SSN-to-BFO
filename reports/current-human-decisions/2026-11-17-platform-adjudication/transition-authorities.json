@@ -1,0 +1,22 @@
+{
+  "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt",
+        "reference": "Explicit approval: retain owl:equivalentClass, RowID and hosts some System; replace MaterialEntity with Continuant.",
+        "sha256": "48a70009075249b9937075656103bfa39d21f35b0752fc1aa3993d8faf32588e"
+      },
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json",
+        "reference": "Exact old/new expression, rationale, RowID, preserved prior assessment and canonical generation delta.",
+        "sha256": "69d19e782a01d9006ff6ca9dd697d0beb9b9f735c8151c6b659379b52cb33aea"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+      "sha256": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac"
+    },
+    "rationale": "SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Under the approved interpretation, a Platform is a BFO Continuant that actually hosts at least one SSN System. The hosting existential remains necessary; merely being capable of hosting does not suffice. Continuant allows material and appropriate nonmaterial hosts while excluding occurrents. The converse is supported by the source inverse relationship between hosts and isHostedBy and the System restriction that all isHostedBy values are Platforms: an individual hosting a System is therefore a Platform. The equivalence retains this converse and the actual-hosting requirement without classifying every Continuant as a Platform."
+  }
+}

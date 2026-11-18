@@ -93,8 +93,13 @@ class DocumentaryWorkbookTests(unittest.TestCase):
         self.assertEqual(snapshot, ROOT / historical["path"])
         self.assertEqual(guard.digest(snapshot.read_bytes()), historical["sha256"])
         self.assertEqual(guard.semantic_projection_sha256(snapshot), historical["semantic_projection_sha256"])
-        self.assertEqual(guard.semantic_projection_sha256(ROOT / guard.WORKBOOK),
+        # Preserve the former live projection as an immutable historical check.
+        prior = semantic.snapshot(ROOT, "778a567168143160c152110e79a32a86eea318710dbde078fa0525482bbccb4c")
+        self.assertEqual(guard.digest(prior.read_bytes()), prior.stem)
+        self.assertEqual(guard.semantic_projection_sha256(prior),
                          "566d6a6ba6200458eab5ea7561c86d0eb2483765fa5a1a7c2e8ff0526654eb44")
+        self.assertEqual(guard.semantic_projection_sha256(ROOT / guard.WORKBOOK),
+                         "3c373fa8d28164bd116be0779815c823cf457c4853147982a039dc08caf214ff")
 
     def test_one_unrelated_reasoning_cell_passes_without_editing_live(self):
         edits = [("Sheet1", "D13", "Documentary description from retained evidence.")]

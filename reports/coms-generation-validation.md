@@ -8,24 +8,24 @@ Freshness is determined from content hashes, not file timestamps.
 
 | Item | Value |
 |---|---|
-| workbook SHA-256 | `e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd` |
+| workbook SHA-256 | `0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b` |
 | generator SHA-256 | `8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3` |
 | row-identity module SHA-256 | `9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425` |
 | product-disposition module SHA-256 | `6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e` |
 | modular-products module SHA-256 | `6a6e827584a5c292881ab78fbd03e7bd6cc06ec85f43a8f3adec227744a33d2c` |
 | publication metadata SHA-256 | `bb818ab88d2dbcfd8a11eddcfc846c81609c4e9a9c6819def44f950da423e8f9` |
-| current assessment inventory SHA-256 | `3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a` |
-| generation timestamp (UTC) | `2026-11-16T03:29:44+00:00` |
+| current assessment inventory SHA-256 | `99c4a711a94a5c1f6229e504be8107fb6a14b30125a6b02a0ef490342439e898` |
+| generation timestamp (UTC) | `2026-11-18T00:42:27+00:00` |
 | maintained ontology path | `SSN2BFO.ttl` |
-| generated ontology SHA-256 | `c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e` |
+| generated ontology SHA-256 | `b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401` |
 | maintained product-disposition path | `reports/coms-product-dispositions.json` |
-| product-disposition JSON SHA-256 | `c1da46285479f59d5e691cc4e9a432057eb74e5dbae17d896e36b71c5294aac3` |
+| product-disposition JSON SHA-256 | `a004e89908b0c444fb171adb9a9c98fbba3145462f1a5339ae6434c93d4b5cc3` |
 | maintained alignment-core path | `releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl` |
 | alignment-core Turtle SHA-256 | `cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5` |
 | maintained strict-BFO path | `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl` |
-| strict-BFO Turtle SHA-256 | `676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af` |
+| strict-BFO Turtle SHA-256 | `a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243` |
 | maintained CCO-extension path | `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl` |
-| CCO-extension Turtle SHA-256 | `87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428` |
+| CCO-extension Turtle SHA-256 | `1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49` |
 
 ## Workbook
 
@@ -102,7 +102,7 @@ Freshness is determined from content hashes, not file timestamps.
 | `cco:DirectiveInformationContentEntity` | class | label_style_key | Directive Information Content Entity | `https://www.commoncoreontologies.org/ont00000965` | `Sheet1!39 [urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607]` |
 | `cco:Effect` | class | exact_label | Effect | `https://www.commoncoreontologies.org/ont00000660` | `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]` |
 | `cco:Frequency` | class | exact_label | Frequency | `https://www.commoncoreontologies.org/ont00001047` | `Sheet1!17 [urn:uuid:124e6b06-906a-47be-a459-92babef3992e]`, `Sheet1!19 [urn:uuid:afc3498b-5446-4c8b-928f-822a8e148b63]` |
-| `cco:InformationContentEntity` | class | label_style_key | Information Content Entity | `https://www.commoncoreontologies.org/ont00000958` | `Sheet1!10 [urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f]`, `Sheet1!2 [urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b]`, `Sheet1!3 [urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e]`, `Sheet1!32 [urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23]`, `Sheet1!33 [urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4]` |
+| `cco:InformationContentEntity` | class | label_style_key | Information Content Entity | `https://www.commoncoreontologies.org/ont00000958` | `Sheet1!10 [urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f]`, `Sheet1!2 [urn:uuid:f475ef3c-12f0-4925-ad21-419ebd96406b]`, `Sheet1!3 [urn:uuid:bc709fe5-c239-494c-9b88-c14e5a8fc79e]`, `Sheet1!32 [urn:uuid:282b2a18-f710-4eac-a5c8-43894a242f23]`, `Sheet1!33 [urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4]`, `Sheet1!36 [urn:uuid:66010702-8134-4e08-a972-f0767ec8dead]`, `Sheet1!9 [urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb]` |
 | `cco:PerformanceSpecification` | class | label_style_key | Performance Specification | `https://www.commoncoreontologies.org/ont00000127` | `Sheet1!14 [urn:uuid:b15038bf-7e69-4e62-9cdd-50edb029d88b]`, `Sheet1!29 [urn:uuid:c912bc86-4ac6-4200-8606-7fda6005542f]` |
 | `cco:PlannedAct` | class | label_style_key | Planned Act | `https://www.commoncoreontologies.org/ont00000228` | `Sheet1!12 [urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3]`, `Sheet1!17 [urn:uuid:124e6b06-906a-47be-a459-92babef3992e]`, `Sheet1!18 [urn:uuid:1a25c5c5-795c-444c-ba3b-e0578f9e715b]`, `Sheet1!25 [urn:uuid:b891bb2b-0093-49ff-aa86-2a68a732686d]`, `Sheet1!26 [urn:uuid:3ddcc935-040b-450b-8ffa-8b0972e33c3b]`, `Sheet1!31 [urn:uuid:1c52d7ee-ee3d-4eb7-ae42-4df1912ee8eb]`, `Sheet1!5 [urn:uuid:2a4f78b4-92cb-4095-9a6b-2ae03e00be4a]`, `Sheet1!8 [urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa]` |
 | `cco:Power` | class | exact_label | Power | `https://www.commoncoreontologies.org/ont00000503` | `Sheet1!20 [urn:uuid:335606ce-18b3-43d9-b13e-7301015c9d26]`, `Sheet1!42 [urn:uuid:d8b4d0f0-d8d4-4f22-ae7c-2bbdebcdd51f]` |
@@ -156,7 +156,7 @@ Freshness is determined from content hashes, not file timestamps.
 - Zero-axiom assessment disposition completeness: PASS
 - Reviewed zero-axiom decisions: 5 / 6
 - Current assessment inventory: `mappings/current-ssn-sosa-assessment.json`
-- Current assessment inventory SHA-256: `3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a`
+- Current assessment inventory SHA-256: `99c4a711a94a5c1f6229e504be8107fb6a14b30125a6b02a0ef490342439e898`
 - Duplicate RowID result: PASS
 - Duplicate authoritative-axiom result: PASS
 
@@ -181,7 +181,7 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:06782965-88c5-4345-ab99-ea027513ec86` | `Sheet1` | 6 | `class_mapping` | `c8da57437716d5da9ab48656f3c97b921c4501b95ba843edb14345f62ecd041d` | `SubClassOf(<http://www.w3.org/ns/sosa/FeatureOfInterest> ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000015> <http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000040> <http://purl.obolibrary.org/obo/BFO_0000144>))` | Direct alignment deferred because SOSA permits a FeatureOfInterest to be property-like. Restricting every FeatureOfInterest to a material entity or process makes the SSN survival-range pattern unsatisfiable. |
 | `urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2` | `Sheet1` | 7 | `class_mapping` | `308287a0820e7928181bc83d4f35ae4dc97e94f54d4a8e98bb71ba9a3728feda` | `SubClassOf(<http://www.w3.org/ns/sosa/ObservableProperty> ObjectUnionOf(ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000197> <http://www.w3.org/ns/sosa/FeatureOfInterest>)) ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000132> <http://www.w3.org/ns/sosa/FeatureOfInterest>))))` | ObservableProperty mirrors ActuatableProperty in being modeled as either a specifically dependent continuant or a process profile, reflecting that observable aspects may be features of continuants or temporally extended features of processes. |
 | `urn:uuid:d973063c-f3a7-4a0b-ab0f-e0ee1fb9eeaa` | `Sheet1` | 8 | `class_mapping` | `376fc60a670fd8d5d22db4a8c961d6d3188159940d306a9e6ac1b7bcbb0a389c` | `SubClassOf(<http://www.w3.org/ns/sosa/Observation> <https://www.commoncoreontologies.org/ont00000228>)` | SOSA defines Observation as an act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. The general cco:PlannedAct classification is retained. CCO ActOfMeasuring requires determining an entity's extent, dimensions, quantity, or quality relative to a standard. CCO ActOfObservation requires acquiring information from a source through one or more senses. These are natural-language target definitions; the SOSA source definition does not justify universally requiring a process part satisfying both CCO classifications. The original existential intersection requires at least one process part belonging to both ActOfMeasuring and ActOfObservation. It is not equivalent to requiring potentially distinct process parts of the two types. The approved revision removes these unsupported necessary conditions without asserting that SOSA Observations can never involve measuring or sensory observation. This is a deliberate semantic weakening, not a correction to OWL syntax. |
-| `urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb` | `Sheet1` | 9 | `class_mapping` | `f195b5ed35e9d8e0ce1ff5345c0b5516fd9b946a6e74523cf4228306cf30cd87` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Platform> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>)))` | sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform. |
+| `urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb` | `Sheet1` | 9 | `class_mapping` | `a6b826c5f85721f0e93b3541833fcfaa43ee3a3b2e3d3581f2baf7fcc3db0881` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Platform> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>)))` | SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A Platform must actually host at least one System; hosting capability alone does not satisfy the existential. The SOSA hosts relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between hosts and isHostedBy together with the System restriction that all isHostedBy values are Platforms: an entity hosting a System is a Platform. The equivalence therefore retains both the necessary hosting witness and the source-supported converse within the adopted exhaustive classification. |
 | `urn:uuid:b05ab84c-eeff-45d1-a95d-39cf2d9f084f` | `Sheet1` | 10 | `class_mapping` | `888f4d97c4d62a60af5c4bed48e18ef060562feb484b5a39870c3ca8782b3a98` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Result> ObjectIntersectionOf(ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001816> ObjectUnionOf(<http://www.w3.org/ns/sosa/Actuation> <http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/ns/sosa/Sampling>)) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>)))` | Result is allowed to be either informational or material because SOSA results include both informational outputs (e.g., measurements) and material outputs (e.g., samples). |
 | `urn:uuid:326ad20d-f954-44e0-b94f-dccf0fd76ebb` | `Sheet1` | 11 | `class_mapping` | `487e82d6ba9c2529f91b500b06e2681ee82343693847544dd8428fb02758469d` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Sample> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001936> <http://www.w3.org/ns/sosa/Sampling>)))` | Sample is modeled as a material entity because it is a physical thing intentionally produced or selected to stand in for a feature of interest. |
 | `urn:uuid:7b3f908b-b717-4336-9968-8b1083f847d3` | `Sheet1` | 12 | `class_mapping` | `9a543be1fc872ce1fc146d2e5206ae7787f38984b93aa5000716c75e3bba8aad` | `EquivalentClasses(<http://www.w3.org/ns/sosa/Sampling> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000228> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001920> <http://www.w3.org/ns/sosa/Procedure>) ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001986> <http://www.w3.org/ns/sosa/Sample>)))` | sosa:Sampling is modeled as a cco:PlannedAct because it is intentionally carried out according to a procedure to create or transform samples. The equivalentTo axiom captures that being prescribed by a procedure and producing a sample as output is both necessary and sufficient for being a sampling. |
@@ -208,7 +208,7 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 | `urn:uuid:89f70432-c87d-41dd-bff2-e6120c02b5a4` | `Sheet1` | 33 | `class_mapping` | `538cb51989eced139509e2d3c2a8c6e4c2d290eb829ff316c7deb609c83924da` | `SubClassOf(<http://www.w3.org/ns/ssn/Output> <https://www.commoncoreontologies.org/ont00000958>)` | Output is modeled as an information content entity because SSN outputs are informational artifacts produced by executing procedures, regardless of whether they later influence material processes. |
 | `urn:uuid:b1421726-3675-4b2a-9824-150e108157e4` | `Sheet1` | 34 | `class_mapping` | `8a3ad12c4c9f7269f431573e4b69efb66aff9d6b3e276799a27271efc7b98269` | `EquivalentClasses(<http://www.w3.org/ns/ssn/Property> ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000144>))` | ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction. |
 | `urn:uuid:23915904-0174-4f2f-b6cf-6a8671b92d7e` | `Sheet1` | 35 | `class_mapping` | `bcc4aa63f9e3d86b30f0900127e61cc1e56b946b4a30f3a11e2c6302f2a2f75c` | `EquivalentClasses(<http://www.w3.org/ns/ssn/Stimulus> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000978> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001803> <http://www.w3.org/ns/sosa/Observation>)))` | The retained mapping characterizes Stimulus as a CCO Cause that is the cause of some Observation. The historical rationale treats a stimulus as an event or happening that causally contributes to an observation and expressly selects necessary-and-sufficient equivalence for this characterization. |
-| `urn:uuid:66010702-8134-4e08-a972-f0767ec8dead` | `Sheet1` | 36 | `class_mapping` | `43e7759ead3c66f83889b2fd88922b18b3a61f1f27c8de10896ae81fc4b51a43` | `EquivalentClasses(<http://www.w3.org/ns/ssn/System> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>)))` | ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA. |
+| `urn:uuid:66010702-8134-4e08-a972-f0767ec8dead` | `Sheet1` | 36 | `class_mapping` | `9ad1fe352821e9a4e3ca586736f0f9f8dd3361d6baad744af3fe083d041649dd` | `EquivalentClasses(<http://www.w3.org/ns/ssn/System> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>)))` | SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification. |
 | `urn:uuid:ee7f2f05-bc8e-4477-bb58-0f40e6da81d0` | `Sheet1` | 37 | `class_mapping` | `2cebc1769b4adbf1594ebdbe7afc3c7ed0fd16bde2c0994b9ff6952bd9d72402` | `SubClassOf(<http://www.w3.org/ns/sosa/Actuator> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000196> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000017> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> <http://www.w3.org/ns/sosa/Actuation>))) ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001787> <http://www.w3.org/ns/sosa/Actuation>)))` | sosa:Actuator is a bfo:MaterialEntity because actuators are physical devices. The bfo:RealizableEntity it bears is realized in actuation processes, capturing the functional rather than purely structural definition of actuators. The cco:agent_in restriction captures that the actuator plays a causative role in the actuation. |
 | `urn:uuid:2902e2b3-44f8-4f81-8ca9-2def4b68befd` | `Sheet1` | 38 | `class_mapping` | `63a0643266c14870cd600ce103710df959e9b7f7dd4220c985337951e6f55252` | `SubClassOf(<http://www.w3.org/ns/sosa/Sensor> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000196> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000017> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> <http://www.w3.org/ns/sosa/Observation>))) ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001787> <http://www.w3.org/ns/sosa/Observation>)))` | This row retains the explicit Sensor subclass expression for the current local CCO profile: material entity, bearer of a realizable entity realized in an Observation, and agent in an Observation. The historical cco:Sensor equivalence concerned a separate forward-looking target-version profile. This note documents the retained current-profile expression without settling that separate question. |
 | `urn:uuid:d88535da-ab7c-409c-b928-a9b0760b4607` | `Sheet1` | 39 | `class_mapping` | `e027eeb617a4a930a80560c624b56160074a365d62d331d067b2eafdcd974b25` | `SubClassOf(<http://www.w3.org/ns/sosa/Procedure> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00000965> ObjectSomeValuesFrom(<https://www.commoncoreontologies.org/ont00001942> <http://purl.obolibrary.org/obo/BFO_0000015>)))` | The retained mapping treats Procedure as information content prescribing how a process is to be carried out and retains the prescribes-some-Process restriction. Its target is the stable IRI cco:ont00000965, called Prescriptive Information Content Entity in historical workbook prose and labelled Directive Information Content Entity in the current imported target. |
@@ -292,9 +292,9 @@ An explicit blank can pass row identity without emitting an axiom. Assessment di
 - Canonical authoritative axioms: 102
 - Zero-axiom rows: 6
 - Target-neutral axioms: 32
-- BFO-bearing axioms: 19
+- BFO-bearing axioms: 17
 - CCO-bearing axioms: 24
-- Mixed BFO/CCO axioms: 27
+- Mixed BFO/CCO axioms: 29
 - Disposition reconciliation and canonical serialization: PASS
 - No lossless transformation or weakened projection is approved by this artifact.
 
@@ -331,33 +331,33 @@ This is the maintained authoritative development artifact at the approved produc
 
 - Path: `releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`
-- Direct governed authoritative axioms: 19
+- Direct governed authoritative axioms: 17
 - Subclass axioms: 3
-- Equivalent-class axioms: 3
+- Equivalent-class axioms: 1
 - Direct subproperty axioms: 9
 - Property-chain axioms: 2
 - Domain axioms: 1
 - Range axioms: 1
-- Logical RDF triples: 125
+- Logical RDF triples: 105
 - Ontology declaration triples: 1
 - Import triples: 1
 - Descriptive metadata annotations: 7
-- Total RDF triples: 134
+- Total RDF triples: 114
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core`
 - Imported alignment-core governed axioms: 32
-- Project-module closure governed axioms: 51
+- Project-module closure governed axioms: 49
 - Direct/alignment-core governed overlap: 0
 - CCO/RO and unexpected logical-vocabulary audit: PASS
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 14991
+- Pinned closure triple count: 14971
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
 - HermiT result: PASS
 - The validation dependency `imports/cco.ttl` is not imported by the published strict graph and does not authorize CCO mappings or transformations.
-- The 51 CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.
+- The 53 CCO-bearing or mixed axioms remain deferred; no transformation or projection is implemented.
 - Formal-release metadata and identity remain deferred.
 
 
@@ -367,20 +367,20 @@ This is the maintained authoritative development artifact at the approved produc
 
 - Path: `releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl`
 - Stable ontology IRI: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/cco-extension`
-- Direct governed authoritative axioms: 51
+- Direct governed authoritative axioms: 53
 - CCO-bearing axioms: 24
-- Mixed BFO/CCO axioms: 27
+- Mixed BFO/CCO axioms: 29
 - Subclass axioms: 29
-- Equivalent-class axioms: 7
+- Equivalent-class axioms: 9
 - Direct subproperty axioms: 15
 - Property-chain axioms: 0
-- Logical RDF triples: 854
+- Logical RDF triples: 886
 - Ontology declaration triples: 1
 - Import triples: 1
 - Descriptive metadata annotations: 7
-- Total RDF triples: 863
+- Total RDF triples: 895
 - Import: `http://www.sks.ai/SSN2BFO/current-ssn-sosa/bfo-mapping`
-- Imported strict-BFO governed axioms: 19
+- Imported strict-BFO governed axioms: 17
 - Transitively imported alignment-core governed axioms: 32
 - Project-module closure governed axioms: 102
 - Pairwise governed overlap: 0
@@ -388,7 +388,7 @@ This is the maintained authoritative development artifact at the approved produc
 - Integrated-root and project-module canonical-axiom reconciliation: PASS
 - Deterministic serialization: PASS
 - Pinned merged CCO/BFO validation closure: `imports/sosa.ttl`, `imports/sosa-sampling.ttl`, `imports/ssn.ttl`, `imports/ssn-systems.ttl`, `imports/cco.ttl`
-- Pinned closure triple count: 15853
+- Pinned closure triple count: 15865
 - HermiT return code: 0
 - Reasoned output produced: yes
 - Named unsatisfiable classes: 0
@@ -403,8 +403,8 @@ This is the maintained authoritative development artifact at the approved produc
 - Ontology declaration triples: 1
 - Import triples: 4
 - Descriptive metadata annotations: 7
-- Governed/structural logical triples: 1035
-- Generated ontology triple count: 1047
+- Governed/structural logical triples: 1047
+- Generated ontology triple count: 1059
 - `SSN2BFO.ttl` is generated from `mappings/SSN2BFO-COMS.xlsx` and must not be edited directly.
 - `coms:Reasoning` remained spreadsheet-only and was not emitted into the ontology.
 
@@ -415,7 +415,7 @@ This is the maintained authoritative development artifact at the approved produc
 | ROBOT command | `robot` (resolved from `PATH`) |
 | candidate closure graph path | temporary validation artifact (`coms-candidate-full-closure.ttl`) |
 | reasoned output path | temporary validation artifact (`coms-candidate-full-closure-reasoned.ttl`) |
-| full candidate closure triple count | 15837 |
+| full candidate closure triple count | 15849 |
 | HermiT return code | 0 |
 | reasoned output produced | yes |
 | `owl:Nothing` count | 0 |
@@ -442,7 +442,7 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet1!6` | `sosa:FeatureOfInterest` | `rdfs:subClassOf` | no | (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile or bfo:MaterialEntity or bfo:Process) | ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000015 http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000040 http://purl.obolibrary.org/obo/BFO_0000144) | `sosa:FeatureOfInterest rdfs:subClassOf ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000015 http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000040 http://purl.obolibrary.org/obo/BFO_0000144) .` |
 | `Sheet1!7` | `sosa:ObservableProperty` | `rdfs:subClassOf` | no | (bfo:SpecificallyDependentContinuant and bfo:inheres_in some sosa:FeatureOfInterest) or (bfo:ProcessProfile and bfo:occurrent_part_of some sosa:FeatureOfInterest) | ObjectUnionOf(ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000132 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000144) ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000197 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000020)) | `sosa:ObservableProperty rdfs:subClassOf ObjectUnionOf(ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000132 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000144) ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000197 http://www.w3.org/ns/sosa/FeatureOfInterest) http://purl.obolibrary.org/obo/BFO_0000020)) .` |
 | `Sheet1!8` | `sosa:Observation` | `rdfs:subClassOf` | no | cco:PlannedAct | https://www.commoncoreontologies.org/ont00000228 | `sosa:Observation rdfs:subClassOf https://www.commoncoreontologies.org/ont00000228 .` |
-| `Sheet1!9` | `sosa:Platform` | `owl:equivalentClass` | no | bfo:MaterialEntity and (sosa:hosts some ssn:System) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000040) | `sosa:Platform owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) http://purl.obolibrary.org/obo/BFO_0000040) .` |
+| `Sheet1!9` | `sosa:Platform` | `owl:equivalentClass` | no | (bfo:MaterialEntity or cco:InformationContentEntity) and (sosa:hosts some ssn:System) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) | `sosa:Platform owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/sosa/hosts http://www.w3.org/ns/ssn/System) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) .` |
 | `Sheet1!10` | `sosa:Result` | `owl:equivalentClass` | no | (cco:InformationContentEntity or bfo:MaterialEntity) and (cco:is_output_of some (sosa:Observation or sosa:Actuation or sosa:Sampling)) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001816 ObjectUnionOf(http://www.w3.org/ns/sosa/Actuation http://www.w3.org/ns/sosa/Observation http://www.w3.org/ns/sosa/Sampling)) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) | `sosa:Result owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001816 ObjectUnionOf(http://www.w3.org/ns/sosa/Actuation http://www.w3.org/ns/sosa/Observation http://www.w3.org/ns/sosa/Sampling)) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) .` |
 | `Sheet1!11` | `sosa:Sample` | `owl:equivalentClass` | no | bfo:MaterialEntity and (cco:is_object_of some sosa:Sampling) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001936 http://www.w3.org/ns/sosa/Sampling) http://purl.obolibrary.org/obo/BFO_0000040) | `sosa:Sample owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001936 http://www.w3.org/ns/sosa/Sampling) http://purl.obolibrary.org/obo/BFO_0000040) .` |
 | `Sheet1!12` | `sosa:Sampling` | `owl:equivalentClass` | no | cco:PlannedAct and (cco:prescribed_by some sosa:Procedure) and (cco:has_output some sosa:Sample) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 http://www.w3.org/ns/sosa/Procedure) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001986 http://www.w3.org/ns/sosa/Sample) https://www.commoncoreontologies.org/ont00000228) | `sosa:Sampling owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001920 http://www.w3.org/ns/sosa/Procedure) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001986 http://www.w3.org/ns/sosa/Sample) https://www.commoncoreontologies.org/ont00000228) .` |
@@ -469,7 +469,7 @@ This section records mapping and domain/range property-typing rows after parsing
 | `Sheet1!33` | `ssn:Output` | `rdfs:subClassOf` | no | cco:InformationContentEntity | https://www.commoncoreontologies.org/ont00000958 | `ssn:Output rdfs:subClassOf https://www.commoncoreontologies.org/ont00000958 .` |
 | `Sheet1!34` | `ssn:Property` | `owl:equivalentClass` | no | (bfo:SpecificallyDependentContinuant or bfo:ProcessProfile) | ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) | `ssn:Property owl:equivalentClass ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000020 http://purl.obolibrary.org/obo/BFO_0000144) .` |
 | `Sheet1!35` | `ssn:Stimulus` | `owl:equivalentClass` | no | cco:Cause and (cco:is_cause_of some sosa:Observation) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001803 http://www.w3.org/ns/sosa/Observation) https://www.commoncoreontologies.org/ont00000978) | `ssn:Stimulus owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001803 http://www.w3.org/ns/sosa/Observation) https://www.commoncoreontologies.org/ont00000978) .` |
-| `Sheet1!36` | `ssn:System` | `owl:equivalentClass` | no | bfo:MaterialEntity and (ssn:implements some sosa:Procedure) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/implements http://www.w3.org/ns/sosa/Procedure) http://purl.obolibrary.org/obo/BFO_0000040) | `ssn:System owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/implements http://www.w3.org/ns/sosa/Procedure) http://purl.obolibrary.org/obo/BFO_0000040) .` |
+| `Sheet1!36` | `ssn:System` | `owl:equivalentClass` | no | (bfo:MaterialEntity or cco:InformationContentEntity) and (ssn:implements some sosa:Procedure) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/implements http://www.w3.org/ns/sosa/Procedure) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) | `ssn:System owl:equivalentClass ObjectIntersectionOf(ObjectSomeValuesFrom(http://www.w3.org/ns/ssn/implements http://www.w3.org/ns/sosa/Procedure) ObjectUnionOf(http://purl.obolibrary.org/obo/BFO_0000040 https://www.commoncoreontologies.org/ont00000958)) .` |
 | `Sheet1!37` | `sosa:Actuator` | `rdfs:subClassOf` | no | bfo:MaterialEntity and (bfo:bearer_of some (bfo:RealizableEntity and (bfo:has_realization some sosa:Actuation))) and (cco:agent_in some sosa:Actuation) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000040) | `sosa:Actuator rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Actuation) http://purl.obolibrary.org/obo/BFO_0000040) .` |
 | `Sheet1!38` | `sosa:Sensor` | `rdfs:subClassOf` | no | bfo:MaterialEntity and (bfo:bearer_of some (bfo:RealizableEntity and (bfo:has_realization some sosa:Observation))) and (cco:agent_in some sosa:Observation) | ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000040) | `sosa:Sensor rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000196 ObjectIntersectionOf(ObjectSomeValuesFrom(http://purl.obolibrary.org/obo/BFO_0000054 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000017)) ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001787 http://www.w3.org/ns/sosa/Observation) http://purl.obolibrary.org/obo/BFO_0000040) .` |
 | `Sheet1!39` | `sosa:Procedure` | `rdfs:subClassOf` | no | cco:DirectiveInformationContentEntity and (cco:prescribes some bfo:Process) | ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001942 http://purl.obolibrary.org/obo/BFO_0000015) https://www.commoncoreontologies.org/ont00000965) | `sosa:Procedure rdfs:subClassOf ObjectIntersectionOf(ObjectSomeValuesFrom(https://www.commoncoreontologies.org/ont00001942 http://purl.obolibrary.org/obo/BFO_0000015) https://www.commoncoreontologies.org/ont00000965) .` |
@@ -556,10 +556,10 @@ This section records mapping and domain/range property-typing rows after parsing
 
 | Item | Count |
 |---|---:|
-| mappings present in both | 55 |
-| mappings only in COMS | 13 |
-| mappings only in pre-COMS legacy ontology | 13 |
-| class-expression differences | 4 |
+| mappings present in both | 53 |
+| mappings only in COMS | 15 |
+| mappings only in pre-COMS legacy ontology | 15 |
+| class-expression differences | 6 |
 | object-property mapping differences | 0 |
 | property-chain differences | 0 |
 | domain axioms present in both | 11 |
@@ -574,4 +574,4 @@ This section records mapping and domain/range property-typing rows after parsing
 
 ## Runtime
 
-- Runtime seconds: 14.81
+- Runtime seconds: 14.47

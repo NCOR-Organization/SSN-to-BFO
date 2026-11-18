@@ -1,0 +1,31 @@
+{
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "clone": "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+  "clone_commands": [
+    [
+      "git",
+      "clone",
+      "--shared",
+      "--no-checkout",
+      "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+      "/tmp/ssn-platform-baseline-uh0_cwav/checkout"
+    ],
+    [
+      "git",
+      "-C",
+      "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+      "checkout",
+      "--detach",
+      "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+    ]
+  ],
+  "clean_head_verified": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "status_before": "",
+  "source_user_untracked_files_copied": false,
+  "main_repository_modified": false,
+  "git_optional_locks": "0",
+  "python": "/opt/miniconda3/bin/python",
+  "scope": "Fresh detached offline local shared clone; not a registered worktree. Only committed baseline files are present.",
+  "status_after": "",
+  "head_after": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+}

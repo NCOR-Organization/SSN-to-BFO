@@ -1,0 +1,28 @@
+{
+  "changes": [
+    {
+      "sheet": "Sheet1",
+      "cell": "C9",
+      "before": "bfo:Continuant and (sosa:hosts some ssn:System)",
+      "after": "(bfo:MaterialEntity or cco:InformationContentEntity) and (sosa:hosts some ssn:System)"
+    },
+    {
+      "sheet": "Sheet1",
+      "cell": "D9",
+      "before": "SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Under the approved interpretation, a Platform is a BFO Continuant that actually hosts at least one SSN System. The hosting existential remains necessary; merely being capable of hosting does not suffice. Continuant allows material and appropriate nonmaterial hosts while excluding occurrents. The converse is supported by the source inverse relationship between hosts and isHostedBy and the System restriction that all isHostedBy values are Platforms: an individual hosting a System is therefore a Platform. The equivalence retains this converse and the actual-hosting requirement without classifying every Continuant as a Platform.",
+      "after": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A Platform must actually host at least one System; hosting capability alone does not satisfy the existential. The SOSA hosts relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between hosts and isHostedBy together with the System restriction that all isHostedBy values are Platforms: an entity hosting a System is a Platform. The equivalence therefore retains both the necessary hosting witness and the source-supported converse within the adopted exhaustive classification."
+    },
+    {
+      "sheet": "Sheet1",
+      "cell": "C36",
+      "before": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)",
+      "after": "(bfo:MaterialEntity or cco:InformationContentEntity) and (ssn:implements some sosa:Procedure)"
+    },
+    {
+      "sheet": "Sheet1",
+      "cell": "D36",
+      "before": "ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA.",
+      "after": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification."
+    }
+  ]
+}

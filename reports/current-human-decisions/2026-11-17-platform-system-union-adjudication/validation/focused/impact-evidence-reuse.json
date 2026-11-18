@@ -1,0 +1,83 @@
+{
+  "candidate_mapping_graph_identity": "173dcafd529d1da2f8b30e53ee9dbc9ca80808eef274d90d69f9a058730ac625",
+  "dependency_hashes": {
+    "imports/cco.ttl": {
+      "current": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "prior": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+    },
+    "imports/sosa-sampling.ttl": {
+      "current": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "prior": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a"
+    },
+    "imports/sosa.ttl": {
+      "current": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "prior": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+    },
+    "imports/ssn-systems.ttl": {
+      "current": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "prior": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105"
+    },
+    "imports/ssn.ttl": {
+      "current": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "prior": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    }
+  },
+  "directly_reused_aboxes": 1,
+  "directly_reused_candidate_queries": 58,
+  "evidence_files": [
+    {
+      "path": "reused-impact/summary.json",
+      "sha256": "0747a090b46bc91c53e44cfacc894b0a4f9a39ce9e50f5d3af1483041f1b65eb"
+    },
+    {
+      "path": "reused-impact/input-manifest.json",
+      "sha256": "28468d3b1bde3552884389439d3cd15456806b48a3b6a717e34dd5acc7cd6ad0"
+    },
+    {
+      "path": "reused-impact/both_union-probe-result.json",
+      "sha256": "9d0d4101b424f07132c4c5b924aeb49f1dd9585e28d4d39a9c01040477fa6c38"
+    },
+    {
+      "path": "reused-impact/source-converse-result.json",
+      "sha256": "53d817061980539be538e12a46dca814201ecf9046eeda632aa7b4b1964ac090"
+    },
+    {
+      "path": "reused-impact/supplemental-ice-roles-result.json",
+      "sha256": "abc34385e5a535f86bd1e91d0754991e1b7def3627aed0be070aaa7c771e3ca0"
+    },
+    {
+      "path": "reused-impact/supplemental-intersections-both_union-result.json",
+      "sha256": "582d2639afa3eaa5d0bdbf0504fed3860f1bf9b64fe56497642b95fd91c01899"
+    },
+    {
+      "path": "reused-impact/distinct-platforms-both_union-result.json",
+      "sha256": "97add0fedff0ece62b4348ab53089ebeba5f60c580220771eaedb063eff7639e"
+    },
+    {
+      "path": "reused-impact/assess_union_candidates.py",
+      "sha256": "9b5e48620c58af30725d9e8af881749c13d24a3bb916579f2a70b6b491a86b06"
+    },
+    {
+      "path": "reused-impact/replay_focused_queries.py",
+      "sha256": "e7107573b17fbdceb9802b14002a3ef6e36fb8059f514d683137b41cd45c0f4a"
+    }
+  ],
+  "not_new_named_class_unsatisfiability": true,
+  "original_external_evidence_directory": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-impact-2026-11-17/reasoner",
+  "prior_graph_identity": "173dcafd529d1da2f8b30e53ee9dbc9ca80808eef274d90d69f9a058730ac625",
+  "qualified_reuse": "263 answers describe the broader comparison matrix, not 263 fresh candidate-only tests. Final both-union graph reuses 50 primary +3 role +5 intersection queries and the distinct-individual ABox; native-source proof contributes four queries. Other variants support the comparison only.",
+  "retained_known_conditional_conflicts": [
+    "ICE Sensor/Actuator/Sampler",
+    "Site and SDC Platform/System",
+    "Platform without hosted System",
+    "System without implemented Procedure",
+    "Occurrent Platform/System",
+    "ICE System with SystemCapability",
+    "Mixed material/ICE subsystem directions",
+    "ICE System bearing Function"
+  ],
+  "retention_note": "Raw selected evidence and the original query builder are retained byte-identically. Evidence reference paths were made portable after execution; no validation result was edited. The separate replay executes the same 58 candidate expectations, four native-source expectations and distinct-individual ABox against the final generated candidate.",
+  "source_only_queries": 4,
+  "status": "EXACT_GRAPH_AND_DEPENDENCIES_MATCH",
+  "supporting_comparison_queries_across_all_variants": 263
+}

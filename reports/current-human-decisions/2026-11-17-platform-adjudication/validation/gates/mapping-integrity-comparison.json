@@ -1,0 +1,316 @@
+{
+  "status": "MAPPING-INTEGRITY SUITES DID NOT PASS; ALL DIAGNOSTICS ACCOUNTED FOR",
+  "baseline": {
+    "tests_run": 165,
+    "failures": 13,
+    "errors": 1,
+    "elapsed_seconds": 339.1762462910265,
+    "exit_code": 1
+  },
+  "candidate": {
+    "tests_run": 165,
+    "failures": 16,
+    "errors": 1,
+    "elapsed_seconds": 359.52644887473434,
+    "exit_code": 1
+  },
+  "new_failing_cases": [
+    "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+    "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+    "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output"
+  ],
+  "resolved_failing_cases": [],
+  "classification_counts": {
+    "Identical preexisting failure": 9,
+    "Changed diagnostic attributable to approved data; preexisting failing case": 4,
+    "Identical preexisting failure; set display order only": 1,
+    "Newly failing fixture attributable to approved mapping data": 3
+  },
+  "exact_normalized_traceback_matches": 9,
+  "demonstrated_unexplained_regressions": [],
+  "test_files_byte_identical": true,
+  "candidate_snapshot_bytes_changed_during_run": [],
+  "strict_identity_delta": {
+    "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb": {
+      "before": {
+        "axiom_id": "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
+        "canonical_input": "CanonicalRowInput(row_id='urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb', location=RowLocation(worksheet='Sheet1', row_number=9), subject_iri='http://www.w3.org/ns/sosa/Platform', predicate_iri='http://www.w3.org/2002/07/owl#equivalentClass', mapping_type='class_mapping', reasoning='sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.', expression=ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000040', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://www.w3.org/ns/sosa/hosts', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/ssn/System', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+      },
+      "after": {
+        "axiom_id": "sha256:863a559642f2d14feb06c876f8f8da4ccf3ed2a290a1264de3fd761c4b36094a",
+        "canonical_input": "CanonicalRowInput(row_id='urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb', location=RowLocation(worksheet='Sheet1', row_number=9), subject_iri='http://www.w3.org/ns/sosa/Platform', predicate_iri='http://www.w3.org/2002/07/owl#equivalentClass', mapping_type='class_mapping', reasoning=\"SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Under the approved interpretation, a Platform is a BFO Continuant that actually hosts at least one SSN System. The hosting existential remains necessary; merely being capable of hosting does not suffice. Continuant allows material and appropriate nonmaterial hosts while excluding occurrents. The converse is supported by the source inverse relationship between hosts and isHostedBy and the System restriction that all isHostedBy values are Platforms: an individual hosting a System is therefore a Platform. The equivalence retains this converse and the actual-hosting requirement without classifying every Continuant as a Platform.\", expression=ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000002', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://www.w3.org/ns/sosa/hosts', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/ssn/System', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+      }
+    }
+  },
+  "strict_product_delta_evidence": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/product-deltas.json",
+    "sha256": "5bec548171471fa0e661f1184007bc13dc7d5f1943ee0016987729eb35288bf4",
+    "delta": {
+      "baseline_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "baseline_triples": 134,
+      "byte_identical": false,
+      "candidate_sha256": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+      "candidate_triples": 134,
+      "only_approved_axiom_replacement": true,
+      "product": "strict_bfo_mapping"
+    }
+  },
+  "blocked_tests": {
+    "class": "test_cco_extension.CcoExtensionTests",
+    "count": 11,
+    "methods": [
+      "test_exact_identity_inventory_digest_categories_and_distribution",
+      "test_nonselected_product_policy_is_reconciled",
+      "test_wrong_disposition_category_and_imported_direct_selection_fail",
+      "test_missing_extra_duplicate_substituted_and_mismatched_identities_fail",
+      "test_direct_graph_identity_import_counts_and_structures",
+      "test_import_vocabulary_and_copied_declarations_are_rejected",
+      "test_determinism_reordered_inputs_and_existing_product_preservation",
+      "test_reordered_canonical_header_is_rejected_by_product_validator",
+      "test_fresh_process_generation_is_byte_deterministic",
+      "test_root_project_closure_and_fixed_term_resolution",
+      "test_pinned_closure_hermit_is_clean"
+    ],
+    "reason": "Same class setup failure on baseline/candidate: latest semantic transition differs from a hardcoded historical transition; these11methods did not execute and are not11additional failure records."
+  },
+  "normalization_policy": "Only exact checkout roots and macOS private aliases. One abbreviated set-print difference is accepted only after comparing complete actual/expected sets. No hash, count, transition, exception, or semantic data suppressed.",
+  "raw_evidence": {
+    "baseline-integrity.log": "ff548d445211f7179201d3c9265f7e0dda6d859d974a9d743aa588a41f320198",
+    "candidate-integrity.log": "97116920f638dd00043c9813327e1d66e85b8b7dd6691ace25c2fafd5f9e85d4",
+    "baseline-integrity/results.json": "f3c6aabfccfd5a7a2d4ad4bd4cb1f77c44ff8c3d81d33d83e791f3332669511b",
+    "candidate-integrity/results.json": "83b63b5ac6f2e85930208cb35723b770304937c5694358426fffdf1f9be3647a",
+    "baseline-symptom-inputs.json": "c8ecb65278d29724d8fe860eef22a52d3d885ae548c8a3d3b559d2d1951de275",
+    "candidate-symptom-inputs.json": "a61516e03dc5fa3a607da26a1dbfbcce2b7fb77df728fb172077ed7baf22ee2a",
+    "baseline-strict-symptom.json": "611e64496aba85c8c2ef43bf791f4229604321713d3f14756ba44d23df65efa9",
+    "candidate-strict-symptom.json": "b26ad0d59c0ac58dfc41d81b4136e3a7ca6d8a4eb702b81893786563c02b5ec2"
+  },
+  "cases": [
+    {
+      "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+      "kind": "errors",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_cco_extension.py\", line 155, in setUpClass\n    cls.transition, _, cls.baseline_inventory = authenticated_baseline()\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_cco_extension.py\", line 155, in setUpClass\n    cls.transition, _, cls.baseline_inventory = authenticated_baseline()\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_cco_extension.py\", line 613, in test_authenticated_three_axiom_delta_preserves_raw_baseline_guard\n    transition, baseline, baseline_inventory = authenticated_baseline()\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_cco_extension.py\", line 613, in test_authenticated_three_axiom_delta_preserves_raw_baseline_guard\n    transition, baseline, baseline_inventory = authenticated_baseline()\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_cco_extension.py\", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance\n    self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)\nAssertionError: '87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n- 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428\n+ 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28\n\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_cco_extension.py\", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance\n    self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)\nAssertionError: '87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n- 87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428\n+ 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28\n\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n    self.assertEqual(len(removed), 3)\nAssertionError: 8 != 3\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n    self.assertEqual(len(removed), 3)\nAssertionError: 9 != 3\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n     self.assertEqual(len(removed), 3)\n-AssertionError: 8 != 3\n+AssertionError: 9 != 3\n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The cumulative historical-to-current removed-axiom inventory rises from8 to9 because the original Platform equivalence is replaced once. Both fail the same hardcoded expectation3. The authenticated Platform transition and focused product-delta proof establish exactly one newly replaced equivalence."
+    },
+    {
+      "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n    self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\nAssertionError: {'urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf5[1522 chars]066'} != frozenset({'urn:uuid:01b1aff2-a12b-430b-9[1386 chars]6c'})\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n    self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\nAssertionError: {'urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d[1522 chars]5bb'} != frozenset({'urn:uuid:0f9d6fa9-00b9-4602-b[1386 chars]bc'})\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,4 +1,4 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n     self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\n-AssertionError: {'urn:uuid:ac30440d-7146-4db0-a8d0-8a5bf5[1522 chars]066'} != frozenset({'urn:uuid:01b1aff2-a12b-430b-9[1386 chars]6c'})\n+AssertionError: {'urn:uuid:1e9432ec-0bfb-4c05-8a16-c4295d[1522 chars]5bb'} != frozenset({'urn:uuid:0f9d6fa9-00b9-4602-b[1386 chars]bc'})\n",
+      "classification": "Identical preexisting failure; set display order only",
+      "explanation": "Both complete selected and expected RowID sets were independently read through unchanged test setup and are exactly equal across baseline/candidate; only the abbreviated Python set display differs.",
+      "evidence": [
+        "baseline-symptom-inputs.json",
+        "candidate-symptom-inputs.json"
+      ]
+    },
+    {
+      "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_modular_products.py\", line 457, in test_fixed_local_source_closure_is_offline_and_import_free\n    self.assertEqual(len(closure), 1214)\nAssertionError: 1217 != 1214\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_modular_products.py\", line 457, in test_fixed_local_source_closure_is_offline_and_import_free\n    self.assertEqual(len(closure), 1214)\nAssertionError: 1217 != 1214\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_modular_products.py\", line 504, in test_current_partition_requires_authenticated_context_and_restores_baseline\n    assert_raw_baseline_rejects()\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_modular_products.py\", line 501, in assert_raw_baseline_rejects\n    self.assertEqual({issue.code for issue in raised.exception.issues},\nAssertionError: Items in the first set but not the second:\n'PRODUCT_AXIOM_COUNT_MISMATCH'\n'PRODUCT_CATEGORY_COUNT_MISMATCH'\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_modular_products.py\", line 504, in test_current_partition_requires_authenticated_context_and_restores_baseline\n    assert_raw_baseline_rejects()\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_modular_products.py\", line 501, in assert_raw_baseline_rejects\n    self.assertEqual({issue.code for issue in raised.exception.issues},\nAssertionError: Items in the first set but not the second:\n'PRODUCT_AXIOM_COUNT_MISMATCH'\n'PRODUCT_CATEGORY_COUNT_MISMATCH'\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_product_dispositions.py\", line 282, in test_current_disposition_delta_matches_authenticated_transition\n    transition = self.current_transition()\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_product_dispositions.py\", line 282, in test_current_disposition_delta_matches_authenticated_transition\n    transition = self.current_transition()\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -4,7 +4,7 @@\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes.",
+      "approved_change": {
+        "baseline_transition": "bd69b546-6ef2-4704-8f05-325ec9bc1862",
+        "candidate_transition": "9f891d92-ae02-4a2d-872b-7e4fc3468cf7"
+      }
+    },
+    {
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_product_dispositions.py\", line 232, in test_current_workbook_totals_and_product_order\n    expected = self.current_transition()[\"generation_expectations\"][\"after\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_product_dispositions.py\", line 232, in test_current_workbook_totals_and_product_order\n    expected = self.current_transition()[\"generation_expectations\"][\"after\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -4,7 +4,7 @@\n                ^^^^^^^^^^^^^^^^^^^^^^^^^\n   File \"<CHECKOUT>/tests/test_product_dispositions.py\", line 228, in current_transition\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes.",
+      "approved_change": {
+        "baseline_transition": "bd69b546-6ef2-4704-8f05-325ec9bc1862",
+        "candidate_transition": "9f891d92-ae02-4a2d-872b-7e4fc3468cf7"
+      }
+    },
+    {
+      "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "kind": "failures",
+      "baseline_case_failed": false,
+      "candidate_case_failed": true,
+      "baseline_traceback": null,
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 660, in test_current_context_preserves_baseline_strict_axioms_and_bytes\n    self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)\nAssertionError: b'# G[5257 chars]/ns/ssn/systems/hasOperatingProperty> rdfs:sub[14039 chars] .\\n' != b'# G[5257 chars]/ns/sosa/Platform> owl:equivalentClass _:a480c[14039 chars] .\\n'\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 660, in test_current_context_preserves_baseline_strict_axioms_and_bytes\n+    self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)\n+AssertionError: b'# G[5257 chars]/ns/ssn/systems/hasOperatingProperty> rdfs:sub[14039 chars] .\\n' != b'# G[5257 chars]/ns/sosa/Platform> owl:equivalentClass _:a480c[14039 chars] .\\n'\n",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "The test requires working-tree strict-BFO bytes to equal the unchanged HEAD version. The approved Platform mapping necessarily changes those bytes. The prior HEAD-hash assertion passes; the focused product-delta proof and both current/HEAD hashes establish only the authorized equivalence replacement.",
+      "source_location": "tests/test_strict_bfo_mapping.py:660"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_strict_bfo_mapping.py\", line 476, in test_deterministic_serialization_and_alignment_core_preservation\n    self.assertEqual(\nAssertionError: 'cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5' != '17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770'\n- cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5\n+ 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770\n\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 476, in test_deterministic_serialization_and_alignment_core_preservation\n    self.assertEqual(\nAssertionError: 'cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5' != '17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770'\n- cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5\n+ 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770\n\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "baseline_case_failed": false,
+      "candidate_case_failed": true,
+      "baseline_traceback": null,
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 160, in test_exact_selection_identity_lock_and_distribution\n    self.assertEqual({value.axiom_id for value in self.strict_selected}, EXPECTED_AXIOM_IDS)\nAssertionError: {'sha256:0db60d0e9764151246aa7f88574dbc9f[1379 chars]cad'} != frozenset({'sha256:0db60d0e9764151246aa7f[1390 chars]ad'})\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -0,0 +1,4 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 160, in test_exact_selection_identity_lock_and_distribution\n+    self.assertEqual({value.axiom_id for value in self.strict_selected}, EXPECTED_AXIOM_IDS)\n+AssertionError: {'sha256:0db60d0e9764151246aa7f88574dbc9f[1379 chars]cad'} != frozenset({'sha256:0db60d0e9764151246aa7f[1390 chars]ad'})\n",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "The unchanged fixed axiom-ID set still contains the old Platform axiom. Baseline matches that set; candidate replaces exactly Platform axiom 480ce325\u2026 with 863a5596\u2026, with all 19 RowIDs and 18 other canonical inputs unchanged. This is an approved-expression consequence, not an unexplained mapping regression.",
+      "evidence": [
+        "baseline-strict-symptom.json",
+        "candidate-strict-symptom.json"
+      ]
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_strict_bfo_mapping.py\", line 600, in test_fixed_pinned_merged_cco_bfo_closure\n    self.assertEqual(len(closure), 14988)\nAssertionError: 14991 != 14988\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 600, in test_fixed_pinned_merged_cco_bfo_closure\n    self.assertEqual(len(closure), 14988)\nAssertionError: 14991 != 14988\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_strict_bfo_mapping.py\", line 633, in test_pinned_closure_hermit_is_clean\n    self.assertEqual(result.closure_triple_count, 14988)\nAssertionError: 14991 != 14988\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 633, in test_pinned_closure_hermit_is_clean\n    self.assertEqual(result.closure_triple_count, 14988)\nAssertionError: 14991 != 14988\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "kind": "failures",
+      "baseline_case_failed": false,
+      "candidate_case_failed": true,
+      "baseline_traceback": null,
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 527, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n    self.assertEqual(\nAssertionError: '2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0' != '676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af'\n- 2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0\n+ 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af\n\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -0,0 +1,7 @@\n+Traceback (most recent call last):\n+  File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 527, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n+    self.assertEqual(\n+AssertionError: '2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0' != '676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af'\n+- 2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0\n++ 676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af\n+\n",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "All preceding row/axiom-order and byte-determinism comparisons pass. The final assertion hardcodes the old strict-BFO product SHA 676b3162\u2026; the approved Platform replacement yields 2e29952e\u2026. Focused graph-delta validation confines the product difference to this one approved equivalence.",
+      "source_location": "tests/test_strict_bfo_mapping.py:527"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_strict_bfo_mapping.py\", line 579, in test_root_and_project_module_reconciliation\n    self.assertEqual(len(strict_ids | core_ids), 48)\nAssertionError: 51 != 48\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 579, in test_root_and_project_module_reconciliation\n    self.assertEqual(len(strict_ids | core_ids), 48)\nAssertionError: 51 != 48\n",
+      "normalized_tracebacks_identical": true,
+      "normalized_diff": "",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "kind": "failures",
+      "baseline_case_failed": true,
+      "candidate_case_failed": true,
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "candidate_traceback": "Traceback (most recent call last):\n  File \"/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n",
+      "normalized_tracebacks_identical": false,
+      "normalized_diff": "--- baseline\n+++ candidate\n@@ -1,7 +1,7 @@\n Traceback (most recent call last):\n   File \"<CHECKOUT>/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n     self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\n-AssertionError: 'bd69b546-6ef2-4704-8f05-325ec9bc1862' != '58481ff2-4e56-4931-a3d4-383357b16561'\n-- bd69b546-6ef2-4704-8f05-325ec9bc1862\n+AssertionError: '9f891d92-ae02-4a2d-872b-7e4fc3468cf7' != '58481ff2-4e56-4931-a3d4-383357b16561'\n+- 9f891d92-ae02-4a2d-872b-7e4fc3468cf7\n + 58481ff2-4e56-4931-a3d4-383357b16561\n \n",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes.",
+      "approved_change": {
+        "baseline_transition": "bd69b546-6ef2-4704-8f05-325ec9bc1862",
+        "candidate_transition": "9f891d92-ae02-4a2d-872b-7e4fc3468cf7"
+      }
+    }
+  ],
+  "gate_caveat": "Neither mapping-integrity suites nor canonical gate is waived or represented as passing. The3newly surfaced approved-data fixtures were not edited; the authorization permitted only the assessment-count test correction."
+}

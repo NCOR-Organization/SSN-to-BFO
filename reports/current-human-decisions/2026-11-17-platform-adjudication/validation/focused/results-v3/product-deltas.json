@@ -1,0 +1,38 @@
+[
+  {
+    "baseline_sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+    "baseline_triples": 1047,
+    "byte_identical": false,
+    "candidate_sha256": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+    "candidate_triples": 1047,
+    "only_approved_axiom_replacement": true,
+    "product": "integrated"
+  },
+  {
+    "baseline_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+    "baseline_triples": 64,
+    "byte_identical": true,
+    "candidate_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+    "candidate_triples": 64,
+    "only_approved_axiom_replacement": true,
+    "product": "alignment_core"
+  },
+  {
+    "baseline_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "baseline_triples": 134,
+    "byte_identical": false,
+    "candidate_sha256": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+    "candidate_triples": 134,
+    "only_approved_axiom_replacement": true,
+    "product": "strict_bfo_mapping"
+  },
+  {
+    "baseline_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+    "baseline_triples": 863,
+    "byte_identical": true,
+    "candidate_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+    "candidate_triples": 863,
+    "only_approved_axiom_replacement": true,
+    "product": "cco_extension"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "runtime": {
+    "python": "/opt/miniconda3/bin/python",
+    "python_version": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:07:17) [Clang 14.0.6 ]",
+    "rdflib_version": "7.6.0",
+    "rdflib_path": "/opt/miniconda3/lib/python3.12/site-packages/rdflib/__init__.py",
+    "openpyxl_version": "3.1.5",
+    "openpyxl_path": "/opt/miniconda3/lib/python3.12/site-packages/openpyxl/__init__.py",
+    "coms_path": "/Users/alecsculley/Documents/GitHub/CommonOntologyMappingSpecification/src/coms/__init__.py"
+  },
+  "declared_mapping_inputs": [
+    {
+      "path": "imports/sosa.ttl",
+      "present": true,
+      "tracked": true,
+      "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "rdf_triples": 327,
+      "owl_import_iris": []
+    },
+    {
+      "path": "imports/sosa-sampling.ttl",
+      "present": true,
+      "tracked": true,
+      "sha256": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "rdf_triples": 35,
+      "owl_import_iris": [
+        "http://www.w3.org/2004/02/skos/core",
+        "http://www.w3.org/ns/sosa/"
+      ]
+    },
+    {
+      "path": "imports/ssn.ttl",
+      "present": true,
+      "tracked": true,
+      "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+      "rdf_triples": 520,
+      "owl_import_iris": [
+        "http://www.w3.org/ns/sosa/"
+      ]
+    },
+    {
+      "path": "imports/ssn-systems.ttl",
+      "present": true,
+      "tracked": true,
+      "sha256": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "rdf_triples": 342,
+      "owl_import_iris": [
+        "http://www.w3.org/ns/ssn/"
+      ]
+    },
+    {
+      "path": "imports/cco.ttl",
+      "present": true,
+      "tracked": true,
+      "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+      "rdf_triples": 13649,
+      "owl_import_iris": []
+    },
+    {
+      "path": "mappings/SSN2BFO-COMS.xlsx",
+      "present": true,
+      "tracked": true,
+      "sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd"
+    },
+    {
+      "path": "queries/source-classes-and-object-properties.rq",
+      "present": true,
+      "tracked": true,
+      "sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9"
+    }
+  ],
+  "missing_declared_mapping_inputs": [],
+  "scope_note": "Declared current local source files, CCO dependency, workbook and source query verified. Remote/transitive imports are not independently fetched or repaired. Test-fixture evidence failures must be distinguished from absent pinned sources. Runtime COMS is the existing installed sibling-repository dependency."
+}

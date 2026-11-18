@@ -1,0 +1,9 @@
+@prefix probe: <urn:ssn-union-distinct-ice-platforms:> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+probe:outer a sosa:Platform, cco:ont00000958 ;
+    sosa:hosts probe:inner ;
+    owl:differentFrom probe:inner .
+probe:inner a sosa:Platform, cco:ont00000958 .

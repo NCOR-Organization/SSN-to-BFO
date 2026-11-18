@@ -1,0 +1,303 @@
+{
+  "status": "PASS: BOTH COMPLETED FAILURE COMPARISONS INDEPENDENTLY VERIFIED; GATES DID NOT PASS",
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "mapping_integrity": {
+    "comparison_sha256": "952e7a6571f14dcfed2727e59a5d4b06145e97a97bdbcbd5081c85b93e4e0c59",
+    "baseline": {
+      "tests_run": 165,
+      "failures": 13,
+      "errors": 1,
+      "elapsed_seconds": 339.1762462910265,
+      "exit_code": 1
+    },
+    "candidate": {
+      "tests_run": 165,
+      "failures": 16,
+      "errors": 1,
+      "elapsed_seconds": 359.52644887473434,
+      "exit_code": 1
+    },
+    "classification_counts": {
+      "Identical preexisting failure": 9,
+      "Changed diagnostic attributable to approved data; preexisting failing case": 4,
+      "Identical preexisting failure; set display order only": 1,
+      "Newly failing fixture attributable to approved mapping data": 3
+    },
+    "total_candidate_diagnostic_records": 17,
+    "diagnostic_inventory": [
+      {
+        "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+        "classification": "Identical preexisting failure",
+        "kind": "errors"
+      },
+      {
+        "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+        "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+        "kind": "failures"
+      },
+      {
+        "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+        "classification": "Identical preexisting failure; set display order only",
+        "kind": "failures"
+      },
+      {
+        "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+        "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+        "kind": "failures"
+      },
+      {
+        "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+        "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+        "classification": "Newly failing fixture attributable to approved mapping data",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+        "classification": "Newly failing fixture attributable to approved mapping data",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+        "classification": "Newly failing fixture attributable to approved mapping data",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+        "classification": "Identical preexisting failure",
+        "kind": "failures"
+      },
+      {
+        "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+        "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+        "kind": "failures"
+      }
+    ],
+    "three_newly_failing_cases_are_approved_data_fixtures": true,
+    "not_identical_preexisting_failures": [
+      "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output"
+    ],
+    "strict_identity_change": {
+      "row_id": "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb",
+      "removed": "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
+      "added": "sha256:863a559642f2d14feb06c876f8f8da4ccf3ed2a290a1264de3fd761c4b36094a",
+      "other18canonical_inputs_identical": true
+    },
+    "strict_product_hashes": {
+      "baseline": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "candidate": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0"
+    },
+    "all19rowids_preserved": true,
+    "set_display_difference_verified_using_complete_sets": true,
+    "raw_evidence_verified": [
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-integrity.log",
+        "sha256": "ff548d445211f7179201d3c9265f7e0dda6d859d974a9d743aa588a41f320198"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-integrity.log",
+        "sha256": "97116920f638dd00043c9813327e1d66e85b8b7dd6691ace25c2fafd5f9e85d4"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-integrity/results.json",
+        "sha256": "f3c6aabfccfd5a7a2d4ad4bd4cb1f77c44ff8c3d81d33d83e791f3332669511b"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-integrity/results.json",
+        "sha256": "83b63b5ac6f2e85930208cb35723b770304937c5694358426fffdf1f9be3647a"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-symptom-inputs.json",
+        "sha256": "c8ecb65278d29724d8fe860eef22a52d3d885ae548c8a3d3b559d2d1951de275"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-symptom-inputs.json",
+        "sha256": "a61516e03dc5fa3a607da26a1dbfbcce2b7fb77df728fb172077ed7baf22ee2a"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline-strict-symptom.json",
+        "sha256": "611e64496aba85c8c2ef43bf791f4229604321713d3f14756ba44d23df65efa9"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-strict-symptom.json",
+        "sha256": "b26ad0d59c0ac58dfc41d81b4136e3a7ca6d8a4eb702b81893786563c02b5ec2"
+      }
+    ],
+    "code_changes": [
+      "tests/test_current_assessment.py"
+    ],
+    "strict_fixture_test_bytes_unchanged": true,
+    "other_test_and_validator_bytes_unchanged": true,
+    "authorized_count_correction_exact": true,
+    "blocked_methods_count": 11,
+    "blocked_methods_not_extra_diagnostic_records": true,
+    "demonstrated_unexplained_regressions": [],
+    "final_bytes_reverification": {
+      "status": "PASS: final comparison differs only by spaces in two explanation strings",
+      "prior_comparison_sha256": "e711911c049650fd4c70ff52958ca08688222624dabb223157cf6fce711068a7",
+      "prior_comparison_reconstruction": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/mapping-integrity-comparison.before-prose-spacing.json",
+      "reconstructed_prior_bytes_match_previously_audited_sha256": true,
+      "final_comparison_sha256": "952e7a6571f14dcfed2727e59a5d4b06145e97a97bdbcbd5081c85b93e4e0c59",
+      "prior_independent_review_sha256": "10fd19b8d867ead305a8c288671d360dfb777196471ea822addb0697d578fdcc",
+      "exact_changes": [
+        {
+          "path": "/cases/11/explanation",
+          "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+          "before": "The unchanged fixed axiom-ID set still contains the old Platform axiom. Baseline matches that set; candidate replaces exactly Platform axiom480ce325\u2026 with863a5596\u2026, with all19RowIDs and18other canonical inputs unchanged. This is an approved-expression consequence, not an unexplained mapping regression.",
+          "after": "The unchanged fixed axiom-ID set still contains the old Platform axiom. Baseline matches that set; candidate replaces exactly Platform axiom 480ce325\u2026 with 863a5596\u2026, with all 19 RowIDs and 18 other canonical inputs unchanged. This is an approved-expression consequence, not an unexplained mapping regression."
+        },
+        {
+          "path": "/cases/14/explanation",
+          "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+          "before": "All preceding row/axiom-order and byte-determinism comparisons pass. The final assertion hardcodes the old strict-BFO product SHA676b3162\u2026; the approved Platform replacement yields2e29952e\u2026. Focused graph-delta validation confines the product difference to this one approved equivalence.",
+          "after": "All preceding row/axiom-order and byte-determinism comparisons pass. The final assertion hardcodes the old strict-BFO product SHA 676b3162\u2026; the approved Platform replacement yields 2e29952e\u2026. Focused graph-delta validation confines the product difference to this one approved equivalence."
+        }
+      ],
+      "raw_evidence_reverified_unchanged": true,
+      "canonical_comparison_and_exception_inventory_reverified_unchanged": true,
+      "diagnostics_classifications_counts_tracebacks_and_evidence_references_unchanged": true,
+      "tests_rerun": false,
+      "repository_files_modified": false
+    }
+  },
+  "canonical_status": "VERIFIED",
+  "gate_waiver": false,
+  "qualification": "The three newly failing strict-BFO fixtures remain unmodified because the user authorized only assessment-count expectation maintenance. They are explained approved-data consequences, not baseline-identical failures or passing tests.",
+  "canonical": {
+    "comparison_sha256": "02bc13d3f8083038d29a8ad4d7d15133706499b70631cc5c491fbed2c8804da8",
+    "exception_inventory_sha256": "1cd217fe33e64a299e08b4d1efa6ae04c392bac20ab691a3e4aa960df49249d5",
+    "fresh_runs": true,
+    "baseline": {
+      "tests": 488,
+      "failures": 24,
+      "errors": 22,
+      "skips": 7,
+      "make_exit_code": 2
+    },
+    "candidate": {
+      "tests": 488,
+      "failures": 24,
+      "errors": 22,
+      "skips": 7,
+      "make_exit_code": 2
+    },
+    "classification_counts": {
+      "Identical preexisting failure": 39,
+      "Changed diagnostic attributable to approved data; preexisting failing case": 7
+    },
+    "changed_case_identities": [
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency",
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency",
+      "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report",
+      "test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records",
+      "test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot",
+      "test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval",
+      "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies"
+    ],
+    "raw_logs_and_all92diagnostic_blocks_verified": true,
+    "raw_evidence_verified": [
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check.log",
+        "sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900"
+      },
+      {
+        "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check.log",
+        "sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267"
+      }
+    ],
+    "new_failing_case_identities": [],
+    "resolved_failing_case_identities": [],
+    "approved_data_hashes_counts_and_complete_sets_verified": true,
+    "candidate_input_file_count": 1931,
+    "candidate_input_bytes_unchanged": true,
+    "executed_stages": {
+      "baseline": [
+        {
+          "name": "Turtle parse check",
+          "outcome": "PASS"
+        },
+        {
+          "name": "Current publication assessment regression tests",
+          "outcome": "FAIL (1)"
+        }
+      ],
+      "candidate": [
+        {
+          "name": "Turtle parse check",
+          "outcome": "PASS"
+        },
+        {
+          "name": "Current publication assessment regression tests",
+          "outcome": "FAIL (1)"
+        }
+      ]
+    },
+    "unreached_stage_inventory_verified": true,
+    "conditional_later_stage_count": 44,
+    "additional_unreached": [
+      "run_validation_suite compile_check() at line1121",
+      "Makefile compile prerequisite",
+      "Makefile check recipe: git diff --check and git status --short"
+    ]
+  },
+  "cross_scope": {
+    "canonical_records": 46,
+    "integrity_records": 17,
+    "diagnostic_records": 63,
+    "test_method_records": 62,
+    "setup_error_records": 1,
+    "duplicate_test_identities": [],
+    "blocked_method_count": 11,
+    "blocked_methods_counted_as_diagnostic_records": false,
+    "standalone_documentary_failure_identical": true,
+    "same_documentary_message_in_canonical_cases": [
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails",
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening",
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions",
+      "test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions",
+      "test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail"
+    ],
+    "counting_caveat": "Distinct diagnostic records can share underlying stale fixtures or missing dependencies;63records does not mean63independent defects."
+  },
+  "demonstrated_unexplained_regressions": []
+}

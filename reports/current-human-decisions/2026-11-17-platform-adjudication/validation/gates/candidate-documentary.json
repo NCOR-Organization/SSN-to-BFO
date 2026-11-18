@@ -1,0 +1,13 @@
+{
+  "root": "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "tools/current_documentary_workbook.py",
+    "check"
+  ],
+  "return_code": 1,
+  "elapsed_seconds": 0.47349433274939656,
+  "sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43",
+  "output": "disconnected documentary update chain\n"
+}

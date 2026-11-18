@@ -1,0 +1,198 @@
+{
+  "source_path": "tools/run_validation_suite.py",
+  "source_sha256": "94f4267cb415e127086cbfb2da36a64928901f39301792d96079959b3e833c24",
+  "executed_before_expected_stop": [
+    {
+      "name": "Turtle parse check",
+      "source_line": 520
+    },
+    {
+      "name": "Current publication assessment regression tests",
+      "source_line": 523
+    }
+  ],
+  "conditional_stages_not_reached_if_current_regressions_fail": [
+    {
+      "line": 527,
+      "name": "Current source/target byte identities"
+    },
+    {
+      "line": 532,
+      "name": "Current assessment inventory and report freshness"
+    },
+    {
+      "line": 538,
+      "name": "COMS row-identity focused tests"
+    },
+    {
+      "line": 554,
+      "name": "COMS framework shadow-integration tests"
+    },
+    {
+      "line": 570,
+      "name": "SOSA source-version authority focused tests"
+    },
+    {
+      "line": 586,
+      "name": "Uniform product-role policy focused tests"
+    },
+    {
+      "line": 602,
+      "name": "SOSA formal package-scope focused tests"
+    },
+    {
+      "line": 618,
+      "name": "Forthcoming SOSA COMS focused tests"
+    },
+    {
+      "line": 634,
+      "name": "SOSA-next maintained-product focused tests"
+    },
+    {
+      "line": 650,
+      "name": "SOSA-next catalog consumer-stack focused tests"
+    },
+    {
+      "line": 666,
+      "name": "SOSA-2023 publication-metadata focused tests"
+    },
+    {
+      "line": 682,
+      "name": "SOSA-2023 formal-rendering focused tests"
+    },
+    {
+      "line": 698,
+      "name": "SOSA-2023 release-manifest focused tests"
+    },
+    {
+      "line": 714,
+      "name": "SOSA-2023 release-package focused tests"
+    },
+    {
+      "line": 727,
+      "name": "SOSA-2023 release-archive focused tests"
+    },
+    {
+      "line": 739,
+      "name": "SOSA-2023 release-rehearsal focused tests"
+    },
+    {
+      "line": 751,
+      "name": "COMS product-disposition focused tests"
+    },
+    {
+      "line": 767,
+      "name": "Alignment-core modular-product focused tests"
+    },
+    {
+      "line": 783,
+      "name": "Strict-BFO modular-product focused tests"
+    },
+    {
+      "line": 799,
+      "name": "CCO-extension modular-product focused tests"
+    },
+    {
+      "line": 815,
+      "name": "BFO-projection role reconciliation focused tests"
+    },
+    {
+      "line": 831,
+      "name": "Publication metadata focused tests"
+    },
+    {
+      "line": 847,
+      "name": "Formal release-context focused tests"
+    },
+    {
+      "line": 863,
+      "name": "Formal ontology-rendering focused tests"
+    },
+    {
+      "line": 879,
+      "name": "Release manifest focused tests"
+    },
+    {
+      "line": 895,
+      "name": "Authenticated current release contract focused tests"
+    },
+    {
+      "line": 911,
+      "name": "Release package build and validation focused tests"
+    },
+    {
+      "line": 927,
+      "name": "Release archive focused tests"
+    },
+    {
+      "line": 943,
+      "name": "Release rehearsal focused tests"
+    },
+    {
+      "line": 959,
+      "name": "Placeholder and catalog migration focused tests"
+    },
+    {
+      "line": 976,
+      "name": "Publication metadata development check"
+    },
+    {
+      "line": 983,
+      "name": "COMS generator focused tests"
+    },
+    {
+      "line": 999,
+      "name": "ROBOT focused tests"
+    },
+    {
+      "line": 1018,
+      "name": "Complete ROBOT reconstruction check"
+    },
+    {
+      "line": 1030,
+      "name": "COMS workbook freshness and candidate quality check"
+    },
+    {
+      "line": 1037,
+      "name": "SOSA source-version authority check"
+    },
+    {
+      "line": 1047,
+      "name": "Uniform product-role policy check"
+    },
+    {
+      "line": 1057,
+      "name": "SOSA formal package-scope check"
+    },
+    {
+      "line": 1067,
+      "name": "Forthcoming SOSA COMS mapping check"
+    },
+    {
+      "line": 1079,
+      "name": "SOSA-next maintained-product check"
+    },
+    {
+      "line": 1091,
+      "name": "Instance-data smoke test"
+    },
+    {
+      "line": 1098,
+      "name": "ELK instance mapping entailment test"
+    },
+    {
+      "line": 1110,
+      "name": "Full local SOSA closure HermiT check"
+    },
+    {
+      "line": 1123,
+      "name": "Git whitespace check"
+    }
+  ],
+  "additional_unreached": [
+    "run_validation_suite compile_check() at line1121",
+    "Makefile compile prerequisite",
+    "Makefile check recipe: git diff --check and git status --short"
+  ],
+  "scope_note": "These stages are not reached within the canonical make-check invocation. Some mapping checks have been independently executed in focused validation; that does not make the canonical gate pass."
+}

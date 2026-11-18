@@ -1,0 +1,17 @@
+{
+  "command": [
+    "make",
+    "check"
+  ],
+  "cwd": "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+  "return_code": 2,
+  "elapsed_seconds": 2257.5853860829957,
+  "test_summary": [
+    "Ran 488 tests in 2255.779s"
+  ],
+  "outcome_summary": [
+    "FAILED (failures=24, errors=22, skipped=7)"
+  ],
+  "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison/baseline/make-check.log",
+  "log_sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900"
+}

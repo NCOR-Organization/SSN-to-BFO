@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "canonicalization_version": "coms-row-expression-v1",
-  "workbook_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+  "workbook_sha256": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b",
   "generator_sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3",
   "row_identity_module_sha256": "9af9f9ed5b9321040428960e1293cffe27ebb48cc7a68a71f53f84cf18a60425",
   "disposition_module_sha256": "6de4f8bb02e979e3559f03503319ec54fae7200b9b271aef66db043918258e1e",
@@ -20,9 +20,9 @@
     "unique_authoritative_axiom_count": 102,
     "zero_axiom_row_count": 6,
     "target_neutral_axiom_count": 32,
-    "bfo_bearing_axiom_count": 19,
+    "bfo_bearing_axiom_count": 17,
     "cco_bearing_axiom_count": 24,
-    "mixed_bfo_cco_axiom_count": 27,
+    "mixed_bfo_cco_axiom_count": 29,
     "class_mapping_row_count": 42,
     "relation_mapping_row_count": 24,
     "property_chain_row_count": 2,
@@ -2903,30 +2903,31 @@
         "lexical": "owl:equivalentClass",
         "iri": "http://www.w3.org/2002/07/owl#equivalentClass"
       },
-      "authoritative_target_lexical": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)",
+      "authoritative_target_lexical": "(bfo:MaterialEntity or cco:InformationContentEntity) and (ssn:implements some sosa:Procedure)",
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
         "mapping_type": "class_mapping",
         "predicate_iri": "http://www.w3.org/2002/07/owl#equivalentClass",
         "subject_iri": "http://www.w3.org/ns/ssn/System",
-        "target": "ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>))"
+        "target": "ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>))"
       },
-      "source_expression_sha256": "43e7759ead3c66f83889b2fd88922b18b3a61f1f27c8de10896ae81fc4b51a43",
+      "source_expression_sha256": "9ad1fe352821e9a4e3ca586736f0f9f8dd3361d6baad744af3fe083d041649dd",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA.",
+      "reasoning": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification.",
       "authoritative_axioms": [
         {
-          "axiom_id": "sha256:0db60d0e9764151246aa7f88574dbc9fb112eecb2191d00822192f51ec298678",
-          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/ssn/System> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>)))",
+          "axiom_id": "sha256:95745072fe264fe978aa32daeba2859134db8cbb1dd54b00dd69f7c0f3a97b79",
+          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/ssn/System> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/ssn/implements> <http://www.w3.org/ns/sosa/Procedure>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>)))",
           "referenced_iris": [
             "http://purl.obolibrary.org/obo/BFO_0000040",
             "http://www.w3.org/2002/07/owl#equivalentClass",
             "http://www.w3.org/ns/sosa/Procedure",
             "http://www.w3.org/ns/ssn/System",
-            "http://www.w3.org/ns/ssn/implements"
+            "http://www.w3.org/ns/ssn/implements",
+            "https://www.commoncoreontologies.org/ont00000958"
           ],
-          "target_category": "bfo_bearing",
+          "target_category": "mixed_bfo_cco",
           "product_dispositions": {
             "integrated": {
               "status": "emitted_unchanged"
@@ -2936,13 +2937,15 @@
               "reason_code": "TARGET_SPECIFIC"
             },
             "strict_bfo_mapping": {
-              "status": "emitted_unchanged"
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
             },
             "bfo_projection": {
-              "status": "provided_through_import"
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
             },
             "cco_extension": {
-              "status": "provided_through_import"
+              "status": "emitted_unchanged"
             }
           }
         }
@@ -4900,30 +4903,31 @@
         "lexical": "owl:equivalentClass",
         "iri": "http://www.w3.org/2002/07/owl#equivalentClass"
       },
-      "authoritative_target_lexical": "bfo:MaterialEntity and (sosa:hosts some ssn:System)",
+      "authoritative_target_lexical": "(bfo:MaterialEntity or cco:InformationContentEntity) and (sosa:hosts some ssn:System)",
       "canonical_row_expression": {
         "canonicalization": "coms-row-expression-v1",
         "mapping_type": "class_mapping",
         "predicate_iri": "http://www.w3.org/2002/07/owl#equivalentClass",
         "subject_iri": "http://www.w3.org/ns/sosa/Platform",
-        "target": "ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>))"
+        "target": "ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>))"
       },
-      "source_expression_sha256": "f195b5ed35e9d8e0ce1ff5345c0b5516fd9b946a6e74523cf4228306cf30cd87",
+      "source_expression_sha256": "a6b826c5f85721f0e93b3541833fcfaa43ee3a3b2e3d3581f2baf7fcc3db0881",
       "mapping_type": "class_mapping",
       "coverage_classification": "class_mapping",
-      "reasoning": "sosa:Platform is modeled as a bfo:MaterialEntity defined by its role in hosting systems, without committing to parthood, attachment, or containment as necessary conditions. The equivalentTo axiom captures that hosting at least one system is both necessary and sufficient for being a platform.",
+      "reasoning": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A Platform must actually host at least one System; hosting capability alone does not satisfy the existential. The SOSA hosts relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between hosts and isHostedBy together with the System restriction that all isHostedBy values are Platforms: an entity hosting a System is a Platform. The equivalence therefore retains both the necessary hosting witness and the source-supported converse within the adopted exhaustive classification.",
       "authoritative_axioms": [
         {
-          "axiom_id": "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
-          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/sosa/Platform> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>)))",
+          "axiom_id": "sha256:4a0d7efee27608a1ec1b448e0a3178c521019ccfef5426b9c6089e4ae49c0906",
+          "canonical_expression": "EquivalentClasses(<http://www.w3.org/ns/sosa/Platform> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/ns/ssn/System>) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> <https://www.commoncoreontologies.org/ont00000958>)))",
           "referenced_iris": [
             "http://purl.obolibrary.org/obo/BFO_0000040",
             "http://www.w3.org/2002/07/owl#equivalentClass",
             "http://www.w3.org/ns/sosa/Platform",
             "http://www.w3.org/ns/sosa/hosts",
-            "http://www.w3.org/ns/ssn/System"
+            "http://www.w3.org/ns/ssn/System",
+            "https://www.commoncoreontologies.org/ont00000958"
           ],
-          "target_category": "bfo_bearing",
+          "target_category": "mixed_bfo_cco",
           "product_dispositions": {
             "integrated": {
               "status": "emitted_unchanged"
@@ -4933,13 +4937,15 @@
               "reason_code": "TARGET_SPECIFIC"
             },
             "strict_bfo_mapping": {
-              "status": "emitted_unchanged"
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
             },
             "bfo_projection": {
-              "status": "provided_through_import"
+              "status": "deferred",
+              "reason_code": "NO_APPROVED_TRANSFORMATION_RULE"
             },
             "cco_extension": {
-              "status": "provided_through_import"
+              "status": "emitted_unchanged"
             }
           }
         }

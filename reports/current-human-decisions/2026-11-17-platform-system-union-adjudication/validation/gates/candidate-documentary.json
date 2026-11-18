@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "tools/current_documentary_workbook.py",
+    "check"
+  ],
+  "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-gate-_3f2es2o/checkout",
+  "return_code": 1,
+  "log_sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43",
+  "output": "disconnected documentary update chain\n",
+  "identical_to_baseline": true,
+  "identical_to_intermediate": true,
+  "not_a_new_independent_unittest_diagnostic": true
+}

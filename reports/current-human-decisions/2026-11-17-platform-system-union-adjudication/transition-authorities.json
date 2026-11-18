@@ -1,0 +1,42 @@
+{
+  "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+        "reference": "Explicit current-track System union approval; preserve equivalence, stable RowID and existential witness.",
+        "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+      },
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+        "reference": "Exact immediate predecessor and approved assertions/rationales, historical Platform approval and two-row generation delta.",
+        "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json",
+      "sha256": "e71667a07a1f7e7db0479e29cd97e236aa966440a7692d1ac75486a73e9e8c54"
+    },
+    "rationale": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification."
+  },
+  "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb": {
+    "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+    "evidence": [
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+        "reference": "Explicit current-track Platform union approval; preserve equivalence, stable RowID and existential witness.",
+        "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+      },
+      {
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+        "reference": "Exact immediate predecessor and approved assertions/rationales, historical Platform approval and two-row generation delta.",
+        "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+      }
+    ],
+    "human_decision": {
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json",
+      "sha256": "3f767f42f3c42b9bd6407b8eb9925b2e30ebca04863be6e447d134d512988560"
+    },
+    "rationale": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A Platform must actually host at least one System; hosting capability alone does not satisfy the existential. The SOSA hosts relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between hosts and isHostedBy together with the System restriction that all isHostedBy values are Platforms: an entity hosting a System is a Platform. The equivalence therefore retains both the necessary hosting witness and the source-supported converse within the adopted exhaustive classification."
+  }
+}

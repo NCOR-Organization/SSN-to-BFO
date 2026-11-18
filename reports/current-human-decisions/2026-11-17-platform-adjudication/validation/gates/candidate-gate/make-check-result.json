@@ -1,0 +1,16 @@
+{
+  "command": [
+    "make",
+    "check"
+  ],
+  "cwd": "/tmp/ssn-platform-candidate-gate-09sxtdo7/checkout",
+  "return_code": 2,
+  "elapsed_seconds": 2404.6728943330236,
+  "test_summary": [
+    "Ran 488 tests in 2402.846s"
+  ],
+  "outcome_summary": [
+    "FAILED (failures=24, errors=22, skipped=7)"
+  ],
+  "log_sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267"
+}

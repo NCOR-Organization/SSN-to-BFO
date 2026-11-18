@@ -1,0 +1,159 @@
+{
+  "expressions": {
+    "candidate": {
+      "http://www.w3.org/ns/sosa/Platform": {
+        "and": [
+          {
+            "or": [
+              "http://purl.obolibrary.org/obo/BFO_0000040",
+              "https://www.commoncoreontologies.org/ont00000958"
+            ]
+          },
+          {
+            "filler": "http://www.w3.org/ns/ssn/System",
+            "some": "http://www.w3.org/ns/sosa/hosts"
+          }
+        ]
+      },
+      "http://www.w3.org/ns/ssn/System": {
+        "and": [
+          {
+            "or": [
+              "http://purl.obolibrary.org/obo/BFO_0000040",
+              "https://www.commoncoreontologies.org/ont00000958"
+            ]
+          },
+          {
+            "filler": "http://www.w3.org/ns/sosa/Procedure",
+            "some": "http://www.w3.org/ns/ssn/implements"
+          }
+        ]
+      }
+    },
+    "head": {
+      "http://www.w3.org/ns/sosa/Platform": {
+        "and": [
+          "http://purl.obolibrary.org/obo/BFO_0000040",
+          {
+            "filler": "http://www.w3.org/ns/ssn/System",
+            "some": "http://www.w3.org/ns/sosa/hosts"
+          }
+        ]
+      },
+      "http://www.w3.org/ns/ssn/System": {
+        "and": [
+          "http://purl.obolibrary.org/obo/BFO_0000040",
+          {
+            "filler": "http://www.w3.org/ns/sosa/Procedure",
+            "some": "http://www.w3.org/ns/ssn/implements"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "http://www.w3.org/ns/sosa/Platform": {
+        "and": [
+          "http://purl.obolibrary.org/obo/BFO_0000002",
+          {
+            "filler": "http://www.w3.org/ns/ssn/System",
+            "some": "http://www.w3.org/ns/sosa/hosts"
+          }
+        ]
+      },
+      "http://www.w3.org/ns/ssn/System": {
+        "and": [
+          "http://purl.obolibrary.org/obo/BFO_0000040",
+          {
+            "filler": "http://www.w3.org/ns/sosa/Procedure",
+            "some": "http://www.w3.org/ns/ssn/implements"
+          }
+        ]
+      }
+    }
+  },
+  "integrated_delta": "Exactly two equivalence replacements versus HEAD and exactly two versus preserved intermediate workbook.",
+  "modular_redistribution": "Exactly these two expressions move from strict-BFO to CCO-extension because their targets now contain CCO ICE.",
+  "products": [
+    {
+      "after_sha256": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401",
+      "after_triples": 1059,
+      "before_sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "before_triples": 1047,
+      "byte_identical": false,
+      "comparison": "head-to-candidate",
+      "exact_approved_change": true,
+      "product": "integrated"
+    },
+    {
+      "after_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "after_triples": 64,
+      "before_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "before_triples": 64,
+      "byte_identical": true,
+      "comparison": "head-to-candidate",
+      "exact_approved_change": true,
+      "product": "alignment_core"
+    },
+    {
+      "after_sha256": "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243",
+      "after_triples": 114,
+      "before_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "before_triples": 134,
+      "byte_identical": false,
+      "comparison": "head-to-candidate",
+      "exact_approved_change": true,
+      "product": "strict_bfo_mapping"
+    },
+    {
+      "after_sha256": "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49",
+      "after_triples": 895,
+      "before_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "before_triples": 863,
+      "byte_identical": false,
+      "comparison": "head-to-candidate",
+      "exact_approved_change": true,
+      "product": "cco_extension"
+    },
+    {
+      "after_sha256": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401",
+      "after_triples": 1059,
+      "before_sha256": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+      "before_triples": 1047,
+      "byte_identical": false,
+      "comparison": "intermediate-to-candidate",
+      "exact_approved_change": true,
+      "product": "integrated"
+    },
+    {
+      "after_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "after_triples": 64,
+      "before_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "before_triples": 64,
+      "byte_identical": true,
+      "comparison": "intermediate-to-candidate",
+      "exact_approved_change": true,
+      "product": "alignment_core"
+    },
+    {
+      "after_sha256": "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243",
+      "after_triples": 114,
+      "before_sha256": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+      "before_triples": 134,
+      "byte_identical": false,
+      "comparison": "intermediate-to-candidate",
+      "exact_approved_change": true,
+      "product": "strict_bfo_mapping"
+    },
+    {
+      "after_sha256": "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49",
+      "after_triples": 895,
+      "before_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "before_triples": 863,
+      "byte_identical": false,
+      "comparison": "intermediate-to-candidate",
+      "exact_approved_change": true,
+      "product": "cco_extension"
+    }
+  ],
+  "status": "PASS"
+}

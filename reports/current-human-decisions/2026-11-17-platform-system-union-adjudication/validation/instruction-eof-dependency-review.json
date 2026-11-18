@@ -1,0 +1,28 @@
+{
+  "status": "NO_FILES_CHANGED",
+  "instruction_file": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+  "existing_sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622",
+  "proposed_one_byte_trim_sha256": "da2b92cde08432effef2553a1fcb30ea04b31129318eb0c9181296bc03eec193",
+  "proposed_byte_difference": "Remove exactly final LF from double LF at EOF; no textual content removed.",
+  "direct_instruction_hash_references": [
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json",
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/transition-authorities.json",
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json",
+    "reports/current-semantic-workbook/transitions/94598afb-94dd-4888-b7cc-402c6ba742a6.json"
+  ],
+  "required_secondary_rebindings": [
+    "mappings/current-ssn-sosa-assessment.json: Platform/System human_decision_record.sha256",
+    "new transition-authorities.json: human_decision refs",
+    "last new semantic transition: both human_decision refs and evidence refs",
+    "maintained current-assessment/v2 reports: authenticated input hashes and aggregate content binding"
+  ],
+  "no_workbook_or_ontology_change_required": true,
+  "contract": [
+    "docs/CURRENT-SEMANTIC-WORKBOOK-EVOLUTION.md:10-13 original artifacts and hashes are never replaced by current versions",
+    "docs/CURRENT-SEMANTIC-WORKBOOK-EVOLUTION.md:39-42 archives are written exclusively without overwriting existing records; trusted checkpoint needed for newly created records",
+    "tools/current_assessment.py:101-102 decision artifacts are immutable physical records",
+    "tools/current_semantic_workbook.py:create_transition refuses an existing transition ID"
+  ],
+  "interpretation": "No documented unpublished-task exception or existing amendment CLI was found. Direct edits could satisfy hash validation on the last edge but would overwrite archived records; therefore no such edit was performed. Preserve the authentic capture and report its one EOF blank unless separately authorized to override the immutable-record convention.",
+  "execution_provenance": "Frozen gate runs bind the existing bytes; they must not be claimed to validate changed bindings."
+}

@@ -1,0 +1,22 @@
+{
+  "root": "/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout",
+  "commands": [
+    [
+      "git",
+      "clone",
+      "--shared",
+      "--no-checkout",
+      "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+      "/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout"
+    ],
+    [
+      "git",
+      "-C",
+      "/tmp/ssn-platform-baseline-integrity-_v8_egts/checkout",
+      "checkout",
+      "--detach",
+      "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+    ]
+  ],
+  "clean": true
+}

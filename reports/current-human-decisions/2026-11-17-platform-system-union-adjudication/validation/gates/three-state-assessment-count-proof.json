@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "three_state_counts": {
+    "baseline": {
+      "unreviewed": 68,
+      "final": 23
+    },
+    "intermediate": {
+      "unreviewed": 67,
+      "final": 24
+    },
+    "candidate": {
+      "unreviewed": 66,
+      "final": 25
+    }
+  },
+  "unchanged_historical_cohort_count": 12,
+  "all12_historical_assessment_record_hashes_match_in_all_three_states": true,
+  "unchanged_test_expected_later_finals": [
+    "http://www.w3.org/ns/sosa/Observation",
+    "http://www.w3.org/ns/sosa/Platform",
+    "http://www.w3.org/ns/sosa/hasSample",
+    "http://www.w3.org/ns/sosa/isSampleOf",
+    "http://www.w3.org/ns/sosa/observedProperty",
+    "http://www.w3.org/ns/sosa/sampling/SampleRelationship",
+    "http://www.w3.org/ns/sosa/sampling/hasSampleRelationship",
+    "http://www.w3.org/ns/sosa/sampling/relatedSample",
+    "http://www.w3.org/ns/ssn/Deployment",
+    "http://www.w3.org/ns/ssn/forProperty",
+    "http://www.w3.org/ns/ssn/systems/MeasurementRange",
+    "http://www.w3.org/ns/ssn/systems/SystemProperty"
+  ],
+  "unchanged_test_expected_final_count": 24,
+  "actual_final_count": 25,
+  "actual_extra_final_iri": "http://www.w3.org/ns/ssn/System",
+  "source_test_sha256": "c7aa020f49c1ecf4eeeab7e0c041f53e022998c4496a54cf5ec4fca7bb7bedb5",
+  "source_test_location": "tests/test_current_assessment.py:228",
+  "interpretation": "A new25-versus24 failure at the live inventory assertion is attributable solely to the approved new System final decision. The historical12-term cohort integrity checks remain satisfied. No fixture or test was changed."
+}

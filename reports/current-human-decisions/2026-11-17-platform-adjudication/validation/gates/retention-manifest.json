@@ -1,0 +1,295 @@
+{
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "source_root": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/gate-comparison",
+  "selected_file_count_excluding_this_manifest": 41,
+  "selected_file_count_including_this_manifest": 42,
+  "total_selected_bytes_excluding_this_manifest": 1496533,
+  "files": [
+    {
+      "path": "canonical-gate-comparison.json",
+      "sha256": "02bc13d3f8083038d29a8ad4d7d15133706499b70631cc5c491fbed2c8804da8",
+      "bytes": 116314,
+      "purpose": "comparison and complete exception accounting"
+    },
+    {
+      "path": "mapping-integrity-comparison.json",
+      "sha256": "952e7a6571f14dcfed2727e59a5d4b06145e97a97bdbcbd5081c85b93e4e0c59",
+      "bytes": 38203,
+      "purpose": "comparison and complete exception accounting"
+    },
+    {
+      "path": "exception-inventory.json",
+      "sha256": "1cd217fe33e64a299e08b4d1efa6ae04c392bac20ab691a3e4aa960df49249d5",
+      "bytes": 47848,
+      "purpose": "comparison and complete exception accounting"
+    },
+    {
+      "path": "canonical-stage-boundary.json",
+      "sha256": "b7ad9bd7bf0465fa1039c25b46d3c154540ca542117ff02cf14c339c6d939d1d",
+      "bytes": 4663,
+      "purpose": "comparison and complete exception accounting"
+    },
+    {
+      "path": "baseline/make-check.log",
+      "sha256": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900",
+      "bytes": 78696,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "baseline/make-check-result.json",
+      "sha256": "9e40f1eefbcf9d5b416e25faec33f8d9cef47a137e36c58eeaf150141d013cd2",
+      "bytes": 558,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "baseline/failure-inventory.json",
+      "sha256": "cfd97c145a39a8483e06c227efb21eee58ec5170cb37e8102eacbf8a23936e33",
+      "bytes": 117727,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "candidate-gate/make-check.log",
+      "sha256": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267",
+      "bytes": 79964,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "candidate-gate/make-check-result.json",
+      "sha256": "c94027e54377a0ce1e0c606ca32827edce8e3c3a0ac86a6ebadca41f532bb693",
+      "bytes": 390,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "candidate-gate/failure-inventory.json",
+      "sha256": "d6b58461e294f4f81a69b54c1b2285bbe7f51a2b3bd3f78a26eec35fb211c60f",
+      "bytes": 83681,
+      "purpose": "raw canonical runs and exact diagnostic extraction"
+    },
+    {
+      "path": "baseline/clone-metadata.json",
+      "sha256": "a9de87f3a4e5f4c5749ed3210e5843d1707aaaf627087b2239254b4cc0b9db68",
+      "bytes": 970,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "baseline/dependency-inventory.json",
+      "sha256": "fd47c6a638a369b6512bd51c2190eda6ee3136fe1ab2ed20b5c03466343f00e2",
+      "bytes": 2672,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "candidate-gate-clone.json",
+      "sha256": "47260ee99505cc466caae9047a025c62c4dc844844d1c3f3d645743fcab7d1ed",
+      "bytes": 5629,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "candidate-gate/input-manifest.json",
+      "sha256": "12ee251c403e34b6176a6e084be26bc2d6a46806df3938c9d264f3818d4d08b6",
+      "bytes": 317794,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "candidate-gate/input-preservation.json",
+      "sha256": "e51cdb971f18050b8db8e89e2b30b7f560942241d18dfb2462abadb61a0f505e",
+      "bytes": 41,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "candidate-gate/report-binding-preflight.json",
+      "sha256": "2649d704ecc1582d6ae0cb7b2cbbcc639fe91c10cc85bf2b2061e6f0a6501f41",
+      "bytes": 310,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "final-candidate-snapshot-equivalence.json",
+      "sha256": "8d8b49fdf43979762775c8057d0bf91903577e4422fb710f422a4578809f0ac8",
+      "bytes": 5643,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "whole-gate-scope-equivalence.json",
+      "sha256": "277606446718f8ea919d75e1930464f24177575a996a1c6c265063cdafabc971",
+      "bytes": 329904,
+      "purpose": "verified checkout, environment, input and preservation records"
+    },
+    {
+      "path": "baseline-integrity.log",
+      "sha256": "ff548d445211f7179201d3c9265f7e0dda6d859d974a9d743aa588a41f320198",
+      "bytes": 63202,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "candidate-integrity.log",
+      "sha256": "97116920f638dd00043c9813327e1d66e85b8b7dd6691ace25c2fafd5f9e85d4",
+      "bytes": 65642,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "baseline-integrity/results.json",
+      "sha256": "f3c6aabfccfd5a7a2d4ad4bd4cb1f77c44ff8c3d81d33d83e791f3332669511b",
+      "bytes": 10748,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "candidate-integrity/results.json",
+      "sha256": "83b63b5ac6f2e85930208cb35723b770304937c5694358426fffdf1f9be3647a",
+      "bytes": 12719,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "baseline-integrity-clone.json",
+      "sha256": "1231249438f5c9bc5c5cb68f5a56fc5ce585404c99e32c089bc5f876eb5f70e2",
+      "bytes": 496,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "candidate-integrity-clone.json",
+      "sha256": "16d446b7a22ee5210d446bc99432253f6af1d3f5375a22439c280c8ba760efb2",
+      "bytes": 5644,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "baseline-integrity-preservation.json",
+      "sha256": "b58c000498f4ac71795614998ece158142cd6bf6bde3de73660c86b8171b9744",
+      "bytes": 110,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "candidate-integrity-preservation.json",
+      "sha256": "f0fec3cce52d6bec80ba33f2e52ea280fb4c0a0f54243e9ffe01219fe7376561",
+      "bytes": 1862,
+      "purpose": "raw separate integrity suites and verified input preservation"
+    },
+    {
+      "path": "baseline-symptom-inputs.json",
+      "sha256": "c8ecb65278d29724d8fe860eef22a52d3d885ae548c8a3d3b559d2d1951de275",
+      "bytes": 8434,
+      "purpose": "complete selections proving abbreviated diagnostic and strict-fixture causes"
+    },
+    {
+      "path": "candidate-symptom-inputs.json",
+      "sha256": "a61516e03dc5fa3a607da26a1dbfbcce2b7fb77df728fb172077ed7baf22ee2a",
+      "bytes": 8435,
+      "purpose": "complete selections proving abbreviated diagnostic and strict-fixture causes"
+    },
+    {
+      "path": "baseline-strict-symptom.json",
+      "sha256": "611e64496aba85c8c2ef43bf791f4229604321713d3f14756ba44d23df65efa9",
+      "bytes": 23664,
+      "purpose": "complete selections proving abbreviated diagnostic and strict-fixture causes"
+    },
+    {
+      "path": "candidate-strict-symptom.json",
+      "sha256": "b26ad0d59c0ac58dfc41d81b4136e3a7ca6d8a4eb702b81893786563c02b5ec2",
+      "bytes": 24126,
+      "purpose": "complete selections proving abbreviated diagnostic and strict-fixture causes"
+    },
+    {
+      "path": "baseline-documentary.json",
+      "sha256": "e4d9e2b7313cef1553d0f123d1e554aea0ab652cf92433e7478c982ee576c86b",
+      "bytes": 378,
+      "purpose": "independent documentary-chain comparison including command and complete output"
+    },
+    {
+      "path": "candidate-documentary.json",
+      "sha256": "da98ce4778b3a4e22755a8bb35298f025a0e3e10a2a82ba1045e193468f6383a",
+      "bytes": 390,
+      "purpose": "independent documentary-chain comparison including command and complete output"
+    },
+    {
+      "path": "baseline/run-baseline.py",
+      "sha256": "ca34cdf03a271c3e48ac97a126ed8792252a0b94500ffd5d78a0ceb1998fe43c",
+      "bytes": 6441,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "run-candidate-gate.py",
+      "sha256": "0ee0ee8034eec1f77c3ca965c9973095499f680b841b16eb2078f443eeb9191d",
+      "bytes": 3545,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "run_mapping_integrity_tests.py",
+      "sha256": "96bacb1f55720575f8593a5d8a7f65d7d158fe15c0d2b698b1e2bb0ec802356f",
+      "bytes": 1835,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "collect-symptom-inputs.py",
+      "sha256": "f2c89ddc7f0a1115ab853984f194d404513d35ff6ef624782b1e6d6b4f147200",
+      "bytes": 776,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "collect-strict-symptom.py",
+      "sha256": "08e5c18b9f5452d4b4aae9f9cfc45961fb7ac66cee4974575d34897f5208ec0b",
+      "bytes": 801,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "compare-mapping-integrity.py",
+      "sha256": "50258e3a558a72a124c8a9564b7b994d4a4230f36db1da70e22650bc6c830d91",
+      "bytes": 9803,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "compare-canonical.py",
+      "sha256": "c2a22f75eb683d37ee9c6c3230891f1ab7a6cacab341e7cb928c89df6e53a5ee",
+      "bytes": 4540,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "finalize-canonical-comparison.py",
+      "sha256": "6759bc32e82d4681e1d01ad93182e8db7056434e71c434ceb5a0e20b412786fc",
+      "bytes": 7801,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    },
+    {
+      "path": "build-exception-inventory.py",
+      "sha256": "7eff836434b5bcd4c87a89c74dda36f83b5244f96c84b875bb9a2cd2cbecb2aa",
+      "bytes": 4134,
+      "purpose": "bounded external run and comparison scripts, not repository infrastructure"
+    }
+  ],
+  "omitted_external_working_files": [
+    {
+      "path": "baseline-documentary.log",
+      "reason": "Complete identical output and output SHA are embedded in baseline-documentary.json."
+    },
+    {
+      "path": "baseline-integrity-clone.log",
+      "reason": "Commands and clean checkout proof are preserved in baseline-integrity-clone.json."
+    },
+    {
+      "path": "baseline/clone.log",
+      "reason": "Clone commands, expected HEAD and clean-state results are preserved in baseline/clone-metadata.json."
+    },
+    {
+      "path": "candidate-documentary.log",
+      "reason": "Complete identical output and output SHA are embedded in candidate-documentary.json."
+    },
+    {
+      "path": "candidate-gate-clone.log",
+      "reason": "Commands, base and exact overlay identities are preserved in candidate-gate-clone.json."
+    },
+    {
+      "path": "candidate-integrity-clone.log",
+      "reason": "Commands, base and exact overlay identities are preserved in candidate-integrity-clone.json."
+    },
+    {
+      "path": "candidate-integrity-root.txt",
+      "reason": "Checkout path is already preserved in candidate-integrity-clone.json and result records."
+    },
+    {
+      "path": "candidate-root.txt",
+      "reason": "Checkout path is already preserved in candidate-gate-clone.json and result records."
+    },
+    {
+      "path": "canonical-gate-comparison.raw.json",
+      "reason": "Intermediate unclassified comparison is superseded by the final complete canonical-gate-comparison.json; compare-canonical.py regenerates it."
+    }
+  ],
+  "preservation_instructions": "Copy selected files and this manifest byte-for-byte under the retained gate-comparison evidence directory. Do not normalize raw logs. Paths in raw logs/scripts are original execution provenance; they are not claims that temporary checkouts are distribution dependencies. The nine omitted files remain untouched outside the repository. No ontology snapshots or reproducible large closure captures are included.",
+  "reproduction_note": "Baseline/candidate canonical scripts preserve the exact command/environment and capture procedures. Replaying in a different checkout requires selecting new output paths; comparison reports bind the executed bytes and raw diagnostics. Supporting scripts are bounded task evidence, not changes to the repository validation infrastructure."
+}

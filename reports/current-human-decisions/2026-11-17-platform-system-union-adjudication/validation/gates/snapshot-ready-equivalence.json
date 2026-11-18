@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "ready_manifest_sha256": "88f30f513974a3bfead08c621ea1a533529c379f3821f14eb66832d20880b18f",
+  "modified": 15,
+  "added": 115,
+  "all_overlay_bytes_identical": true,
+  "test_tool_config_bytes_identical_to_intermediate": true,
+  "gate_root": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-gate-_3f2es2o/checkout",
+  "integrity_root": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout"
+}

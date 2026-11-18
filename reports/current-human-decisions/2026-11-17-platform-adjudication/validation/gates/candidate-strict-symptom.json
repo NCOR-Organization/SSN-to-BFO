@@ -1,0 +1,125 @@
+{
+  "root": "/private/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+  "strict_rows": {
+    "urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476": {
+      "axiom_id": "sha256:0caeec31770247fe2efeb443e85fefe9b4e1648a7d9569adc35d2972b77682b1",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476', location=RowLocation(worksheet='Sheet2', row_number=15), subject_iri='http://www.w3.org/ns/ssn/isPropertyOf', predicate_iri='http://www.w3.org/2000/01/rdf-schema#domain', mapping_type='domain', reasoning='The domain records the specifically dependent continuant and process-profile categories. isPropertyOf retains its source inverse relationship to hasProperty; the separate conditional rule handles the two cases without a global BFO subproperty inclusion.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead": {
+      "axiom_id": "sha256:0db60d0e9764151246aa7f88574dbc9fb112eecb2191d00822192f51ec298678",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:66010702-8134-4e08-a972-f0767ec8dead', location=RowLocation(worksheet='Sheet1', row_number=36), subject_iri='http://www.w3.org/ns/ssn/System', predicate_iri='http://www.w3.org/2002/07/owl#equivalentClass', mapping_type='class_mapping', reasoning='ssn:System is modeled as a bfo:MaterialEntity defined by its capability to implement procedures. The equivalentTo axiom captures that being a material entity that implements at least one procedure is both necessary and sufficient for being a system, reflecting the functional rather than structural definition in SOSA.', expression=ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000040', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://www.w3.org/ns/ssn/implements', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/sosa/Procedure', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4": {
+      "axiom_id": "sha256:205b4f09b9778256d60879903b8e03e20a284c0ce6d3dd085b87d5c2e3b44cad",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4', location=RowLocation(worksheet='Sheet2', row_number=50), subject_iri='http://www.w3.org/ns/ssn/hasDeployment', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedSystem under has_participant. The current assertion exactly preserves that decision.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000056', property_chain=())"
+    },
+    "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5": {
+      "axiom_id": "sha256:20d91e47601ba6ee027a45b1292383a93db5223addd66a57f6b0ce832054b0d6",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5', location=RowLocation(worksheet='Sheet2', row_number=46), subject_iri='http://www.w3.org/ns/ssn/deployedOnPlatform', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The retained interpretation states that the Platform on which Systems are deployed participates in the Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000057', property_chain=())"
+    },
+    "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710": {
+      "axiom_id": "sha256:39946148848f627dc9bd67601c5d0d1184960c34054c876541a77fa9d42e3d6b",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710', location=RowLocation(worksheet='Sheet2', row_number=11), subject_iri='http://www.w3.org/ns/sosa/phenomenonTime', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning=\"Per explicit human instruction, retain the existing sosa:phenomenonTime rdfs:subPropertyOf bfo:BFO_0000199 mapping unchanged. Potential counterexample: An Observation may produce a Result whose phenomenonTime refers to an earlier temporal interval than the interval occupied by the Observation process itself. For example, an observation conducted today may estimate a phenomenon from yesterday. In that case, the result-applicability time would differ from the process's temporal occupancy, potentially undermining the universal subproperty inclusion. This is a potential counterexample, not a demonstrated inconsistency or a settled refutation. The instruction does not definitively validate the interpretation; the assessment remains unreviewed.\", expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000199', property_chain=())"
+    },
+    "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5": {
+      "axiom_id": "sha256:3e6d4c8e6ae7f32b3fde12f2e976c4c91ea66a0893e45ae7a3bb7ddf974dafba",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5', location=RowLocation(worksheet='Sheet2', row_number=47), subject_iri='http://www.w3.org/ns/ssn/deployedSystem', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The retained interpretation states that the deployed System participates in its Deployment. This row preserves that has_participant inclusion and its documented inverse-side consequences.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000057', property_chain=())"
+    },
+    "urn:uuid:e866de80-683d-4138-a713-be9646d37148": {
+      "axiom_id": "sha256:47859e2cfd5df437d1f55c83560793ab22f035de9b829ccdedcc4d3118cc4f3e",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:e866de80-683d-4138-a713-be9646d37148', location=RowLocation(worksheet='Sheet2', row_number=19), subject_iri='http://www.w3.org/ns/sosa/isHostedBy', predicate_iri='http://www.w3.org/2002/07/owl#propertyChainAxiom', mapping_type='property_chain', reasoning='This retained inverse-side hosting chain uses participates_in, realizes and inheres_in. A matching path entails isHostedBy; the chain does not require a matching path for every asserted isHostedBy edge.', expression=None, target_property_iri=None, property_chain=('http://purl.obolibrary.org/obo/BFO_0000056', 'http://purl.obolibrary.org/obo/BFO_0000055', 'http://purl.obolibrary.org/obo/BFO_0000197'))"
+    },
+    "urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3": {
+      "axiom_id": "sha256:4ee0a31d0d7abc626e19715ee1f31b610823136f2ea133155491a644f72db22a",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3', location=RowLocation(worksheet='Sheet2', row_number=37), subject_iri='http://www.w3.org/ns/ssn/systems/hasOperatingProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The documented intended dependence runs from the operating property object to the operating range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000194', property_chain=())"
+    },
+    "urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2": {
+      "axiom_id": "sha256:5606980322dc337a4e5d0eb2daef2e5acbba7ee42a782247375fcf3f39d12e00",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2', location=RowLocation(worksheet='Sheet1', row_number=7), subject_iri='http://www.w3.org/ns/sosa/ObservableProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subClassOf', mapping_type='class_mapping', reasoning='ObservableProperty mirrors ActuatableProperty in being modeled as either a specifically dependent continuant or a process profile, reflecting that observable aspects may be features of continuants or temporally extended features of processes.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://purl.obolibrary.org/obo/BFO_0000197', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/sosa/FeatureOfInterest', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://purl.obolibrary.org/obo/BFO_0000132', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/sosa/FeatureOfInterest', children=(), property_iri=None, filler=None))), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3": {
+      "axiom_id": "sha256:6dfa77b04dfaea343d0a8767e6467c603eafddf10395ff40ac7416f52c7fd4d4",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3', location=RowLocation(worksheet='Sheet2', row_number=55), subject_iri='http://www.w3.org/ns/ssn/hasProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#range', mapping_type='range', reasoning='The range records specifically dependent continuants and process profiles. The separate conditional rule produces bearer_of or has_occurrent_part from suitable endpoint typing, avoiding an unconditional dual BFO subproperty mapping.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb": {
+      "axiom_id": "sha256:863a559642f2d14feb06c876f8f8da4ccf3ed2a290a1264de3fd761c4b36094a",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb', location=RowLocation(worksheet='Sheet1', row_number=9), subject_iri='http://www.w3.org/ns/sosa/Platform', predicate_iri='http://www.w3.org/2002/07/owl#equivalentClass', mapping_type='class_mapping', reasoning=\"SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Under the approved interpretation, a Platform is a BFO Continuant that actually hosts at least one SSN System. The hosting existential remains necessary; merely being capable of hosting does not suffice. Continuant allows material and appropriate nonmaterial hosts while excluding occurrents. The converse is supported by the source inverse relationship between hosts and isHostedBy and the System restriction that all isHostedBy values are Platforms: an individual hosting a System is therefore a Platform. The equivalence retains this converse and the actual-hosting requirement without classifying every Continuant as a Platform.\", expression=ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000002', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://www.w3.org/ns/sosa/hosts', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/ssn/System', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e": {
+      "axiom_id": "sha256:90d2b3a965084a150dcd254003bbdd2e5d706d8dd1b7a941c44e44ee2ea1737e",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e', location=RowLocation(worksheet='Sheet2', row_number=18), subject_iri='http://www.w3.org/ns/sosa/hosts', predicate_iri='http://www.w3.org/2002/07/owl#propertyChainAxiom', mapping_type='property_chain', reasoning='The retained hosting interpretation uses role-mediated support. The bearer_of, has_realization, has_participant path entails hosts; the chain does not require a matching path for every asserted hosts edge.', expression=None, target_property_iri=None, property_chain=('http://purl.obolibrary.org/obo/BFO_0000196', 'http://purl.obolibrary.org/obo/BFO_0000054', 'http://purl.obolibrary.org/obo/BFO_0000057'))"
+    },
+    "urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49": {
+      "axiom_id": "sha256:9df2ac96dda81289facb4e871c73c208fa2ae4fc7f33cfd9bc293c8e50b0439c",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49', location=RowLocation(worksheet='Sheet2', row_number=45), subject_iri='http://www.w3.org/ns/ssn/systems/hasSystemProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The documented intended dependence runs from the system property object to the system capability subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical scope and reasoner qualifications remain applicable to their original evidence.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000194', property_chain=())"
+    },
+    "urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d": {
+      "axiom_id": "sha256:a967fdeccb6b435f0f84de94b976dec27307580651a7d16a08b900be0daa4dd1",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d', location=RowLocation(worksheet='Sheet2', row_number=56), subject_iri='http://www.w3.org/ns/ssn/hasSubSystem', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The existing review identifies subsystems as structural components and explicitly recommends the now-adopted continuant-parthood inclusion. It asserts only the necessary direction.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000178', property_chain=())"
+    },
+    "urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a": {
+      "axiom_id": "sha256:b87f9b4fe09c1df974c9c698e4501efaab8762b8a376aa207f83810b6f2ae7dd",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a', location=RowLocation(worksheet='Sheet2', row_number=40), subject_iri='http://www.w3.org/ns/ssn/systems/hasSurvivalProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The documented intended dependence runs from the survival property object to the survival range subject. Therefore the selected forward target is specifically_depended_on_by, the inverse of specifically_depends_on. Historical technical deferral retained this intended semantics; COMS later restored the corrected direction. Historical reasoner findings retain their original profile limitations.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000194', property_chain=())"
+    },
+    "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804": {
+      "axiom_id": "sha256:cb03fd4e0013c6cb36cdae6f435a71662e5ace11c4b60fd6121e30a58cfddbaf",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804', location=RowLocation(worksheet='Sheet2', row_number=59), subject_iri='http://www.w3.org/ns/ssn/inDeployment', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subPropertyOf', mapping_type='object_property_mapping', reasoning='The explicit inverse-side policy retains participation in a Deployment as the inverse of deployedOnPlatform under has_participant. The current assertion exactly preserves that decision.', expression=None, target_property_iri='http://purl.obolibrary.org/obo/BFO_0000056', property_chain=())"
+    },
+    "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4": {
+      "axiom_id": "sha256:e97401fddd65d2c240938d965cb3ecb82f52b396f7fbdc7ccee0de7edf3ff74b",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:b1421726-3675-4b2a-9824-150e108157e4', location=RowLocation(worksheet='Sheet1', row_number=34), subject_iri='http://www.w3.org/ns/ssn/Property', predicate_iri='http://www.w3.org/2002/07/owl#equivalentClass', mapping_type='class_mapping', reasoning='ssn:Property is modeled as the union of bfo:SpecificallyDependentContinuant and bfo:ProcessProfile in order to accommodate both intrinsic qualities that inhere in independent continuants and temporal properties that are process profiles of occurrents within a single SOSA abstraction.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86": {
+      "axiom_id": "sha256:ebc5a554a5a02d96a177a4905b1f58369c2a1b3cb0c5e952b40208fd3d70f720",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:06782965-88c5-4345-ab99-ea027513ec86', location=RowLocation(worksheet='Sheet1', row_number=6), subject_iri='http://www.w3.org/ns/sosa/FeatureOfInterest', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subClassOf', mapping_type='class_mapping', reasoning='Direct alignment deferred because SOSA permits a FeatureOfInterest to be property-like. Restricting every FeatureOfInterest to a material entity or process makes the SSN survival-range pattern unsatisfiable.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000040', children=(), property_iri=None, filler=None), ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000015', children=(), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    },
+    "urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342": {
+      "axiom_id": "sha256:f0ed25535d9f911882545913dac2c83339346e2ca16a5e939b2a2e27cd5f1c4e",
+      "canonical_input": "CanonicalRowInput(row_id='urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342', location=RowLocation(worksheet='Sheet1', row_number=4), subject_iri='http://www.w3.org/ns/sosa/ActuatableProperty', predicate_iri='http://www.w3.org/2000/01/rdf-schema#subClassOf', mapping_type='class_mapping', reasoning='This class is modeled as either a specifically dependent continuant or a process profile to align with SSN/SOSA\u2019s treatment of properties that may be continuant features or features of processes, both of which can be the target of intentional change.', expression=ExpressionNode(kind='union', iri=None, children=(ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000020', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://purl.obolibrary.org/obo/BFO_0000197', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/sosa/FeatureOfInterest', children=(), property_iri=None, filler=None))), property_iri=None, filler=None), ExpressionNode(kind='intersection', iri=None, children=(ExpressionNode(kind='named', iri='http://purl.obolibrary.org/obo/BFO_0000144', children=(), property_iri=None, filler=None), ExpressionNode(kind='some', iri=None, children=(), property_iri='http://purl.obolibrary.org/obo/BFO_0000132', filler=ExpressionNode(kind='named', iri='http://www.w3.org/ns/sosa/FeatureOfInterest', children=(), property_iri=None, filler=None))), property_iri=None, filler=None)), property_iri=None, filler=None), target_property_iri=None, property_chain=())"
+    }
+  },
+  "expected_row_ids": [
+    "urn:uuid:02294d3c-f88d-4d3d-921e-8d6c00457476",
+    "urn:uuid:06782965-88c5-4345-ab99-ea027513ec86",
+    "urn:uuid:158c0cce-2c1d-4baf-90b5-243d7cdce34d",
+    "urn:uuid:17528e16-1f22-4c6e-9e29-e3b3c6699804",
+    "urn:uuid:1b7c27d4-1b0e-461f-8a77-7a81631ab342",
+    "urn:uuid:2abe4468-736d-4db8-99d7-1670730a6710",
+    "urn:uuid:37576663-68e9-4298-8652-a3c614c34ae3",
+    "urn:uuid:3af8734c-ac86-46b0-8c0c-27a19525bc1e",
+    "urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b28f8d3",
+    "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+    "urn:uuid:6c58598b-8de6-4559-82fa-53a6efc6a3c4",
+    "urn:uuid:99b22791-b2d1-4667-901e-861a44f2b8a2",
+    "urn:uuid:af48aae7-263f-436d-a76a-4e7232c609c5",
+    "urn:uuid:b1421726-3675-4b2a-9824-150e108157e4",
+    "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb",
+    "urn:uuid:c0a94c70-33c7-41ac-8906-49ad2efe48b5",
+    "urn:uuid:d8f45381-cd95-4251-ae69-803a033a8f49",
+    "urn:uuid:e866de80-683d-4138-a713-be9646d37148",
+    "urn:uuid:f0fbd0af-655a-46c8-bda9-1c2adb24a10a"
+  ],
+  "expected_axiom_ids": [
+    "sha256:0caeec31770247fe2efeb443e85fefe9b4e1648a7d9569adc35d2972b77682b1",
+    "sha256:0db60d0e9764151246aa7f88574dbc9fb112eecb2191d00822192f51ec298678",
+    "sha256:205b4f09b9778256d60879903b8e03e20a284c0ce6d3dd085b87d5c2e3b44cad",
+    "sha256:20d91e47601ba6ee027a45b1292383a93db5223addd66a57f6b0ce832054b0d6",
+    "sha256:39946148848f627dc9bd67601c5d0d1184960c34054c876541a77fa9d42e3d6b",
+    "sha256:3e6d4c8e6ae7f32b3fde12f2e976c4c91ea66a0893e45ae7a3bb7ddf974dafba",
+    "sha256:47859e2cfd5df437d1f55c83560793ab22f035de9b829ccdedcc4d3118cc4f3e",
+    "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
+    "sha256:4ee0a31d0d7abc626e19715ee1f31b610823136f2ea133155491a644f72db22a",
+    "sha256:5606980322dc337a4e5d0eb2daef2e5acbba7ee42a782247375fcf3f39d12e00",
+    "sha256:6dfa77b04dfaea343d0a8767e6467c603eafddf10395ff40ac7416f52c7fd4d4",
+    "sha256:90d2b3a965084a150dcd254003bbdd2e5d706d8dd1b7a941c44e44ee2ea1737e",
+    "sha256:9df2ac96dda81289facb4e871c73c208fa2ae4fc7f33cfd9bc293c8e50b0439c",
+    "sha256:a967fdeccb6b435f0f84de94b976dec27307580651a7d16a08b900be0daa4dd1",
+    "sha256:b87f9b4fe09c1df974c9c698e4501efaab8762b8a376aa207f83810b6f2ae7dd",
+    "sha256:cb03fd4e0013c6cb36cdae6f435a71662e5ace11c4b60fd6121e30a58cfddbaf",
+    "sha256:e97401fddd65d2c240938d965cb3ecb82f52b396f7fbdc7ccee0de7edf3ff74b",
+    "sha256:ebc5a554a5a02d96a177a4905b1f58369c2a1b3cb0c5e952b40208fd3d70f720",
+    "sha256:f0ed25535d9f911882545913dac2c83339346e2ca16a5e939b2a2e27cd5f1c4e"
+  ],
+  "strict_product_sha256": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+  "evidence_note": "Read unchanged test setup and fixed identity locks. No fixture modification."
+}

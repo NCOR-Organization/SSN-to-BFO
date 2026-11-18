@@ -1,0 +1,9 @@
+{
+  "path": "tests/test_current_assessment.py",
+  "test": "CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed",
+  "old_sha256": "e5f59c7d1486cc130cc3e7efd767aed09e2933de0e983c8544244f79951cd99b",
+  "new_sha256": "c7aa020f49c1ecf4eeeab7e0c041f53e022998c4496a54cf5ec4fca7bb7bedb5",
+  "change": "Add only Platform to explicit expected_later_finals; retain derived count and all historical cohort/hash/tamper assertions.",
+  "new_expected_final": 24,
+  "new_expected_unreviewed": 67
+}

@@ -1,0 +1,727 @@
+{
+  "added_union_task": {
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform-review-packet.json": {
+      "bytes": 27030,
+      "sha256": "4d416d387effd06aa9074bfe442bccc96e36b6b9a2ffceef6c1de441f149a80d"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json": {
+      "bytes": 10074,
+      "sha256": "3f767f42f3c42b9bd6407b8eb9925b2e30ebca04863be6e447d134d512988560"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-before-review-packet.json": {
+      "bytes": 22223,
+      "sha256": "1572ee12ab2554e672e9ffae9688668a43f13d850e02bb914b185ee59ddc6aba"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-review-packet.json": {
+      "bytes": 30177,
+      "sha256": "8f435681c7af063ebbe629c9b704855574230871d50d04095d81b97332048f9b"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json": {
+      "bytes": 9053,
+      "sha256": "e71667a07a1f7e7db0479e29cd97e236aa966440a7692d1ac75486a73e9e8c54"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt": {
+      "bytes": 4288,
+      "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json": {
+      "bytes": 204701,
+      "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json": {
+      "bytes": 112720,
+      "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/completion-report.md": {
+      "bytes": 17301,
+      "sha256": "2a21e9e6aa9af07fb06e247c265c7a6f7a3decc9eed1bfd9777e74cc4a10ae2b"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/transition-authorities.json": {
+      "bytes": 4951,
+      "sha256": "4e78e0559ddac9c19114b8652aeda41a7752cb5d5919304e014bd2e65cc95e72"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/assessment-freshness.log": {
+      "bytes": 1640,
+      "sha256": "8a50a1179ef1c23676f11a4544d7dc7932d04f3cc429795b94838cdc50ed5228"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/assessment-write.log": {
+      "bytes": 1640,
+      "sha256": "8a50a1179ef1c23676f11a4544d7dc7932d04f3cc429795b94838cdc50ed5228"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/candidate-preservation-audit.json": {
+      "bytes": 20460,
+      "sha256": "a2677fedddca3b1b022f972758b36b25947c4c54a5bec1f6faccec871e9b12e3"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/candidate-verification.json": {
+      "bytes": 470,
+      "sha256": "ededdca9bb254c66337743bf8b895c65b4d5a893c97dad46ed6a0a5d296befe3"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/changes.json": {
+      "bytes": 4507,
+      "sha256": "a193cdeddbdac6bf1925e69c5e1d6bb973479a4d182daf68cd17c64dc3b3daa1"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/documentary-check.log": {
+      "bytes": 38,
+      "sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/file-inventory.json": {
+      "hash_omitted_to_avoid_self_reference": true,
+      "self_manifest": true
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused-retention-manifest.json": {
+      "bytes": 14306,
+      "sha256": "f402803697f85ad108cc37684515a0d434ab64eb2b6fb54605857b5cab23bdaf"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/README.md": {
+      "bytes": 4914,
+      "sha256": "0608ab26210f6da52e7eaf5882d383ec3a69bfb665aa05cf9b1721b78280ab4b"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/alignment_core-validation-result.json": {
+      "bytes": 1081,
+      "sha256": "9328a215d01a0d953aeb15788a0bf693c41a4b879237fde257332fcdca8d3cc3"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/cco_extension-validation-result.json": {
+      "bytes": 1123,
+      "sha256": "8e8b44f30d891000f38a6714a61cd24d8a120df8df9b051c9d17d5e69d1ef3d9"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/distinct-ice-platforms/probe.ttl": {
+      "bytes": 365,
+      "sha256": "373a47fd9e8923299c6a6498824208c438c8751fe834009daee5ffa063bdff98"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/distinct-ice-platforms/results/result.json": {
+      "bytes": 129450,
+      "sha256": "18880b18d7e1e6f33123523ed03d3c1f569fa3250e42154bf235dba35ff44455"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/distinct-ice-platforms/results/summary.json": {
+      "bytes": 1132,
+      "sha256": "18885c3ec057da774729475f71ba9b40c628ba2082be090ebbbe5b2aff0147ac"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/distinct-ice-platforms/run_probe.py": {
+      "bytes": 2911,
+      "sha256": "d38e241d175a4b6f836ba2c2165908ba4cf282b6fbff35d9a3c0392eef3b3840"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/generation-counts.json": {
+      "bytes": 11088,
+      "sha256": "a054f48c3c315fcbad45aebd9b52276800cc8940a76dc92abc768700373933d2"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/impact-evidence-reuse.json": {
+      "bytes": 4159,
+      "sha256": "ed08a3f93f7475eabce60a2f5fc632781367aa45ab7a9696353e6a2c319ea5bf"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/integrated-validation-result.json": {
+      "bytes": 1067,
+      "sha256": "5a7b2bf2399eca2f834171208ea40e62847ae295e669843f2d1d9c40ac0f9cf9"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/logical-delta.json": {
+      "bytes": 5500,
+      "sha256": "44838b3d85d7ce3c7acc798a4bd93353ad5ae9334a9d55b7c1558c826ea797ae"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/distinct-platform-abox-result.json": {
+      "bytes": 129338,
+      "sha256": "12897858dd56e6872663bbed4054f33edb29fe63e8c54a83f1355e71939210b5"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/final-union-queries-result.json": {
+      "bytes": 139524,
+      "sha256": "6b66b458b7f3a63c574f31f7c2c185c4ba9426a08dac42da11f03ff1981d6aa3"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/native-converses-result.json": {
+      "bytes": 27449,
+      "sha256": "c3466b096426de0be69b5158708c0b7b26e65eb0ee89cbd4ee2b26743191e569"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay-results/summary.json": {
+      "bytes": 240,
+      "sha256": "f26a6fb3e79cba8e7ba005abc4450304e327797b45cf465ce4707c38b0bdf565"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/replay.log": {
+      "bytes": 101,
+      "sha256": "041814a9f46c7a75df507fb752068192e5e53458d56d8a042ff33df836e8ee68"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/assess_union_candidates.py": {
+      "bytes": 10686,
+      "sha256": "9b5e48620c58af30725d9e8af881749c13d24a3bb916579f2a70b6b491a86b06"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/both_union-probe-result.json": {
+      "bytes": 138420,
+      "sha256": "9d0d4101b424f07132c4c5b924aeb49f1dd9585e28d4d39a9c01040477fa6c38"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/distinct-platforms-both_union-result.json": {
+      "bytes": 129224,
+      "sha256": "97add0fedff0ece62b4348ab53089ebeba5f60c580220771eaedb063eff7639e"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/input-manifest.json": {
+      "bytes": 1298,
+      "sha256": "28468d3b1bde3552884389439d3cd15456806b48a3b6a717e34dd5acc7cd6ad0"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/replay_focused_queries.py": {
+      "bytes": 5158,
+      "sha256": "e7107573b17fbdceb9802b14002a3ef6e36fb8059f514d683137b41cd45c0f4a"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/source-converse-result.json": {
+      "bytes": 27365,
+      "sha256": "53d817061980539be538e12a46dca814201ecf9046eeda632aa7b4b1964ac090"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/summary.json": {
+      "bytes": 12910,
+      "sha256": "0747a090b46bc91c53e44cfacc894b0a4f9a39ce9e50f5d3af1483041f1b65eb"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/supplemental-ice-roles-result.json": {
+      "bytes": 130513,
+      "sha256": "abc34385e5a535f86bd1e91d0754991e1b7def3627aed0be070aaa7c771e3ca0"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/reused-impact/supplemental-intersections-both_union-result.json": {
+      "bytes": 130882,
+      "sha256": "582d2639afa3eaa5d0bdbf0504fed3860f1bf9b64fe56497642b95fd91c01899"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/strict_bfo_mapping-validation-result.json": {
+      "bytes": 1129,
+      "sha256": "d86fa23bc51f39639d99d62091ce9b05fd9f3c85d52dddc8b632106860b33e1f"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/summary.json": {
+      "bytes": 6295,
+      "sha256": "352c664d9425808f7ae9c891ce973b922f11d4aef9c73dcd1962a7235d47d84f"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/validate_union_candidate.py": {
+      "bytes": 10253,
+      "sha256": "fa6918be303a27686044a5fe1f67034dda8402c07cbcce07d77a862172778ef3"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/focused/validation.log": {
+      "bytes": 328,
+      "sha256": "a048360a1a50febe74790071aaf3101de8dade0467f54855e511ff28eae71faf"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-documentary.json": {
+      "bytes": 510,
+      "sha256": "8b868c2e60bc2a17c5017f9b0b99cd97b898028e796e3733144bf171858322b0"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-execution-environment.json": {
+      "bytes": 3746,
+      "sha256": "ed6d85f4a5c5abd21ebfa41a798f5bd9b0b349a5c97eb06cd8c0befe1cb8b6fd"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate-clone.json": {
+      "bytes": 38220,
+      "sha256": "cecd2fa8f8faffcbb80459eade1fade6f394785eecc384ca9d70fc70e4ba83f4"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/failure-inventory.json": {
+      "bytes": 89550,
+      "sha256": "d887a872a409141873e1ecd6aaefef41c9ecaa22a9f0c7d41a4842ad5949f645"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/input-manifest.json": {
+      "bytes": 337551,
+      "sha256": "8af2f0c3028c74a33a760aa55d9f8b32f5f9048848f7581be9007c17d5695c35"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/input-preservation.json": {
+      "bytes": 41,
+      "sha256": "e51cdb971f18050b8db8e89e2b30b7f560942241d18dfb2462abadb61a0f505e"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/make-check-result.json": {
+      "bytes": 431,
+      "sha256": "b0970cd32997d0d4304c585ed990a0332167f0557a40ac1fcfe1c3b04828c664"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/make-check.log": {
+      "bytes": 85709,
+      "sha256": "7f4c9e7b14099d14f6704f04e53ea635fdde72f538fd5dfe8cc6bbe1cfe68688"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/report-binding-preflight.json": {
+      "bytes": 310,
+      "sha256": "de4c340263a238a6324f3cea5a49045d25d7d3a54a968335f474ca061121ffae"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity-preservation.json": {
+      "bytes": 112,
+      "sha256": "50b7b942b35297c2d5117e104cd7a8afa88c4d41129f9d669202b30810fafc48"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity.log": {
+      "bytes": 67862,
+      "sha256": "935c32f36fb1347b21e83395ce5867e32bce720b6dd25b57437226f767eaa1b1"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity/results.json": {
+      "bytes": 14458,
+      "sha256": "290612918940423e7f9b51b3a60f0f8be5983a9c1a05c1f9694279a7a56a9162"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-strict-symptom.json": {
+      "bytes": 21168,
+      "sha256": "5f59977fa6f51a85d003784d98d7d7b0788d9f88623b6cda71733747fb6098b7"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-symptom-inputs.json": {
+      "bytes": 8476,
+      "sha256": "3492b747eeba8e7dee16e3f3b0db3410a1b41d386b3219291b8b2a66964993cc"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/canonical-gate-comparison.json": {
+      "bytes": 165402,
+      "sha256": "ba5ecf96ece8f50b947a37dd907488a993c3206e494394eb03f8bcdae58b9f62"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/exception-inventory.json": {
+      "bytes": 41444,
+      "sha256": "fa9b869f626b710b77a72f1b2d6812945424e4b7b1d3d856f6d6c7933077c08c"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/final-source-scope-equivalence.json": {
+      "bytes": 2017,
+      "sha256": "7dc6d3cd351f2ffc3d01ae15a4ea9df3862aed3157ad386568a9460f28dba717"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/mapping-integrity-comparison.json": {
+      "bytes": 33363,
+      "sha256": "50d5cb5c8f9ba7759ef5ce930873981fa8f9dca6f1bb500c3a994ee969c83ce1"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/prior-comparison-inputs.json": {
+      "bytes": 13750,
+      "sha256": "85f85c2cd55c10860ed684ffabe81b4ec4ecf2e9061a96624f9d187c25e47c45"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/retention-manifest.json": {
+      "bytes": 12594,
+      "sha256": "6e8889c8c5be4682e3e45e2cb59b69915bba33c423f468c9e339569041115575"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/snapshot-ready-equivalence.json": {
+      "bytes": 481,
+      "sha256": "9587de45e312893ff0317c74f58e57b7b8c9e31ea5fe61da087ace5d1478541e"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/three-state-assessment-count-proof.json": {
+      "bytes": 1569,
+      "sha256": "629e90ea7abc740aefec31374b05fff8771e69ff86853e37b10dffd145976c23"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/three-state-partition-proof.json": {
+      "bytes": 1316,
+      "sha256": "e1b4aadb0eeef657b2e90223e58ec6c0acdbcb7a1cd2932af08ed4fc6a959a72"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/whole-gate-input-equivalence.json": {
+      "bytes": 5496,
+      "sha256": "fd123fc514d664b73c1803054a8caf0ac40c5d6cb2506101d7c39b9ee560b95a"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/generation-check.log": {
+      "bytes": 6718,
+      "sha256": "3beddf42b77797d6ba9bdfb435846e696037c9955613e598ee85c6cb07aebb45"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/generation-update.log": {
+      "bytes": 7044,
+      "sha256": "3b8650ad6343d48e34342365d010b454dd306937b2ea2a478880270a6c7f7d7b"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/governance-result.json": {
+      "bytes": 20938,
+      "sha256": "60ddda67c7bbdf67a47f50f858e095b6b0472e214e88016b5ec57114d8b86748"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/independent-governance-reference-audit.json": {
+      "bytes": 12158,
+      "sha256": "cc950365d5bfe522502476513b91c37fd7fd673df6d536831221572fffb9d679"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/instruction-eof-dependency-review.json": {
+      "bytes": 2357,
+      "sha256": "ab7d9fea791dd03582f26ae2bec9e86d63853f0a6db626cb245ccf8a34538543"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/main-checks.json": {
+      "bytes": 1659,
+      "sha256": "9ad89575fec58d48b8125505b9f59c4c20bfc17b4956b387573453b05806123c"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/main-generation-check.log": {
+      "bytes": 5800,
+      "sha256": "4ee10caffb8cfa659cc2276f977713da166f1c16a93c80794c269ad835f09871"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/semantic-history.log": {
+      "bytes": 137,
+      "sha256": "6b66d474609eba54e60116b6650ecfbe4d02ceeef6f2cae24a965fb90d4ecf67"
+    },
+    "reports/current-semantic-workbook/transitions/94598afb-94dd-4888-b7cc-402c6ba742a6.json": {
+      "bytes": 97231,
+      "sha256": "f719255b19c11bf31f321367cea835cc38e35c1becfcacec5ebe85417b18d6df"
+    },
+    "reports/current-semantic-workbook/versions/0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b.xlsx": {
+      "bytes": 24046,
+      "sha256": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b"
+    }
+  },
+  "all89unrelated_assessment_records_unchanged": true,
+  "all_other_tracked_bytes_unchanged": true,
+  "assessment_counts": {
+    "assertions": 102,
+    "blank_rows": 6,
+    "deferred": 0,
+    "final": 25,
+    "formal_mapping_adopted": 18,
+    "inheritance_sufficient": 2,
+    "no_direct_mapping": 5,
+    "rows": 108,
+    "terms": 91,
+    "unreviewed": 66
+  },
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "branch": "publication/current-sosa-readiness",
+  "index_entries_sha256_unchanged": "d6e2c5c67f3abf269b4c1f785287fc25c7f0b6e6772da1d7b9aa0ef5efd6f9b2",
+  "input_scope": {
+    "frozen_checkout_inventory_files": 2037,
+    "main_additional_preserved_excluded_file": "mappings/~$SSN2BFO-COMS.xlsx",
+    "selected_main_bytes_match": true,
+    "tested_role_inputs": 1101
+  },
+  "logical_delta": "Exactly two approved equivalent-class replacements; retained existential witnesses; no unrelated integrated mapping-axiom change.",
+  "modified_relative_intermediate": {
+    "SSN2BFO.ttl": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401",
+    "mappings/SSN2BFO-COMS.xlsx": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b",
+    "mappings/current-ssn-sosa-assessment.json": "99c4a711a94a5c1f6229e504be8107fb6a14b30125a6b02a0ef490342439e898",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49",
+    "reports/coms-generation-validation.md": "078e5999f158c23e371db92363164c536cab821a65c355d21fa0c3be7c72a1d3",
+    "reports/coms-product-dispositions.json": "a004e89908b0c444fb171adb9a9c98fbba3145462f1a5339ae6434c93d4b5cc3",
+    "reports/coms-vs-pre-coms-legacy-diff.md": "eed00cb5b90ffbe368cf92469fef970e98eac0f28372868408e4a57f1219801c",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "5a606034979f7366037aeb747769b86503d8d56d7300eae112feb9c6e135a482",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "298bdf99139dad0645d5d6d991088401e2a28ce46144e42b7dfc049313d62038",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "f21275bc856277e091a0349a2a832061f68ba3630e6e5a578f7b19166a2eec0f",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "36bdc23c37b9a382bea245d1e2fc6c87de54d8cc35370fed882217db586ced0e",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "ea784460b8567bbde91365b6802afdccaa19b1766e9af01e8cae97bd2e6ae05d",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "5e40a3c66ad98b612ac6d17139ebecd355528e05a7582bd0606ce936103a4e59"
+  },
+  "modified_tracked_vs_HEAD": {
+    "SSN2BFO.ttl": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401",
+    "mappings/SSN2BFO-COMS.xlsx": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b",
+    "mappings/current-ssn-sosa-assessment.json": "99c4a711a94a5c1f6229e504be8107fb6a14b30125a6b02a0ef490342439e898",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243",
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49",
+    "reports/coms-generation-validation.md": "078e5999f158c23e371db92363164c536cab821a65c355d21fa0c3be7c72a1d3",
+    "reports/coms-product-dispositions.json": "a004e89908b0c444fb171adb9a9c98fbba3145462f1a5339ae6434c93d4b5cc3",
+    "reports/coms-vs-pre-coms-legacy-diff.md": "eed00cb5b90ffbe368cf92469fef970e98eac0f28372868408e4a57f1219801c",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "5a606034979f7366037aeb747769b86503d8d56d7300eae112feb9c6e135a482",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "298bdf99139dad0645d5d6d991088401e2a28ce46144e42b7dfc049313d62038",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "f21275bc856277e091a0349a2a832061f68ba3630e6e5a578f7b19166a2eec0f",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "36bdc23c37b9a382bea245d1e2fc6c87de54d8cc35370fed882217db586ced0e",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "ea784460b8567bbde91365b6802afdccaa19b1766e9af01e8cae97bd2e6ae05d",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "5e40a3c66ad98b612ac6d17139ebecd355528e05a7582bd0606ce936103a4e59",
+    "tests/test_current_assessment.py": "c7aa020f49c1ecf4eeeab7e0c041f53e022998c4496a54cf5ec4fca7bb7bedb5"
+  },
+  "no_stage_commit_tag_push_or_release": true,
+  "preserved_excluded_files": {
+    "mappings/~$SSN2BFO-COMS.xlsx": "8979e28dcaedc005684d999b11b935fd16860e81b957c733d0ae748e4a02a218",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/CURRENT-STATUS.md": "bc971c40437f3e2fa4fd1b976093ccafab221f6ffd0ae835a33669857f4e2823",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/Property-before-review-packet.json": "3234feca627d8f0a59010b7854f43ccc510005277a01ebe5bf6421fc23f4d5e0",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/Property-review-packet.json": "79385607f4521cd88201214597bf8a77e5a5ed02d4ab401b0deece43d9823de7",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/Property.json": "5c2112301c72224dd822e12aa111ac5a3de80923c56b7c4432b67fb870afefec",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/approved-instructions.txt": "a032f54664410acf3aa9ad8bfbaf19a263af1950d20e4dfd69f2700596667fc8",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/assessment-before.json": "a0303820d89ba1a2022f37a47f7cd7ca835c773562435473b3498ab02bf42253",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/completion-report.md": "d7678b011924dce77ed46ddab66f73d4b07ce068328c283d19178393bc06a2e0",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/reviewer-identity-context.txt": "0498156354f91537f6e173130deb53575de666422e32c04c94be01818cb2acf8",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/transition-authorities.json": "d750f3393cb822b984400330c34b6d9838ee291787196813f1c77ba54b6038ab",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/assessment-check.log": "a7c647517e923dff21dbdeff674b2f1418a6d15db32ca7f23571c92882fc7d9c",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/assessment-write.log": "a7c647517e923dff21dbdeff674b2f1418a6d15db32ca7f23571c92882fc7d9c",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/final-verification.json": "18ae51c7f5217aa3f11b505bb44848a8340c44209850020bae39802d93056214",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/generation-expectations.json": "32c83b7b1b2f1991251615fbcd15e7567b2de5209cabe6fdb6bc3f2987bcfefe",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/generation.log": "7be0a3dd63a5392f884bc5a54dd0ff4ebb43460029476661d7f79b32428f0e6e",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/installation.json": "d526be18eab3c5a65a7c455b7777d5cf9e251fc04045f430f2659bdd19e7287b",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/prior-decision-applicability-preflight.json": "9303890f7c9d9c755d042b958a6a54b301e35e29a0388fe82db6a088b24f67b2",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/build/completed-local-baseline.queries.json": "92b20a6fcebc6e9b4610e0b52d5c9204987d221daa23a7193e9c8ca4223252f0",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/build/completed-local-baseline.rdf": "2a10fa00a071b82b792c358cda2a55c66e438b45d3580740d63841db1a6e9be5",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/build/completed-local-candidate.queries.json": "9fec4e0f041e7eb50d19be741f99a698b2f357139d7b9c66580c54008c396091",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/build/completed-local-candidate.rdf": "2c3a2b189cadfecae47d24d10999cba4155dcfa5a924b8f5c693a17740c447cd",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-baseline.attempt.json": "6f76e8b9da8fde7113646a81117f9cf1806f503bb93a0bfaa323498fd6f9d487",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-baseline.command.json": "8abebdb6d5bc4b5bc2fbb43aedf106ffadc4ade43c8a16f84fadd4b81046cba6",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-baseline.result.json": "647eeb32acd1f830b383cff8af0466b9d04683ce9a532f1250f2670a79b4bf7e",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-candidate.attempt.json": "6c4257edbc04b02d7c046dccc19be386c7462233ac6e752029ba0de034437ad3",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-candidate.command.json": "ce58119ff5fbd8fe4454269dd7eefaeb489e01e24a729d9e7adee17e3aeecf7f",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/completed-local-candidate.result.json": "1125b445e3d7954cb89549c001ac6ed054453259fe6449d21227242073234532",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/d6ba784d-5ba5-409f-a38c-5ef20d9cff28.capture.json": "c607bc972c4f7098c18fdd08d73ea169e67d6627a4c3bb7a266b336674edc119",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/d6ba784d-5ba5-409f-a38c-5ef20d9cff28.envelope.json": "1a77368451262cb5c5a5df26647a04a70461acee7c423c0afa0a98cec175dd40",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/d6ba784d-5ba5-409f-a38c-5ef20d9cff28.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/d6ba784d-5ba5-409f-a38c-5ef20d9cff28.stdout.log": "a1ec9134a7719deb822abf7ce8354f7c2661e6b22a46dcc694aece2f709a2280",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/d6ba784d-5ba5-409f-a38c-5ef20d9cff28.ticket.json": "282fae5b71f426b9a248abad831076c56ff51dcf11e20ee8c5eb8676b8273bd3",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/e40ddbf1-730f-400b-8257-b17f1478429b.capture.json": "69798f552943ad1f57c6f7337f16047b4c7e7e110f685f266191616f8dc938d8",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/e40ddbf1-730f-400b-8257-b17f1478429b.envelope.json": "8593a1d981409b98a8fe7093bc48f9bf77eb5b6d4805eaf0075936f454bd1865",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/e40ddbf1-730f-400b-8257-b17f1478429b.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/e40ddbf1-730f-400b-8257-b17f1478429b.stdout.log": "df47f4495efd4ae0f165c90d4286d66895abe5bfd269eb0730b90426b5e04959",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/invocations/e40ddbf1-730f-400b-8257-b17f1478429b.ticket.json": "573eeeb34498d549e106469b61a9df9861895be19c2763220e5316c06e14a838",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/javac.command.json": "6035d00ed2b7c88d91741fa1f933d65f4e0415a1a0d657144746b892d90e9cb7",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/javac.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/evidence/javac.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/plan.json": "2c520cc34fb9c218ed00579942cde0c27b19c72b9ee1415da48c75ee84dff6a0",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/completed-local-02/summary.json": "626990d9db453ec2f662c5c9f1a090822da5ab24d385ee912b424eb9d86af9cd",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/driver.log": "e6856fb348ef341303751b84554972e8adf176ba63febd5871695e547d8be703",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/evidence/exact-available-baseline.result.json": "8688d7aad5bb6b823737b4eb3cc6226b818cd2d0be3bfc5d113a9b9cfa6e7ba7",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/logical-validation-report.json": "50a1bafd6259f543f73d998674e06e94c647bc042e5e98b862fe98bceab24577",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/logical-validation-report.md": "6cca780d3ab744cbedc853fc92671d62b13ce5a26bf4b7d105c6eb73d74d8d6c",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/resume-01/diagnostic-summary.json": "ed999ca7cdeb3026611338d60e1870acc497f76b429a126220743f4fdf2074d5",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/reasoning/resume-01/evidence/exact-available-candidate.result.json": "f1189417642c5674fc65c3224b01b88f94ac969ffd99d73c95d9161cf305e7a4",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/retained-diagnostics.json": "9327a341e62487a9acc01ff63e140a8ebc54610dfbafff0bae300fc30901ca7f",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/source-identity-check.log": "73c50c84c96cba080e793517444a6d0595943be1152c4af6335f3f9a81ac98ef",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/transition-check.log": "672e4fbb4c191400f84aa9d7bb107f2818ac0a2c892837b59c4dc3d3ef98d7e3",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/verification.json": "b7d39d655a6a1cbb793eb4335e34c644ac4de2c35711f305e0210c4dd7cce0c7",
+    "reports/current-human-decisions/2026-10-30-property-adjudication/validation/workbook-delta.json": "887a8d8435c7e3ba5c071ea51b6ee753fc9fd8589660cf7d063f55f1ee4740b7",
+    "reports/current-human-decisions/2026-10-30-property-reversion/approved-reversion-instructions.txt": "f267075c62eee82baacbe23cb4be68e6805237d50af548e684c660f1b02477b2",
+    "reports/current-human-decisions/2026-10-30-property-reversion/completion-report.md": "453bc9175eb4bfe2d8f18cdd9cb1e22312d2d2f0dcfb9762b2a1b0a2cfd846ca",
+    "reports/current-human-decisions/2026-10-30-property-reversion/reversion.json": "778e992699c52fed5c916b82af1caf8d0c88d56871e5416064033012b13ccdb6",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/assessment-check.log": "c221af9c01e5cb2bc80062fa4c2c1f3ff24fde8a17d8f445d9ff6d0e051fc20f",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/assessment-write.log": "c221af9c01e5cb2bc80062fa4c2c1f3ff24fde8a17d8f445d9ff6d0e051fc20f",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/generation-expectations.json": "9d8f860df11eacfcde6252a12f6bc18798c30c31f43cfcea425c83528d75f207",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/generation.log": "f7f031401a6af0d3ee5d06a32a878df30a530102b99c20b80a2fc67b22939aa1",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/retained-diagnostics.json": "c235242710f40a78ffe10909143f6f1e4783935b5e373546643160eb9c023b34",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/transition-check.log": "53cf60f2a6e9acd2ec22389e4a77275faa914ba3a10cd2c32427686a2298248c",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/verification.json": "141ea71548d32e137ad0dd8fe764fa8b3f4a5e3394ff0123c1793ed33040f829",
+    "reports/current-human-decisions/2026-10-30-property-reversion/validation/workbook-delta.json": "22c7f1d57b48b87c0bab126628291679ecd76fe58f3737eea4959b757e3e4dbf",
+    "reports/current-human-decisions/2026-10-30-property-reversion/withdrawn-transition-ac935a40-7656-47e7-9b08-483d72188cdd.json": "b340c872ca718d424371426aaf46de0aac34f9ca7acac2e6f1f95aa25652a9dc",
+    "reports/current-human-decisions/2026-11-15-deployment-adjudication/validation/focused-validation/baseline/entailment-queries.json": "71473db7bd54653c99e224e3fca372867adadc46d5cace9234a09f2b127bfeff",
+    "reports/current-human-decisions/2026-11-15-deployment-adjudication/validation/focused-validation/candidate/entailment-queries.json": "ea5af464bc24c200feaacbe01ca1ec3775c5eb579fea468cf9049e9797c01f2e",
+    "reports/current-human-decisions/2026-11-15-deployment-adjudication/validation/source-converse-validation.log": "78f6dc1ce38f89a99dec4f98efca591704fb23d52ba13e87b16f768468bcea5e",
+    "reports/current-mapping-completion/2026-10-30/assessment-check.log": "c221af9c01e5cb2bc80062fa4c2c1f3ff24fde8a17d8f445d9ff6d0e051fc20f",
+    "reports/current-mapping-completion/2026-10-30/completion-assessment.md": "946a5d80b4613410a488a399a110f0583264bb18b55de3818fda9ed459d4d1e6",
+    "reports/current-mapping-completion/2026-10-30/generation-check.log": "5ad4f082620f9f845d302df22109fa5900cedab7a224869f95012fe2716a2f15",
+    "reports/current-mapping-completion/2026-10-30/inventory.json": "840fbebf1ef212f250e3d063fd20a48136f4b991d5b9a6c739c473b24bf76ddf",
+    "reports/current-mapping-completion/2026-10-30/term-treatment-matrix.md": "2fcdc863ab113b86066692877d50c61df104b7c06c73cfef7f43a34ef38f126e",
+    "reports/current-mapping-completion/2026-10-30/verification.json": "e875087f69a92b25363def8858b16c16c09af9def4ceeb73bf522287d75f9a8b",
+    "reports/current-publication-validation/three-term-20261028/classify_remaining.py": "d4f40d53512f08b91eb778a85f4b32f9c3ee3d061e89ce9d7985778b2318acd1",
+    "reports/current-publication-validation/three-term-20261028/independent_final_invariants.py": "9e21dadcc2b6a41c92847d862d33922e110f3b62875bde7487b77e3a2ac32d0f",
+    "reports/current-publication-validation/three-term-20261028/preexisting-sosa-output-preservation.json": "af9a1c84b39e7bab96281b9957bf6bd1c4b3c4d7a41a345003521a02a6c99f8f",
+    "reports/current-publication-validation/three-term-20261028/prepare_reconciliation_report.py": "557732c02b23b50fa6e6d5014e183233060436ef3761bb3d9e8846e526f31475",
+    "reports/current-semantic-workbook/five-historical-restorations/README.md": "c665a1674ac9fd9719e28427b24c0abe07c311084bf7be64f9962ba5a53f0009",
+    "reports/current-semantic-workbook/five-historical-restorations/RestorationProfile.java": "687e1cb0dcd37075b989a8c61dbcf41e99763fc45f9458189df8b9f2b26170e5",
+    "reports/current-semantic-workbook/five-historical-restorations/authorized-instructions.txt": "b5037876f578d04edd88df8eece34f9f615b05750672d1c94a16e10649407465",
+    "reports/current-semantic-workbook/five-historical-restorations/baseline-closure.json": "33eab5b2c2f93bb6db850fc9dd3ef81045a6ef6de9cc79f31eb827d4c4a414b2",
+    "reports/current-semantic-workbook/five-historical-restorations/baseline-command.json": "5ef8ffb9a9793e23f135c787255a6a539650c9e167e6f708b5e3ddbb03b1df85",
+    "reports/current-semantic-workbook/five-historical-restorations/baseline-profile.json": "9786ce71d25a60db0f870dcce752e8670bd14c2bcbe17f41f42b3735659d8e13",
+    "reports/current-semantic-workbook/five-historical-restorations/baseline-test-manifest.json": "39c1c81065bca701f85d0a55f3b66513c4097b1c79feaece2b72eb3437ad38c6",
+    "reports/current-semantic-workbook/five-historical-restorations/baseline-test-runner.py": "e639326c1505d58dae150665d3d36980e1b8cec55de1959edf445544da1cabd5",
+    "reports/current-semantic-workbook/five-historical-restorations/candidate-closure.json": "0706a21e14780e15d57b486808b74be8db745f2875bab8ee4eb3d6883e4fe560",
+    "reports/current-semantic-workbook/five-historical-restorations/candidate-command.json": "a8c53c07670ea904effe7a0f9d87a6a5e8160b2b28019d9264e8911c8c5ad2de",
+    "reports/current-semantic-workbook/five-historical-restorations/candidate-evidence.json": "f49990bbfff233b3d51bfc9610d639f87e7e58c3827df15fcf8d4a7dcd873bd5",
+    "reports/current-semantic-workbook/five-historical-restorations/candidate-profile.json": "08cffa01bc4296265baa6eed064b148e68930c922ac15e95f37e1a40dd05bf89",
+    "reports/current-semantic-workbook/five-historical-restorations/cco-hermit-diagnostic.json": "0515c1251366c8f3e5f822b37aa80b092dd2e87ecc34d67bcec107171b11ed5b",
+    "reports/current-semantic-workbook/five-historical-restorations/cco-hermit-diagnostic.log": "0515c1251366c8f3e5f822b37aa80b092dd2e87ecc34d67bcec107171b11ed5b",
+    "reports/current-semantic-workbook/five-historical-restorations/compile-command.json": "02402d3c179d35c8789ff51e62a96f63b8bc20159842e8525dfe645a44306738",
+    "reports/current-semantic-workbook/five-historical-restorations/completion-report.md": "53b188170cff70c387450cc657d983765b7aec41cdf014a7e20593c2080b0035",
+    "reports/current-semantic-workbook/five-historical-restorations/evidence-manifest.json": "f78dd7e3e83286ef64f21ab067413b4c5027ea7897994af7aef618a61353840b",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/candidate-products/alignment_core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/candidate-products/cco_extension.ttl": "2453b3f0d24e1043f1d7a162ea129ef748a5350d8c85febe5029541cca949fa9",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/candidate-products/integrated.ttl": "a1b54d02314784bb355941657d32fc6a5d0ddb4de230b5e5acc7e7503d38762d",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/candidate-products/strict_bfo_mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/current_publication_readiness.attempted.py": "4ab3c546580093e4c5fb38561faaa46f6eac83aa9d6df148a78610ce9decc66b",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/reports/current-decision-applicability/records/deb81f0c-b9a5-4c56-8eb9-21932286e63b.json": "cab0d7b2ccb11cd7080c054f011dd00b72bc2f1ebd4f1e00fc5b843d6cad19f5",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/reports/current-decision-applicability/records/e651dfbf-55d4-43cc-95d9-8812ded497a1.json": "4be485976c03d07cf42d1c8eb1052b5e5fe04f77a1cb9137253ba0c7ca0ad5f5",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/reports/current-semantic-workbook/transitions/db676afa-aae7-4fb5-aa57-e950fb101ffe.json": "9a0ceed8b36190c4a875801ec3e5ba4b4239b117f6ee447cc0d67ab8a1fe6327",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/reports/current-semantic-workbook/versions/5465730d1d20f186b0d2c853eb48e81135bdf4abd383a639f30e833a0ba08675.xlsx": "5465730d1d20f186b0d2c853eb48e81135bdf4abd383a639f30e833a0ba08675",
+    "reports/current-semantic-workbook/five-historical-restorations/failed-attempt/reports/current-semantic-workbook/versions/9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14.xlsx": "9e526e5705fc84571e03616f74c59fe8654fcc073a1c45a281109cf22c276e14",
+    "reports/current-semantic-workbook/five-historical-restorations/generation-update.log": "46013f2d486a53303c4bca6d5e3d0ef43635ffceda99e1a5858a765995e9f025",
+    "reports/current-semantic-workbook/five-historical-restorations/independent-per-term-coverage.json": "0eb242ec0930843d50df5057e86aa2594f133a51c6c1f207fd415acaba52f695",
+    "reports/current-semantic-workbook/five-historical-restorations/initial-file-hashes.json": "0eebf8ef1764630009faaa118842d77c30ab5ba035feec6bfc60403ed913d5ab",
+    "reports/current-semantic-workbook/five-historical-restorations/installation.json": "029770e2762d53ed867cbc27b97b87a229eb7c5b6de70d1f1c6532c4a31ba94c",
+    "reports/current-semantic-workbook/five-historical-restorations/preconditions.json": "4aa635482c0bcdf2676856dacaa0451043cfd99c9737182dace1497edef3eb10",
+    "reports/current-semantic-workbook/five-historical-restorations/preinstall-validation.json": "a8a41737dc332746da983b1726a627667d2e1d9b8fe381a672eb248fc04a1681",
+    "reports/current-semantic-workbook/five-historical-restorations/profile-comparison.json": "e5d11106ec049071e322a793e21e40b13bb8b1ec7bfb14379cc987ce10aa8413",
+    "reports/current-semantic-workbook/five-historical-restorations/readiness-renderer-audit.json": "ab9d135038794df6701b37c93734b079b930ab5518729af2e795d6673187cad5",
+    "reports/current-semantic-workbook/five-historical-restorations/recorded-transition.json": "e3270ce8999fdd80a52a4bc5ad6c5646f1d8c61c54c4be93eb0c653ad684aac5",
+    "reports/current-semantic-workbook/five-historical-restorations/required-cco-hermit/cco-extension-pinned-merged-cco-bfo-closure-owl2dl-profile.ttl": "43b8401076916c9a30b0753c48d1524a7661b44247018535da6c6c488d401571",
+    "reports/current-semantic-workbook/five-historical-restorations/required-cco-hermit/cco-extension-pinned-merged-cco-bfo-closure.ttl": "144816c472874dde5fd4c643cab9ca5739be37b0a5291fb9b2a04522c7a1e2d7",
+    "reports/current-semantic-workbook/five-historical-restorations/required-hermit-failure-audit.json": "d47e4a3018bddedb90de78a3696bd1edfabc951a21a2553be9ed23d6ff099cb8",
+    "reports/current-semantic-workbook/five-historical-restorations/restoration-baseline-coms.log": "5d35b7a71f80b3937d75c549ab0333c33b818160a6e1cab86646b7a34c1c66d6",
+    "reports/current-semantic-workbook/five-historical-restorations/restoration-baseline-current-hermit7.log": "3fe81d6a7a5d73ba9b051254d410b0837eace5d0a27ffa26252aa1a90769d281",
+    "reports/current-semantic-workbook/five-historical-restorations/restoration-baseline-current.log": "c4195bc4af9481cb989dc5096fd5d9d069a05863b1a0a060abb0ba32e92f645a",
+    "reports/current-semantic-workbook/five-historical-restorations/restoration-baseline-publication.log": "aed83f716bc569e2600693d05b954fb82ee030e97d1fc4ef6d883bdae27fc3c8",
+    "reports/current-semantic-workbook/five-historical-restorations/restoration-baseline-sosa94.log": "3cf2a3bfda18dcd3442493446e0af474891759cb8e024bd25e6944a47913d919",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-assessment.log": "3b81b3dc594ba087b0ed0a61a955c8760694e43903354f11cd5e7a74f3ad240e",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-documentary-history.log": "f5be6e6f31a0bc3adacae7264644eb0c3ad5996077a29b206407de67d342262b",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-generation-freshness.log": "ddb888c86b3a99eddcdab2eb9865b185fcfd31b439cab5f8d4bec96c7ce86037",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-git-diff-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-independent-audit.json": "4b5a7c8ec68e563827a19b8285ef8ce0988d16edbc89425363a784bdde69d2d8",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-preservation.log": "49b519603f41b9872fd63842370fd181beee8b3d407ff80da1489844d763294f",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-readiness-tests.log": "6cb4d22f16fdf2f9e3543da0056769fa2c0e954379d4ec3d696f9e0156db91c7",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-semantic-history.log": "c024ab89ae06121812b56c99b8405a216b6fa360f06a0711b714815c1aa12ee2",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-source-identity.log": "e523106e326edb9f399f2fa301c0699c85f30764396d2e9fd30ff50f9c9b4128",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-validation-results.json": "68cc412fe0148834d6bb3e0a3d12f7c157e76bb5c7e5b59118de8af026dc4004",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback-validation.log": "addba7c0e6ac8c61b1e113503a947b9c2acf775afe7c68afc9b651acbdf410c8",
+    "reports/current-semantic-workbook/five-historical-restorations/rollback.json": "5e0de4fee2fd7c1e9d77d2a432708611a936ddc0a15f1da6d315068bdf6e6ef7",
+    "reports/current-semantic-workbook/five-historical-restorations/xlsx-preservation.json": "f8531b042d14f7d39311ee8166362c62df06b8e1ee2428c5d2e39bde6b178f5e",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/artifact-hashes.json": "e468ef1b1de6a967cb486c219ccaffca2272241db8b5b4b518bdc371c2c06016",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/delta.json": "98f9e4e45bcfb6f99b940632b83231675ba37eaddc5070330e466569f0b23670",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/mapping.ttl": "4ace24d38b09c3c4d36bfa485d630b0df63e164cffa78a4a6a0d229fbc89c68b",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/validation-result.json": "70110e6146d2afea1f63259124019455c0dc3912565579bf4182e4f6aa4c13fe",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/validation/coms-candidate-full-closure-owl2dl-profile.ttl": "77de944a45ae2a6532489f2f63b6e1dd40e8f2f1013397e80a8a82fc62e31ed1",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/validation/coms-candidate-full-closure-reasoned.ttl": "3f0e15e98d4b2feb70000b8cb191babfa0383e0d16edde29e91b2cfb43c612da",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/baseline/validation/coms-candidate-full-closure.ttl": "e093b1c1a936871a5a105b2c62e3475b03d2a0374b3921a9985ceedc3b48ce78",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/completion-report.md": "be52cefd142964edc36ed9d21a9817d72e3c4036ce789b1606755db02f0ecc97",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/finalize.py": "6a59e9c168553758e8fb7c92eabd5cc8b5faa69c844f71db0a0a81d63d8bde6d",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/git-status.txt": "b356beb868f5f465e2b29b248ee7b92cfea8de3dd2ebfed686fa2dae7c3dc9ea",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/implementation/delta.json": "7f144cc9cff446ae74ca63f4b0cc65fe3bb70330e33b4a8f5771e33f2b8c3486",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/implementation/mapping.ttl": "1a8ad861286876585b8002dd0417cf7e22487e16789ff253176d5af7ded8f627",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/implementation/validation-result.json": "1df923e3fd4f32ef0bb6fe833a07e42f337792acbcf468d88255e614d8822837",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/implementation/validation/coms-candidate-full-closure-owl2dl-profile.ttl": "03318271416dc24702b8bcec1d37e5a125287831e57c480a57d23ffc4e081934",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/implementation/validation/coms-candidate-full-closure.ttl": "fb962436b3fd10867a832ebe60c075027987150589e4f64eae01a09feb084be4",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/initial-file-hashes.json": "e8138a6b9e739e33df8388e60142a7f5f82c2666a7a12e2e5f62d03839d3cccb",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/initial-git-status.txt": "1e9c89d25be64f13157a2a8502d28b269c6aeaa7c26d0232880e24363db606c2",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/initial-head.txt": "a988afd6f1275de9e14b83379d97a8c35fbd97331f020c054eb706eeb0d6edc1",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/initial-index-sha256.txt": "bc6917a9b4a8eea452489c7476349167bc3b6a8bec923f5194a2a886dc9aeec1",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/install_sensor.py": "8c72be4e37cef22b08218ca854b1fd94eae24aef9fd7bab83a349a8c9167c4d2",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/recovery.py": "fe3f52eb9cd65d989349b2af697aacce32c42121f1a9324637013ff8ce3879f6",
+    "reports/current-semantic-workbook/historical-recovery-2026-10-30/workbook-inventory.json": "a0763df0d6a72418beb7f7dd4605b8eec2b5ffdfde90d004409ac1839f15673f",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/abox_probes.py": "c2b102505a865aea312f63f67893fbafc7a6abaad68c3d10862865842ef9232d",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/after.png": "025a2fcc46d22b4ed50a5c7dbd6ef7e836038496e6aef68a18128db86fca0532",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/artifact-hashes.json": "53a54ae90ed8c6a9595868e69a34bbc132dc546679140e12ae1e3e87a8cdc729",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/SSN2BFO.ttl": "fd0b436c6919f0e10e97cfad31d9e219f407d51f169d955ff2f4997d1be4ea44",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/mappings/SSN2BFO-COMS.xlsx": "88835c763ce79f3ad54b076be1836b1a821dc31f984bbfe467deee3c40034ef2",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/mappings/current-ssn-sosa-assessment.json": "f1f219eaa3afeebc72fab720bcda7d029126c2e53a03fb3db50275029f79e5f2",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/releases/current-ssn-sosa/ssn-sosa-alignment-core.ttl": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": "fa4e907d7e819cf924e18f26ada984e01976d9d27e011a94c67d7e5b66da4102",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/baseline/tools/current_assessment.py": "e72f6e008182cc5bb7d58d359ff6ad93bfcde6a5e22af34518e915fda94b1f03",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/before.png": "5355f32c425efc62260fa1e8fdfec790ea2411ddce4130fe72638138743753cf",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/build-result.json": "2eecb754909b8bf381193ccad0612882bf3e9c503f14006098dbccb51a569c75",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/finalize.py": "1b9cb70de6df9db2a3f0e2908b4739a53fd312839f28bf616ca6a36e427d658e",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/initial-file-hashes.json": "9f1cdaa184fd68dd8d4323d6bce0cf34a32d0d55ba74de931efdd2d6051b3f56",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/initial-git-status.txt": "b356beb868f5f465e2b29b248ee7b92cfea8de3dd2ebfed686fa2dae7c3dc9ea",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/initial-head.txt": "a988afd6f1275de9e14b83379d97a8c35fbd97331f020c054eb706eeb0d6edc1",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/install_rule.py": "78306c568d93f1be0dfc5cd5e746d53d9e782cc2047ce953794b30ed5b6cef60",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/installation.log": "0a38b7aa01c46fb4f98a6ec89f744c4d6f3e735fab4286f75649336ebfbcb1d4",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/validate_candidates.py": "0088752cfdf34024d2bcdc7642db05ba5396ee195701cd7c51291376b1d11e5e",
+    "reports/current-semantic-workbook/implementation-rule-2026-10-30/write_completion.py": "3f9080be14f396c18a2a1d270fabefbab1aaef1edc3b26ad89224c152106118f",
+    "reports/current-semantic-workbook/versions/cd59b69e99621e7a721f7d5d0174494c39a810663dc665771fe30a96b39b1cb4.xlsx": "cd59b69e99621e7a721f7d5d0174494c39a810663dc665771fe30a96b39b1cb4"
+  },
+  "preserved_prior_task_files": {
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-before-review-packet.json": "4d0e1852963c66192503352f0bb0b28531a36a5764e0ad0c184e8326912f6adc",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json": "9444c2100c3df6e52b3e97a89afaa83eaca24c4e723b4d27f11e96f82ed1c6a1",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt": "48a70009075249b9937075656103bfa39d21f35b0752fc1aa3993d8faf32588e",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json": "3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json": "69d19e782a01d9006ff6ca9dd697d0beb9b9f735c8151c6b659379b52cb33aea",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/completion-report.md": "4d1029b6f659656078b3c79c92dfd7c2284516f45ebb14253a21a679df03415e",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/file-inventory.json": "770e7cf3e2b2a367bbbdf4c9843a9ce8071220735f5af0073799f1afc36f7f24",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/transition-authorities.json": "7bd5958d23e5b876fc8229a4cc51fd9342b8ee5ec761eff3df9a7d292b5bb93d",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/assessment-count-correction.json": "d9fc7f3874418b2e508f897464d62ad52b57f8ed463383a7971f6596fef6fd13",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/assessment-count-test.log": "a93976f2c9ea7acd1976a349477be11d675552581d1708b3adc97abfa89af212",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/assessment-freshness-check.log": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/candidate-check-results.json": "cb0ac4a94cd23233a1f6a814c094ef87911519717ad6a17f18b9aeab79413e51",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/candidate-governance-independent-audit.json": "3aa9dcc3e86583d45f6ba1284028b41c721654ff493748f02840ef17bf8c1f17",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/candidate-verification.json": "5bdfe70f22bbd0542e3d20850f895f8cd42f7bb08f0bde78fec179971ceb8695",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/changes.json": "05740649305fb152ace5a4a40aa1f896f19872dfaf6a65f44eb745004f1c0436",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/documentary-check.log": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused-retention-manifest.json": "937949c142d68ce41b7c1782638852e60b7c9a14c67536be21f09209f17b7aec",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/README.md": "411cd877378fab95111583dec63ad76d38085167c246204e9cdd33b23c792364",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/baseline-queries.json": "c27cde6d56afa6f23b22a3c014cdbd4c117dc70e587e34dc3ed3ddc87fc1f18a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/candidate-queries.json": "be78a767af4193d49beda0825099091ce0bb5f706aa7cea600724ed35b77fc33",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/probe-definitions.ttl": "f1d930386e3396f389d2b0d8a620f987144cd8ff41568df8e0495a2fc72f5845",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/probe-expectation-correction.json": "4983edb0ce19bae7a2ccbdbf0ab2d5e4175020effb4d48e230120293753bca5e",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/related-class-comparison.json": "c84a337e8f8844de42a1582e80d8b053434b50bf24743d15f1d6ced97d8c6bc1",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v2/source-converse/result.json": "45e95ed64cf6f5b524e43886bef2239c4158def2deebe19491738e481481ac58",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/baseline/entailment-result.json": "cd387daee5ac559464c7816457981b23097c32886b696e52f6ab256192d02d38",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/baseline/integrated-validation-result.json": "4c57f8ba7dc49208667dd64278cbe7d1e0b3ee968bfdea8c3134967dc49aad71",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/alignment_core-validation-result.json": "27337d534d28525f37755dea64625623ea5b107d3f6ea086e99ba0148574febb",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/cco_extension-validation-result.json": "cef46f00446c3e9960c6c97d7717954b40049c01109af11cc76b822969a97650",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/entailment-result.json": "a26fbf922e8f2146b5151ae225e3d74d873c63faa3695d2fbb9a8775ad79d131",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/integrated-validation-result.json": "380a00448d33819485b6619f709d9ea0273be341c303b1a1bc60d170eba8f28a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/strict_bfo_mapping-validation-result.json": "b0cd97f462a448e372d7a86c387f7c6258856d501ff3f23e91721991708b6735",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/product-deltas.json": "5bec548171471fa0e661f1184007bc13dc7d5f1943ee0016987729eb35288bf4",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/source-converse/input-manifest.json": "8a3007388f2b57f6dd487e0350a0755ed17cbfa5c997dbce9cc9bdc68c8368dc",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/source-converse/result.json": "94cd00eb793576125f9e0b819cd6df73d7c6c31e782a73fab6f0c262aebc8cb1",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/summary.json": "c8074023b6fa8e002b026ee4d209cba5a2d56f9036c35a942818b19e0d1aafea",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results/baseline/entailment-queries.json": "fcb481714aa5bf014fc6f5ed0fe48d13fc346c053b82ae544dcb12acf55ec9be",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results/baseline/entailment-result.json": "ea50fadfe45aadbd2e03b130277cb6f60b1ff3fe9edebed42d4e0a6fd0ec2523",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-probe.ttl": "be73683c86782db122def8f8b568c743e3fee943565f3cf69d3460e187c0d935",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-proof-scope-note.json": "ce669d6523870d2e63fd5b841053545e42be6eb046e2c74619de7c3a409188d4",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-queries.json": "77bceed6dbeb27435e6de725fb4782eb70e556a0e0e40c937deeedc76ad385df",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-target-evidence.json": "60c03d119ecc341303a177534b4ef071221d9da8dda234148195b9e9ebfe18d0",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validate_platform_candidate-four-source-diagnostic.py": "ce97c9fd329157ce24d746c48f685c1db0f8608ae0d0157e5ab527d84e9b3076",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validate_platform_candidate.py": "15385682d62811c8b212ee0c36ac6eca3265bac27481c5b02ecdb4df9a616297",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation-v2.log": "4260e9a6649b2b860df51e123d3511eef7163203af920bb6c860cce025b7a1eb",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation-v3.log": "f2831737f8345ad60a66c9a4f44837192d9bcb6ec7a63e88f4926ff1d44d609f",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation.log": "27f590d6dabffa4c9f9b862a1fc119ccb5610eacb38d4d146760b809ca5b001b",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-documentary.json": "e4d9e2b7313cef1553d0f123d1e554aea0ab652cf92433e7478c982ee576c86b",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity-clone.json": "1231249438f5c9bc5c5cb68f5a56fc5ce585404c99e32c089bc5f876eb5f70e2",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity-preservation.json": "b58c000498f4ac71795614998ece158142cd6bf6bde3de73660c86b8171b9744",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity.log": "ff548d445211f7179201d3c9265f7e0dda6d859d974a9d743aa588a41f320198",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-integrity/results.json": "f3c6aabfccfd5a7a2d4ad4bd4cb1f77c44ff8c3d81d33d83e791f3332669511b",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-strict-symptom.json": "611e64496aba85c8c2ef43bf791f4229604321713d3f14756ba44d23df65efa9",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline-symptom-inputs.json": "c8ecb65278d29724d8fe860eef22a52d3d885ae548c8a3d3b559d2d1951de275",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/clone-metadata.json": "a9de87f3a4e5f4c5749ed3210e5843d1707aaaf627087b2239254b4cc0b9db68",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/dependency-inventory.json": "fd47c6a638a369b6512bd51c2190eda6ee3136fe1ab2ed20b5c03466343f00e2",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/failure-inventory.json": "cfd97c145a39a8483e06c227efb21eee58ec5170cb37e8102eacbf8a23936e33",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/make-check-result.json": "9e40f1eefbcf9d5b416e25faec33f8d9cef47a137e36c58eeaf150141d013cd2",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/make-check.log": "12df945837fa6474c30b83a5df5a7fae7fc5ef35a05ef8c30d606a28599e5900",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/baseline/run-baseline.py": "ca34cdf03a271c3e48ac97a126ed8792252a0b94500ffd5d78a0ceb1998fe43c",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/build-exception-inventory.py": "7eff836434b5bcd4c87a89c74dda36f83b5244f96c84b875bb9a2cd2cbecb2aa",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-documentary.json": "da98ce4778b3a4e22755a8bb35298f025a0e3e10a2a82ba1045e193468f6383a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate-clone.json": "47260ee99505cc466caae9047a025c62c4dc844844d1c3f3d645743fcab7d1ed",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/failure-inventory.json": "d6b58461e294f4f81a69b54c1b2285bbe7f51a2b3bd3f78a26eec35fb211c60f",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/input-manifest.json": "12ee251c403e34b6176a6e084be26bc2d6a46806df3938c9d264f3818d4d08b6",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/input-preservation.json": "e51cdb971f18050b8db8e89e2b30b7f560942241d18dfb2462abadb61a0f505e",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/make-check-result.json": "c94027e54377a0ce1e0c606ca32827edce8e3c3a0ac86a6ebadca41f532bb693",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/make-check.log": "f0d0373b22941368d9b7eb16cbf99c9c83d22dbc1ff9de42d51f308105d70267",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-gate/report-binding-preflight.json": "2649d704ecc1582d6ae0cb7b2cbbcc639fe91c10cc85bf2b2061e6f0a6501f41",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity-clone.json": "16d446b7a22ee5210d446bc99432253f6af1d3f5375a22439c280c8ba760efb2",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity-preservation.json": "f0fec3cce52d6bec80ba33f2e52ea280fb4c0a0f54243e9ffe01219fe7376561",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity.log": "97116920f638dd00043c9813327e1d66e85b8b7dd6691ace25c2fafd5f9e85d4",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-integrity/results.json": "83b63b5ac6f2e85930208cb35723b770304937c5694358426fffdf1f9be3647a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-strict-symptom.json": "b26ad0d59c0ac58dfc41d81b4136e3a7ca6d8a4eb702b81893786563c02b5ec2",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/candidate-symptom-inputs.json": "a61516e03dc5fa3a607da26a1dbfbcce2b7fb77df728fb172077ed7baf22ee2a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/canonical-gate-comparison.json": "02bc13d3f8083038d29a8ad4d7d15133706499b70631cc5c491fbed2c8804da8",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/canonical-stage-boundary.json": "b7ad9bd7bf0465fa1039c25b46d3c154540ca542117ff02cf14c339c6d939d1d",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-strict-symptom.py": "08e5c18b9f5452d4b4aae9f9cfc45961fb7ac66cee4974575d34897f5208ec0b",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-symptom-inputs.py": "f2c89ddc7f0a1115ab853984f194d404513d35ff6ef624782b1e6d6b4f147200",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/compare-canonical.py": "c2a22f75eb683d37ee9c6c3230891f1ab7a6cacab341e7cb928c89df6e53a5ee",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/compare-mapping-integrity.py": "50258e3a558a72a124c8a9564b7b994d4a4230f36db1da70e22650bc6c830d91",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/exception-inventory.json": "1cd217fe33e64a299e08b4d1efa6ae04c392bac20ab691a3e4aa960df49249d5",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/final-candidate-snapshot-equivalence.json": "8d8b49fdf43979762775c8057d0bf91903577e4422fb710f422a4578809f0ac8",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/finalize-canonical-comparison.py": "6759bc32e82d4681e1d01ad93182e8db7056434e71c434ceb5a0e20b412786fc",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/mapping-integrity-comparison.json": "952e7a6571f14dcfed2727e59a5d4b06145e97a97bdbcbd5081c85b93e4e0c59",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/retention-manifest.json": "46f59a1dc5b13a2e6d531e3a0afedab793ee699800319f136952ac028501318c",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run-candidate-gate.py": "0ee0ee8034eec1f77c3ca965c9973095499f680b841b16eb2078f443eeb9191d",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run_mapping_integrity_tests.py": "96bacb1f55720575f8593a5d8a7f65d7d158fe15c0d2b698b1e2bb0ec802356f",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/whole-gate-scope-equivalence.json": "277606446718f8ea919d75e1930464f24177575a996a1c6c265063cdafabc971",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/generation-check.log": "16fa4194bead862a3cce2a1a252f267156151c43f78036cc04f54ba0efae48ab",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/generation-update.log": "5835fef3758436928d35ab4061fa396245d4fddd94188056d9a6bcf400368d13",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/independent-gate-review.json": "451f9782181bb94ba3c29a7192ef0cb93f9c3a21d62c4649aa82acd21dc3d72d",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/installation-result.json": "569b3fd0e9174a64c2788302c41310c3de7f8fa9296d92847aa0fba44081ad9a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/installed-assessment-freshness.log": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/installed-check-results.json": "f2deccc14b2860813d3cff262bfb827c388721591f6cc04596074eb50ae9582f",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/installed-generation.log": "2f9ad80031980b5d3bd4e61816aac36b7cd6b48b6f23c0a8f1e03caff7af497d",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/installed-semantic-history.log": "8b90e3ed3adbada25f612d02c5bf1192111a403cdb681017f5eb8b982cbb8bb8",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/post-generation-assessment-write.log": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/refreshed-candidate-independent-audit.json": "2e3486528c49e6c0d3563bba9c55a0ddf6fd19d84d2d723bf982e1c76fd42ec6",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/repository-before.json": "0afcf6f070dffc607974fd8c212ba230b80995c0819d248caf96d2cbaf5fe8ad",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/semantic-history-check.log": "8b90e3ed3adbada25f612d02c5bf1192111a403cdb681017f5eb8b982cbb8bb8",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/validated-candidate-inventory.json": "0c949a1356096626cbdd0d4e07e5b5b1b9a3562edd0fef01239fd8b6b2071696",
+    "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json": "2acc6fb88bcc2534805fcb30631e9a7510382557d744ec123803189d77a40898",
+    "reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7"
+  },
+  "report": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/completion-report.md",
+  "scope_counts": {
+    "added_union_task": 81,
+    "final_total_untracked": 363,
+    "modified_relative_intermediate": 14,
+    "modified_tracked_vs_HEAD": 15,
+    "preserved_excluded": 178,
+    "preserved_prior_task_untracked": 104,
+    "staged": 0
+  },
+  "source_imports_and_SOSA2023_unchanged": true,
+  "status": "PASS FOR APPROVED IMPLEMENTATION; FULL GATES DID NOT PASS",
+  "validation": {
+    "authentication_freshness_generation": "PASS",
+    "canonical": {
+      "errors": 22,
+      "failures": 25,
+      "passed": false,
+      "skipped": 7,
+      "tests": 488
+    },
+    "diagnostic_records_two_scopes": 66,
+    "focused_expectations": 62,
+    "four_products_OWL2DL_HermiT": "PASS; zero named unsatisfiable classes",
+    "fresh_distinct_nested_platform_ABox_checks": 2,
+    "integrity": {
+      "failures": 18,
+      "passed": false,
+      "setup_errors": 1,
+      "tests": 165
+    },
+    "later_canonical_stages_reached": false,
+    "unexplained_regressions_demonstrated": 0,
+    "waiver": false
+  },
+  "whitespace": {
+    "known_diagnostics": [
+      {
+        "action": "preserved hash-bound historical capture; disclosed without exemption",
+        "line": 75,
+        "message": "new blank line at EOF",
+        "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+        "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+      }
+    ],
+    "new_files_checked": 81,
+    "tracked_diff_check": "PASS"
+  },
+  "workbook_changes": [
+    "Sheet1!C9",
+    "Sheet1!D9",
+    "Sheet1!C36",
+    "Sheet1!D36"
+  ],
+  "workbook_sha256": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b"
+}

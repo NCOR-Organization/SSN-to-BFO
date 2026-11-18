@@ -1,0 +1,113 @@
+{
+  "root": "/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout",
+  "files": [
+    "test_coms_row_identity.py",
+    "test_generate_mapping_from_coms.py",
+    "test_product_dispositions.py",
+    "test_modular_products.py",
+    "test_strict_bfo_mapping.py",
+    "test_cco_extension.py"
+  ],
+  "test_files_sha256_before": {
+    "test_coms_row_identity.py": "326b2f6c8a51317712641215dd0e7ba5976aa940a5bf1fb5c2d964d36281c9dc",
+    "test_generate_mapping_from_coms.py": "f4787d4ad39c997158ca27719021813170bad49712725659e86d847a9986fdff",
+    "test_product_dispositions.py": "725317130f9a729b2559a5c3df4db72b3ab036f13869cc925df8c83bacddf635",
+    "test_modular_products.py": "5eca0fbb5ec51a7a3931703c819c0264d6ee9f447c7d6e5b33c98dabdb4c4b41",
+    "test_strict_bfo_mapping.py": "4d57de3957f5386417736386561516b8d0d2682c830a2e39e9e4eae0638954fa",
+    "test_cco_extension.py": "a30ca008412ed5d8a164330fcbf22e4005ef5421f7ee7ab622566791da09a4f6"
+  },
+  "test_files_sha256_after": {
+    "test_coms_row_identity.py": "326b2f6c8a51317712641215dd0e7ba5976aa940a5bf1fb5c2d964d36281c9dc",
+    "test_generate_mapping_from_coms.py": "f4787d4ad39c997158ca27719021813170bad49712725659e86d847a9986fdff",
+    "test_product_dispositions.py": "725317130f9a729b2559a5c3df4db72b3ab036f13869cc925df8c83bacddf635",
+    "test_modular_products.py": "5eca0fbb5ec51a7a3931703c819c0264d6ee9f447c7d6e5b33c98dabdb4c4b41",
+    "test_strict_bfo_mapping.py": "4d57de3957f5386417736386561516b8d0d2682c830a2e39e9e4eae0638954fa",
+    "test_cco_extension.py": "a30ca008412ed5d8a164330fcbf22e4005ef5421f7ee7ab622566791da09a4f6"
+  },
+  "tests_run": 165,
+  "failures": [
+    {
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_generate_mapping_from_coms.py\", line 1628, in test_current_generation_context_preserves_raw_baseline_and_exact_delta\n    self.assertEqual(len(removed), 3)\nAssertionError: 10 != 3\n"
+    },
+    {
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_generate_mapping_from_coms.py\", line 2742, in test_first_successful_update_creates_initially_absent_strict_bfo_mapping\n    self.assertEqual(checker.main([]), 0)\nAssertionError: 1 != 0\n"
+    },
+    {
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_product_dispositions.py\", line 282, in test_current_disposition_delta_matches_authenticated_transition\n    transition = self.current_transition()\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 94598afb-94dd-4888-b7cc-402c6ba742a6\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n"
+    },
+    {
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_product_dispositions.py\", line 232, in test_current_workbook_totals_and_product_order\n    expected = self.current_transition()[\"generation_expectations\"][\"after\"]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_product_dispositions.py\", line 228, in current_transition\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 94598afb-94dd-4888-b7cc-402c6ba742a6\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n"
+    },
+    {
+      "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_modular_products.py\", line 150, in test_exact_selection_identity_lock_and_distribution\n    self.assertEqual({value.row_id for value in self.selected}, EXPECTED_ROW_IDS)\nAssertionError: {'urn:uuid:5f25dce9-54a0-442e-a9de-f18cd2[1522 chars]cff'} != frozenset({'urn:uuid:5f25dce9-54a0-442e-a[1386 chars]ff'})\n"
+    },
+    {
+      "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_modular_products.py\", line 457, in test_fixed_local_source_closure_is_offline_and_import_free\n    self.assertEqual(len(closure), 1214)\nAssertionError: 1217 != 1214\n"
+    },
+    {
+      "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_modular_products.py\", line 504, in test_current_partition_requires_authenticated_context_and_restores_baseline\n    assert_raw_baseline_rejects()\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_modular_products.py\", line 501, in assert_raw_baseline_rejects\n    self.assertEqual({issue.code for issue in raised.exception.issues},\nAssertionError: Items in the first set but not the second:\n'PRODUCT_AXIOM_COUNT_MISMATCH'\n'PRODUCT_CATEGORY_COUNT_MISMATCH'\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 660, in test_current_context_preserves_baseline_strict_axioms_and_bytes\n    self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)\nAssertionError: b'# G[2399 chars]/ssn/hasDeployment> rdfs:subPropertyOf <http:/[14104 chars] .\\n' != b'# G[2399 chars]/ssn/System> owl:equivalentClass _:a0db60d0e97[16897 chars] .\\n'\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 476, in test_deterministic_serialization_and_alignment_core_preservation\n    self.assertEqual(\nAssertionError: 'cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5' != '17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770'\n- cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5\n+ 17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770\n\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 401, in test_direct_graph_identity_import_counts_and_structures\n    self.assertEqual(self.strict_result.logical_triple_count, 125)\nAssertionError: 105 != 125\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 159, in test_exact_selection_identity_lock_and_distribution\n    self.assertEqual({value.row_id for value in self.strict_selected}, EXPECTED_ROW_IDS)\nAssertionError: {'urn:uuid:43ad1a14-e8a4-48d5-ae2b-3b5a5b[787 chars]9c5'} != frozenset({'urn:uuid:3af8734c-ac86-46b0-8[896 chars]76'})\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 600, in test_fixed_pinned_merged_cco_bfo_closure\n    self.assertEqual(len(closure), 14988)\nAssertionError: 14971 != 14988\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 633, in test_pinned_closure_hermit_is_clean\n    self.assertEqual(result.closure_triple_count, 14988)\nAssertionError: 14971 != 14988\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 515, in test_processed_row_and_audit_order_do_not_affect_strict_bfo_output\n    self.assertEqual(len(reordered_selected), 19)\nAssertionError: 17 != 19\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 579, in test_root_and_project_module_reconciliation\n    self.assertEqual(len(strict_ids | core_ids), 48)\nAssertionError: 49 != 48\n"
+    },
+    {
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_strict_bfo_mapping.py\", line 202, in test_three_authorized_blanks_remove_only_non_strict_axioms\n    self.assertEqual(transition[\"transition_id\"], \"58481ff2-4e56-4931-a3d4-383357b16561\")\nAssertionError: '94598afb-94dd-4888-b7cc-402c6ba742a6' != '58481ff2-4e56-4931-a3d4-383357b16561'\n- 94598afb-94dd-4888-b7cc-402c6ba742a6\n+ 58481ff2-4e56-4931-a3d4-383357b16561\n\n"
+    },
+    {
+      "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_cco_extension.py\", line 613, in test_authenticated_three_axiom_delta_preserves_raw_baseline_guard\n    transition, baseline, baseline_inventory = authenticated_baseline()\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n"
+    },
+    {
+      "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_cco_extension.py\", line 592, in test_historical_fixture_is_independent_of_a_simulated_head_advance\n    self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)\nAssertionError: '1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49' != '5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28'\n- 1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49\n+ 5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28\n\n"
+    }
+  ],
+  "errors": [
+    {
+      "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+      "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_cco_extension.py\", line 155, in setUpClass\n    cls.transition, _, cls.baseline_inventory = authenticated_baseline()\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout/tests/test_cco_extension.py\", line 143, in authenticated_baseline\n    raise AssertionError(\"unexpected maintained-current semantic transition\")\nAssertionError: unexpected maintained-current semantic transition\n"
+    }
+  ],
+  "skipped": [],
+  "unexpected_successes": [],
+  "expected_failures": [],
+  "passed": false,
+  "elapsed_seconds": 365.3848268329166
+}

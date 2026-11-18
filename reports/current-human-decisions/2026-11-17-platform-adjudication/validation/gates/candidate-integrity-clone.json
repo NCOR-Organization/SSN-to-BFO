@@ -1,0 +1,76 @@
+{
+  "root": "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+  "source": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+  "commands": [
+    [
+      "git",
+      "clone",
+      "--shared",
+      "--no-checkout",
+      "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+      "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout"
+    ],
+    [
+      "git",
+      "-C",
+      "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+      "checkout",
+      "--detach",
+      "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+    ]
+  ],
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "modified_files": [
+    "SSN2BFO.ttl",
+    "mappings/SSN2BFO-COMS.xlsx",
+    "mappings/current-ssn-sosa-assessment.json",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl",
+    "reports/coms-generation-validation.md",
+    "reports/coms-product-dispositions.json",
+    "reports/coms-vs-pre-coms-legacy-diff.md",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md",
+    "tests/test_current_assessment.py"
+  ],
+  "new_files": [
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-before-review-packet.json",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/transition-authorities.json",
+    "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json",
+    "reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx"
+  ],
+  "overlay_hashes": {
+    "SSN2BFO.ttl": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+    "mappings/SSN2BFO-COMS.xlsx": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7",
+    "mappings/current-ssn-sosa-assessment.json": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258",
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+    "reports/coms-generation-validation.md": "e595885b353865880e8d30e1f09a1583face43647baba939138e81a55bbd1427",
+    "reports/coms-product-dispositions.json": "b9674e2827f434029083da31d24875706116fb6b171e2e7677803c36e85d1907",
+    "reports/coms-vs-pre-coms-legacy-diff.md": "a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": "12e8c9ad13909818caa81b06a4b09d3d0ba4e74f2599a3e3c919c555dcaea902",
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": "d4457dfd647e47437e687cfe016d5ef45209b9422b89664a71f7986550518df2",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": "f534aa821cd0f5bfff05eff9f9070d858e37ddfb70f2faf13d723d5dabfe99f6",
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": "ccf734e0b7ec7e96b460e80a0f69aaf8944fd092ce69047a3049a45fd21ff4f4",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": "47242e7fc37bbce31acd35341a152e28e0fd06086da1d484a9662da3c4518e63",
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": "796fe7b7a3f2ff77ef19ac823346b15c6dacd63a0b0d9eaa53b581d4b0a47132",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-before-review-packet.json": "4d0e1852963c66192503352f0bb0b28531a36a5764e0ad0c184e8326912f6adc",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json": "9444c2100c3df6e52b3e97a89afaa83eaca24c4e723b4d27f11e96f82ed1c6a1",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt": "48a70009075249b9937075656103bfa39d21f35b0752fc1aa3993d8faf32588e",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json": "3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json": "69d19e782a01d9006ff6ca9dd697d0beb9b9f735c8151c6b659379b52cb33aea",
+    "reports/current-human-decisions/2026-11-17-platform-adjudication/transition-authorities.json": "7bd5958d23e5b876fc8229a4cc51fd9342b8ee5ec761eff3df9a7d292b5bb93d",
+    "reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json": "2acc6fb88bcc2534805fcb30631e9a7510382557d744ec123803189d77a40898",
+    "reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7",
+    "tests/test_current_assessment.py": "c7aa020f49c1ecf4eeeab7e0c041f53e022998c4496a54cf5ec4fca7bb7bedb5"
+  },
+  "excluded_local_files_copied": false
+}

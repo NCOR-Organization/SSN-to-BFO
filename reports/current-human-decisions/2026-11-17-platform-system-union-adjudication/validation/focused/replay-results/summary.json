@@ -1,0 +1,10 @@
+{
+  "replay_inputs_self_contained": true,
+  "results": {
+    "distinct_platform_abox": "consistent",
+    "final_candidate_query_count": 58,
+    "native_query_count": 4
+  },
+  "source_and_mapping_files_modified": false,
+  "status": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "executed_in": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+  "mode": "read-only post-installation checks",
+  "commands": [
+    {
+      "command": "python -B tools/current_assessment.py",
+      "exit_code": 0,
+      "log": "assessment-freshness.log",
+      "log_sha256": "8a50a1179ef1c23676f11a4544d7dc7932d04f3cc429795b94838cdc50ed5228",
+      "log_byte_identical_to_retained_candidate": true
+    },
+    {
+      "command": "python -B tools/current_semantic_workbook.py check",
+      "exit_code": 0,
+      "log": "semantic-history.log",
+      "log_sha256": "6b66d474609eba54e60116b6650ecfbe4d02ceeef6f2cae24a965fb90d4ecf67",
+      "log_byte_identical_to_retained_candidate": true
+    },
+    {
+      "command": "python -B tools/check_coms_mapping.py --check-only",
+      "exit_code": 0,
+      "log": "main-generation-check.log",
+      "log_sha256": "4ee10caffb8cfa659cc2276f977713da166f1c16a93c80794c269ad835f09871"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "scope": "tracked changes only"
+    }
+  ],
+  "assessment_counts": {
+    "final": 25,
+    "unreviewed": 66
+  },
+  "no_product_or_authority_rewrites": true,
+  "preexisting_excluded_lock_file": {
+    "path": "mappings/~$SSN2BFO-COMS.xlsx",
+    "sha256": "8979e28dcaedc005684d999b11b935fd16860e81b957c733d0ae748e4a02a218",
+    "unchanged": true,
+    "qualification": "This preexisting excluded file is retained in the main working tree. It is absent from the isolated selected-task checkout; broader full_repository_gate inventory has1102 entries in main versus1101 isolated. No literal equality of those full inventories is claimed."
+  }
+}

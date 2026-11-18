@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "scope": "full_repository_gate",
+  "frozen_count": 1101,
+  "frozen_input_map_sha256": "3f1ed3891718288678305614ee71286e2f6375070ce5dd84e856f1a18feaa92b",
+  "source_input_map_identical": true,
+  "intermediate_count": 1092,
+  "changed_vs_intermediate": {
+    "SSN2BFO.ttl": {
+      "before": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+      "after": "b78c7fde8d73c167ed2808947b4be2fdbdbe1ab8f9bb3a71c67725ccb6a89401"
+    },
+    "mappings/SSN2BFO-COMS.xlsx": {
+      "before": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7",
+      "after": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b"
+    },
+    "mappings/current-ssn-sosa-assessment.json": {
+      "before": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258",
+      "after": "99c4a711a94a5c1f6229e504be8107fb6a14b30125a6b02a0ef490342439e898"
+    },
+    "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl": {
+      "before": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+      "after": "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243"
+    },
+    "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl": {
+      "before": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "after": "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49"
+    },
+    "reports/coms-generation-validation.md": {
+      "before": "e595885b353865880e8d30e1f09a1583face43647baba939138e81a55bbd1427",
+      "after": "078e5999f158c23e371db92363164c536cab821a65c355d21fa0c3be7c72a1d3"
+    },
+    "reports/coms-product-dispositions.json": {
+      "before": "b9674e2827f434029083da31d24875706116fb6b171e2e7677803c36e85d1907",
+      "after": "a004e89908b0c444fb171adb9a9c98fbba3145462f1a5339ae6434c93d4b5cc3"
+    },
+    "reports/coms-vs-pre-coms-legacy-diff.md": {
+      "before": "a5061e6ae031997628bfdc40f2f0235395a71e425d8f4dea34892605b22e4609",
+      "after": "eed00cb5b90ffbe368cf92469fef970e98eac0f28372868408e4a57f1219801c"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.json": {
+      "before": "12e8c9ad13909818caa81b06a4b09d3d0ba4e74f2599a3e3c919c555dcaea902",
+      "after": "5a606034979f7366037aeb747769b86503d8d56d7300eae112feb9c6e135a482"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-coverage.md": {
+      "before": "d4457dfd647e47437e687cfe016d5ef45209b9422b89664a71f7986550518df2",
+      "after": "298bdf99139dad0645d5d6d991088401e2a28ce46144e42b7dfc049313d62038"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.json": {
+      "before": "f534aa821cd0f5bfff05eff9f9070d858e37ddfb70f2faf13d723d5dabfe99f6",
+      "after": "f21275bc856277e091a0349a2a832061f68ba3630e6e5a578f7b19166a2eec0f"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-human-review.md": {
+      "before": "ccf734e0b7ec7e96b460e80a0f69aaf8944fd092ce69047a3049a45fd21ff4f4",
+      "after": "36bdc23c37b9a382bea245d1e2fc6c87de54d8cc35370fed882217db586ced0e"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json": {
+      "before": "47242e7fc37bbce31acd35341a152e28e0fd06086da1d484a9662da3c4518e63",
+      "after": "ea784460b8567bbde91365b6802afdccaa19b1766e9af01e8cae97bd2e6ae05d"
+    },
+    "reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md": {
+      "before": "796fe7b7a3f2ff77ef19ac823346b15c6dacd63a0b0d9eaa53b581d4b0a47132",
+      "after": "5e40a3c66ad98b612ac6d17139ebecd355528e05a7582bd0606ce936103a4e59"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform-review-packet.json": {
+      "before": null,
+      "after": "4d416d387effd06aa9074bfe442bccc96e36b6b9a2ffceef6c1de441f149a80d"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json": {
+      "before": null,
+      "after": "3f767f42f3c42b9bd6407b8eb9925b2e30ebca04863be6e447d134d512988560"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-review-packet.json": {
+      "before": null,
+      "after": "8f435681c7af063ebbe629c9b704855574230871d50d04095d81b97332048f9b"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json": {
+      "before": null,
+      "after": "e71667a07a1f7e7db0479e29cd97e236aa966440a7692d1ac75486a73e9e8c54"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt": {
+      "before": null,
+      "after": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json": {
+      "before": null,
+      "after": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+    },
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json": {
+      "before": null,
+      "after": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    "reports/current-semantic-workbook/transitions/94598afb-94dd-4888-b7cc-402c6ba742a6.json": {
+      "before": null,
+      "after": "f719255b19c11bf31f321367cea835cc38e35c1becfcacec5ebe85417b18d6df"
+    },
+    "reports/current-semantic-workbook/versions/0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b.xlsx": {
+      "before": null,
+      "after": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+<urn:platform-adjudication-probe:SourceHost> a owl:Class ; owl:equivalentClass [ a owl:Restriction ; owl:onProperty sosa:hosts ; owl:someValuesFrom ssn:System ] .

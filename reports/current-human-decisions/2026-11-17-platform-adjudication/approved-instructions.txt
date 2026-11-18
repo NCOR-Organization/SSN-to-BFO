@@ -1,0 +1,39 @@
+Implement the approved `sosa:Platform` semantic revision.
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+Expected baseline: `3376e1c74e846e40e6863ec8b1f1c255349aa2d3`
+Authoritative workbook: `mappings/SSN2BFO-COMS.xlsx`
+RowID: `urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb`
+
+Approved decision
+Replace:
+`sosa:Platform owl:equivalentClass bfo:MaterialEntity and (sosa:hosts some ssn:System)`
+with:
+`sosa:Platform owl:equivalentClass bfo:Continuant and (sosa:hosts some ssn:System)`
+Retain `owl:equivalentClass` and the hosting existential.
+
+The rationale is that SOSA's Platform definition and its DUL Object alignment do not justify restricting all Platforms to material entities. Platforms are interpreted as BFO Continuants, allowing material and nonmaterial hosts. Actual hosting of at least one System remains necessary.
+
+Implementation
+1. Update only the Platform mapping assertion and its `coms:Reasoning` cell in the authoritative workbook.
+2. Use the approved semantic justification provided in this conversation.
+3. Record the decision as `final / formal_mapping_adopted`, linked to the existing RowID.
+4. Preserve the previous assertion, original rationale, historical interpretation, and supporting evidence through existing governance records.
+5. Regenerate the maintained ontology products using the established deterministic workflow.
+6. Preserve all other mappings, RowIDs, and assessment records.
+7. Update assessment-count tests only as necessary to reflect the new approved final decision, without weakening their historical integrity checks.
+
+Verification
+- Confirm that the only intended mapping-axiom delta is replacement of `MaterialEntity` with `Continuant` in the Platform equivalence.
+- Confirm that `hosts some System` remains necessary.
+- Verify that material and appropriate nonmaterial continuants can satisfy the revised Platform expression.
+- Verify that an occurrent cannot satisfy the Platform classification without violating the BFO continuant/occurrent distinction.
+- Verify that the source-supported converse remains valid.
+- Check for unexpected consequences in related `System`, `Sensor`, `Actuator`, and `Sampler` mappings.
+- Run OWL 2 DL, HermiT, focused entailment checks, deterministic generation, decision authentication, assessment freshness, and mapping-integrity checks.
+- Compare full-gate failures against the verified baseline, distinguishing preexisting defects, approved-data differences, and new regressions.
+- Preserve SOSA-2023 and all excluded local files.
+
+Do not alter other mappings or introduce additional semantic decisions.
+Do not stage, commit, push, or prepare a release.
+Report the exact workbook changes, logical delta, entailment results, validation outcomes, and preservation evidence. Stop for review.

@@ -1,0 +1,40 @@
+{
+  "installed-semantic-history": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_semantic_workbook.py",
+      "check"
+    ],
+    "cwd": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+    "return_code": 0,
+    "elapsed_seconds": 16.497210708912462,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/installed-semantic-history.log",
+    "sha256": "8b90e3ed3adbada25f612d02c5bf1192111a403cdb681017f5eb8b982cbb8bb8"
+  },
+  "installed-assessment-freshness": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_assessment.py"
+    ],
+    "cwd": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+    "return_code": 0,
+    "elapsed_seconds": 112.08616408286616,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/installed-assessment-freshness.log",
+    "sha256": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c"
+  },
+  "installed-generation": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/check_coms_mapping.py",
+      "--check-only"
+    ],
+    "cwd": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO",
+    "return_code": 0,
+    "elapsed_seconds": 49.13874424993992,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/installed-generation.log",
+    "sha256": "2f9ad80031980b5d3bd4e61816aac36b7cd6b48b6f23c0a8f1e03caff7af497d"
+  }
+}

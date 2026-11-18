@@ -1,0 +1,88 @@
+{
+  "added_named_subclass_edges": [
+    [
+      "http://www.w3.org/ns/sosa/Platform",
+      "http://purl.obolibrary.org/obo/BFO_0000002"
+    ]
+  ],
+  "baseline_Platform_classification_explanation": {
+    "Actuator_difference": "The current madeByActuator mapping lacks that direct CCO has_agent inclusion; the same derivation is unavailable. Its non-subsumption by Platform is independently reasoner-tested.",
+    "classes": [
+      "sosa:Sensor",
+      "sosa:Sampler"
+    ],
+    "proof": [
+      "Their mapping expressions require a bearer_of witness that has a realization in Observation or Sampling.",
+      "Native source Observation/Sampling require exactly one madeBySensor/madeBySampler filler, restricted to Sensor/Sampler, which are SSN Systems.",
+      "The preserved madeBySensor/madeBySampler subproperty mapping to CCO has_agent, itself subproperty of BFO has_participant, supplies a System participant in that realization.",
+      "The preserved bearer_of o has_realization o has_participant subPropertyOf hosts chain therefore supplies hosts some System.",
+      "System all isHostedBy Platform plus hosts inverseOf isHostedBy classifies the original host as Platform."
+    ],
+    "references": [
+      "SSN2BFO.ttl: Sensor/Sampler expressions, hosts property chain, madeBySensor and madeBySampler superproperties",
+      "imports/ssn.ttl: Observation/Sampling cardinality and allValuesFrom restrictions, Sensor/Sampler subclass System, System isHostedBy only Platform",
+      "imports/sosa.ttl: hosts inverseOf isHostedBy",
+      "imports/cco.ttl: ont00001833 subPropertyOf BFO_0000057"
+    ]
+  },
+  "baseline_reasoned_path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/baseline/integrated-validation/coms-candidate-full-closure-reasoned.ttl",
+  "candidate_reasoned_path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/integrated-validation/coms-candidate-full-closure-reasoned.ttl",
+  "comparison_inputs": {
+    "baseline": {
+      "reasoned_graph_sha256": "0ffe33ed516e98c05397d0be309cb549d6a071e5cd85e5fe0fb00128f24f72b7",
+      "result_reference": "results-v3/baseline/integrated-validation-result.json",
+      "result_sha256": "4c57f8ba7dc49208667dd64278cbe7d1e0b3ee968bfdea8c3134967dc49aad71"
+    },
+    "candidate": {
+      "reasoned_graph_sha256": "c1f9f977194fe31167819c2128144c4277efa14f209b5ab63b2fb083071cd3bd",
+      "result_reference": "results-v3/candidate/integrated-validation-result.json",
+      "result_sha256": "380a00448d33819485b6619f709d9ea0273be341c303b1a1bc60d170eba8f28a"
+    }
+  },
+  "related_classes": {
+    "http://www.w3.org/ns/sosa/Actuator": {
+      "baseline": [
+        "http://www.w3.org/ns/ssn/System"
+      ],
+      "candidate": [
+        "http://www.w3.org/ns/ssn/System"
+      ]
+    },
+    "http://www.w3.org/ns/sosa/Sampler": {
+      "baseline": [
+        "http://www.w3.org/ns/sosa/Platform",
+        "http://www.w3.org/ns/ssn/System"
+      ],
+      "candidate": [
+        "http://www.w3.org/ns/sosa/Platform",
+        "http://www.w3.org/ns/ssn/System"
+      ]
+    },
+    "http://www.w3.org/ns/sosa/Sensor": {
+      "baseline": [
+        "http://www.w3.org/ns/sosa/Platform",
+        "http://www.w3.org/ns/ssn/System"
+      ],
+      "candidate": [
+        "http://www.w3.org/ns/sosa/Platform",
+        "http://www.w3.org/ns/ssn/System"
+      ]
+    },
+    "http://www.w3.org/ns/ssn/System": {
+      "baseline": [
+        "http://purl.obolibrary.org/obo/BFO_0000040"
+      ],
+      "candidate": [
+        "http://purl.obolibrary.org/obo/BFO_0000040"
+      ]
+    }
+  },
+  "related_edges_unchanged": true,
+  "removed_named_subclass_edges": [
+    [
+      "http://www.w3.org/ns/sosa/Platform",
+      "http://purl.obolibrary.org/obo/BFO_0000040"
+    ]
+  ],
+  "scope": "Named direct subclass edges emitted by existing ROBOT/HermiT integrated-product classification; not a claim of model-theoretic conservativity"
+}

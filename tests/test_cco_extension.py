@@ -106,7 +106,9 @@ EXPECTED_INVENTORY = tuple(
 EXPECTED_ROW_IDS = frozenset(row_id for row_id, _ in EXPECTED_INVENTORY)
 EXPECTED_AXIOM_IDS = frozenset(axiom_id for _, axiom_id in EXPECTED_INVENTORY)
 EXPECTED_INVENTORY_SHA256 = "c5587418a9fa0a16b1309609da0eddc8e34e2c2b8ea421069e2f46dd576ac590"
-CURRENT_CCO_SHA256 = "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+PRE_RECOVERY_COMMIT = "fe06c78b7290fd586b05c42145a57f32d84a8674"
+PRE_RECOVERY_CCO_SHA256 = "5c95807b4a2299c06647320a532afe0beff553b0dd0e46a95c38af67db9d5d28"
+CURRENT_CCO_SHA256 = "1dce64184c4b2c4b5cba84cf576fb1d0a6538eeaa8291f7d3faa52972d806e49"
 HISTORICAL_CCO_SHA256 = "2908f89648d42dc928f7225056216f1cbf3bcdc79de1bcf770b40a017a5e9bf5"
 CCO_PRODUCT_PATH = "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl"
 
@@ -589,6 +591,11 @@ class RawCcoTransitionTests(unittest.TestCase):
         historical = historical_cco_bytes()
         current = (REPO_ROOT / CCO_PRODUCT_PATH).read_bytes()
         self.assertEqual(hashlib.sha256(historical).hexdigest(), HISTORICAL_CCO_SHA256)
+        pre_recovery = subprocess.check_output(
+            ["git", "--no-optional-locks", "show", f"{PRE_RECOVERY_COMMIT}:{CCO_PRODUCT_PATH}"],
+            cwd=REPO_ROOT,
+        )
+        self.assertEqual(hashlib.sha256(pre_recovery).hexdigest(), PRE_RECOVERY_CCO_SHA256)
         self.assertEqual(hashlib.sha256(current).hexdigest(), CURRENT_CCO_SHA256)
         self.assertNotEqual(historical, current)
         actual_check_output = subprocess.check_output

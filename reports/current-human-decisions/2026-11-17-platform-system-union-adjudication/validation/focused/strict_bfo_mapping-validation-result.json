@@ -1,0 +1,20 @@
+{
+  "closure_triple_count": 14971,
+  "generated_triple_count": 114,
+  "graph_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-final-e_2knnx5/strict_bfo_mapping-validation/strict-bfo-pinned-merged-cco-bfo-closure.ttl",
+  "owl_nothing_count": 0,
+  "passed": true,
+  "profile_checked": true,
+  "profile_declaration_completion_count": 4,
+  "profile_graph_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-final-e_2knnx5/strict_bfo_mapping-validation/strict-bfo-pinned-merged-cco-bfo-closure-owl2dl-profile.ttl",
+  "profile_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "profile_return_code": 0,
+  "profile_triple_count": 14975,
+  "reasoned_output_produced": true,
+  "reasoned_path": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-final-e_2knnx5/strict_bfo_mapping-validation/strict-bfo-pinned-merged-cco-bfo-closure-reasoned.ttl",
+  "return_code": 0,
+  "robot_output": "OWL 2 DL Profile Report: [Ontology and imports closure in profile]",
+  "robot_path": "/usr/local/bin/robot",
+  "source_sample_declarations_retained": true,
+  "unsat_classes": []
+}

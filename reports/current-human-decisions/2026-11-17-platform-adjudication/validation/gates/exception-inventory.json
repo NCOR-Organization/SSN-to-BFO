@@ -1,0 +1,837 @@
+{
+  "status": "ALL OBSERVED DIAGNOSTICS ACCOUNTED FOR; GATES DID NOT PASS",
+  "baseline": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3",
+  "canonical": {
+    "baseline": {
+      "FAIL": 24,
+      "ERROR": 22
+    },
+    "candidate": {
+      "FAIL": 24,
+      "ERROR": 22
+    },
+    "classifications": {
+      "Identical preexisting failure": 39,
+      "Changed diagnostic attributable to approved data; preexisting failing case": 7
+    },
+    "tests_run": 488,
+    "skipped": 7,
+    "return_code": 2
+  },
+  "mapping_integrity": {
+    "baseline": {
+      "tests_run": 165,
+      "failures": 13,
+      "errors": 1,
+      "elapsed_seconds": 339.1762462910265,
+      "exit_code": 1
+    },
+    "candidate": {
+      "tests_run": 165,
+      "failures": 16,
+      "errors": 1,
+      "elapsed_seconds": 359.52644887473434,
+      "exit_code": 1
+    },
+    "classifications": {
+      "Identical preexisting failure": 9,
+      "Changed diagnostic attributable to approved data; preexisting failing case": 4,
+      "Identical preexisting failure; set display order only": 1,
+      "Newly failing fixture attributable to approved mapping data": 3
+    }
+  },
+  "cross_scope_duplicate_test_identities": [],
+  "candidate_diagnostic_records_across_two_scopes": 63,
+  "distinct_normalized_identities": 63,
+  "candidate_test_method_diagnostics": 62,
+  "candidate_setup_diagnostics": 1,
+  "blocked_methods_not_counted_as_additional_diagnostics": {
+    "class": "test_cco_extension.CcoExtensionTests",
+    "count": 11,
+    "methods": [
+      "test_exact_identity_inventory_digest_categories_and_distribution",
+      "test_nonselected_product_policy_is_reconciled",
+      "test_wrong_disposition_category_and_imported_direct_selection_fail",
+      "test_missing_extra_duplicate_substituted_and_mismatched_identities_fail",
+      "test_direct_graph_identity_import_counts_and_structures",
+      "test_import_vocabulary_and_copied_declarations_are_rejected",
+      "test_determinism_reordered_inputs_and_existing_product_preservation",
+      "test_reordered_canonical_header_is_rejected_by_product_validator",
+      "test_fresh_process_generation_is_byte_deterministic",
+      "test_root_project_closure_and_fixed_term_resolution",
+      "test_pinned_closure_hermit_is_clean"
+    ],
+    "reason": "Same class setup failure on baseline/candidate: latest semantic transition differs from a hardcoded historical transition; these11methods did not execute and are not11additional failure records."
+  },
+  "standalone_documentary_check": {
+    "baseline": {
+      "root": "/tmp/ssn-platform-baseline-uh0_cwav/checkout",
+      "command": [
+        "/opt/miniconda3/bin/python",
+        "-B",
+        "tools/current_documentary_workbook.py",
+        "check"
+      ],
+      "return_code": 1,
+      "elapsed_seconds": 0.4397512502036989,
+      "sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43",
+      "output": "disconnected documentary update chain\n"
+    },
+    "candidate": {
+      "root": "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+      "command": [
+        "/opt/miniconda3/bin/python",
+        "-B",
+        "tools/current_documentary_workbook.py",
+        "check"
+      ],
+      "return_code": 1,
+      "elapsed_seconds": 0.47349433274939656,
+      "sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43",
+      "output": "disconnected documentary update chain\n"
+    },
+    "baseline_identical": true,
+    "canonical_cases_sharing_same_error_message": [
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails",
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening",
+      "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions",
+      "test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions",
+      "test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail"
+    ],
+    "counting_note": "A separate command failure, disclosed separately; it repeats a preexisting diagnostic cause and is not an additional unittest record in the two-scope count."
+  },
+  "canonical_executed_stages": {
+    "baseline": [
+      {
+        "name": "Turtle parse check",
+        "outcome": "PASS"
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "outcome": "FAIL (1)"
+      }
+    ],
+    "candidate": [
+      {
+        "name": "Turtle parse check",
+        "outcome": "PASS"
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "outcome": "FAIL (1)"
+      }
+    ]
+  },
+  "canonical_unreached_stages": {
+    "source_path": "tools/run_validation_suite.py",
+    "source_sha256": "94f4267cb415e127086cbfb2da36a64928901f39301792d96079959b3e833c24",
+    "executed_before_expected_stop": [
+      {
+        "name": "Turtle parse check",
+        "source_line": 520
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "source_line": 523
+      }
+    ],
+    "conditional_stages_not_reached_if_current_regressions_fail": [
+      {
+        "line": 527,
+        "name": "Current source/target byte identities"
+      },
+      {
+        "line": 532,
+        "name": "Current assessment inventory and report freshness"
+      },
+      {
+        "line": 538,
+        "name": "COMS row-identity focused tests"
+      },
+      {
+        "line": 554,
+        "name": "COMS framework shadow-integration tests"
+      },
+      {
+        "line": 570,
+        "name": "SOSA source-version authority focused tests"
+      },
+      {
+        "line": 586,
+        "name": "Uniform product-role policy focused tests"
+      },
+      {
+        "line": 602,
+        "name": "SOSA formal package-scope focused tests"
+      },
+      {
+        "line": 618,
+        "name": "Forthcoming SOSA COMS focused tests"
+      },
+      {
+        "line": 634,
+        "name": "SOSA-next maintained-product focused tests"
+      },
+      {
+        "line": 650,
+        "name": "SOSA-next catalog consumer-stack focused tests"
+      },
+      {
+        "line": 666,
+        "name": "SOSA-2023 publication-metadata focused tests"
+      },
+      {
+        "line": 682,
+        "name": "SOSA-2023 formal-rendering focused tests"
+      },
+      {
+        "line": 698,
+        "name": "SOSA-2023 release-manifest focused tests"
+      },
+      {
+        "line": 714,
+        "name": "SOSA-2023 release-package focused tests"
+      },
+      {
+        "line": 727,
+        "name": "SOSA-2023 release-archive focused tests"
+      },
+      {
+        "line": 739,
+        "name": "SOSA-2023 release-rehearsal focused tests"
+      },
+      {
+        "line": 751,
+        "name": "COMS product-disposition focused tests"
+      },
+      {
+        "line": 767,
+        "name": "Alignment-core modular-product focused tests"
+      },
+      {
+        "line": 783,
+        "name": "Strict-BFO modular-product focused tests"
+      },
+      {
+        "line": 799,
+        "name": "CCO-extension modular-product focused tests"
+      },
+      {
+        "line": 815,
+        "name": "BFO-projection role reconciliation focused tests"
+      },
+      {
+        "line": 831,
+        "name": "Publication metadata focused tests"
+      },
+      {
+        "line": 847,
+        "name": "Formal release-context focused tests"
+      },
+      {
+        "line": 863,
+        "name": "Formal ontology-rendering focused tests"
+      },
+      {
+        "line": 879,
+        "name": "Release manifest focused tests"
+      },
+      {
+        "line": 895,
+        "name": "Authenticated current release contract focused tests"
+      },
+      {
+        "line": 911,
+        "name": "Release package build and validation focused tests"
+      },
+      {
+        "line": 927,
+        "name": "Release archive focused tests"
+      },
+      {
+        "line": 943,
+        "name": "Release rehearsal focused tests"
+      },
+      {
+        "line": 959,
+        "name": "Placeholder and catalog migration focused tests"
+      },
+      {
+        "line": 976,
+        "name": "Publication metadata development check"
+      },
+      {
+        "line": 983,
+        "name": "COMS generator focused tests"
+      },
+      {
+        "line": 999,
+        "name": "ROBOT focused tests"
+      },
+      {
+        "line": 1018,
+        "name": "Complete ROBOT reconstruction check"
+      },
+      {
+        "line": 1030,
+        "name": "COMS workbook freshness and candidate quality check"
+      },
+      {
+        "line": 1037,
+        "name": "SOSA source-version authority check"
+      },
+      {
+        "line": 1047,
+        "name": "Uniform product-role policy check"
+      },
+      {
+        "line": 1057,
+        "name": "SOSA formal package-scope check"
+      },
+      {
+        "line": 1067,
+        "name": "Forthcoming SOSA COMS mapping check"
+      },
+      {
+        "line": 1079,
+        "name": "SOSA-next maintained-product check"
+      },
+      {
+        "line": 1091,
+        "name": "Instance-data smoke test"
+      },
+      {
+        "line": 1098,
+        "name": "ELK instance mapping entailment test"
+      },
+      {
+        "line": 1110,
+        "name": "Full local SOSA closure HermiT check"
+      },
+      {
+        "line": 1123,
+        "name": "Git whitespace check"
+      }
+    ],
+    "additional_unreached": [
+      "run_validation_suite compile_check() at line1121",
+      "Makefile compile prerequisite",
+      "Makefile check recipe: git diff --check and git status --short"
+    ],
+    "scope_note": "These stages are not reached within the canonical make-check invocation. Some mapping checks have been independently executed in focused validation; that does not make the canonical gate pass."
+  },
+  "newly_failing_cases_due_to_approved_data": [
+    "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+    "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+    "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output"
+  ],
+  "demonstrated_unexplained_regressions": [],
+  "normalization_and_cause_note": "Diagnostic records are not necessarily independent defects. Distinct test methods remain separate records even when they exercise the same stale fixture/hash/transition expectation. All raw differences remain in the two detailed comparisons.",
+  "cases": [
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity",
+      "test": "test_added_and_removed_rows_keep_exact_stable_identity (test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged",
+      "test": "test_baseline_exact_bytes_and_counts_are_unchanged (test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail",
+      "test": "test_branching_and_missing_transitions_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged",
+      "test": "test_creation_keeps_live_and_historical_bytes_unchanged (test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail",
+      "test": "test_cycle_attempt_and_stale_old_version_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails",
+      "test": "test_e_authenticated_semantic_transition_without_required_applicability_fails (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states",
+      "test": "test_exact_manifest_rejects_omitted_cells_and_forged_states (test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes",
+      "test": "test_explicit_inheritance_approvals_bind_exact_candidate_routes (test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening",
+      "test": "test_f_authenticated_material_determination_requires_reopening (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix",
+      "test": "test_formal_mapping_finality_bypass_matrix (test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions",
+      "test": "test_g_authenticated_non_material_determinations_preserve_decisions (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes",
+      "test": "test_later_transition_binds_exact_predecessor_record_bytes (test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions",
+      "test": "test_multiple_semantic_and_documentary_transitions (test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior",
+      "test": "test_no_semantic_transition_retains_baseline_behavior (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files",
+      "test": "test_qualified_release_preserves_historical_protocol_and_governed_files (test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions",
+      "test": "test_real_five_term_transition_preserves_history_and_sample_decisions (test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities",
+      "test": "test_real_semantic_transition_advances_products_without_replacing_old_authorities (test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live",
+      "test": "test_snapshot_tampering_fails_even_with_unchanged_live (test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail",
+      "test": "test_source_target_rule_and_evidence_tampering_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint",
+      "test": "test_three_current_new_decisions_preserve_the_checkpoint (test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints",
+      "test": "test_validated_exact_product_generation_preserves_historical_fingerprints (test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering",
+      "test": "test_validated_transition_enables_exact_counts_and_rendering (test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering)",
+      "kind": "ERROR",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency",
+      "test": "test_a_exact_original_workbook_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs compare immutable inheritance-sufficiency evidence with the current workbook and stop at the same stale historical hash expectation. Only the actual workbook hash changes according to the approved Platform transition; later assertions are not reached."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity",
+      "test": "test_accepted_checkpoint_keeps_original_baseline_and_identity (test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation",
+      "test": "test_authorized_current_history_passes_before_and_after_generation (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency",
+      "test": "test_b_authenticated_d_only_transition_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs compare immutable inheritance-sufficiency evidence with the current workbook and stop at the same stale historical hash expectation. Only the actual workbook hash changes according to the approved Platform transition; later assertions are not reached."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content",
+      "test": "test_candidate_publication_evidence_is_not_historical_protected_content (test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic",
+      "test": "test_documentary_only_edit_cannot_be_semantic (test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes",
+      "test": "test_external_coms_mutable_hash_cannot_redefine_expected_bytes (test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report",
+      "test": "test_four_documentary_bindings_retain_exact_history_and_live_report (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs fail the same obsolete generated legacy-comparison report hash. Exact report diff adds only the approved Platform expression difference and adjusts corresponding common/removed/added totals; no other mapping difference is introduced."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers",
+      "test": "test_governed_bytes_and_headers (test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change",
+      "test": "test_historical_authentication_is_independent_of_unrecorded_current_change (test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records",
+      "test": "test_live_assessment_summary_matches_actual_records (test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The same unchanged policy prose reports 17 final / 74 unreviewed / 10 formal mappings. Expected live counts change from 23/68/16 to 24/67/17 through the sole authorized Platform finalization. No stale policy prose was repaired."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot",
+      "test": "test_maintained_live_workbook_resolves_to_immutable_decision_snapshot (test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "Both runs fail the same hardcoded historical semantic-projection hash. Candidate projection changes only according to the authenticated Platform semantic transition; immutable history and applicability checks precede this failure."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered",
+      "test": "test_prepared_determinations_are_not_active_and_cannot_be_tampered (test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition",
+      "test": "test_product_drift_requires_semantic_transition (test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval",
+      "test": "test_queue_complete_and_rationales_separate_documentation_from_approval (test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The unchanged queue test expects 69 unresolved terms. The baseline already has 68; approved Platform finalization leaves 67. Both stop at this same stale count assertion; later alternative-count and final-summary assertions remain masked."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration",
+      "test": "test_real_documentary_chain_and_forged_manifest_integration (test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping",
+      "test": "test_removal_authority_cannot_add_mapping (test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership",
+      "test": "test_rowid_evolution_rejects_unrelated_bad_starting_membership (test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail",
+      "test": "test_unauthorized_semantic_edit_and_documentary_impersonation_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass",
+      "test": "test_unchanged_protected_bytes_pass (test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides",
+      "test": "test_unrecorded_semantic_workbook_cannot_obtain_count_overrides (test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes",
+      "test": "test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes (test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline",
+      "test": "test_valid_documentary_chain_preserves_pinned_baseline (test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline)",
+      "kind": "FAIL",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies",
+      "test": "test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies)",
+      "kind": "FAIL",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The same historical sampling assessment-before dependency is absent from both computed whole-suite input sets, although its file exists in both checkouts. Parsed complete sets add exactly 7 Platform decision/transition/snapshot inputs and remove none. Python set display order is immaterial; no missing-dependency repair is claimed."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "setUpClass:test_cco_extension.CcoExtensionTests",
+      "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+      "kind": "errors",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "kind": "failures",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The cumulative historical-to-current removed-axiom inventory rises from8 to9 because the original Platform equivalence is replaced once. Both fail the same hardcoded expectation3. The authenticated Platform transition and focused product-delta proof establish exactly one newly replaced equivalence."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "classification": "Identical preexisting failure; set display order only",
+      "explanation": "Both complete selected and expected RowID sets were independently read through unchanged test setup and are exactly equal across baseline/candidate; only the abbreviated Python set display differs."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "kind": "failures",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "kind": "failures",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "kind": "failures",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "The test requires working-tree strict-BFO bytes to equal the unchanged HEAD version. The approved Platform mapping necessarily changes those bytes. The prior HEAD-hash assertion passes; the focused product-delta proof and both current/HEAD hashes establish only the authorized equivalence replacement."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "The unchanged fixed axiom-ID set still contains the old Platform axiom. Baseline matches that set; candidate replaces exactly Platform axiom 480ce325\u2026 with 863a5596\u2026, with all 19 RowIDs and 18 other canonical inputs unchanged. This is an approved-expression consequence, not an unexplained mapping regression."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "kind": "failures",
+      "classification": "Newly failing fixture attributable to approved mapping data",
+      "explanation": "All preceding row/axiom-order and byte-determinism comparisons pass. The final assertion hardcodes the old strict-BFO product SHA 676b3162\u2026; the approved Platform replacement yields 2e29952e\u2026. Focused graph-delta validation confines the product difference to this one approved equivalence."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "kind": "failures",
+      "classification": "Identical preexisting failure",
+      "explanation": "Complete traceback equality after exact checkout-root substitution only."
+    },
+    {
+      "scope": "mapping_integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "kind": "failures",
+      "classification": "Changed diagnostic attributable to approved data; preexisting failing case",
+      "explanation": "The test still requires transition58481ff2-4e56-4931-a3d4-383357b16561. Baseline has the approved Deployment transition; candidate has the approved Platform successor. No other traceback content changes."
+    }
+  ],
+  "waiver": "No exception or release waiver is authorized or implied. make check was executed and did not pass; later canonical stages were not reached. Three newly failing strict-BFO fixtures were preserved unchanged because authorization extended only to the assessment-count correction."
+}

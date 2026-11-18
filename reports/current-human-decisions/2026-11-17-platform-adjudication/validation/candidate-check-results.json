@@ -1,0 +1,101 @@
+{
+  "generation-update": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/check_coms_mapping.py",
+      "--update"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 45.910136125050485,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/generation-update.log",
+    "sha256": "5835fef3758436928d35ab4061fa396245d4fddd94188056d9a6bcf400368d13"
+  },
+  "post-generation-assessment-write": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_assessment.py",
+      "--write"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 104.80609608395025,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/post-generation-assessment-write.log",
+    "sha256": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c"
+  },
+  "semantic-history-check": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_semantic_workbook.py",
+      "check"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 16.30468387529254,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/semantic-history-check.log",
+    "sha256": "8b90e3ed3adbada25f612d02c5bf1192111a403cdb681017f5eb8b982cbb8bb8"
+  },
+  "assessment-count-test": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed",
+      "-v"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 23.54299574997276,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/assessment-count-test.log",
+    "sha256": "a93976f2c9ea7acd1976a349477be11d675552581d1708b3adc97abfa89af212"
+  },
+  "documentary-check": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_documentary_workbook.py",
+      "check"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 1,
+    "expected_return_code": 1,
+    "elapsed_seconds": 0.48127216612920165,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/documentary-check.log",
+    "sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43"
+  },
+  "generation-check": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/check_coms_mapping.py",
+      "--check-only"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 48.189603332895786,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/generation-check.log",
+    "sha256": "16fa4194bead862a3cce2a1a252f267156151c43f78036cc04f54ba0efae48ab"
+  },
+  "assessment-freshness-check": {
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "tools/current_assessment.py"
+    ],
+    "cwd": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-platform-candidate-jl0poxx6/checkout",
+    "return_code": 0,
+    "expected_return_code": 0,
+    "elapsed_seconds": 112.76332845771685,
+    "log": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/assessment-freshness-check.log",
+    "sha256": "dc77b14787603604eaf1bb82318d168c7bd3f8ecf42204492333c1177354050c"
+  }
+}

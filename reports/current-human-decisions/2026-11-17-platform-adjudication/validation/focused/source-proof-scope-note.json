@@ -1,0 +1,27 @@
+{
+  "initial_four_source_attempt": "results-v2/source-converse/result.json",
+  "status": "technical_failure",
+  "reasoner_status": "consistent",
+  "profile": true,
+  "expectations": [
+    {
+      "entailed": true,
+      "id": "source-inverse-universal-proves-converse",
+      "passed": true
+    },
+    {
+      "entailed": false,
+      "id": "source-does-not-require-hosted-System-witness",
+      "passed": true
+    }
+  ],
+  "unresolved_imports": [
+    {
+      "file": "imports/sosa-sampling.ttl",
+      "import": "http://www.w3.org/2004/02/skos/core",
+      "ontology": "http://www.w3.org/ns/sosa/sampling/"
+    }
+  ],
+  "followup": "Final reproducible driver uses complete sosa.ttl and ssn.ttl files for this bounded source-only implication. These contain every premise and have no unresolved imports together. No source files or logical axioms are edited. Complete four-module/target mapping validation still occurs separately for each product; this minimal proof does not replace it.",
+  "no_infrastructure_change": true
+}

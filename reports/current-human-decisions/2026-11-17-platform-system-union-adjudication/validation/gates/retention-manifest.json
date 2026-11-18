@@ -1,0 +1,157 @@
+{
+  "purpose": "Retain minimal completed final-candidate gate evidence with verified references to previously retained HEAD/intermediate evidence; no duplicated historical captures.",
+  "record_count_excluding_this_manifest": 23,
+  "files": [
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/prior-comparison-inputs.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/prior-comparison-inputs.json",
+      "sha256": "85f85c2cd55c10860ed684ffabe81b4ec4ecf2e9061a96624f9d187c25e47c45",
+      "bytes": 13750
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/snapshot-ready-equivalence.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/snapshot-ready-equivalence.json",
+      "sha256": "9587de45e312893ff0317c74f58e57b7b8c9e31ea5fe61da087ace5d1478541e",
+      "bytes": 481
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate-clone.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate-clone.json",
+      "sha256": "cecd2fa8f8faffcbb80459eade1fade6f394785eecc384ca9d70fc70e4ba83f4",
+      "bytes": 38220
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-execution-environment.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-execution-environment.json",
+      "sha256": "ed6d85f4a5c5abd21ebfa41a798f5bd9b0b349a5c97eb06cd8c0befe1cb8b6fd",
+      "bytes": 3746
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/input-manifest.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/input-manifest.json",
+      "sha256": "8af2f0c3028c74a33a760aa55d9f8b32f5f9048848f7581be9007c17d5695c35",
+      "bytes": 337551
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/report-binding-preflight.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/report-binding-preflight.json",
+      "sha256": "de4c340263a238a6324f3cea5a49045d25d7d3a54a968335f474ca061121ffae",
+      "bytes": 310
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check.log",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/make-check.log",
+      "sha256": "7f4c9e7b14099d14f6704f04e53ea635fdde72f538fd5dfe8cc6bbe1cfe68688",
+      "bytes": 85709
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/make-check-result.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/make-check-result.json",
+      "sha256": "b0970cd32997d0d4304c585ed990a0332167f0557a40ac1fcfe1c3b04828c664",
+      "bytes": 431
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/failure-inventory.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/failure-inventory.json",
+      "sha256": "d887a872a409141873e1ecd6aaefef41c9ecaa22a9f0c7d41a4842ad5949f645",
+      "bytes": 89550
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-gate/input-preservation.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-gate/input-preservation.json",
+      "sha256": "e51cdb971f18050b8db8e89e2b30b7f560942241d18dfb2462abadb61a0f505e",
+      "bytes": 41
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/canonical-gate-comparison.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/canonical-gate-comparison.json",
+      "sha256": "ba5ecf96ece8f50b947a37dd907488a993c3206e494394eb03f8bcdae58b9f62",
+      "bytes": 165402
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-integrity.log",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity.log",
+      "sha256": "935c32f36fb1347b21e83395ce5867e32bce720b6dd25b57437226f767eaa1b1",
+      "bytes": 67862
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-integrity/results.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity/results.json",
+      "sha256": "290612918940423e7f9b51b3a60f0f8be5983a9c1a05c1f9694279a7a56a9162",
+      "bytes": 14458
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-integrity-preservation.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-integrity-preservation.json",
+      "sha256": "50b7b942b35297c2d5117e104cd7a8afa88c4d41129f9d669202b30810fafc48",
+      "bytes": 112
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/mapping-integrity-comparison.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/mapping-integrity-comparison.json",
+      "sha256": "50d5cb5c8f9ba7759ef5ce930873981fa8f9dca6f1bb500c3a994ee969c83ce1",
+      "bytes": 33363
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-strict-symptom.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-strict-symptom.json",
+      "sha256": "5f59977fa6f51a85d003784d98d7d7b0788d9f88623b6cda71733747fb6098b7",
+      "bytes": 21168
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-symptom-inputs.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-symptom-inputs.json",
+      "sha256": "3492b747eeba8e7dee16e3f3b0db3410a1b41d386b3219291b8b2a66964993cc",
+      "bytes": 8476
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/three-state-partition-proof.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/three-state-partition-proof.json",
+      "sha256": "e1b4aadb0eeef657b2e90223e58ec6c0acdbcb7a1cd2932af08ed4fc6a959a72",
+      "bytes": 1316
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/three-state-assessment-count-proof.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/three-state-assessment-count-proof.json",
+      "sha256": "629e90ea7abc740aefec31374b05fff8771e69ff86853e37b10dffd145976c23",
+      "bytes": 1569
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-documentary.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/candidate-documentary.json",
+      "sha256": "8b868c2e60bc2a17c5017f9b0b99cd97b898028e796e3733144bf171858322b0",
+      "bytes": 510
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/final-source-scope-equivalence.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/final-source-scope-equivalence.json",
+      "sha256": "7dc6d3cd351f2ffc3d01ae15a4ea9df3862aed3157ad386568a9460f28dba717",
+      "bytes": 2017
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/whole-gate-input-equivalence.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/whole-gate-input-equivalence.json",
+      "sha256": "fd123fc514d664b73c1803054a8caf0ac40c5d6cb2506101d7c39b9ee560b95a",
+      "bytes": 5496
+    },
+    {
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/exception-inventory.json",
+      "destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/exception-inventory.json",
+      "sha256": "fa9b869f626b710b77a72f1b2d6812945424e4b7b1d3d856f6d6c7933077c08c",
+      "bytes": 41444
+    }
+  ],
+  "manifest_destination": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/validation/gates/retention-manifest.json",
+  "previous_evidence": "prior-comparison-inputs.json binds all reused baseline/intermediate files and runner sources to their existing repository-preserved paths.",
+  "documentary_log": "../documentary-check.log is already retained; its SHA256 is bound by candidate-documentary.json.",
+  "omitted_external_only": [
+    "interrupted-pre-formatting-consideration/* (incomplete interrupted runs; not final evidence)",
+    "candidate-documentary.log (byte-identical existing retained log)",
+    "candidate-integrity-clone.json (duplicate overlay manifest; gate clone manifest and integrity input-preservation prove inputs)",
+    "canonical-three-state.raw.json and integrity-three-state.raw.json (classified reports preserve exact differences)",
+    "copied prior runner scripts (existing repository paths and hashes are bound)",
+    "temporary Git checkouts and reproducible generated test captures"
+  ],
+  "validation_status": "make check and separate mapping-integrity suites did not pass. All completed diagnostics are accounted for, with no demonstrated unexplained regression. No gate waiver is granted.",
+  "known_scope_qualification": "Selected clean1101 inputs match final source and every selected main input. Dirty main has one preserved preexisting excluded Excel lock file; see final-source-scope-equivalence.json."
+}

@@ -1,0 +1,612 @@
+{
+  "DUL_qualification": "No DUL Object assertion is present in the four pinned current source files or CCO dependency. The approved DUL rationale is interpretive/historical context, not an axiom loaded in these tests.",
+  "relation_direction_qualification": "Current hosts and isHostedBy direct mapping axioms are property-chain heads. They do not propagate every hosting edge into a BFO located-in edge. Nonmaterial permissibility must be checked against the complete closure rather than assumed from this observation.",
+  "source_only_converse_proof": "If x hosts y and y is System, hosts inverseOf isHostedBy yields y isHostedBy x; System subclass all isHostedBy Platform yields x Platform. Thus exists hosts.System subclass Platform follows from pinned source axioms alone. Source Platform all hosts System restricts fillers but does not itself assert one exists.",
+  "sources": {
+    "SSN2BFO.ttl": {
+      "evidence": [
+        {
+          "term": "http://www.w3.org/ns/sosa/Platform",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                "http://www.w3.org/2002/07/owl#intersectionOf": [
+                  "http://purl.obolibrary.org/obo/BFO_0000040",
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/hosts",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/ssn/System"
+                  }
+                ]
+              },
+              "predicate": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/hosts",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": [
+                "http://purl.obolibrary.org/obo/BFO_0000196",
+                "http://purl.obolibrary.org/obo/BFO_0000054",
+                "http://purl.obolibrary.org/obo/BFO_0000057"
+              ],
+              "predicate": "http://www.w3.org/2002/07/owl#propertyChainAxiom"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/isHostedBy",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": [
+                "http://purl.obolibrary.org/obo/BFO_0000056",
+                "http://purl.obolibrary.org/obo/BFO_0000055",
+                "http://purl.obolibrary.org/obo/BFO_0000197"
+              ],
+              "predicate": "http://www.w3.org/2002/07/owl#propertyChainAxiom"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/ssn/System",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                "http://www.w3.org/2002/07/owl#intersectionOf": [
+                  "http://purl.obolibrary.org/obo/BFO_0000040",
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/implements",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Procedure"
+                  }
+                ]
+              },
+              "predicate": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Sensor",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                "http://www.w3.org/2002/07/owl#intersectionOf": [
+                  "http://purl.obolibrary.org/obo/BFO_0000040",
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000196",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": {
+                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                      "http://www.w3.org/2002/07/owl#intersectionOf": [
+                        "http://purl.obolibrary.org/obo/BFO_0000017",
+                        {
+                          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                          "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000054",
+                          "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Observation"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "https://www.commoncoreontologies.org/ont00001787",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Observation"
+                  }
+                ]
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Actuator",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                "http://www.w3.org/2002/07/owl#intersectionOf": [
+                  "http://purl.obolibrary.org/obo/BFO_0000040",
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000196",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": {
+                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                      "http://www.w3.org/2002/07/owl#intersectionOf": [
+                        "http://purl.obolibrary.org/obo/BFO_0000017",
+                        {
+                          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                          "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000054",
+                          "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Actuation"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "https://www.commoncoreontologies.org/ont00001787",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Actuation"
+                  }
+                ]
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Sampler",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                "http://www.w3.org/2002/07/owl#intersectionOf": [
+                  "http://purl.obolibrary.org/obo/BFO_0000040",
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000196",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": {
+                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                      "http://www.w3.org/2002/07/owl#intersectionOf": [
+                        "http://purl.obolibrary.org/obo/BFO_0000017",
+                        {
+                          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                          "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000054",
+                          "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Sampling"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                    "http://www.w3.org/2002/07/owl#onProperty": "https://www.commoncoreontologies.org/ont00001787",
+                    "http://www.w3.org/2002/07/owl#someValuesFrom": "http://www.w3.org/ns/sosa/Sampling"
+                  }
+                ]
+              },
+              "predicate": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+          ]
+        }
+      ],
+      "sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e"
+    },
+    "imports/cco.ttl": {
+      "evidence": [
+        {
+          "term": "http://purl.obolibrary.org/obo/BFO_0000002",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000001",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://purl.obolibrary.org/obo/BFO_0000002",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000176"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000003",
+              "predicate": "http://www.w3.org/2002/07/owl#disjointWith"
+            },
+            {
+              "formal_axiom": false,
+              "object": "continuant",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "(Elucidation) A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://purl.obolibrary.org/obo/BFO_0000040",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000004",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://purl.obolibrary.org/obo/BFO_0000040",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000176"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": {
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Class",
+                  "http://www.w3.org/2002/07/owl#unionOf": [
+                    "http://purl.obolibrary.org/obo/BFO_0000029",
+                    "http://purl.obolibrary.org/obo/BFO_0000040",
+                    "http://purl.obolibrary.org/obo/BFO_0000140"
+                  ]
+                },
+                "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000178"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000141",
+              "predicate": "http://www.w3.org/2002/07/owl#disjointWith"
+            },
+            {
+              "formal_axiom": false,
+              "object": "material entity",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "(Elucidation) A material entity is an independent continuant has some portion of matter as continuant part",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://purl.obolibrary.org/obo/BFO_0000141",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000004",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": false,
+              "object": "immaterial entity",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "b is an immaterial entity =Def b is an independent continuant which is such that there is no time t when it has a material entity as continuant part",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://purl.obolibrary.org/obo/BFO_0000006",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000141",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://purl.obolibrary.org/obo/BFO_0000006",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://purl.obolibrary.org/obo/BFO_0000176"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": false,
+              "object": "spatial region",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "(Elucidation) A spatial region is a continuant entity that is a continuant part of the spatial projection of a portion of spacetime at a given time",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://purl.obolibrary.org/obo/BFO_0000003",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://purl.obolibrary.org/obo/BFO_0000001",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": false,
+              "object": "occurrent",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "(Elucidation) An occurrent is an entity that unfolds itself in time or it is the start or end of such an entity or it is a temporal or spatiotemporal region",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        }
+      ],
+      "sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4"
+    },
+    "imports/sosa.ttl": {
+      "evidence": [
+        {
+          "term": "http://www.w3.org/ns/sosa/Platform",
+          "triples": [
+            {
+              "formal_axiom": false,
+              "object": "Platform",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/hosts",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://www.w3.org/ns/sosa/isHostedBy",
+              "predicate": "http://www.w3.org/2002/07/owl#inverseOf"
+            },
+            {
+              "formal_axiom": false,
+              "object": "hosts",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it.",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/isHostedBy",
+          "triples": [
+            {
+              "formal_axiom": false,
+              "object": "is hosted by",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by.",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        }
+      ],
+      "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+    },
+    "imports/ssn.ttl": {
+      "evidence": [
+        {
+          "term": "http://www.w3.org/ns/sosa/Platform",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/System",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/hosts"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/Deployment",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/inDeployment"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/ssn/System",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/Platform",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/isHostedBy"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/Deployment",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/hasDeployment"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/System",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/hasSubSystem"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/Procedure",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/implements"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/System",
+                "http://www.w3.org/2002/07/owl#onProperty": {
+                  "http://www.w3.org/2002/07/owl#inverseOf": "http://www.w3.org/ns/ssn/hasSubSystem"
+                }
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": false,
+              "object": "System",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#label"
+            },
+            {
+              "formal_axiom": false,
+              "object": "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems.",
+              "predicate": "http://www.w3.org/2004/02/skos/core#definition"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Sensor",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://www.w3.org/ns/ssn/System",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/Observation",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/madeObservation"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/ObservableProperty",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/observes"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/ssn/Stimulus",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/detects"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#minCardinality": "1",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/implements"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Actuator",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://www.w3.org/ns/ssn/System",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/Actuation",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/madeActuation"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/ActuatableProperty",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/forProperty"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#minCardinality": "1",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/implements"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/Sampler",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": "http://www.w3.org/ns/ssn/System",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#allValuesFrom": "http://www.w3.org/ns/sosa/Sampling",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/sosa/madeSampling"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            },
+            {
+              "formal_axiom": true,
+              "object": {
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#minCardinality": "1",
+                "http://www.w3.org/2002/07/owl#onProperty": "http://www.w3.org/ns/ssn/implements"
+              },
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+          ]
+        },
+        {
+          "term": "http://www.w3.org/ns/sosa/hosts",
+          "triples": [
+            {
+              "formal_axiom": true,
+              "object": [
+                "http://www.w3.org/ns/ssn/inDeployment",
+                "http://www.w3.org/ns/ssn/deployedSystem"
+              ],
+              "predicate": "http://www.w3.org/2002/07/owl#propertyChainAxiom"
+            }
+          ]
+        }
+      ],
+      "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    }
+  }
+}

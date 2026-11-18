@@ -1,0 +1,40 @@
+{
+  "status": "PASS FOR CLEAN SELECTED CANDIDATE; DIRTY MAIN HAS ONE PRESERVED EXCLUDED INPUT",
+  "role": "full_repository_gate",
+  "input_counts": {
+    "frozen": 1101,
+    "final_source": 1101,
+    "installed_main": 1102
+  },
+  "input_map_sha256": {
+    "frozen": "3f1ed3891718288678305614ee71286e2f6375070ce5dd84e856f1a18feaa92b",
+    "final_source": "3f1ed3891718288678305614ee71286e2f6375070ce5dd84e856f1a18feaa92b",
+    "installed_main": "bb2cc9b95bfb1e82982e42494171910a525067062604dd3cf18e10e1f0d37f26"
+  },
+  "exact_differences_from_frozen": {
+    "final_source": {},
+    "installed_main": {
+      "mappings/~$SSN2BFO-COMS.xlsx": {
+        "frozen": null,
+        "actual": "8979e28dcaedc005684d999b11b935fd16860e81b957c733d0ae748e4a02a218"
+      }
+    }
+  },
+  "final_source_and_all1101_selected_main_inputs_match_frozen": true,
+  "additional_validation_only_evidence_does_not_change_scope": true,
+  "excluded_file": {
+    "path": "mappings/~$SSN2BFO-COMS.xlsx",
+    "sha256": "8979e28dcaedc005684d999b11b935fd16860e81b957c733d0ae748e4a02a218",
+    "initial_sha256": "8979e28dcaedc005684d999b11b935fd16860e81b957c733d0ae748e4a02a218",
+    "preserved_byte_identical": true,
+    "copied_to_test_checkout": false
+  },
+  "qualification": "The completed gate applies to the selected isolated1101-input candidate. The dirty main tree has1102 scope inputs because of its preexisting explicitly excluded Excel lock file. No claim is made that the literal dirty-main1102-input scope was tested. The excluded file is preserved unchanged, not deleted or copied.",
+  "roots": {
+    "frozen": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-gate-_3f2es2o/checkout",
+    "final_source": "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-adjudication-u__eyvo4/checkout",
+    "installed_main": "/Users/alecsculley/Documents/GitHub/SSN-to-BFO"
+  },
+  "last_read_only_scope_recheck_utc": "2026-11-18T01:27:22.760081+00:00",
+  "final_additional_focused_evidence_preserves_frozen_scope": true
+}

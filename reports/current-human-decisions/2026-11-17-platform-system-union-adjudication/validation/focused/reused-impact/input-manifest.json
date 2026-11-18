@@ -1,0 +1,14 @@
+{
+  "closure_policy": "Same fixed local source/CCO/BFO closure and declaration completion as existing current-track generator diagnostics; no logical source axiom removed. SKOS metadata import directives remain a separate packaging concern.",
+  "driver_sha256": "9b5e48620c58af30725d9e8af881749c13d24a3bb916579f2a70b6b491a86b06",
+  "exploratory_query_convention": "For exploratory unsatisfiability and materiality questions, expected_entailed=false is the API placeholder, not an assertion that every answer should be false. Report actual entailed answers; placeholder passed flags are not the assessment verdict.",
+  "inputs": {
+    "SSN2BFO.ttl": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+    "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+    "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+    "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+    "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+    "mappings/SSN2BFO-COMS.xlsx": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7"
+  }
+}

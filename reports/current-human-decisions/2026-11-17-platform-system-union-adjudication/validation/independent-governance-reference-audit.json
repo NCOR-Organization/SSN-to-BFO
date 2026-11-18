@@ -1,0 +1,235 @@
+{
+  "all104prior_task_untracked_files_preserved": true,
+  "all_explicit_separate_track_paths_unchanged": true,
+  "all_tracked_imports_unchanged": true,
+  "anchor_and_predecessor_explicitly_distinguished": true,
+  "current_platform_pointer_selects_new_successor": true,
+  "explicit_sosa_next_or_2023_tracked_path_count": 89,
+  "fingerprints": [
+    {
+      "document": "Platform.json",
+      "field": ".approved_instructions",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+      "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".assessment_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json",
+      "sha256": "3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".before_after_comparison",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+      "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".current_predecessor_assessment_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json",
+      "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".previous_review_packet",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json",
+      "sha256": "9444c2100c3df6e52b3e97a89afaa83eaca24c4e723b4d27f11e96f82ed1c6a1"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".review_packet_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform-review-packet.json",
+      "sha256": "4d416d387effd06aa9074bfe442bccc96e36b6b9a2ffceef6c1de441f149a80d"
+    },
+    {
+      "document": "Platform.json",
+      "field": ".supersedes_human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+      "sha256": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac"
+    },
+    {
+      "document": "System.json",
+      "field": ".approved_instructions",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+      "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    {
+      "document": "System.json",
+      "field": ".assessment_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json",
+      "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+    },
+    {
+      "document": "System.json",
+      "field": ".before_after_comparison",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+      "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    {
+      "document": "System.json",
+      "field": ".current_predecessor_assessment_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json",
+      "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+    },
+    {
+      "document": "System.json",
+      "field": ".previous_review_packet",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-before-review-packet.json",
+      "sha256": "1572ee12ab2554e672e9ffae9688668a43f13d850e02bb914b185ee59ddc6aba"
+    },
+    {
+      "document": "System.json",
+      "field": ".review_packet_snapshot",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-review-packet.json",
+      "sha256": "8f435681c7af063ebbe629c9b704855574230871d50d04095d81b97332048f9b"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[5].human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-01-observation-adjudication/Observation.json",
+      "sha256": "1eb03f1bcbb43ea3d93bd5d9954e8b2ab45091ea7cd2df9a4d042dab7c9facc8"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[6].human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+      "sha256": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[16].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-25-sample-pair/hasSample.json",
+      "sha256": "e5c7d7f313c69ff291b32e69c0fd4ba8c593edbcad6fdac5f6f86efda6a7839f"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[23].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-25-sample-pair/isSampleOf.json",
+      "sha256": "03d5e3396de3c85a121361085b8dd2dd28bce3d1a60b06df75fac60f78f84ba2"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[30].human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-14-observed-property-adjudication/observedProperty.json",
+      "sha256": "b4a82df9e030aab74aeed5b3e88c1da1f7e2f9368623cf67480be51075f0d290"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[34].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/SampleRelationship.json",
+      "sha256": "8349405b6c675244977d85aaf19b74594798a91015be68847f3ee275cfc88dcc"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[35].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/hasSampleRelationship.json",
+      "sha256": "1a31805182ad927c632395da71fca5f59c57e48c8182aacc5b14fcdba0615f91"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[37].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-30-sampling-relationship-adjudication/relatedSample.json",
+      "sha256": "16ef189132204f5b86017ed247db6dcfec232d9ceb140d9242d14128fac9a930"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[39].human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-15-deployment-adjudication/Deployment.json",
+      "sha256": "26a6386e65ac336615093c1cf18ccf031a6669ab04795bb5421029c2b550393d"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[48].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/forProperty.json",
+      "sha256": "a08ab558f3284a199596be555adbbad97f1c706a2489ff6b7abd91851e613782"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[68].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange.json",
+      "sha256": "4cb094523fa4d060dc60c43bc338997a8b57e1f0d881adaa39541a2d894c6c7d"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[68].inheritance_sufficiency_evidence",
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/MeasurementRange-inheritance-sufficiency.json",
+      "sha256": "536ccf2987f70c152cfa19015ecfb616f7bcd24c038cb5d226af42f674de4069"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[81].human_decision_record",
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty.json",
+      "sha256": "df6ce92011ba3a9d28a4ffa9324b31ed50f17982eda8c50c93c3835e7e3e5df5"
+    },
+    {
+      "document": "assessment-before.json",
+      "field": ".records[81].inheritance_sufficiency_evidence",
+      "path": "reports/current-human-decisions/2026-10-26-three-term-adjudication/SystemProperty-inheritance-sufficiency.json",
+      "sha256": "53682e9caf3999076334280a8294bcd85e64f7d4cb23f59a47c8ae6459d6b1a3"
+    },
+    {
+      "document": "before-after.json",
+      "field": ".historical_platform_anchor",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json",
+      "sha256": "3b6cee597e98d3a52bd512ea42ddc9d98645a146cceb5ed68bbba300bd16054a"
+    },
+    {
+      "document": "before-after.json",
+      "field": ".preserved_platform_decision",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+      "sha256": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac"
+    },
+    {
+      "document": "before-after.json",
+      "field": ".terms.Platform.before.assessment_record.human_decision_record",
+      "path": "reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json",
+      "sha256": "74d97f540c5a279b1821f07312a68774e6297993d0dd996bc2935b72f8b827ac"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:66010702-8134-4e08-a972-f0767ec8dead.evidence[0]",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+      "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:66010702-8134-4e08-a972-f0767ec8dead.evidence[1]",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+      "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:66010702-8134-4e08-a972-f0767ec8dead.human_decision",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System.json",
+      "sha256": "e71667a07a1f7e7db0479e29cd97e236aa966440a7692d1ac75486a73e9e8c54"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb.evidence[0]",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+      "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb.evidence[1]",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+      "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+    },
+    {
+      "document": "transition-authorities.json",
+      "field": ".urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb.human_decision",
+      "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/Platform.json",
+      "sha256": "3f767f42f3c42b9bd6407b8eb9925b2e30ebca04863be6e447d134d512988560"
+    }
+  ],
+  "historical_original_anchor_state": "unreviewed",
+  "immediate_platform_predecessor_state": "final",
+  "parent_preservation_script_note": "Candidate audit checks all tracked hashes, all 104 inherited task files, four workbook cells and 89 unrelated assessment records. Its excluded-file absence check applies only to the isolated clone; main-tree preservation must separately compare the 178 excluded-file hashes captured before execution. New-path prefix checks bound location but do not alone prove contents necessary; explicit final inventory review remains needed.",
+  "reference_fingerprints_checked": 36,
+  "scope": "Read-only hash/reference and chronology audit; not another complete decision-authentication run.",
+  "status": "PASS",
+  "superseded_platform_record_retained_byte_identically": true,
+  "system_original_unreviewed_snapshot_preserved": true,
+  "tracked_import_path_count": 6
+}

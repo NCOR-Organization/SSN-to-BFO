@@ -1,0 +1,75 @@
+Amend the current Platform/System adjudication to implement **both approved union mappings**.
+
+Repository: `/Users/alecsculley/Documents/GitHub/SSN-to-BFO`
+
+Baseline HEAD: `3376e1c74e846e40e6863ec8b1f1c255349aa2d3`
+
+Preserve the existing uncommitted Platform adjudication and its historical evidence. If the previous System implementation task is already underway, incorporate this correction rather than restarting completed work.
+
+### 1. Platform
+
+RowID: `urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb`
+
+Replace the currently implemented, uncommitted expression:
+
+`sosa:Platform ≡ bfo:Continuant and (sosa:hosts some ssn:System)`
+
+with:
+
+`sosa:Platform ≡ (bfo:MaterialEntity or cco:InformationContentEntity) and (sosa:hosts some ssn:System)`
+
+Retain `owl:equivalentClass`.
+
+The earlier MaterialEntity→Continuant decision must remain preserved in the decision history, but the explicit union is now the approved replacement. Record the supersession clearly without deleting or misrepresenting the earlier approval.
+
+### 2. System
+
+RowID: `urn:uuid:66010702-8134-4e08-a972-f0767ec8dead`
+
+Replace:
+
+`ssn:System ≡ bfo:MaterialEntity and (ssn:implements some sosa:Procedure)`
+
+with:
+
+`ssn:System ≡ (bfo:MaterialEntity or cco:InformationContentEntity) and (ssn:implements some sosa:Procedure)`
+
+Retain `owl:equivalentClass`.
+
+### 3. Semantic justification
+
+Update the two `coms:Reasoning` cells to explain that:
+
+- SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms.
+- Under the adopted BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities.
+- InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization.
+- SOSA's `hosts` and `implements` relations can apply directly to appropriate InformationContentEntities; they are not automatically translated into relations between physical bearers.
+- The explicit union is an adopted, exhaustive classification for these mappings, not an entailment of the source definitions or the DUL alignment.
+- The existential hosting and implementation conditions remain necessary.
+- The converse directions remain supported by the pinned source inverse-property and universal restrictions.
+
+Explain why the explicit union is preferred over unrestricted `bfo:Continuant`, including the intentional exclusion of Sites and dependent continuants other than InformationContentEntities.
+
+Keep decision chronology, validation evidence, and implementation mechanics in their established governance records rather than in `coms:Reasoning`.
+
+### 4. Implementation and validation
+
+1. Update only the Platform and System mapping assertions and their reasoning cells.
+2. Record both approved semantic decisions as final, linked to their existing RowIDs.
+3. Preserve the original mappings, intermediate Platform revision, rationales, and decision history.
+4. Regenerate the four maintained ontology products deterministically.
+5. Confirm that the only mapping-axiom changes relative to HEAD are the approved Platform and System replacements.
+6. Verify both material and informational instances, informational nested Platforms, and System implementations.
+7. Verify that Sites and specifically dependent continuants outside ICE are excluded as intended.
+8. Check for unexpected materiality inferences, contradictions, or effects on Sensor, Actuator, Sampler, SystemCapability, and subsystem relationships.
+9. Run OWL 2 DL, HermiT, focused entailment, authentication, freshness, generation, and mapping-integrity checks.
+10. Compare validation outcomes against HEAD and the intermediate Platform-only state. Distinguish new regressions from approved-data changes and baseline defects.
+11. Identify outdated historical-snapshot expectations without modifying tests unless separately authorized.
+12. Preserve SOSA-2023, unrelated mappings, and all excluded local files.
+
+Reuse existing evidence and verification infrastructure. Avoid generating redundant reports.
+
+Do not stage, commit, tag, push, or prepare a release.
+
+Report exact workbook changes, semantic delta, satisfiability and entailment results, assessment counts, validation outcomes, and preservation evidence. Stop for review.
+

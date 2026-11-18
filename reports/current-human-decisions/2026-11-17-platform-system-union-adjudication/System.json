@@ -1,0 +1,107 @@
+{
+  "approved_instructions": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+    "sha256": "96f0e16a5e63f47e5421901f720e0172775c53d5d6feb932fba9a0abdb63a622"
+  },
+  "assessment_outcome": "formal_mapping_adopted",
+  "assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json",
+    "record_sha256": "c5d0b350a67154d9d39dcfe074f294ae6a3a03f99756e9984c21348cb1d19ab3",
+    "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+  },
+  "assessment_snapshot_scope": "Exact immediate predecessor unresolved System assessment.",
+  "authority_scope": "Explicit human approval of the current-track Platform and System union mappings only. No other mapping, assessment decision, source axiom or separately governed SOSA-2023 artifact is authorized to change.",
+  "authorization_type": "EXPLICIT_NEW_HUMAN_DECISION",
+  "before_after_comparison": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json",
+    "sha256": "0d68ab2033d29bca5eed7244e875b4e0ae117aa3e0c496dd28d23af41ba21078"
+  },
+  "cross_track_evidence_scope": "Inherited SOSA-next/SOSA-2023 references remain historical comparison context only and are not decision authority. The captured current-track human approval and pinned current source/target inputs supply authority.",
+  "current_predecessor_assessment_snapshot": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/assessment-before.json",
+    "record_sha256": "c5d0b350a67154d9d39dcfe074f294ae6a3a03f99756e9984c21348cb1d19ab3",
+    "sha256": "641ae548294bacd4b368d462298243e59f830086149c415340536f9904923258"
+  },
+  "decision_basis": "formal_mapping_approval",
+  "decision_date": "2026-11-17",
+  "decision_id": "urn:uuid:110fc48f-862b-4d7a-834e-9047ce8341e8",
+  "evidence_refs": [
+    "mappings/SSN2BFO-COMS.xlsx#Sheet1!36",
+    "imports/ssn.ttl#http://www.w3.org/ns/ssn/System",
+    "imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/System",
+    "imports/cco.ttl",
+    "reports/sosa-next-crosswalk-reconciliation.md",
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+    "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/before-after.json"
+  ],
+  "formal_coverage_evidence": {
+    "chain_mapping_row_ids": [],
+    "direct_formal_mapping": true,
+    "direct_mapping_row_ids": [
+      "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
+    ],
+    "explicit_blank": false,
+    "inherited_formal_mapping": false,
+    "inherited_routes": [],
+    "no_established_formal_route": false,
+    "rule_or_chain_route": false,
+    "rule_routes": [],
+    "source_iri": "http://www.w3.org/ns/ssn/System",
+    "source_kind": "class",
+    "typing_only_in_workbook": false,
+    "typing_row_ids": []
+  },
+  "formal_coverage_sha256": "d31823f40a09f55914496b97efdbe5203f19551299045e31fe6048cc13f6832c",
+  "formal_mapping_approved": true,
+  "formal_mapping_assertions": [
+    {
+      "predicate": "owl:equivalentClass",
+      "row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+      "target": "(bfo:MaterialEntity or cco:InformationContentEntity) and (ssn:implements some sosa:Procedure)"
+    }
+  ],
+  "input_hashes": {
+    "scope_sha256": "f9a1256e871c7421ecb75a37b23bcead31e505096ffe08adec0f7ad04acbf852",
+    "source_files_sha256": {
+      "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+      "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+      "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+      "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    },
+    "source_identity_sha256": "88ed514bd69f2579b9c2815f7afa7916419da8749b943a4ccbd63cff44d216f8",
+    "source_query_sha256": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9",
+    "target_sha256": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "workbook_sha256": "0f1ad87f3b48f0001bbe157d83f1a33447348c094a016cc2276730a10103ee5b"
+  },
+  "mapping_row_ids": [
+    "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead"
+  ],
+  "previous_formal_mapping_assertions": [
+    {
+      "predicate": "owl:equivalentClass",
+      "row_id": "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+      "target": "bfo:MaterialEntity and (ssn:implements some sosa:Procedure)"
+    }
+  ],
+  "previous_review_packet": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-before-review-packet.json",
+    "sha256": "1572ee12ab2554e672e9ffae9688668a43f13d850e02bb914b185ee59ddc6aba"
+  },
+  "question_response": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification.",
+  "rationale": "SOSA/SSN accommodates physical infrastructure and informational implementations of Systems and Platforms. Under this BFO/CCO alignment, the relevant referents are MaterialEntities or InformationContentEntities. InformationContentEntities are distinct from their physical bearers, although their existence depends on physical realization or concretization. This union is an adopted exhaustive classification, not an entailment of the source definitions or the DUL alignment. It is preferred to unrestricted Continuant because it intentionally excludes Sites and dependent continuants other than InformationContentEntities, as well as other nonmaterial continuants outside the adopted informational category. A System must implement at least one Procedure in an executable way; the existential does not, by itself, assert that a particular execution has occurred. The SSN implements relation may apply directly to an appropriate InformationContentEntity and is not automatically translated into a relation between physical bearers. The converse is supported by the pinned inverse relation between implements and implementedBy together with the Procedure restriction that all implementedBy values are Systems: an entity implementing a Procedure is a System. The equivalence therefore retains both the necessary implementation witness and the source-supported converse within the adopted exhaustive classification.",
+  "review_packet_scope": "Approved-candidate packet reconstructed with the authentic original unresolved question and unchanged nondecision assessment facts. The immediate predecessor state is preserved separately and is not rewritten.",
+  "review_packet_snapshot": {
+    "item_sha256": "8f435681c7af063ebbe629c9b704855574230871d50d04095d81b97332048f9b",
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/System-review-packet.json",
+    "sha256": "8f435681c7af063ebbe629c9b704855574230871d50d04095d81b97332048f9b"
+  },
+  "review_question": "Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation?",
+  "review_state": "final",
+  "review_timestamp": "2026-11-17T18:57:49.648843-05:00",
+  "reviewer_identity": "Alec Sculley",
+  "reviewer_identity_provenance": "Exact reviewer identity Alec Sculley retained from the explicit human instruction in this conversation.",
+  "schema_version": 1,
+  "semantic_change_kind": "Adopt the exhaustive MaterialEntity-or-InformationContentEntity union, retaining equivalence and the term-specific existential witness.",
+  "source_iri": "http://www.w3.org/ns/ssn/System",
+  "timestamp_scope": "Actual encoding timestamp for the explicit two-term union adjudication in this conversation."
+}

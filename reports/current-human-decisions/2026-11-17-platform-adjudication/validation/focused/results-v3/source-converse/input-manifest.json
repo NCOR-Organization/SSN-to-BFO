@@ -1,0 +1,48 @@
+{
+  "actual_execution_graph": {
+    "bytes": 92183,
+    "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/source-converse/java/platform-source-converse.rdf",
+    "sha256": "7b8f3241531caefd90a6d9a6b1fa4b991ad782614bdf6e75d5d0531aa6b19002"
+  },
+  "actual_execution_queries": {
+    "bytes": 475,
+    "path": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/source-converse/java/platform-source-converse.queries.json",
+    "sha256": "468da05fd31c8664cfdf7d77ebf9fcd89a7bd1c8e99131848c34d9fc11aa839d"
+  },
+  "driver": {
+    "path": "validate_platform_candidate.py",
+    "sha256": "15385682d62811c8b212ee0c36ac6eca3265bac27481c5b02ecdb4df9a616297"
+  },
+  "metadata_declaration_completion": "generate_mapping_from_coms.DL_PROFILE_DECLARATION_COMPLETION",
+  "metadata_declaration_tool": {
+    "path": "tools/generate_mapping_from_coms.py",
+    "sha256": "8d01c136394509d8a426707b652d6edfd58847cca737cfa4c7ec9e0b9e9ff5f3"
+  },
+  "probe": {
+    "path": "source-probe.ttl",
+    "sha256": "be73683c86782db122def8f8b568c743e3fee943565f3cf69d3460e187c0d935"
+  },
+  "queries": {
+    "path": "source-queries.json",
+    "sha256": "77bceed6dbeb27435e6de725fb4782eb70e556a0e0e40c937deeedc76ad385df"
+  },
+  "reconstruction_note": "Execution RDF/Java/normalized-query captures are reproducible diagnostic intermediates and are not selected for retention. Original execution paths and byte fingerprints remain historical evidence, not live portable references or publication-gate receipts.",
+  "removed_logical_axioms": 0,
+  "result_reference": "results-v3/source-converse/result.json",
+  "result_sha256": "94cd00eb793576125f9e0b819cd6df73d7c6c31e782a73fab6f0c262aebc8cb1",
+  "scope": "Authenticated source-converse proof over exactly the complete sosa.ttl and ssn.ttl premise files, with existing declaration-only completion and a fresh conservative probe name. Complete product closures are validated separately.",
+  "source_inputs": [
+    {
+      "bytes": 34854,
+      "path": "imports/sosa.ttl",
+      "sha256": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33"
+    },
+    {
+      "bytes": 38450,
+      "path": "imports/ssn.ttl",
+      "sha256": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383"
+    }
+  ],
+  "source_inputs_retain_in_existing_repository": true,
+  "unresolved_imports": []
+}

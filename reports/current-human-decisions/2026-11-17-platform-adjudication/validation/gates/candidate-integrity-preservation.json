@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "root": "/tmp/ssn-platform-candidate-integrity-6s4zan46/checkout",
+  "compared_input_file_count": 1931,
+  "all_snapshot_bytes_preserved": true,
+  "differences": [],
+  "git_status_after": " M SSN2BFO.ttl\n M mappings/SSN2BFO-COMS.xlsx\n M mappings/current-ssn-sosa-assessment.json\n M releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl\n M reports/coms-generation-validation.md\n M reports/coms-product-dispositions.json\n M reports/coms-vs-pre-coms-legacy-diff.md\n M reports/current-assessment/v2/current-ssn-sosa-coverage.json\n M reports/current-assessment/v2/current-ssn-sosa-coverage.md\n M reports/current-assessment/v2/current-ssn-sosa-human-review.json\n M reports/current-assessment/v2/current-ssn-sosa-human-review.md\n M reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.json\n M reports/current-assessment/v2/current-ssn-sosa-rationale-proposals.md\n M tests/test_current_assessment.py\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-before-review-packet.json\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/Platform-review-packet.json\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/Platform.json\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/approved-instructions.txt\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/assessment-before.json\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/before-after.json\n?? reports/current-human-decisions/2026-11-17-platform-adjudication/transition-authorities.json\n?? reports/current-semantic-workbook/transitions/9f891d92-ae02-4a2d-872b-7e4fc3468cf7.json\n?? reports/current-semantic-workbook/versions/b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7.xlsx\n",
+  "head": "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+}

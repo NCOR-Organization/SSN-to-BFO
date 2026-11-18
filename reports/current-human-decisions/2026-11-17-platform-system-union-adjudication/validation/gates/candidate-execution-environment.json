@@ -1,0 +1,72 @@
+{
+  "runtime": {
+    "python": "/opt/miniconda3/bin/python",
+    "python_version": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 10:07:17) [Clang 14.0.6 ]",
+    "rdflib_version": "7.6.0",
+    "rdflib_path": "/opt/miniconda3/lib/python3.12/site-packages/rdflib/__init__.py",
+    "openpyxl_version": "3.1.5",
+    "openpyxl_path": "/opt/miniconda3/lib/python3.12/site-packages/openpyxl/__init__.py",
+    "coms_path": "/Users/alecsculley/Documents/GitHub/CommonOntologyMappingSpecification/src/coms/__init__.py"
+  },
+  "runtime_identical_to_verified_baseline": true,
+  "source_dependency_hashes": {
+    "imports/sosa.ttl": "0dad03b30c7fdd085e2629dfc0ebd10bb1dacbda73b2c375fb295ab6861ffb33",
+    "imports/sosa-sampling.ttl": "f6e1d9451732bb132fa4ba567ca58fba752dcfbb43e66c5d4b660963bd0f7c1a",
+    "imports/ssn.ttl": "434b50fecb32e14b30aac28310a76935a33fdc397e70fce887fd653069a59383",
+    "imports/ssn-systems.ttl": "156870689643840c861aaead206458bcdfc9cded5f7107598dbf87e015861105",
+    "imports/cco.ttl": "3ad8f098ecb3d7ca27464a1edf2795b90c69573843447d51f090e6f1b30694f4",
+    "queries/source-classes-and-object-properties.rq": "6d00669a789d66a952674108924e831258706d1dd1c086cdc59412f422f427b9"
+  },
+  "pinned_source_dependencies_identical": true,
+  "environment_overrides": {
+    "PATH_prefix": "/opt/miniconda3/bin",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GIT_OPTIONAL_LOCKS": "0"
+  },
+  "canonical_command": [
+    "make",
+    "check"
+  ],
+  "integrity_command_script": "run_mapping_integrity_tests.py",
+  "fixture_or_validator_changes": false,
+  "integrity_command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/run_mapping_integrity_tests.py",
+    "--root",
+    "/var/folders/js/fx38x_5s22q9_bzsy77rykfh0000gn/T/ssn-union-candidate-integrity-c5vmr8zy/checkout",
+    "--output",
+    "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/candidate-integrity"
+  ],
+  "canonical_wrapper_command": [
+    "/opt/miniconda3/bin/python",
+    "-B",
+    "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-system-union-adjudication-2026-11-17/gate-comparison/run-candidate-gate.py"
+  ],
+  "runner_sources": [
+    {
+      "name": "run-candidate-gate.py",
+      "sha256": "0ee0ee8034eec1f77c3ca965c9973095499f680b841b16eb2078f443eeb9191d",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run-candidate-gate.py"
+    },
+    {
+      "name": "run_mapping_integrity_tests.py",
+      "sha256": "96bacb1f55720575f8593a5d8a7f65d7d158fe15c0d2b698b1e2bb0ec802356f",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/run_mapping_integrity_tests.py"
+    },
+    {
+      "name": "collect-symptom-inputs.py",
+      "sha256": "f2c89ddc7f0a1115ab853984f194d404513d35ff6ef624782b1e6d6b4f147200",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-symptom-inputs.py"
+    },
+    {
+      "name": "collect-strict-symptom.py",
+      "sha256": "08e5c18b9f5452d4b4aae9f9cfc45961fb7ac66cee4974575d34897f5208ec0b",
+      "byte_identical_to_prior_runner": true,
+      "repository_preserved_path": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/collect-strict-symptom.py"
+    }
+  ]
+}

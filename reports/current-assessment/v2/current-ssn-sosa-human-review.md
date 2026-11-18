@@ -1,6 +1,6 @@
 # Current SSN/SOSA human semantic review
 
-**68 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
+**66 finite unresolved source-term decisions.** Ordered: blanks, typing-only terms, strong equivalences, complex expressions, existentials, chains, cross-track differences, remaining target commitments.
 
 Workbook assertions remain unchanged. Repository facts and logical consequences below are separated from proposed alternatives. Recommendations do not approve a semantic change. Historical report claims are not current validation results. The JSON companion contains every RowID, bounded material source/target facts, exact target definitions, coverage path, and input hash. These evidence aids do not claim every ontology axiom or decide semantic adequacy. Incoming relations, restrictions and grouped disjointness retain their asserted subject and direction; derived evidence is separately labelled with its premises. Relevant source-native, target-native, and mapping property chains retain their distinct origins, ordered members, and resulting superproperties. Each chain runs from a member path to its superproperty; it does not decompose a superproperty edge.
 
@@ -26,14 +26,12 @@ Target facts are deduplicated in the glossary after the queue; each item identif
 | 2 | `ssn-system:hasSystemCapability` | Does every SystemCapability qualify for a uniform bearer relation despite its continuant-or-ProcessProfile union, or must the conditional query remain separate? |
 | 2 | `ssn-system:inCondition` | Is a domain-only row an intentional final outcome for the relation to environmental Conditions, and is the omitted range intentional? |
 | 3 | `sosa:Actuation` | Does every PlannedAct affecting an ActuatableProperty qualify as a SOSA Actuation, or are those only necessary conditions? |
-| 3 | `sosa:Platform` | Does the source justify both materiality and actual hosting of a System, and is every such host necessarily a Platform? |
 | 3 | `sosa:Result` | Does every result have to be information content or a material entity, and does every such output of the listed executions qualify as a SOSA Result? |
 | 3 | `sosa:Sample` | Must all current SOSA Samples be material and objects of Sampling, and are those conditions sufficient for samplehood, including statistical samples in source examples? |
 | 3 | `sosa:Sampler` | Should the earlier explicit necessary-and-sufficient Sampler decision remain final given unused samplers and the pinned track’s removal of actual Sampling existentials? |
 | 3 | `sosa:Sampling` | Are a PlannedAct, an actual prescribed Procedure, and an output Sample jointly sufficient for Sampling rather than merely necessary? |
 | 3 | `ssn:Property` | Is every BFO specifically dependent continuant and every ProcessProfile necessarily an SSN Property, as the equivalence asserts? |
 | 3 | `ssn:Stimulus` | Is every cause of an Observation a detectable change that qualifies as a source Stimulus, or only some causes? |
-| 3 | `ssn:System` | Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation? |
 | 4 | `sosa:ActuatableProperty` | Does every actuatable property actually inhere in or form an occurrent part of a FeatureOfInterest, and do the two BFO branches exhaust its source meaning? |
 | 4 | `sosa:Actuator` | Can an unused Actuator exist without an actual Actuation, despite the current realization and agent_in existential commitments? |
 | 4 | `sosa:FeatureOfInterest` | Is the four-category union a deliberate necessary upper bound for every FeatureOfInterest, including abstract or informational features, and does the wording “direct alignment deferred” accurately describe an active axiom? |
@@ -816,42 +814,6 @@ Asserted context (actual axiom subject and direction retained):
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
 
-## sosa:Platform
-
-State: **unreviewed**; priority 3; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!9` / `urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb`: `owl:equivalentClass` bfo:MaterialEntity and (sosa:hosts some ssn:System).
-
-**Source semantics:** A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (sosa:hosts owl:allValuesFrom ssn:System); rdfs:subClassOf (ssn:inDeployment owl:allValuesFrom ssn:Deployment)
-
-Source advisory signature: none recorded
-
-**Target semantics:** `bfo:BFO_0000040` (material entity; asserted_target_expression; glossary)
-
-**Logical consequences:** Every sosa:Platform satisfies bfo:MaterialEntity and (sosa:hosts some ssn:System); every instance satisfying that full expression is also sosa:Platform. Existential fillers denote actual individuals, including anonymous witnesses.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `ssn:Deployment rdfs:subClassOf (ssn:deployedOnPlatform owl:allValuesFrom sosa:Platform)`.
-- `source_native` / asserted: `ssn:System rdfs:subClassOf (sosa:isHostedBy owl:allValuesFrom sosa:Platform)`.
-
-**Pinned-track comparison:** `mappings/SOSA-next-to-BFO-COMS.xlsx#Sheet1!14`: `sosa:Platform` — `active`, `owl:equivalentClass` sosa:Asset and bfo:MaterialEntity and (sosa:hosts some sosa:Asset). Replace the current equivalence with sosa:Platform owl:equivalentClass sosa:Asset and bfo:MaterialEntity and (sosa:hosts some sosa:Asset). The pinned definition characterizes a Platform as an Asset that hosts other Assets, particularly Systems and Platforms; the external System-or-Platform filler is therefore still too narrow. The MaterialEntity conjunct preserves the project's existing materiality commitment. Comparison basis: same lexical term.
-
-**Human decision:** Does the source justify both materiality and actual hosting of a System, and is every such host necessarily a Platform?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain necessary material/hosting conditions under subclass only, or justify equivalence and the System filler against current source definitions.
-
-**Proposed recommendation:** Retain the artifact during review. Retain necessary material/hosting conditions under subclass only, or justify equivalence and the System filler against current source definitions.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!9`; `imports/sosa.ttl#http://www.w3.org/ns/sosa/Platform`; `imports/ssn.ttl#http://www.w3.org/ns/sosa/Platform`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
 ## sosa:Result
 
 State: **unreviewed**; priority 3; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
@@ -1092,47 +1054,6 @@ Asserted context (actual axiom subject and direction retained):
 **Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!35`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/Stimulus`; `imports/cco.ttl`; `reports/hermit-observation-sensor-stimulus-evaluation.md`; `reports/sosa-next-crosswalk-reconciliation.md`; `mappings/SOSA-next-to-BFO-COMS.xlsx`.
 
 **Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted. The pinned-track comparison records different assertions; the same local name is not proof of equivalent source meaning or identical target identity.
-
-## ssn:System
-
-State: **unreviewed**; priority 3; evidence confidence: high for extracted assertions and stated logical consequences; unresolved for the ontological decision.
-
-**Repository facts — mapping:**
-
-- `Sheet1!36` / `urn:uuid:66010702-8134-4e08-a972-f0767ec8dead`: `owl:equivalentClass` bfo:MaterialEntity and (ssn:implements some sosa:Procedure).
-
-**Source semantics:** System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems.
-
-Source structure: rdf:type owl:Class; rdfs:subClassOf (inverse(ssn:hasSubSystem) owl:allValuesFrom ssn:System); rdfs:subClassOf (sosa:isHostedBy owl:allValuesFrom sosa:Platform); rdfs:subClassOf (ssn-system:hasOperatingRange owl:allValuesFrom ssn-system:OperatingRange); rdfs:subClassOf (ssn-system:hasSurvivalRange owl:allValuesFrom ssn-system:SurvivalRange); rdfs:subClassOf (ssn-system:hasSystemCapability owl:allValuesFrom ssn-system:SystemCapability); rdfs:subClassOf (ssn:hasDeployment owl:allValuesFrom ssn:Deployment); rdfs:subClassOf (ssn:hasSubSystem owl:allValuesFrom ssn:System); rdfs:subClassOf (ssn:implements owl:allValuesFrom sosa:Procedure)
-
-Source advisory signature: none recorded
-
-**Target semantics:** `bfo:BFO_0000040` (material entity; asserted_target_expression; glossary)
-
-**Logical consequences:** Every ssn:System satisfies bfo:MaterialEntity and (ssn:implements some sosa:Procedure); every instance satisfying that full expression is also ssn:System. Existential fillers denote actual individuals, including anonymous witnesses.
-
-Asserted context (actual axiom subject and direction retained):
-- `source_native` / asserted: `sosa:Actuator rdfs:subClassOf ssn:System`.
-- `source_native` / asserted: `sosa:Platform rdfs:subClassOf (sosa:hosts owl:allValuesFrom ssn:System)`.
-- `source_native` / asserted: `sosa:Procedure rdfs:subClassOf (ssn:implementedBy owl:allValuesFrom ssn:System)`.
-- `source_native` / asserted: `sosa:Sampler rdfs:subClassOf ssn:System`.
-- `source_native` / asserted: `sosa:Sensor rdfs:subClassOf ssn:System`.
-- `source_native` / asserted: `ssn-system:OperatingRange rdfs:subClassOf (inverse(ssn-system:hasOperatingRange) owl:allValuesFrom ssn:System)`.
-- `source_native` / asserted: `ssn-system:SurvivalRange rdfs:subClassOf (inverse(ssn-system:hasSurvivalRange) owl:allValuesFrom ssn:System)`.
-- `source_native` / asserted: `ssn-system:SystemCapability rdfs:subClassOf (inverse(ssn-system:hasSystemCapability) owl:allValuesFrom ssn:System)`.
-- `source_native` / asserted: `ssn:Deployment rdfs:subClassOf (ssn:deployedSystem owl:allValuesFrom ssn:System)`.
-
-**Human decision:** Does materiality plus implementing an actual Procedure suffice for Systemhood, and does every source System require that actual Procedure relation?
-
-**Alternatives:**
-- Retain the exact current rows shown, with a source-specific argument for their necessary/sufficient conditions or their deliberate absence.
-- Retain a one-way MaterialEntity bound and separately defend the Procedure existential; do not assume consistency establishes sufficiency.
-
-**Proposed recommendation:** Retain the artifact during review. Retain a one-way MaterialEntity bound and separately defend the Procedure existential; do not assume consistency establishes sufficiency.
-
-**Evidence:** `mappings/SSN2BFO-COMS.xlsx#Sheet1!36`; `imports/ssn.ttl#http://www.w3.org/ns/ssn/System`; `imports/ssn-systems.ttl#http://www.w3.org/ns/ssn/System`; `imports/cco.ttl`; `reports/sosa-next-crosswalk-reconciliation.md`.
-
-**Notes:** Exact workbook facts control the current mapping state. Earlier reports may describe superseded assertions or reduced reasoning closures and are supplied as decision history, not as fresh validation. No semantic change is adopted.
 
 ## sosa:ActuatableProperty
 

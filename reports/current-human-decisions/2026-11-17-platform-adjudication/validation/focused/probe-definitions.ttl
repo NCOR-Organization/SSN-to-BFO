@@ -1,0 +1,19 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix probe: <urn:platform-adjudication-probe:> .
+
+probe:HostsSystem a owl:Class ; owl:equivalentClass [ a owl:Restriction ; owl:onProperty sosa:hosts ; owl:someValuesFrom ssn:System ] .
+probe:NewTarget a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( bfo:BFO_0000002 probe:HostsSystem ) ] .
+probe:OldTarget a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( bfo:BFO_0000040 probe:HostsSystem ) ] .
+probe:OnlySystemFillers a owl:Class ; owl:equivalentClass [ a owl:Restriction ; owl:onProperty sosa:hosts ; owl:allValuesFrom ssn:System ] .
+probe:SystemWithoutHost a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( ssn:System [ a owl:Class ; owl:complementOf [ a owl:Restriction ; owl:onProperty sosa:isHostedBy ; owl:someValuesFrom owl:Thing ] ] ) ] .
+probe:HostlessPlatform a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( sosa:Platform [ a owl:Class ; owl:complementOf probe:HostsSystem ] ) ] .
+probe:MaterialPlatform a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( sosa:Platform bfo:BFO_0000040 ) ] .
+probe:ImmaterialPlatform a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( sosa:Platform bfo:BFO_0000141 ) ] .
+probe:SpatialRegionPlatform a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( sosa:Platform bfo:BFO_0000006 ) ] .
+probe:OccurrentPlatform a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( sosa:Platform bfo:BFO_0000003 ) ] .
+probe:MaterialHost a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( bfo:BFO_0000040 probe:HostsSystem ) ] .
+probe:ImmaterialHost a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( bfo:BFO_0000141 probe:HostsSystem ) ] .
+probe:SpatialRegionHost a owl:Class ; owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( bfo:BFO_0000006 probe:HostsSystem ) ] .

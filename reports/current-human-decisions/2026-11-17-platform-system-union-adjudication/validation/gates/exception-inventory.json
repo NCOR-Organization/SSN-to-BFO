@@ -1,0 +1,623 @@
+{
+  "statement": "make check was executed and did not pass. Mapping-integrity suites also did not pass. No validation exception or release waiver is granted.",
+  "counts": {
+    "canonical": 47,
+    "mapping_integrity": 19,
+    "total_diagnostic_records_across_two_scopes": 66,
+    "unique_case_identities": 66,
+    "cross_scope_duplicate_identities": 0,
+    "setup_error_records": 1,
+    "method_diagnostic_records": 65
+  },
+  "not_independent_defect_count": true,
+  "classification_totals": {
+    "baseline": {
+      "Identical preexisting diagnostic": 44,
+      "Changed preexisting diagnostic attributable to approved data": 7,
+      "Newly failing fixture attributable to approved assessment data": 1,
+      "Changed preexisting diagnostic attributable to approved mapping data": 8,
+      "Newly failing fixture attributable to approved mapping data": 5,
+      "Identical preexisting diagnostic; set display order only": 1
+    },
+    "intermediate": {
+      "Identical preexisting diagnostic": 44,
+      "Changed preexisting diagnostic attributable to approved data": 7,
+      "Newly failing fixture attributable to approved assessment data": 1,
+      "Changed preexisting diagnostic attributable to approved mapping data": 11,
+      "Newly failing fixture attributable to approved mapping data": 2,
+      "Identical preexisting diagnostic; set display order only": 1
+    }
+  },
+  "overlaps": {
+    "exact_duplicate_test_identities": [],
+    "one_concrete_shared_stale_expectation": {
+      "actual_unchanged_alignment_core_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "obsolete_expected_sha256": "17695ef17379924449153b2c92ffaed6b57d497a1b2d1e854f584614cebec770",
+      "canonical": "test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation",
+      "mapping_integrity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation"
+    },
+    "shared_causes": "Distinct test identities can report the same historical hashes, documentary-chain failure, old transition locks, or changed strict-product inventory. Record totals must not be presented as independent defects."
+  },
+  "blocked_methods": {
+    "class": "test_cco_extension.CcoExtensionTests",
+    "count": 11,
+    "methods": [
+      "test_exact_identity_inventory_digest_categories_and_distribution",
+      "test_nonselected_product_policy_is_reconciled",
+      "test_wrong_disposition_category_and_imported_direct_selection_fail",
+      "test_missing_extra_duplicate_substituted_and_mismatched_identities_fail",
+      "test_direct_graph_identity_import_counts_and_structures",
+      "test_import_vocabulary_and_copied_declarations_are_rejected",
+      "test_determinism_reordered_inputs_and_existing_product_preservation",
+      "test_reordered_canonical_header_is_rejected_by_product_validator",
+      "test_fresh_process_generation_is_byte_deterministic",
+      "test_root_project_closure_and_fixed_term_resolution",
+      "test_pinned_closure_hermit_is_clean"
+    ],
+    "note": "Identical setup error blocks11methods; this is one error record, not11additional failures."
+  },
+  "standalone_documentary": {
+    "return_code": 1,
+    "output": "disconnected documentary update chain\n",
+    "same_preexisting_cause_as_repeated_canonical_errors": true,
+    "additional_independent_unittest_record": false,
+    "retained_log": "../documentary-check.log",
+    "log_sha256": "38bc5d19b04caa1be505d370d9a48630cb4197b593512c07966a49292a957d43"
+  },
+  "unreached_gate_stages": {
+    "executed": [
+      {
+        "name": "Turtle parse check",
+        "outcome": "PASS"
+      },
+      {
+        "name": "Current publication assessment regression tests",
+        "outcome": "FAIL (1)"
+      }
+    ],
+    "retained_exact_stage_inventory": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/gates/canonical-stage-boundary.json",
+    "retained_stage_inventory_sha256": "b7ad9bd7bf0465fa1039c25b46d3c154540ca542117ff02cf14c339c6d939d1d",
+    "validator_sha256": "94f4267cb415e127086cbfb2da36a64928901f39301792d96079959b3e833c24",
+    "makefile_sha256": "5cb86eb03ae01b0756edbaff51c3d8ad23a98494bfc1dfa77330633bc7e1db4d",
+    "note": "Same conditional short circuit:44 later run_command stages, run_validation_suite compile_check, and subsequent Makefile checks are not reached. Focused separately executed checks do not convert the canonical gate to a pass."
+  },
+  "separate_formatting_issue": {
+    "path": "reports/current-human-decisions/2026-11-17-platform-system-union-adjudication/approved-instructions.txt",
+    "issue": "One extra blank line at EOF, retained under immutable evidence contract; parent report documents separately.",
+    "included_in_test_diagnostic_count": false,
+    "waived": false
+  },
+  "partial_run_note": "One earlier candidate execution was interrupted at parent direction while a formatting correction was considered and then rejected. No input bytes changed. Partial logs remain outside the repository and are not included in completed validation counts; the full same-input rerun supplies this inventory.",
+  "scope_qualification": "See final-source-scope-equivalence.json: clean selected1101 inputs tested; dirty main also retains one preexisting explicitly excluded Excel lock file.",
+  "demonstrated_unexplained_regressions": [],
+  "records": [
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity",
+      "test": "test_added_and_removed_rows_keep_exact_stable_identity (test_current_semantic_workbook.SemanticWorkbookTests.test_added_and_removed_rows_keep_exact_stable_identity)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged",
+      "test": "test_baseline_exact_bytes_and_counts_are_unchanged (test_current_semantic_generation.SemanticGenerationTests.test_baseline_exact_bytes_and_counts_are_unchanged)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail",
+      "test": "test_branching_and_missing_transitions_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_branching_and_missing_transitions_fail)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged",
+      "test": "test_creation_keeps_live_and_historical_bytes_unchanged (test_current_semantic_workbook.SemanticWorkbookTests.test_creation_keeps_live_and_historical_bytes_unchanged)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail",
+      "test": "test_cycle_attempt_and_stale_old_version_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_cycle_attempt_and_stale_old_version_fail)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails",
+      "test": "test_e_authenticated_semantic_transition_without_required_applicability_fails (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_e_authenticated_semantic_transition_without_required_applicability_fails)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states",
+      "test": "test_exact_manifest_rejects_omitted_cells_and_forged_states (test_current_semantic_workbook.SemanticWorkbookTests.test_exact_manifest_rejects_omitted_cells_and_forged_states)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes",
+      "test": "test_explicit_inheritance_approvals_bind_exact_candidate_routes (test_current_semantic_workbook.SemanticWorkbookTests.test_explicit_inheritance_approvals_bind_exact_candidate_routes)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening",
+      "test": "test_f_authenticated_material_determination_requires_reopening (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_f_authenticated_material_determination_requires_reopening)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix",
+      "test": "test_formal_mapping_finality_bypass_matrix (test_current_assessment.CurrentAssessmentTests.test_formal_mapping_finality_bypass_matrix)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions",
+      "test": "test_g_authenticated_non_material_determinations_preserve_decisions (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_g_authenticated_non_material_determinations_preserve_decisions)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes",
+      "test": "test_later_transition_binds_exact_predecessor_record_bytes (test_current_semantic_workbook.SemanticWorkbookTests.test_later_transition_binds_exact_predecessor_record_bytes)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions",
+      "test": "test_multiple_semantic_and_documentary_transitions (test_current_semantic_workbook.SemanticWorkbookTests.test_multiple_semantic_and_documentary_transitions)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior",
+      "test": "test_no_semantic_transition_retains_baseline_behavior (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_no_semantic_transition_retains_baseline_behavior)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files",
+      "test": "test_qualified_release_preserves_historical_protocol_and_governed_files (test_current_checkpoint_successor.CurrentCheckpointIntegrationTests.test_qualified_release_preserves_historical_protocol_and_governed_files)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions",
+      "test": "test_real_five_term_transition_preserves_history_and_sample_decisions (test_current_semantic_applicability.SemanticApplicabilityTests.test_real_five_term_transition_preserves_history_and_sample_decisions)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities",
+      "test": "test_real_semantic_transition_advances_products_without_replacing_old_authorities (test_current_semantic_preservation.SemanticPreservationTests.test_real_semantic_transition_advances_products_without_replacing_old_authorities)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live",
+      "test": "test_snapshot_tampering_fails_even_with_unchanged_live (test_current_semantic_workbook.SemanticWorkbookTests.test_snapshot_tampering_fails_even_with_unchanged_live)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail",
+      "test": "test_source_target_rule_and_evidence_tampering_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_source_target_rule_and_evidence_tampering_fail)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint",
+      "test": "test_three_current_new_decisions_preserve_the_checkpoint (test_current_semantic_preservation.LiveAdjudicationPreservationTests.test_three_current_new_decisions_preserve_the_checkpoint)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints",
+      "test": "test_validated_exact_product_generation_preserves_historical_fingerprints (test_current_semantic_preservation.SemanticPreservationTests.test_validated_exact_product_generation_preserves_historical_fingerprints)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering",
+      "test": "test_validated_transition_enables_exact_counts_and_rendering (test_current_semantic_generation.SemanticGenerationTests.test_validated_transition_enables_exact_counts_and_rendering)",
+      "kind": "ERROR",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency",
+      "test": "test_a_exact_original_workbook_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_a_exact_original_workbook_preserves_sufficiency)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity",
+      "test": "test_accepted_checkpoint_keeps_original_baseline_and_identity (test_current_semantic_preservation.SemanticPreservationTests.test_accepted_checkpoint_keeps_original_baseline_and_identity)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation",
+      "test": "test_authorized_current_history_passes_before_and_after_generation (test_current_cross_track_preservation.CurrentCrossTrackPreservationTests.test_authorized_current_history_passes_before_and_after_generation)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency",
+      "test": "test_b_authenticated_d_only_transition_preserves_sufficiency (test_current_evidence_freshness.CurrentEvidenceFreshnessTests.test_b_authenticated_d_only_transition_preserves_sufficiency)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content",
+      "test": "test_candidate_publication_evidence_is_not_historical_protected_content (test_current_publication_preservation.CurrentPreservationTests.test_candidate_publication_evidence_is_not_historical_protected_content)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic",
+      "test": "test_documentary_only_edit_cannot_be_semantic (test_current_semantic_workbook.SemanticWorkbookTests.test_documentary_only_edit_cannot_be_semantic)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes",
+      "test": "test_external_coms_mutable_hash_cannot_redefine_expected_bytes (test_current_publication_preservation.CurrentPreservationTests.test_external_coms_mutable_hash_cannot_redefine_expected_bytes)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report",
+      "test": "test_four_documentary_bindings_retain_exact_history_and_live_report (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_four_documentary_bindings_retain_exact_history_and_live_report)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers",
+      "test": "test_governed_bytes_and_headers (test_current_source_identity.CurrentIdentityTests.test_governed_bytes_and_headers)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change",
+      "test": "test_historical_authentication_is_independent_of_unrecorded_current_change (test_current_semantic_applicability.SemanticApplicabilityTests.test_historical_authentication_is_independent_of_unrecorded_current_change)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed",
+      "test": "test_historical_final_baseline_is_exact_and_fixed (test_current_assessment.CurrentAssessmentTests.test_historical_final_baseline_is_exact_and_fixed)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved assessment data",
+      "classification_vs_intermediate": "Newly failing fixture attributable to approved assessment data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records",
+      "test": "test_live_assessment_summary_matches_actual_records (test_current_documentation_policy.CurrentDocumentationPolicyTests.test_live_assessment_summary_matches_actual_records)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot",
+      "test": "test_maintained_live_workbook_resolves_to_immutable_decision_snapshot (test_current_documentary_workbook.DocumentaryWorkbookTests.test_maintained_live_workbook_resolves_to_immutable_decision_snapshot)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered",
+      "test": "test_prepared_determinations_are_not_active_and_cannot_be_tampered (test_current_semantic_applicability.SemanticApplicabilityTests.test_prepared_determinations_are_not_active_and_cannot_be_tampered)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition",
+      "test": "test_product_drift_requires_semantic_transition (test_current_semantic_preservation.SemanticPreservationTests.test_product_drift_requires_semantic_transition)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval",
+      "test": "test_queue_complete_and_rationales_separate_documentation_from_approval (test_current_assessment.CurrentAssessmentTests.test_queue_complete_and_rationales_separate_documentation_from_approval)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration",
+      "test": "test_real_documentary_chain_and_forged_manifest_integration (test_current_publication_preservation.CurrentPreservationTests.test_real_documentary_chain_and_forged_manifest_integration)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping",
+      "test": "test_removal_authority_cannot_add_mapping (test_current_semantic_workbook.SemanticWorkbookTests.test_removal_authority_cannot_add_mapping)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership",
+      "test": "test_rowid_evolution_rejects_unrelated_bad_starting_membership (test_current_semantic_applicability.SemanticApplicabilityTests.test_rowid_evolution_rejects_unrelated_bad_starting_membership)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail",
+      "test": "test_unauthorized_semantic_edit_and_documentary_impersonation_fail (test_current_semantic_workbook.SemanticWorkbookTests.test_unauthorized_semantic_edit_and_documentary_impersonation_fail)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass",
+      "test": "test_unchanged_protected_bytes_pass (test_current_publication_preservation.CurrentPreservationTests.test_unchanged_protected_bytes_pass)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides",
+      "test": "test_unrecorded_semantic_workbook_cannot_obtain_count_overrides (test_current_semantic_generation.SemanticGenerationTests.test_unrecorded_semantic_workbook_cannot_obtain_count_overrides)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes",
+      "test": "test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes (test_current_semantic_applicability.SemanticApplicabilityTests.test_unreviewed_membership_derivation_rejects_finalized_and_unrecorded_changes)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline",
+      "test": "test_valid_documentary_chain_preserves_pinned_baseline (test_current_publication_preservation.CurrentPreservationTests.test_valid_documentary_chain_preserves_pinned_baseline)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "canonical",
+      "identity": "test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies",
+      "test": "test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies (test_current_retained_evidence_integration.RetainedRepositoryHistoryTests.test_whole_suite_inputs_bind_retained_and_nested_decision_dependencies)",
+      "kind": "FAIL",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_cco_extension.CcoExtensionTests",
+      "test": "setUpClass (test_cco_extension.CcoExtensionTests)",
+      "kind": "errors",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_authenticated_three_axiom_delta_preserves_raw_baseline_guard",
+      "kind": "failures",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "test": "test_cco_extension.RawCcoTransitionTests.test_historical_fixture_is_independent_of_a_simulated_head_advance",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_current_generation_context_preserves_raw_baseline_and_exact_delta",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "test": "test_generate_mapping_from_coms.ComsAuthorityMigrationTests.test_first_successful_update_creates_initially_absent_strict_bfo_mapping",
+      "kind": "failures",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Newly failing fixture attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "test": "test_modular_products.ModularProductTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "classification_vs_baseline": "Identical preexisting diagnostic; set display order only",
+      "classification_vs_intermediate": "Identical preexisting diagnostic; set display order only"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "test": "test_modular_products.ModularProductTests.test_fixed_local_source_closure_is_offline_and_import_free",
+      "kind": "failures",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "test": "test_modular_products.RawModularProductGuardTests.test_current_partition_requires_authenticated_context_and_restores_baseline",
+      "kind": "failures",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_disposition_delta_matches_authenticated_transition",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "test": "test_product_dispositions.ProductDispositionTests.test_current_workbook_totals_and_product_order",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "test": "test_strict_bfo_mapping.RawStrictBfoGuardTests.test_current_context_preserves_baseline_strict_axioms_and_bytes",
+      "kind": "failures",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_deterministic_serialization_and_alignment_core_preservation",
+      "kind": "failures",
+      "classification_vs_baseline": "Identical preexisting diagnostic",
+      "classification_vs_intermediate": "Identical preexisting diagnostic"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_direct_graph_identity_import_counts_and_structures",
+      "kind": "failures",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Newly failing fixture attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_exact_selection_identity_lock_and_distribution",
+      "kind": "failures",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_fixed_pinned_merged_cco_bfo_closure",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_pinned_closure_hermit_is_clean",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_processed_row_and_audit_order_do_not_affect_strict_bfo_output",
+      "kind": "failures",
+      "classification_vs_baseline": "Newly failing fixture attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_root_and_project_module_reconciliation",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    },
+    {
+      "scope": "mapping-integrity",
+      "identity": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "test": "test_strict_bfo_mapping.StrictBfoMappingTests.test_three_authorized_blanks_remove_only_non_strict_axioms",
+      "kind": "failures",
+      "classification_vs_baseline": "Changed preexisting diagnostic attributable to approved mapping data",
+      "classification_vs_intermediate": "Changed preexisting diagnostic attributable to approved mapping data"
+    }
+  ]
+}

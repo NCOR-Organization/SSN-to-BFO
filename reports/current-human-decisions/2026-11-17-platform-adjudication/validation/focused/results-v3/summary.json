@@ -1,0 +1,439 @@
+{
+  "baseline_workbook_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+  "candidate_workbook_sha256": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7",
+  "counts": {
+    "AUTHORITATIVE_AXIOM_COUNT": 102,
+    "GOVERNED_ROW_COUNT": 108,
+    "ZERO_AXIOM_ROW_COUNT": 6
+  },
+  "deterministic_generation": true,
+  "focused_entailments": {
+    "baseline": [
+      {
+        "entailed": true,
+        "id": "Platform-Continuant",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Platform-materiality-required-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Platform-hosted-System-necessary",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-forward",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-reverse",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-still-sufficient",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-necessary-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "hostless-Platform-unsatisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "material-Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "immaterial-Platform-unsatisfiable-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "spatial-region-Platform-unsatisfiable-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "occurrent-Platform-unsatisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "material-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "immaterial-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "spatial-region-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-universal-hosting-System-retained",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-converse-independent-of-target-conjunct",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "System-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Sensor-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Actuator-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Actuator-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Actuator-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Actuator-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Sampler-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-without-host-remains-satisfiable",
+        "passed": true
+      }
+    ],
+    "candidate": [
+      {
+        "entailed": true,
+        "id": "Platform-Continuant",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Platform-materiality-required-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Platform-hosted-System-necessary",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-forward",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "new-expression-reverse",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "old-expression-still-sufficient",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "old-expression-necessary-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "hostless-Platform-unsatisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "material-Platform-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "immaterial-Platform-unsatisfiable-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "spatial-region-Platform-unsatisfiable-only-in-baseline",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "occurrent-Platform-unsatisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "material-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "immaterial-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "spatial-region-host-classifies-as-Platform",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-universal-hosting-System-retained",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "source-converse-independent-of-target-conjunct",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "System-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Sensor-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sensor-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Actuator-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Actuator-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Actuator-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Actuator-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "Sampler-satisfiable",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-remains-material",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-Platform-classification-preserved",
+        "passed": true
+      },
+      {
+        "entailed": true,
+        "id": "Sampler-remains-System",
+        "passed": true
+      },
+      {
+        "entailed": false,
+        "id": "System-without-host-remains-satisfiable",
+        "passed": true
+      }
+    ]
+  },
+  "interpretation": "Candidate retains a hosted-System witness and allows satisfiable material and immaterial/spatial-region Platforms while excluding occurrent Platforms. The source-only inverse/universal pattern independently proves hosts some System sufficient for Platform. The four related classes retain materiality, satisfiability and System subclass structure; the baseline Sensor and Sampler Platform classifications are retained, while System and Actuator are not forced to be Platforms.",
+  "logical_delta": {
+    "added": "EquivalentClasses(sosa:Platform ObjectIntersectionOf(bfo:Continuant ObjectSomeValuesFrom(sosa:hosts ssn:System)))",
+    "removed": "EquivalentClasses(sosa:Platform ObjectIntersectionOf(bfo:MaterialEntity ObjectSomeValuesFrom(sosa:hosts ssn:System)))"
+  },
+  "product_deltas": [
+    {
+      "baseline_sha256": "c1a58cc8467becabb352da185f44d7911a76e580c983639d3e3152260a50518e",
+      "baseline_triples": 1047,
+      "byte_identical": false,
+      "candidate_sha256": "7bc3d7990837cf3d178ec5d1d622666c79123d56ed8cdec9e15df0c947654669",
+      "candidate_triples": 1047,
+      "only_approved_axiom_replacement": true,
+      "product": "integrated"
+    },
+    {
+      "baseline_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "baseline_triples": 64,
+      "byte_identical": true,
+      "candidate_sha256": "cb5a7d89b0a54cd3a0bbf0b7644d0e8b0ab8c77f8878e7d9fc0e29de5b7a4ee5",
+      "candidate_triples": 64,
+      "only_approved_axiom_replacement": true,
+      "product": "alignment_core"
+    },
+    {
+      "baseline_sha256": "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+      "baseline_triples": 134,
+      "byte_identical": false,
+      "candidate_sha256": "2e29952e36faffde6a592ebb9f9217d2199897c44b7d311940ee6d540bb6a9c0",
+      "candidate_triples": 134,
+      "only_approved_axiom_replacement": true,
+      "product": "strict_bfo_mapping"
+    },
+    {
+      "baseline_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "baseline_triples": 863,
+      "byte_identical": true,
+      "candidate_sha256": "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428",
+      "candidate_triples": 863,
+      "only_approved_axiom_replacement": true,
+      "product": "cco_extension"
+    }
+  ],
+  "product_validation": {
+    "baseline/integrated": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/alignment_core": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/cco_extension": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/integrated": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    },
+    "candidate/strict_bfo_mapping": {
+      "named_unsatisfiable_classes": 0,
+      "passed": true,
+      "profile_return_code": 0
+    }
+  },
+  "source_converse": [
+    {
+      "entailed": true,
+      "id": "source-inverse-universal-proves-converse",
+      "passed": true
+    },
+    {
+      "entailed": false,
+      "id": "source-does-not-require-hosted-System-witness",
+      "passed": true
+    }
+  ],
+  "status": "PASS"
+}

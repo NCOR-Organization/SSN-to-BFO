@@ -1,0 +1,18 @@
+{
+  "scope": "New external diagnostic probes only; no repository test or mapping changes",
+  "first_attempt": "results/baseline/entailment-result.json",
+  "first_attempt_product_checks": "All five complete product profile and HermiT checks passed; baseline probe run found two unexpected baseline entailments",
+  "correction": {
+    "Sensor-not-automatically-a-Platform": {
+      "expected_before": false,
+      "actual_baseline": true,
+      "expected_after": true
+    },
+    "Sampler-not-automatically-a-Platform": {
+      "expected_before": false,
+      "actual_baseline": true,
+      "expected_after": true
+    }
+  },
+  "reason": "Retain baseline related-class classification in candidate. The original assumptions were incorrect probe expectations, not a candidate regression. All first-attempt raw outputs remain preserved."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "changed_cells": 2,
+  "changed_archive_parts": [
+    "xl/worksheets/sheet1.xml"
+  ],
+  "all_other_workbook_xml_unchanged": true,
+  "exact_literal_text_replacements_only": true,
+  "old_sha256": "e7e2ec225e326b0b2bb232591f4949b378876937e6bcb90a3917bfd82d5e87dd",
+  "new_sha256": "b9c674c762a748184d3ca4770a7dd769a55344db18fb8174ced035306b73cef7",
+  "semantic_projection_sha256": "c7a63311ce8b0257489ee2a888e5b8d8314406844c6543b26640936966b4ff3e"
+}

@@ -1,0 +1,244 @@
+{
+  "driver_relative_dependencies": [
+    "probe-definitions.ttl",
+    "baseline-queries.json",
+    "candidate-queries.json",
+    "source-probe.ttl",
+    "source-queries.json"
+  ],
+  "driver_relative_dependencies_all_selected": true,
+  "external_output_required": true,
+  "files": [
+    {
+      "bytes": 2677,
+      "purpose": "Scope, reproduction, limitations, and diagnostic history",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/README.md",
+      "sha256": "411cd877378fab95111583dec63ad76d38085167c246204e9cdd33b23c792364",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/README.md"
+    },
+    {
+      "bytes": 10201,
+      "purpose": "Final reproducible bounded validation driver",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validate_platform_candidate.py",
+      "sha256": "15385682d62811c8b212ee0c36ac6eca3265bac27481c5b02ecdb4df9a616297",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validate_platform_candidate.py"
+    },
+    {
+      "bytes": 2094,
+      "purpose": "Conservative fresh-name test definitions",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/probe-definitions.ttl",
+      "sha256": "f1d930386e3396f389d2b0d8a620f987144cd8ff41568df8e0495a2fc72f5845",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/probe-definitions.ttl"
+    },
+    {
+      "bytes": 7863,
+      "purpose": "Final baseline expectation inventory",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/baseline-queries.json",
+      "sha256": "c27cde6d56afa6f23b22a3c014cdbd4c117dc70e587e34dc3ed3ddc87fc1f18a",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/baseline-queries.json"
+    },
+    {
+      "bytes": 7867,
+      "purpose": "Final candidate expectation inventory",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/candidate-queries.json",
+      "sha256": "be78a767af4193d49beda0825099091ce0bb5f706aa7cea600724ed35b77fc33",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/candidate-queries.json"
+    },
+    {
+      "bytes": 299,
+      "purpose": "Minimal native-source existential definition",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-probe.ttl",
+      "sha256": "be73683c86782db122def8f8b568c743e3fee943565f3cf69d3460e187c0d935",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/source-probe.ttl"
+    },
+    {
+      "bytes": 534,
+      "purpose": "Native source converse and absence-of-witness expectations",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-queries.json",
+      "sha256": "77bceed6dbeb27435e6de725fb4782eb70e556a0e0e40c937deeedc76ad385df",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/source-queries.json"
+    },
+    {
+      "bytes": 28942,
+      "purpose": "Pinned source/target evidence and formal-versus-interpretive qualifications",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-target-evidence.json",
+      "sha256": "60c03d119ecc341303a177534b4ef071221d9da8dda234148195b9e9ebfe18d0",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/source-target-evidence.json"
+    },
+    {
+      "bytes": 4068,
+      "purpose": "Final named hierarchy comparison and preexisting Sensor/Sampler route",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/related-class-comparison.json",
+      "sha256": "c84a337e8f8844de42a1582e80d8b053434b50bf24743d15f1d6ced97d8c6bc1",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/related-class-comparison.json"
+    },
+    {
+      "bytes": 833,
+      "purpose": "Transparent correction of two new diagnostic assumptions using baseline results",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/probe-expectation-correction.json",
+      "sha256": "4983edb0ce19bae7a2ccbdbf0ab2d5e4175020effb4d48e230120293753bca5e",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/probe-expectation-correction.json"
+    },
+    {
+      "bytes": 1026,
+      "purpose": "Four-source missing-SKOS diagnostic and bounded proof scope",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/source-proof-scope-note.json",
+      "sha256": "ce669d6523870d2e63fd5b841053545e42be6eb046e2c74619de7c3a409188d4",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/source-proof-scope-note.json"
+    },
+    {
+      "bytes": 9068,
+      "purpose": "Exact full stdout/stderr of passing final driver run",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation-v3.log",
+      "sha256": "f2831737f8345ad60a66c9a4f44837192d9bcb6ec7a63e88f4926ff1d44d609f",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validation-v3.log"
+    },
+    {
+      "bytes": 11595,
+      "purpose": "Final consolidated checks",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/summary.json",
+      "sha256": "c8074023b6fa8e002b026ee4d209cba5a2d56f9036c35a942818b19e0d1aafea",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/summary.json"
+    },
+    {
+      "bytes": 1428,
+      "purpose": "Exact product hashes and approved-only logical delta",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/product-deltas.json",
+      "sha256": "5bec548171471fa0e661f1184007bc13dc7d5f1943ee0016987729eb35288bf4",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/product-deltas.json"
+    },
+    {
+      "bytes": 1295,
+      "purpose": "Complete baseline integrated profile/HermiT evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/baseline/integrated-validation-result.json",
+      "sha256": "4c57f8ba7dc49208667dd64278cbe7d1e0b3ee968bfdea8c3134967dc49aad71",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/baseline/integrated-validation-result.json"
+    },
+    {
+      "bytes": 1298,
+      "purpose": "Complete candidate integrated profile/HermiT evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/integrated-validation-result.json",
+      "sha256": "380a00448d33819485b6619f709d9ea0273be341c303b1a1bc60d170eba8f28a",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/integrated-validation-result.json"
+    },
+    {
+      "bytes": 1312,
+      "purpose": "Complete candidate alignment-core profile/HermiT evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/alignment_core-validation-result.json",
+      "sha256": "27337d534d28525f37755dea64625623ea5b107d3f6ea086e99ba0148574febb",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/alignment_core-validation-result.json"
+    },
+    {
+      "bytes": 1360,
+      "purpose": "Complete candidate strict-BFO profile/HermiT evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/strict_bfo_mapping-validation-result.json",
+      "sha256": "b0cd97f462a448e372d7a86c387f7c6258856d501ff3f23e91721991708b6735",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/strict_bfo_mapping-validation-result.json"
+    },
+    {
+      "bytes": 1354,
+      "purpose": "Complete candidate CCO-extension profile/HermiT evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/cco_extension-validation-result.json",
+      "sha256": "cef46f00446c3e9960c6c97d7717954b40049c01109af11cc76b822969a97650",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/cco_extension-validation-result.json"
+    },
+    {
+      "bytes": 136100,
+      "purpose": "34 baseline ticket-bound diagnostic entailment results",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/baseline/entailment-result.json",
+      "sha256": "cd387daee5ac559464c7816457981b23097c32886b696e52f6ab256192d02d38",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/baseline/entailment-result.json"
+    },
+    {
+      "bytes": 136128,
+      "purpose": "34 candidate ticket-bound diagnostic entailment results",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/candidate/entailment-result.json",
+      "sha256": "a26fbf922e8f2146b5151ae225e3d74d873c63faa3695d2fbb9a8775ad79d131",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/candidate/entailment-result.json"
+    },
+    {
+      "bytes": 28609,
+      "purpose": "Two final source-only diagnostic results",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/source-converse/result.json",
+      "sha256": "94cd00eb793576125f9e0b819cd6df73d7c6c31e782a73fab6f0c262aebc8cb1",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/source-converse/result.json"
+    },
+    {
+      "bytes": 2501,
+      "purpose": "Exact source inputs and reproducible diagnostic-input binding",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v3/source-converse/input-manifest.json",
+      "sha256": "8a3007388f2b57f6dd487e0350a0755ed17cbfa5c997dbce9cc9bdc68c8368dc",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v3/source-converse/input-manifest.json"
+    },
+    {
+      "bytes": 1996,
+      "purpose": "Initial incorrect-baseline-expectation attempt, full unaltered log",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation.log",
+      "sha256": "27f590d6dabffa4c9f9b862a1fc119ccb5610eacb38d4d146760b809ca5b001b",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validation.log"
+    },
+    {
+      "bytes": 136037,
+      "purpose": "Initial two incorrect baseline expectation diagnostics, unaltered",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results/baseline/entailment-result.json",
+      "sha256": "ea50fadfe45aadbd2e03b130277cb6f60b1ff3fe9edebed42d4e0a6fd0ec2523",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results/baseline/entailment-result.json"
+    },
+    {
+      "bytes": 7845,
+      "purpose": "Original initial baseline expectations; substantively differs from final primary query file",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results/baseline/entailment-queries.json",
+      "sha256": "fcb481714aa5bf014fc6f5ed0fe48d13fc346c053b82ae544dcb12acf55ec9be",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results/baseline/entailment-queries.json"
+    },
+    {
+      "bytes": 1415,
+      "purpose": "Four-source proof attempt, full unaltered log",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validation-v2.log",
+      "sha256": "4260e9a6649b2b860df51e123d3511eef7163203af920bb6c860cce025b7a1eb",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validation-v2.log"
+    },
+    {
+      "bytes": 31694,
+      "purpose": "Preserved four-source technical_failure with logical/profile PASS and unresolved SKOS evidence",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/results-v2/source-converse/result.json",
+      "sha256": "45e95ed64cf6f5b524e43886bef2239c4158def2deebe19491738e481481ac58",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/results-v2/source-converse/result.json"
+    },
+    {
+      "bytes": 9983,
+      "purpose": "Exact driver used for four-source diagnostic, necessary to reproduce its distinct scope",
+      "relative_target": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused/validate_platform_candidate-four-source-diagnostic.py",
+      "sha256": "ce97c9fd329157ce24d746c48f685c1db0f8608ae0d0157e5ab527d84e9b3076",
+      "source": "/Users/alecsculley/.codex/visualizations/2026/10/25/01a174de-bda9-76a0-ac10-6736aa132ae5/platform-adjudication-2026-11-17/focused/validate_platform_candidate-four-source-diagnostic.py"
+    }
+  ],
+  "no_files_deleted": true,
+  "omissions": [
+    {
+      "group": "Generated integrated/core/strict/CCO Turtle products and merged/profile/reasoned ontology captures",
+      "reason": "Derivable from retained workbook authorities, pinned dependencies, and unchanged existing generation APIs. Exact hashes/results retained; copies would duplicate maintained products."
+    },
+    {
+      "group": "Final normalized query duplicates",
+      "reason": "Final primary query JSONs are retained; semantic.run_graph and driver JSON serialization exactly define intermediate query bytes. Initial baseline query copy is retained because its two expectations differ substantively."
+    },
+    {
+      "group": "Repeated product-validation and passing entailment results in attempts 1/2",
+      "reason": "Final attempt revalidates identical workbook/dependency bytes, with full final raw log and all product/entailment results retained. Only distinct failed diagnostic outputs are necessary from earlier attempts."
+    },
+    {
+      "group": "Java build outputs, execution RDF, invocation intermediates and repetitive compiler outputs",
+      "reason": "Reproducible diagnostic execution intermediates; top-level results retain actual input/query fingerprints, execution binding, raw reasoner payload, and attempt results. They are not active authentication requirements or publication execution slots."
+    },
+    {
+      "group": "create_platform_probes.py and generation-snapshots.json",
+      "reason": "Scratch synthesis script and generated per-row snapshots are redundant with retained literal probe/query inputs, authority workbook transition history, final summary and exact product delta."
+    }
+  ],
+  "retention_status": "These are diagnostic evidence and reproducible inputs. Absolute runtime paths inside immutable result records preserve where execution occurred; they are not claims that generated captures exist in a clean checkout or that these diagnostics satisfy publication evidence slots.",
+  "selected_bytes": 587422,
+  "selected_file_count": 29,
+  "status": "prepared_external_only_no_repository_edits",
+  "target_base": "reports/current-human-decisions/2026-11-17-platform-adjudication/validation/focused"
+}

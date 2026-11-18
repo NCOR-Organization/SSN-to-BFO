@@ -94,6 +94,22 @@ EXPECTED_AXIOM_IDS = frozenset(
 )
 
 
+# Keep the original nineteen-row/axiom locks above for historical checks.
+# Only these two approved mappings leave the pure-BFO product for the CCO union.
+UNION_RECLASSIFIED_ROW_IDS = frozenset({
+    "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb",
+    "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+})
+UNION_RECLASSIFIED_AXIOM_IDS = frozenset({
+    "sha256:480ce3257f6b1baaaacee7b06ce730cdf63a7dd14c16b4a1bedc09597a5d96ef",
+    "sha256:0db60d0e9764151246aa7f88574dbc9fb112eecb2191d00822192f51ec298678",
+})
+CURRENT_ROW_IDS = EXPECTED_ROW_IDS - UNION_RECLASSIFIED_ROW_IDS
+CURRENT_AXIOM_IDS = EXPECTED_AXIOM_IDS - UNION_RECLASSIFIED_AXIOM_IDS
+PRE_UNION_COMMIT = "3376e1c74e846e40e6863ec8b1f1c255349aa2d3"
+CURRENT_STRICT_SHA256 = "a00acdc8eb2c78b3b91847f104298bf51dc089ec21b2d7661a0396848eee3243"
+
+
 class StrictBfoMappingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -156,11 +172,11 @@ class StrictBfoMappingTests(unittest.TestCase):
         }
 
     def test_exact_selection_identity_lock_and_distribution(self) -> None:
-        self.assertEqual({value.row_id for value in self.strict_selected}, EXPECTED_ROW_IDS)
-        self.assertEqual({value.axiom_id for value in self.strict_selected}, EXPECTED_AXIOM_IDS)
+        self.assertEqual({value.row_id for value in self.strict_selected}, CURRENT_ROW_IDS)
+        self.assertEqual({value.axiom_id for value in self.strict_selected}, CURRENT_AXIOM_IDS)
         predicates = [value.canonical_input.predicate_iri for value in self.strict_selected]
         self.assertEqual(predicates.count(str(RDFS.subClassOf)), 3)
-        self.assertEqual(predicates.count(str(OWL.equivalentClass)), 3)
+        self.assertEqual(predicates.count(str(OWL.equivalentClass)), 1)
         self.assertEqual(predicates.count(str(RDFS.subPropertyOf)), 9)
         self.assertEqual(
             sum(value.canonical_input.mapping_type == "property_chain" for value in self.strict_selected),
@@ -269,7 +285,7 @@ class StrictBfoMappingTests(unittest.TestCase):
 
     def test_wrong_disposition_category_and_prohibited_direct_selection_fail(self) -> None:
         cases = []
-        strict_row = next(row for row in self.disposition.rows if row.row_id in EXPECTED_ROW_IDS)
+        strict_row = next(row for row in self.disposition.rows if row.row_id in CURRENT_ROW_IDS)
         strict_axiom = strict_row.authoritative_axioms[0]
         wrong_strict = tuple(
             (key, ProductDisposition("provided_through_import"))
@@ -341,7 +357,7 @@ class StrictBfoMappingTests(unittest.TestCase):
                     )
 
     def test_axiom_identity_location_hash_and_expression_mismatches_fail(self) -> None:
-        selected_row = next(row for row in self.disposition.rows if row.row_id in EXPECTED_ROW_IDS)
+        selected_row = next(row for row in self.disposition.rows if row.row_id in CURRENT_ROW_IDS)
         axiom = selected_row.authoritative_axioms[0]
         changed_rows = (
             dataclasses.replace(selected_row, authoritative_axioms=()),
@@ -398,11 +414,11 @@ class StrictBfoMappingTests(unittest.TestCase):
         core = URIRef("http://www.sks.ai/SSN2BFO/current-ssn-sosa/alignment-core")
         self.assertEqual(set(graph.subjects(RDF.type, OWL.Ontology)), {ontology})
         self.assertEqual(set(graph.triples((None, OWL.imports, None))), {(ontology, OWL.imports, core)})
-        self.assertEqual(self.strict_result.logical_triple_count, 125)
+        self.assertEqual(self.strict_result.logical_triple_count, expected_count("STRICT_BFO_LOGICAL_TRIPLE_COUNT", 125))
         self.assertEqual(self.strict_result.ontology_declaration_triple_count, 1)
         self.assertEqual(self.strict_result.import_triple_count, 1)
         self.assertEqual(self.strict_result.metadata_annotation_count, 7)
-        self.assertEqual(len(graph), 134)
+        self.assertEqual(len(graph), expected_count("STRICT_BFO_TOTAL_TRIPLE_COUNT", 134))
         self.assertEqual(
             set(ontology_metadata_rdf_triples(self.metadata, "strict_bfo_mapping")),
             set(graph.triples((ontology, None, None)))
@@ -429,17 +445,17 @@ class StrictBfoMappingTests(unittest.TestCase):
                     (str(core),),
                 )
             ),
-            125,
+            expected_count("STRICT_BFO_LOGICAL_TRIPLE_COUNT", 125),
         )
         self.assertEqual(len(set(graph.subjects(OWL.unionOf, None))), 6)
-        self.assertEqual(len(set(graph.subjects(OWL.intersectionOf, None))), 6)
-        self.assertEqual(len(set(graph.subjects(OWL.someValuesFrom, None))), 6)
+        self.assertEqual(len(set(graph.subjects(OWL.intersectionOf, None))), 4)
+        self.assertEqual(len(set(graph.subjects(OWL.someValuesFrom, None))), 4)
         chains = set(graph.subjects(OWL.propertyChainAxiom, None))
         self.assertEqual(len(chains), 2)
         self.assertTrue(
             all(len(list(Collection(graph, next(graph.objects(chain, OWL.propertyChainAxiom))))) == 3 for chain in chains)
         )
-        self.assertEqual(self.strict_result.rdf_list_count, 14)
+        self.assertEqual(self.strict_result.rdf_list_count, 12)
         self.assertFalse(any(True for _ in graph.triples((None, OWL.inverseOf, None))))
 
     def test_import_vocabulary_and_copied_declarations_are_rejected(self) -> None:
@@ -512,7 +528,7 @@ class StrictBfoMappingTests(unittest.TestCase):
             self.metadata,
         )
 
-        self.assertEqual(len(reordered_selected), 19)
+        self.assertEqual(len(reordered_selected), 17)
         self.assertEqual(
             {value.row_id for value in reordered_selected},
             {value.row_id for value in baseline_selected},
@@ -526,7 +542,7 @@ class StrictBfoMappingTests(unittest.TestCase):
         self.assertEqual(reordered_bytes, baseline_bytes)
         self.assertEqual(
             hashlib.sha256(reordered_bytes).hexdigest(),
-            "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
+            CURRENT_STRICT_SHA256,
         )
 
     def test_fresh_process_generation_is_byte_deterministic(self) -> None:
@@ -576,13 +592,13 @@ class StrictBfoMappingTests(unittest.TestCase):
         strict_ids = {value.axiom_id for value in self.strict_selected}
         core_ids = {value.axiom_id for value in self.core_selected}
         self.assertFalse(strict_ids & core_ids)
-        self.assertEqual(len(strict_ids | core_ids), 48)
+        self.assertEqual(len(strict_ids | core_ids), expected_count("STRICT_BFO_PROJECT_CLOSURE_AXIOM_COUNT", 48))
         graph = Graph().parse(data=self.strict_result.serialized_bytes.decode(), format="turtle")
         graph.parse(data=self.core_result.serialized_bytes.decode(), format="turtle")
-        self.assertEqual(len(graph), 195)
+        self.assertEqual(len(graph), expected_count("STRICT_BFO_PROJECT_GRAPH_TRIPLE_COUNT", 195))
         for triple in list(graph.triples((None, OWL.imports, None))):
             graph.remove(triple)
-        self.assertEqual(len(graph), 194)
+        self.assertEqual(len(graph), expected_count("STRICT_BFO_LOCAL_PROJECT_GRAPH_TRIPLE_COUNT", 194))
 
     def test_fixed_pinned_merged_cco_bfo_closure(self) -> None:
         dependencies = (
@@ -597,7 +613,7 @@ class StrictBfoMappingTests(unittest.TestCase):
             (self.strict_result.serialized_bytes, self.core_result.serialized_bytes),
             dependencies,
         )
-        self.assertEqual(len(closure), 14988)
+        self.assertEqual(len(closure), expected_count("STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT", 14988))
         self.assertTrue(
             all(
                 triple in closure
@@ -630,9 +646,9 @@ class StrictBfoMappingTests(unittest.TestCase):
         self.assertTrue(result.passed, result.robot_output)
         self.assertEqual(result.return_code, 0)
         self.assertTrue(result.reasoned_output_produced)
-        self.assertEqual(result.closure_triple_count, 14988)
+        self.assertEqual(result.closure_triple_count, expected_count("STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT", 14988))
         self.assertTrue(result.profile_checked)
-        self.assertEqual(result.profile_triple_count, 14992)
+        self.assertEqual(result.profile_triple_count, expected_count("STRICT_BFO_FIXED_CLOSURE_TRIPLE_COUNT", 14988) + 4)
         self.assertEqual(result.profile_declaration_completion_count, 4)
         self.assertEqual(result.profile_return_code, 0)
         self.assertTrue(result.source_sample_declarations_retained)
@@ -650,21 +666,61 @@ class RawStrictBfoGuardTests(unittest.TestCase):
         metadata = load_metadata(REPO_ROOT / "config/publication-metadata.toml")
         product_path = "releases/current-ssn-sosa/ssn-sosa-bfo-mapping.ttl"
         baseline_bytes = subprocess.check_output(
-            ["git", "--no-optional-locks", "show", "HEAD:" + product_path],
+            ["git", "--no-optional-locks", "show", PRE_UNION_COMMIT + ":" + product_path],
             cwd=REPO_ROOT,
         )
         self.assertEqual(
             hashlib.sha256(baseline_bytes).hexdigest(),
             "676b31620df10db5c26c46bcc44b2dfd5939d606b16e0fa8a910926e8497c3af",
         )
-        self.assertEqual((REPO_ROOT / product_path).read_bytes(), baseline_bytes)
+        current_bytes = (REPO_ROOT / product_path).read_bytes()
+        self.assertEqual(hashlib.sha256(current_bytes).hexdigest(), CURRENT_STRICT_SHA256)
+        baseline_axioms = modular._canonical_graph_axioms(Graph().parse(data=baseline_bytes, format="turtle"))
+        current_axioms = modular._canonical_graph_axioms(Graph().parse(data=current_bytes, format="turtle"))
+        self.assertEqual(set(baseline_axioms), EXPECTED_AXIOM_IDS)
+        self.assertEqual(set(current_axioms), CURRENT_AXIOM_IDS)
+        self.assertEqual(set(baseline_axioms) - set(current_axioms), UNION_RECLASSIFIED_AXIOM_IDS)
+        self.assertEqual(set(current_axioms) - set(baseline_axioms), set())
+        self.assertEqual({str(baseline_axioms[key][1]) for key in UNION_RECLASSIFIED_AXIOM_IDS},
+                         {"http://www.w3.org/ns/sosa/Platform", "http://www.w3.org/ns/ssn/System"})
+        self.assertEqual({key: value[0] for key, value in current_axioms.items()},
+                         {key: value[0] for key, value in baseline_axioms.items()
+                          if key not in UNION_RECLASSIFIED_AXIOM_IDS})
+
+        # The removed pure-BFO correspondences are replaced by precisely the
+        # two approved union expressions in the CCO extension.
+        cco_path = "releases/current-ssn-sosa/ssn-sosa-cco-extension.ttl"
+        baseline_cco = subprocess.check_output(
+            ["git", "--no-optional-locks", "show", PRE_UNION_COMMIT + ":" + cco_path],
+            cwd=REPO_ROOT,
+        )
+        self.assertEqual(hashlib.sha256(baseline_cco).hexdigest(),
+                         "87a64e6bf7a78593ef94f48da0bb17458929b47a9f9d3ac9612c9811b766e428")
+        cco_before = modular._canonical_graph_axioms(Graph().parse(data=baseline_cco, format="turtle"))
+        cco_after = modular._canonical_graph_axioms(Graph().parse(REPO_ROOT / cco_path, format="turtle"))
+        expected_added = {
+            "EquivalentClasses(<" + subject + "> ObjectIntersectionOf(ObjectSomeValuesFrom(<" + relation
+            + "> <" + target + ">) ObjectUnionOf(<http://purl.obolibrary.org/obo/BFO_0000040> "
+            "<https://www.commoncoreontologies.org/ont00000958>)))"
+            for subject, relation, target in (
+                ("http://www.w3.org/ns/sosa/Platform", "http://www.w3.org/ns/sosa/hosts", "http://www.w3.org/ns/ssn/System"),
+                ("http://www.w3.org/ns/ssn/System", "http://www.w3.org/ns/ssn/implements", "http://www.w3.org/ns/sosa/Procedure"),
+            )
+        }
+        self.assertEqual((len(cco_before), len(cco_after)), (51, 53))
+        self.assertEqual(set(cco_before) - set(cco_after), set())
+        self.assertEqual({value[0] for key, value in cco_after.items() if key not in cco_before}, expected_added)
+        self.assertEqual({key: value[0] for key, value in cco_before.items()},
+                         {key: value[0] for key, value in cco_after.items() if key in cco_before})
 
         def assert_raw_baseline_rejects() -> None:
+            self.assertEqual(modular.PRODUCT_SELECTION["strict_bfo_mapping"].expected_count, 19)
             with self.assertRaises(modular.ModularProductError) as raised:
                 modular.select_product_axioms("strict_bfo_mapping", canonical_rows, audits, disposition)
             self.assertEqual(
                 {issue.code for issue in raised.exception.issues},
-                {"PRODUCT_DISPOSITION_COUNT_MISMATCH"},
+                {"PRODUCT_AXIOM_COUNT_MISMATCH", "PRODUCT_CATEGORY_COUNT_MISMATCH",
+                 "PRODUCT_DISPOSITION_COUNT_MISMATCH"},
             )
 
         assert_raw_baseline_rejects()
@@ -672,10 +728,10 @@ class RawStrictBfoGuardTests(unittest.TestCase):
             selected = modular.select_product_axioms(
                 "strict_bfo_mapping", canonical_rows, audits, disposition
             )
-            self.assertEqual({value.row_id for value in selected}, EXPECTED_ROW_IDS)
-            self.assertEqual({value.axiom_id for value in selected}, EXPECTED_AXIOM_IDS)
+            self.assertEqual({value.row_id for value in selected}, CURRENT_ROW_IDS)
+            self.assertEqual({value.axiom_id for value in selected}, CURRENT_AXIOM_IDS)
             result = modular.build_strict_bfo_mapping(selected, metadata)
-            self.assertEqual(result.serialized_bytes, baseline_bytes)
+            self.assertEqual(result.serialized_bytes, current_bytes)
         assert_raw_baseline_rejects()
 
 

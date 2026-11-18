@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "bindings": {
+    "coverage": "0c155c71d2dbc19cac5f1595255b26c539d2586e1609761c616507db10753f03",
+    "rationale-proposals": "0c155c71d2dbc19cac5f1595255b26c539d2586e1609761c616507db10753f03",
+    "human-review": "0c155c71d2dbc19cac5f1595255b26c539d2586e1609761c616507db10753f03"
+  }
+}

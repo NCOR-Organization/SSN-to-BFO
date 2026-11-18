@@ -1,0 +1,241 @@
+[
+  {
+    "expected_entailed": true,
+    "id": "Platform-Continuant",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000002",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Platform-materiality-required-only-in-baseline",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Platform-hosted-System-necessary",
+    "kind": "existential_subsumption",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "predicate": "http://www.w3.org/ns/sosa/hosts",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "new-expression-forward",
+    "kind": "class_subsumption",
+    "object": "urn:platform-adjudication-probe:NewTarget",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "new-expression-reverse",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:NewTarget"
+  },
+  {
+    "expected_entailed": true,
+    "id": "old-expression-still-sufficient",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:OldTarget"
+  },
+  {
+    "expected_entailed": true,
+    "id": "old-expression-necessary-only-in-baseline",
+    "kind": "class_subsumption",
+    "object": "urn:platform-adjudication-probe:OldTarget",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "hostless-Platform-unsatisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:HostlessPlatform"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Platform-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": false,
+    "id": "material-Platform-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:MaterialPlatform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "immaterial-Platform-unsatisfiable-only-in-baseline",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:ImmaterialPlatform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "spatial-region-Platform-unsatisfiable-only-in-baseline",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:SpatialRegionPlatform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "occurrent-Platform-unsatisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:OccurrentPlatform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "material-host-classifies-as-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:MaterialHost"
+  },
+  {
+    "expected_entailed": true,
+    "id": "immaterial-host-classifies-as-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:ImmaterialHost"
+  },
+  {
+    "expected_entailed": true,
+    "id": "spatial-region-host-classifies-as-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:SpatialRegionHost"
+  },
+  {
+    "expected_entailed": true,
+    "id": "source-universal-hosting-System-retained",
+    "kind": "class_subsumption",
+    "object": "urn:platform-adjudication-probe:OnlySystemFillers",
+    "subject": "http://www.w3.org/ns/sosa/Platform"
+  },
+  {
+    "expected_entailed": true,
+    "id": "source-converse-independent-of-target-conjunct",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "urn:platform-adjudication-probe:HostsSystem"
+  },
+  {
+    "expected_entailed": false,
+    "id": "System-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/ssn/System"
+  },
+  {
+    "expected_entailed": true,
+    "id": "System-remains-material",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "subject": "http://www.w3.org/ns/ssn/System"
+  },
+  {
+    "expected_entailed": false,
+    "id": "System-not-automatically-a-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "http://www.w3.org/ns/ssn/System"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sensor-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Sensor-remains-material",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sensor-not-automatically-a-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Sensor-remains-System",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "subject": "http://www.w3.org/ns/sosa/Sensor"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Actuator-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Actuator"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Actuator-remains-material",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "subject": "http://www.w3.org/ns/sosa/Actuator"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Actuator-not-automatically-a-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "http://www.w3.org/ns/sosa/Actuator"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Actuator-remains-System",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "subject": "http://www.w3.org/ns/sosa/Actuator"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sampler-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "http://www.w3.org/ns/sosa/Sampler"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Sampler-remains-material",
+    "kind": "class_subsumption",
+    "object": "http://purl.obolibrary.org/obo/BFO_0000040",
+    "subject": "http://www.w3.org/ns/sosa/Sampler"
+  },
+  {
+    "expected_entailed": false,
+    "id": "Sampler-not-automatically-a-Platform",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/sosa/Platform",
+    "subject": "http://www.w3.org/ns/sosa/Sampler"
+  },
+  {
+    "expected_entailed": true,
+    "id": "Sampler-remains-System",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/ns/ssn/System",
+    "subject": "http://www.w3.org/ns/sosa/Sampler"
+  },
+  {
+    "expected_entailed": false,
+    "id": "System-without-host-remains-satisfiable",
+    "kind": "class_subsumption",
+    "object": "http://www.w3.org/2002/07/owl#Nothing",
+    "subject": "urn:platform-adjudication-probe:SystemWithoutHost"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "baseline_strict_count": 19,
+  "intermediate_strict_count": 19,
+  "final_strict_count": 17,
+  "removed_strict_rows": [
+    "urn:uuid:66010702-8134-4e08-a972-f0767ec8dead",
+    "urn:uuid:b4508c03-1b79-4f53-b525-d5db6d80c7cb"
+  ],
+  "remaining17_canonical_rows_identical_in_all_three_states": true,
+  "new_strict_rows": [],
+  "alignment_core_actual_and_expected_sets_identical_in_all_three_states": true,
+  "actual_strict_rdf_triples": 114,
+  "previous_strict_rdf_triples": 134,
+  "governance_transition": {
+    "path": "reports/current-semantic-workbook/transitions/94598afb-94dd-4888-b7cc-402c6ba742a6.json",
+    "sha256": "f719255b19c11bf31f321367cea835cc38e35c1becfcacec5ebe85417b18d6df"
+  },
+  "before_category_counts": {
+    "bfo_bearing": 19,
+    "cco_bearing": 24,
+    "mixed_bfo_cco": 27,
+    "target_neutral": 32
+  },
+  "after_category_counts": {
+    "bfo_bearing": 17,
+    "cco_bearing": 24,
+    "mixed_bfo_cco": 29,
+    "target_neutral": 32
+  },
+  "strict_expected_constants_unchanged": true,
+  "explanation": "Both approved expressions now refer to CCO InformationContentEntity and therefore leave the unchanged pure-BFO product partition. Exactly Platform and System move to the mixed BFO/CCO category; all other strict canonical rows and alignment-core rows remain unchanged."
+}
